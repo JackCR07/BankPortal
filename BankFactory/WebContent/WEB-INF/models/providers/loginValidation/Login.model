@@ -1,4 +1,4 @@
-<Model id="providers/LoginValidation/Login"><BuilderCallList><BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Model id="providers/loginValidation/Login"><BuilderCallList><BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
 <Messages />
 <Inputs><Input name="Name">Next Steps</Input>
 <Input name="BuilderCallEnabled">true</Input>
@@ -62,6 +62,11 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="ServiceName">Login</Input>
 <Input name="Name">Login</Input>
 <Input name="TestServiceName">Login</Input>
+<Input name="TestOperationInputs"><OverridenInputs><InputsForOperation><Operation>execute</Operation>
+<Inputs />
+</InputsForOperation>
+</OverridenInputs>
+</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc5"><BuilderDefID>com.bowstreet.builders.webapp.ServiceCallBuilder</BuilderDefID>
@@ -80,7 +85,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="WSDL_Refresh">Refresh/fetch WSDL</Input>
 <Input name="DoHTTP_RequestType">GET</Input>
 <Input name="hidden_UIState">8</Input>
-<Input name="Name">Login</Input>
+<Input name="Name">LoginCall</Input>
 <Input name="WSDL_URL">/factory/schemasWSDL/LoginValidation/LoginValidation.wsdl</Input>
 <Input name="ExamineWSDL_ServiceDoc">LoginValidationHttpService</Input>
 <Input name="ExamineWSDL_Bindings">operation1 - 1.1 SOAP-document</Input>
@@ -156,7 +161,7 @@ Here are some of the things you might want to do now that you have the model sta
 &lt;/wsdl:definitions&gt;
 </Input>
 <Input name="ExamineWSDL_createInputVariables">true</Input>
-<Input name="ExamineWSDLargval_1">${Variables/Login_arg1_operation1Parameters}</Input>
+<Input name="ExamineWSDLargval_1">${Variables/LoginCall_arg1_operation1Parameters}</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
@@ -188,7 +193,7 @@ Here are some of the things you might want to do now that you have the model sta
 </Fields>
 </Input>
 <Input name="OperationName">LoginValidation</Input>
-<Input name="TargetOperation">DataServices/Login/execute</Input>
+<Input name="TargetOperation">DataServices/LoginCall/execute</Input>
 <Input name="Name">LoginValidation</Input>
 </Inputs>
 </BuilderCall>
