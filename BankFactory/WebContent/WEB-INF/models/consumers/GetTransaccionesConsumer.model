@@ -1,4 +1,4 @@
-<Model id="services/GetTransaccionesConsumer"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Model id="consumers/GetTransaccionesConsumer"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
 <Messages />
 <Inputs><Input name="Name">Next Steps</Input>
 <Input name="BuilderCallEnabled">true</Input>
@@ -51,7 +51,7 @@ You can also profile other builder inputs according to device type, and you can 
 <Input name="UseAllOperations">true</Input>
 <Input name="OverrideInputs">true</Input>
 <Input name="Name">GetTransaccionesService</Input>
-<Input name="ProviderModel">services/GetTransaccionesProvider</Input>
+<Input name="ProviderModel">providers/GetTransaccionesProvider</Input>
 <Input name="OperationInputs"><OverridenInputs><InputsForOperation><Operation>GetTransaccionesOperation</Operation>
 <Inputs><top><Input><Name>operation1</Name>
 </Input>
@@ -77,16 +77,7 @@ You can also profile other builder inputs according to device type, and you can 
 </OverridenInputs>
 </Input>
 <Input name="OperationName">all</Input>
-<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>byStatus</Operation>
-<Mappings />
-</ValuesForOperation>
-<ValuesForOperation><Operation>byExactStatus</Operation>
-<Mappings />
-</ValuesForOperation>
-<ValuesForOperation><Operation>all</Operation>
-<Mappings />
-</ValuesForOperation>
-<ValuesForOperation><Operation>getOrderDetails</Operation>
+<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>GetTransaccionesOperation</Operation>
 <Mappings />
 </ValuesForOperation>
 </ContextVariables>
@@ -94,6 +85,16 @@ You can also profile other builder inputs according to device type, and you can 
 <Input name="OperationDescription">[no description]
 Parameters:
 	Name:			results</Input>
+<Input name="SelectOperations"><top><OperationSelected><Operation>GetTransaccionesOperation</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>No description was provided.
+Parameters:
+	Name:			inputs
+
+	Name:			results</Description>
+</OperationSelected>
+</top>
+</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ViewAndFormBuilder</BuilderDefID>
@@ -131,7 +132,7 @@ Parameters:
 <Input name="SetProfiledInputValues">true</Input>
 <Input name="UniquePattern">xyzzy7</Input>
 <Input name="LinkColumn">numero_transaccion</Input>
-<Input name="DetailsMethod"></Input>
+<Input name="DetailsMethod" />
 <Input name="InputPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_InputPageStyleSheetOverrideHTMLTemplate}</Input>
 <Input name="ViewPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_ViewPageStyleSheetOverride}</Input>
 <Input name="DetailPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</Input>
@@ -306,7 +307,7 @@ Parameters:
 <Properties><Contained>false</Contained>
 </Properties>
 <Dependencies><Dependency type="Model">imports/factory/multichanneltheme85</Dependency>
-<Dependency type="Model">services/GetTransaccionesProvider</Dependency>
+<Dependency type="Model">providers/GetTransaccionesProvider</Dependency>
 <Dependency type="Model">factory/portletbase/view_and_form_base</Dependency>
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/input.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_label_above_themes.html</Dependency>

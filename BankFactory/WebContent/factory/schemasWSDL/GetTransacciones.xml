@@ -1,0 +1,79 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://getTransacciones" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="getTransacciones" targetNamespace="http://getTransacciones">
+<wsdl:documentation>
+<wsdl:appinfo source="WMQI_APPINFO">
+<MRWSDLAppInfo imported="true">
+<generatedXSD location="getTransacciones_InlineSchema1.xsd"/>
+<binding hasEncoding="false" imported="true" name="getTransaccionesHttpBinding" originalBindingStyle="document"/>
+</MRWSDLAppInfo>
+</wsdl:appinfo>
+</wsdl:documentation>
+<wsdl:types>
+<xsd:schema targetNamespace="http://getTransacciones">
+
+<xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="id_cuenta" nillable="true" type="xsd:int"/>
+<xsd:element name="id_tipo_transaccion" nillable="true" type="xsd:int"/>
+<xsd:element name="fecha_mov_mayor_a" nillable="true" type="xsd:string"/>
+<xsd:element name="fecha_mov_menor_a" nillable="true" type="xsd:string"/>
+<xsd:element name="mon_trans_mayor_a" nillable="true" type="xsd:double"/>
+<xsd:element name="mon_trans_menor_a" nillable="true" type="xsd:double"/>
+<xsd:element name="n_trans_mayor_a" nillable="true" type="xsd:int"/>
+<xsd:element name="n_trans_menor_a" nillable="true" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1Response">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="transaccion" nillable="true" type="tns:Transaccion"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="Transaccion">
+<xsd:sequence>
+<xsd:element name="id_transaccion" type="xsd:int"></xsd:element>
+<xsd:element name="numero_transaccion" type="xsd:string"></xsd:element>
+<xsd:element name="monto" type="xsd:double"/>
+<xsd:element name="fecha_transaccion" type="xsd:string"></xsd:element>
+<xsd:element name="tipo_transaccion" type="xsd:string"></xsd:element>
+<xsd:element name="id_cuenta_origen" type="xsd:int"></xsd:element>
+<xsd:element name="num_cuenta_origen" type="xsd:int"></xsd:element>
+<xsd:element name="id_cuenta_destino" type="xsd:int"/>
+<xsd:element name="num_cuenta_destino" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="operation1RequestMsg">
+<wsdl:part element="tns:operation1" name="operation1Parameters"/>
+</wsdl:message>
+<wsdl:message name="operation1ResponseMsg">
+<wsdl:part element="tns:operation1Response" name="operation1Result"/>
+</wsdl:message>
+<wsdl:portType name="getTransacciones">
+<wsdl:operation name="operation1">
+<wsdl:input message="tns:operation1RequestMsg" name="operation1Request"/>
+<wsdl:output message="tns:operation1ResponseMsg" name="operation1Response"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="getTransaccionesHttpBinding" type="tns:getTransacciones">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="operation1">
+<soap:operation soapAction="http://getTransacciones/operation1"/>
+<wsdl:input name="operation1Request">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="operation1Response">
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="getTransaccionesHttpService">
+<wsdl:port binding="tns:getTransaccionesHttpBinding" name="getTransaccionesHttpPort">
+<soap:address location="http://172.16.11.225:7800/getTransacciones/getTransacciones"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

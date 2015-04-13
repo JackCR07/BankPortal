@@ -1,4 +1,4 @@
-<Model id="services/GetCuentasProvider"><BuilderCallList><BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Model id="providers/GetCuentasProvider"><BuilderCallList><BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
 <Messages />
 <Inputs><Input name="Name">Next Steps</Input>
 <Input name="BuilderCallEnabled">true</Input>
@@ -80,10 +80,10 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="DoHTTP_RequestType">GET</Input>
 <Input name="hidden_UIState">8</Input>
 <Input name="Name">GetCuentasWSCall</Input>
-<Input name="WSDL_URL">/WEB-INF/models/services/getCuentas.xml</Input>
+<Input name="WSDL_URL">/factory/schemasWSDL/getCuentas.xml</Input>
 <Input name="ExamineWSDL_ServiceDoc">GetCuentasHttpService</Input>
 <Input name="ExamineWSDL_Bindings">operation1 - 1.1 SOAP-document</Input>
-<Input name="ExamineWSDL_URL">http://172.16.11.225:7801/GetCuentas/GetCuentas</Input>
+<Input name="ExamineWSDL_URL">http://172.16.11.225:7800/GetCuentas/GetCuentas</Input>
 <Input name="ExamineWSDL_MethodNamespaceURI">http://GetCuentas</Input>
 <Input name="ExamineWSDL_MethodName">operation1</Input>
 <Input name="hidden_ExamineWSDL_isSOAP">true</Input>
@@ -102,7 +102,7 @@ Here are some of the things you might want to do now that you have the model sta
 &lt;/outputs&gt;
 &lt;SoapNamespace&gt;http://schemas.xmlsoap.org/wsdl/soap/&lt;/SoapNamespace&gt;
 &lt;portType&gt;GetCuentas&lt;/portType&gt;
-&lt;serviceInfo&gt;&lt;URL&gt;http://172.16.11.225:7801/GetCuentas/GetCuentas&lt;/URL&gt;
+&lt;serviceInfo&gt;&lt;URL&gt;http://172.16.11.225:7800/GetCuentas/GetCuentas&lt;/URL&gt;
 &lt;serviceName&gt;GetCuentasHttpService&lt;/serviceName&gt;
 &lt;serviceNamespace&gt;http://GetCuentas&lt;/serviceNamespace&gt;
 &lt;/serviceInfo&gt;
@@ -120,7 +120,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="ExamineWSDL_replytype">operation1Response</Input>
 <Input name="hidden_ExamineWSDL_replyclass">com.bowstreet.util.IXml</Input>
 <Input name="hidden_WSDL_replycount">1</Input>
-<Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\lprado\Documents\Portal\WEF\WSDLTutorial\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://GetCuentas" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://GetCuentas"&gt;&lt;xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1"&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element name="id_cliente" nillable="true" type="xsd:integer" /&gt;
+<Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\lprado\git\BankPortal\BankFactory\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://GetCuentas" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://GetCuentas"&gt;&lt;xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1"&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element name="id_cliente" nillable="true" type="xsd:integer" /&gt;
 &lt;xsd:element name="id_tipo_cuenta" nillable="true" type="xsd:integer" /&gt;
 &lt;xsd:element name="fecha_mayor_a" nillable="true" type="xsd:string" /&gt;
 &lt;xsd:element name="fecha_menor_a" nillable="true" type="xsd:string" /&gt;
@@ -190,7 +190,7 @@ Here are some of the things you might want to do now that you have the model sta
 &lt;/wsdl:fault&gt;
 &lt;/wsdl:operation&gt;
 &lt;/wsdl:binding&gt;
-&lt;wsdl:service name="GetCuentasHttpService"&gt;&lt;wsdl:port binding="tns:GetCuentasHttpBinding" name="GetCuentasHttpPort"&gt;&lt;soap:address location="http://172.16.11.225:7801/GetCuentas/GetCuentas" /&gt;
+&lt;wsdl:service name="GetCuentasHttpService"&gt;&lt;wsdl:port binding="tns:GetCuentasHttpBinding" name="GetCuentasHttpPort"&gt;&lt;soap:address location="http://172.16.11.225:7800/GetCuentas/GetCuentas" /&gt;
 &lt;/wsdl:port&gt;
 &lt;/wsdl:service&gt;
 &lt;/wsdl:definitions&gt;

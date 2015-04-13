@@ -1,0 +1,77 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://GetCuentas" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GetCuentas" targetNamespace="http://GetCuentas">
+<wsdl:documentation>
+<wsdl:appinfo source="WMQI_APPINFO">
+<MRWSDLAppInfo imported="true">
+<generatedXSD location="GetCuentas_InlineSchema1.xsd"/>
+<binding hasEncoding="false" imported="true" name="GetCuentasHttpBinding" originalBindingStyle="document"/>
+</MRWSDLAppInfo>
+</wsdl:appinfo>
+</wsdl:documentation>
+<wsdl:types>
+<xsd:schema targetNamespace="http://GetCuentas">
+
+<xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="id_cliente" nillable="true" type="xsd:integer"/>
+<xsd:element name="id_tipo_cuenta" nillable="true" type="xsd:integer"/>
+<xsd:element name="fecha_mayor_a" nillable="true" type="xsd:string"/>
+<xsd:element name="fecha_menor_a" nillable="true" type="xsd:string"/>
+<xsd:element name="saldo_mayor_a" nillable="true" type="xsd:double"/>
+<xsd:element name="saldo_menor_a" nillable="true" type="xsd:double"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1Response">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" name="cuenta" type="tns:Cuenta"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="Cuenta">
+<xsd:sequence>
+<xsd:element name="id_cuenta" type="xsd:int"/>
+<xsd:element name="tipo_cuenta" type="xsd:string"/>
+<xsd:element name="saldo" type="xsd:double"/>
+<xsd:element name="numero_cuenta" type="xsd:string"></xsd:element>
+<xsd:element name="fecha_creacion" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="operation1RequestMsg">
+<wsdl:part element="tns:operation1" name="operation1Parameters"/>
+</wsdl:message>
+<wsdl:message name="operation1ResponseMsg">
+<wsdl:part element="tns:operation1Response" name="operation1Result"/>
+</wsdl:message>
+<wsdl:portType name="GetCuentas">
+<wsdl:documentation/>
+<wsdl:operation name="operation1">
+<wsdl:input message="tns:operation1RequestMsg" name="operation1Request"/>
+<wsdl:output message="tns:operation1ResponseMsg" name="operation1Response"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="GetCuentasHttpBinding" type="tns:GetCuentas">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="operation1">
+<soap:operation soapAction="http://GetCuentas/operation1"/>
+<wsdl:input name="operation1Request">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="operation1Response">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="operation1Fault1">
+<soap:fault name="operation1Fault1" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="GetCuentasHttpService">
+<wsdl:port binding="tns:GetCuentasHttpBinding" name="GetCuentasHttpPort">
+<soap:address location="http://172.16.11.225:7800/GetCuentas/GetCuentas"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
