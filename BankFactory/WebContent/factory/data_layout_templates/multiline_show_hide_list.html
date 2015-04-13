@@ -1,0 +1,24 @@
+<meta data-template-id="MultiLineShowHide" data-template-bundle-name="com.bowstreet.builders.webapp.dojo_messages" data-template-name-id="DataLayoutMultiLineShowHideName" data-template-description-id="DataLayoutMultiLineShowHideDescription" data-template-name="Multi-Line Show/Hide List" data-style-picker-file-names="/factory/data_layout_templates/base_template_styles.css" data-stylesheets="/factory/data_layout_templates/multiline_show_hide_list.css,/factory/data_layout_templates/blank.css" data-dojo-requires="dojo.parser" />
+<div class="wpfMultiLineShowHideList" >
+  <div data-repeat-wrapper="default" class="wpfListRow">
+     <div class="wpfFixedSection">
+         <div data-target="fixed_left_top" class="wpfListColumnItemLeft"></div>
+         <div data-target="fixed_show" class="wpfListShowHideText" onclick="wpf_dojo_utils.toggleClass(this, 'wpfHideSection', 'wpfHide');wpf_dojo_utils.toggleClass(this, 'wpfListShowHideText', 'wpfHide');dojo.stopEvent(event);"></div>
+         <div data-target="fixed_hide" class="wpfListShowHideText wpfHide" onclick="wpf_dojo_utils.toggleClass(this, 'wpfHideSection', 'wpfHide');wpf_dojo_utils.toggleClass(this, 'wpfListShowHideText', 'wpfHide');dojo.stopEvent(event);"></div>
+         <div data-target="fixed_left_bottom" class="wpfListColumnItemLeft"></div>
+     </div>
+     <div class="wpfHideSection wpfHide" >
+        <div class="wpfListColumn">
+          <div data-target="left_top" class="wpfListColumnItem"></div>
+          <div data-target="left_middle" class="wpfListColumnItem"></div>
+          <div data-target="left_bottom" class="wpfListColumnItem"></div>
+        </div>
+        <div class="wpfListColumn">
+          <div data-target="right_top" class="wpfListColumnItem"></div>
+          <div data-target="right_middle" class="wpfListColumnItem"></div>
+          <div data-target="right_bottom" class="wpfListColumnItem"></div>
+        </div>
+     </div>
+  </div>
+</div>
+

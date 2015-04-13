@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.EnhancedTableModifierBuilder">
+  <ReadableName>Dojo Enhanced Table Modifier</ReadableName>
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName>
+  <HelpFile></HelpFile>
+  <RequiredFactoryVersion>6.0.1</RequiredFactoryVersion>
+  <Description>Enhances a data table.</Description>
+  <Domains>
+    <Domain>WebApp</Domain>
+    <Domain>Consumer</Domain>
+  </Domains>
+  <CreateModifyList>
+    <CanModify type="[Unassigned Elements]" category="Tables and Forms">Enhances a data table.</CanModify>
+    <CanModify xmlns="" type="Control" category="Tables and Forms"/>
+  </CreateModifyList>
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <Category>Tables and Forms,Page Elements,Rich UI</Category>
+  <Keywords>Form,Data Entry,Layout,Dojo</Keywords>
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+
+  <BuilderData>
+    <BuilderDataEntry name="IconName">enhancedTable</BuilderDataEntry>
+    <BuilderDataEntry name="PageLocation">onNamedTag</BuilderDataEntry>
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.EnhancedTableModifierBuilder</BuilderDataEntry>
+  </BuilderData>
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.EnhancedTableModifierCoordinator</CoordinatorClassName>
+  <InputDefinitions>
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.RestrictedBuilderName"/>
+
+    <InputDefinition name="PageLocationType" base="com.bowstreet.core.Base.StringData">
+      <Prompt>Location Type</Prompt>
+      <HelpText>Specify how to build the page location for this control.</HelpText>
+      <InitialValue>PageLocation</InitialValue>
+      <Editor JavaClass="com.bowstreet.widget.RadioBox">
+        <Argument name="listData">PageLocation,Container</Argument>
+        <Argument name="ListLabels">Page Location,Container</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation">
+      <Prompt></Prompt>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="Container" base="com.bowstreet.core.WebAppBase.SingleFieldContainersOnly">
+      <Required>false</Required>
+    </InputDefinition>
+    
+    <InputDefinition name="AllowResize" base="com.bowstreet.core.Base.BooleanData" >
+      <Prompt>Allow Column Resize</Prompt>
+      <InitialValue>true</InitialValue>
+      <EmptyValueReplacement>true</EmptyValueReplacement>
+      <Visible>true</Visible>
+      <Required>false</Required>
+    </InputDefinition>
+    
+    <InputDefinition name="AllowReorder" base="com.bowstreet.core.Base.BooleanData" >
+      <Prompt>Allow Column Reorder</Prompt>
+      <InitialValue>true</InitialValue>
+      <EmptyValueReplacement>true</EmptyValueReplacement>
+      <Visible>true</Visible>
+      <Required>false</Required>
+    </InputDefinition>
+
+    <InputDefinition name="EnableInlineEdit" base="com.bowstreet.core.Base.BooleanData">
+      <Prompt>Enable Inline Edit</Prompt>
+      <InitialValue>false</InitialValue>
+      <EmptyValueReplacement>false</EmptyValueReplacement>
+      <Visible>true</Visible>
+      <Required>false</Required>
+    </InputDefinition>
+
+    <InputDefinition name="FireRowClick" base="com.bowstreet.core.Base.BooleanData" >
+      <Prompt>Fire Row Click Events</Prompt>
+      <InitialValue>true</InitialValue>
+      <EmptyValueReplacement>true</EmptyValueReplacement>
+      <Visible>true</Visible>
+      <Required>false</Required>
+    </InputDefinition>
+    
+    <InputDefinition name="FireRowDoubleClick" base="com.bowstreet.core.Base.BooleanData" >
+      <Prompt>Fire Row Double Click Events</Prompt>
+      <InitialValue>true</InitialValue>
+      <EmptyValueReplacement>true</EmptyValueReplacement>
+      <Visible>true</Visible>
+      <Required>false</Required>
+    </InputDefinition>
+    
+    <InputDefinition name="DoubleClickTime" base="com.bowstreet.core.Base.StringData" >
+      <Prompt>Double Click Time (ms)</Prompt>
+      <HelpText>Specify the interval in milliseconds that distinguishes a double click from two independent clicks.</HelpText>
+      <InitialValue>500</InitialValue>
+      <EmptyValueReplacement>500</EmptyValueReplacement>
+      <Visible>true</Visible>
+      <Required>false</Required>
+    </InputDefinition>
+    
+    <InputDefinition name="ClientSideEventPrefix" base="com.bowstreet.core.Base.IndirectValue">
+      <Prompt>Client Event Prefix</Prompt>
+      <HelpText>Optional prefix added to the client event to make a unique name.</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <Property>true</Property>
+      <Callable>true</Callable>
+    </InputDefinition>
+    
+    <InputDefinition name="DojoType" base="com.bowstreet.core.Base.StringData">
+      <Prompt>Type</Prompt>
+      <InitialValue>CustomExtension</InitialValue>
+      <EmptyValueReplacement>CustomExtension</EmptyValueReplacement>
+      <Visible>false</Visible>
+    </InputDefinition>
+
+    <InputDefinition name="CustomDojoType" base="com.bowstreet.core.Base.StringData">
+      <Prompt></Prompt>
+      <InitialValue>wpf.widget.EnhancedTable</InitialValue>
+      <EmptyValueReplacement>wpf.widget.EnhancedTable</EmptyValueReplacement>  
+      <Visible>false</Visible>
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition>
+
+    <InputDefinition name="AddRequires" base="com.bowstreet.core.Base.BooleanData" >
+      <Prompt>Add to Requires</Prompt>
+      <InitialValue>true</InitialValue>
+      <EmptyValueReplacement>true</EmptyValueReplacement>
+      <Visible>false</Visible>
+      <Required>false</Required>
+    </InputDefinition>
+    
+    <InputDefinition name="Value" base="com.bowstreet.core.Base.IndirectValue">
+      <Visible>false</Visible>
+    </InputDefinition>
+
+    <InputDefinition name="Attributes" base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Attributes">
+      <Group>Attributes</Group>
+      <Type>Xml</Type>
+    </InputDefinition>
+
+    <InputDefinition name="HandleExisting" base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleExisting">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition>
+
+    <InputDefinition name="HandleMissingValue" base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleMissingValue">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition>
+
+    <InputDefinition name="Separator" base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Separator">
+      <Group>Attributes</Group>
+      <InitialValue>;</InitialValue>
+    </InputDefinition>
+
+  </InputDefinitions>
+  <GroupDefinitions>
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced"/>
+    <GroupDefinition id="Attributes">
+      <Name>Attributes</Name>
+      <Description>Optional attributes to apply to the target widget element.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+  </GroupDefinitions>
+
+  <PageDefinitions />
+</BuilderDef>

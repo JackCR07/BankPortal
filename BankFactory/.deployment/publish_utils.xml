@@ -1,0 +1,116 @@
+<project name="publish" basedir=".">
+	<target name="properties">
+
+		<property name="taskClassPath" 
+			value="${webcontent.location}/../.deployment/lib/wpfDeployment.jar;
+			${webcontent.location}/WEB-INF/lib/factory.jar;
+			${webcontent.location}/WEB-INF/lib/bstres.jar;
+			${webcontent.location}/WEB-INF/lib/bstres_n11.jar;
+			${webcontent.location}/WEB-INF/lib/jdom.jar;
+			${webcontent.location}/WEB-INF/lib/log4j.jar;
+			${webcontent.location}/WEB-INF/lib/commons-pool.jar;
+			${webcontent.location}/WEB-INF/clientLibs/j2ee.jar"/>
+
+		<available file="${webcontent.location}/WEB-INF/bin/predeploy" property="preDeploy.present" />
+		<available file="${webcontent.location}/WEB-INF/bin/postdeploy" property="postDeploy.present" />
+	</target>
+
+	<!-- Configure the project for production export. -->
+	<target name="configProjectExport" depends="setDisplayName">
+		<echo message="Configuring project for export." />
+
+		<!-- Update server properties with server port from deployment configuration file -->
+		<delete file="${webcontent.location}/WEB-INF/config/server.properties" />
+		<copy file="${project.location}/.deployment/templates/WEB-INF/config/server.properties" 
+			tofile="${webcontent.location}/WEB-INF/config/server.properties" />
+		<replace file="${webcontent.location}/WEB-INF/config/server.properties">
+			<replacefilter token="@SERVER_PORT@" value="80" />
+		</replace>
+	</target>
+
+	<!-- Configure the project for the target server and application context, as defined by the project. -->
+	<target name="configProject" depends="setDisplayName">
+		<echo message="Configuring project for deployment action." />
+
+		<!-- Update server properties with server port from deployment configuration file -->
+		<delete file="${webcontent.location}/WEB-INF/config/server.properties" />
+		<copy file="${project.location}/.deployment/templates/WEB-INF/config/server.properties" 
+			tofile="${webcontent.location}/WEB-INF/config/server.properties" />
+		<replace file="${webcontent.location}/WEB-INF/config/server.properties" propertyFile="${config.file}">
+			<replacefilter token="@SERVER_PORT@" property="wpf.serverport" />
+		</replace>
+
+		<!-- Update wpf.signature file with project name so we can discover the 'deployed' location later. -->
+		<delete file="${webcontent.location}/WEB-INF/config/wpf.signature" />
+		<copy file="${project.location}/.deployment/templates/WEB-INF/config/wpf.signature" 
+			tofile="${webcontent.location}/WEB-INF/config/wpf.signature" />
+		<replace file="${webcontent.location}/WEB-INF/config/wpf.signature" token="@PROJECT_NAME@" value="${project.name}" encoding="UTF-8" />
+		<replace file="${webcontent.location}/WEB-INF/config/wpf.signature" token="@PUBLISH_TIMESTAMP@" value="${publish.timestamp}" encoding="UTF-8" />
+	</target>
+
+	<!-- Creates displayname.xml descriptor extensions. -->
+	<target name="setDisplayName">
+		<!-- Update the displayname.xml descriptor processors -->
+		<delete file="${webcontent.location}/WEB-INF/bin/deployment/extensions/portlet.web/displayname.xml"/>
+		<copy file="${project.location}/.deployment/templates/WEB-INF/bin/deployment/extensions/portlet.web/displayname.xml" 
+			tofile="${webcontent.location}/WEB-INF/bin/deployment/extensions/portlet.web/displayname.xml" />
+
+		<delete file="${webcontent.location}/WEB-INF/bin/deployment/extensions/standalone.web/displayname.xml" />
+		<copy file="${project.location}/.deployment/templates/WEB-INF/bin/deployment/extensions/standalone.web/displayname.xml" 
+			tofile="${webcontent.location}/WEB-INF/bin/deployment/extensions/standalone.web/displayname.xml" />
+
+		<replace file="${webcontent.location}/WEB-INF/bin/deployment/extensions/portlet.web/displayname.xml" 
+			token="@PROJECT_NAME@" value="${project.name}" encoding="UTF-8" />
+		<replace file="${webcontent.location}/WEB-INF/bin/deployment/extensions/standalone.web/displayname.xml" 
+			token="@PROJECT_NAME@" value="${project.name}" encoding="UTF-8" />
+	</target>
+
+	<!-- This target is a hook for featureset developpers to accomplish some config tasks before deployment takes place. -->
+	<target name="preDeploy" depends="properties" if="preDeploy.present">
+		<echo message="Invoking pre-deployment script(s)." />
+		<subant target="" inheritall="true" failonerror="false">
+			<fileset dir="${webcontent.location}/WEB-INF/bin/predeploy" includes="*.xml" />
+		</subant>
+
+	</target>
+
+	<!-- This target is a hook for featureset developpers to accomplish some config tasks after deployment takes place. -->
+	<target name="postDeploy" depends="properties" if="postDeploy.present">
+		<echo message="Invoking post-deployment script(s)." />
+		<subant target="" inheritall="true" failonerror="false">
+			<fileset dir="${webcontent.location}/WEB-INF/bin/postdeploy" includes="*.xml" />
+		</subant>
+	</target>
+
+	<!-- Add a servlet defintion and mapping to project web.xml file.-->
+	<target name="addaServlet" depends="properties">
+		<echo message="Adding the ${servletName} servlet definition to ${webXmlFile}." />
+		<taskdef name="updateWebXml" 
+			classname="com.bowstreet.deployment.AddServlet" 
+			classpath="${taskClassPath}" />
+
+		<updateWebXml servletName="${servletName}" 
+			comment="${comment}" 
+			servletClass="${servletClass}" 
+			loadOnStartup="${loadOnStartup}" 
+			urlPattern="${urlPattern}" 
+			webXmlFile="${webXmlFile}" />
+	</target>
+
+
+	<!--
+	 	Sets the http port for the application war with a specific port.
+	 -->
+	<target name="setServerPortUserDefined" depends="properties" if="http.port">
+		<replace file="${webcontent.location}/WEB-INF/config/server.properties" token="@SERVER_PORT@" value="${http.port}" />
+	</target>
+
+
+	<!--
+	 	Sets the http port for the application war with a default port (if none is specified).
+	 -->
+	<target name="setServerPortDefault" depends="properties" unless="http.port">
+		<replace file="${webcontent.location}/WEB-INF/config/server.properties" token="@SERVER_PORT@" value="10000" />
+	</target>
+
+</project>

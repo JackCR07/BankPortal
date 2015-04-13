@@ -1,0 +1,11 @@
+<project name="post" basedir="." default="hello">
+	<description>
+		
+	</description>
+
+	<target name="hello">
+		<echo message="All ant files in the predeploy directory get called."/>
+		<echo message="Just add an ant file to your featureset, and I'll invoke the default target."/>
+	</target>
+
+</project>

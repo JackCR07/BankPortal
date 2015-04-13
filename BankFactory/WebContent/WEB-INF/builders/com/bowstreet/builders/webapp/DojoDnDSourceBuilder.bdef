@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoDnDSourceBuilder"> 
+  <ReadableName>Dojo Drag Source</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName> 
+  <HelpFile>factory/product_documentation/designer/dojo_drag_source.html</HelpFile>
+  <RequiredFactoryVersion>6.0.1</RequiredFactoryVersion> 
+  <Description>Use this builder to specify Dojo drag source data and page location.</Description> 
+  <Domains> 
+    <Domain>WebApp</Domain> 
+    <Domain>Consumer</Domain>
+  </Domains> 
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <Category>Rich UI</Category>
+  <Keywords>Page, Page Elements, Display, Flow Control, Layout, Drag and drop</Keywords>
+  
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoDnDSourceBuilder</BuilderDataEntry> 
+    <BuilderDataEntry name="IconName">event</BuilderDataEntry>
+    <BuilderDataEntry name="PageLocation">onNamedTag</BuilderDataEntry>
+  </BuilderData>
+ <CoordinatorClassName />   
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName"> 
+      <Prompt>Name</Prompt> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation"> 
+      <Prompt>Page location</Prompt> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="DragSourceData" base="com.bowstreet.core.Base.IndirectValue">
+        <Prompt>Drag Source Data</Prompt>
+        <HelpText>Enter the data to pass to the drop target.</HelpText>
+        <Property>true</Property>
+    </InputDefinition>
+    <InputDefinition name="DragType" base="com.bowstreet.core.Base.StringData">
+       <Prompt>Drag Type</Prompt>
+       <HelpText>Specify a drag data filter type that is used to match the drop target.</HelpText>
+       <InitialValue>*</InitialValue>
+       <Property>true</Property>
+    </InputDefinition>
+  </InputDefinitions> 
+  <GroupDefinitions> 
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" /> 
+  </GroupDefinitions> 
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

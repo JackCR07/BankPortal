@@ -1,0 +1,503 @@
+<Model id="factory/portletbase/data_view"><BuilderCallList>
+		<BuilderCall id = "bc212">
+			<BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+			<Messages></Messages>
+			<Inputs>
+				<Input name = "Name">copyright</Input>
+				<Input name = "BuilderCallEnabled">false</Input>
+				<Input name = "Comment">Licensed Materials - Property of IBM 
+5724-Od03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+				<Input name = "BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+			</Inputs>
+		</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Inputs profiled="true"><Input name="Name">main</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>__DataView_PatternToReplace__DataViewPage</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="BuilderCallEnabled" profile="portletbase.dataview:GenerateMainAction">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="BuilderCallComment">"main" is the first method or action list called when a model is executed.</Input>
+</Inputs>
+<Cache />
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:Display_UseDefaultPage">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageData">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;span name="data"/&gt;
+&lt;/body&gt;&lt;/html&gt;</Input>
+<Input name="Name">__DataView_PatternToReplace__DataViewPage</Input>
+<Input name="BuilderCallComment">This page is used if no imported page URL is specified - it serves as the base page for the data display.</Input>
+<Input name="Public">true</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[<html>
+<head><title></title></head>
+<body>
+<span name="data"/>
+</body></html>]]></CacheKey>
+<CacheValue><HTMLData><HTML><HTMLContent><![CDATA[
+]]></HTMLContent>
+<HEAD><HTMLContent><![CDATA[<TITLE></TITLE>]]></HTMLContent>
+</HEAD>
+<HTMLContent><![CDATA[
+]]></HTMLContent>
+<BODY><HTMLContent><![CDATA[
+]]></HTMLContent>
+<SPAN name="data" />
+<HTMLContent><![CDATA[
+]]></HTMLContent>
+</BODY>
+</HTML>
+</HTMLData>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ProfiledServiceCallBuilder</BuilderDefID>
+<Cache />
+<Messages><Error><Message>Model not found: test/unittests/DataPaging/SvcCallDataSource</Message>
+</Error>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:DataSource_UseWebService">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="DesignTimeOnly">false</Input>
+<Input name="SchemaNamespaceURI">http://www.w3.org/2001/XMLSchema</Input>
+<Input name="Timeout">30</Input>
+<Input name="ServiceCallType" profile="portletbase.dataview:DataSource_ServiceCall_Type">LOCAL</Input>
+<Input name="HTTP_RequestType" profile="portletbase.dataview:DataSource_HTTP_RequestType">GET</Input>
+<Input name="SOAPHeadersInputStyle">Table</Input>
+<Input name="HTTPHeadersInputStyle">Table</Input>
+<Input name="CookiesInputStyle">Table</Input>
+<Input name="Name">ServiceCall</Input>
+<Input name="Args" xmlProfile="portletbase.dataview:DataSource_WSDL_Arguments" />
+<Input name="WSDL_URL" profile="portletbase.dataview:DataSource_WSDL_URL">http://www.webservicex.net/periodictable.asmx?wsdl</Input>
+<Input name="URL" profile="portletbase.dataview:DataSource_WSDL_EndpointURL">http://www.bowstreet.com</Input>
+<Input name="wsdlinfo"><WSDLINFO><ExamineWSDL_ServiceDoc>PeriodicTable</ExamineWSDL_ServiceDoc>
+<ExamineWSDL_Bindings><operation><binding>PeriodicTableSoap</binding>
+<bindingNS>http://www.webservicex.net</bindingNS>
+<opname>GetAtoms</opname>
+<style>SOAP-document</style>
+</operation>
+<operation><binding>PeriodicTableSoap</binding>
+<bindingNS>http://www.webservicex.net</bindingNS>
+<opname>GetAtomicWeight</opname>
+<style>SOAP-document</style>
+</operation>
+<operation><binding>PeriodicTableSoap</binding>
+<bindingNS>http://www.webservicex.net</bindingNS>
+<opname>GetAtomicNumber</opname>
+<style>SOAP-document</style>
+</operation>
+<operation><binding>PeriodicTableSoap</binding>
+<bindingNS>http://www.webservicex.net</bindingNS>
+<opname>GetElementSymbol</opname>
+<style>SOAP-document</style>
+</operation>
+</ExamineWSDL_Bindings>
+<ExamineWSDL_BindingsSelected>GetAtoms</ExamineWSDL_BindingsSelected>
+<ExamineWSDL_URL>http://www.webservicex.net/periodictable.asmx</ExamineWSDL_URL>
+<ExamineWSDL_MethodNamespaceURI>http://www.webservicex.net</ExamineWSDL_MethodNamespaceURI>
+<ExamineWSDL_MethodName>GetAtoms</ExamineWSDL_MethodName>
+<ExamineWSDL_MethodDoc>Get element list</ExamineWSDL_MethodDoc>
+<ExamineWSDL_SOAPAction>http://www.webservicex.net/GetAtoms</ExamineWSDL_SOAPAction>
+<hidden_ExamineWSDL_isSOAP>true</hidden_ExamineWSDL_isSOAP>
+<ExamineWSDL_SOAPStyle>document</ExamineWSDL_SOAPStyle>
+<inputs><arg1><name>parameters</name>
+<type>GetAtoms</type>
+<namespace>http://www.webservicex.net</namespace>
+</arg1>
+</inputs>
+<hidden_WSDL_argcount>1</hidden_WSDL_argcount>
+<outputs><name>parameters</name>
+<type>GetAtomsResponse</type>
+<namespace>http://www.webservicex.net</namespace>
+</outputs>
+<hidden_WSDL_replycount>1</hidden_WSDL_replycount>
+<hidden_ExamineWSDL_Schema />
+<hidden_ExamineWSDL_SchemaNamespace>http://www.w3.org/2001/XMLSchema</hidden_ExamineWSDL_SchemaNamespace>
+</WSDLINFO>
+</Input>
+<Input name="DebugCheckBox" profile="portletbase.dataview:DataSource_DoLogging">false</Input>
+<Input name="LocalServiceModelPath" profile="portletbase.dataview:DataSource_LOCAL_ModelName">test/unittests/DataPaging/SvcCallDataSource</Input>
+<Input name="WSDL_DesiredOperation" profile="portletbase.dataview:DataSource_WSDL_Operation">makeDefaultData</Input>
+<Input name="OverrideURL" profile="portletbase.dataview:DataSource_WSDL_OverrideServiceURL"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.HTMLBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:Display_UseSimpleView">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>__DataView_PatternToReplace__DataViewPage</Page>
+<NameSearch profile="portletbase.dataview:Display_Location">data</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="HTML" profile="portletbase.dataview:Display_DataReference">${MethodCall/ServiceCall.invoke}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc12"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:Display_UseImportedPage">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="AbsoluteURLs" profile="portletbase.dataview:Display_Page_Existing_AbsoluteURLs">true</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="Name">__DataView_PatternToReplace__DataViewPage</Input>
+<Input name="URL" profile="portletbase.dataview:Display_Page_Existing_PageURL">/basepage1.html</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc13"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:Display_UseComplexView">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageType">Infer</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="CreateTags" profile="portletbase.dataview:Display_Structure_Complex_CreateTags">true</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">AddNames</Input>
+<Input name="Name">DataPage</Input>
+<Input name="TypedVariable" profile="portletbase.dataview:DataSource_Variable_ProcessedName">ServiceCall_reply</Input>
+<Input name="PageName">__DataView_PatternToReplace__DataViewPage</Input>
+<Input name="CreateTagsLocation" profile="portletbase.dataview:Display_Location">data</Input>
+<Input name="ClearDataBeforeSaving">true</Input>
+<Input name="CreateResourceBundle" profile="portletbase.dataview:Display_Structure_Complex_CreateResourceBundle"></Input>
+<Input name="ResourceBundleName" profile="portletbase.dataview:Display_Structure_Complex_ResourceBundleName"></Input>
+<Input name="Country" profile="portletbase.dataview:Display_Structure_Complex_Country"></Input>
+<Input name="Language" profile="portletbase.dataview:Display_Structure_Complex_Language"></Input>
+<Input name="LocaleKey" profile="portletbase.dataview:Display_Structure_Complex_ResourceBundleName_LocaleKey"></Input>
+<Input name="inputObjectType" profile="portletbase.dataview:DataSource_Variable_InputObjectType">String</Input>
+<Input name="beanCollectionClassname" profile="portletbase.dataview:DataSource_Variable_BeanCollectionClassname"></Input>
+<Input name="TemplateFile" profile="portletbase.dataview:Display_HTML_Template_File"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc14"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:Display_UseErrorPage">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="Name">ErrorPage</Input>
+<Input name="URL" profile="portletbase.dataview:Display_ErrorPageURL"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc15"><BuilderDefID>com.bowstreet.builders.webapp.ErrorHandlerBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:Display_UseErrorPage">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="Name">ErrorHandler</Input>
+<Input name="ErrorAction">__DataView_PatternToReplace__DataViewPage</Input>
+<Input name="ActionName">ErrorPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc18"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:DataSource_UseWebService">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">DataSource_RemoteURL</Input>
+<Input name="Type">String</Input>
+<Input name="Value" profile="portletbase.dataview:DataSource_WSDL_EndpointURL">http://www.bowstreet.com</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc20"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:DataSource_UseWebService">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">IXml</Input>
+<Input name="Body">{
+    IXml data = (IXml)webAppAccess.callMethod("ServiceCall.invoke");
+    String url = webAppAccess.getVariables().getString("DataSource_RemoteURL");
+    if (url == null || url.length() == 0)
+        throw new RuntimeException("Missing required input: URL");
+    ContentHelper.convertToAbsoluteURLs(data, url, null);
+    return data;
+}</Input>
+<Input name="Name">ConvertIncomingURLs</Input>
+<Input name="Imports"><Imports><Import>com.bowstreet.builders.webapp.methods.ContentHelper</Import>
+</Imports>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc25"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:DataSource_UseDatabase">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Database_ResultSet</Input>
+<Input name="Type">XML</Input>
+<Input name="InstantiateMethod">Database_FillVariableData</Input>
+<Input name="InitializeEveryFetch">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc5"><BuilderDefID>com.bowstreet.builders.webapp.SqlDataSourceBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:DataSource_UseDatabase">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Database_DataSource</Input>
+<Input name="DataSourceName" profile="portletbase.dataview:DataSource_DB_JNDI_DataSource">jdbc/newTestSource</Input>
+<Input name="JndiContextFactory" profile="portletbase.dataview:DataSource_DB_JNDI_ContextFactory"></Input>
+<Input name="JndiUrl" profile="portletbase.dataview:DataSource_DB_JNDI_URL"></Input>
+<Input name="JndiSecurityPrincipal" profile="portletbase.dataview:DataSource_DB_JNDI_Principal"></Input>
+<Input name="JndiSecurityCredentials" profile="portletbase.dataview:DataSource_DB_JNDI_Credentials"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.SqlStatementBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:DataSource_UseDatabase">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Database_Statement</Input>
+<Input name="SqlStatement" profile="portletbase.dataview:DataSource_DB_Query">select * from emp</Input>
+<Input name="Concurrency">ReadOnly</Input>
+<Input name="ScrollType">Insensitive</Input>
+<Input name="AutoCreateInputs" profile="portletbase.dataview:DataSource_DB_AutoCreateInputs"></Input>
+<Input name="InputParameters" xmlProfile="portletbase.dataview:DataSource_DB_InputParameters" />
+<Input name="OutputParameters" xmlProfile="portletbase.dataview:DataSource_DB_OutputParameters" />
+<Input name="FetchDirection">Forward</Input>
+<Input name="FetchSize" profile="portletbase.dataview:Database_DB_Statement_FetchSize"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc21"><BuilderDefID>com.bowstreet.builders.webapp.SqlTransformToXmlBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:DataSource_UseDatabase">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="TransformType">Complete</Input>
+<Input name="DefaultSchemaTargetNameSpace">http://127.0.0.1:7001/bowstreet/webengine/factory/portletbase/data_view/</Input>
+<Input name="Name">Database_Transform</Input>
+<Input name="XmlVariableName">Database_ResultSet</Input>
+<Input name="CustomTransforms"><top><Property><JdbcTypeName>CLOB</JdbcTypeName>
+<TransformMethod>notsupported</TransformMethod>
+</Property>
+</top>
+</Input>
+<Input name="CreateVerboseXml">false</Input>
+<Input name="TransformResult" profile="portletbase.dataview:DataSource_Database_TransformType">CompleteXmlDocument</Input>
+<Input name="UseColumnLabels" profile="portletbase.dataview:DataSource_DB_UseColumnLabels"></Input>
+<Input name="LogSqlWarnings" profile="portletbase.dataview:DataSource_DoLogging">false</Input>
+<Input name="LogServerStats" profile="portletbase.dataview:DataSource_DoLogging">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc22"><BuilderDefID>com.bowstreet.builders.webapp.SqlTransactionBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:DataSource_UseDatabase">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Database_Transaction</Input>
+<Input name="IsolationLevel">ReadCommitted</Input>
+<Input name="TransactionSteps"><top><Step><StepName>DoQuery</StepName>
+<DataSourceName>Database_DataSource</DataSourceName>
+<StatementName>Database_Statement</StatementName>
+<TransformName>Database_Transform</TransformName>
+</Step>
+</top>
+</Input>
+<Input name="TimeoutCycle">30</Input>
+<Input name="TimeoutPeriod">300</Input>
+<Input name="TimeoutAction">Rollback</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc11"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:DataSource_UseDatabase">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Body">{
+    webAppAccess.callMethod("Database_Transaction.execute");
+    webAppAccess.callMethod("Database_Transaction.commit");
+    return webAppAccess.getVariables().getVariable("Database_ResultSet").getValue();
+}</Input>
+<Input name="Name">Database_FillVariableData</Input>
+<Input name="Imports"><Imports><Import>com.bowstreet.builders.webapp.methods.PagingAssistant</Import>
+</Imports>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc23"><BuilderDefID>com.bowstreet.builders.webapp.SqlToXmlSchemaBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:DataSource_UseDatabase">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="GenerateSchema">OnEveryRegen</Input>
+<Input name="StatementType">IndividualSqlStatement</Input>
+<Input name="SqlDataSource">Database_DataSource</Input>
+<Input name="SqlStatement">Database_Statement</Input>
+<Input name="Name">Database_XMLSchema</Input>
+<Input name="SqlTransform">Database_Transform</Input>
+<Input name="XmlData"><cns:RowSet xmlns:cns="http://127.0.0.1:7001/bowstreet/webengine/_ndb/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><cns:Row xmlns:cns="http://127.0.0.1:7001/bowstreet/webengine/_ndb/"><cns:EMPNO xmlns:cns="http://127.0.0.1:7001/bowstreet/webengine/_ndb/" xsi:type="xsd:decimal" MetaDataColumnNumber="1">7369</cns:EMPNO>
+<cns:ENAME xmlns:cns="http://127.0.0.1:7001/bowstreet/webengine/_ndb/" xsi:type="xsd:string" MetaDataColumnNumber="2">SMITH</cns:ENAME>
+<cns:JOB xmlns:cns="http://127.0.0.1:7001/bowstreet/webengine/_ndb/" xsi:type="xsd:string" MetaDataColumnNumber="3">CLERK</cns:JOB>
+<cns:MGR xmlns:cns="http://127.0.0.1:7001/bowstreet/webengine/_ndb/" xsi:type="xsd:decimal" MetaDataColumnNumber="4">7902</cns:MGR>
+<cns:HIREDATE xmlns:cns="http://127.0.0.1:7001/bowstreet/webengine/_ndb/" xsi:type="xsd:dateTime" MetaDataColumnNumber="5">1980-12-17 00:00:00.0</cns:HIREDATE>
+<cns:SAL xmlns:cns="http://127.0.0.1:7001/bowstreet/webengine/_ndb/" xsi:type="xsd:decimal" MetaDataColumnNumber="6">800</cns:SAL>
+<cns:COMM xmlns:cns="http://127.0.0.1:7001/bowstreet/webengine/_ndb/" xsi:nil="true" xsi:type="xsd:decimal" MetaDataColumnNumber="7" />
+<cns:DEPTNO xmlns:cns="http://127.0.0.1:7001/bowstreet/webengine/_ndb/" xsi:type="xsd:decimal" MetaDataColumnNumber="8">20</cns:DEPTNO>
+</cns:Row>
+</cns:RowSet>
+</Input>
+<Input name="XmlSchema"><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://127.0.0.1:7001/bowstreet/webengine/_ndb/" targetNamespace="http://127.0.0.1:7001/bowstreet/webengine/_ndb/" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema auto-generated by SqlTransformToXmlHelper from the content of XML Variable "Database_ResultSet"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:EMPNO" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:ENAME" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:JOB" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:MGR" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:HIREDATE" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:SAL" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:COMM" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:DEPTNO" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EMPNO" nillable="false"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:simpleContent xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:extension xmlns:xsd="http://www.w3.org/2001/XMLSchema" base="xsd:decimal"><xsd:attribute xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MetaDataColumnNumber" type="xsd:positiveInteger" use="required" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ENAME" nillable="true"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:simpleContent xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:extension xmlns:xsd="http://www.w3.org/2001/XMLSchema" base="xsd:string"><xsd:attribute xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MetaDataColumnNumber" type="xsd:positiveInteger" use="required" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="JOB" nillable="true"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:simpleContent xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:extension xmlns:xsd="http://www.w3.org/2001/XMLSchema" base="xsd:string"><xsd:attribute xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MetaDataColumnNumber" type="xsd:positiveInteger" use="required" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MGR" nillable="true"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:simpleContent xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:extension xmlns:xsd="http://www.w3.org/2001/XMLSchema" base="xsd:decimal"><xsd:attribute xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MetaDataColumnNumber" type="xsd:positiveInteger" use="required" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HIREDATE" nillable="true"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:simpleContent xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:extension xmlns:xsd="http://www.w3.org/2001/XMLSchema" base="xsd:dateTime"><xsd:attribute xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MetaDataColumnNumber" type="xsd:positiveInteger" use="required" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SAL" nillable="true"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:simpleContent xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:extension xmlns:xsd="http://www.w3.org/2001/XMLSchema" base="xsd:decimal"><xsd:attribute xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MetaDataColumnNumber" type="xsd:positiveInteger" use="required" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="COMM" nillable="true"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:simpleContent xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:extension xmlns:xsd="http://www.w3.org/2001/XMLSchema" base="xsd:decimal"><xsd:attribute xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MetaDataColumnNumber" type="xsd:positiveInteger" use="required" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DEPTNO" nillable="true"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:simpleContent xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:extension xmlns:xsd="http://www.w3.org/2001/XMLSchema" base="xsd:decimal"><xsd:attribute xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MetaDataColumnNumber" type="xsd:positiveInteger" use="required" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc24"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:DataSource_UseDatabase">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EventName">System:OnWebAppLoad</Input>
+<Input name="ActionName">Database_InitializeResultSet</Input>
+<Input name="Name">Database_DoResultSetInitialization</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc16"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:DataSource_UseDatabase">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+    webAppAccess.getVariables().setXml("Database_ResultSet", null);
+}</Input>
+<Input name="Name">Database_InitializeResultSet</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc26"><BuilderDefID>com.bowstreet.builders.webapp.PagingAssistantBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:Display_Structure_Complex_DoDataPaging">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageSize" profile="portletbase.dataview:Display_Structure_Complex_PageSize">4</Input>
+<Input name="AutomaticInitialization">true</Input>
+<Input name="Name">__DataView_PatternToReplace__DataSource_Pager</Input>
+<Input name="DataSource" profile="portletbase.dataview:Display_RawDataReference">${MethodCall/ServiceCall.invoke}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc27"><BuilderDefID>com.bowstreet.builders.webapp.PagingButtonsBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.dataview:Display_Structure_Complex_AddPagingButtons">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="HTMLPage">/factory/pages/data_paging_buttons.html</Input>
+<Input name="PageLocation"><CompletePageLocation><Node>Page</Node>
+<Node>__DataView_PatternToReplace__DataViewPage</Node>
+<Node>NameSearch</Node>
+<Node>paging_buttons</Node>
+<Node>Else</Node>
+<Node>XPath</Node>
+<Node>//BODY</Node>
+<Node>InsertInsideBottom</Node>
+</CompletePageLocation>
+</Input>
+<Input name="AssistantName">__DataView_PatternToReplace__DataSource_Pager</Input>
+<Input name="Name">__DataView_PatternToReplace__PagingButtons</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><RequiredFactoryVersion>5.0.0</RequiredFactoryVersion>
+<Version>0.0.0</Version>
+<Description>New Model</Description>
+<Contained>false</Contained>
+<EnableGenerationCaching>true</EnableGenerationCaching>
+<Roles />
+<EnableFailover>false</EnableFailover>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

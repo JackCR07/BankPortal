@@ -1,0 +1,5 @@
+/* Copyright IBM Corp. 2010
+ * Styles for Split Pager UI. To be used if the OneUI / Enterprise theme is in use in the page.
+ * Use /factory/clientjavascript/styles/loadCSS.jsp to conditionally load this or other files based on the presence of certain style definitions.
+ * Note that this set of styles is intentionally blank, since in this case the OneUI style definitions already in the page will suffice.
+ */

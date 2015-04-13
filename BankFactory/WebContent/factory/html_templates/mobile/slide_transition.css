@@ -1,0 +1,19 @@
+/* Licensed Materials - Property of IBM 
+5724-O03
+Copyright 2010. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+*/
+/* Define classes used to implement a slide transition. */
+.wpf-post-load-transition-init {
+   margin-left: 100%;
+   opacity: 0;
+}
+.wpf-post-load-transition {
+  opacity: 1;
+  margin-left: 0px;
+  /* Implement slide transition using CSS3 properties; only works in browsers which support these properties. */
+  -moz-transition-property: opacity, margin-left;  -moz-transition-duration: 1s;
+  -webkit-transition-property: opacity, margin-left; -webkit-transition-duration: 1s;
+  -o-transition-property: opacity, margin-left;  -o-transition-duration: 1s;
+  transition-property: opacity, margin-left; transition-duration: 1s;  
+}

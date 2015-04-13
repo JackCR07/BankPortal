@@ -1,0 +1,34 @@
+<!--  **************************   WEF 8.5 Smartphone UI Theme **********************************
+Copyright IBM Corp. 2013
+-->
+<Theme extends="/WEB-INF/factory/themes/mobile/WEF8.5_tablet.uitheme">
+
+    <Use_Smart_Refresh>false</Use_Smart_Refresh>
+    <DefaultRDD>/WEB-INF/factory/data_definitions/mobile/basic_mobile_datadef.xml</DefaultRDD>
+    <DojoEnable_DisableThemeCSS>true</DojoEnable_DisableThemeCSS>
+
+    <!-- Mobile Buttons need to be a little taller, to be finger-clickable -->
+    <Button_ActionRole_Default>wefSmartphoneButton</Button_ActionRole_Default>
+
+    <!-- View and Form overrides -->
+    <ViewAndForm_ViewPageBase>/factory/pages/multichannel/smartphone/view_and_form/view.html</ViewAndForm_ViewPageBase>
+    <ViewAndForm_DetailPageBase>/factory/pages/multichannel/smartphone/view_and_form/details.html</ViewAndForm_DetailPageBase>
+    <ViewAndForm_UpdatePageBase>/factory/pages/multichannel/smartphone/view_and_form/input.html</ViewAndForm_UpdatePageBase>
+    <ViewAndForm_Input_PageBase>/factory/pages/multichannel/smartphone/view_and_form/input.html</ViewAndForm_Input_PageBase>
+    <InputForm_PageBase>/factory/pages/multichannel/smartphone/view_and_form/input.html</InputForm_PageBase>
+
+    <!-- DSUI overrides -->
+    <DSUI_CreatePageHTML>/factory/pages/multichannel/smartphone/dsui/create.html</DSUI_CreatePageHTML>
+    <DSUI_UpdatePageHTML>/factory/pages/multichannel/smartphone/dsui/update.html</DSUI_UpdatePageHTML>
+    <DSUI_DetailsPageHTML>/factory/pages/multichannel/smartphone/dsui/details.html</DSUI_DetailsPageHTML>
+    <DSUI_NoDetailsYetPageHTML>/factory/pages/multichannel/smartphone/dsui/no_details_yet.html</DSUI_NoDetailsYetPageHTML>
+    <DSUI_QueryPageHTML>/factory/pages/multichannel/smartphone/dsui/query.html</DSUI_QueryPageHTML>
+    <DSUI_SearchResultsPageHTML>/factory/pages/multichannel/smartphone/dsui/search_results.html</DSUI_SearchResultsPageHTML>
+    <DSUI_FilterPageHTML>/factory/pages/multichannel/smartphone/dsui/filter.html</DSUI_FilterPageHTML>
+    <DSUI_ListPageHTML>/factory/pages/multichannel/smartphone/dsui/list_page.html</DSUI_ListPageHTML>
+
+    <!-- Application Page  -->
+    <ApplicationPage_ViewPageBase>/factory/pages/multichannel/smartphone/application_page/view.html</ApplicationPage_ViewPageBase>
+    <ApplicationPage_InputPageBase>/factory/pages/multichannel/smartphone/application_page/input.html</ApplicationPage_InputPageBase>
+    
+ </Theme>

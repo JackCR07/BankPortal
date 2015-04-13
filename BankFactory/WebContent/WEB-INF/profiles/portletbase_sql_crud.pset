@@ -1,0 +1,1093 @@
+<ProfileSet name="portletbase_sql_crud" useQualifiedProfileNames="true"><Description>Generated profile set for model DbAccessBase</Description>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<Visibility>False</Visibility>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<Models />
+<ProfileDef><Entries><Entry name="AllowXmlConversion" isRuntime="false"><UI type="TextInput"><Prompt>AllowXmlConversion</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="EnablePaging" isRuntime="false"><UI type="TextInput"><Prompt>EnablePaging</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ListRowElementName" isRuntime="false"><UI type="TextInput"><Prompt>ListRowElementName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ListTopElementName" isRuntime="false"><UI type="TextInput"><Prompt>ListTopElementName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PublicService" isRuntime="false"><UI type="TextInput"><Prompt>PublicService</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="RetrieveOpResultSchema" isRuntime="false"><UI type="TextInput"><Prompt>RetrieveOpResultSchema</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="RetrieveRowElementName" isRuntime="false"><UI type="TextInput"><Prompt>RetrieveRowElementName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="RetrieveTopElementName" isRuntime="false"><UI type="TextInput"><Prompt>RetrieveTopElementName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SearchRowElementName" isRuntime="false"><UI type="TextInput"><Prompt>SearchRowElementName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SearchTopElementName" isRuntime="false"><UI type="TextInput"><Prompt>SearchTopElementName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceName" isRuntime="false"><UI type="TextInput"><Prompt>ServiceDefinition_ServiceName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlDataSource" isRuntime="false"><UI type="TextInput"><Prompt>SqlDataSource</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="createOpName" isRuntime="false"><UI type="TextInput"><Prompt>createOpName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="createParameters" isRuntime="false"><UI type="TextInput"><Prompt>Create Parameters</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="createRecordSql" isRuntime="false"><UI type="TextInput"><Prompt>Create Record SQL</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="deleteOpName" isRuntime="false"><UI type="TextInput"><Prompt>deleteOpName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="deleteParameters" isRuntime="false"><UI type="TextInput"><Prompt>deleteParameters</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="deleteRecordSql" isRuntime="false"><UI type="TextInput"><Prompt>Delete Record SQL</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="enableCore" isRuntime="false"><UI type="TextInput"><Prompt>ServiceDefinition_BuilderCallEnabled</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="enableCreateRecord" isRuntime="false"><UI type="TextInput"><Prompt>enableCreateRecord</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="enableDeleteRecord" isRuntime="false"><UI type="TextInput"><Prompt>enableDeleteRecord</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="enableListRecords" isRuntime="false"><UI type="TextInput"><Prompt>enableListRecords</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="enableRetrieveRecord" isRuntime="false"><UI type="TextInput"><Prompt>enableRetrieveRecord</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="enableSearchRecords" isRuntime="false"><UI type="TextInput"><Prompt>enableSearchRecords</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="enableSqlLogging" isRuntime="false"><UI type="TextInput"><Prompt>enableSqlLogging</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="enableTestingSupport" isRuntime="false"><UI type="TextInput"><Prompt>enableTestingSupport</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="enableUpdateRecord" isRuntime="false"><UI type="TextInput"><Prompt>enableUpdateRecord</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="listOpName" isRuntime="false"><UI type="TextInput"><Prompt>listOpName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="listParameters" isRuntime="false"><UI type="TextInput"><Prompt>listParameters</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="listRecordsSql" isRuntime="false"><UI type="TextInput"><Prompt>listRecordsSql</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="maintainState" isRuntime="false"><UI type="TextInput"><Prompt>maintainState</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="retrieveOpName" isRuntime="false"><UI type="TextInput"><Prompt>retrieveOpName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="retrieveOpName1" isRuntime="false"><UI type="TextInput"><Prompt>retrieveOpName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="retrieveParameters" isRuntime="false"><UI type="TextInput"><Prompt>retrieveParameters</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="retrieveRecordAltSql" isRuntime="false"><UI type="TextInput"><Prompt>retrieveRecordAltSql</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="retrieveRecordSql" isRuntime="false"><UI type="TextInput"><Prompt>retrieveRecordSql</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="searchOpName" isRuntime="false"><UI type="TextInput"><Prompt>searchOpName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="searchParameters" isRuntime="false"><UI type="TextInput"><Prompt>searchParameters</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="searchRecordsSql" isRuntime="false"><UI type="TextInput"><Prompt>searchRecordsSql</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="sqlDataSourceName" isRuntime="false"><UI type="TextInput"><Prompt>sqlDataSourceName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="updateOpName" isRuntime="false"><UI type="TextInput"><Prompt>updateOpName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="updateParameters" isRuntime="false"><UI type="TextInput"><Prompt>Update Parameters</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="updateRecordSql" isRuntime="false"><UI type="TextInput"><Prompt>updateRecordSql</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1329160311806" isContainer="true"><Values><Value name="AllowXmlConversion" effects_child="true">false</Value>
+<Value name="EnablePaging" effects_child="true">PagedXmlDataRetriever</Value>
+<Value name="ListRowElementName" effects_child="true"></Value>
+<Value name="ListTopElementName" effects_child="true"></Value>
+<Value name="PublicService" effects_child="true">true</Value>
+<Value name="RetrieveOpResultSchema" effects_child="true"></Value>
+<Value name="RetrieveRowElementName" effects_child="true"></Value>
+<Value name="RetrieveTopElementName" effects_child="true"></Value>
+<Value name="SearchRowElementName" effects_child="true"></Value>
+<Value name="SearchTopElementName" effects_child="true"></Value>
+<Value name="ServiceName" effects_child="true">Employees</Value>
+<Value name="SqlDataSource" effects_child="true">java:comp/env/jdbc/MyDataSource</Value>
+<Value name="createOpName" effects_child="true">createEmployeeRecord</Value>
+<Value name="createParameters" effects_child="true">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;2&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/FIRSTNME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;3&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/MIDINIT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;4&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/LASTNAME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;5&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/WORKDEPT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;6&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/PHONENO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;7&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/HIREDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;8&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/JOB}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;9&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/EDLEVEL}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;10&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/SEX}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;11&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/BIRTHDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;12&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/SALARY}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;13&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/BONUS}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;14&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/COMM}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="createRecordSql" effects_child="true">insert into samp.EMPLOYEE
+  (EMPNO, FIRSTNME, MIDINIT, LASTNAME, WORKDEPT, PHONENO, HIREDATE, JOB, EDLEVEL, SEX, BIRTHDATE, SALARY, BONUS, COMM)
+values
+  (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</Value>
+<Value name="deleteOpName" effects_child="true">deleteEmployeeRecord</Value>
+<Value name="deleteParameters" effects_child="true">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/deleteWPFEmployeeRecordSQLInputs/KEYFIELD}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="deleteRecordSql" effects_child="true">delete from
+  samp.EMPLOYEE 
+where
+ EMPNO = ?</Value>
+<Value name="enableCore" effects_child="true">false</Value>
+<Value name="enableCreateRecord" effects_child="true">false</Value>
+<Value name="enableDeleteRecord" effects_child="true">false</Value>
+<Value name="enableListRecords" effects_child="true">false</Value>
+<Value name="enableRetrieveRecord" effects_child="true">false</Value>
+<Value name="enableSearchRecords" effects_child="true">false</Value>
+<Value name="enableSqlLogging" effects_child="true"></Value>
+<Value name="enableTestingSupport" effects_child="true">false</Value>
+<Value name="enableUpdateRecord" effects_child="true">false</Value>
+<Value name="listOpName" effects_child="true">getEmployeeList</Value>
+<Value name="listParameters" effects_child="true">&lt;top /&gt;</Value>
+<Value name="listRecordsSql" effects_child="true">select EMPNO from samp.EMPLOYEE</Value>
+<Value name="maintainState" effects_child="true">false</Value>
+<Value name="retrieveOpName" effects_child="true">getEmployeeRecord</Value>
+<Value name="retrieveOpName1" effects_child="true">getEmployeeRecord</Value>
+<Value name="retrieveParameters" effects_child="true">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/getEmployeeRecordSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="retrieveRecordAltSql" effects_child="true">select * from samp.EMPLOYEE</Value>
+<Value name="retrieveRecordSql" effects_child="true">select * from samp.EMPLOYEE where EMPNO = ?</Value>
+<Value name="searchOpName" effects_child="true">searchForEmployees</Value>
+<Value name="searchParameters" effects_child="true">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;2&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/FIRSTNME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;3&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/LASTNAME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;4&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/WORKDEPT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="searchRecordsSql" effects_child="true">select EMPNO, FIRSTNME, LASTNAME, WORKDEPT from samp.EMPLOYEE 
+where EMPNO like ? and FIRSTNME like ? and LASTNAME like ? and WORKDEPT like ?</Value>
+<Value name="sqlDataSourceName" effects_child="true">java:comp/env/jdbc/MyDataSource</Value>
+<Value name="updateOpName" effects_child="true">updateEmployeeRecord</Value>
+<Value name="updateParameters" effects_child="true">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/FIRSTNME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;2&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/MIDINIT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;3&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/LASTNAME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;4&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/WORKDEPT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;5&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/PHONENO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;6&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/HIREDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;7&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/JOB}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;8&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/EDLEVEL}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;9&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/SEX}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;10&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/BIRTHDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;11&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/SALARY}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;12&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/BONUS}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;13&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/COMM}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;14&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="updateRecordSql" effects_child="true">update
+  samp.EMPLOYEE
+set
+  FIRSTNME = ?, MIDINIT = ?, LASTNAME = ?, WORKDEPT = ?, PHONENO = ?, HIREDATE = ?, JOB = ?, EDLEVEL = ?, SEX = ?, BIRTHDATE = ?, SALARY = ?, BONUS = ?, COMM = ?
+where
+  EMPNO = ?</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="enableTestingSup" last_modified="1329160311806" isContainer="false" parent="Default"><Values><Value name="AllowXmlConversion" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="EnablePaging" inherited_from="Default" inherited="true" edit_status="inheritedLocked">PagedXmlDataRetriever</Value>
+<Value name="ListRowElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="ListTopElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="PublicService" inherited_from="Default" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="RetrieveOpResultSchema" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="RetrieveRowElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="RetrieveTopElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="SearchRowElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="SearchTopElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="ServiceName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">Employees</Value>
+<Value name="SqlDataSource" inherited_from="Default" inherited="true" edit_status="inheritedLocked">java:comp/env/jdbc/MyDataSource</Value>
+<Value name="createOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">createEmployeeRecord</Value>
+<Value name="createParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;2&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/FIRSTNME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;3&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/MIDINIT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;4&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/LASTNAME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;5&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/WORKDEPT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;6&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/PHONENO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;7&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/HIREDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;8&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/JOB}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;9&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/EDLEVEL}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;10&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/SEX}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;11&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/BIRTHDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;12&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/SALARY}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;13&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/BONUS}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;14&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/COMM}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="createRecordSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">insert into samp.EMPLOYEE
+  (EMPNO, FIRSTNME, MIDINIT, LASTNAME, WORKDEPT, PHONENO, HIREDATE, JOB, EDLEVEL, SEX, BIRTHDATE, SALARY, BONUS, COMM)
+values
+  (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</Value>
+<Value name="deleteOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">deleteEmployeeRecord</Value>
+<Value name="deleteParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/deleteWPFEmployeeRecordSQLInputs/KEYFIELD}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="deleteRecordSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">delete from
+  samp.EMPLOYEE 
+where
+ EMPNO = ?</Value>
+<Value name="enableCore" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableCreateRecord" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableDeleteRecord" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableListRecords" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableRetrieveRecord" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableSearchRecords" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableSqlLogging" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="enableTestingSupport">true</Value>
+<Value name="enableUpdateRecord" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="listOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">getEmployeeList</Value>
+<Value name="listParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top /&gt;</Value>
+<Value name="listRecordsSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">select EMPNO from samp.EMPLOYEE</Value>
+<Value name="maintainState" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="retrieveOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">getEmployeeRecord</Value>
+<Value name="retrieveOpName1" inherited_from="Default" inherited="true" edit_status="inheritedLocked">getEmployeeRecord</Value>
+<Value name="retrieveParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/getEmployeeRecordSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="retrieveRecordAltSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">select * from samp.EMPLOYEE</Value>
+<Value name="retrieveRecordSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">select * from samp.EMPLOYEE where EMPNO = ?</Value>
+<Value name="searchOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">searchForEmployees</Value>
+<Value name="searchParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;2&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/FIRSTNME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;3&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/LASTNAME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;4&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/WORKDEPT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="searchRecordsSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">select EMPNO, FIRSTNME, LASTNAME, WORKDEPT from samp.EMPLOYEE 
+where EMPNO like ? and FIRSTNME like ? and LASTNAME like ? and WORKDEPT like ?</Value>
+<Value name="sqlDataSourceName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">java:comp/env/jdbc/MyDataSource</Value>
+<Value name="updateOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">updateEmployeeRecord</Value>
+<Value name="updateParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/FIRSTNME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;2&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/MIDINIT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;3&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/LASTNAME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;4&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/WORKDEPT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;5&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/PHONENO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;6&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/HIREDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;7&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/JOB}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;8&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/EDLEVEL}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;9&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/SEX}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;10&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/BIRTHDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;11&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/SALARY}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;12&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/BONUS}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;13&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/COMM}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;14&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="updateRecordSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">update
+  samp.EMPLOYEE
+set
+  FIRSTNME = ?, MIDINIT = ?, LASTNAME = ?, WORKDEPT = ?, PHONENO = ?, HIREDATE = ?, JOB = ?, EDLEVEL = ?, SEX = ?, BIRTHDATE = ?, SALARY = ?, BONUS = ?, COMM = ?
+where
+  EMPNO = ?</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="retrieveEnable" last_modified="1329160311806" isContainer="false" parent="Default"><Values><Value name="AllowXmlConversion" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="EnablePaging" inherited_from="Default" inherited="true" edit_status="inheritedLocked">PagedXmlDataRetriever</Value>
+<Value name="ListRowElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="ListTopElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="PublicService" inherited_from="Default" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="RetrieveOpResultSchema" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="RetrieveRowElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="RetrieveTopElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="SearchRowElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="SearchTopElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="ServiceName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">Employees</Value>
+<Value name="SqlDataSource" inherited_from="Default" inherited="true" edit_status="inheritedLocked">java:comp/env/jdbc/MyDataSource</Value>
+<Value name="createOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">createEmployeeRecord</Value>
+<Value name="createParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;2&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/FIRSTNME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;3&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/MIDINIT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;4&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/LASTNAME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;5&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/WORKDEPT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;6&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/PHONENO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;7&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/HIREDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;8&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/JOB}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;9&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/EDLEVEL}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;10&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/SEX}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;11&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/BIRTHDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;12&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/SALARY}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;13&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/BONUS}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;14&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/COMM}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="createRecordSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">insert into samp.EMPLOYEE
+  (EMPNO, FIRSTNME, MIDINIT, LASTNAME, WORKDEPT, PHONENO, HIREDATE, JOB, EDLEVEL, SEX, BIRTHDATE, SALARY, BONUS, COMM)
+values
+  (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</Value>
+<Value name="deleteOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">deleteEmployeeRecord</Value>
+<Value name="deleteParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/deleteWPFEmployeeRecordSQLInputs/KEYFIELD}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="deleteRecordSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">delete from
+  samp.EMPLOYEE 
+where
+ EMPNO = ?</Value>
+<Value name="enableCore" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableCreateRecord" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableDeleteRecord" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableListRecords" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableRetrieveRecord">true</Value>
+<Value name="enableSearchRecords" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableSqlLogging" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="enableTestingSupport" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableUpdateRecord" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="listOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">getEmployeeList</Value>
+<Value name="listParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top /&gt;</Value>
+<Value name="listRecordsSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">select EMPNO from samp.EMPLOYEE</Value>
+<Value name="maintainState" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="retrieveOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">getEmployeeRecord</Value>
+<Value name="retrieveOpName1" inherited_from="Default" inherited="true" edit_status="inheritedLocked">getEmployeeRecord</Value>
+<Value name="retrieveParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/getEmployeeRecordSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="retrieveRecordAltSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">select * from samp.EMPLOYEE</Value>
+<Value name="retrieveRecordSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">select * from samp.EMPLOYEE where EMPNO = ?</Value>
+<Value name="searchOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">searchForEmployees</Value>
+<Value name="searchParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;2&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/FIRSTNME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;3&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/LASTNAME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;4&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/WORKDEPT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="searchRecordsSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">select EMPNO, FIRSTNME, LASTNAME, WORKDEPT from samp.EMPLOYEE 
+where EMPNO like ? and FIRSTNME like ? and LASTNAME like ? and WORKDEPT like ?</Value>
+<Value name="sqlDataSourceName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">java:comp/env/jdbc/MyDataSource</Value>
+<Value name="updateOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">updateEmployeeRecord</Value>
+<Value name="updateParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/FIRSTNME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;2&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/MIDINIT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;3&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/LASTNAME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;4&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/WORKDEPT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;5&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/PHONENO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;6&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/HIREDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;7&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/JOB}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;8&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/EDLEVEL}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;9&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/SEX}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;10&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/BIRTHDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;11&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/SALARY}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;12&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/BONUS}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;13&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/COMM}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;14&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="updateRecordSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">update
+  samp.EMPLOYEE
+set
+  FIRSTNME = ?, MIDINIT = ?, LASTNAME = ?, WORKDEPT = ?, PHONENO = ?, HIREDATE = ?, JOB = ?, EDLEVEL = ?, SEX = ?, BIRTHDATE = ?, SALARY = ?, BONUS = ?, COMM = ?
+where
+  EMPNO = ?</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="srchEnable" last_modified="1329160311806" isContainer="false" parent="Default"><Values><Value name="AllowXmlConversion" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="EnablePaging" inherited_from="Default" inherited="true" edit_status="inheritedLocked">PagedXmlDataRetriever</Value>
+<Value name="ListRowElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="ListTopElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="PublicService" inherited_from="Default" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="RetrieveOpResultSchema" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="RetrieveRowElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="RetrieveTopElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="SearchRowElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="SearchTopElementName" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="ServiceName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">Employees</Value>
+<Value name="SqlDataSource" inherited_from="Default" inherited="true" edit_status="inheritedLocked">java:comp/env/jdbc/MyDataSource</Value>
+<Value name="createOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">createEmployeeRecord</Value>
+<Value name="createParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;2&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/FIRSTNME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;3&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/MIDINIT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;4&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/LASTNAME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;5&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/WORKDEPT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;6&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/PHONENO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;7&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/HIREDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;8&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/JOB}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;9&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/EDLEVEL}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;10&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/SEX}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;11&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/BIRTHDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;12&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/SALARY}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;13&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/BONUS}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;14&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/createEmployeeRecordSQLInputs/COMM}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="createRecordSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">insert into samp.EMPLOYEE
+  (EMPNO, FIRSTNME, MIDINIT, LASTNAME, WORKDEPT, PHONENO, HIREDATE, JOB, EDLEVEL, SEX, BIRTHDATE, SALARY, BONUS, COMM)
+values
+  (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</Value>
+<Value name="deleteOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">deleteEmployeeRecord</Value>
+<Value name="deleteParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/deleteWPFEmployeeRecordSQLInputs/KEYFIELD}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="deleteRecordSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">delete from
+  samp.EMPLOYEE 
+where
+ EMPNO = ?</Value>
+<Value name="enableCore" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableCreateRecord" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableDeleteRecord" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableListRecords" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableRetrieveRecord" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableSearchRecords">true</Value>
+<Value name="enableSqlLogging" inherited_from="Default" inherited="true" edit_status="inheritedLocked"></Value>
+<Value name="enableTestingSupport" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="enableUpdateRecord" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="listOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">getEmployeeList</Value>
+<Value name="listParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top /&gt;</Value>
+<Value name="listRecordsSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">select EMPNO from samp.EMPLOYEE</Value>
+<Value name="maintainState" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="retrieveOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">getEmployeeRecord</Value>
+<Value name="retrieveOpName1" inherited_from="Default" inherited="true" edit_status="inheritedLocked">getEmployeeRecord</Value>
+<Value name="retrieveParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/getEmployeeRecordSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="retrieveRecordAltSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">select * from samp.EMPLOYEE</Value>
+<Value name="retrieveRecordSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">select * from samp.EMPLOYEE where EMPNO = ?</Value>
+<Value name="searchOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">searchForEmployees</Value>
+<Value name="searchParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;2&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/FIRSTNME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;3&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/LASTNAME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;4&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/searchForEmployeesSQLInputs/WORKDEPT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="searchRecordsSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">select EMPNO, FIRSTNME, LASTNAME, WORKDEPT from samp.EMPLOYEE 
+where EMPNO like ? and FIRSTNME like ? and LASTNAME like ? and WORKDEPT like ?</Value>
+<Value name="sqlDataSourceName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">java:comp/env/jdbc/MyDataSource</Value>
+<Value name="updateOpName" inherited_from="Default" inherited="true" edit_status="inheritedLocked">updateEmployeeRecord</Value>
+<Value name="updateParameters" inherited_from="Default" inherited="true" edit_status="inheritedLocked">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/FIRSTNME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;2&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/MIDINIT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;3&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/LASTNAME}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;4&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/WORKDEPT}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;5&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/PHONENO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;6&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/HIREDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;7&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/JOB}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;8&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/EDLEVEL}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;9&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/SEX}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;10&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/BIRTHDATE}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;11&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/SALARY}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;12&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/BONUS}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;13&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/COMM}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;Parameter&gt;&lt;Position&gt;14&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/updateEmployeeRecordSQLInputs/EMPNO}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="updateRecordSql" inherited_from="Default" inherited="true" edit_status="inheritedLocked">update
+  samp.EMPLOYEE
+set
+  FIRSTNME = ?, MIDINIT = ?, LASTNAME = ?, WORKDEPT = ?, PHONENO = ?, HIREDATE = ?, JOB = ?, EDLEVEL = ?, SEX = ?, BIRTHDATE = ?, SALARY = ?, BONUS = ?, COMM = ?
+where
+  EMPNO = ?</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

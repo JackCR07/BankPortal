@@ -1,0 +1,259 @@
+/* Copyright IBM Corp. 2011 */
+body {
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.pageTitle {
+  font-size: 13px;
+  color:#333333;
+  font-weight: bold;
+}
+
+/* for table background-color/border- can be used with cellspacing="1" to provide inner table borders */
+.gridTable {
+  background-color: #666666;
+}
+
+/* for table head cells*/
+.tableHead {
+  background-color: #DDDDDD;
+  padding: 3px;
+}
+
+/* for text in table header cells */
+.tableHeadText {
+  font-size: 11px;
+  font-weight: bold;  
+  color:#333333;
+}
+
+/* for links in table header cells, for sorting */
+a.tableHeadSortLink:link, a.tableHeadSortLink:active, a.tableHeadSortLink:visited {
+  font-size: 11px;
+  font-weight: bold;
+  color:#333333;
+}
+
+a.tableHeadSortLink:hover {
+  text-decoration: underline;
+}
+
+/* for odd repeated rows */
+.tableRowOdd {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 12px;
+}
+
+/* for even repeated rows */
+.tableRowEven {
+  background-color: #F3F3F3;
+  color: #000000;
+  font-size: 12px;
+}
+
+/* for field inputs or display elements */
+.outputData {
+  font-size:11px;
+}
+
+.outputDataRight {
+  font-size:11px;
+  text-align: right;
+}
+
+/* for the labels between sections of inputs or fields */
+.sectionLabel {
+  color: #333333;              
+  font-size:11px;
+  font-weight: bold;
+  line-height: 15px;
+}            
+
+/* for the table cells containing the sectionLabels */
+.sectionLabelCell {              
+  background-color: #DDDDDD;
+  text-indent: 3px;
+}
+
+/* for the text prompts for field inputs or fields */
+.label {
+  color:#000000;              
+  font-size:11px;
+  text-indent: 3px;
+}
+
+/* for the table cells containing labels */
+.labelCell {
+  background-color: #F3F3F3;
+  line-height: 16px;
+}
+
+/* for the cell containing any field input or display elements */
+.outputDataCell {
+  background-color: #FFFFFF;
+  line-height: 16px;
+  text-indent: 2px;
+}
+
+/* for indicating required fields, as with an asterisk */
+.requiredPrompt {
+  font-size: 12px;
+  font-weight: bold;
+  color: #FF0000;
+  padding: 1px;
+}
+
+/* to hightlight error message text */
+.errorMessage {
+  font-size: 12px;
+  color: #FF0000;
+}
+
+.actionLink {
+  font-size: 11px;
+  color: blue;
+}
+
+.toolbarBG {
+  background-color: #e8e8e8;
+}
+
+.outputDataWarning {        
+  color: red;
+  font-size: 11px;
+  font-weight: bold;          
+  cursor: default;
+}
+
+.outputDataExceeding {        
+  color: green;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: default;
+}
+
+.outputDataCellWarning {        
+  background-color: #FF6666;
+}
+
+.outputDataCellExceeding {        
+  background-color: #99FF99;
+}
+
+.outputDataCellOnTrack {        
+  background-color: #FDFD8E;
+}
+
+.legendImage {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #333333;
+}
+
+/* regular unselected tab style */
+.tabbedPagesTabCell {
+  text-align: center;   
+  text-decoration: none;
+  border-top: 1px solid #666666;
+  border-bottom: 1px solid #003366;
+  border-right: 1px solid #666666;
+  border-left: 1px solid #666666;
+  background-color: #e8e8e8;
+  background-image:none;
+}
+
+/* selected horizontal tab style */
+.tabbedPagesHTabCellSelected {
+  text-align: center;
+  text-decoration: none;  
+  background-image: none;  
+  border-top: 1px solid #003366;
+  border-bottom: 0px solid #003366;
+  border-right: 1px solid #003366;
+  border-left: 1px solid #003366; 
+  background-color: #FFFFFF;
+  background-image: none;
+}
+
+/* selected vertical tab style */
+.tabbedPagesVTabCellSelected {
+  text-align: center;
+  text-decoration: none;  
+  background-image: none;  
+  border-top: 1px solid #003366;
+  border-bottom: 1px solid #003366;
+  border-right: 0px solid #003366;
+  border-left: 1px solid #003366; 
+  background-color: #FFFFFF;
+  background-image: none;
+}
+
+/* regular unselected tab text style */
+.tabbedPagesTabText {
+  font-family: Verdana, Tahoma, Arial, "MS Sans Serif";    
+  font-weight: bold;
+  font-size: 10px;
+  color: #333333;
+  text-decoration:none; 
+  display: block; 
+  margin:0; 
+  padding:4px 6px 4px 6px;
+  cursor:pointer; 
+}
+
+/* if using link option, provide a hover style for unselected tabs */
+a.tabbedPagesTabText:hover {
+  text-decoration:underline; 
+}    
+
+/* selected tab text style */
+.tabbedPagesTabTextSelected {
+  font-family: Verdana, Tahoma, Arial, "MS Sans Serif";  
+  font-weight: bold;
+  font-size: 10px;
+  color: #004E98;  
+  text-decoration:none; 
+  display: block; 
+  margin:0; 
+  padding:4px 6px 4px 6px; 
+  cursor:pointer;    
+}
+
+/* Just has a bottom solid border to form top of container, for use between tabs or in the same row as tabs */
+.tabbedPagesHTabSpacer {
+  border-top: 0px solid #003366;
+  border-bottom: 1px solid #003366;
+  border-right: 0px solid #003366;
+  border-left: 0px solid #003366;
+}
+
+/* The main content area has a solid border on sides and bottom (top is provided by spacer style above.*/
+.tabbedPagesHContentArea {
+  background-color: #FFFFFF;
+  padding: 5px;
+  border-top: 0px solid #003366;
+  border-bottom: 1px solid #003366;
+  border-right: 1px solid #003366;
+  border-left: 1px solid #003366;
+}
+
+/* Just has a right solid border to form right side of container, for use between tabs or in the same col as tabs */
+.tabbedPagesVTabSpacer {
+  border-top: 0px solid #003366;
+  border-bottom: 0px solid #003366;
+  border-right: 1px solid #003366;
+  border-left: 0px solid #003366;
+}
+
+/* The main content area has a solid border on top, bottom and rightside (left is provided by V spacer style above.*/
+.tabbedPagesVContentArea {
+  background-color: #FFFFFF;
+  padding: 5px;
+  border-top: 1px solid #003366;
+  border-bottom: 1px solid #003366;
+  border-right: 1px solid #003366;
+  border-left: 0px solid #003366;
+}

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app id="WebApp_ID" xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+  version="2.5" metadata-complete="true">
+  <!-- See WEB-INF/bin/deployment/web.xml.readme for information on changing web.xml templates -->
+  <display-name>WEF</display-name>
+  <description>IBM Web Experience Factory</description>
+
+  <!-- Define application event listeners. -->
+  <listener>
+    <listener-class>com.bowstreet.servlet.ObjectLifeCycleHandler</listener-class>
+  </listener>
+
+  <servlet>
+    <!-- The Primary WebApp Engine Servlet that model/WebApp requests go through -->
+    <!-- servlet-name can not be changed, or web.xml will be replaced. -->
+    <servlet-name>WebEngineServlet</servlet-name>
+    <servlet-class>
+      com.bowstreet.webapp.engine.WebAppServlet
+    </servlet-class>
+    <init-param>
+      <param-name>bowstreet.URLMapper</param-name>
+      <param-value>
+        com.bowstreet.webapp.util.WebAppURLMapper
+      </param-value>
+    </init-param>
+
+    <!--
+      If you change this load-on-startup order number, make sure it comes
+      AFTER J2EEDeployment servlet's load-on-startup value defined below.
+    -->
+    <load-on-startup>2</load-on-startup>
+
+    <security-role-ref id="SecurityRoleRef_1">
+      <!--
+        This links the the name used for programmatic role checks, as is the case
+        with J2EE Role based profile selection and OPTIONAL J2EE Role based WebApp
+        authorization checks, if roles are optionally added to model properties
+        (in addition to the recommended use of security constraints shown below).
+        For some current AppServers, you MUST have this reference from programmatic
+        name to definition name (eg, WebSphere).  For others (eg, WebLogic) you
+        could leave this out if you only ever run on that brand AppServer.  In the
+        next release of the J2EE Servlet Spec (2.3), the spec is more clear that you
+        should be able to leave this out and the name mapping should be implicit.
+        For simplicity and to prevent mistakes, we recommend that you use the same
+        value for role-name and role-link
+      -->
+      <role-name>IBMAdministrators</role-name>
+      <role-link>IBMAdministrators</role-link>
+    </security-role-ref>
+
+    <security-role-ref id="SecurityRoleRef_2">
+      <role-name>SOAPUsers</role-name>
+      <role-link>SOAPUsers</role-link>
+    </security-role-ref>
+
+    <security-role-ref id="SecurityRoleRef_3">
+      <role-name>AllAuthenticatedUsers</role-name>
+      <role-link>AllAuthenticatedUsers</role-link>
+    </security-role-ref>
+
+  </servlet>
+
+  <servlet>
+    <!-- For internal use only - no URL mapping defined -->
+    <servlet-name>J2EEDeploymentHandler</servlet-name>
+    <servlet-class>
+      com.bowstreet.servlet.J2EEDeploymentHandler
+    </servlet-class>
+    <init-param>
+      <param-name>bowstreet.rootDirectory</param-name>
+      <param-value>extractedfactory4</param-value>
+    </init-param>
+    <init-param>
+      <param-name>bowstreet.archiveVersion</param-name>
+      <param-value>1</param-value>
+    </init-param>
+    <init-param>
+      <param-name>bowstreet.extractionDirectory.1</param-name>
+      <param-value>WEB-INF</param-value>
+    </init-param>
+    <init-param>
+      <param-name>bowstreet.extractionDirectory.2</param-name>
+      <param-value>[html]</param-value>
+    </init-param>
+
+    <!--
+      Used by Factory to configure runtime properties for
+      application server Under most circumstances, you will not need
+      to change these to run the Factory on supported application
+      servers.  If you need to add another server, you'll need to
+      know the string returned by your application server when
+      ServletContext.getServerInfo() is called.  Then write a
+      regular expression conforming to the Jakarta regular
+      expression (RE) library to identify the server name and
+      version number from the results of getServerInfo.  Create an
+      identifier appservername.string set to your regular
+      expression, then create .provider and .implementation
+      identifiers, giving the name of the company/organization, and
+      application server name, respectively.
+    -->
+
+    <!-- IBM websphere application server/5.x -->
+    <init-param>
+      <param-name>websphere1.string</param-name>
+      <param-value>^.*websphere.*$</param-value>
+    </init-param>
+    <init-param>
+      <param-name>websphere1.provider</param-name>
+      <param-value>IBM</param-value>
+    </init-param>
+    <init-param>
+      <param-name>bowstreet.appContext</param-name>
+      <param-value>@APP_CONTEXT@</param-value>
+    </init-param>
+    <init-param>
+      <param-name>websphere1.implementation</param-name>
+      <param-value>WebSphere</param-value>
+    </init-param>
+
+    <load-on-startup>1</load-on-startup>
+
+  </servlet>
+
+  <servlet>
+    <servlet-name>AjaxServlet</servlet-name>
+    <servlet-class>com.bowstreet.servlet.AjaxServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <!--
+      Mapping from URL path to the WebEngine Servlet defined above.
+      NOTE:  If you change this, you must ensure you update security constraints
+      associated with this URL path.
+    -->
+    <servlet-name>WebEngineServlet</servlet-name>
+    <url-pattern>/webengine/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>AjaxServlet</servlet-name>
+    <url-pattern>/ajax/*</url-pattern>
+  </servlet-mapping>
+
+<!-- This is required for wsdl enabled services that generate wsdl that import xsd schema files -->
+    <mime-mapping>
+      <extension>xsd</extension>
+      <mime-type>text/xml</mime-type>
+    </mime-mapping>
+
+
+  <welcome-file-list>
+    <!-- This should be modified or removed for customer deployments. -->
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/factory/webapp/defaulterror_web.jsp</location>
+  </error-page>
+
+  <jsp-config>
+  <taglib>
+    <taglib-uri>http://www.bowstreet.com/webapp-taglib</taglib-uri>
+    <taglib-location>/WEB-INF/bowst_webapp.tld</taglib-location>
+  </taglib>
+  </jsp-config>
+  
+  <security-constraint id="SecurityConstraint_1">
+    <!-- Nobody should really need to directly hit auto-generated WebApp genjsp JSP pages -->
+    <web-resource-collection id="WebResourceCollection_1">
+      <web-resource-name>Generated JSP pages</web-resource-name>
+      <url-pattern>/genjsp/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint id="AuthConstraint_1">
+      <description>
+        Roles allowed to execute generated pages under genjsp
+        directory.
+      </description>
+      <role-name>IBMAdministrators</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint id="SecurityConstraint_3">
+    <!--
+      Back door means of redirecting someone to a protected page
+      (ie, the JSP listed in the url pattern here) to force them
+      to login, even if your app is mostly public.  The OPTIONAL
+      J2EE Role based authorization handler may also force a user
+      to this protected page if you inadvertently forgot to protect
+      a model with a security constraint, but still specified optional
+      model security property based list of roles via the Designer.
+      View the source of this JSP page to see how it works and what
+      it does after the user has been logged in and gets to this
+      page, which should do nothing other than redirect you to where
+      you were trying to go before.
+    -->
+    <web-resource-collection id="WebResourceCollection_3">
+      <web-resource-name>ForceLogin</web-resource-name>
+      <url-pattern>
+        /factory/webapp/authorizationloginhandler.jsp
+      </url-pattern>
+    </web-resource-collection>
+    <auth-constraint id="AuthConstraint_3">
+      <description>
+        Roles allowed through forced login redirect page
+        (typically all roles)
+      </description>
+      <role-name>IBMAdministrators</role-name>
+      <role-name>AllAuthenticatedUsers</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint id="SecurityConstraint_4">
+    <!--
+      Sample model folder set up protected by this security constraint
+      out of the box, so you can easily and quickly experiment with
+      protected models/WebApps that force you to login before proceeding.
+      Applies to models under WEB-INF/models/factory/samples/protectedSamples/
+    -->
+    <web-resource-collection id="WebResourceCollection_4">
+      <web-resource-name>ProtectedSampleModels</web-resource-name>
+      <url-pattern>
+        /webengine/factory/samples/protectedSamples/*
+      </url-pattern>
+    </web-resource-collection>
+    <auth-constraint id="AuthConstraint_4">
+      <description>
+        Roles allowed to execute sample protected models under
+        factory/samples/protectedSamples
+      </description>
+      <role-name>IBMAdministrators</role-name>
+      <role-name>AllAuthenticatedUsers</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint id="SecurityConstraint_5">
+    <!--
+      Sample model folder set up protected by this security constraint
+      out of the box, so you can easily and quickly experiment with
+      protected models/WebApps that force you to login before proceeding.
+      Applies to models under WEB-INF/models/samples/Portal_Doc_Mgr/
+    -->
+    <web-resource-collection id="WebResourceCollection_5">
+      <web-resource-name>
+        PortalDocMgrProtectedSampleModels
+      </web-resource-name>
+      <url-pattern>/webengine/samples/Portal_Doc_Mgr/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint id="AuthConstraint_5">
+      <description>
+        Roles allowed to execute sample protected models under
+        samples/Portal_Doc_Mgr
+      </description>
+      <role-name>IBMAdministrators</role-name>
+      <role-name>AllAuthenticatedUsers</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <!-- EXAMPLE SOAP Security Constraint - you may enable this if you provide SOAP services.
+    NOTE: SOAP DOES NOT WORK WITH FORM BASED AUTHN
+    - Must use HTTP Basic Auth or other non-form based authn with this, in login-config below.
+    - Specify the roles allowed to make SOAP requests in the auth-constraint below.
+    <security-constraint id="SecurityConstraint_100">
+    <web-resource-collection id="WebResourceCollection_100">
+    <web-resource-name>SOAPRequests</web-resource-name>
+    <url-pattern>/servlet/AxisServlet</url-pattern>
+    </web-resource-collection>
+    <auth-constraint id="AuthConstraint_100">
+    <description>Roles allowed to execute SOAP based incoming service requests</description>
+    <role-name>SOAPUsers</role-name>
+    </auth-constraint>
+    </security-constraint>
+  -->
+
+
+  <login-config id="LoginConfig_1">
+    <!--
+      Login configuration to use if security constraint forces
+      requestor to login before proceeding to a protected URL.
+      To change to HTTP Basic Auth, eg for use with SOAP services,
+      change FORM to BASIC in the <auth-method> element below.
+    -->
+    <auth-method>FORM</auth-method>
+    <realm-name>WebAppAuthentication</realm-name>
+    <form-login-config id="FormLoginConfig_1">
+      <form-login-page>/factory/login/login.jsp</form-login-page>
+      <form-error-page>
+        /factory/login/login.jsp?TryAgain=true
+      </form-error-page>
+    </form-login-config>
+  </login-config>
+
+
+  <security-role id="SecurityRole_1">
+    <!--
+      Out of the box role for IBM Admins, used for admin models above.
+      Map this to users/groups via your AppServer's administration tools.
+    -->
+    <description>IBM Administrators</description>
+    <role-name>IBMAdministrators</role-name>
+  </security-role>
+
+  <security-role id="SecurityRole_2">
+    <description>Example SOAP Users Role</description>
+    <role-name>SOAPUsers</role-name>
+  </security-role>
+
+  <security-role id="SecurityRole_3">
+    <description>All Authenticated Users Role</description>
+    <role-name>AllAuthenticatedUsers</role-name>
+  </security-role>
+
+</web-app>

@@ -1,0 +1,753 @@
+<!-- ISO 3166 Country Code names and codes -->
+<DataDefinitions resources="com.bowstreet.builders.webapp.usertext.messages">
+	
+	<!-- lookup table with ISO 3166 country codes -->	 
+    <DataDefinition name="base_ISOCountryCodesLookup">
+        <LookupTable>countries</LookupTable>
+    </DataDefinition>
+    
+    <LookupTables>
+		<LookupTable>
+            <ReadableName>Country Codes</ReadableName>
+			<BuilderID>com.bowstreet.builders.webapp.LookupTableBuilder</BuilderID>
+			<Name>countries</Name>
+			<Inputs>
+				<Input name="DataType">NewXmlData</Input>
+				<Input name="GetDataFrom">BuilderInput</Input>
+				<Input name="TablePosition">InFront</Input>
+				<Input name="Name">countries</Input>
+				<Input name="ValueElementName">code</Input>
+				<Input name="LabelElementName">name</Input>
+				<Input name="NewXmlData">
+<CountryCodes>
+<CountryCodeEntry><name></name>
+<code></code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AF">Afghanistan (AF)</name>
+<code>AF</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AX">Aland Islands (AX)</name>
+<code>AX</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AL">Albania (AL)</name>
+<code>AL</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_DZ">Algeria (DZ)</name>
+<code>DZ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AS">American Samoa (AS)</name>
+<code>AS</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AD">Andorra (AD)</name>
+<code>AD</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AO">Angola (AO)</name>
+<code>AO</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AI">Anguilla (AI)</name>
+<code>AI</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AQ">Antarctica (AQ)</name>
+<code>AQ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AG">Antigua And Barbuda (AG)</name>
+<code>AG</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AR">Argentina (AR)</name>
+<code>AR</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AM">Armenia (AM)</name>
+<code>AM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AW">Aruba (AW)</name>
+<code>AW</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AU">Australia (AU)</name>
+<code>AU</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AT">Austria (AT)</name>
+<code>AT</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AZ">Azerbaijan (AZ)</name>
+<code>AZ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BS">Bahamas (BS)</name>
+<code>BS</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BH">Bahrain (BH)</name>
+<code>BH</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BD">Bangladesh (BD)</name>
+<code>BD</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BB">Barbados (BB)</name>
+<code>BB</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BY">Belarus (BY)</name>
+<code>BY</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BE">Belgium (BE)</name>
+<code>BE</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BZ">Belize (BZ)</name>
+<code>BZ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BJ">Benin (BJ)</name>
+<code>BJ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BM">Bermuda (BM)</name>
+<code>BM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BT">Bhutan (BT)</name>
+<code>BT</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BO">Bolivia (BO)</name>
+<code>BO</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BA">Bosnia And Herzegovina (BA)</name>
+<code>BA</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BW">Botswana (BW)</name>
+<code>BW</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BV">Bouvet Island (BV)</name>
+<code>BV</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BR">Brazil (BR)</name>
+<code>BR</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_IO">British Indian Ocean Territory (IO)</name>
+<code>IO</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BN">Brunei Darussalam (BN)</name>
+<code>BN</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BG">Bulgaria (BG)</name>
+<code>BG</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BF">Burkina Faso (BF)</name>
+<code>BF</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_BI">Burundi (BI)</name>
+<code>BI</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_KH">Cambodia (KH)</name>
+<code>KH</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CM">Cameroon (CM)</name>
+<code>CM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CA">Canada (CA)</name>
+<code>CA</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CV">Cape Verde (CV)</name>
+<code>CV</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_KY">Cayman Islands (KY)</name>
+<code>KY</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CF">Central African Republic (CF)</name>
+<code>CF</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TD">Chad (TD)</name>
+<code>TD</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CL">Chile (CL)</name>
+<code>CL</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CN">China (CN)</name>
+<code>CN</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CX">Christmas Island (CX)</name>
+<code>CX</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CC">Cocos (Keeling) Islands (CC)</name>
+<code>CC</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CO">Colombia (CO)</name>
+<code>CO</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_KM">Comoros (KM)</name>
+<code>KM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CG">Congo (CG)</name>
+<code>CG</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CD">Congo, The Democratic Republic Of The (CD)</name>
+<code>CD</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CK">Cook Islands (CK)</name>
+<code>CK</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CR">Costa Rica (CR)</name>
+<code>CR</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CI">Cote D'Ivoire (CI)</name>
+<code>CI</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_HR">Croatia (HR)</name>
+<code>HR</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CU">Cuba (CU)</name>
+<code>CU</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CY">Cyprus (CY)</name>
+<code>CY</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CZ">Czech Republic (CZ)</name>
+<code>CZ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_DK">Denmark (DK)</name>
+<code>DK</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_DJ">Djibouti (DJ)</name>
+<code>DJ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_DM">Dominica (DM)</name>
+<code>DM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_DO">Dominican Republic (DO)</name>
+<code>DO</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_EC">Ecuador (EC)</name>
+<code>EC</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_EG">Egypt (EG)</name>
+<code>EG</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SV">El Salvador (SV)</name>
+<code>SV</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GQ">Equatorial Guinea (GQ)</name>
+<code>GQ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_ER">Eritrea (ER)</name>
+<code>ER</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_EE">Estonia (EE)</name>
+<code>EE</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_ET">Ethiopia (ET)</name>
+<code>ET</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_FK">Falkland Islands (Malvinas) (FK)</name>
+<code>FK</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_FO">Faroe Islands (FO)</name>
+<code>FO</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_FJ">Fiji (FJ)</name>
+<code>FJ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_FI">Finland (FI)</name>
+<code>FI</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_FR">France (FR)</name>
+<code>FR</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GF">French Guiana (GF)</name>
+<code>GF</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_PF">French Polynesia (PF)</name>
+<code>PF</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TF">French Southern Territories (TF)</name>
+<code>TF</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GA">Gabon (GA)</name>
+<code>GA</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GM">Gambia (GM)</name>
+<code>GM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GE">Georgia (GE)</name>
+<code>GE</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_DE">Germany (DE)</name>
+<code>DE</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GH">Ghana (GH)</name>
+<code>GH</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GI">Gibraltar (GI)</name>
+<code>GI</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GR">Greece (GR)</name>
+<code>GR</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GL">Greenland (GL)</name>
+<code>GL</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GD">Grenada (GD)</name>
+<code>GD</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GP">Guadeloupe (GP)</name>
+<code>GP</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GU">Guam (GU)</name>
+<code>GU</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GT">Guatemala (GT)</name>
+<code>GT</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GN">Guinea (GN)</name>
+<code>GN</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GW">Guinea-Bissau (GW)</name>
+<code>GW</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GY">Guyana (GY)</name>
+<code>GY</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_HT">Haiti (HT)</name>
+<code>HT</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_HM">Heard Island And Mcdonald Islands (HM)</name>
+<code>HM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_VA">Holy See (Vatican City State) (VA)</name>
+<code>VA</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_HN">Honduras (HN)</name>
+<code>HN</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_HK">Hong Kong (HK)</name>
+<code>HK</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_HU">Hungary (HU)</name>
+<code>HU</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_IS">Iceland (IS)</name>
+<code>IS</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_IN">India (IN)</name>
+<code>IN</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_ID">Indonesia (ID)</name>
+<code>ID</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_IR">Iran, Islamic Republic Of (IR)</name>
+<code>IR</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_IQ">Iraq (IQ)</name>
+<code>IQ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_IE">Ireland (IE)</name>
+<code>IE</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_IL">Israel (IL)</name>
+<code>IL</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_IT">Italy (IT)</name>
+<code>IT</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_JM">Jamaica (JM)</name>
+<code>JM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_JP">Japan (JP)</name>
+<code>JP</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_JO">Jordan (JO)</name>
+<code>JO</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_KZ">Kazakhstan (KZ)</name>
+<code>KZ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_KE">Kenya (KE)</name>
+<code>KE</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_KI">Kiribati (KI)</name>
+<code>KI</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_KP">Korea, Democratic People'S Republic Of (KP)</name>
+<code>KP</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_KR">Korea, Republic Of (KR)</name>
+<code>KR</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_KW">Kuwait (KW)</name>
+<code>KW</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_KG">Kyrgyzstan (KG)</name>
+<code>KG</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_LA">Lao People'S Democratic Republic (LA)</name>
+<code>LA</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_LV">Latvia (LV)</name>
+<code>LV</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_LB">Lebanon (LB)</name>
+<code>LB</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_LS">Lesotho (LS)</name>
+<code>LS</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_LR">Liberia (LR)</name>
+<code>LR</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_LY">Libyan Arab Jamahiriya (LY)</name>
+<code>LY</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_LI">Liechtenstein (LI)</name>
+<code>LI</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_LT">Lithuania (LT)</name>
+<code>LT</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_LU">Luxembourg (LU)</name>
+<code>LU</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MO">Macao (MO)</name>
+<code>MO</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MK">Macedonia, The Former Yugoslav Republic Of (MK)</name>
+<code>MK</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MG">Madagascar (MG)</name>
+<code>MG</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MW">Malawi (MW)</name>
+<code>MW</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MY">Malaysia (MY)</name>
+<code>MY</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MV">Maldives (MV)</name>
+<code>MV</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_ML">Mali (ML)</name>
+<code>ML</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MT">Malta (MT)</name>
+<code>MT</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MH">Marshall Islands (MH)</name>
+<code>MH</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MQ">Martinique (MQ)</name>
+<code>MQ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MR">Mauritania (MR)</name>
+<code>MR</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MU">Mauritius (MU)</name>
+<code>MU</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_YT">Mayotte (YT)</name>
+<code>YT</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MX">Mexico (MX)</name>
+<code>MX</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_FM">Micronesia, Federated States Of (FM)</name>
+<code>FM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MD">Moldova, Republic Of (MD)</name>
+<code>MD</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MC">Monaco (MC)</name>
+<code>MC</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MN">Mongolia (MN)</name>
+<code>MN</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MS">Montserrat (MS)</name>
+<code>MS</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MA">Morocco (MA)</name>
+<code>MA</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MZ">Mozambique (MZ)</name>
+<code>MZ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MM">Myanmar (MM)</name>
+<code>MM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_NA">Namibia (NA)</name>
+<code>NA</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_NR">Nauru (NR)</name>
+<code>NR</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_NP">Nepal (NP)</name>
+<code>NP</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_NL">Netherlands (NL)</name>
+<code>NL</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AN">Netherlands Antilles (AN)</name>
+<code>AN</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_NC">New Caledonia (NC)</name>
+<code>NC</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_NZ">New Zealand (NZ)</name>
+<code>NZ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_NI">Nicaragua (NI)</name>
+<code>NI</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_NE">Niger (NE)</name>
+<code>NE</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_NG">Nigeria (NG)</name>
+<code>NG</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_NU">Niue (NU)</name>
+<code>NU</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_NF">Norfolk Island (NF)</name>
+<code>NF</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_MP">Northern Mariana Islands (MP)</name>
+<code>MP</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_NO">Norway (NO)</name>
+<code>NO</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_OM">Oman (OM)</name>
+<code>OM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_PK">Pakistan (PK)</name>
+<code>PK</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_PW">Palau (PW)</name>
+<code>PW</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_PS">Palestinian Territory, Occupied (PS)</name>
+<code>PS</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_PA">Panama (PA)</name>
+<code>PA</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_PG">Papua New Guinea (PG)</name>
+<code>PG</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_PY">Paraguay (PY)</name>
+<code>PY</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_PE">Peru (PE)</name>
+<code>PE</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_PH">Philippines (PH)</name>
+<code>PH</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_PN">Pitcairn (PN)</name>
+<code>PN</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_PL">Poland (PL)</name>
+<code>PL</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_PT">Portugal (PT)</name>
+<code>PT</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_PR">Puerto Rico (PR)</name>
+<code>PR</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_QA">Qatar (QA)</name>
+<code>QA</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_RE">Reunion (RE)</name>
+<code>RE</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_RO">Romania (RO)</name>
+<code>RO</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_RU">Russian Federation (RU)</name>
+<code>RU</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_RW">Rwanda (RW)</name>
+<code>RW</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SH">Saint Helena (SH)</name>
+<code>SH</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_KN">Saint Kitts And Nevis (KN)</name>
+<code>KN</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_LC">Saint Lucia (LC)</name>
+<code>LC</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_PM">Saint Pierre And Miquelon (PM)</name>
+<code>PM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_VC">Saint Vincent And The Grenadines (VC)</name>
+<code>VC</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_WS">Samoa (WS)</name>
+<code>WS</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SM">San Marino (SM)</name>
+<code>SM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_ST">Sao Tome And Principe (ST)</name>
+<code>ST</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SA">Saudi Arabia (SA)</name>
+<code>SA</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SN">Senegal (SN)</name>
+<code>SN</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CS">Serbia And Montenegro (CS)</name>
+<code>CS</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SC">Seychelles (SC)</name>
+<code>SC</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SL">Sierra Leone (SL)</name>
+<code>SL</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SG">Singapore (SG)</name>
+<code>SG</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SK">Slovakia (SK)</name>
+<code>SK</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SI">Slovenia (SI)</name>
+<code>SI</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SB">Solomon Islands (SB)</name>
+<code>SB</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SO">Somalia (SO)</name>
+<code>SO</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_ZA">South Africa (ZA)</name>
+<code>ZA</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GS">South Georgia And The South Sandwich Islands (GS)</name>
+<code>GS</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_ES">Spain (ES)</name>
+<code>ES</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_LK">Sri Lanka (LK)</name>
+<code>LK</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SD">Sudan (SD)</name>
+<code>SD</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SR">Suriname (SR)</name>
+<code>SR</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SJ">Svalbard And Jan Mayen (SJ)</name>
+<code>SJ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SZ">Swaziland (SZ)</name>
+<code>SZ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SE">Sweden (SE)</name>
+<code>SE</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_CH">Switzerland (CH)</name>
+<code>CH</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_SY">Syrian Arab Republic (SY)</name>
+<code>SY</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TW">Taiwan, Province Of China (TW)</name>
+<code>TW</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TJ">Tajikistan (TJ)</name>
+<code>TJ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TZ">Tanzania, United Republic Of (TZ)</name>
+<code>TZ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TH">Thailand (TH)</name>
+<code>TH</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TL">Timor-Leste (TL)</name>
+<code>TL</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TG">Togo (TG)</name>
+<code>TG</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TK">Tokelau (TK)</name>
+<code>TK</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TO">Tonga (TO)</name>
+<code>TO</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TT">Trinidad And Tobago (TT)</name>
+<code>TT</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TN">Tunisia (TN)</name>
+<code>TN</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TR">Turkey (TR)</name>
+<code>TR</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TM">Turkmenistan (TM)</name>
+<code>TM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TC">Turks And Caicos Islands (TC)</name>
+<code>TC</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_TV">Tuvalu (TV)</name>
+<code>TV</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_UG">Uganda (UG)</name>
+<code>UG</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_UA">Ukraine (UA)</name>
+<code>UA</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_AE">United Arab Emirates (AE)</name>
+<code>AE</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_GB">United Kingdom (GB)</name>
+<code>GB</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_US">United States (US)</name>
+<code>US</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_UM">United States Minor Outlying Islands (UM)</name>
+<code>UM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_UY">Uruguay (UY)</name>
+<code>UY</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_UZ">Uzbekistan (UZ)</name>
+<code>UZ</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_VU">Vanuatu (VU)</name>
+<code>VU</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_VE">Venezuela (VE)</name>
+<code>VE</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_VN">Viet Nam (VN)</name>
+<code>VN</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_VG">Virgin Islands, British (VG)</name>
+<code>VG</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_VI">Virgin Islands, U.S. (VI)</name>
+<code>VI</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_WF">Wallis And Futuna (WF)</name>
+<code>WF</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_EH">Western Sahara (EH)</name>
+<code>EH</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_YE">Yemen (YE)</name>
+<code>YE</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_ZM">Zambia (ZM)</name>
+<code>ZM</code>
+</CountryCodeEntry>
+<CountryCodeEntry><name resource_key="CountryCode_ZW">Zimbabwe (ZW)</name>
+<code>ZW</code>
+</CountryCodeEntry>
+</CountryCodes>
+				</Input>
+			</Inputs>
+		</LookupTable>
+	</LookupTables>
+
+
+</DataDefinitions>

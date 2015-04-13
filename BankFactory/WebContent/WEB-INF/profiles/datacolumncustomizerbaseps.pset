@@ -1,0 +1,193 @@
+<ProfileSet name="datacolumncustomizerbaseps" useQualifiedProfileNames="true"><Description>Generated profile set for model data_column_customizer_base</Description>
+<Visibility>False</Visibility>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<Models />
+<ProfileDef><Entries><Entry name="Alignment_Column_Modifier" isRuntime="false"><UI type="TextInput"><Prompt>Alignment Column Modifier</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Alignment_Modifier_Field" isRuntime="false"><UI type="TextInput"><Prompt>Alignment Modifier Field</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Column_Alignment" isRuntime="false"><UI type="Checkbox"><Prompt>Column Alignment</Prompt>
+<ExtraData>false,true,Checkbox Label</ExtraData>
+</UI>
+</Entry>
+<Entry name="Column_Counter_Column_Modifier" isRuntime="false"><UI type="TextInput"><Prompt>Column Counter Column Modifier</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Column_Name" isRuntime="false"><UI type="Checkbox"><Prompt>Column_Name</Prompt>
+<ExtraData>false,true,Checkbox Label</ExtraData>
+</UI>
+</Entry>
+<Entry name="Column_Sorting" isRuntime="false"><UI type="Checkbox"><Prompt>Column_Sorting</Prompt>
+<ExtraData>false,true,Checkbox Label</ExtraData>
+</UI>
+</Entry>
+<Entry name="Column_Width" isRuntime="false"><UI type="Checkbox"><Prompt>Column_Width</Prompt>
+<ExtraData>false,true,Checkbox Label</ExtraData>
+</UI>
+</Entry>
+<Entry name="Container_Field" isRuntime="false"><UI type="TextInput"><Prompt>Container Field</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Counter_Column_Modifier" isRuntime="false"><UI type="TextInput"><Prompt>Counter Column Modifier</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DataFieldDefinition_Fields" isRuntime="false"><UI type="TextInput"><Prompt>DataFieldDefinition_Fields</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataFieldDefinition_Hide" isRuntime="false"><UI type="Checkbox"><Prompt>DataFieldDefinition_Hide</Prompt>
+<ExtraData>true,false,Checkbox Label</ExtraData>
+</UI>
+</Entry>
+<Entry name="Get_Localized_Text_Name" isRuntime="false"><UI type="TextInput"><Prompt>Get_Localized_Text_Name</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Heading_Column_Modifier" isRuntime="false"><UI type="TextInput"><Prompt>Heading Column Modifier</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Heading_Modifier_Field" isRuntime="false"><UI type="TextInput"><Prompt>Heading Modifier Field</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Hide_Heading_Column" isRuntime="false"><UI type="Checkbox"><Prompt>Hide_Heading_Column</Prompt>
+<ExtraData>false,true,</ExtraData>
+</UI>
+</Entry>
+<Entry name="ImageButton_BuilderCallEnabled" isRuntime="false"><UI type="TextInput"><Prompt>ImageButton BuilderCallEnabled</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="MoveDown_ColumnName" isRuntime="false"><UI type="TextInput"><Prompt>MoveDown Column Name</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="MoveDown_ColumnsElement" isRuntime="false"><UI type="TextInput"><Prompt>MoveDown Columns Element</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="MoveDown_ImageButton_BuilderCallEnabled" isRuntime="false"><UI type="TextInput"><Prompt>MoveDown ImageButton BuilderCallEnabled</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="MoveDown_Page" isRuntime="false"><UI type="TextInput"><Prompt>MoveDown Page</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="MoveRow_BuilderCallEnabled" isRuntime="false"><UI type="TextInput"><Prompt>MoveRow BuilderCall Enabled</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="MoveUp_ColumnName" isRuntime="false"><UI type="TextInput"><Prompt>MoveUp Column Name</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="MoveUp_ColumnsElement" isRuntime="false"><UI type="TextInput"><Prompt>MoveUp Columns Element</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="MoveUp_ImageButton_BuilderCallEnabled" isRuntime="false"><UI type="TextInput"><Prompt>MoveUp ImageButton BuilderCallEnabled</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="MoveUp_Page" isRuntime="false"><UI type="TextInput"><Prompt>MoveUp Page</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Name_Column_Modifier" isRuntime="false"><UI type="TextInput"><Prompt>Name Column Modifier</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Name_Modifier_Field" isRuntime="false"><UI type="TextInput"><Prompt>Name Modifier Field</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Order_Column_Name" isRuntime="false"><UI type="TextInput"><Prompt>Orde Column Name</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Order_Field_Modifier" isRuntime="false"><UI type="TextInput"><Prompt>Row0_input0</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Reorder_Columns" isRuntime="false"><UI type="TextInput"><Prompt>Reorder_Columns</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Sortable_Column_Modifier" isRuntime="false"><UI type="TextInput"><Prompt>Sortable_Column_Modifier</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Sortable_Modifier_Field" isRuntime="false"><UI type="TextInput"><Prompt>Sortable Modifier Field</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Status_Column_Modifier" isRuntime="false"><UI type="TextInput"><Prompt>Status Column Modifier</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Status_Modifier_Field" isRuntime="false"><UI type="TextInput"><Prompt>Status Modifier Field</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Width_Column_Modifier" isRuntime="false"><UI type="TextInput"><Prompt>Width Column Modifier</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Width_Modifier_Field" isRuntime="false"><UI type="TextInput"><Prompt>Width Modifier Field</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1122618712014" isContainer="true"><Values><Value name="Alignment_Column_Modifier">Alignment</Value>
+<Value name="Alignment_Modifier_Field">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Alignment</Value>
+<Value name="Column_Alignment">false</Value>
+<Value name="Column_Counter_Column_Modifier">Column_Counter</Value>
+<Value name="Column_Name">false</Value>
+<Value name="Column_Sorting">false</Value>
+<Value name="Column_Width">false</Value>
+<Value name="Container_Field">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column</Value>
+<Value name="Counter_Column_Modifier">Column_Counter</Value>
+<Value name="DataFieldDefinition_Fields">&lt;Fields&gt;&lt;Field profile="datacolumncustomizerbaseps:Heading_Modifier_Field"&gt;[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Order&lt;/Field&gt;
+&lt;/Fields&gt;</Value>
+<Value name="DataFieldDefinition_Hide">false</Value>
+<Value name="Get_Localized_Text_Name">${MethodCall/basename_getLocalizedText(${Variables/ColumnLoopVar/Column/Name},testing_DataProfile_DataPage,LocaleData)}</Value>
+<Value name="Heading_Column_Modifier">Heading</Value>
+<Value name="Heading_Modifier_Field">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Heading</Value>
+<Value name="Hide_Heading_Column">false</Value>
+<Value name="ImageButton_BuilderCallEnabled">true</Value>
+<Value name="MoveDown_ColumnName">${Variables/ColumnLoopVar/Column/Name}</Value>
+<Value name="MoveDown_ColumnsElement">portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns</Value>
+<Value name="MoveDown_ImageButton_BuilderCallEnabled">true</Value>
+<Value name="MoveDown_Page">editPage1</Value>
+<Value name="MoveRow_BuilderCallEnabled">true</Value>
+<Value name="MoveUp_ColumnName">${Variables/ColumnLoopVar/Column/Name}</Value>
+<Value name="MoveUp_ColumnsElement">portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns</Value>
+<Value name="MoveUp_ImageButton_BuilderCallEnabled">true</Value>
+<Value name="MoveUp_Page">editPage1</Value>
+<Value name="Name_Column_Modifier">Name</Value>
+<Value name="Name_Modifier_Field">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Name</Value>
+<Value name="Order_Column_Name">Order</Value>
+<Value name="Order_Field_Modifier">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Order</Value>
+<Value name="Reorder_Columns">false</Value>
+<Value name="Sortable_Column_Modifier">Sortable</Value>
+<Value name="Sortable_Modifier_Field">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Sortable</Value>
+<Value name="Status_Column_Modifier">Status</Value>
+<Value name="Status_Modifier_Field">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Status</Value>
+<Value name="Width_Column_Modifier">Width</Value>
+<Value name="Width_Modifier_Field">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Width</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

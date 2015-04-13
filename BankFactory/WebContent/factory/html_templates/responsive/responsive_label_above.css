@@ -1,0 +1,53 @@
+/* Copyright IBM Corp.2012 */
+@import url(WEF8.5_uitheme.css);
+.DataEntryGroupFieldset {
+    border: 1px solid #EFE2A3;
+}
+.FieldWrapperDiv {
+    clear: none;
+    float: left;
+    padding: 2px;
+    width: 48%;
+}
+.DataEntryFieldHolder {
+    min-height: 2em;
+    padding: 4px;
+    clear:both;
+}
+
+.FieldRequiredHolder {
+    display: block;
+    float: left;
+    height: .8em;
+}
+.requiredPrompt {
+    color: #FF0000;
+    font-size: 1em;
+    font-weight: bold;
+    left: 15px;
+    max-width: .5em;
+    min-height: 1em;
+    position: relative;
+    top: 4px;
+}
+.EmptyDataMessage {
+    color: #0000CC;
+    font-size: 1em;
+    text-align: center;
+    width: 100%;
+}
+.label{
+    float:left;
+}
+.outputData{
+	clear:both;
+}
+@media only screen
+and (max-width : 320px) {
+.FieldWrapperDiv{
+    float:left;
+    clear: both;
+    padding: 2px;
+    width: 98%;
+	}
+}

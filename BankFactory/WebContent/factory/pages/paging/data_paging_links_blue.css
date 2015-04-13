@@ -1,0 +1,37 @@
+TABLE.dataPagingButton{
+  padding-bottom: 3px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 3px;
+  background-color: #F5F5F5;
+  border: 1px solid #808080;
+  font-size: ${requestScope . cssRules . fontSize . normal};
+  /* Center table */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+IMG.dataPagingButton{
+  vertical-align: middle;
+}
+
+SPAN.dataPagingButton{
+  vertical-align: middle;
+}
+
+.dataPagingCurrentPage{
+  font-weight: bold;
+  color: #3E79B6;
+}
+
+.paging a:hover{
+  background: #6FA1D5 none repeat scroll 0 0;
+  color: #FFFFFF;
+}
+
+.paging a{
+  border: 1px solid #6FA1D5;
+  color: #3E79B6;
+  padding: 3px 6px;
+  text-decoration: none;
+}

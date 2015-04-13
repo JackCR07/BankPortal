@@ -1,0 +1,27 @@
+<!--  **************************  7.0 Blue Theme **********************************
+
+A theme is a collection of style information that can be used to drive builder inputs that provide the application UI in your model.
+This information can include but is not limited to HTML templates, style sheets (CSS), base pages, highlighting style, and paging style. 
+
+This theme file extents the blue.uitheme theme and enables features specific to WPF 7.0 such as Smart Refresh, Progress Indicator, and other styling changes.
+See blue.uitheme for base features.
+
+For more Theme information please see the "Themes and user interface control" section of the product documentation.
+
+-->
+<Theme extends="/WEB-INF/factory/themes/blue.uitheme">
+    <Use_Smart_Refresh>true</Use_Smart_Refresh>
+    <Add_Default_Progress_Indicator>true</Add_Default_Progress_Indicator>
+    <Progress_Indicator_DisplayMode>OverRegion</Progress_Indicator_DisplayMode>
+    <Progress_Indicator_Message>${Java/com.bowstreet.builders.webapp.usertext.Messages.getString("ProgressIndicator_DefaultLoadingMessage")}</Progress_Indicator_Message>
+    <DataPage_StyleSheetOverride>/factory/html_templates/gridtable_blue_WPF7.css</DataPage_StyleSheetOverride>
+    <ViewAndForm_ViewPageStyleSheetOverride>/factory/html_templates/gridtable_blue_WPF7.css</ViewAndForm_ViewPageStyleSheetOverride>
+    <ViewAndForm_DetailPageStyleSheetOverride>/factory/html_templates/gridtable_blue_WPF7.css</ViewAndForm_DetailPageStyleSheetOverride>
+    <ViewAndForm_UpdatePageStyleSheetOverride>/factory/html_templates/gridtable_blue_WPF7.css</ViewAndForm_UpdatePageStyleSheetOverride>
+    <ViewAndForm_InputPageStyleSheetOverride>/factory/html_templates/gridtable_blue_WPF7.css</ViewAndForm_InputPageStyleSheetOverride>
+    <InputForm_StyleSheetOverride>/factory/html_templates/gridtable_blue_WPF7.css</InputForm_StyleSheetOverride>
+    
+    <DSUI_StyleSheetOverride>/factory/html_templates/gridtable_blue_WPF7.css</DSUI_StyleSheetOverride>
+    
+</Theme>
+

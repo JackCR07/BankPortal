@@ -1,0 +1,418 @@
+/* Copyright IBM Corp. 2013 - IBM Web Experience Factory 8.5 UI Theme stylesheet */
+/* Set background and font for standalone (non-portal) page body */
+#wefBody{background:#FFFFFF; font: 75%/1.5 Arial,Helvetica,sans-serif;}
+#wefBody .blockHeading{font-family:Georgia,"Times New Roman",Times,serif;font-size:1.8em;font-weight:normal;color:#115D94;}
+.wefSmartphonePage .vf_buttons{text-align:center;}
+.wefTabletButton,.wefSmartphoneButton{font-size:1.4em;height:40px;margin-bottom:5px;min-width:105px;text-align:center}
+.wefSmartphoneButton{width:100%;}
+.paging .wefSmartphoneButton{min-width:60px;}
+.wefDesktopButton{
+ margin:0px 10px 3px 0px;
+ border:1px solid #ccc;
+ padding-top:3px;
+ text-shadow:0 1px 1px #FFFFFF;
+ background-color:#E7E7E7;
+ border-collapse:separate;
+ border-radius:3px 3px 3px 3px;
+ box-shadow:0 1px 1px rgba(0, 0, 0, 0.5);
+ color:#333;
+ font-size:0.9em;
+ font-weight:bold;
+ text-align:center;
+ cursor:pointer;
+ line-height:1.7em;
+ -moz-box-shadow:0 2px 1px rgba(0,0,0,0.5);
+ -webkit-box-shadow:0 2px 1px rgba(0,0,0,0.5);
+}
+.wefDesktopButton:hover,.wefDesktopButton:focus,wefTabletButton,wefSmartphoneButton:focus{
+ -moz-box-shadow:0 2px 1px rgba(0,0,0,0.5);
+ -webkit-box-shadow:0 2px 1px rgba(0,0,0,0.5);
+ box-shadow:0 2px 1px rgba(0,0,0,0.5);
+ border-bottom-color:#666;
+}
+.displayPageTable,.wefMobilePage,.dsui_full_width table{width:100%}
+.displayPageTable .label{font-size:1em}
+.outputData{font-size:1em;padding-bottom:3px}
+.displayPageTable td{padding-bottom:2px}
+.ColumnGroupLabelEmpty{border-bottom:thin solid #DDDDDD}
+.spacerColumn{border-left:thin solid #808080}
+.spacerColumnGroupHeader{border-bottom:thin solid #808080;border-left:thin solid #808080}
+.tableHead,.tableHeadAsc,.tableHeadDesc{
+ background:white;
+ border-color:#FFFFFF #ACA899 #919191 #FFFFFF;
+ border-style:none;
+ border-width:1px;
+ padding-bottom:5px;
+ overflow:hidden;
+ padding:0px;
+ padding-right:6px;
+ text-align:left;
+ font-style:normal;
+ font-size:1em;
+ color:black; 
+ border-bottom:1px dotted #D5CDB5;
+}
+.tableHead{font-weight:normal}
+.tableHead[align="center"]{font-weight:normal;text-align:center;}
+.tableHead[align="right"]{font-weight:normal;text-align:right;}
+.tableHeadAsc{font-weight:bold}
+.tableHeadDesc{font-weight:lighter}
+.tableCell{
+ border-bottom:1px dotted #D5CDB5;
+ overflow:hidden;
+ padding:3px 3px 10px 3px;
+ empty-cells:show;
+}
+.tableHeadText{padding:3px}
+a.tableHeadSortLink:link,a.tableHeadSortLink:active,a.tableHeadSortLink:visited{
+ color:#003;
+ text-decoration:none;
+}
+a.tableHeadSortLink:hover{text-decoration:underline}
+.tableRowEven{color:#000000}
+a.outputData:link,a.outputData:active,a.outputData:visited{
+ color:05386B;
+ font-size:1em;
+ text-decoration:none;
+}
+a.outputData:hover{
+ font-size:1em;
+ text-decoration:underline;
+}
+.outputDataRight{
+ font-size:1em;
+ text-align:right;
+}
+/* labels between sections of inputs or fields */
+.sectionLabel{
+ font-size:1.1em;
+ font-weight:bold;
+ color:#222;
+}
+/* table cells containing the sectionLabels */
+.sectionLabelCell{
+ background-color:#DDDDDD;
+ text-indent:3px;
+}
+/* text prompts for field inputs or fields */
+.label{
+ margin-left:0px;
+ display:inline;
+ padding-bottom:3px;
+ margin-bottom:3px;
+ color:#222;
+ font-weight:bold;
+}
+.requiredPrompt,.requiredPromptAbove{margin-right:3px}
+.labelAbove{
+ margin-left:0px;
+ display:inline;
+ padding-bottom:3px;
+ margin-bottom:3px;
+ color:#222;
+ font-weight:bold;
+}
+.inputLabelAbove{
+ margin-left:0px;
+ display:inline;
+ padding-bottom:3px;
+ margin-bottom:3px;
+ color:#222;
+ font-weight:bold;
+}
+
+.wefMobilePage .DataEntryFieldRow input{padding-right:0px;border-width:2px;border-color:#cccccc;-webkit-border-radius:3px;width:98%}
+.wefMobilePage .DataEntryFieldRow textarea{width:98%;padding-right:0px; border-width:2px; border-color:#cccccc;-webkit-border-radius:3px}
+.wefMobilePage .DataEntryFieldRow select{width:98%;font-size:1.4em;border-width:2px;border-color:#cccccc;-webkit-border-radius:3px}
+.wefMobilePage .DataEntryFieldRow .DataEntryFieldElement{font-size:1.2em}
+
+.DataEntryFieldDiv{margin-top:2px}
+.DataEntryFieldLabelText{font-family:Arial,Helvetica,sans-serif}
+.DataEntryFieldCell{padding-bottom:10px !important}
+.DataEntryFieldDataDiv{padding-top:3px}
+.labelCell{padding-right:20px;}
+.errorMessage{font-size:1em;color:#FF0000}
+.vf_field_container img,.vf_view_container img{max-width:100%}
+.wef_datalayout_list img{max-width: none;}
+div.vf_field_container form,div.vf_view_container div.vf_view_list form{padding:0px}
+.vf_buttons{
+ margin-top:12px;
+ padding:2px;
+ clear:both;
+}
+.vf_smallButton{
+ margin-top:0px !important;
+ padding-top:0px !important;
+ padding-left:2px;
+ padding-right:2px;
+ text-align:center;
+ font-size:0.75em !important;
+ font-weight:bold;
+ height:16px;
+}
+.vf_view_container{padding:0px;width:100%}
+.vf_field_container{
+ float:left;
+ width:100%;
+}
+/* make field padding match full width phone buttons */
+.wefSmartphonePage .vf_fields{margin-right:0px;padding-right:2px}
+.vf_fields,.WPF_LayoutTable{
+ text-align:left;
+ margin-top:8px;
+ margin-left:0px; 
+ margin-right:5px; 
+ padding-right:5px;  
+ padding-left:0px;  
+ border-bottom-color:#AAA;
+ border-bottom-style:solid;
+ border-bottom-width:1px;
+}
+.WPF_LayoutTable img{float:left;}
+.WPF_LayoutRow td{vertical-align:top}
+.vf_fields .vf_fields{border:none}
+.vf_view_list{float:left;clear:both;width:100%;}
+.vf_header{width:100%;}
+.vf_footer{text-align:center;width:100%}
+
+.paging{
+ text-align:center;
+ margin-top:7px;
+ margin-bottom:2px;
+ clear:both;
+}
+.dataPagingContainer{height:40px;padding:0}
+.dataPagingContainer li{
+ display:block;
+ float:left;
+ padding-top:3px;  
+ margin:0px;  
+ width:50%;
+ text-align:center;
+}
+.dataPagingContainer ul{
+ float:left;
+ margin:0px;  
+ padding:0px;  
+ width:100%;
+}
+.dataPagingContainer a{
+ display:block;
+ text-decoration:none;
+ font-size:1.8em;
+ font-weight:bold;
+ color:#000;
+ border:1px solid #000;
+ background:buttonface;
+ -webkit-appearance:push-button;
+}
+.dataPagingContainer a.dataPagingLinkDisable{color:#D0D0D0}
+.dataPagingContainer li.paging_previous a{margin-right:2px}
+.dataPagingContainer li.paging_next a{margin-left:2px}
+
+.blockHeading{border-bottom:solid;margin-bottom:12px}
+.vf_field_container .vf_field_container .blockHeading,.vf_view_container .vf_field_container .blockHeading,.wefMobilePage .wefMobilePage .blockHeading{display:none}
+
+/* data layout image base styles */
+.wpfImageExtraExtraSmall{width:16px!important;height:16px!important;}
+.wpfImageExtraSmall{width:30px!important;height:30px!important;}
+.wpfImageSmall{width:50px!important;height:50px!important;}
+.wpfImageMedium{width:65px!important;height:65px!important;}
+.wpfImageLarge{width:80px!important;height:80px!important;}
+.wpfImageXLarge{
+ min-width:100px!important;
+ max-width:200px!important;
+ min-height:100px!important;
+ max-height:200px!important;
+}
+.wpfCtcImageContainerBorder{
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    margin-left: 2px;
+}
+.wef_datalayout_list .clImagePadding5 img{padding:5px;}
+.wef_datalayout_list .clImagePadding10 img{padding:10px;}
+.wpfTitleText{font-weight:bold}
+.wpfLabelText{font-weight:bold;padding-right:3px}
+.wpfLargeTitleText, .wpfLargeText{font-weight:bold;font-size:1.2em}
+.wpfItalicText{font-style:italic}
+.wpfSmallText{font-weight:lighter;font-size:.8em}
+.wpfSmallItalicText{font-style:italic;font-weight:lighter;font-size:.8em}
+.wpfPaddingRight{padding-right:3px}
+.wpfSelectableRow:hover{cursor:pointer}
+a.wpfSelectableRow {color: #000000;text-decoration: none}
+.wpfSpaceAfter:after{content: '\00a0'} /* adds a non-breaking space */
+.hide{display:none}
+.wpfFixed1EMItemHeight{padding-right:1em;}
+.wpthemeThin .hideThemeThin,.wpthemeNarrow .hideThemeNarrow,.wpthemeMedium .hideThemeMedium, .wpthemeWide .hideThemeWide{display:none}
+/* responsive Data Layout base styles */
+.responsive_ThumbnailList .thumbnailListItem{
+ text-decoration:none;color:black;
+ width:100%;
+ min-height:75px;
+ min-width:65px;
+}
+.responsive_SmallThumbnailList  .thumbnailListItem{min-height:58px}
+.responsive_MediumThumbnailList .thumbnailListItem{min-height:73px}
+.responsive_LargeThumbnailList  .thumbnailListItem{min-height:88px}
+.responsive_ExtraLargeThumbnailList .thumbnailListItem{min-height:108px}
+.responsive_SmallThumbnailList  .wpfLeft {min-width:50px;min-height:50px}
+.responsive_MediumThumbnailList .wpfLeft {min-width:65px;min-height:65px}
+.responsive_LargeThumbnailList  .wpfLeft {min-width:80px;min-height:80px}
+.responsive_ExtraLargeThumbnailList .wpfLeft{min-width:100px;min-height:100px}
+.responsive_ThumbnailList .wpfLeft{float:left;padding:2px;margin-right:10px;}
+.responsive_ThumbnailList .listItem{white-space:nowrap;overflow:hidden;}
+.responsive_ThumbnailList .wpfCenterContainer{float:left; width:60%;}
+.responsive_ExtraLargeThumbnailList .wpfCenterContainer{ width:50%;}
+.responsive_ThumbnailList .wpfCenter{
+ padding-left:3px;
+ padding-right:3px;
+ text-overflow:ellipsis; 
+ white-space:nowrap;
+ overflow:hidden;
+ max-width:600px;
+ min-height:12px; 
+}
+.responsive_ThumbnailList .clSingleRowContainer .wpfCenter{display:table-cell;vertical-align:middle;}
+.responsive_SmallThumbnailList .clSingleRowContainer .listItem{line-height:50px;}
+.responsive_MediumThumbnailList .clSingleRowContainer .listItem{line-height:65px;}
+.responsive_LargeThumbnailList .clSingleRowContainer .listItem{line-height:80px;}
+.responsive_ExtraLargeThumbnailList .clSingleRowContainer .listItem{line-height:100px;}
+.responsive_ThumbnailList .clCenterWrapContainer .wpfCenterContainer .wpfMiddle, .wpfWrapContainer, .outputDataCell{
+ text-overflow:visible; 
+ white-space:normal;
+ overflow:visible; 
+ padding:2px;
+ line-height:normal;
+}
+.responsive_ThumbnailList .wpfRightContainer{
+ float:right;
+ margin-right:2px;
+ width:15%;
+}
+.responsive_ThumbnailList .thumbnailListItem .wpfLeft img{
+ -webkit-border-radius:8px;
+ width:65px;
+ height:65px;
+}
+.responsive_SmallThumbnailList .thumbnailListItem .wpfLeft img{width:50px;height:50px;}
+.responsive_MediumThumbnailList .thumbnailListItem .wpfLeft img{width:65px;height:65px;}
+.responsive_LargeThumbnailList .thumbnailListItem .wpfLeft img{width:80px;height:80px;}
+.responsive_ExtraLargeThumbnailList .thumbnailListItem .wpfLeft img{width:100px;height:100px;}
+.responsive_ThumbnailList .clSingleRowContainer .wpfTop, .responsive_ThumbnailList .clSingleRowContainer .wpfBottom{display:none;}
+.responsive_ThumbnailList .clArrowContainer{background-image:url("../../data_layout_templates/right_arrow.gif")!important;}
+.responsive_ThumbnailList .thumbnailListItem{
+ background-image:none;
+ background-repeat:no-repeat;
+ background-position:right;
+ border-bottom:1px solid #AAAAAA;
+ margin:5px 0 0 0;
+ padding:2px 0 2px 0;
+}
+.wpfRightAlignText {margin-right: 0px; text-align: right; margin-left: auto;}
+.wpfRightAlignTextWithArrow {padding-right: 20px; text-align: right; margin-left: auto;background-image:url("../../data_layout_templates/right_arrow.gif")!important; background-repeat: no-repeat!important; background-position: right!important;}
+.wpfArrowText:after {content: ">";font-weight: bold;}
+.wpfArrowImage{background-image:url("../../data_layout_templates/right_arrow.gif")!important; background-repeat: no-repeat!important; background-position: right!important;}
+@media only screen and (max-width: 435px){
+.responsive_ThumbnailList .wpfCenterContainer{width:auto !important}
+.responsive_SmallThumbnailList .wpfCenter{max-width:220px}
+.responsive_MediumThumbnailList .wpfCenter{max-width:195px}
+.responsive_LargeThumbnailList .wpfCenter{max-width:180px}
+.responsive_ExtraLargeThumbnailList .wpfCenter{max-width:160px}
+.responsive_ThumbnailList .wpfRightContainer{display:none}
+}
+.responsive_MultiLineList .multLineListItem{
+    background-image: none;
+    background-position: right center;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #AAAAAA;
+    margin: 5px 0 0;
+    padding: 2px 0;
+    clear:both;
+}
+.responsive_MultiLineList .wpfListColumn {float:left;width:33%}
+.cl1Column .wpfListCenterColumn,.cl1Column .wpfListRightColumn{display:none}
+.cl1Column .wpfListColumn{width:99%}
+.cl2ColumnEqual .wpfListColumn{float:left;width:49%}
+.cl2ColumnEqual .wpfListRightColumn{display:none}
+.cl2ColumnLeft .wpfListLeftColumn{width:69%}
+.cl2ColumnLeft .wpfListCenterColumn{width:29%}
+.cl2ColumnLeft .wpfListRightColumn{display:none}
+.cl2ColumnRight .wpfListLeftColumn{width:29%}
+.cl2ColumnRight .wpfListCenterColumn{width:69%}
+.cl2ColumnRight .wpfListRightColumn{display:none}
+.cl3ColumnCenter .wpfListLeftColumn,.cl3ColumnCenter .wpfListRightColumn{width:20%}
+.cl3ColumnCenter .wpfListCenterColumn{width:58%}
+.cl3x3ColumnGrid .wpfListColumnItem{min-height:1em;}
+.cl3x2ColumnGrid .wpfListColumnItem{min-height:1em;}
+.cl3x2ColumnGrid .wpfListBottomItem{display:none;}
+.responsive_MultiLineList .wpfListRow {display: table;width:100%;border-bottom:2px solid #F0F0F0;background-color: #F8F8F8}
+.responsive_MultiLineList .wpfListColumnItem {margin: 2px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
+.responsive_MultiLineList .wpfListColumnItem img{-webkit-border-top-left-radius:8px;-webkit-border-top-right-radius:8px;-webkit-border-bottom-left-radius:8px;-webkit-border-bottom-right-radius:8px;width:55px;height:55px}
+.responsive_6X6_MultiLineList .multLineListItem{
+    background-image: none;
+    background-position: right center;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #AAAAAA;
+    margin: 5px 0 0;
+    padding: 2px 0;
+    clear:both;
+}
+.responsive_6X6_MultiLineList .wpfListColumn {float:left;width:16.6%}
+.cl1Column .wpfListCenterColumn,.cl1Column .wpfListRightColumn,.cl1Column .wpfList4thColumn,.cl1Column .wpfList5thColumn, .cl1Column .wpfList6thColumn {display:none}
+.cl1Column .wpfListColumn{width:99%}
+.cl2Column .wpfListRightColumn,.cl2Column .wpfList4thColumn,.cl2Column .wpfList5thColumn, .cl2Column .wpfList6thColumn {display:none}
+.cl2Column .wpfListColumn{width:49.5%}
+.cl3Column .wpfList4thColumn,.cl3Column .wpfList5thColumn, .cl3Column .wpfList6thColumn {display:none}
+.cl3Column .wpfListColumn{width:33%}
+.cl4Column .wpfList5thColumn, .cl4Column .wpfList6thColumn {display:none}
+.cl4Column .wpfListColumn{width:24.75%}
+.cl5Column .wpfList6thColumn {display:none}
+.cl5Column .wpfListColumn{width:19.8%}
+.responsive_6X6_MultiLineList .wpfListRow {display: table;width:100%;border-bottom:2px solid #F0F0F0;background-color: #F8F8F8}
+.responsive_6X6_MultiLineList .wpfListColumnItem {margin: 2px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
+.responsive_6X6_MultiLineList .wpfListColumnItem img{-webkit-border-top-left-radius:8px;-webkit-border-top-right-radius:8px;-webkit-border-bottom-left-radius:8px;-webkit-border-bottom-right-radius:8px;width:55px;height:55px}
+.cl2RowGrid .wpfListColumnItem,.cl3RowGrid .wpfListColumnItem,.cl4RowGrid .wpfListColumnItem,.cl5RowGrid .wpfListColumnItem,.cl6RowGrid .wpfListColumnItem{min-height:1em;}
+.cl2RowGrid .wpfListBottomItem, .cl2RowGrid .wpfListrow4Item,.cl2RowGrid .wpfListrow5Item, .cl2RowGrid .wpfListrow6Item{display:none;}
+.cl3RowGrid .wpfListrow4Item,.cl3RowGrid .wpfListrow5Item, .cl3RowGrid .wpfListrow6Item{display:none;}
+.cl4RowGrid .wpfListrow5Item, .cl4RowGrid .wpfListrow6Item{display:none;}
+.cl5RowGrid .wpfListrow6Item{display:none;}
+.responsiveMobileNavE2E{width:100%}
+.responsiveMobileNavE2E div.vf_view_container{padding:0px}
+.responsiveMobileNavE2E .wpfLeft{float:left;padding:2px;width:auto}
+.responsiveMobileNavE2E .wpfCenterContainer{float:left;width:auto}
+.responsiveMobileNavE2E .wpfCenter{padding-left:3px;padding-right:3px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
+.responsiveMobileNavE2E .wpfGroupTitle{font-weight:bold;font-size:1.2em}
+.responsiveMobileNavE2E .wpfListItem img{-webkit-border-radius:8px}
+.responsiveMobileNavE2E .wpfListItem{
+ margin-bottom:-1px;
+ height:2.5em;
+ padding:10px 0px 10px 0px;
+ border-top:1px solid #AAA;
+ border-bottom:1px solid #AAA;
+ margin-left:0px;
+ margin-right:0px;
+}
+.wefDojoAccordionNav{min-height:6em;height:auto}
+.wefDojoAccordionNav .dijitContentPane{min-height:6em;height:auto}
+
+/* Hide split pager center control in narrow columns and devices */
+.wpthemeThin .wefSplitPagerCenter,.wpthemeNarrow .wefSplitPagerCenter,.wpthemeUnequal .wpthemeSecondaryContainer .wefSplitPagerCenter,.wpthemeTertiaryContainer .wefSplitPagerCenter{display:none}
+@media only screen and (max-width:4px){.lotusPaging .wefSplitPagerCenter{display:none}}
+.vf_view_container .lotusPaging{background:none}
+/* Phone (portrait) */
+@media only screen and (max-width: 435px){
+.hidePhonePortrait{display:none}
+}
+/* Phone (landscape) */
+@media only screen and (min-width: 436px){
+.hidePhoneLandscape{display:none}
+}
+/* tablet (landscape) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape){
+.hideTabletPortrait{display:none}
+}
+/* tablet (portrait) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait){
+.hideTabletLandscape{display:none}
+}

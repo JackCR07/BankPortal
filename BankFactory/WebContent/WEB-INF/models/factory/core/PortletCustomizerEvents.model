@@ -1,0 +1,56 @@
+<Model id="factory/base/PortletCustomizerEvents"><BuilderCallList><BuilderCall id="bc1"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-Od03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-Od03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Overview</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">This model declares events used for communication between models using the Portlet Customizer builder and Portlet-Customizer-aware containers.</Input>
+<Input name="BuilderCallComment">This model declares events used for communication between models using the Portlet Customizer builder and Portlet-Customizer-aware containers.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc5"><BuilderDefID>com.bowstreet.builders.webapp.EventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ClientSideDelivery">false</Input>
+<Input name="ServerDelivery">true</Input>
+<Input name="EventName">PortletCustomizerProfileDataChanged</Input>
+<Input name="Arguments"><top><Argument><Name>Model</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>ProfileData</Name>
+<Type>java.util.Map</Type>
+</Argument>
+<Argument><Name>CustomizerModel</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Name">PortletCustomizerProfileDataChanged</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

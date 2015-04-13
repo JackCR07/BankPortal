@@ -1,0 +1,271 @@
+<Model id="factory/adapters/CustomEditPage"><BuilderCallList>
+		<BuilderCall id = "bc212">
+			<BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+			<Messages></Messages>
+			<Inputs>
+				<Input name = "Name">copyright</Input>
+				<Input name = "BuilderCallEnabled">true</Input>
+				<Input name = "Comment">Licensed Materials - Property of IBM 
+5724-Od03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+				<Input name = "BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+			</Inputs>
+		</BuilderCall>
+<BuilderCall id="bc18"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Inputs><Input name="Name">main</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>EditPage</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="BuilderCallComment">"main" is the first method or action list called when a model is executed.</Input>
+</Inputs>
+<Cache />
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Inputs><Input name="Name">updateEntriesXML</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>entryData = ${MethodCall/EditPageUtil.getEntries}</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="BuilderCallComment">"main" is the first method or action list called when a model is executed.</Input>
+</Inputs>
+<Cache />
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc24"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="Name">EditPage</Input>
+<Input name="URL" profile="PortletEditPageProperties:PortletEditPage">/factory/portletadapter/portlet_edit_page.html</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc5"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="Extend">false</Input>
+<Input name="ClassName">com.bowstreet.methods.adapters.EditPage</Input>
+<Input name="Name">EditPageUtil</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc9"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Update</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>EditPageUtil.processInputs</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>main</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">Submit form to URL</Input>
+<Input name="IsModelAction">false</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">DoUpdate</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>EditPage</Page>
+<NameSearch>submitbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">OK</Input>
+<Input name="Action">${Java/request.getAttribute("update.return.uri")}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc25"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to a URL</Input>
+<Input name="IsModelAction">false</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">DoCancel</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>EditPage</Page>
+<NameSearch>cancelbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">Cancel</Input>
+<Input name="Action">${Java/request.getAttribute("cancel.return.uri")}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc16"><BuilderDefID>com.bowstreet.builders.webapp.RepeatedRegionBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="StartIndex">1</Input>
+<Input name="SkipCount">0</Input>
+<Input name="Name">loop</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>EditPage</Page>
+<NameSearch>repeat</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="SourceList">${Variables/entryData}</Input>
+<Input name="LoopVariable">loopVar</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc12"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Cache><entry><name>abc</name>
+<prompt>prompt</prompt>
+<uitype>123</uitype>
+<value />
+<extradata />
+</entry>
+</Cache>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">loopVar</Input>
+<Input name="Type">XML</Input>
+<Input name="Value">&lt;entry&gt;
+&lt;name&gt;abc&lt;/name&gt;
+&lt;prompt&gt;prompt&lt;/prompt&gt;
+&lt;uitype&gt;123&lt;/uitype&gt;
+&lt;value&gt;&lt;/value&gt;
+&lt;extradata&gt;&lt;/extradata&gt;
+&lt;/entry&gt;</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[<entry>
+<name>abc</name>
+<prompt>prompt</prompt>
+<uitype>123</uitype>
+<value></value>
+<extradata></extradata>
+</entry>]]></CacheKey>
+<CacheValue><entry><name>abc</name>
+<prompt>prompt</prompt>
+<uitype>123</uitype>
+<value />
+<extradata />
+</entry>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc17"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>EditPage</Page>
+<NameSearch>entry_prompt</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/loopVar/entry/prompt}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc14"><BuilderDefID>com.bowstreet.builders.webapp.VariableInputControlBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>EditPage</Page>
+<NameSearch>entry_value</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="InputType">${Variables/loopVar/entry/uitype}</Input>
+<Input name="Value">${Variables/loopVar/entry/value}</Input>
+<Input name="InputName">${Variables/loopVar/entry/name}</Input>
+<Input name="ExtraData">${Variables/loopVar/entry/extradata}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc15"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">entryData</Input>
+<Input name="Type">XML</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc19"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EventName">Page:EditPage:OnPageLoad</Input>
+<Input name="ActionName">updateEntriesXML</Input>
+<Input name="Name">updateEntries</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc27"><BuilderDefID>com.bowstreet.builders.webapp.ModelActionAccessBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PublicActions"><top><Action><ActionName>Update</ActionName>
+</Action>
+</top>
+</Input>
+<Input name="Name">Public Methods</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><RequiredFactoryVersion>5.0.0</RequiredFactoryVersion>
+<Version>0.0.0</Version>
+<Description>New Model</Description>
+<Contained>false</Contained>
+<EnableGenerationCaching>true</EnableGenerationCaching>
+<Roles />
+<EnableFailover>false</EnableFailover>
+</Properties>
+<Dependencies><Dependency type="File">/factory/portletadapter/portlet_edit_page.html</Dependency>
+<Dependency type="Class">com.bowstreet.methods.adapters.EditPage</Dependency>
+</Dependencies>
+<ExternalProperties />
+</Model>

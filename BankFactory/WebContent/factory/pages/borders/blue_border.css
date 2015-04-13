@@ -1,0 +1,13 @@
+@import url(base_border.css);
+.tl {background:url(../../images/borders/blue_tl.jpg) 0 0 no-repeat;}
+.tc {background:url(../../images/borders/blue_tc.jpg) 0 0 repeat-x #E8F2FE;}
+.tr {background:url(../../images/borders/blue_tr.jpg) 100% 0 no-repeat; padding: 20px}
+
+.lc {background:url(../../images/borders/blue_lc.jpg) 0 0 repeat-y;}
+.rc {background:url(../../images/borders/blue_rc.jpg) 100% 0 repeat-y;}
+
+.bl {background:url(../../images/borders/blue_bl.jpg) 0 100% no-repeat;  }
+.bc {background:url(../../images/borders/blue_bc.jpg) 0 100% repeat-x; }
+.br {background:url(../../images/borders/blue_br.jpg) 100% 100% no-repeat;}
+
+.tc, .bc {width: 300;} 

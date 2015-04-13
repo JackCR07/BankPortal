@@ -1,0 +1,61 @@
+<!--  **************************  Black/Gray Mobile Theme **********************************
+
+A theme is a collection of style information that can be used to drive builder inputs that provide the application UI in your model.
+This information can include but is not limited to HTML templates, style sheets (CSS), base pages, highlighting style, and paging style. 
+
+This theme file extents the mobile.uitheme and changes the look of the page header, buttons, and tables to use a gray and black color scheme.
+
+For more Theme information please see the "Themes and user interface control" section of the product documentation.
+
+
+This is a good starting point for creating a new similar theme.
+
+Below is a list of artifacts used by this theme:
+
+New theme file (this file).
+WebContent/WEB-INF/factory/themes/mobile/mobile_gray.uitheme
+
+Style sheet for the page content and header.
+WebContent/factory/html_templates/mobile/mobile_gray.css
+
+Style sheet for the navigation and submit buttons.
+WebContent/factory/html_templates/mobile/mobile_gray_buttons.css
+
+Images used when styling the buttons.
+WebContent/factory/images/mobile/grayButton.png
+WebContent/factory/images/mobile/grayBackButton.png
+
+style for simplified paging buttons.
+WebContent/factory/pages/mobile/paging/paging_links_gray.css
+
+-->
+<Theme extends="/WEB-INF/factory/themes/mobile/mobile.uitheme">
+
+    <DataPage_StyleSheetOverride>/factory/html_templates/mobile/mobile_gray.css</DataPage_StyleSheetOverride>
+    
+    <ViewAndForm_ViewPageStyleSheetOverride>/factory/html_templates/mobile/mobile_gray.css</ViewAndForm_ViewPageStyleSheetOverride>
+    <ViewAndForm_DetailPageStyleSheetOverride>/factory/html_templates/mobile/mobile_gray.css</ViewAndForm_DetailPageStyleSheetOverride>
+    <ViewAndForm_UpdatePageStyleSheetOverride>/factory/html_templates/mobile/mobile_gray.css</ViewAndForm_UpdatePageStyleSheetOverride>
+    <ViewAndForm_InputPageStyleSheetOverride>/factory/html_templates/mobile/mobile_gray.css</ViewAndForm_InputPageStyleSheetOverride>
+    
+    <DSUI_StyleSheetOverride>/factory/html_templates/mobile/mobile_gray.css</DSUI_StyleSheetOverride>
+
+    <DSUI_CreatePageStyleSheetOverride>/factory/html_templates/mobile/mobile_gray.css</DSUI_CreatePageStyleSheetOverride>
+    <DSUI_UpdatePageStyleSheetOverride>/factory/html_templates/mobile/mobile_gray.css</DSUI_UpdatePageStyleSheetOverride>
+    <DSUI_DetailsPageStyleSheetOverride>/factory/html_templates/mobile/mobile_gray.css</DSUI_DetailsPageStyleSheetOverride>
+    <DSUI_QueryPageStyleSheetOverride>/factory/html_templates/mobile/mobile_gray.css</DSUI_QueryPageStyleSheetOverride>
+    <DSUI_SearchPageStyleSheetOverride>/factory/html_templates/mobile/mobile_gray.css</DSUI_SearchPageStyleSheetOverride>
+    <DSUI_FilterPageStyleSheetOverride>/factory/html_templates/mobile/mobile_gray.css</DSUI_FilterPageStyleSheetOverride>
+    <DSUI_ListPageStyleSheetOverride>/factory/html_templates/mobile/mobile_gray.css</DSUI_ListPageStyleSheetOverride>
+
+
+    <InputForm_StyleSheetOverride>/factory/html_templates/mobile/mobile_gray.css</InputForm_StyleSheetOverride>
+
+    
+    <Button_StyleSheet>/factory/html_templates/mobile/mobile_gray_buttons.css</Button_StyleSheet>
+    
+    <!-- Simple two button pager -->    
+    <PagingLinks_StyleSheet>/factory/pages/mobile/paging/paging_links_gray.css</PagingLinks_StyleSheet>
+    
+    
+</Theme>

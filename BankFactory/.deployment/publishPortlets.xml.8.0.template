@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request create-oids="true" type="update" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="@SCHEMA@">
+  <portal action="locate">
+    <web-app action="update" active="true" predeployed="true" removable="true" uid="@WEBAPP_UID@">
+      <url>file:///$app_install_root$/@NODE@/@APPNAME@.ear/@APPNAME@.war</url>
+      <context-root>/@APPNAME@</context-root>
+      <display-name>@APPNAME@</display-name>
+
+      <portlet-app action="locate" name="@PORTLETAPP_UID@" uid="@PORTLETAPP_UID@">
+        <portlet action="locate" name="@PORTLET_NAME@" objectid="@PORTLET_OID@" />
+      </portlet-app>
+    </web-app>
+
+    <content-node action="delete" uniquename="@PROJECT_PAGE@" />
+
+    <content-node action="locate" objectid="ibm.portal.Home" uniquename="ibm.portal.Home" />
+
+    <content-node action="update" active="true" allportletsallowed="true" content-parentref="ibm.portal.Home" create-type="explicit" type="label" uniquename="@PROJECT_PAGE@" objectid="@PROJECT_PAGE@">
+      <supported-markup markup="html" update="set" />
+      <localedata locale="en">
+        <title>@PAGE_TITLE@</title>
+      </localedata>
+    </content-node>
+
+    <content-node action="update" active="true" allportletsallowed="true" content-parentref="ibm.portal.Home" create-type="explicit" type="staticpage" uniquename="@PROJECT_PAGE@" objectid="@PAGE_OID@">
+      <localedata locale="en">
+        <title>@PAGE_TITLE@</title>
+      </localedata>
+      <pagecontents markup="html" display-option="inline" />
+      <parameter name="resourceaggregation.profile" type="string" update="set"><![CDATA[profiles/profile_full.json]]></parameter>
+      <parameter name="com.ibm.portal.bookmarkable" type="string" update="set"><![CDATA[true]]></parameter>
+      <parameter name="com.ibm.portal.layout.template.ref" type="string" update="set"><![CDATA[dav:fs-type1/themes/Portal8.0/layout-templates/2ColumnEqual/]]></parameter>
+
+      <component action="update" active="true" ordinal="100" orientation="V" type="container">
+        <component action="update" active="true" ordinal="100" orientation="V" type="container" />
+        <component action="update" active="true" ordinal="200" orientation="H" type="container">
+          <parameter name="com.ibm.portal.layoutnode.localname" type="string" update="set"><![CDATA[ibmHiddenWidgets]]></parameter>
+          <parameter name="css-classes" type="string" update="set"><![CDATA[ibmDndRow hiddenWidgetsContainer]]></parameter>
+        </component>
+
+        <component action="update" active="true" ordinal="300" orientation="H" type="container" name="main">
+          <parameter name="com.ibm.portal.layoutnode.localname" type="string" update="set"><![CDATA[ibmMainContainer]]></parameter>
+          <parameter name="css-classes" type="string" update="set"><![CDATA[wpthemeCol wpthemeLeft ibmDndColumn wpthemePrimaryContainer]]></parameter>
+
+          <component action="update" active="true" ordinal="100" type="control" uniquename="@PORTLET_WINDOW_ID@">
+            <parameter name="com.ibm.portal.content.mashuppage" type="string" update="set"><![CDATA[true]]></parameter>
+            <portletinstance action="update" portletref="@PORTLET_OID@" objectid="@PORTLET_INSTANCE_OID@" />
+          </component>
+
+        </component>
+
+        <component action="update" active="true" ordinal="400" orientation="H" type="container">
+          <parameter name="com.ibm.portal.layoutnode.localname" type="string" update="set"><![CDATA[right]]></parameter>
+          <parameter name="css-classes" type="string" update="set"><![CDATA[wpthemeCol wpthemeLeft ibmDndColumn wpthemeSecondaryContainer]]></parameter>
+
+        </component>
+
+      </component>
+    </content-node>
+
+    <cross-page-wire action="update" immediate-switch="false" ordinal="0" source-pageref="@PAGE_OID@" source-portletinstanceref="@PORTLET_INSTANCE_OID@" source-property="@EVENT@" target-action="@EVENT@" target-pageref="@PAGE_OID@" target-param="@EVENT@" target-portletinstanceref="@PORTLET_INSTANCE_OID@" user="anonymous portal user" />
+
+  </portal>
+</request>

@@ -1,0 +1,116 @@
+function $NAME$Navigate(url)
+{
+    var iframe = document.getElementById("$NAME$");
+    iframe.src = url;
+}
+function $NAME$HookSubmit(frm)
+{
+    var url = frm.action;
+    if (url.indexOf("javascript:") >= 0)
+    {
+        url = url.substring("javascript:".length);
+        url = url.replace(/[^(]*(.*)/, "$1");
+        var args = url.replace("(", "["); 
+        args = args.replace(")", "]"); 
+        args = eval(args);
+
+        url = args[0];
+    }
+    frm.target = "$NAME$";
+    frm.action = url;
+}
+
+function $NAME$HandleLoad()
+{
+    var el = document.getElementById("$NAME$_container");
+    
+    // Get the contents of the special DIV with which the builder wrapped the page.
+    var contentElement = $NAME$.document.getElementById("$NAME$_OuterContent") || $NAME$.document.documentElement;
+    var html = contentElement.innerHTML;
+       
+    // Collect stylesheet references
+    var links = $NAME$.document.getElementsByTagName("link");
+    for (var i = 0; i < links.length; i++)
+    {
+        var url = links[i].getAttribute("href");
+        if (url)
+            $NAME$AddStyleSheet(url);
+    }
+    
+    // Copy the HTML from the IFRAME to the view element.
+    el.innerHTML = html;
+    
+    // Collect scripts from the IFRAME document.
+    var scripts = $NAME$.document.getElementsByTagName("script");
+    var scptTxt = "";
+    for (var i = 0; i < scripts.length; i++)
+    {
+        var scpt = scripts[i].innerHTML;      
+        if (scpt)
+        {
+            // HACK: special-case the script in the gridtable.html
+            // which creates a stylesheet link - this isn't needed
+            // because we copy styles, and provokes a FireFox bug.
+            if (!/_bst_gridtable_css_link/.test(scpt))
+            {
+                scptTxt += scpt + "\n";
+            }
+        }
+    }
+    
+    // If scripts were found above, load them into the root context.
+    if (scptTxt)
+    {
+        var el = document.getElementById("$NAME$_scripts");
+        el.text = scptTxt;
+    }
+}
+
+function $NAME$AppendQueryParameter(url, name, value)
+{
+    var sep = "?";
+    if (url.indexOf("?") > 0)
+        sep = "&";
+    return url + sep + name + "=" + value;
+}
+
+function $NAME$AddStyleSheet(url)
+{
+    var sheetTracker = "";
+    if (!window.$NAME$AddedStyleSheets)
+        window.$NAME$AddedStyleSheets = new Array();
+    if (window.$NAME$AddedStyleSheets[url])
+        return;
+    window.$NAME$AddedStyleSheets[url] = true;
+    
+    // Add stylesheet, using DOM script to insert in HEAD, if possible.
+    if (document.getElementsByTagName && document.getElementById)
+    {
+        var head;          
+        var heads = document.getElementsByTagName("head");
+        if (!heads || heads.length == 0)
+        {
+            var html = document.getElementsByTagName("html")[0];
+            if (html)
+            {
+                head = document.createElement("head");
+                html.appendChild(head);
+            }
+        }
+        else head = heads[0];
+        if (head)
+        {  
+            var link = document.createElement("link");
+            link.setAttribute("rel", "STYLESHEET");
+            link.setAttribute("type", "text/css");
+            link.setAttribute("href", url);
+            head.appendChild(link);
+        }
+    }
+}
+
+document.write('<scr' + 'ipt id="$NAME$_scripts" type="text/javascript"></scr' + 'ipt>');
+
+document.write('<div id="$NAME$_container">$LOADING$</div>');
+
+document.write('<iframe style="display:none" id="$NAME$" name="$NAME$" src="$IFRAME_URL$" onload="$NAME$HandleLoad()"></iframe>');

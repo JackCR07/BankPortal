@@ -1,0 +1,682 @@
+<!-- These are some sample Dojo data definition types to use as base types with Rich Data Definition -->
+<DataDefinitions resources="com.bowstreet.builders.webapp.usertext.messages">
+
+    <BaseDefinitions>
+        <BaseDefinition>/WEB-INF/factory/data_definitions/country_codes.xml</BaseDefinition>
+        <BaseDefinition>/WEB-INF/factory/data_definitions/us_states.xml</BaseDefinition>
+    </BaseDefinitions>
+
+    <!-- Automatic mapping based on type -->
+    <SchemaTypeMappings>
+      <SchemaTypeMap type="date">base_Date</SchemaTypeMap>
+      <SchemaTypeMap type="boolean">base_CheckBox</SchemaTypeMap>
+      <SchemaTypeMap type="string">base_String</SchemaTypeMap>
+      <SchemaTypeMap type="string_enumeration">base_Select</SchemaTypeMap>
+      <SchemaTypeMap type="char">base_ShortString</SchemaTypeMap>
+      <!--  It would be nice to have these
+      <SchemaTypeMap type="dateTime"></SchemaTypeMap>
+      <SchemaTypeMap type="time"></SchemaTypeMap>
+       -->
+      <SchemaTypeMap type="integer">base_Integer</SchemaTypeMap>
+      <SchemaTypeMap type="int">base_Integer</SchemaTypeMap>
+      <SchemaTypeMap type="byte">base_Integer</SchemaTypeMap>
+      <SchemaTypeMap type="short">base_Integer</SchemaTypeMap>
+      <SchemaTypeMap type="long">base_Integer</SchemaTypeMap>
+      <SchemaTypeMap type="double">base_FloatingPoint</SchemaTypeMap>
+      <SchemaTypeMap type="float">base_FloatingPoint</SchemaTypeMap>
+    <SchemaTypeMap type="decimal">base_Integer_Internal</SchemaTypeMap>
+    </SchemaTypeMappings>
+
+    <!-- Automatic mapping based on builder control used from palette-->
+    <ControlBuilderMappings>
+        <ControlBuilderMap type="com.bowstreet.builders.webapp.CheckBoxBuilder">base_CheckBox</ControlBuilderMap>
+        <ControlBuilderMap type="com.bowstreet.builders.webapp.DojoCheckBoxBuilder">base_CheckBox</ControlBuilderMap>
+        <ControlBuilderMap type="com.bowstreet.builders.webapp.TextInputBuilder">base_String</ControlBuilderMap>
+        <ControlBuilderMap type="com.bowstreet.builders.webapp.RadioButtonGroupBuilder">base_RadioGroup</ControlBuilderMap>
+        <ControlBuilderMap type="com.bowstreet.builders.webapp.DojoRadioButtonGroupBuilder">base_RadioGroup</ControlBuilderMap>
+        <ControlBuilderMap type="com.bowstreet.builders.webapp.SelectBuilder">base_Select</ControlBuilderMap>
+        <ControlBuilderMap type="com.bowstreet.builders.webapp.DojoSelectBuilder">base_Select</ControlBuilderMap>
+        <ControlBuilderMap type="com.bowstreet.builders.webapp.TextAreaBuilder">base_TextArea</ControlBuilderMap>
+        <ControlBuilderMap type="com.bowstreet.builders.webapp.CalendarPickerBuilder">base_Date</ControlBuilderMap>
+        <ControlBuilderMap type="com.bowstreet.builders.webapp.DojoDateTextBoxBuilder">base_Date</ControlBuilderMap>
+        <ControlBuilderMap type="com.bowstreet.builders.webapp.DojoEditorBuilder">base_RichText</ControlBuilderMap>
+    </ControlBuilderMappings>
+
+
+    <!-- for variable-length Strings, adds case-insensitive sorting -->
+     <DataDefinition name="base_String">
+      <ReadableName resource_key="BaseString">String</ReadableName>
+      <Description>Variable-length Strings</Description>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="CustomDojoType">dijit.form.TextBox</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+            </Inputs>
+        </DataEntryInputs>
+        <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+     </DataDefinition>
+
+    <DataDefinition name="readOnly_String">
+        <ReadableName resource_key="ReadOnlyString">Read-only String</ReadableName>
+        <Description>Read-only Strings</Description>
+        <ReadOnly>true</ReadOnly>
+        <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+    </DataDefinition>
+
+    <!-- Adds Dojo Rich Text Editor for input -->
+     <DataDefinition name="base_RichText">
+      <ReadableName resource_key="BaseRichTextEdit">Rich Text Editor</ReadableName>
+      <Description>Dojo Rich Text Editor for input</Description>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoEditorBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="Height">150</Input>
+                <Input name="DecodeContent">true</Input>
+             </Inputs>
+        </DataEntryInputs>
+        <Properties>
+            <Property name="EscapeOutputText">false</Property>
+        </Properties>
+        <FormatExpr>ContentFilterFormat</FormatExpr>
+        <TranslateExpr>ContentFilterTranslate</TranslateExpr>
+    </DataDefinition>
+
+    <!-- for short strings like CHAR db fields that should be center aligned, e.g. a currency code or alphanumeric department
+        id -->
+     <DataDefinition name="base_ShortString">
+     <ReadableName resource_key="BaseShortString">Short string</ReadableName>
+        <Description>Short strings like CHAR db fields that should be center aligned, e.g. a currency code or
+            alphanumeric department id</Description>
+       <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="CustomDojoType">dijit.form.TextBox</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+                <Input name="Attributes">
+                    <top>
+                        <Attribute>
+                            <Name>maxlength</Name>
+                            <Value>10</Value>
+                        </Attribute>
+                    </top>
+                </Input>
+            </Inputs>
+        </DataEntryInputs>
+        <ColumnAlignment>center</ColumnAlignment>
+        <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+     </DataDefinition>
+
+     <DataDefinition name="base_Integer_Internal">
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="CustomDojoType">dijit.form.NumberTextBox</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+                <Input name="Attributes">
+                    <top>
+                        <Attribute>
+                            <Name>places</Name>
+                            <Value>0</Value>
+                        </Attribute>
+                    </top>
+                </Input>
+
+            </Inputs>
+        </DataEntryInputs>
+        <ColumnAlignment>right</ColumnAlignment>
+        <PotentialColumnSorting>Numbers</PotentialColumnSorting>
+     </DataDefinition>
+
+    <!-- for integers, adds numeric sorting -->
+     <DataDefinition name="base_Integer" base="base_Integer_Internal">
+      <ReadableName resource_key="BaseInteger">Integer</ReadableName>
+      <Description>Integers</Description>
+      <DataType>integer</DataType>
+     </DataDefinition>
+
+    <!-- for integers, adds numeric sorting -->
+     <DataDefinition name="base_NumericSpinner">
+      <ReadableName resource_key="BaseNumericSpinner">Numeric Spinner</ReadableName>
+      <Description>integers, adds spin control</Description>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="CustomDojoType">dijit.form.NumberSpinner</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+
+                <Input name="Attributes">
+                    <top>
+                        <Attribute>
+                            <Name>constraints</Name>
+                            <Value>{min:0,max:9999,places:0}</Value>
+                        </Attribute>
+                    </top>
+                </Input>
+            </Inputs>
+        </DataEntryInputs>
+        <PotentialColumnSorting>Numbers</PotentialColumnSorting>
+        <ColumnAlignment>right</ColumnAlignment>
+     </DataDefinition>
+
+     <!-- for floats, adds numeric sorting -->
+     <DataDefinition name="base_FloatingPoint">
+       <ReadableName resource_key="BaseFloatingPoint">Floating Point</ReadableName>
+       <Description>Floating point</Description>
+       <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="CustomDojoType">dijit.form.NumberTextBox</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+             </Inputs>
+        </DataEntryInputs>
+        <ColumnAlignment>right</ColumnAlignment>
+        <DataType>float</DataType>
+        <PotentialColumnSorting>Numbers</PotentialColumnSorting>
+     </DataDefinition>
+
+    <!-- date - this assumes internal date format is a ISO-8601 string yyyy-mm-dd (e.g. 2007-06-01) -->
+     <DataDefinition name="base_Date">
+        <ReadableName resource_key="BaseDate">Date: yyyy-MM-dd</ReadableName>
+        <Description>Date - this assumes internal date format is a ISO-8601 string yyyy-mm-dd</Description>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoDateTextBoxBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="CustomDojoType">dijit.form.DateTextBox</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+            </Inputs>
+        </DataEntryInputs>
+        <ValidateExpr>Date(yyyy-MM-dd)</ValidateExpr>
+      <PotentialColumnSorting>Date</PotentialColumnSorting>
+      <!-- Use FormattedTextBuilder so we can format just the display value since the Dojo picker formats the input on the client -->
+      <DisplayControl>com.bowstreet.builders.webapp.FormattedTextBuilder</DisplayControl>
+      <DisplayInputs>
+          <Inputs>
+              <Input name="Type">Date</Input>
+              <Input name="Editable">No</Input>
+              <Input name="FormatExpression" before_resource="Format(yyyy-MM-dd$" after_resource=")" resource_key="BaseDate_DisplayFormat">MM/dd/yyyy</Input>
+          </Inputs>
+      </DisplayInputs>
+    </DataDefinition>
+
+    <!-- date - this assumes internal date format is yyyy-MM-dd -->
+    <DataDefinition name="readOnly_Date">
+        <ReadableName resource_key="ReadOnlyDate">Read-only Date: yyyy-MM-dd</ReadableName>
+        <Description>Read-only Date - assumes internal date format is yyyy-MM-dd</Description>
+        <TranslateExpr before_resource="Translate(yyyy-MM-dd$" after_resource=")" resource_key="BaseDate_DisplayFormat">MM/dd/yyyy</TranslateExpr>
+        <ValidateExpr>Date(yyyy-MM-dd)</ValidateExpr>
+        <PotentialColumnSorting>Date</PotentialColumnSorting>
+        <ReadOnly>true</ReadOnly>
+       <DisplayControl>com.bowstreet.builders.webapp.FormattedTextBuilder</DisplayControl>
+      <DisplayInputs>
+          <Inputs>
+              <Input name="Type">Date</Input>
+              <Input name="Editable">No</Input>
+              <Input name="FormatExpression" before_resource="Format(yyyy-MM-dd$" after_resource=")" resource_key="BaseDate_DisplayFormat">MM/dd/yyyy</Input>
+          </Inputs>
+      </DisplayInputs>
+    </DataDefinition>
+
+    <!-- Sample to show how to convert MM/dd/yyyy (e.g. 06/01/2007) internal date format to a ISO-8601 string yyyy-mm-dd
+        (e.g. 2007-06-01) required by the Dojo DateTextBox -->
+    <DataDefinition name="base_DateConvert" base="base_Date">
+      <ReadableName resource_key="BaseDateConvert">Date: Converts MM/dd/yyyy to yyyy-mm-dd</ReadableName>
+        <Description>Date - Converts MM/dd/yyyy (e.g. 06/01/2007) internal date format to a ISO-8601 string yyyy-mm-dd</Description>
+        
+        <!-- Don't get these from resource - they represent the format Dojo Picker expects.  It will display in a language-dependent format -->
+        <FormatExpr>Format(MM/dd/yyyy$yyyy-MM-dd)</FormatExpr>
+        <TranslateExpr>Translate(MM/dd/yyyy$yyyy-MM-dd)</TranslateExpr>
+        <ValidateExpr>Date(MM/dd/yyyy)</ValidateExpr>
+    </DataDefinition>
+
+    <!-- Domino date - this assumes internal date format is MM/dd/yy hh:mm:ss a -->
+     <DataDefinition name="base_DefaultDominoDate">
+        <ReadableName resource_key="BaseDominoDate">Date from Domino: MM/dd/yy hh:mm:ss a</ReadableName>
+        <Description>Domino date - assumes internal date format is MM/dd/yy hh:mm:ss a</Description>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoDateTextBoxBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="DojoType">dijit.form.DateTextBox</Input>
+            </Inputs>
+        </DataEntryInputs>
+        <FormatExpr>Format(MM/dd/yy hh:mm:ss a$yyyy-MM-dd)</FormatExpr>
+        <TranslateExpr>Translate(MM/dd/yy hh:mm:ss a$yyyy-MM-dd)</TranslateExpr>
+        <ValidateExpr>Date(MM/dd/yyyy hh:mm:ss a)</ValidateExpr>
+        <PotentialColumnSorting>Date</PotentialColumnSorting>
+        <!-- Use FormattedTextBuilder so we can format just the display value as the Dojo picker formats the input on the client -->
+      <DisplayControl>com.bowstreet.builders.webapp.FormattedTextBuilder</DisplayControl>
+      <DisplayInputs>
+          <Inputs>
+              <Input name="Type">Date</Input>
+              <Input name="Editable">No</Input>
+              <Input name="FormatExpression"  before_resource="Format(MM/dd/yyyy hh:mm:ss a$" after_resource=")" resource_key="BaseDate_DisplayFormat">MM-dd-yyyy</Input>
+          </Inputs>
+      </DisplayInputs>
+    </DataDefinition>
+
+    <!-- time - this assumes internal time format is a ISO-8601 string 'T'HH:mm:ss (e.g. T09:00:00)-->
+     <DataDefinition name="base_ISOTime">
+        <ReadableName before_resource="" after_resource=" 'T'HH:mm:ss" resource_key="BaseTime" >ISO Time:</ReadableName>
+	    <Description>Time - this assumes internal date format is a ISO-8601 string 'T'HH:mm:ss</Description>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoDateTextBoxBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="DojoType">dijit.form.TimeTextBox</Input>
+            </Inputs>
+        </DataEntryInputs>
+        <PotentialColumnSorting>Time</PotentialColumnSorting>
+        <!-- Use FormattedTextBuilder so we can format just the display value as the Dojo picker formats the input on the client -->
+        <DisplayControl>com.bowstreet.builders.webapp.FormattedTextBuilder</DisplayControl>
+        <DisplayInputs>
+          <Inputs>
+              <Input name="Type">Date</Input>
+              <Input name="Editable">No</Input>
+              <Input name="FormatExpression"  before_resource="Format('T'HH:mm:ss$" after_resource=")" resource_key="BaseTime_DisplayFormat">HH:mm:ss a</Input>
+          </Inputs>
+        </DisplayInputs>
+     </DataDefinition>
+
+     <DataDefinition name="base_Time" base="base_ISOTime">
+        <ReadableName before_resource="" after_resource=" HH:mm:ss" resource_key="BaseTime">Norm Time:</ReadableName>
+        <Description>Time - this assumes internal date format is hh:mm:ss</Description>
+        
+        <!-- Don't get these from resource - they represent the format Dojo Picker expects.  It will display in a language-dependent format -->
+        <FormatExpr>Format(HH:mm:ss$'T'HH:mm:ss)</FormatExpr>
+        <TranslateExpr>Translate(HH:mm:ss$'T'HH:mm:ss)</TranslateExpr>
+        <ValidateExpr>Date(HH:mm:ss)</ValidateExpr>    
+     </DataDefinition>
+
+     <DataDefinition name="base_Time_Short" base="base_ISOTime">
+        <ReadableName resource_key="BaseTime" before_resource="" after_resource=" HH:mm">Short Time:</ReadableName>
+        <Description>Time - this assumes internal date format is HH:mm</Description>
+        
+        <!-- Don't get these from resource - they represent the format Dojo Picker expects.  That will display in a language-dependent format -->
+        <FormatExpr>Format(HH:mm$'T'HH:mm:ss)</FormatExpr>
+        <TranslateExpr>Translate(HH:mm$'T'HH:mm:ss)</TranslateExpr>
+        <ValidateExpr>Date(HH:mm)</ValidateExpr>    
+     </DataDefinition>
+
+
+    <!-- formatting and sorting for currency values.  -->
+     <DataDefinition name="base_Currency">
+      <ReadableName resource_key="BaseCurrency">Currency: #,###.00</ReadableName>
+      <Description>Formatting for currency values</Description>
+        <DataType>decimal</DataType>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="CustomDojoType">dijit.form.CurrencyTextBox</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+            </Inputs>
+        </DataEntryInputs>
+        <ColumnAlignment>right</ColumnAlignment>
+        <PotentialColumnSorting>Numbers</PotentialColumnSorting>
+        <!-- Use FormattedTextBuilder so we can format just the display value since the Dojo picker formats the input on
+            the client -->
+        <DisplayControl>com.bowstreet.builders.webapp.FormattedTextBuilder</DisplayControl>
+        <DisplayInputs>
+            <Inputs>
+                <Input name="Type">Number</Input>
+                <Input name="Editable">No</Input>
+                <Input name="FormatExpression" before_resource="NumberFormat(" resource_key="Currency_FormatExpr" after_resource=")">#,###.00</Input>
+            </Inputs>
+        </DisplayInputs>
+    </DataDefinition>
+
+
+    <!-- formatting and sorting for currency values. Force US $ currency format -->
+     <DataDefinition name="base_Currency_USD" base="base_Currency">
+      <ReadableName resource_key="BaseCurrencyUSD">Currency: $#,###.00</ReadableName>
+        <Description>Formatting and sorting for currency values. Force US $ currency format</Description>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="DojoType">dijit.form.CurrencyTextBox</Input>
+                <Input name="Attributes">
+                    <top>
+                        <Attribute>
+                            <!-- ISO 4217 currency code for United States Dollars -->
+                            <Name>currency</Name>
+                            <Value>USD</Value>
+                        </Attribute>
+                    </top>
+                </Input>
+            </Inputs>
+        </DataEntryInputs>
+        <ColumnAlignment>right</ColumnAlignment>
+        <PotentialColumnSorting>Numbers</PotentialColumnSorting>
+        <!-- Use FormattedTextBuilder so we can format just the display value since the Dojo picker formats the input on
+            the client -->
+        <DisplayControl>com.bowstreet.builders.webapp.FormattedTextBuilder</DisplayControl>
+        <DisplayInputs>
+            <Inputs>
+                <Input name="Type">Number</Input>
+                <Input name="Editable">No</Input>
+                <Input name="FormatExpression" before_resource="NumberFormat(" resource_key="Currency_USD_FormatExpr" after_resource=")">$#,###.00</Input>
+            </Inputs>
+        </DisplayInputs>
+    </DataDefinition>
+
+    <!-- base percentage type -->
+    <DataDefinition name="base_Percentage">
+        <ReadableName resource_key="BasePercentage">Decimal:  #,##0.0</ReadableName>
+        <Description>Percentage type</Description>
+        <ColumnAlignment>right</ColumnAlignment>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="CustomDojoType">dijit.form.NumberTextBox</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+               <Input name="Attributes">
+                    <top>
+                        <Attribute>
+                            <Name>constraints</Name>
+                            <Value>{type:'percent'}</Value>
+                        </Attribute>
+                    </top>
+                </Input>
+              </Inputs>
+        </DataEntryInputs>
+        <PotentialColumnSorting>Numbers</PotentialColumnSorting>
+        <!-- Use FormattedTextBuilder so we can format just the display value since the Dojo picker formats the input on
+            the client -->
+        <DisplayControl>com.bowstreet.builders.webapp.FormattedTextBuilder</DisplayControl>
+        <DisplayInputs>
+            <Inputs>
+                <Input name="Type">Number</Input>
+                <Input name="Editable">No</Input>
+                <Input name="FormatExpression" before_resource="NumberFormat(" resource_key="Percentage_FormatExpr" after_resource=")">#,##0.0</Input>
+            </Inputs>
+        </DisplayInputs>
+
+    </DataDefinition>
+
+
+    <!-- date with year only and sortable -->
+    <DataDefinition name="base_Year">
+    <ReadableName resource_key="BaseYear">Year only</ReadableName>
+      <Description>Date with year only and sortable</Description>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="CustomDojoType">dijit.form.NumberTextBox</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+                <Input name="Attributes">
+                    <top>
+                        <Attribute>
+                            <Name>maxlength</Name>
+                            <Value>4</Value>
+                        </Attribute>
+                    </top>
+                </Input>
+            </Inputs>
+        </DataEntryInputs>
+        <DataType>year</DataType>
+        <ColumnAlignment>right</ColumnAlignment>
+        <PotentialColumnSorting>Numbers</PotentialColumnSorting>
+    </DataDefinition>
+
+    <!-- text area input -->
+     <DataDefinition name="base_TextArea">
+      <ReadableName resource_key="BaseTextArea">TextArea input</ReadableName>
+      <Description>Text area input</Description>
+      <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+       <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+             <Inputs>
+                <Input name="DojoType">dijit.form.Textarea</Input>
+                <Input name="Attributes">
+                    <top>
+                        <Attribute>
+                            <Name>style</Name>
+                            <Value>width:180px;</Value>
+                        </Attribute>
+                    </top>
+                </Input>
+
+            </Inputs>
+        </DataEntryInputs>
+     </DataDefinition>
+
+    <!-- for URLs -->
+    <DataDefinition name="base_URL">
+        <ReadableName resource_key="BaseURL">URL</ReadableName>
+        <Description>URL Active Text</Description>
+        <DisplayControl>com.bowstreet.builders.webapp.ActiveTextBuilder</DisplayControl>
+        <DisplayInputs>
+            <Inputs>
+                <Input name="Scheme"></Input>
+            </Inputs>
+        </DisplayInputs>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="CustomDojoType">dijit.form.TextBox</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+            </Inputs>
+        </DataEntryInputs>
+        <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+    </DataDefinition>
+
+    <!-- for phone numbers -->
+    <DataDefinition name="base_PhoneNumber">
+        <ReadableName resource_key="BasePhoneNumber">Phone Number</ReadableName>
+        <Description>Phone Number Active Text</Description>
+        <DisplayControl>com.bowstreet.builders.webapp.ActiveTextBuilder</DisplayControl>
+        <DisplayInputs>
+            <Inputs>
+                <Input name="Scheme">tel:</Input>
+            </Inputs>
+        </DisplayInputs>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="CustomDojoType">dijit.form.TextBox</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+            </Inputs>
+        </DataEntryInputs>
+        <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+    </DataDefinition>
+
+    <!-- for SMS messages -->
+    <DataDefinition name="base_SMS">
+        <ReadableName resource_key="BaseSMS">SMS</ReadableName>
+        <Description>SMS Active Text</Description>
+        <DisplayControl>com.bowstreet.builders.webapp.ActiveTextBuilder</DisplayControl>
+        <DisplayInputs>
+            <Inputs>
+                <Input name="Scheme">sms:</Input>
+            </Inputs>
+        </DisplayInputs>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="CustomDojoType">dijit.form.TextBox</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+            </Inputs>
+        </DataEntryInputs>
+        <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+    </DataDefinition>
+
+     <!-- input for email address -->
+     <DataDefinition name="base_Email">
+      <ReadableName resource_key="BaseEmail">E-Mail Address</ReadableName>
+      <Description>Input for email address</Description>
+        <DisplayControl>com.bowstreet.builders.webapp.ActiveTextBuilder</DisplayControl>
+        <DisplayInputs>
+            <Inputs>
+                <Input name="Scheme">mailto:</Input>
+            </Inputs>
+        </DisplayInputs>
+       <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+             <Inputs>
+                <Input name="CustomDojoType">dijit.form.ValidationTextBox</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+                <Input name="Attributes">
+                    <top>
+                        <Attribute>
+                            <Name>regExp</Name>
+                            <!-- sample email address validation -->
+                            <Value>[\w._%+-]+@[\w._%+-]+\.[a-zA-Z]+</Value>
+                        </Attribute>
+                    </top>
+                </Input>
+            </Inputs>
+        </DataEntryInputs>
+        <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+     </DataDefinition>
+
+     <!-- input for zip code or zip + 4 -->
+     <DataDefinition name="base_ZipCode">
+      <ReadableName resource_key="BaseZipCode">Zip Code</ReadableName>
+      <Description>Input for zip code or zip + 4</Description>
+       <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+             <Inputs>
+                <Input name="CustomDojoType">dijit.form.ValidationTextBox</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+                <Input name="Attributes">
+                    <top>
+                        <Attribute>
+                            <Name>regExp</Name>
+                            <Value>(\d{5})|(\d{5}-\d{4})</Value>
+                        </Attribute>
+                    </top>
+                </Input>
+            </Inputs>
+        </DataEntryInputs>
+        <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+     </DataDefinition>
+
+    <!-- password text input -->
+    <DataDefinition name="base_Password">
+      <ReadableName resource_key="BasePassword">Password</ReadableName>
+      <Description>Password text input</Description>
+       <DataEntryControl>com.bowstreet.builders.webapp.DojoFormElementsBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="CustomDojoType">dijit.form.TextBox</Input>
+                <Input name = "DojoType">Custom</Input>
+                <Input name = "ElementName">input</Input>
+                <Input name="Attributes">
+                    <top>
+                        <Attribute>
+                            <Name>Type</Name>
+                            <Value>password</Value>
+                        </Attribute>
+                        <Attribute>
+                            <Name>type</Name>
+                            <Value>password</Value>
+                        </Attribute>
+                    </top>
+                </Input>
+               <Input name="HandleExisting">Replace</Input>
+            </Inputs>
+        </DataEntryInputs>
+        <DisplayControl>com.bowstreet.builders.webapp.TextBuilder</DisplayControl>
+        <DisplayInputs>
+            <Inputs>
+                <Input name="Text">****</Input>
+            </Inputs>
+        </DisplayInputs>
+    </DataDefinition>
+
+    
+
+    <!-- applies checkbox builder for data entry (assumes true/false values -->
+    <DataDefinition name="base_CheckBox">
+      <ReadableName resource_key="BaseCheckbox">Boolean (Checkbox)</ReadableName>
+      <Description>Checkbox builder for data entry (assumes true/false values) </Description>
+      <DataEntryControl>com.bowstreet.builders.webapp.DojoCheckBoxBuilder</DataEntryControl>
+      <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+    </DataDefinition>
+
+    <!-- applies Select builder for data entry, user should provide lookup table or choices -->
+    <DataDefinition name="base_Select">
+        <ReadableName resource_key="BaseSelect">Select (Dojo filtering drop down)</ReadableName>
+        <Description>Filtering Select builder for data entry, user should provide lookup table or choices</Description>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoSelectBuilder</DataEntryControl>
+        <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+    </DataDefinition>
+    
+    <!-- applies Non-Editable Select builder for data entry, user should provide lookup table or choices -->
+    <DataDefinition name="base_DojoSelect">
+        <ReadableName resource_key="BaseDojoSelect">Select (Dojo non-filtering drop down)</ReadableName>
+        <Description>Select builder for data entry, user should provide lookup table or choices</Description>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoSelectBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="DojoWidgetType">dijit.form.Select</Input>
+            </Inputs>
+        </DataEntryInputs>
+        <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+    </DataDefinition>
+
+    <!-- applies Radio Button Group builder for data entry, user should provide lookup table or choices -->
+    <DataDefinition name="base_RadioGroup">
+        <ReadableName resource_key="BaseRdaioGroup">Radio Button Group (Vertical)</ReadableName>
+        <Description>Radio Button Group builder for data entry, user should provide lookup table or choices
+        </Description>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoRadioButtonGroupBuilder</DataEntryControl>
+        <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+    </DataDefinition>
+
+    <!-- applies Radio Button Group builder for data entry, user should provide lookup table or choices -->
+    <DataDefinition name="base_RadioGroup_Horizontal">
+        <ReadableName resource_key="BaseRadioGroupHorizontal">Radio Button Group (Horizontal)</ReadableName>
+        <Description>Radio Button Group builder for data entry, user should provide lookup table or choices
+        </Description>
+        <DataEntryControl>com.bowstreet.builders.webapp.DojoRadioButtonGroupBuilder</DataEntryControl>
+        <DataEntryInputs>
+            <Inputs>
+                <Input name="Orientation">horizontal</Input>
+            </Inputs>
+        </DataEntryInputs>
+        <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+    </DataDefinition>
+
+    <!-- For display of image from URL -->
+    <DataDefinition name="base_Image">
+     <ReadableName resource_key="BaseImage">Image Display</ReadableName>
+     <Description>Display Image from URL</Description>
+       <DataEntryControl>com.bowstreet.builders.webapp.ImageBuilder</DataEntryControl>
+       <DataEntryInputs>
+           <Inputs>
+           </Inputs>
+       </DataEntryInputs>
+     <DisplayControl>com.bowstreet.builders.webapp.ImageBuilder</DisplayControl>
+     <DisplayInputs>
+         <Inputs>
+         </Inputs>
+     </DisplayInputs>
+    </DataDefinition>
+
+    <!-- lookup table with ISO 3166 country codes -->
+     <DataDefinition name="base_ISOCountryCodes" base="base_ISOCountryCodesLookup">
+       <Description>Lookup table with ISO 3166 country codes</Description>
+       <!-- The list is in separate XML file -->
+       <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+    </DataDefinition>
+
+    <!-- lookup table with US states -->
+     <DataDefinition name="base_US_States" base="base_US_StatesLookup">
+       <Description>Lookup table with US states </Description>
+       <!-- The list is in separate XML file -->
+       <PotentialColumnSorting>Case Insensitive String</PotentialColumnSorting>
+     </DataDefinition>
+
+</DataDefinitions>

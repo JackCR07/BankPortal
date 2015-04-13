@@ -1,0 +1,60 @@
+/* Copyright IBM Corp.2012 */
+@import url(WEF8.5_uitheme.css);
+.DataEntryGroupFieldset{
+    border: 1px solid #EFE2A3;
+}
+.FieldWrapperDiv{
+    float:left;
+    clear: none;
+    padding: 2px;
+    width: 48%;
+    min-height: 3em;
+}
+.DataEntryFieldHolder {
+    min-height: 1em;
+    padding: 4px;
+}
+.label{
+	margin-right: 1em;
+    display:table-cell;
+    float: left;
+    text-align: left;
+    width: 7em;
+}
+
+.DataEntryFieldHolder, .ValidationErrorHolder{
+    display:table-cell;
+    float: left;
+}
+
+.FieldRequiredHolder{
+    display:table-cell;
+    float: left;
+    height: 2em;
+    width: 2em;
+}
+
+.requiredPrompt{
+  font-size: 1em;
+  font-weight: bold;
+  color: #FF0000;
+}
+
+/* Text shown when query for table produced no records. */
+.EmptyDataMessage{
+  font-size: 1em;
+  color: #0000CC;
+  width: 100%;
+  text-align: center;	
+}
+
+@media only screen
+and (max-width : 320px) {
+.FieldWrapperDiv{
+    float:left;
+    clear: both;
+    padding: 2px;
+    width: 98%;
+    min-height: 1em;
+	}
+}

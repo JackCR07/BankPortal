@@ -1,0 +1,12 @@
+<!-- Licensed Materials - Property of IBM, 5724-O03, Copyright IBM Corp. 2010 -->
+<Handler name="Mobile Device Type Handler">
+  <Description>Mobile - Handler for client device type (mobile/browser) profile</Description>
+  <Selection class="com.ibm.wpf.profiles.mobile.DeviceTypeSelectionHandler">
+    <Properties>
+    </Properties>
+  </Selection>
+  <SegmentList class="com.ibm.wpf.profiles.mobile.DeviceTypeSelectionHandler">
+    <Properties>
+    </Properties>
+  </SegmentList>
+</Handler>

@@ -1,0 +1,146 @@
+/* Copyright IBM Corp. 2005,2011 */
+body{
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+/* This is the layout table which wraps an entire Display Page */
+.displayPageTable {}
+
+/* This is the layout table which wraps an entire Display Page */
+.dataEntryPageTable {}
+
+/* for table background-color/border- can be used with cellspacing="1" to provide inner table borders */
+.gridTable{
+  background-color: #666666;
+}
+
+/* for table head row */
+.tableHeadRow{}
+
+/* for table head cells*/
+.tableHead,
+.tableHeadAsc,
+.tableHeadDesc{
+  background-color: #DDDDDD;
+  padding: 3px;
+}
+
+.tableHead{
+  font-weight: normal;
+}
+
+.tableHeadAsc{
+  font-weight: bold;
+}
+.tableHeadDesc{
+  font-weight: lighter;
+}
+
+/* for text in table header cells */
+.tableHeadText{
+  font-size: 11px;
+  font-weight: bold;  
+  color:#333333;
+}
+
+/* for links in table header cells, for sorting */
+a.tableHeadSortLink:link, a.tableHeadSortLink:active, a.tableHeadSortLink:visited{
+  font-size: 11px;
+  font-weight: bold;
+  color:#333333;
+}
+
+a.tableHeadSortLink:hover{
+  text-decoration: underline;
+}
+
+/* for odd repeated rows */
+.tableRowOdd{
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 12px;
+}
+
+/* for even repeated rows */
+.tableRowEven{
+  background-color: #F3F3F3;
+  color: #000000;
+  font-size: 12px;
+}
+
+/* for field inputs or display elements */
+.outputData{
+  color: #000000;
+  font-size:11px;
+  width:300;
+}
+
+/* for links in data (inside tables) */
+a.outputData:link, a.outputData:active, a.outputData:visited{
+  color: #000000;
+  font-size:11px;
+  text-decoration: underline;
+}
+
+a.outputData:hover{
+  color: #0000CC;
+  font-size:11px;
+  text-decoration: underline;
+}
+
+.outputDataRight{
+  color: #000000;
+  font-size:11px;
+  text-align: right;
+}
+
+/* for the labels between sections of inputs or fields */
+.sectionLabel{
+  color: #333333;
+  font-size:11px;
+  font-weight: bold;
+  line-height: 15px;
+}
+
+/* for the table cells containing the sectionLabels */
+.sectionLabelCell {
+  background-color: #DDDDDD;
+  text-indent: 3px;
+}
+
+/* for the text prompts for field inputs or fields */
+.label{
+  color:#000000;
+  font-size:11px;
+  text-indent: 3px;
+}
+
+/* for the table cells containing labels */
+.labelCell{
+  height:27; width:35%;
+  background-color: #F3F3F3;
+  line-height: 16px;
+}
+
+/* for the cell containing any field input or display elements */
+.outputDataCell{
+  background-color: #FFFFFF;
+  line-height: 16px;
+  text-indent: 2px;
+}  
+
+/* for indicating required fields, as with an asterisk */
+.requiredPrompt{
+  font-size: 12px;
+  font-weight: bold;
+  color: #FF0000;
+  padding: 1px;
+}
+
+/* to hightlight error message text */
+.errorMessage {
+  font-size: 11px;
+  color: #FF0000;
+}

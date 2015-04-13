@@ -1,0 +1,11 @@
+/** styles used by Data Layout Template style sheets **/
+@IMPORT url("base_template_styles.css");  
+
+ul.wpfOrderedList {
+list-style-type: decimal;
+}
+
+.wpfOrderedList a.wpfSelectableRow {
+    color: #000000;
+    text-decoration: none;
+}

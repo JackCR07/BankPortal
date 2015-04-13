@@ -1,0 +1,101 @@
+@IMPORT url("base_template_styles.css");  
+
+body {
+  /* set left/right margin to 0 to go to edge */
+   margin-left: 0px;
+   margin-right: 0px;
+   width: 100%;
+}
+
+div.vf_view_container {
+    width:100%;
+    padding: 0px;
+}
+
+.vf_view_list {
+   width:100%;
+}
+
+.wpfThumbnailMultiLineListE2EWT a.wpfSelectableRow {
+    color: #222222;
+    text-decoration: none;
+}
+    
+.wpfThumbnailMultiLineListE2EWT .wpfLeft {
+    float: left;
+    padding: 2px;
+}
+
+.wpfThumbnailMultiLineListE2EWT .wpfCenterContainer {
+    float: left;
+    width: 60%;
+}   
+
+.wpfThumbnailMultiLineListE2EWT .wpfCenter {
+    padding-left: 3px;
+    padding-right: 3px;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden; 
+}
+
+.wpfThumbnailMultiLineListE2EWT .wpfRight {
+    float: right;
+    margin-right: 20px;
+    line-height: 58px;    
+    white-space: nowrap;
+    overflow: hidden;
+    width: 15%;
+}
+
+.wpfThumbnailMultiLineListE2EWT .wpfListItem img
+{
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}
+
+.wpfThumbnailMultiLineListE2EWT {
+    width:100%;
+    min-width: 305px;
+ }
+
+.wpfThumbnailMultiLineListE2EWT .wpfListItem
+{
+    text-decoration: none;
+    color: #222222;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 2px 0px 2px 0px;
+    border-bottom: 1px solid #999999;
+    height: 56px; 
+    margin-left: 2px;
+    margin-right: 2px;
+    background-color: #FFFFFF;
+    width: 100%;
+    display:table;
+    height: auto;
+}
+
+.wpfThumbnailMultiLineListE2EWT a.wpfLargeTitleText
+{
+    text-decoration: none;
+    color: #105CB6;
+}
+
+.wpfThumbnailMultiLineListE2EWT a.wpfLargeTitleText:HOVER{
+    text-decoration: underline;
+}
+
+.wpfThumbnailMultiLineListE2EWT .wpfCenterWrap {
+    text-overflow: visible; 
+    white-space: normal;
+    overflow: visible; 
+    padding: 5px 3px 5px 3px;
+}
+
+.wpfThumbnailMultiLineListE2EWT .wpfCenterContainer {
+    float: left;
+    width: 75%;
+}

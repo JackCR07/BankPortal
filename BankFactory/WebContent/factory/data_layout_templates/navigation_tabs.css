@@ -1,0 +1,47 @@
+@IMPORT url("base_template_styles.css");
+
+.wpfNavTabRow {
+    height: 50px;
+    width: 100%;
+}
+
+.wpfNavTabRow a.wpfSelectableRow {
+    float: left;
+    color: #000000;
+    text-decoration: none;
+}
+
+.wpfNavTabRow .wpfTabColumn {
+    float: left;
+    height: 40px;
+    padding: 2px;
+    margin: 2px;
+    border: 1px solid #999999;
+    background-color: #F0F0F0;
+    display: table;
+}
+
+.wpfNavTabRow .selected .wpfTabColumn {
+    background-color: #D0D0D0;
+}
+
+.wpfNavTabRow .wpfTabText, .wpfTabImage {
+    text-align: center;
+    height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.wpfNavTabRow .wpfTabImage img {
+    height: 20px;
+}
+
+.wpfNavTabRow .wpfTabColumn .wpfTabColumnContents {
+    min-width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}

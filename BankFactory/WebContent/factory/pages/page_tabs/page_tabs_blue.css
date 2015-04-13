@@ -1,0 +1,60 @@
+@IMPORT url("../tabbedPagesStyles.css");
+
+    /** regular unselected tab style */
+    .tabbedPagesTabCell {
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        background-color:  none;         
+        border-bottom: 1px solid #3399FF;
+    }
+        
+    /** selected tab style */   
+    .tabbedPagesTabCellSelected {
+        border-top: none;
+        border-right: none;
+        border-left: none; 
+    }
+    
+    /** regular unselected tab text style */            
+    .tabbedPagesTabText {
+        color: #004E98;
+    }
+
+    /** selected tab text style */      
+    .tabbedPagesTabTextSelected {
+        color: #004E98;
+    }
+
+    /** Just has a bottom solid border to form top of container, for use between tabs or in the same row as tabs */
+    .tabbedPagesTabSpacer   {
+        border-bottom: 1px solid #3399FF;
+    }
+
+    /** The main content area has a solid border on sides and bottom (top is provided by spacer style above. */ 
+    .tabbedPagesContentArea {
+        border-bottom: 1px solid #3399FF;
+        border-right: 1px solid #3399FF;
+        border-left: 1px solid #3399FF;
+    }
+    
+    /** Images for rounded corners */ 
+    .tabbedPagesTabCell .TabImageRight {
+        background: url(../../images/tabs/blue_right.gif) no-repeat right 0;
+    }
+    
+   .tabbedPagesTabCell .TabImageLeft {
+        background: url(../../images/tabs/blue_left.gif) no-repeat;
+    }
+     
+    .tabbedPagesTabCellSelected .TabImageRight {
+         background: url(../../images/tabs/blue_right_selected.gif) no-repeat right 0;
+    }
+    
+   .tabbedPagesTabCellSelected .TabImageLeft {
+         background: url(../../images/tabs/blue_left_selected.gif) no-repeat;
+    }
+
+      
+
+    

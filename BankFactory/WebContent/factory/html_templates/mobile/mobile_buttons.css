@@ -1,0 +1,63 @@
+/** Copyright IBM Corp. 2011 */
+/** Style classes for mobile buttons */
+.wpfMobilePage .wpfBlueButton:hover,.wpfBlueButton:focus {
+}
+
+.wpfMobilePage input.wpfBlueButton,.wpfMobilePage button.wpfBlueButton {
+  cursor: pointer;
+  padding: 2px 7px 3px;
+}
+
+.wpfMobileBackButton,.wpfMobileCancelButton {
+  float: left;
+}
+
+.wpfMobileLogoutButton {
+  float: right;
+}
+
+.wpfMobileUpdateButton,.wpfMobileSubmitButton,.wpfMobileCreateButton {
+  width: 50%;
+}
+
+.wpfMobilePageHeader .wpfBlueButton {
+  margin-right: 2px;
+  height: 30px;
+  line-height: 26px;
+  padding: 0px;
+  margin-top: 3px;
+  margin-bottom: 1px;
+  margin-left: 3px;
+  font-size: 1.1em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 80px;
+  border-width: 0px 8px 0px 8px;
+}
+
+.wpfMobilePage input.wpfMobileBackButton, .wpfMobilePage input.wpfMobileCancelButton {
+  -webkit-border-image: url(../../images/mobile/back.png) 0 6 0 9 stretch;
+  -moz-border-image: url(../../images/mobile/back.png) 0 6 0 9 stretch !important;
+  border-width: 0px 6px 0px 9px;
+  line-height: 27px;
+  overflow: hidden;
+  text-decoration: none;
+  background-image: none;
+  padding: 0px;
+}
+
+.wpfMobilePage .wpfMobilePageHeader .wpfMobileLogoutButton {
+  -webkit-border-image: url(../../images/mobile/button.png) 0 7 0 7 stretch;
+  -moz-border-image: url(../../images/mobile/button.png) 0 7 0 7 stretch !important;
+  margin-top: 2px;
+  margin-right: 3px;
+}
+
+.wpfMobilePage .wpfBlueButton {
+  background-image: none;
+  background-color: transparent;
+  -webkit-border-image: url(../../images/mobile/button.png) 0 9 0 9 stretch;
+  -moz-border-image: url(../../images/mobile/button.png) 0 9 0 9 stretch !important;
+  border-width: 0px 6px 0px 9px;
+}
+

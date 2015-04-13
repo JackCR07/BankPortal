@@ -1,0 +1,742 @@
+<Model id="factory/wizardbase/database_service_provider"><BuilderCallList><BuilderCall id="bc18"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2002, 2006. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2002, 2006. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ServiceDefinitionBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PublicService">true</Input>
+<Input name="ExportAsWSDL" profile="databaseserviceproviderps:ServiceDefinition_GenerateWSDL">false</Input>
+<Input name="MaintainState">false</Input>
+<Input name="GenerateStubAutomatically">false</Input>
+<Input name="AddTestingSupport">true</Input>
+<Input name="TestCreateMain">true</Input>
+<Input name="TestIncludeDocumentation">false</Input>
+<Input name="TestOverrideInputs">false</Input>
+<Input name="ServiceName" profile="databaseserviceproviderps:ServiceName">theService</Input>
+<Input name="TestServiceName">theService</Input>
+<Input name="Name">theService</Input>
+<Input name="TestOperationInputs">
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc9"><BuilderDefID>com.bowstreet.builders.webapp.SqlCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EntityTypeToFetch">Tables</Input>
+<Input name="StatementType">Select</Input>
+<Input name="ParameterBinding">AutoCreateXMLVariable</Input>
+<Input name="TransformResult">CompleteXmlDocument</Input>
+<Input name="SchemaGeneration">FromSQLStatement</Input>
+<Input name="SchemaRegenTime">OnlyWhenSQLBuilderChangesAreDetected</Input>
+<Input name="SchemaImportRule">ImportOnlyAtDesignTime</Input>
+<Input name="Name" profile="databaseserviceproviderps:SqlCall_Name1">call1</Input>
+<Input name="Parameters" xmlProfile="databaseserviceproviderps:SqlCall_Parameters1"><top><Parameter><Position>1</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/call1Inputs/Parameter1Value}</ValueSetCastMethod>
+</Parameter>
+</top>
+</Input>
+<Input name="FetchDataSourceNames">Fetch DataSource Names</Input>
+<Input name="SqlDataSourceValues">java:comp/env/jdbc/derby,java:comp/env/jdbc/eCommerce,java:comp/env/jdbc/sample,java:comp/env/jdbc/dashboarddb</Input>
+<Input name="SqlDataSource" profile="databaseserviceproviderps:SqlCall_SqlDataSource1">java:comp/env/jdbc/sample</Input>
+<Input name="SqlStatement" profile="databaseserviceproviderps:SqlCall_SqlStatement1">select * from ORDERS where STATUS like ?</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[$Child$call1Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call1StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/b1/webengine/factory/wizardbase/database_service_provider/call1Transform" targetNamespace="http://localhost:8080/b1/webengine/factory/wizardbase/database_service_provider/call1Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Wednesday, May 3, 2006 2:37:49 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="InputStructureHandling" profile="databaseserviceproviderps:ServiceOperation_InputStructureHandling1">FromOperation</Input>
+<Input name="InputAllowStructureEdit">false</Input>
+<Input name="InputAutomaticMapping">true</Input>
+<Input name="ResultStructureHandling" profile="databaseserviceproviderps:ServiceOperation_ResultStructureHandling1">FromOperation</Input>
+<Input name="ResultSchema" profile="databaseserviceproviderps:ServiceOperation_ResultSchema1"></Input>
+<Input name="ResultAllowStructureEdit">false</Input>
+<Input name="ResultAutomaticMapping">true</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="CachingTimeout">3600</Input>
+<Input name="PreExecuteEventEnabled">disabled</Input>
+<Input name="PostExecuteEventEnabled">disabled</Input>
+<Input name="DataService" profile="databaseserviceproviderps:ServiceName">theService</Input>
+<Input name="ResultMappingTable"><Fields><Field><Name>ORDER_ID</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>DATE_ORDERED</Name>
+<Type>date</Type>
+</Field>
+<Field><Name>STATUS</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>DATE_SHIPPED</Name>
+<Type>date</Type>
+</Field>
+<Field><Name>QUANTITY</Name>
+<Type>integer</Type>
+</Field>
+<Field><Name>AMOUNT</Name>
+<Type>decimal</Type>
+</Field>
+<Field><Name>BILLING</Name>
+<Type>string</Type>
+</Field>
+</Fields>
+</Input>
+<Input name="InputMappingTable"><Fields><Field><Name>Parameter1Value</Name>
+<Type>string</Type>
+</Field>
+</Fields>
+</Input>
+<Input name="OperationName" profile="databaseserviceproviderps:OperationName1">operation1</Input>
+<Input name="TargetOperation" profile="databaseserviceproviderps:ServiceOperation_TargetOperation1">DataServices/call1/execute</Input>
+<Input name="Name">operation1</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc11"><BuilderDefID>com.bowstreet.builders.webapp.SqlCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="databaseserviceproviderps:OperationEnabled2">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EntityTypeToFetch">Tables</Input>
+<Input name="StatementType">Select</Input>
+<Input name="ParameterBinding">AutoCreateXMLVariable</Input>
+<Input name="TransformResult">CompleteXmlDocument</Input>
+<Input name="SchemaGeneration">FromSQLStatement</Input>
+<Input name="SchemaRegenTime">OnlyWhenSQLBuilderChangesAreDetected</Input>
+<Input name="SchemaImportRule">ImportOnlyAtDesignTime</Input>
+<Input name="Name" profile="databaseserviceproviderps:SqlCall_Name2">call2</Input>
+<Input name="Parameters" xmlProfile="databaseserviceproviderps:SqlCall_Parameters2"><top><Parameter><Position>1</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/call2Inputs/Parameter1Value}</ValueSetCastMethod>
+</Parameter>
+</top>
+</Input>
+<Input name="FetchDataSourceNames">Fetch DataSource Names</Input>
+<Input name="SqlDataSourceValues">java:comp/env/jdbc/derby,java:comp/env/jdbc/eCommerce,java:comp/env/jdbc/sample,java:comp/env/jdbc/dashboarddb</Input>
+<Input name="SqlDataSource" profile="databaseserviceproviderps:SqlCall_SqlDataSource2">java:comp/env/jdbc/sample</Input>
+<Input name="SqlStatement" profile="databaseserviceproviderps:SqlCall_SqlStatement2">select * from ORDERS where STATUS like ?</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[$Child$call1Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call1StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call1Transform" targetNamespace="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call1Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Monday, April 17, 2006 1:28:21 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$call2Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call2StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call2Transform" targetNamespace="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call2Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Monday, April 17, 2006 3:02:36 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc12"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="databaseserviceproviderps:OperationEnabled2">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="InputStructureHandling" profile="databaseserviceproviderps:ServiceOperation_InputStructureHandling2">FromOperation</Input>
+<Input name="InputAllowStructureEdit">false</Input>
+<Input name="InputAutomaticMapping">true</Input>
+<Input name="ResultStructureHandling" profile="databaseserviceproviderps:ServiceOperation_ResultStructureHandling2">FromOperation</Input>
+<Input name="ResultSchema" profile="databaseserviceproviderps:ServiceOperation_ResultSchema2" />
+<Input name="ResultAllowStructureEdit">false</Input>
+<Input name="ResultAutomaticMapping">true</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="CachingTimeout">3600</Input>
+<Input name="PreExecuteEventEnabled">disabled</Input>
+<Input name="PostExecuteEventEnabled">disabled</Input>
+<Input name="DataService" profile="databaseserviceproviderps:ServiceName">theService</Input>
+<Input name="ResultMappingTable"><Fields />
+</Input>
+<Input name="InputMappingTable"><Fields />
+</Input>
+<Input name="OperationName" profile="databaseserviceproviderps:OperationName2">operation2</Input>
+<Input name="TargetOperation" profile="databaseserviceproviderps:ServiceOperation_TargetOperation2">DataServices/call2/execute</Input>
+<Input name="Name">operation2</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc13"><BuilderDefID>com.bowstreet.builders.webapp.SqlCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="databaseserviceproviderps:OperationEnabled3">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EntityTypeToFetch">Tables</Input>
+<Input name="StatementType">Select</Input>
+<Input name="ParameterBinding">AutoCreateXMLVariable</Input>
+<Input name="TransformResult">CompleteXmlDocument</Input>
+<Input name="SchemaGeneration">FromSQLStatement</Input>
+<Input name="SchemaRegenTime">OnlyWhenSQLBuilderChangesAreDetected</Input>
+<Input name="SchemaImportRule">ImportOnlyAtDesignTime</Input>
+<Input name="Name" profile="databaseserviceproviderps:SqlCall_Name3">call3</Input>
+<Input name="Parameters" xmlProfile="databaseserviceproviderps:SqlCall_Parameters3"><top><Parameter><Position>1</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/call3Inputs/Parameter1Value}</ValueSetCastMethod>
+</Parameter>
+</top>
+</Input>
+<Input name="FetchDataSourceNames">Fetch DataSource Names</Input>
+<Input name="SqlDataSourceValues">java:comp/env/jdbc/derby,java:comp/env/jdbc/eCommerce,java:comp/env/jdbc/sample,java:comp/env/jdbc/dashboarddb</Input>
+<Input name="SqlDataSource" profile="databaseserviceproviderps:SqlCall_SqlDataSource3">java:comp/env/jdbc/sample</Input>
+<Input name="SqlStatement" profile="databaseserviceproviderps:SqlCall_SqlStatement3">select * from ORDERS where STATUS like ?</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[$Child$call1Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call1StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call1Transform" targetNamespace="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call1Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Monday, April 17, 2006 1:28:21 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$call2Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call2StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call2Transform" targetNamespace="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call2Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Monday, April 17, 2006 3:02:36 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$call3Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call3StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call3Transform" targetNamespace="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call3Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Monday, April 17, 2006 3:20:05 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc14"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="databaseserviceproviderps:OperationEnabled3">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="InputStructureHandling" profile="databaseserviceproviderps:ServiceOperation_InputStructureHandling3">FromOperation</Input>
+<Input name="InputAllowStructureEdit">false</Input>
+<Input name="InputAutomaticMapping">true</Input>
+<Input name="ResultStructureHandling" profile="databaseserviceproviderps:ServiceOperation_ResultStructureHandling3">FromOperation</Input>
+<Input name="ResultSchema" profile="databaseserviceproviderps:ServiceOperation_ResultSchema3" />
+<Input name="ResultAllowStructureEdit">false</Input>
+<Input name="ResultAutomaticMapping">true</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="CachingTimeout">3600</Input>
+<Input name="PreExecuteEventEnabled">disabled</Input>
+<Input name="PostExecuteEventEnabled">disabled</Input>
+<Input name="DataService" profile="databaseserviceproviderps:ServiceName">theService</Input>
+<Input name="ResultMappingTable"><Fields />
+</Input>
+<Input name="InputMappingTable"><Fields />
+</Input>
+<Input name="OperationName" profile="databaseserviceproviderps:OperationName3">operation3</Input>
+<Input name="TargetOperation" profile="databaseserviceproviderps:ServiceOperation_TargetOperation3">DataServices/call3/execute</Input>
+<Input name="Name">operation3</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc15"><BuilderDefID>com.bowstreet.builders.webapp.SqlCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="databaseserviceproviderps:OperationEnabled4">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EntityTypeToFetch">Tables</Input>
+<Input name="StatementType">Select</Input>
+<Input name="ParameterBinding">AutoCreateXMLVariable</Input>
+<Input name="TransformResult">CompleteXmlDocument</Input>
+<Input name="SchemaGeneration">FromSQLStatement</Input>
+<Input name="SchemaRegenTime">OnlyWhenSQLBuilderChangesAreDetected</Input>
+<Input name="SchemaImportRule">ImportOnlyAtDesignTime</Input>
+<Input name="Name" profile="databaseserviceproviderps:SqlCall_Name4">call4</Input>
+<Input name="Parameters" xmlProfile="databaseserviceproviderps:SqlCall_Parameters4"><top><Parameter><Position>1</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/call4Inputs/Parameter1Value}</ValueSetCastMethod>
+</Parameter>
+</top>
+</Input>
+<Input name="FetchDataSourceNames">Fetch DataSource Names</Input>
+<Input name="SqlDataSourceValues">java:comp/env/jdbc/derby,java:comp/env/jdbc/eCommerce,java:comp/env/jdbc/sample,java:comp/env/jdbc/dashboarddb</Input>
+<Input name="SqlDataSource" profile="databaseserviceproviderps:SqlCall_SqlDataSource4">java:comp/env/jdbc/sample</Input>
+<Input name="SqlStatement" profile="databaseserviceproviderps:SqlCall_SqlStatement4">select * from ORDERS where STATUS like ?</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[$Child$call1Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call1StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call1Transform" targetNamespace="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call1Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Monday, April 17, 2006 1:28:21 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$call2Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call2StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call2Transform" targetNamespace="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call2Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Monday, April 17, 2006 3:02:36 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$call3Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call3StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call3Transform" targetNamespace="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call3Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Monday, April 17, 2006 3:20:05 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$call4Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call4StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call4Transform" targetNamespace="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call4Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Monday, April 17, 2006 3:37:39 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc16"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="databaseserviceproviderps:OperationEnabled4">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="InputStructureHandling" profile="databaseserviceproviderps:ServiceOperation_InputStructureHandling4">FromOperation</Input>
+<Input name="InputAllowStructureEdit">false</Input>
+<Input name="InputAutomaticMapping">true</Input>
+<Input name="ResultStructureHandling" profile="databaseserviceproviderps:ServiceOperation_ResultStructureHandling4">FromOperation</Input>
+<Input name="ResultSchema" profile="databaseserviceproviderps:ServiceOperation_ResultSchema4" />
+<Input name="ResultAllowStructureEdit">false</Input>
+<Input name="ResultAutomaticMapping">true</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="CachingTimeout">3600</Input>
+<Input name="PreExecuteEventEnabled">disabled</Input>
+<Input name="PostExecuteEventEnabled">disabled</Input>
+<Input name="DataService" profile="databaseserviceproviderps:ServiceName">theService</Input>
+<Input name="ResultMappingTable"><Fields />
+</Input>
+<Input name="InputMappingTable"><Fields />
+</Input>
+<Input name="OperationName" profile="databaseserviceproviderps:OperationName4">operation4</Input>
+<Input name="TargetOperation" profile="databaseserviceproviderps:ServiceOperation_TargetOperation4">DataServices/call4/execute</Input>
+<Input name="Name">operation4</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.SqlCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="databaseserviceproviderps:OperationEnabled5">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EntityTypeToFetch">Tables</Input>
+<Input name="StatementType">Select</Input>
+<Input name="ParameterBinding">AutoCreateXMLVariable</Input>
+<Input name="TransformResult">CompleteXmlDocument</Input>
+<Input name="SchemaGeneration">FromSQLStatement</Input>
+<Input name="SchemaRegenTime">OnlyWhenSQLBuilderChangesAreDetected</Input>
+<Input name="SchemaImportRule">ImportOnlyAtDesignTime</Input>
+<Input name="Name" profile="databaseserviceproviderps:SqlCall_Name5">call5</Input>
+<Input name="Parameters" xmlProfile="databaseserviceproviderps:SqlCall_Parameters5"><top><Parameter><Position>1</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/call5Inputs/Parameter1Value}</ValueSetCastMethod>
+</Parameter>
+</top>
+</Input>
+<Input name="FetchDataSourceNames">Fetch DataSource Names</Input>
+<Input name="SqlDataSourceValues">java:comp/env/jdbc/derby,java:comp/env/jdbc/eCommerce,java:comp/env/jdbc/sample,java:comp/env/jdbc/dashboarddb</Input>
+<Input name="SqlDataSource" profile="databaseserviceproviderps:SqlCall_SqlDataSource5">java:comp/env/jdbc/sample</Input>
+<Input name="SqlStatement" profile="databaseserviceproviderps:SqlCall_SqlStatement5">select * from ORDERS where STATUS like ?</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[$Child$call1Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call1StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call1Transform" targetNamespace="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call1Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Monday, April 17, 2006 1:28:21 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$call2Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call2StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call2Transform" targetNamespace="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call2Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Monday, April 17, 2006 3:02:36 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$call3Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call3StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call3Transform" targetNamespace="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call3Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Monday, April 17, 2006 3:20:05 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$call5Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call5StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call5Transform" targetNamespace="http://localhost:8080/DatabaseWizard/webengine/factory/wizardbase/database_service_provider/call5Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Monday, April 17, 2006 3:43:55 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="databaseserviceproviderps:OperationEnabled5">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="InputStructureHandling" profile="databaseserviceproviderps:ServiceOperation_InputStructureHandling5">FromOperation</Input>
+<Input name="InputAllowStructureEdit">false</Input>
+<Input name="InputAutomaticMapping">true</Input>
+<Input name="ResultStructureHandling" profile="databaseserviceproviderps:ServiceOperation_ResultStructureHandling5">FromOperation</Input>
+<Input name="ResultSchema" profile="databaseserviceproviderps:ServiceOperation_ResultSchema5" />
+<Input name="ResultAllowStructureEdit">false</Input>
+<Input name="ResultAutomaticMapping">true</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="CachingTimeout">3600</Input>
+<Input name="PreExecuteEventEnabled">disabled</Input>
+<Input name="PostExecuteEventEnabled">disabled</Input>
+<Input name="DataService" profile="databaseserviceproviderps:ServiceName">theService</Input>
+<Input name="ResultMappingTable"><Fields />
+</Input>
+<Input name="InputMappingTable"><Fields />
+</Input>
+<Input name="OperationName" profile="databaseserviceproviderps:OperationName5">operation5</Input>
+<Input name="TargetOperation" profile="databaseserviceproviderps:ServiceOperation_TargetOperation5">DataServices/call5/execute</Input>
+<Input name="Name">operation5</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties>
+<Contained>false</Contained>
+</Properties>
+<Dependencies><Dependency type="File">/factory/pages/service_test_index_page.html</Dependency>
+</Dependencies>
+<ExternalProperties><ExternalProperty id="Service2Enabled">true</ExternalProperty>
+</ExternalProperties>
+</Model>

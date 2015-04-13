@@ -1,0 +1,27 @@
+<ProfileSet name="mainandpagebaseps" useQualifiedProfileNames="true"><Description>Generated profile set for model main_and_page_base</Description>
+<Visibility>False</Visibility>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<Models />
+<ProfileDef><Entries><Entry name="Page_BuilderCallEnabled" isRuntime="false"><UI type="Checkbox"><Prompt>Page_BuilderCallEnabled</Prompt>
+<ExtraData>true,false,Checkbox Label</ExtraData>
+</UI>
+</Entry>
+<Entry name="ImportedPage_BuilderCallEnabled" isRuntime="false"><UI type="Checkbox"><Prompt>ImportedPage_BuilderCallEnabled</Prompt>
+<ExtraData>true,false,Checkbox Label</ExtraData>
+</UI>
+</Entry>
+<Entry name="ImportedPage_URL" isRuntime="false"><UI type="TextInput"><Prompt>ImportedPage_URL</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1090945658640" isContainer="true"><Values><Value name="ImportedPage_URL">/factory/pages/main_and_page.html</Value>
+<Value name="Page_BuilderCallEnabled">false</Value>
+<Value name="ImportedPage_BuilderCallEnabled">true</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

@@ -1,0 +1,22 @@
+<%-- Template file used by the Dojo Progress Indicator.
+     The name of this file can be specified as an input to the Dojo Progress Indicator builder.
+     You can create your own template file to provide an alternate layout.
+     When creating a template you must maintain the following tagged elements:
+     image - The specified progress image will be attached here.
+     message - Any user-specified message text will go here.
+ --%>
+<div>
+<%if(!JSPSupport.processedReference("wpf.css","wpf_progress_indicator_box",request)){%> <style type="text/css" name="styles">
+ .wpf_progress_indicator_box {
+  width: auto;
+  box-shadow: 5px 5px 5px #ccc;
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  border-radius:8px;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  background-color:#fff;
+ }
+ </style>
+<%}%> <span alt="" name="image" />&nbsp;<i name="message" />
+</div>

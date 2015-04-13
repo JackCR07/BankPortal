@@ -1,0 +1,34 @@
+<!--  **************************  7.0.1 Blue Theme **********************************
+
+A theme is a collection of style information that can be used to drive builder inputs that provide the application UI in your model.
+This information can include but is not limited to HTML templates, style sheets (CSS), base pages, highlighting style, and paging style. 
+
+This theme file extents the blue_WPF7.uitheme theme and enables features specific to WPF 7.0.1 such as Split Pager drop down menu, and other styling changes.
+See blue_WPF7.uitheme for base features.
+
+For more Theme information please see the "Themes and user interface control" section of the product documentation.
+
+-->
+<Theme extends="/WEB-INF/factory/themes/blue_WPF7.uitheme">
+
+    <!-- The following will default to DSUI_HTMLTemplate and DSUI_StyleSheetOverride if no value specified -->
+    <DSUI_CreatePageHTMLTemplate>/factory/html_templates/color_themes.html</DSUI_CreatePageHTMLTemplate>
+    <DSUI_CreatePageStyleSheetOverride>/factory/html_templates/gridtable_blue_WPF7.css</DSUI_CreatePageStyleSheetOverride>
+    <DSUI_UpdatePageHTMLTemplate>/factory/html_templates/color_themes.html</DSUI_UpdatePageHTMLTemplate>
+    <DSUI_UpdatePageStyleSheetOverride>/factory/html_templates/gridtable_blue_WPF7.css</DSUI_UpdatePageStyleSheetOverride>
+    <DSUI_DetailsPageHTMLTemplate>/factory/html_templates/color_themes.html</DSUI_DetailsPageHTMLTemplate>
+    <DSUI_DetailsPageStyleSheetOverride>/factory/html_templates/gridtable_blue_WPF7.css</DSUI_DetailsPageStyleSheetOverride>
+    <DSUI_QueryPageHTMLTemplate>/factory/html_templates/color_themes.html</DSUI_QueryPageHTMLTemplate>
+    <DSUI_QueryPageStyleSheetOverride>/factory/html_templates/gridtable_blue_WPF7.css</DSUI_QueryPageStyleSheetOverride>
+    <DSUI_SearchPageHTMLTemplate>/factory/html_templates/color_themes.html</DSUI_SearchPageHTMLTemplate>
+    <DSUI_SearchPageStyleSheetOverride>/factory/html_templates/gridtable_blue_WPF7.css</DSUI_SearchPageStyleSheetOverride>
+    <DSUI_FilterPageHTMLTemplate>/factory/html_templates/color_themes.html</DSUI_FilterPageHTMLTemplate>
+    <DSUI_FilterPageStyleSheetOverride>/factory/html_templates/gridtable_blue_WPF7.css</DSUI_FilterPageStyleSheetOverride>
+    <DSUI_ListPageHTMLTemplate>/factory/html_templates/color_themes.html</DSUI_ListPageHTMLTemplate>
+    <DSUI_ListPageStyleSheetOverride>/factory/html_templates/gridtable_blue_WPF7.css</DSUI_ListPageStyleSheetOverride>
+    
+    <!-- Use a drop-down control in Split Pager -->
+    <SplitPager_BottomBasePage>/factory/pages/split_pager_drop_down_bottom_base.html</SplitPager_BottomBasePage>
+    <SplitPager_TopBasePage>/factory/pages/split_pager_default_top_base.html</SplitPager_TopBasePage>
+</Theme>
+

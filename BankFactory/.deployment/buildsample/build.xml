@@ -1,0 +1,79 @@
+<!--
+  A sample ant build task for building Web Experience Factory
+  command line war files. Please see WEF documentation
+  for more information on this file and how to use
+  it in your own project.
+-->
+<project name="build" default="nightly" basedir=".">
+
+  <!-- define build script properties. -->
+  <target name="properties">  
+    <property file="build.properties" />
+  </target>
+
+  <target name="nightly" depends="properties, clean">    
+
+    <!-- create temp directory structure for building -->
+    <mkdir dir="${builddist.location}" />
+    <mkdir dir="${buildtmp.location}" />  
+
+    <!-- create temp dir to build on top of -->
+    <copy todir="${buildtmp.location}/.deployment">
+      <fileset dir="${buildsrc.location}/.deployment"/>
+    </copy>    
+
+    <copy todir="${webcontent.location}">
+      <fileset dir="${buildsrc.location}/WebContent"/>
+    </copy>    
+
+    <!-- optional task to generate the logs folder in the temp location. 
+         Specific war generation tasks will log their data to this directory. -->
+    <mkdir dir="${buildsrc.location}/WebContent/WEB-INF/logs"/>
+    
+    <!-- expand factory image into the webcontent.location -->
+    <ant antfile="${webcontent.location}/projectDeploy.xml" target="expandFactoryImage" >
+      <property name="runtime.image" value="${wpf.artifacts.dir}/Images/factory${version}.zip" />
+    </ant>
+    
+    <ant antfile="${webcontent.location}/projectDeploy.xml" target="addFeatureSet" >
+      <property name="pkg" value="${wpf.artifacts.dir}/Packages/Tutorials.pkg" />
+    </ant>
+    
+    <!-- build source files -->
+    <ant antfile="${webcontent.location}/projectDeploy.xml" target="compile" />     
+         
+    <!-- Set the http.port parameter for the Standalone Deployment WAR -->
+    <ant antfile="${webcontent.location}/projectDeploy.xml" target="setServerPort" >
+      <property name="http.port" value="10000" />
+    </ant>
+     
+    <!-- build a production standalone war -->
+    <ant antfile="${webcontent.location}/projectDeploy.xml" target="buildDeploymentWar" >
+    </ant>
+
+    <!-- Set the http.port parameter for the JSR286 Portlet WAR -->
+    <ant antfile="${webcontent.location}/projectDeploy.xml" target="setServerPort" >
+      <property name="http.port" value="10038" />
+    </ant>
+
+    <!-- build Java Standared (168) portlet war -->
+    <ant antfile="${webcontent.location}/projectDeploy.xml" target="buildPortletWar" >
+      <property name="wpf.portletapi.target" value="buildStandardPortletWar"/>
+    </ant>     
+
+    <!-- build 286 portlet war, and give it a new name. -->
+    <ant antfile="${webcontent.location}/projectDeploy.xml" target="buildPortletWar" >
+      <property name="wpf.portletapi.target" value="build286StandardPortletWar"/>
+      <property name="wpf.portalversion" value="7.0"/>
+      <property name="project.name" value="${project.name}286"/>
+    </ant>               
+     
+  </target>
+
+  <!-- clean the project -->
+  <target name="clean" depends="properties">   
+    <delete dir="${builddist.location}" />
+    <delete dir="${buildtmp.location}"/>
+  </target>  
+
+</project>

@@ -1,0 +1,303 @@
+<HTML>
+<body>
+  <styleSheet name="StyleSheetHint">/factory/html_templates/template_compatible2.css</styleSheet>
+  <styleSheet name="DesignViewStyleSheet">${WebContent}/factory/html_templates/template_compatible2.css</styleSheet>
+ 
+  <div name="DisplayPageWrapper" class="DisplayPageWrapper">
+    <HTMLWRAPPER name="PageContentsContainer">
+      <HTMLWRAPPER name="TopDisplayGroupWrapper">
+       <div class="DisplayGroupWrapper">
+        <HTMLWRAPPER name="LabelContainer">
+          <div  name="DisplayGroupLabel"  class="DisplayGroupLabelDiv">
+            <span name="LabelText"  class="DisplayGroupLabelText" />
+          </div>
+        </HTMLWRAPPER>
+        <table name="GroupContainer">
+
+         <HTMLWRAPPER name="DisplayGroup">
+          <HTMLWRAPPER name="DataContainer">
+
+            <tr name="DisplayField" class="DisplayFieldRow">
+              <td class="RequiredPromptCell" ><br /><span name="FieldRequired" class="RequiredPromptText" /></td>
+              <td class="DataEntryFieldCell" >
+                <span name="FieldLabel" class="DisplayFieldLabelText"/>
+                <br />
+                <span name="FieldElement" class="DisplayFieldElement" /> 
+                <span name="FieldValidationError" class="ValidationErrorText" />
+              </td>
+            </tr>
+
+          </HTMLWRAPPER>
+         </HTMLWRAPPER>  <!-- end DataEntryGroup -->
+
+        </table>
+       </div>
+       <br /><br />
+      </HTMLWRAPPER>  <!-- end DisplayGroupWrapper -->
+      
+    </HTMLWRAPPER>
+  </div>  <!-- end DisplayPageWrapper -->
+
+  <div name="DataEntryPageWrapper" class="DataEntryPageWrapper">
+
+    <p name="FullErrorLocation" class="FullErrorLocationText"></p>
+    <HTMLWRAPPER name="PageContentsContainer">
+      
+      <HTMLWRAPPER name="DataEntryGroupWrapper">
+       <div class="DataEntryGroupWrapper">
+        <HTMLWRAPPER name="LabelContainer">
+          <div  name="DataEntryGroupLabel"  class="DataEntryGroupLabelDiv">
+            <span name="LabelText"  class="DataEntryGroupLabelText" />
+          </div>
+        </HTMLWRAPPER>
+        <table name="GroupContainer">
+
+         <HTMLWRAPPER name="DataEntryGroup">
+           <HTMLWRAPPER name="DataContainer">
+
+            <tr name="DataEntryField" class="DataEntryFieldRow">
+              <td class="RequiredPromptCell" ><br /><span name="FieldRequired" class="RequiredPromptText" /></td>
+              <td class="DataEntryFieldCell" >
+                <label name="FieldLabel" class="DataEntryFieldLabelText" for="_field" />
+                <br />
+                <span name="FieldElement" class="DataEntryFieldElement" id="_field" /> 
+                <span name="FieldValidationError" class="ValidationErrorText" />
+              </td>
+            </tr>
+            <tr name="DataEntryField_textinput" class="DataEntryFieldRow">
+              <td class="RequiredPromptCell" ><br /><span name="FieldRequired" class="RequiredPromptText" /></td>
+              <td class="DataEntryFieldCell" >
+                <label name="FieldLabel" class="DataEntryFieldLabelText" for="_field" />
+                <br />
+                <input type="text" size="40" name="FieldElement" class="DataEntryFieldElement" id="_field" /> 
+                <span name="FieldValidationError" class="ValidationErrorText" />
+              </td>
+            </tr>
+            <tr name="DataEntryField_textarea" class="DataEntryFieldRow">
+              <td class="RequiredPromptCell" ><br /><span name="FieldRequired" class="RequiredPromptText" /></td>
+              <td class="DataEntryFieldCell" >
+                <label name="FieldLabel" class="DataEntryFieldLabelText" for="_field" />
+                <br />
+                <textarea rows="9" cols="35" name="FieldElement" id="_field" /> 
+                <span name="FieldValidationError" class="ValidationErrorText" />
+              </td>
+            </tr>
+
+          </HTMLWRAPPER>
+         </HTMLWRAPPER>  <!-- end DataEntryGroup -->
+
+        </table>
+       </div>
+       <br /><br />
+      </HTMLWRAPPER>  <!-- end DataEntryGroupWrapper -->
+    </HTMLWRAPPER>
+  </div>  <!-- end DataEntryPageWrapper -->
+
+      <div name="DisplayGroupWrapperByName_Customer">
+        <HTMLWRAPPER name="LabelContainer">
+          <div  name="DisplayGroupLabelByName_Customer">
+           <div padding="8" style="font:16pt Arial;font-weight:bold" align="center"><br /><hr />
+            <span name="LabelText"  /><br /><hr />
+           </div>
+          </div>
+        </HTMLWRAPPER>
+        <HTMLWRAPPER name="GroupContainer">
+        </HTMLWRAPPER>
+      </div>
+
+      <div name="DataEntryGroupWrapperByName_Customer">
+        <HTMLWRAPPER name="LabelContainer">
+          <div  name="DataEntryGroupLabelByName_Customer">
+           <div padding="8" style="font:16pt Arial;font-weight:bold" align="center"><br /><hr />
+            <span name="LabelText"  /><br /><hr />
+           </div>
+          </div>
+        </HTMLWRAPPER>
+        <HTMLWRAPPER name="GroupContainer">
+        </HTMLWRAPPER>
+      </div>
+
+      <!--
+        TableWrapper is defined "out of place" down here.  Note that the constructs do 
+        not have to be defined in place, i.e. inside the construct that they will 
+        eventually be put in.  It is just commonly done for convenience.
+        -->
+      <HTMLWRAPPER name="TableWrapper">
+        <HTMLWRAPPER name="LabelContainer">
+
+          <tr name="TableLabel">
+            <td  colspan="2" class="TableLabelCell">
+              <span name="LabelText" class="TableLabelText" />
+            </td>
+          </tr>
+
+        </HTMLWRAPPER>
+
+        <tr><td  colspan="3" class="TableContainerCell">
+          <div name="GroupContainer" class="TableContainerDiv" >
+
+           <table name="Table" id="_table" class="Table">
+             <tr name="TableHeaderContainer" class="ColumnHeaderRow">
+               <!-- Note seven different column header types defined.  The PageAutomation 
+                    code will choose the most specific one defined for each column. -->
+               <th name="ColumnHeader"  class="ColumnHeaderCell">
+                 <span name="HeaderElement"></span>
+               </th>
+               <th name="ColumnHeaderSorted"  class="ColumnHeaderCell">
+                 <a name="HeaderElement" class="labelSortLink"></a>
+               </th>
+               <th name="ColumnHeader_int"  class="ColumnHeaderCell_Numeric">
+                 <span name="HeaderElement"></span>
+               </th>
+               <th name="ColumnHeaderSorted_int" class="ColumnHeaderCell_Numeric">
+                 <a name="HeaderElement" class="labelSortLink"></a>
+               </th>
+               <th name="ColumnHeader_float" class="ColumnHeaderCell_Numeric">
+                 <span name="HeaderElement"></span>
+               </th>
+               <th name="ColumnHeaderSorted_float" class="ColumnHeaderCell_Numeric">
+                 <a name="HeaderElement" class="labelSortLink"></a>
+               </th>
+               <th name="ColumnHeader_double" class="ColumnHeaderCell_Numeric">
+                 <span name="HeaderElement"></span>
+               </th>
+               <th name="ColumnHeaderSorted_double" class="ColumnHeaderCell_Numeric">
+                 <a name="HeaderElement" class="labelSortLink"></a>
+               </th>
+             </tr>
+
+             <!-- spacer row after the header, perhaps add an <hr /> here? -->
+             <tr><td colspan="100" class="SpacerRowAfterTableHeader" height="0"></td></tr>
+
+             <HTMLWRAPPER name="RepeatElement">
+               <tr name="DataContainer" sequence_class="TableRowOdd,TableRowEven">
+                 <!-- As with headers, we define four column data types.  Code will choose best one. -->
+                 <td name="ColumnData" class="ColumnCell">
+                   <span name="FieldElement" /> <span name="FieldValidationError" class="ValidationErrorText" />
+                 </td>
+                 <td name="ColumnData_int" class="ColumnCell_Numeric">
+                   <span name="FieldElement" /> <span name="FieldValidationError" class="ValidationErrorText" />
+                 </td>
+                 <td name="ColumnData_float" class="ColumnCell_Numeric">
+                   <span name="FieldElement" /> <span name="FieldValidationError" class="ValidationErrorText" />
+                 </td>
+                 <td name="ColumnData_double" class="ColumnCell_Numeric">
+                   <span name="FieldElement" /> <span name="FieldValidationError" class="ValidationErrorText" />
+                 </td>
+                 <td name="ColumnData_autodelete" class="ColumnCell_Numeric">
+                   <span name="FieldElement" /> <span name="FieldValidationError" class="ValidationErrorText" />
+                 </td>
+               </tr>
+             </HTMLWRAPPER>
+           </table>
+        </div>
+        <span name="_buttonSpace" />
+
+        <!-- Place for "Empty Data" message -->
+        <HTMLWRAPPER name="EmptyDataContainer">
+          <table cellpadding="0" cellspacing="0" width="100%" name="TableEmptyData" ><tr class="EmptyDataMessageRow"><td align="center" class="EmptyDataMessageCell">
+            <span  name="EmptyDataMessage" class="emptyDataMessage" />
+          </td></tr></table>
+        </HTMLWRAPPER>
+
+      </td></tr>
+  </HTMLWRAPPER>  <!-- end TableWrapper -->
+
+  <tr name="DisplayGroup_NewsColumnBase"><td style="spacing:0; padding:0">
+      <table width="100%"  cellpadding="0" cellspacing="0">
+        <tr name="DataContainer" class="NewsColumnWrapper" />        
+      </table>
+    </td>
+  </tr>
+
+  <td name="DisplayGroupWrapper_NewsColumnCell" class="NewsColumnCell" valign="top">
+    <table class="displayPageTable" cellpadding="3" cellspacing="1" width="100%">
+      <span name="LabelContainer"></span>
+      <span name="GroupContainer"></span>
+    </table>
+  </td>
+
+  <tr name="DataEntryGroup_NewsColumnBase"><td style="spacing:0; padding:0">
+        <table width="100%"  cellpadding="0" cellspacing="0">
+        <tr name="DataContainer" class="NewsColumnWrapper" />        
+        </table>
+    </td></tr>
+
+  <td name="DataEntryGroupWrapper_NewsColumnCell" class="NewsColumnCell"  valign="top">
+    <table class="dataEntryPageTable" cellpadding="3" cellspacing="1" width="100%">
+      <span name="LabelContainer"></span>
+      <span name="GroupContainer"></span>
+    </table>
+  </td>  
+
+    <!--  LayoutGrid.  Top Group Wrappers start inside DIV
+                       Non-top start inside TABLE
+                       Inner element must finsih with TABLE
+     --> 
+    <div name="TopDisplayGroupWrapper_LayoutGrid" class="vf_fields">
+      <HTMLWRAPPER name="GroupContainer" class="displayPageTable" />
+    </div>
+
+    <tr name="DisplayGroupWrapper_LayoutGrid">
+      <td name="GroupContainer" colspan="2">
+
+        <table name="DisplayGroup_LayoutGrid" class="WPF_LayoutGrid">
+          <HTMLWRAPPER name="DataContainer" >
+           <HTMLWRAPPER name="DisplayGroupWrapper_LayoutRow">
+             <HTMLWRAPPER name="GroupContainer" >
+               <tr name="DisplayGroup_LayoutRow" class="WPF_LayoutRow">
+                 <HTMLWRAPPER name="DataContainer" >
+                   <td name="DisplayGroupWrapper_LayoutColumn">
+                     <HTMLWRAPPER name="GroupContainer">
+                      <span name="DisplayGroup_LayoutColumn" class="WPF_LayoutColumn">
+                        <table name="DataContainer">
+                            <tr name="EmptyLayoutColumn">
+                                <td style="width:50px; height:40px;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </tr>
+                        </table>
+                      </span>
+                     </HTMLWRAPPER>
+                   </td>
+                 </HTMLWRAPPER>    
+               </tr>
+             </HTMLWRAPPER>
+           </HTMLWRAPPER>
+          </HTMLWRAPPER>
+        </table>
+      </td>
+    </tr>
+
+    <div name="TopDataEntryGroupWrapper_LayoutGrid" class="vf_fields">
+      <HTMLWRAPPER name="GroupContainer" class="DisplayGroupWrapper" />
+    </div>
+
+    <tr name="DataEntryGroupWrapper_LayoutGrid">
+      <td name="GroupContainer" colspan="2">
+        <table name="DataEntryGroup_LayoutGrid" class="WPF_LayoutGrid">
+          <HTMLWRAPPER name="DataContainer" >
+             <HTMLWRAPPER name="DataEntryGroupWrapper_LayoutRow">
+               <HTMLWRAPPER name="GroupContainer" >
+                 <tr name="DataEntryGroup_LayoutRow" class="WPF_LayoutRow">
+                   <HTMLWRAPPER name="DataContainer" >
+                      <td name="DataEntryGroupWrapper_LayoutColumn">
+                        <HTMLWRAPPER name="GroupContainer">
+                          <span name="DataEntryGroup_LayoutColumn" class="WPF_LayoutColumn">
+                            <table  name="DataContainer" />
+                          </span>
+                        </HTMLWRAPPER>
+                      </td>
+                   </HTMLWRAPPER>
+                 </tr>
+               </HTMLWRAPPER>
+             </HTMLWRAPPER>
+          </HTMLWRAPPER>
+        </table>
+      </td>
+    </tr>
+
+  <tr name="table_SpecialWrapper"><td colspan="2" name="CleanContainer"></td></tr>
+  <td colspan="2" name="tr_SpecialWrapper"></td>
+
+
+</body>
+</HTML>

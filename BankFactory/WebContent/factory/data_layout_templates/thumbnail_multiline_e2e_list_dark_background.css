@@ -1,0 +1,80 @@
+@IMPORT url("base_template_styles.css");  
+
+body {
+  /* set left/right margin to 0 to go to edge */
+   margin-left: 0px;
+   margin-right: 0px;
+   width: 100%;
+}
+
+div.vf_view_container {
+    width:100%;
+    padding: 0px;
+}
+
+.vf_view_list {
+   width:100%;
+}
+
+.wpfThumbnailMultiLineListE2ED a.wpfSelectableRow {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.wpfThumbnailMultiLineListE2ED {
+    min-width: 305px;
+ }
+    
+.wpfThumbnailMultiLineListE2ED .wpfLeft {
+    float: left;
+    padding: 2px;
+}
+
+.wpfThumbnailMultiLineListE2ED .wpfCenterContainer {
+    float: left;
+    width: 60%;
+}   
+
+.wpfThumbnailMultiLineListE2ED .wpfCenter {
+    padding-left: 3px;
+    padding-right: 3px;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden; 
+}
+
+.wpfThumbnailMultiLineListE2ED .wpfRight {
+    float: right;
+    margin-right: 20px;
+    line-height: 58px;    
+    white-space: nowrap;
+    overflow: hidden;
+    width: 15%;
+}
+
+.wpfThumbnailMultiLineListE2ED .wpfListItem img
+{
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}
+
+.wpfThumbnailMultiLineListE2ED .wpfListItem
+{
+    background-image: url("right_arrow_light.png");
+    background-color: #787878;  
+	background-repeat: no-repeat;
+    background-position: right;
+    text-decoration: none;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 2px 0px 2px 0px;
+    height: 56px; 
+    border-bottom: 1px solid #AAAAAA;
+    border-left: none;
+    border-right: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: #FFFFFF;
+}

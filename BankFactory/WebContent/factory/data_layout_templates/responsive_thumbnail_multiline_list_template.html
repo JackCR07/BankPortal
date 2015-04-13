@@ -1,0 +1,29 @@
+<meta 
+data-template-id="responsive_ThumbnailList"
+data-template-bundle-name="com.bowstreet.builders.webapp.package"
+data-template-name-id="DataLayoutresponsive_ThumbnailListName" 
+data-template-description-id="DataLayoutresponsive_ThumbnailList" 
+data-template-name="Thumbnail Multi-Line List (Responsive)" 
+data-template-description="This layout is used for lists that contain thumbnails.  There are four base layouts that you select by selecting a style sheet. These style sheets control the size of the image and the height of the list item.  The layout is designed to be responsive, when used on a phone in the portrait orientation the values in the right column are hidden and the center columns are expanded to use that space.  The theme setting will use a small thumbnail layout when on a phone and a medium thumbnail layout in all other cases. There are alternate layouts that you create by setting the container_layout style on the container layout. Style sheet files that end in uitheme.css use styles that are defined in the themes css file." 
+data-style-picker-file-names="/factory/data_layout_templates/responsive_base_thumbnail_list_template_styles.css" 
+data-container-style-picker-file-names="/factory/data_layout_templates/responsive_base_thumbnail_list_template_container_styles.css" 
+data-stylesheets="/factory/data_layout_templates/responsive_thumbnail_list_small_uitheme.css,/factory/data_layout_templates/responsive_thumbnail_list_medium_uitheme.css,/factory/data_layout_templates/responsive_thumbnail_list_large_uitheme.css,/factory/data_layout_templates/responsive_thumbnail_list_extralarge_uitheme.css,/factory/data_layout_templates/blank.css" 
+data-stylesheet-root-class-names="responsive_SmallThumbnailList,responsive_MediumThumbnailList,responsive_LargeThumbnailList,responsive_ExtraLargeThumbnailList,responsive_ThumbnailListBlank"/>
+<div name="layout_list" class="wef_datalayout_list responsive_ThumbnailList">
+   <div class="thumbnailListItem" name="list_item" data-repeat-wrapper="default" data-target-exact="containerLayoutStyles(clStyles)">
+      <div  data-target-exact="left_column_styles" data-target="left_image" class="wpfLeft listItem"></div>
+      <div class="wpfCenterContainer listItem" data-target-exact="center_column_styles">
+         <div data-target-exact="center_top_styles" data-target="center_top" class="wpfCenter wpfTop"></div>
+         <div data-target-exact="center_middle_styles" data-target="center_middle" class="wpfCenter wpfCenterWrap wpfMiddle"></div>
+         <div data-target-exact="center_bottom_styles" data-target="center_bottom" class="wpfCenter wpfBottom"></div>
+      </div>
+     <div class="wpfRightContainer listItem" data-target-exact="right_column_styles">
+         <div data-target-exact="right_top_styles" data-target="right_top" class="wpfRight wpfTop"></div>
+         <div data-target-exact="right_middle_styles" data-target="right_middle" class="wpfRight wpfMiddle"></div>
+         <div data-target-exact="right_bottom_styles" data-target="right_bottom" class="wpfRight wpfBottom"></div>
+      </div>
+   <div style="clear: both;"></div>
+   </div>
+</div>
+
+

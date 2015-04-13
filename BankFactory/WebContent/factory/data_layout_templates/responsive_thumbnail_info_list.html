@@ -1,0 +1,22 @@
+<meta data-template-id="responsive_ThumbnailInfo"
+	data-template-bundle-name="com.bowstreet.builders.webapp.package" 
+	data-template-name-id="DataLayoutresponsive_ThumbnailInfoName" 
+	data-template-description-id="DataLayoutresponsive_ThumbnailInfo" 
+	data-template-name="Responsive Thumbnails with Info" 
+	data-template-description="This layout is used for horizontal lists of items that have an image and information text.  The items are displayed horizontally until the item doesn't fit and it is then wrapped to the next line and continues until the items are all displayed. The layouts are either with the image above or the info on the left or the right.  All the layouts Responsive Thumbnail with info list are designed to layout as a narrow list where the images are above the info when placed in a thin portal container. There are alternate container layouts that you can select by setting a clStyle the container layout.  The alternate layouts allow 2, 3, 4 or 5 items per line.  The theme setting will use the layout that displays the image above the info." 
+	data-style-picker-file-names="/factory/data_layout_templates/responsive_base_thumbnail_info_template_styles.css" 
+	data-container-style-picker-file-names="/factory/data_layout_templates/responsive_base_thumbnail_info_template_container_styles.css" 
+	data-stylesheets="/factory/data_layout_templates/responsive_thumbnail_info.css,/factory/data_layout_templates/responsive_thumbnail_info_left.css,/factory/data_layout_templates/responsive_thumbnail_info_right.css,/factory/data_layout_templates/blank.css" 
+	data-stylesheet-root-class-names="responsive_Thumbnail_Info,responsive_Thumbnail_Info_Left,responsive_Thumbnail_Info_Right,responsive_Thumbnail_InfoBlank"/>
+<div name="layout_list" class="wef_datalayout_list responsive_Thumbnail_Info">
+  <div class="thumbnailInfoItem" name="list_item" data-repeat-wrapper="default" data-target-exact="containerLayoutStyles(clStyles)">
+	<div data-target-exact="thumbnail_section_styles" data-target="thumbnail" class="thumbnail"></div>
+	<div data-target-exact="info_section_styles" class="info">
+		<div data-target-exact="info_styles" data-target="info" class="infoText"></div>
+		<div class="links" data-target-exact="links_section_styles" data-target-exact="linksStyles">
+		<div data-target="link_left" data-target-exact="link_left_styles" class="linkLeft"></div>
+		<div data-target-exact="link_right_styles" data-target="link_right" class="linkRight"></div>
+		</div> 
+	</div>
+  </div>
+</div>

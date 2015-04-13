@@ -1,0 +1,102 @@
+@IMPORT url("base_template_styles.css");
+
+/** Set overall list style **/
+
+.vf_view_container {
+    width:100%;
+}
+
+.vf_view_list {
+   width:100%;
+}
+
+.wpfMultiLineShowHideList .wpfListColumn {
+    float:left;
+    width:33%;
+}
+
+.wpfMultiLineShowHideList .wpfListColumnItem {
+    margin: 2px 0px;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden; 
+}
+
+.wpfMultiLineShowHideList .wpfFixedSection {
+	float:left;
+	width: 100%;
+	line-height: 1.5em; 
+    display: table;   
+}
+  
+.wpfMultiLineShowHideList .wpfFixedSection .wpfListColumnItemLeft a{
+    text-decoration: none;
+    color: #105CB6;
+}
+
+.wpfMultiLineShowHideList .wpfFixedSection .wpfListColumnItemLeft a:HOVER{
+    text-decoration: underline;
+}
+  
+.wpfMultiLineShowHideList .wpfHideSection{
+  display: table;   
+  width: 100%;		
+  padding-top: 7px;
+}  
+  
+.wpfMultiLineShowHideList .wpfHideSection .wpfListColumn {
+    float:left;
+    width:50%;
+}
+   
+.wpfMultiLineShowHideList .wpfHide{
+  display: none;   
+}  
+   
+.wpfMultiLineShowHideList .wpfListColumnRight {
+  float:right;	
+}   
+  
+.wpfMultiLineShowHideList .wpfListShowHideText:hover {
+    cursor: pointer;
+    color: #083773;
+}  
+
+.wpfMultiLineShowHideList .wpfListShowHideText  {
+  font-size: 0.9em;
+  color: #105CB6;
+  text-decoration: underline;
+}    
+  
+.wpfMultiLineShowHideList .wpfListColumnItemLeft {
+  float: left; 
+  width: 50%;
+}
+
+.wpfMultiLineShowHideList .wpfListShowHideText  {
+  float:right; 
+  color: #105CB6;
+}    
+
+.wpfMultiLineShowHideList .wpfShowHideListContainer {
+    padding-top: 5px;
+}
+
+.wpfMultiLineShowHideList .wpfListRow {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: table;
+  width: 100%;  
+  border-bottom: 2px solid #F0F0F0;
+  background-color: #F8F8F8;
+}
+
+.wpfMultiLineShowHideList .wpfListColumnItem img
+{
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    width: 55px;
+    height: 55px;
+}

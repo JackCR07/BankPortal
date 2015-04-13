@@ -1,0 +1,17 @@
+<meta data-template-id="NavigationList" 
+data-template-type="navigation" 
+data-template-bundle-name="com.bowstreet.builders.webapp.package" 
+data-template-name-id="DataLayoutNavigationListName" 
+data-template-description-id="DataLayoutNavigationListDescription" 
+data-template-name="Navigation List" 
+data-template-description="This template allows you to generate a simple navigation list." 
+data-stylesheets="/factory/data_layout_templates/navigation_list.css,/factory/data_layout_templates/blank.css" />
+<ul class="wpfNavListContainer">
+   <div data-repeat-wrapper="default">
+      <div data-target="group_title" class="wpfGroupTitle"></div>
+      <li data-repeat-wrapper="Item" class="wpfListItem">
+         <span data-target="left_image"></span><span data-target="name" class="wpfLargeTitleText"></span>
+         <div data-target="description" class="wpfSmallText"></div>
+      </li>
+   </div>
+</ul>

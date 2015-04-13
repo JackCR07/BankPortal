@@ -1,0 +1,94 @@
+<Model id="factory/adapters/model_not_set"><BuilderCallList>
+		<BuilderCall id = "bc212">
+			<BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+			<Messages></Messages>
+			<Inputs>
+				<Input name = "Name">copyright</Input>
+				<Input name = "BuilderCallEnabled">true</Input>
+				<Input name = "Comment">Licensed Materials - Property of IBM 
+5724-Od03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+				<Input name = "BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+			</Inputs>
+		</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Inputs><Input name="Name">main</Input>
+<Input name="Actions"><Actions><Action><ActionType>Page</ActionType>
+<ActionName>model_not_set</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="BuilderCallComment">"main" is the first method or action list called when a model is executed.</Input>
+</Inputs>
+<Cache />
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc5"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="DesignTimeImport">true</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="URL">/factory/portletadapter/model_not_set_page.html</Input>
+<Input name="PageData"><htmlDocument><HTML><HTMLContent><![CDATA[
+]]></HTMLContent>
+<BODY><HTMLContent><![CDATA[
+<TABLE border=0 cellpadding=1 cellspacing=0 width="100%">
+  <TR>
+    <TD bgcolor="#6673a9" height="7" width="100%">&nbsp;</TD></TR>
+  <TR>
+    <TD align="left" bgcolor="#cccccc" height="25">&nbsp;</TD></TR>
+</TABLE>
+<BR><BR><BR>
+<DIV align="center">The model for this portlet has not been configured properly, or you have pointed to the abstract IBM Portlet.<P>
+                    Please see the Web Experience Factory documentation or tutorial for details on creating portlets with IBM Web Experience Factory.
+</DIV>
+<BR>&nbsp;<BR>
+<BR><BR><BR>
+<TABLE border=0 cellpadding=0 cellspacing=0 width="100%">
+  <TR>
+    <TD bgcolor="#cccccc" height="25" width="100%">&nbsp;</TD></TR>
+  <TR>
+    <TD bgcolor="#6673a9" width="100%" height="7">&nbsp;</TD></TR>
+</TABLE>
+]]></HTMLContent>
+</BODY>
+<HTMLContent><![CDATA[
+]]></HTMLContent>
+</HTML>
+</htmlDocument>
+</Input>
+<Input name="Name">model_not_set</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><RequiredFactoryVersion>5.0.0</RequiredFactoryVersion>
+<Version>0.0.0</Version>
+<Description>New Model</Description>
+<Contained>false</Contained>
+<EnableGenerationCaching>true</EnableGenerationCaching>
+<Roles />
+<EnableFailover>false</EnableFailover>
+</Properties>
+<Dependencies><Dependency type="File">/factory/portletadapter/model_not_set_page.html</Dependency>
+</Dependencies>
+<ExternalProperties />
+</Model>

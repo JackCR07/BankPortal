@@ -1,0 +1,4 @@
+/* the styles for this layout are contained in the **img base styles** section of the 
+ /factory/html_templates/WEF8.5_uitheme.css file*/
+@IMPORT url("responsive_base_template_styles.css");
+@IMPORT url("responsive_base_hide_template_styles.css");

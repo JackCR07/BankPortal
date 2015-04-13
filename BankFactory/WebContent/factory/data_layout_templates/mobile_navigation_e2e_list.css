@@ -1,0 +1,91 @@
+@IMPORT url("base_template_styles.css");  
+
+body {
+   margin-left: 0px;
+   margin-right: 0px;
+   width: 100%;
+}
+
+div.vf_view_container {
+    width:100%;
+    padding: 0px;
+}
+
+.vf_view_list {
+   width:100%;
+}
+
+.wpfMobileNavE2E a.wpfSelectableRow {
+    color: #222222;
+    text-decoration: none;
+}
+
+.wpfMobileNavE2E {
+    min-width: 305px;
+    width: 100%;
+ }
+    
+.wpfMobileNavE2E .wpfLeft {
+    float: left;
+    padding: 2px;
+}
+
+.wpfMobileNavE2E .wpfCenterContainer {
+    float: left;
+    width: 60%;
+}   
+
+.wpfMobileNavE2E .wpfCenter {
+    padding-left: 3px;
+    padding-right: 3px;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden; 
+}
+
+.wpfMobileNavE2E .wpfRight {
+    float: right;
+    margin-right: 20px;
+    line-height: 58px;    
+    white-space: nowrap;
+    overflow: hidden;
+    width: 15%;
+}
+
+.wpfMobileNavE2E .wpfListItem img
+{
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}
+
+.wpfMobileNavE2E .wpfListItem
+{
+    background-image: url("right_arrow.gif");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: #F8F8F8;  
+    text-decoration: none;
+    color: #222222;
+    font-size: 15px;
+    margin-bottom: -1px;
+    text-decoration: none;
+    
+    height: 36px;
+    padding: 10px 0px 10px 0px;
+    
+    border-top: 1px solid #AAAAAA;
+    border-bottom: 1px solid #AAAAAA;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.wpfMobileNavE2E .wpfCenterContainer {
+    width: 95%;
+}
+
+.wpfMobileNavE2E .wpfGroupTitle {
+    font-weight: bold;
+    font-size: 17px;
+}

@@ -1,0 +1,303 @@
+<ProfileSet name="portletbase.dataview" useQualifiedProfileNames="true"><Description>auto-created</Description>
+<Visibility>False</Visibility>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<Models><Model>factory/portletbase/data_view</Model>
+</Models>
+<ProfileDef><Entries><Entry name="DataSource_ServiceCall_LOCAL_ModelName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_Variable_BeanCollectionClassname" isRuntime="false"><UI type="TextInput"><Prompt>DataSource_Variable_BeanCollectionClassname</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_Structure_Complex_ResourceBundleName_LocaleKey" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_Variable_InputObjectType" isRuntime="false"><UI type="TextInput"><Prompt>DataSource_Variable_InputObjectType</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_WSDL_Operation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_Structure_Complex_PageSize" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_DB_JNDI_DataSource" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_DB_InputParameters" isRuntime="false"><UI type="TextInput"><Prompt>Input Parameters</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_WSDL_Arguments" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_DB_JNDI_ContextFactory" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_WSDL_URL" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_UseDefaultPage" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_DB_SampleData" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_RawDataReference" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_Structure_Complex_CreateResourceBundle" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_UseComplexView" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_UseErrorPage" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_DB_AutoCreateInputs" isRuntime="false"><UI type="TextInput"><Prompt>Auto Create Variables</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_Variable_ProcessedName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="GenerateMainAction" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_UseSimpleView" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_Page_Existing_PageURL" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_Database_UsePaging" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_Structure_Complex_AddPagingButtons" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_Page_Existing_AbsoluteURLs" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_UseDatabase" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_DB_Query" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_LOCAL_ModelName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_HTTP_RequestType" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_Database_TransformType" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_DB_JNDI_Principal" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_DB_UseSampleData" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Database_DB_Statement_FetchSize" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_PagingAssistant_PageSize" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_ServiceCall_DoLogging" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_ErrorPageURL" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_DB_JNDI_URL" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_DB_JNDI_Credentials" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_UseWebService" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_SubPath" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_Structure_Complex_Country" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_Structure_Complex_DoDataPaging" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_UseImportedPage" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_ServiceCall_Type" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_Structure_Complex_CreateTags" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_DoLogging" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewTemplateFile" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_HTML_Template_File" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_DB_UseColumnLabels" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_Variable_Name" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_DB_OutputParameters" isRuntime="false"><UI type="TextInput"><Prompt>Output Parameters</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_WSDL_OverrideServiceURL" isRuntime="false"><UI type="TextInput"><Prompt>DataSource_WSDL_OverrideServiceURL</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_DataReference" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_Structure_Complex_Language" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_WSDL_EndpointURL" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_Structure_Complex_ResourceBundleName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Display_Location" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="DataSource_ServiceCall_ModelName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1092742854164" isContainer="true"><Values><Value name="DataSource_ServiceCall_LOCAL_ModelName">test/unittests/DataPaging/SvcCallDataSource</Value>
+<Value name="DataSource_Variable_BeanCollectionClassname"></Value>
+<Value name="Display_Structure_Complex_ResourceBundleName_LocaleKey"></Value>
+<Value name="DataSource_Variable_InputObjectType">String</Value>
+<Value name="DataSource_WSDL_Operation">makeDefaultData</Value>
+<Value name="Display_Structure_Complex_PageSize">4</Value>
+<Value name="DataSource_DB_JNDI_DataSource">jdbc/newTestSource</Value>
+<Value name="DataSource_DB_InputParameters"></Value>
+<Value name="DataSource_WSDL_Arguments"></Value>
+<Value name="DataSource_DB_JNDI_ContextFactory"></Value>
+<Value name="DataSource_WSDL_URL">http://www.webservicex.net/periodictable.asmx?wsdl</Value>
+<Value name="Display_UseDefaultPage">Enabled</Value>
+<Value name="DataSource_DB_SampleData">null</Value>
+<Value name="Display_RawDataReference">${MethodCall/ServiceCall.invoke}</Value>
+<Value name="Display_Structure_Complex_CreateResourceBundle"></Value>
+<Value name="Display_UseComplexView">false</Value>
+<Value name="Display_UseErrorPage">false</Value>
+<Value name="DataSource_DB_AutoCreateInputs"></Value>
+<Value name="DataSource_Variable_ProcessedName">ServiceCall_reply</Value>
+<Value name="GenerateMainAction">Enabled</Value>
+<Value name="Display_UseSimpleView">Enabled</Value>
+<Value name="Display_Page_Existing_PageURL">/basepage1.html</Value>
+<Value name="DataSource_Database_UsePaging">false</Value>
+<Value name="Display_Structure_Complex_AddPagingButtons">false</Value>
+<Value name="Display_Page_Existing_AbsoluteURLs">true</Value>
+<Value name="DataSource_UseDatabase">false</Value>
+<Value name="DataSource_DB_Query">select * from emp</Value>
+<Value name="DataSource_LOCAL_ModelName">test/unittests/DataPaging/SvcCallDataSource</Value>
+<Value name="DataSource_HTTP_RequestType">GET</Value>
+<Value name="DataSource_Database_TransformType">CompleteXmlDocument</Value>
+<Value name="DataSource_DB_JNDI_Principal"></Value>
+<Value name="DataSource_DB_UseSampleData">false</Value>
+<Value name="Database_DB_Statement_FetchSize"></Value>
+<Value name="Display_PagingAssistant_PageSize">4</Value>
+<Value name="DataSource_ServiceCall_DoLogging">false</Value>
+<Value name="Display_ErrorPageURL"></Value>
+<Value name="DataSource_UseWebService">Enabled</Value>
+<Value name="DataSource_DB_JNDI_Credentials"></Value>
+<Value name="DataSource_DB_JNDI_URL"></Value>
+<Value name="DataSource_SubPath"></Value>
+<Value name="Display_Structure_Complex_Country"></Value>
+<Value name="Display_Structure_Complex_DoDataPaging">false</Value>
+<Value name="Display_UseImportedPage">Disabled</Value>
+<Value name="DataSource_ServiceCall_Type">LOCAL</Value>
+<Value name="Display_Structure_Complex_CreateTags">true</Value>
+<Value name="DataSource_DoLogging">false</Value>
+<Value name="ViewTemplateFile"></Value>
+<Value name="DataSource_DB_UseColumnLabels"></Value>
+<Value name="Display_HTML_Template_File"></Value>
+<Value name="DataSource_Variable_Name">ServiceCall_reply</Value>
+<Value name="DataSource_DB_OutputParameters"></Value>
+<Value name="DataSource_WSDL_OverrideServiceURL"></Value>
+<Value name="Display_Structure_Complex_Language"></Value>
+<Value name="Display_DataReference">${MethodCall/ServiceCall.invoke}</Value>
+<Value name="DataSource_WSDL_EndpointURL">http://www.bowstreet.com</Value>
+<Value name="Display_Structure_Complex_ResourceBundleName"></Value>
+<Value name="DataSource_ServiceCall_ModelName">test/unittests/DataPaging/SvcCallDataSource</Value>
+<Value name="Display_Location">data</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

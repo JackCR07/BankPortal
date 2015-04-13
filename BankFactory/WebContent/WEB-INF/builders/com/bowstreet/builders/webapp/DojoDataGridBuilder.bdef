@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoDataGridBuilder"> 
+  <ReadableName>Dojo Data Grid</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName> 
+  <HelpFile></HelpFile>
+  <RequiredFactoryVersion>6.0.1</RequiredFactoryVersion> 
+  <Description>Adds a Dojo Data Grid to a specified page location.</Description> 
+  <Domains> 
+    <Domain>WebApp</Domain> 
+    <Domain>Consumer</Domain>
+  </Domains> 
+  <CreateModifyList>
+  </CreateModifyList>
+  <Category>Page Elements, Rich UI</Category>
+  <Keywords>Dojo,Data</Keywords>
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+
+  <BuilderData> 
+    <BuilderDataEntry name="PickerVisibility">5</BuilderDataEntry>
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoDataGridBuilder</BuilderDataEntry> 
+    <BuilderDataEntry name="WidgetTypeInfo">
+        <WidgetTypeInfo>
+           <WidgetType>
+               <DojoType>dojox.grid.DataGrid</DojoType>
+               <AttributeNames>store,jsid,query,rowsPerPage,rowSelector,style,structure</AttributeNames>
+               <Default>true</Default>
+           </WidgetType>
+        </WidgetTypeInfo>
+    </BuilderDataEntry>
+    <BuilderDataEntry name="IconName">datagrid_pal</BuilderDataEntry>
+    <BuilderDataEntry name="PageLocation">onNamedTag</BuilderDataEntry>
+  </BuilderData> 
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoDataGridCoordinator</CoordinatorClassName> 
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName"> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition>
+    
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation"> 
+      <Prompt></Prompt> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+     
+    <InputDefinition name="DojoType" base="com.bowstreet.core.Base.StringData">
+       <Prompt>Type</Prompt>
+       <Visible>false</Visible> 
+       <HelpText>Choose Dojo element type</HelpText>
+       <InitialValue>dojox.grid.DataGrid</InitialValue>
+       <Editor JavaClass="com.bowstreet.widget.RadioBox">
+         <Argument name="listLabels">DataGrid</Argument>
+         <Argument name="listData">dojox.grid.DataGrid</Argument>
+       </Editor>
+    </InputDefinition>
+     
+    <InputDefinition name="DataSource" base="com.bowstreet.core.Base.StringData">
+      <Prompt>Data Source</Prompt> 
+      <Required>true</Required>
+      <Visible>true</Visible> 
+       <Editor JavaClass="com.bowstreet.widget.ComboBox">
+          <Argument name="listData"></Argument>
+          <Argument name="isEditable">true</Argument>
+       </Editor>
+    </InputDefinition> 
+     
+   <InputDefinition name="UniqueID" base="com.bowstreet.core.Base.IndirectValue">
+       <Required>false</Required>
+       <Prompt>Unique ID</Prompt>
+       <HelpText>Optional unique ID to reference the Dojo Grid.</HelpText>
+       <Property>true</Property>
+   </InputDefinition>
+     
+   <InputDefinition name="AutoHeight" base="com.bowstreet.core.Base.IndirectValue">
+       <Required>false</Required>
+       <Prompt>Auto Height</Prompt>
+       <HelpText>Sets the Dojo Grid's autoHeight attribute value. You can set this to "true", or to the height of the table in number of rows.</HelpText>
+       <Property>true</Property>
+       <InitialValue>true</InitialValue>
+    </InputDefinition>
+     
+    <InputDefinition name="Value" base="com.bowstreet.core.Base.IndirectValue">
+     <Visible>false</Visible> 
+    </InputDefinition> 
+    
+     <InputDefinition name="Attributes"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Attributes">
+      <Group>Attributes</Group>
+      <Type>Xml</Type>
+    </InputDefinition> 
+      
+    <InputDefinition name="HandleExisting"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleExisting">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition> 
+       
+    <InputDefinition name="HandleMissingValue"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleMissingValue">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition> 
+ 
+    <InputDefinition name="Separator"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Separator">
+      <Group>Attributes</Group>
+      <InitialValue>;</InitialValue>
+    </InputDefinition> 
+       
+   <InputDefinition name="GridStructure"  base="com.bowstreet.core.Base.PageData">
+        <Group>GridStructure</Group>
+        <Required>false</Required>
+        <Prompt>Grid Structure</Prompt>
+        <HelpText>Specify the grid structure using HTML markup. See the Dojo documentation for more information.</HelpText>
+        <Property>true</Property>
+        <Editor JavaClass="com.bowstreet.widget.Reference">
+            <Argument name="editor">
+                <Editor JavaClass="com.bowstreet.widget.HtmlWidget">
+                    <Argument name="height">300</Argument>
+                </Editor>
+            </Argument>
+        </Editor>
+    </InputDefinition>
+       
+   <InputDefinition name="GridScriptTags"  base="com.bowstreet.core.Base.PageData">
+        <Group>GridScriptTags</Group>
+        <Required>false</Required>
+        <Prompt>Grid Script Tags</Prompt>
+        <HelpText>Specify any optional script tags (e.g. &lt;script type="dojo/method" &gt;...&lt;/script&gt;) to override grid methods or connect to grid events.</HelpText>
+        <Property>true</Property>
+        <Editor JavaClass="com.bowstreet.widget.Reference">
+            <Argument name="editor">
+                <Editor JavaClass="com.bowstreet.widget.HtmlWidget">
+                    <Argument name="height">300</Argument>
+                </Editor>
+            </Argument>
+        </Editor>
+    </InputDefinition>
+       
+       
+    <InputDefinition name="RequiresList" base="com.bowstreet.builders.webapp.DojoEnableBuilder.RequiresList">
+      <Group>RequiresList</Group>
+    </InputDefinition>
+
+    <InputDefinition name="Script"  base="com.bowstreet.builders.webapp.DojoEnableBuilder.Script">
+        <Group>Script</Group>
+    </InputDefinition>
+    
+  </InputDefinitions> 
+  
+  <GroupDefinitions> 
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" /> 
+   <GroupDefinition id="Attributes" base="com.bowstreet.builders.webapp.DojoFormElementsBuilder.Attributes">
+    </GroupDefinition>
+  <GroupDefinition id="RequiresList" base="com.bowstreet.builders.webapp.DojoFormElementsBuilder.RequiresList">
+    </GroupDefinition>
+  <GroupDefinition id="Script" base="com.bowstreet.builders.webapp.DojoFormElementsBuilder.Script">
+    </GroupDefinition>
+  <GroupDefinition id="GridStructure">
+      <Name>Grid Structure</Name>
+      <Description>Specify optional grid structure to format the table.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+  <GroupDefinition id="GridScriptTags">
+      <Name>Grid Script Tags</Name>
+      <Description>Specify any optional script tags (e.g. &lt;script type="dojo/method" &gt;...&lt;/script&gt;).</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+    
+  </GroupDefinitions> 
+  
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

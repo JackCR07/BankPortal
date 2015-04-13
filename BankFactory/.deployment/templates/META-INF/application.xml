@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application id="Application_ID" version="5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd">
+   <display-name>@APP_NAME@</display-name>
+   <description>Wrapper EAR for Web Experience Factory Application</description>
+   <module id="WebModule_1">
+      <web>
+         <web-uri>@WAR_NAME@.war</web-uri>
+         <context-root>/@CONTEXT_ROOT@</context-root>
+      </web>
+   </module>
+
+   <security-role id="SecurityRole_1">
+      <description>Web Experience Factory Administrators</description>
+      <role-name>IBMAdministrators</role-name>
+   </security-role>
+
+   <security-role id="SecurityRole_2">
+      <description>Example SOAP Users</description>
+      <role-name>SOAPUsers</role-name>
+   </security-role>
+
+   <security-role id="SecurityRole_3">
+      <description>All Authenticated users that might be used for any apps in this deployment.</description>
+      <role-name>AllAuthenticatedUsers</role-name>
+   </security-role>
+
+</application>
+ 

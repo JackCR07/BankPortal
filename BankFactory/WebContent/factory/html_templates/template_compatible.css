@@ -1,0 +1,46 @@
+
+.DisplayPageWrapper {background-color:#ffffff}
+.DataEntryPageWrapper {background-color:#ffffff}
+
+.TableLabelCell	          {font:10pt Arial; font-weight:bold; background-color:#dddddd}
+.TableLabelText           {}
+.DisplayGroupLabelCell    {font:10pt Arial; font-weight:bold; background-color:#dddddd}
+.DisplayGroupLabelText    {}
+.DataEntryGroupLabelCell  {font:10pt Arial; font-weight:bold; background-color:#dddddd}
+.DataEntryGroupLabelText  {}
+.ColumnGroupLabel         {font:14pt Arial; font-weight:bold; background-color:#dddddd}
+
+.TableContainerDiv {}
+.TableContainerCell {}
+
+.Table {padding:2; spacing:2;}
+.ColumnHeaderRow {font:10pt Arial; font-weight:bold}
+.ColumnHeaderCell {text-align:left;}
+.ColumnHeaderCell_Numeric {text-align:center}
+
+.SpacerRowAfterTableHeader {color:#808080}
+.TableRowOdd  {background-color: #f8f8f8; color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: 10pt}
+.TableRowEven {background-color: #e0e0e0; color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: 10pt}
+
+.ColumnCell {text-align:left}
+.ColumnCell_Numeric {text-align:right}
+
+.DisplayFieldRow {}
+.DisplayFieldLabelCell {width:250; text-align:right}
+.DisplayFieldLabelText {font:10pt Arial; }
+.DisplayFieldCell {width:400}
+.DisplayFieldElement {font:10pt Arial; font-weight:bold;}
+
+.DataEntryFieldRow {}
+.DataEntryFieldLabelCell {width:250; text-align:right}
+.DataEntryFieldLabelText {font:10pt Arial;}
+.RequiredPromptCell {width:35}
+.RequiredPromptText {}
+.DataEntryFieldCell {width:400}
+.DataEntryFieldElement {font:10pt Arial; font-weight:bold;}
+.ValidationErrorCell {width:400}
+.ValidationErrorText {color:red; font:10pt Arial;}
+
+.FullErrorLocationCell {text-align: left; padding-left:10}
+.FullErrorLocationText {color:red; font:10pt Arial; }
+

@@ -1,0 +1,734 @@
+<Model id="factory/portletbase/data_column_customizer_base"><BuilderCallList>
+		<BuilderCall id = "bc212">
+			<BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+			<Messages></Messages>
+			<Inputs>
+				<Input name = "Name">copyright</Input>
+				<Input name = "BuilderCallEnabled">false</Input>
+				<Input name = "Comment">Licensed Materials - Property of IBM 
+5724-Od03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+				<Input name = "BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+			</Inputs>
+		</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">About this Model</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Base model for the Data Column Customizer builder. This builds a customizer for a profiled Data Column Modifier.</Input>
+<Input name="BuilderCallComment">Base model for the Data Column Customizer builder. This builds a customizer for a profiled Data Column Modifier.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.portletcustomizer.PortletCustomizerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="NumPages">1</Input>
+<Input name="PageURL">/factory/pages/default_portletcustomizerpage.html</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="GenerateMainAction">true</Input>
+<Input name="ModelName">solutions/salesDashboard/ForecastSummary</Input>
+<Input name="ProfileSets"><top><ProfileSet><Name>com.bowstreet.solutions.salesDashboard.ForecastSummaryps</Name>
+<Handling>values</Handling>
+</ProfileSet>
+</top>
+</Input>
+<Input name="PageInputMappings"><top><Mapping><Input>com_bowstreet_solutions_salesDashboard_ForecastSummaryps_Page_Title</Input>
+<UserVisibleInput>Page_Title (com.bowstreet.solutions.salesDashboard.ForecastSummaryps)</UserVisibleInput>
+<Page>1</Page>
+<DefaultValue>some text</DefaultValue>
+<Prompt>Page Title</Prompt>
+<UIType>TextInput</UIType>
+<ProfileSetName>com.bowstreet.solutions.salesDashboard.ForecastSummaryps</ProfileSetName>
+<ExtraData>60</ExtraData>
+</Mapping>
+<Mapping><Input>com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier</Input>
+<UserVisibleInput>List_Page_Column_Modifier (com.bowstreet.solutions.salesDashboard.ForecastSummaryps)</UserVisibleInput>
+<Page>1</Page>
+<DefaultValue>&lt;Columns&gt;&lt;Column&gt;&lt;Name&gt;Row_Counter&lt;/Name&gt;
+&lt;Status&gt;Counter Column&lt;/Status&gt;
+&lt;Heading /&gt;
+&lt;Width /&gt;
+&lt;Alignment&gt;Center&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;OPPORTUNITY_ID&lt;/Name&gt;
+&lt;Status&gt;Hide&lt;/Status&gt;
+&lt;Heading&gt;OPPORTUNITY_ID&lt;/Heading&gt;
+&lt;Width /&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;CUSTOMER_ID&lt;/Name&gt;
+&lt;Status&gt;Hide&lt;/Status&gt;
+&lt;Heading&gt;CUSTOMER_ID&lt;/Heading&gt;
+&lt;Width /&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;OPPORTUNITY_NAME&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;Opportunity Name&lt;/Heading&gt;
+&lt;Width /&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Case Insensitive String&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;AMOUNT&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;Amount&lt;/Heading&gt;
+&lt;Width /&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Number&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;STAGE&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;Stage&lt;/Heading&gt;
+&lt;Width /&gt;
+&lt;Alignment&gt;Center&lt;/Alignment&gt;
+&lt;Sortable&gt;Number&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;COMMITTED&lt;/Name&gt;
+&lt;Status&gt;Hide&lt;/Status&gt;
+&lt;Heading&gt;COMMITTED&lt;/Heading&gt;
+&lt;Width /&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;DATE_INITIATED&lt;/Name&gt;
+&lt;Status&gt;Hide&lt;/Status&gt;
+&lt;Heading&gt;DATE_INITIATED&lt;/Heading&gt;
+&lt;Width /&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;DATE_CLOSED&lt;/Name&gt;
+&lt;Status&gt;Hide&lt;/Status&gt;
+&lt;Heading&gt;DATE_CLOSED&lt;/Heading&gt;
+&lt;Width /&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;DESC&lt;/Name&gt;
+&lt;Status&gt;Hide&lt;/Status&gt;
+&lt;Heading&gt;DESC&lt;/Heading&gt;
+&lt;Width /&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;REP_NAME&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;Rep&lt;/Heading&gt;
+&lt;Width /&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Case Insensitive String&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;/Columns&gt;</DefaultValue>
+<Prompt>List Page Column Modifier</Prompt>
+<UIType>TextInput</UIType>
+<ProfileSetName>com.bowstreet.solutions.salesDashboard.ForecastSummaryps</ProfileSetName>
+<ExtraData>60</ExtraData>
+</Mapping>
+</top>
+</Input>
+<Input name="Name">Forecast Summary Customizer</Input>
+<Input name="RefreshProfileSets">Update Profile Sets for Portlet</Input>
+<Input name="TreatTextAsXml">true</Input>
+<Input name="TemplateFile">/solutions/templates/gridtable.htm</Input>
+<Input name="StylesheetURL">/solutions/salesDashboard/styles.css</Input>
+<Input name="RefreshInputMappings">Update Input Values From Profile Set</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc53"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPageTableModifier</BuilderDefID>
+<Messages><Warning>Field selector "[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column" did not evaluate to any fields.  Ensure that this BuilderCall follows the corresponding Data Page BuilderCall.</Warning>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="DataPagingPageSize">5</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="DeleteColumnStyle">No Delete Column</Input>
+<Input name="DeleteLinkText">Delete</Input>
+<Input name="DeleteButtonText">Delete</Input>
+<Input name="DeleteMethodType">None</Input>
+<Input name="ManageColumns">true</Input>
+<Input name="PlaceAddedColumns">After</Input>
+<Input name="SingleField" profile="datacolumncustomizerbaseps:Container_Field">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column</Input>
+<Input name="ChildrenInfo"><Columns><Column><Name profile="datacolumncustomizerbaseps:Column_Counter_Column_Modifier">Column_Counter</Name>
+<Status>Hide</Status>
+<Heading>#</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name profile="datacolumncustomizerbaseps:Order_Column_Name">Order</Name>
+<Status>Do Not Change</Status>
+<Heading>Order</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name profile="datacolumncustomizerbaseps:Name_Column_Modifier">Name</Name>
+<Status>Do Not Change</Status>
+<Heading>Name</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name profile="datacolumncustomizerbaseps:Status_Column_Modifier">Status</Name>
+<Status>Do Not Change</Status>
+<Heading>Status</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name profile="datacolumncustomizerbaseps:Heading_Column_Modifier">Heading</Name>
+<Status>Do Not Change</Status>
+<Heading>Heading</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name profile="datacolumncustomizerbaseps:Width_Column_Modifier">Width</Name>
+<Status>Do Not Change</Status>
+<Heading>Width</Heading>
+<Width />
+<Alignment>Left</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name profile="datacolumncustomizerbaseps:Alignment_Column_Modifier">Alignment</Name>
+<Status>Do Not Change</Status>
+<Heading>Alignment</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name profile="datacolumncustomizerbaseps:Sortable_Column_Modifier">Sortable</Name>
+<Status>Do Not Change</Status>
+<Heading>Sortable</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+</Columns>
+</Input>
+<Input name="AddCounterColumn">true</Input>
+<Input name="AddOtherColumns" profile="datacolumncustomizerbaseps:Order_Column_Name">Order</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc20"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldDefinition</BuilderDefID>
+<Messages><Warning>Field selector "[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Heading" did not evaluate to any fields.  Ensure that this BuilderCall follows the corresponding Data Page BuilderCall."},
+No Elements were found.</Warning>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="FieldSelector">Name</Input>
+<Input name="GenerateLabels">NoChange</Input>
+<Input name="IsRepeated">NoChange</Input>
+<Input name="ChildrenCreateTags">NoChange</Input>
+<Input name="ChildrenGenerateLabels">NoChange</Input>
+<Input name="DisplayDirection">NoChange</Input>
+<Input name="FieldBehavior">DataEntry</Input>
+<Input name="IsRequired">No</Input>
+<Input name="DataEntryControlType">NoChange</Input>
+<Input name="TextAreaWrap">off</Input>
+<Input name="SelectOptionsSource">NoChange</Input>
+<Input name="CheckBoxCheckedValue">true</Input>
+<Input name="CheckBoxUncheckedValue">false</Input>
+<Input name="Orientation">vertical</Input>
+<Input name="ViewOnlyControlType">TextOutput</Input>
+<Input name="ActionControlType">Link</Input>
+<Input name="ButtonLabelSource">FieldData</Input>
+<Input name="LinkTextSource">FieldData</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="DataPagingPageSize">5</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="Separator">;</Input>
+<Input name="HTMLClassLabel">[No Change]</Input>
+<Input name="HTMLClassSectionLabel">[No Change]</Input>
+<Input name="HTMLClassOutputData">[No Change]</Input>
+<Input name="HTMLClassEntireTable">[No Change]</Input>
+<Input name="HTMLClassTableHead">[No Change]</Input>
+<Input name="HTMLClassTableRow">[No Change]</Input>
+<Input name="HTMLClassTableRowOdd">[No Change]</Input>
+<Input name="HTMLClassTableRowEven">[No Change]</Input>
+<Input name="Fields"><Fields><Field profile="datacolumncustomizerbaseps:Heading_Modifier_Field">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Heading</Field>
+</Fields>
+</Input>
+<Input name="LookupTable">None</Input>
+<Input name="DefaultName">Heading</Input>
+<Input name="Label">Heading</Input>
+<Input name="Attributes"><top><Attribute><Name>nowrap</Name>
+<Value>true</Value>
+</Attribute>
+</top>
+</Input>
+<Input name="Hide" profile="datacolumncustomizerbaseps:Hide_Heading_Column">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc21"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldDefinition</BuilderDefID>
+<Messages><Warning>Field selector "[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Status" did not evaluate to any fields.  Ensure that this BuilderCall follows the corresponding Data Page BuilderCall."},
+No Elements were found.</Warning>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="FieldSelector">Name</Input>
+<Input name="GenerateLabels">NoChange</Input>
+<Input name="IsRepeated">NoChange</Input>
+<Input name="ChildrenCreateTags">NoChange</Input>
+<Input name="ChildrenGenerateLabels">NoChange</Input>
+<Input name="DisplayDirection">NoChange</Input>
+<Input name="FieldBehavior">DataEntry</Input>
+<Input name="IsRequired">NoChange</Input>
+<Input name="DataEntryControlType">Select</Input>
+<Input name="TextAreaWrap">off</Input>
+<Input name="SelectOptionsSource">Specify</Input>
+<Input name="CheckBoxCheckedValue">true</Input>
+<Input name="CheckBoxUncheckedValue">false</Input>
+<Input name="Orientation">vertical</Input>
+<Input name="ViewOnlyControlType">NoChange</Input>
+<Input name="ActionControlType">Link</Input>
+<Input name="ButtonLabelSource">FieldData</Input>
+<Input name="LinkTextSource">FieldData</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="DataPagingPageSize">5</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="Separator">;</Input>
+<Input name="HTMLClassLabel">[No Change]</Input>
+<Input name="HTMLClassSectionLabel">[No Change]</Input>
+<Input name="HTMLClassOutputData">[No Change]</Input>
+<Input name="HTMLClassEntireTable">[No Change]</Input>
+<Input name="HTMLClassTableHead">[No Change]</Input>
+<Input name="HTMLClassTableRow">[No Change]</Input>
+<Input name="HTMLClassTableRowOdd">[No Change]</Input>
+<Input name="HTMLClassTableRowEven">[No Change]</Input>
+<Input name="Fields"><Fields><Field profile="datacolumncustomizerbaseps:Status_Modifier_Field">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Status</Field>
+</Fields>
+</Input>
+<Input name="LookupTable">None</Input>
+<Input name="Hide">false</Input>
+<Input name="DefaultName">Status</Input>
+<Input name="SelectOptions">Show,Hide</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc23"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldDefinition</BuilderDefID>
+<Messages><Warning>Field selector "[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Alignment" did not evaluate to any fields.  Ensure that this BuilderCall follows the corresponding Data Page BuilderCall."},
+No Elements were found.</Warning>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="FieldSelector">Name</Input>
+<Input name="GenerateLabels">NoChange</Input>
+<Input name="IsRepeated">NoChange</Input>
+<Input name="ChildrenCreateTags">NoChange</Input>
+<Input name="ChildrenGenerateLabels">NoChange</Input>
+<Input name="DisplayDirection">NoChange</Input>
+<Input name="FieldBehavior">DataEntry</Input>
+<Input name="IsRequired">NoChange</Input>
+<Input name="DataEntryControlType">Select</Input>
+<Input name="TextAreaWrap">off</Input>
+<Input name="SelectOptionsSource">Specify</Input>
+<Input name="CheckBoxCheckedValue">true</Input>
+<Input name="CheckBoxUncheckedValue">false</Input>
+<Input name="Orientation">vertical</Input>
+<Input name="ViewOnlyControlType">NoChange</Input>
+<Input name="ActionControlType">Link</Input>
+<Input name="ButtonLabelSource">FieldData</Input>
+<Input name="LinkTextSource">FieldData</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="DataPagingPageSize">5</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="Separator">;</Input>
+<Input name="HTMLClassLabel">[No Change]</Input>
+<Input name="HTMLClassSectionLabel">[No Change]</Input>
+<Input name="HTMLClassOutputData">[No Change]</Input>
+<Input name="HTMLClassEntireTable">[No Change]</Input>
+<Input name="HTMLClassTableHead">[No Change]</Input>
+<Input name="HTMLClassTableRow">[No Change]</Input>
+<Input name="HTMLClassTableRowOdd">[No Change]</Input>
+<Input name="HTMLClassTableRowEven">[No Change]</Input>
+<Input name="Fields"><Fields><Field profile="datacolumncustomizerbaseps:Alignment_Modifier_Field">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Alignment</Field>
+</Fields>
+</Input>
+<Input name="LookupTable">None</Input>
+<Input name="SelectOptions">Default,Left,Center,Right</Input>
+<Input name="DefaultName">Alignment</Input>
+<Input name="Hide" profile="datacolumncustomizerbaseps:Column_Alignment">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc19"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldDefinition</BuilderDefID>
+<Messages><Warning>Field selector "[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Sortable" did not evaluate to any fields.  Ensure that this BuilderCall follows the corresponding Data Page BuilderCall."},
+No Elements were found.</Warning>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="FieldSelector">Name</Input>
+<Input name="GenerateLabels">NoChange</Input>
+<Input name="IsRepeated">NoChange</Input>
+<Input name="ChildrenCreateTags">NoChange</Input>
+<Input name="ChildrenGenerateLabels">NoChange</Input>
+<Input name="DisplayDirection">NoChange</Input>
+<Input name="FieldBehavior">DataEntry</Input>
+<Input name="IsRequired">NoChange</Input>
+<Input name="DataEntryControlType">Select</Input>
+<Input name="TextAreaWrap">off</Input>
+<Input name="SelectOptionsSource">Specify</Input>
+<Input name="CheckBoxCheckedValue">true</Input>
+<Input name="CheckBoxUncheckedValue">false</Input>
+<Input name="Orientation">vertical</Input>
+<Input name="ViewOnlyControlType">NoChange</Input>
+<Input name="ActionControlType">Link</Input>
+<Input name="ButtonLabelSource">FieldData</Input>
+<Input name="LinkTextSource">FieldData</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="DataPagingPageSize">5</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="Separator">;</Input>
+<Input name="HTMLClassLabel">[No Change]</Input>
+<Input name="HTMLClassSectionLabel">[No Change]</Input>
+<Input name="HTMLClassOutputData">[No Change]</Input>
+<Input name="HTMLClassEntireTable">[No Change]</Input>
+<Input name="HTMLClassTableHead">[No Change]</Input>
+<Input name="HTMLClassTableRow">[No Change]</Input>
+<Input name="HTMLClassTableRowOdd">[No Change]</Input>
+<Input name="HTMLClassTableRowEven">[No Change]</Input>
+<Input name="Fields"><Fields><Field profile="datacolumncustomizerbaseps:Sortable_Modifier_Field">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Sortable</Field>
+</Fields>
+</Input>
+<Input name="LookupTable">None</Input>
+<Input name="SelectOptions">Not Sortable,Case Insensitive String,Case Sensitive String,Date,Number</Input>
+<Input name="DefaultName">Sortable</Input>
+<Input name="Hide" profile="datacolumncustomizerbaseps:Column_Sorting">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc28"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldDefinition</BuilderDefID>
+<Messages><Warning>Field selector "[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Name" did not evaluate to any fields.  Ensure that this BuilderCall follows the corresponding Data Page BuilderCall."},
+No Elements were found.</Warning>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="FieldSelector">Name</Input>
+<Input name="GenerateLabels">NoChange</Input>
+<Input name="IsRepeated">NoChange</Input>
+<Input name="ChildrenCreateTags">NoChange</Input>
+<Input name="ChildrenGenerateLabels">NoChange</Input>
+<Input name="DisplayDirection">NoChange</Input>
+<Input name="FieldBehavior">ViewOnly</Input>
+<Input name="IsRequired">NoChange</Input>
+<Input name="DataEntryControlType">NoChange</Input>
+<Input name="TextAreaWrap">off</Input>
+<Input name="SelectOptionsSource">NoChange</Input>
+<Input name="CheckBoxCheckedValue">true</Input>
+<Input name="CheckBoxUncheckedValue">false</Input>
+<Input name="Orientation">vertical</Input>
+<Input name="ViewOnlyControlType">NoChange</Input>
+<Input name="ActionControlType">Link</Input>
+<Input name="ButtonLabelSource">FieldData</Input>
+<Input name="LinkTextSource">FieldData</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="DataPagingPageSize">5</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="Separator">;</Input>
+<Input name="HTMLClassLabel">[No Change]</Input>
+<Input name="HTMLClassSectionLabel">[No Change]</Input>
+<Input name="HTMLClassOutputData">[No Change]</Input>
+<Input name="HTMLClassEntireTable">[No Change]</Input>
+<Input name="HTMLClassTableHead">[No Change]</Input>
+<Input name="HTMLClassTableRow">[No Change]</Input>
+<Input name="HTMLClassTableRowOdd">[No Change]</Input>
+<Input name="HTMLClassTableRowEven">[No Change]</Input>
+<Input name="Fields"><Fields><Field profile="datacolumncustomizerbaseps:Name_Modifier_Field">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Name</Field>
+</Fields>
+</Input>
+<Input name="LookupTable">None</Input>
+<Input name="DefaultName">Name</Input>
+<Input name="Hide" profile="datacolumncustomizerbaseps:Column_Name">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc46"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldDefinition</BuilderDefID>
+<Messages><Warning>Field selector "[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Width" did not evaluate to any fields.  Ensure that this BuilderCall follows the corresponding Data Page BuilderCall."},
+No Elements were found.</Warning>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="FieldSelector">Name</Input>
+<Input name="GenerateLabels">NoChange</Input>
+<Input name="IsRepeated">NoChange</Input>
+<Input name="ChildrenCreateTags">NoChange</Input>
+<Input name="ChildrenGenerateLabels">NoChange</Input>
+<Input name="DisplayDirection">NoChange</Input>
+<Input name="FieldBehavior">NoChange</Input>
+<Input name="IsRequired">No</Input>
+<Input name="DataEntryControlType">NoChange</Input>
+<Input name="TextAreaWrap">off</Input>
+<Input name="SelectOptionsSource">NoChange</Input>
+<Input name="CheckBoxCheckedValue">true</Input>
+<Input name="CheckBoxUncheckedValue">false</Input>
+<Input name="Orientation">vertical</Input>
+<Input name="ViewOnlyControlType">NoChange</Input>
+<Input name="ActionControlType">Link</Input>
+<Input name="ButtonLabelSource">FieldData</Input>
+<Input name="LinkTextSource">FieldData</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="DataPagingPageSize">5</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="Separator">;</Input>
+<Input name="HTMLClassLabel">[No Change]</Input>
+<Input name="HTMLClassSectionLabel">[No Change]</Input>
+<Input name="HTMLClassOutputData">[No Change]</Input>
+<Input name="HTMLClassEntireTable">[No Change]</Input>
+<Input name="HTMLClassTableHead">[No Change]</Input>
+<Input name="HTMLClassTableRow">[No Change]</Input>
+<Input name="HTMLClassTableRowOdd">[No Change]</Input>
+<Input name="HTMLClassTableRowEven">[No Change]</Input>
+<Input name="Fields"><Fields><Field profile="datacolumncustomizerbaseps:Width_Modifier_Field">[editPage1]editPage1/portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns/Column/Width</Field>
+</Fields>
+</Input>
+<Input name="LookupTable">None</Input>
+<Input name="Attributes"><top><Attribute><Name>size</Name>
+<Value>4</Value>
+</Attribute>
+<Attribute><Name>maxlength</Name>
+<Value>4</Value>
+</Attribute>
+</top>
+</Input>
+<Input name="DefaultName">Width</Input>
+<Input name="Hide" profile="datacolumncustomizerbaseps:Column_Width">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc29"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="datacolumncustomizerbaseps:MoveRow_BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+            IXml root = webAppAccess.getVariables().getXml("portletInputs");
+    
+            IXml rows = root.findElement(columnsElement);
+         
+            if(rows == null)
+                return;
+            
+            IXml column = rows.findElement("Column[Name=" + columnName + "]");
+
+            if(column == null)
+                return;
+            
+            IXml insertPoint = null;
+            
+            if(direction.equals("up"))
+            {
+                insertPoint = column.getPreviousSiblingElement();
+            }
+            else if(direction.equals("down"))
+            {
+                IXml firstSibling = column.getNextSiblingElement();
+                if(firstSibling != null)
+                {
+                    insertPoint = firstSibling.getNextSiblingElement();
+                    if(insertPoint == null)
+                    {
+                        // if we're at the end of the list just swap the last two
+                        insertPoint = column;
+                        column = firstSibling;
+                        
+                    }
+                }
+            }
+            
+            if(insertPoint != null)
+            {
+                rows.removeChildElement(column);
+                rows.insertBefore(column, insertPoint);
+            }
+            
+    
+}</Input>
+<Input name="Name">moveColumnRow</Input>
+<Input name="Arguments"><top><Argument><Type>String</Type>
+<Name>columnsElement</Name>
+</Argument>
+<Argument><Name>columnName</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>direction</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Imports"><Imports />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc30"><BuilderDefID>com.bowstreet.builders.webapp.ImageButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="datacolumncustomizerbaseps:Reorder_Columns">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">true</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><alt>Move Column Up</alt>
+<width />
+<height />
+<border>0</border>
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page profile="datacolumncustomizerbaseps:MoveUp_Page">editPage1</Page>
+<NameSearch profile="datacolumncustomizerbaseps:Order_Column_Name">Order</NameSearch>
+<InsertionModifier>Before</InsertionModifier>
+<NewNodeName>uparrow</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Image">/factory/images/portletcustomizer/uparrow.gif</Input>
+<Input name="Action">moveColumnRow</Input>
+<Input name="InputMappings"><top><InputMapping><Name>columnsElement</Name>
+<Value profile="datacolumncustomizerbaseps:MoveUp_ColumnsElement">portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns</Value>
+</InputMapping>
+<InputMapping><Name>columnName</Name>
+<Value profile="datacolumncustomizerbaseps:MoveUp_ColumnName">${Variables/ColumnLoopVar/Column/Name}</Value>
+</InputMapping>
+<InputMapping><Name>direction</Name>
+<Value>up</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">moveRow</Input>
+<Input name="Name">MoveUp</Input>
+<Input name="alt">Move Column Up</Input>
+<Input name="border">0</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc31"><BuilderDefID>com.bowstreet.builders.webapp.ImageButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="datacolumncustomizerbaseps:Reorder_Columns">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">true</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><alt>Move Column Down</alt>
+<width />
+<height />
+<border>0</border>
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page profile="datacolumncustomizerbaseps:MoveDown_Page">editPage1</Page>
+<NameSearch profile="datacolumncustomizerbaseps:Order_Column_Name">Order</NameSearch>
+<InsertionModifier>After</InsertionModifier>
+<NewNodeName>downarrow</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Image">/factory/images/portletcustomizer/downarrow.gif</Input>
+<Input name="Action">moveColumnRow</Input>
+<Input name="InputMappings"><top><InputMapping><Name>columnsElement</Name>
+<Value profile="datacolumncustomizerbaseps:MoveDown_ColumnsElement">portletInputs/com_bowstreet_solutions_salesDashboard_ForecastSummaryps_List_Page_Column_Modifier/Columns</Value>
+</InputMapping>
+<InputMapping><Name>columnName</Name>
+<Value profile="datacolumncustomizerbaseps:MoveDown_ColumnName">${Variables/ColumnLoopVar/Column/Name}</Value>
+</InputMapping>
+<InputMapping><Name>direction</Name>
+<Value>down</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">moveRow</Input>
+<Input name="Name">MoveDown</Input>
+<Input name="alt">Move Column Down</Input>
+<Input name="border">0</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc57"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Localization of Name values</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc54"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages><Warning>PageLocation expression does not evaluate to any locations: "Page editPage1 NameSearch Name"</Warning>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page profile="datacolumncustomizerbaseps:MoveUp_Page">editPage1</Page>
+<NameSearch profile="datacolumncustomizerbaseps:Name_Column_Modifier">Name</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text" profile="datacolumncustomizerbaseps:Get_Localized_Text_Name">${MethodCall/basename_getLocalizedText(${Variables/ColumnLoopVar/Column/Name},testing_DataProfile_DataPage,LocaleData)}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc55"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+        String key; 
+        key = webAppAccess.getVariables().getXmlText("portletInputs", 
+        columnName+"/Columns/Column[Name=" + rowValue + "]/Heading"); 
+        if(key==null || key.length()&lt;=0) 
+            return rowValue; 
+         if(localeDataName.equals(""))
+         	return key;
+         
+        String localizedString = webAppAccess.getVariables().getXmlText(localeDataName, "Data/" + key); 
+        if(localizedString==null||localizedString.length()&lt;=0) 
+            return key; 
+        else 
+            return localizedString; 
+}</Input>
+<Input name="RenameExisting">true</Input>
+<Input name="Name">basename_getLocalizedText</Input>
+<Input name="Arguments"><top><Argument><Name>rowValue</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>columnName</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>localeDataName</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><RequiredFactoryVersion>5.0.0</RequiredFactoryVersion>
+<Version>0.0.0</Version>
+<Description>Empty model (contains no builder calls).</Description>
+<Contained>false</Contained>
+<EnableGenerationCaching>true</EnableGenerationCaching>
+<Roles />
+<EnableFailover>false</EnableFailover>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

@@ -1,0 +1,68 @@
+/** Base styles used by Data Layout Template style sheets **/
+
+.wpfImageExtraExtraSmall {
+    width: 16px;
+    height: 16px;
+}
+
+.wpfImageExtraSmall {
+    width: 30px;
+    height: 30px;
+}
+
+.wpfImageSmall {
+	width: 50px;
+	height: 50px;
+}
+
+.wpfImageMedium {
+	width: 65px;
+	height: 65px;
+}
+
+.wpfImageLarge {
+	width: 80px;
+	height: 80px;
+}
+
+.wpfTitleText {
+	font-weight: bold;
+}
+
+.wpfLabelText {
+	font-weight: bold;
+	padding-right: 3px;
+}
+
+.wpfPaddingRight {
+    padding-right: 3px;
+}
+
+.wpfLargeTitleText {
+	font-weight: bold;
+    font-size: 1.2em;
+}
+
+.wpfSmallText {
+	font-weight: lighter;
+	font-size: 12px;
+}
+
+.wpfSmallItalicText {
+	font-style: italic;
+	font-weight: lighter;
+	font-size: 12px;
+}
+
+.wpfSelectableRow:hover {
+	cursor: pointer;
+}
+
+/* adds a non-breaking space */
+.wpfSpaceAfter:after {
+	content: '\00a0';
+}
+
+.wpfSpaceAfter {
+	
+}

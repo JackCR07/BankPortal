@@ -1,0 +1,25 @@
+<meta
+data-template-id="ctc_CatalogList"
+data-template-bundle-name="com.bowstreet.builders.webapp.package"
+data-template-name-id="DataLayoutctc_CatalogListName"
+data-template-description-id="DataLayoutctc_CatalogList"
+data-template-name="Content Template Catalog Style List"
+data-template-description="This layout is used for lists that look like index pages from the content template catalog. There are two base layouts that are set by selecting a style sheet. The ctc list with styles style sheet uses styles defined in our style sheets that match the original styles defined by ctc and can be used on portal pages or stand alone. The ctc list using styles from ctc style sheet has no styles defined in our style sheets.  It needs the portlet to be placed on a portal page that has a ctc content index page on it, and it uses the styles defined in ctc.  The theme setting will use the CTC's styles by default. Style sheet files that end in uitheme.css use styles that are defined in the themes css file."
+data-style-picker-file-names="/factory/data_layout_templates/ctc_base_catalog_list_template_styles.css"
+data-container-style-picker-file-names="/factory/data_layout_templates/responsive_base_ctc_list_template_container_styles.css"
+data-stylesheets="/factory/data_layout_templates/ctc_catalog_list_with_styles.css,/factory/data_layout_templates/ctc_catalog_list_using_styles_from_ctc_uitheme.css,/factory/data_layout_templates/blank.css"
+data-stylesheet-root-class-names="ctc_catalogList,contentIndex,ctc_catalogListBlank"/>
+<div name="layout_list" class="wef_datalayout_list">
+	<div class="ctcListItem item" name="list_item" data-repeat-wrapper="default" data-target-exact="containerLayoutStyles(clStyles)">
+		<div class="itemImage" data-target-exact="image_column_styles" data-target="image"></div>
+		<div class="itemDetails" data-target-exact="detail_column_styles">
+			<h3 class="itemTitle" data-target-exact="item_title"></h3>
+			<span class="itemSubTitle" data-target-exact="item_sub_title"></span>
+			<div class="itemSummary">
+				<p dir="ltr" data-target-exact="item_summary"></p>
+			</div>
+			<div class="itemLink" data-target="item_bottom"></div>
+		</div>
+		<div class="contentClear"></div>
+	</div>
+</div>

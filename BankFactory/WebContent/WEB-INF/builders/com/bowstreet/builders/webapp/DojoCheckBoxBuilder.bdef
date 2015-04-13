@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<BuilderDef id="com.bowstreet.builders.webapp.DojoCheckBoxBuilder" xmlns="http://www.bowstreet.com/2001/Schemas">
+    <ReadableName>Dojo Check Box</ReadableName>
+    <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName>
+    <HelpFile></HelpFile>
+    <RequiredFactoryVersion>6.0.1</RequiredFactoryVersion>
+    <Description>Adds a single Dojo check box to a named tag or other location on a page or pages.</Description>
+    <Domains>
+            <Domain>WebApp</Domain>
+		    <Domain>Consumer</Domain>
+    </Domains>
+    <CreateModifyList>
+      <CanModify type="Page" category="Page Elements">Adds a single check box to a named tag or other location on the page.</CanModify>
+      <CanModify type="[Unassigned Elements]" category="Page Elements">Adds a single check box.</CanModify>
+    </CreateModifyList>
+    <Category>Page Elements, Rich UI</Category>
+    <Keywords>Dojo, Form, Data Entry, Check Box</Keywords>
+    <BuilderData>
+	    <BuilderDataEntry name="PickerVisibility">5</BuilderDataEntry>
+        <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoCheckBoxBuilder</BuilderDataEntry>
+    </BuilderData>
+  	<CoordinatorClassName>com.bowstreet.builders.webapp.ui.CheckBoxCoordinator</CoordinatorClassName>
+    <InputDefinitions>
+        <InputDefinition name="Name"  base="com.bowstreet.core.Base.BuilderName" />
+
+	    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation"> 
+	      <Prompt></Prompt> 
+	      <Required>true</Required> 
+	      <Visible>true</Visible> 
+	      <ProfileType>Value</ProfileType> 
+	      <Callable>true</Callable> 
+	    </InputDefinition> 
+
+        <InputDefinition name="Text"  base="com.bowstreet.core.Base.IndirectValue">
+            <Prompt>Label</Prompt>
+            <HelpText>Specify a label for the check box.</HelpText>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="DefaultValue"  base="com.bowstreet.core.Base.IndirectValueLoopVarPreferred">
+            <Prompt>Default Value</Prompt>
+            <HelpText>Specify the default value for the check box. It must match either the checked or unchecked values specified.</HelpText>
+            <InitialValue>false</InitialValue>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="Value"  base="com.bowstreet.core.Base.HiddenValue" />
+
+        <InputDefinition name="CheckedValue"  base="com.bowstreet.core.Base.IndirectValue">
+            <Prompt>Checked Value</Prompt>
+            <HelpText>Specify the value returned by this check box when it is checked (Default: true)</HelpText>
+            <InitialValue>true</InitialValue>
+        </InputDefinition>
+
+        <InputDefinition name="UncheckedValue"  base="com.bowstreet.core.Base.IndirectValue">
+            <Prompt>Unchecked Value</Prompt>
+            <HelpText>Specify the value for the check box when it is not checked (Default: false)</HelpText>
+            <InitialValue>false</InitialValue>
+        </InputDefinition>
+        
+        <InputDefinition name="RenderDisabled"  base="com.bowstreet.core.Base.IndirectValue">
+            <Prompt>Render Disabled</Prompt>
+            <HelpText>Specify if check box should be rendered as disabled</HelpText>
+            <InitialValue>false</InitialValue>
+            <Editor JavaClass="com.bowstreet.widget.Reference">
+                <Argument name="editor">
+                    <Editor JavaClass="com.bowstreet.widget.ComboBox">
+		            	<Argument name="listData">false,true</Argument>
+	    		        <Argument name="listLabels">false,true</Argument>
+			    		<Argument name="isEditable">true</Argument>
+				    </Editor>
+                </Argument>
+            </Editor>
+        </InputDefinition>
+<!-- future enhancement
+        <InputDefinition name="CopyParentTagAttributes" base="com.bowstreet.core.Base.BooleanData">
+            <Prompt>Copy Parent Tag Attributes</Prompt>
+            <HelpText>Specify if check box should inherit inclosing tag's attributes</HelpText>
+            <InitialValue>false</InitialValue>
+        </InputDefinition>
+
+        <InputDefinition name="CopyOptions" base="com.bowstreet.core.Base.StringData">
+	        <Prompt>Placement of Parent Tag's Attribute Content</Prompt>
+	        <HelpText></HelpText>
+            <InitialValue>false</InitialValue>	        
+	        <Editor JavaClass="com.bowstreet.widget.ComboBox">
+	          <Argument name="initialValue" inheritable="true">Replace</Argument>	
+	          <Argument name="listData" inheritable="true">Replace,Prepend,Append</Argument>
+	          <Argument name="listLabels" inheritable="true">Replace Target Attribute,Add To Beginning Of Target Attribute,Add To End Of Target Attribute</Argument>
+	        </Editor>
+	        <ProfileType>None</ProfileType>
+	        <Visible>false</Visible>
+      	</InputDefinition>
+
+        <InputDefinition name="ParentTagAttributesToExclude" base="com.bowstreet.core.Base.IndirectValue">
+            <Prompt>Parent Tag Attributes To Exclude</Prompt>
+            <HelpText>Comma separated list of parent tag's attribute names to exclude</HelpText>
+            <InitialValue></InitialValue>
+            <Visible>false</Visible>
+        </InputDefinition>
+-->        
+        <InputDefinition name="DynamicControlName"  base="com.bowstreet.core.Base.IndirectValue">
+            <Group>Advanced</Group>
+            <Prompt>Dynamic Name</Prompt>
+            <HelpText>Dynamic HTML Control Name Attribute, for use within repeated regions</HelpText>
+        </InputDefinition>
+
+      <InputDefinition name="OverrideDojoType"
+base="com.bowstreet.core.Base.StringData">
+          <Group>Advanced</Group>
+          <Prompt>Override Dojo Type</Prompt>
+          <HelpText></HelpText>
+          <Visible>false</Visible>
+      </InputDefinition>
+
+    </InputDefinitions>
+
+    <GroupDefinitions>
+        <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced">
+            <Description>Specify an indirect name attribute if used within repeated regions</Description>
+        </GroupDefinition>
+    </GroupDefinitions>
+
+</BuilderDef>

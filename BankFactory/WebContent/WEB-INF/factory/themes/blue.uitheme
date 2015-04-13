@@ -1,0 +1,68 @@
+<!--  **************************  Blue Theme **********************************
+
+A theme is a collection of style information that can be used to drive builder inputs that provide the application UI in your model.
+This information can include but is not limited to HTML templates, style sheets (CSS), base pages, highlighting style, and paging style. 
+
+This theme file extents the wpfbase.uitheme theme and changes the look of the page header, buttons, pager, 
+and tables to use a blue color scheme.
+See wpfbase.uitheme for base features.
+
+
+For more Theme information please see the "Themes and user interface control" section of the product documentation.
+
+-->
+<Theme extends="/WEB-INF/factory/themes/wpfbase.uitheme">
+    <DataPage_StyleSheetOverride>/factory/html_templates/gridtable_blue.css</DataPage_StyleSheetOverride>
+
+    <ViewAndForm_ViewPageStyleSheetOverride>/factory/html_templates/gridtable_blue.css</ViewAndForm_ViewPageStyleSheetOverride>
+
+    <ViewAndForm_DetailPageStyleSheetOverride>/factory/html_templates/gridtable_blue.css</ViewAndForm_DetailPageStyleSheetOverride>
+
+    <ViewAndForm_UpdatePageStyleSheetOverride>/factory/html_templates/gridtable_blue.css</ViewAndForm_UpdatePageStyleSheetOverride>
+
+    <ViewAndForm_InputPageStyleSheetOverride>/factory/html_templates/gridtable_blue.css</ViewAndForm_InputPageStyleSheetOverride>
+
+    <ViewAndForm_PagingLinksStyleSheet>/factory/pages/paging/data_paging_links_blue.css</ViewAndForm_PagingLinksStyleSheet>
+    <ViewAndForm_PagingButtonsStyleSheet>/factory/pages/paging/data_paging_buttons_blue.css</ViewAndForm_PagingButtonsStyleSheet>
+
+    <!-- Make color black so that when a column is set to be an input the text will show up, otherwise it will be white on white -->
+    <ViewAndForm_HighlighterForeground>#000000</ViewAndForm_HighlighterForeground>
+    <ViewAndForm_HighlighterBackground>#60A1EA</ViewAndForm_HighlighterBackground>
+
+    <InputForm_StyleSheetOverride>/factory/html_templates/gridtable_blue.css</InputForm_StyleSheetOverride>
+
+    <PageBorder_BorderStyleFile>/factory/pages/borders/blue_border.css</PageBorder_BorderStyleFile>
+
+    <PageTabs_Style_Sheet_File_Name>/factory/pages/page_tabs/page_tabs_blue.css</PageTabs_Style_Sheet_File_Name>
+   
+    <PagingLinks_StyleSheet>/factory/pages/paging/data_paging_links_blue.css</PagingLinks_StyleSheet>
+ 
+    <PagingButtons_StyleSheet>/factory/pages/paging/data_paging_buttons_blue.css</PagingButtons_StyleSheet>
+    <PagingButtons_FirstNormalButtonImage>/factory/images/paging/blue/firstpg.gif</PagingButtons_FirstNormalButtonImage>
+    <PagingButtons_FirstHoverButtonImage>/factory/images/paging/blue/firstpg.gif</PagingButtons_FirstHoverButtonImage>
+    <PagingButtons_FirstPressedButtonImage>/factory/images/paging/blue/firstpg_dn.gif</PagingButtons_FirstPressedButtonImage>
+    <PagingButtons_FirstDisabledButtonImage>/factory/images/paging/blue/firstpg_dis.gif</PagingButtons_FirstDisabledButtonImage>
+    <PagingButtons_PrevNormalButtonImage>/factory/images/paging/blue/prevpg.gif</PagingButtons_PrevNormalButtonImage>
+    <PagingButtons_PrevHoverButtonImage>/factory/images/paging/blue/prevpg.gif</PagingButtons_PrevHoverButtonImage>
+    <PagingButtons_PrevPressedButtonImage>/factory/images/paging/blue/prevpg_dn.gif</PagingButtons_PrevPressedButtonImage>
+    <PagingButtons_PrevDisabledButtonImage>/factory/images/paging/blue/prevpg_dis.gif</PagingButtons_PrevDisabledButtonImage>
+    <PagingButtons_NextNormalButtonImage>/factory/images/paging/blue/nextpg.gif</PagingButtons_NextNormalButtonImage>
+    <PagingButtons_NextHoverButtonImage>/factory/images/paging/blue/nextpg.gif</PagingButtons_NextHoverButtonImage>
+    <PagingButtons_NextPressedButtonImage>/factory/images/paging/blue/nextpg_dn.gif</PagingButtons_NextPressedButtonImage>
+    <PagingButtons_NextDisabledButtonImage>/factory/images/paging/blue/nextpg_dis.gif</PagingButtons_NextDisabledButtonImage>
+    <PagingButtons_LastNormalButtonImage>/factory/images/paging/blue/lastpg.gif</PagingButtons_LastNormalButtonImage>
+    <PagingButtons_LastHoverButtonImage>/factory/images/paging/blue/lastpg.gif</PagingButtons_LastHoverButtonImage>
+    <PagingButtons_LastPressedButtonImage>/factory/images/paging/blue/lastpg_dn.gif</PagingButtons_LastPressedButtonImage>
+    <PagingButtons_LastDisabledButtonImage>/factory/images/paging/blue/lastpg_dis.gif</PagingButtons_LastDisabledButtonImage>
+
+    <Button_ActionRole_Default>wpfBlueButton</Button_ActionRole_Default>
+    <Button_StyleSheet>/factory/html_templates/blue_buttons.css</Button_StyleSheet>
+    
+    <DSUI_StyleSheetOverride>/factory/html_templates/gridtable_blue.css</DSUI_StyleSheetOverride>
+    
+    <!-- Make color black so that when a column is set to be an input the text will show up, otherwise it will be white on white -->
+    <DSUI_RowHightlightColor>#000000</DSUI_RowHightlightColor>
+    <DSUI_RowHightlightBackgroundColor>#60A1EA</DSUI_RowHightlightBackgroundColor>
+    
+</Theme>
+

@@ -1,0 +1,65 @@
+ .responsive_Thumbnail_Info .thumbnailInfoItem{
+ width:190px;
+ float:left;
+ padding:3px;
+}
+.responsive_Thumbnail_Info_Left .thumbnailInfoItem, .responsive_Thumbnail_Info_Right .thumbnailInfoItem{
+ width:200px;
+}
+.responsive_Thumbnail_Info .thumbnail{
+ float:left;
+ padding:3px;
+ display:inline;
+}
+.responsive_Thumbnail_Info_Left .thumbnail{
+ float:right;
+ width:38%;
+}
+.responsive_Thumbnail_Info_Right .thumbnail{
+ float:left;
+ width:38%;
+}
+.wpthemeThin .responsive_Thumbnail_Info_Left .clThemeThinContainer .thumbnail,.wpthemeThin .responsive_Thumbnail_Info_Right .clThemeThinContainer .thumbnail{
+ float:none!important;
+ width:150px;
+}
+.wpthemeThin .responsive_Thumbnail_Info_Right .clThemeThinContainer .thumbnail img,.wpthemeThin .responsive_Thumbnail_Info_Right .clThemeThinContainer .thumbnail img{max-width:150px;}
+.wpthemeThin .responsive_Thumbnail_Info_Left .clThemeThinContainer .info,.wpthemeThin .responsive_Thumbnail_Info_Right .clThemeThinContainer .info{
+	clear:both;
+	width:150px;
+}
+.responsive_Thumbnail_Info .thumbnail img{max-width:190px;}
+.responsive_Thumbnail_Info_Right .thumbnail img,.responsive_Thumbnail_Info_Right .thumbnail img,{max-width:90px;}
+.responsive_Thumbnail_Info .info{clear:both;}
+.responsive_Thumbnail_Info_Left .info, .responsive_Thumbnail_Info_Right .info{
+ text-decoration:none;
+ float:left;
+ width:58%;
+ clear:none;
+}
+.responsive_Thumbnail_Info .links{
+ float:left;
+ width:100%;
+}
+.responsive_Thumbnail_Info .linkLeft{
+ float:left;
+ border-right:thin solid gray;
+ text-align:center;
+ padding-right:5px;
+}
+.responsive_Thumbnail_Info .linkRight{
+ float:left;
+ text-align:center;
+ padding-left:5px;
+}
+.responsive_Thumbnail_Info img{max-width:346px;}
+.responsive_Thumbnail_Info .wpthemeCol12of12 img{max-width:274px;}
+.responsive_Thumbnail_Info .wpthemeCol8of12 img{max-width:174px;}
+.responsive_Thumbnail_Info .wpthemeCol6of12 img{max-width:114px;}
+.responsive_Thumbnail_Info .wpthemeCol4of12 img{max-width:64px;}
+.responsive_Thumbnail_Info .cl2PerLine{width:47%;}
+.responsive_Thumbnail_Info .cl3PerLine{width:30%;}
+.responsive_Thumbnail_Info .cl4PerLine{width:23%;}
+.responsive_Thumbnail_Info .cl5PerLine{width:18%;}
+.responsive_Thumbnail_Info .clWidth300, .responsive_Thumbnail_Info_Left .clWidth300 ,.responsive_Thumbnail_Info_Right .clWidth300 {width:290px;}
+	

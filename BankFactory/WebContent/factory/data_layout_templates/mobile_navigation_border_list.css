@@ -1,0 +1,120 @@
+@IMPORT url("base_template_styles.css");
+
+body {
+   margin-left: 0px;
+   margin-right: 0px;
+   width: 100%;
+}
+
+div.vf_view_container {
+    width:100%;
+    padding: 0px;
+}
+
+.vf_view_list {
+   width:100%;
+}
+
+.wpfMobileNavBD a.wpfSelectableRow {
+    color: #222222;
+    text-decoration: none;
+}
+
+.wpfMobileTabRow .wpfSelectableRow.selected.mblTabButton {
+    background-color:#5877A2;
+    background-image:-webkit-gradient(linear, left top, left bottom, from(#8ea4c1) , to(#4a6c9b) , color-stop(0.5, #5877a2) , color-stop(0.5, #476999));
+}
+
+.wpfMobileTabRow .wpfSelectableRow.selected.mblTabBarButton {
+    -webkit-border-radius:3px;
+    background-color:#404040;
+    background-image:-webkit-gradient(linear, left top, left bottom, from(#484848) , to(#242424) , color-stop(0.5, #353535) , color-stop(0.5, #242424));
+}
+
+.wpfMobileTabRow .wpfSelectableRow.selected.mblTabBarButton .mblTabBarButtonTextBox {
+    color:white;
+}
+
+.wpfMobileNavBD {
+    min-width: 305px;
+}
+
+.wpfMobileNavBD .wpfLeft {
+    float: left;
+    padding: 2px;
+}
+
+.wpfMobileNavBD .wpfCenterContainer {
+    float: left;
+    width: 60%;
+}
+
+.wpfMobileNavBD .wpfCenter {
+    padding-left: 3px;
+    padding-right: 3px;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden; 
+}
+
+.wpfMobileNavBD .wpfRight {
+    float: right;
+    margin-right: 20px;
+    line-height: 58px;    
+    white-space: nowrap;
+    overflow: hidden;
+    width: 15%;
+}
+
+.wpfMobileNavBD .wpfListItem img
+{
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}
+
+.wpfMobileNavBD .wpfListItem
+{
+    background-image: url("right_arrow.gif");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: #F8F8F8;  
+    text-decoration: none;
+    color: #222222;
+    font-size: 15px;
+    margin-bottom: -1px;
+    text-decoration: none;
+    border: 1px solid #999999;
+    margin-left: 2px;
+    margin-right: 2px;
+    
+    height: 36px;
+    padding: 10px 10px;
+}
+
+/** Round the first and last child **/
+/* This varies based on if the link in on the entire row or on a field */
+.wpfMobileNavBD a:first-child>.wpfListItem,
+.wpfMobileNavBD>.wpfListItem:first-child  
+{
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+}
+
+/* This varies based on if the link in on the entire row or on a field */
+.wpfMobileNavBD a:last-child>.wpfListItem, 
+.wpfMobileNavBD>.wpfListItem:last-child
+{
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}
+
+.wpfMobileNavBD .wpfCenterContainer {
+    width: 95%;
+}
+
+.wpfMobileNavBD .wpfGroupTitle {
+    font-weight: bold;
+    font-size: 17px;
+}

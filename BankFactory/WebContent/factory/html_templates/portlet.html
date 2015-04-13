@@ -1,0 +1,156 @@
+<html>
+<body>
+  <styleSheet name="StyleSheetHint">/factory/html_templates/gridtable.css</styleSheet>
+  <styleSheet name="DesignViewStyleSheet">${WebContent}/factory/html_templates/gridtable4VisualDesigner.css</styleSheet>
+
+  <HTMLWRAPPER name="DisplayPageWrapper">  <!-- Begin: Display Page Wrapper -->  
+    <table class="portlet-font" cellpadding="3" cellspacing="1" name="OuterTable">
+      <HTMLWRAPPER name="PageContentsContainer">
+        <HTMLWRAPPER name="DisplayGroupWrapper">  <!-- Begin: Display Group Wrapper -->
+          <HTMLWRAPPER name="LabelContainer">
+            <tr name="DisplayGroupLabel">
+              <td colspan="2" height="25" class="sectionLabelCell" nowrap><span name="LabelText" class="portlet-section-header">Section Label</span></td>
+            </tr>
+          </HTMLWRAPPER>
+          <HTMLWRAPPER name="GroupContainer">
+            <HTMLWRAPPER name="DisplayGroup">
+              <HTMLWRAPPER name="DataContainer">  <!-- Begin: Data display fields -->
+                <tr name="DisplayField" class="DisplayFieldRow">
+                  <td class="labelCell" height="27" align="right" valign="top" nowrap>&nbsp;&nbsp;&nbsp;<span name="FieldLabel" class="portlet-form-label">Field Label</span></td>
+                  <td width="100%" class="outputDataCell" valign="top"><span name="FieldElement" class="portlet-form-field">Field Value</span></td>
+                </tr>
+              </HTMLWRAPPER>  <!-- End: Data display fields -->
+            </HTMLWRAPPER>
+          </HTMLWRAPPER>
+        </HTMLWRAPPER>  <!-- End: DisplayGroupWrapper -->
+
+      <!-- Begin: Table Wrapper.  Note that this will sit inside DisplayPageWrapper or DataEntryPageWrapper -->
+      <tr name="TableWrapper"><td colspan="4" class="outputDataCell" style="padding:0px" width="100%">
+          <HTMLWRAPPER name="_tableAndButton">
+          <HTMLWRAPPER name="GroupContainer">
+          <table name="Table" id="_table" width="100%" class="portlet-section-text" cellspacing="0" cellpadding="3">  <!-- Begin: Table -->
+          <tr name="TableHeaderContainer" class="portlet-section-header">  <!-- Begin: table header row -->
+            <!-- Generic column header -->
+            <th name="ColumnHeader" class="tableHead" nowrap><span name="HeaderElement" class="portlet-section-header">Header</span></th>
+            <!-- Sorted column header- useful for applying correct style to sorting link -->
+            <th name="ColumnHeaderSorted" class="tableHead" nowrap><a href="#" name="HeaderElement" class="portlet-section-header">Header Sorted</a></th>
+            <!-- These columns are specifically for Details,Edit and Delete and provide centering and the right style -->
+            <th name="ColumnHeaderByName_Details" width="50" class="tableHead" align="center" nowrap><span name="HeaderElement" class="portlet-section-header">Details</span></th>
+            <th name="ColumnHeaderByName_Edit" width="50" class="tableHead" align="center" nowrap><span name="HeaderElement" class="portlet-section-header">Edit</span></th>
+            <th name="ColumnHeaderByName_Delete" width="50" class="tableHead" align="center" nowrap><span name="HeaderElement" class="portlet-section-header">Delete</span></th>
+            <!-- This column is more general for any columns where the field is made into a button, for example auto delete, but only where data field modifiers make the column a button -->
+            <th name="ColumnHeader_button" class="tableHead" align="center" nowrap><span name="HeaderElement" class="portlet-section-header">Auto Delete</span></th>      
+            <!-- These columns are specifically for decimal values and provide centering and the right style -->      
+            <th name="ColumnHeader_decimal" class="tableHead" align="center" nowrap><span name="HeaderElement" class="portlet-section-header">Decimal</span></th>
+            <th name="ColumnHeaderSorted_decimal" class="tableHead" align="center" nowrap><a name="HeaderElement" class="portlet-section-header">Decimal Sorted</a></th>
+            <!-- These columns are specifically for dates and provide centering and the right style -->
+            <th name="ColumnHeader_integer" class="tableHead" align="center" nowrap><span name="HeaderElement" class="portlet-section-header">Integer</span></th>
+            <th name="ColumnHeaderSorted_integer" class="tableHead" align="center" nowrap><a name="HeaderElement" class="portlet-section-header">Integer Sorted</a></th>
+            <th name="ColumnHeader_int" class="tableHead" align="center" nowrap><span name="HeaderElement" class="portlet-section-header">Integer</span></th>
+            <th name="ColumnHeaderSorted_int" class="tableHead" align="center" nowrap><a name="HeaderElement" class="portlet-section-header">Integer Sorted</a></th>
+            <th name="ColumnHeader_float" class="tableHead" align="center" nowrap><span name="HeaderElement" class="portlet-section-header">Integer</span></th>
+            <th name="ColumnHeaderSorted_float" class="tableHead" align="center" nowrap><a name="HeaderElement" class="portlet-section-header">Integer Sorted</a></th>
+            <th name="ColumnHeader_double" class="tableHead" align="center" nowrap><span name="HeaderElement" class="portlet-section-header">Integer</span></th>
+            <th name="ColumnHeaderSorted_double" class="tableHead" align="center" nowrap><a name="HeaderElement" class="portlet-section-header">Integer Sorted</a></th>
+            <th name="ColumnHeader_date" class="tableHead" align="center" nowrap><span name="HeaderElement" class="portlet-section-header">Date</span></th>
+            <th name="ColumnHeaderSorted_date" class="tableHead" align="center" nowrap><a name="HeaderElement" class="portlet-section-header">Date Sorted</a></th>
+            <th name="ColumnHeader_year" class="tableHead" align="center" nowrap><span name="HeaderElement" class="portlet-section-header">Year</span></th>
+            <th name="ColumnHeaderSorted_year" class="tableHead" align="center" nowrap><a name="HeaderElement" class="portlet-section-header">Year Sorted</a></th>
+          </tr>  <!-- End: table header row -->
+          <HTMLWRAPPER name="RepeatElement"><!-- Begin: repeated data rows -->
+          <tr name="DataContainer" sequence_class="portlet-section-body,portlet-section-alternate">      
+            <!-- Cells that match the above header columns.  No special treatment for sorted cells. -->
+            <td name="ColumnData" valign="top"><span name="FieldElement" class="portlet-form-field" ></span><span name="FieldValidationError" class="portlet-msg-error" /></td>
+            <td name="ColumnDataByName_Details" class="portlet-form-field" valign="top" align="center"><span name="FieldElement" class="portlet-form-button"></span></td>
+            <td name="ColumnDataByName_Edit" class="portlet-form-field" valign="top" align="center"><span name="FieldElement" class="portlet-form-button"></span></td>
+            <td name="ColumnDataByName_Delete" class="portlet-form-field" valign="top" align="center"><span name="FieldElement" class="portlet-form-button"></span></td>
+            <td name="ColumnData_button" class="portlet-form-field" valign="top" align="center"><span name="FieldElement" class="portlet-form-button">Button</span></td>
+            <td name="ColumnData_decimal" class="portlet-form-field" valign="top" align="right" nowrap><span name="FieldElement">Decimal</span><span name="FieldValidationError" class="portlet-msg-error" /></td>
+            <td name="ColumnData_integer" valign="top"  class="outputDataRight"><span name="FieldElement" class="outputDataRight" nowrap>Integer</span><span name="FieldValidationError" class="portlet-msg-error" /></td>
+            <td name="ColumnData_int" valign="top" class="outputDataRight"><span name="FieldElement" class="outputDataRight" nowrap>Integer</span><span name="FieldValidationError" class="portlet-msg-error" /></td>
+            <td name="ColumnData_float" valign="top" class="outputDataRight"><span name="FieldElement" class="outputDataRight" nowrap>Integer</span><span name="FieldValidationError" class="portlet-msg-error" /></td>
+            <td name="ColumnData_double" valign="top" class="outputDataRight"><span name="FieldElement" class="outputDataRight" nowrap>Integer</span><span name="FieldValidationError" class="portlet-msg-error" /></td>
+            <td name="ColumnData_date" valign="top" align="center"><span name="FieldElement" class="portlet-form-field" nowrap>Date</span><span name="FieldValidationError" class="portlet-msg-error" /></td>
+            <td name="ColumnData_year" valign="top" align="center"><span name="FieldElement" class="portlet-form-field" nowrap>Year</span><span name="FieldValidationError" class="portlet-msg-error" /></td>
+          </tr>
+          </HTMLWRAPPER><!-- End: repeated data rows -->    
+          <tr name="SummaryContainer" class="tableSummaryRow">
+            <td name="ColumnSummary" valign="top"><span name="DataElement" class="portlet-form-field" ></span></td>
+            <td name="ColumnSummary_button" class="portlet-form-field" valign="top" align="center"><span name="DataElement" class="portlet-form-button"></span></td>
+            <td name="ColumnSummary_decimal"  valign="top"  class="outputDataRight" nowrap><span name="DataElement" class="portlet-form-field"></span></td>
+            <td name="ColumnSummary_integer" valign="top"  class="outputDataRight"><span name="DataElement" class="portlet-form-field" nowrap></span></td>
+            <td name="ColumnSummary_int" valign="top" class="outputDataRight"><span name="DataElement" class="portlet-form-field" nowrap></span></td>
+            <td name="ColumnSummary_float" valign="top" class="outputDataRight"><span name="DataElement" class="portlet-form-field" nowrap></span></td>
+            <td name="ColumnSummary_double" valign="top" class="outputDataRight"><span name="DataElement" class="portlet-form-field" nowrap></span></td>
+            <td name="ColumnSummary_date" valign="top" align="center"><span name="DataElement" class="portlet-form-field" nowrap></span></td>
+            <td name="ColumnSummary_year" valign="top" align="center"><span name="DataElement" class="portlet-form-field" nowrap></span></td>            
+          </tr>
+        </table>  <!-- End: Table -->  
+        </HTMLWRAPPER><!-- End: GroupContainer -->
+          <span name="_buttonSpace" />            
+        </HTMLWRAPPER>
+
+        <HTMLWRAPPER name="EmptyDataContainer"><!-- Place for "Empty Data" message -->
+          <table cellpadding="0" cellspacing="0" width="100%" name="TableEmptyData" ><tr class="EmptyDataMessageRow"><td align="center" class="EmptyDataMessageCell">
+            <span  name="EmptyDataMessage" class="portlet-msg-info" />
+          </td></tr></table>
+        </HTMLWRAPPER>
+
+      </td></tr> <!-- End: Table Wrapper -->
+      </HTMLWRAPPER> <!-- End: PageContentsContainer -->
+    </table>
+  </HTMLWRAPPER> <!-- End: Display Page Wrapper -->
+
+  <HTMLWRAPPER name="DataEntryPageWrapper">  <!-- Begin: Data Entry Page Wrapper -->
+    <table width="" class="portlet-font" cellpadding="3" cellspacing="1"  name="OuterTable">
+      <HTMLWRAPPER name="PageContentsContainer">
+        <HTMLWRAPPER name="DataEntryGroupWrapper">
+          <HTMLWRAPPER name="LabelContainer">
+            <tr name="DataEntryGroupLabel">
+              <td colspan="2" height="25" class="sectionLabelCell" nowrap><span name="LabelText" class="portlet-section-header">Section Label</span></td>
+            </tr>
+          </HTMLWRAPPER>
+          <HTMLWRAPPER name="GroupContainer">
+            <HTMLWRAPPER name="DataEntryGroup">
+              <HTMLWRAPPER name="DataContainer">  <!-- Begin: Data entry fields -->
+                <tr name="DataEntryField" class="DataEntryFieldRow">
+                  <td class="labelCell" align="right" valign="top" height="27" nowrap>
+                    <label name="FieldLabel" class="portlet-form-label" for="_field">Field Label</label>&nbsp;<span name="FieldRequired" class="portlet-form-label"></span>
+                  </td>
+                  <td width="100%" class="outputDataCell" valign="top" nowrap>
+                  <input name="FieldElement" class="portlet-form-field" value="Field Value" id="_field">
+                  <span name="FieldValidationError" class="portlet-msg-error" nowrap></span>
+                  </td>
+                </tr>
+              </HTMLWRAPPER>  <!-- End: Data entry fields -->
+            </HTMLWRAPPER>
+          </HTMLWRAPPER>
+        </HTMLWRAPPER>  <!-- End: Data entry/form fields -->
+      </HTMLWRAPPER>
+    </table>
+  </HTMLWRAPPER><!-- End: Data Entry Page Wrapper -->
+
+  <HTMLWRAPPER name="DisplayGroup_NewsColumnBase">
+    <tr name="DataContainer" class="NewsColumnWrapper" />
+  </HTMLWRAPPER>
+
+  <td name="DisplayGroupWrapper_NewsColumnCell" class="NewsColumnCell" valign="top" width="33%">
+    <table class="portlet-font" cellpadding="0" cellspacing="0" width="">
+      <span name="LabelContainer"></span>
+      <span name="GroupContainer"></span>
+    </table>
+  </td>
+
+  <HTMLWRAPPER name="DataEntryGroup_NewsColumnBase">
+    <tr name="DataContainer" class="NewsColumnWrapper" />
+  </HTMLWRAPPER>
+
+  <td name="DataEntryGroupWrapper_NewsColumnCell" class="NewsColumnCell"  valign="top" width="33%">
+    <table class="dataEntryPageTable" cellpadding="0" cellspacing="0" width="">
+      <span name="LabelContainer"></span>
+      <span name="GroupContainer"></span>
+    </table>
+  </td>  
+
+</body>
+</html>

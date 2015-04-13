@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+
+<BuilderDef id="com.bowstreet.builders.webapp.DojoRadioButtonGroupBuilder" xmlns="http://www.bowstreet.com/2001/Schemas">
+    <ReadableName>Dojo Radio Button Group</ReadableName>
+    <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName>
+    <HelpFile>factory/product_documentation/designer/radio_box.htm</HelpFile>
+    <RequiredFactoryVersion>5.0.0</RequiredFactoryVersion>
+    <Description>Creates a Dojo Radio Button Group at a named tag or other location on a page or pages.</Description>
+    <Domains>
+            <Domain>WebApp</Domain>
+		    <Domain>Consumer</Domain>
+    </Domains>
+    <CreateModifyList>
+      <CanModify type="Page" category="Page Elements">Adds a group of Dojo Radio Buttons to the Page.</CanModify>
+      <CanModify type="[Unassigned Elements]" category="Page Elements">Adds a group of Dojo Radio Buttons.</CanModify>
+    </CreateModifyList>
+    <Category>Page Elements</Category>
+    <Keywords>Input, Data Entry, Form</Keywords>
+    <BuilderData>
+	    <BuilderDataEntry name="PickerVisibility">5</BuilderDataEntry>
+        <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoRadioButtonGroupBuilder</BuilderDataEntry>
+    </BuilderData>
+    <CoordinatorClassName>com.bowstreet.builders.webapp.ui.SelectRadioGroupCoordinator</CoordinatorClassName>
+
+    <InputDefinitions>
+        <InputDefinition name="Name"  base="com.bowstreet.core.Base.BuilderName" />
+        <InputDefinition name="PageLocation"  base="com.bowstreet.core.WebAppBase.PageLocation" />
+
+        <InputDefinition name="LookupTable" base="com.bowstreet.builders.webapp.SelectBuilder.LookupTable" />
+
+        <InputDefinition name="SelectionOptions"  base="com.bowstreet.core.Base.IndirectValue">
+            <Prompt>Radio Group Data</Prompt>
+            <HelpText>Specify an XML structure or a comma separated list of values</HelpText>
+            <Property>true</Property>
+        </InputDefinition>
+
+<!-- ValueTextElements (XML Data Source Elements) Group Inputs -->
+        <InputDefinition name="ValueKey" base="com.bowstreet.builders.webapp.CheckBoxGroupBuilder.ValueKey" />
+        <InputDefinition name="TextKey"  base="com.bowstreet.builders.webapp.CheckBoxGroupBuilder.TextKey" />
+<!-- End ValueTextElements (XML Data Source Elements) Group Inputs -->
+
+        <InputDefinition name="SelectedValue"  base="com.bowstreet.core.Base.IndirectValueLoopVarPreferred">
+            <Prompt>Selected Value</Prompt>
+            <HelpText>Determines which radio button in the array is checked when the page is displayed.</HelpText>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="Value"  base="com.bowstreet.core.Base.HiddenValue" />
+
+        <InputDefinition name="Orientation"  base="com.bowstreet.builders.webapp.CheckBoxGroupBuilder.Orientation">
+            <HelpText>Choose between positioning the radio boxes horizontally (side by side) or vertically (one above the other)</HelpText>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="AlternateRendering"  base="com.bowstreet.core.Base.BooleanData" >
+          <Prompt>Alternate Rendering</Prompt>
+          <HelpText>Choose whether the alternate JSP rendering should be used, including loopvar and countervar created.</HelpText>
+          <Required>false</Required>
+          <Visible>true</Visible>
+          <Group>Advanced</Group>
+        </InputDefinition>
+
+        <InputDefinition name="OverrideDojoType"
+base="com.bowstreet.core.Base.StringData">
+          <Group>Advanced</Group>
+          <Prompt>Override Dojo Type</Prompt>
+          <HelpText></HelpText>
+          <Visible>false</Visible>
+        </InputDefinition>
+
+    </InputDefinitions>
+
+    <GroupDefinitions>
+        <GroupDefinition id="ValueTextElements" base="com.bowstreet.builders.webapp.CheckBoxGroupBuilder.ValueTextElements">
+            <Description>For radio button group data defined in XML hierarchy, you must specify which elements correspond to return values and which are radio button labels.</Description>
+        </GroupDefinition>
+        <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced">
+            <Description>If &quot;Return state of all values&quot; format is selected, the value returned by check boxes can be set (both checked and not checked). These default to true &amp; false respectively</Description>
+        </GroupDefinition>
+    </GroupDefinitions>
+</BuilderDef>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

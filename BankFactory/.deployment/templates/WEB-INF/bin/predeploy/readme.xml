@@ -1,0 +1,32 @@
+<project name="publish" basedir="." default="hello">
+
+	<!--
+	1. All ant scripts in the predeploy and postdeploy directories will be invoked.
+		a. Pre and post hooks are called on all deployment requests.  First time and re-deploys.
+		b. Default target is hit.
+		c. The order of script execution is not guaranteed, so your featuresets should configure without dependenancies on one another.
+	2. All config and project properties are available for your use.  Just use ${propname} syntax.
+		a. project properties are in .bowstreet.
+		b. config properties are in <WORKSPACE>\.metadata\.plugins\com.bowstreet.designer.webapp\deploymentconfigs
+	3. Your scripts should act accordingly for all servertypes.  You may need to organize your scripts to allow for conditional
+	processing depending on config type.  I.e. Tomcat does not have an admin URL.  
+	4. All output is sent to ${installdir}/WPFDesigner/FeatureSets/Web-App_${version}/Deployment/antscripts/logs/${project.name}.${configname}.log  
+	
+	
+	Pre-deploy hook: All ant xml files in WEB-INF/bin/deployment/predeploy
+	Good for configuring your featureset, setting properties, updating servlet defs and mappings in web.xml, etc...
+	
+	
+	Post-deploy hook: All ant xml files in WEB-INF/bin/deployment/postdeploy
+	Good for executing XMLAccess to create users, groups, pages, place portlets, etc...
+	
+	-->
+	
+	<target name="hello">
+		<echo message="Some project properties: "/>
+		<echo message="${project.name} is located in ${project.location}"/>
+		<echo message="Some config properties: "/>
+		<echo message="${wpf.configname} is a ${wpf.servername} server."/>
+	</target>
+
+</project>

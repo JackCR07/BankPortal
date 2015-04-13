@@ -1,0 +1,15 @@
+<segments>
+  <segment name="Gold">
+    <user userID="tom"/>
+  </segment>
+  <segment name="Silver">
+    <user userID="mike"/>
+  </segment>
+  <segment name="English">
+    <user userID="tom"/>
+    <user userID="mike"/>
+  </segment>
+  <segment name="French">
+    <user userID="john"/>
+  </segment>
+</segments>

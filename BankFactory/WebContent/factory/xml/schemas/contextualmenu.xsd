@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Schema Dyanmice Menu Items of Contextual Menu builder-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:cns="http://www.bowstreet.com/builder/ContextualBuilder" 
+	targetNamespace="http://www.bowstreet.com/builder/ContextualBuilder" 
+	elementFormDefault="unqualified" attributeFormDefault="unqualified">
+     <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ItemSet" type="cns:ItemSetType" />
+    <xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ItemSetType">
+      <xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Item" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+   <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Item">
+      <xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Type" minOccurs="0" maxOccurs="1"/>
+            <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Text" type="xsd:string" minOccurs="0" maxOccurs="1" />
+            <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Action" minOccurs="0" maxOccurs="1" />
+            <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Enable" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
+            <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Hide" type="xsd:boolean" minOccurs="1" maxOccurs="1" />
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+
+   <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Type">
+      <xsd:simpleType xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      		<xsd:restriction base="xsd:string">
+      			<xsd:enumeration value='MenuItem'></xsd:enumeration>
+      			<xsd:enumeration value='Separator'></xsd:enumeration>
+      		</xsd:restriction >
+      </xsd:simpleType>
+   </xsd:element>   
+     
+            
+   <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Action">
+      <xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Attribute" minOccurs="1" maxOccurs="unbounded" />
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+   <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Attribute">
+      <xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+       <xsd:attribute name="name" type="xsd:string" use="required"/><xsd:attribute name="value" type="xsd:string" use="required"/>
+       <!-- attribute name should be html events(onclick) or href -->
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

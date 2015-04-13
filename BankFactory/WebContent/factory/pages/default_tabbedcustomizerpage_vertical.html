@@ -1,0 +1,38 @@
+<%-- Begin: tabbed page table --%>
+<form method="post" name="portlet_edit_form">
+<table  role="presentation" name="tabbedPagesLayoutTable" cellspacing="0" cellpadding="0" width="300" height="150">
+  <%-- Begin: tab col --%>
+  <tr  role="presentation">
+    <td  role="presentation" height="100%">
+      <table  role="presentation" height="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr  role="presentation"><%-- Begin: tabbed container row --%>
+          <td  role="presentation" valign="top" height="100%">
+            <table  role="presentation" height="100%" cellspacing="0" cellpadding="0" border="0"> 
+              <span name="tab_location"></span>
+            </table>
+          </td>
+          <%-- End: tab col --%>
+          <%-- Begin: tabbed content cell --%>
+          <td  role="presentation" name="tabbedPagesContainerCell" valign="top" align="left" width="100%" height="100%" class="tabbedPagesVContentArea">
+            <span name="data"></span><%-- where the form inputs are placed --%>
+          </td><%-- End: tabbed content cell --%>
+        </tr><%-- End: tabbed container row --%>
+        <tr  role="presentation">
+          <td  role="presentation" colspan="2">
+            <%-- target for the "previous page" button --%>
+            <span name="prevButton"></span>
+            <%-- target for the "next page" button --%>
+            <span name="nextButton"></span>
+            <br />
+            <%-- where the "Update" button is located --%>
+            <span name="okButton"></span>
+            <span name="clearButton"></span>
+            <span name="cancelButton"></span>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</form>
+<%-- End: tabbed page table --%>

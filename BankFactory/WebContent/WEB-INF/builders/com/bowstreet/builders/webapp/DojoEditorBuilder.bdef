@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoEditorBuilder"> 
+  <ReadableName>Dojo Rich Text Editor</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName> 
+  <HelpFile /> 
+  <RequiredFactoryVersion>5.6.0</RequiredFactoryVersion> 
+  <Description>Adds Dojo Editor support for an edit field.</Description> 
+  <Domains> 
+    <Domain>WebApp</Domain> 
+    <Domain>Consumer</Domain>
+  </Domains> 
+  <Category>Page Elements,Rich UI</Category>
+  <AddFromPaletteListenerClassName>com.bowstreet.editor.uitools.designlistener.ControlAddFromPaletteListener</AddFromPaletteListenerClassName>
+  <BuilderData> 
+    <BuilderDataEntry name="PickerVisibility">5</BuilderDataEntry>
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoEditorBuilder</BuilderDataEntry> 
+    <BuilderDataEntry name="IconName">richText</BuilderDataEntry>
+    <BuilderDataEntry name="PageLocation">onNamedTag</BuilderDataEntry>
+  </BuilderData> 
+  <CoordinatorClassName /> 
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName"> 
+      <Prompt>Name</Prompt> 
+      <InitialValue /> 
+      <HelpText /> 
+      <Page /> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation"> 
+      <Prompt>Page location</Prompt> 
+      <InitialValue /> 
+      <HelpText /> 
+      <Page /> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="Value"  base="com.bowstreet.core.Base.IndirectValue">
+        <Prompt>Value</Prompt>
+        <HelpText>Use this input to specify the source of the content to populate the editor</HelpText>
+    </InputDefinition>
+    <InputDefinition name="Height"  base="com.bowstreet.core.Base.IndirectValue">
+        <Prompt>Height</Prompt>
+       <HelpText>Use this input to manually set the "height" attribute on the Dojo Editor</HelpText> 
+    </InputDefinition>
+    <InputDefinition name="MinimumHeight"  base="com.bowstreet.core.Base.IndirectValue">
+        <Prompt>Minimum Height</Prompt>
+        <HelpText>Use this input to manually set the "minHeight" attribute on the Dojo Editor</HelpText> 
+    </InputDefinition>
+	<InputDefinition name="EnableLinkDialog"  base="com.bowstreet.core.Base.BooleanData" >
+      	<Prompt>Enable Link Dialog</Prompt> 
+        <HelpText>Check this input if you want to add this ability for users to embed HTML links in the content</HelpText> 
+        <Visible>true</Visible>
+        <InitialValue>true</InitialValue>
+        <EmptyValueReplacement>true</EmptyValueReplacement>  
+        <Required>false</Required>
+    </InputDefinition> 
+   	<InputDefinition name="EnableImageDialog"  base="com.bowstreet.core.Base.BooleanData" >
+      	<Prompt>Enable Image Dialog</Prompt> 
+        <HelpText>Check this input if you want to add this ability for users to embed images in the content</HelpText> 
+        <Visible>true</Visible>
+        <InitialValue>true</InitialValue>
+        <EmptyValueReplacement>true</EmptyValueReplacement>  
+        <Required>false</Required>
+    </InputDefinition>
+    <InputDefinition name="EnableTextColor"  base="com.bowstreet.core.Base.BooleanData" >
+        <Prompt>Enable Text Color</Prompt> 
+        <HelpText>Check this input if you want to add this ability for users to alter the text color.</HelpText> 
+        <Visible>true</Visible>
+        <InitialValue>true</InitialValue>
+        <EmptyValueReplacement>true</EmptyValueReplacement>  
+        <Required>false</Required>
+    </InputDefinition>  
+    <InputDefinition name="EnableFontChoice"  base="com.bowstreet.core.Base.BooleanData" >
+        <Prompt>Enable Font Choice</Prompt> 
+        <HelpText>Check this input if you want to add this ability for users to alter the text font.</HelpText> 
+        <Visible>true</Visible>
+        <InitialValue>false</InitialValue>
+        <EmptyValueReplacement>false</EmptyValueReplacement>  
+        <Required>false</Required>
+    </InputDefinition>  
+    <InputDefinition name="EnableFontSize"  base="com.bowstreet.core.Base.BooleanData" >
+        <Prompt>Enable Font Size</Prompt> 
+        <HelpText>Check this input if you want to add this ability for users to alter the font size.</HelpText> 
+        <Visible>true</Visible>
+        <InitialValue>false</InitialValue>
+        <EmptyValueReplacement>false</EmptyValueReplacement>  
+        <Required>false</Required>
+    </InputDefinition>  
+    <InputDefinition name="EnableFontFormat"  base="com.bowstreet.core.Base.BooleanData" >
+        <Prompt>Enable Font Format</Prompt> 
+        <HelpText>Check this input if you want to add this ability for users to alter the font format.</HelpText> 
+        <Visible>true</Visible>
+        <InitialValue>false</InitialValue>
+        <EmptyValueReplacement>false</EmptyValueReplacement>  
+        <Required>false</Required>
+    </InputDefinition>  
+   	<InputDefinition name="DecodeContent"  base="com.bowstreet.core.Base.BooleanData" >
+      	<Prompt>Decode Content</Prompt> 
+        <HelpText>Check this input if you want to automatically decode the content when the form is submitted</HelpText> 
+        <Visible>true</Visible>
+        <Required>false</Required>
+    </InputDefinition> 
+  </InputDefinitions> 
+  <GroupDefinitions> 
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" /> 
+  </GroupDefinitions> 
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

@@ -1,0 +1,78 @@
+<ProfileSet name="wizardbase.simple_model" useQualifiedProfileNames="true"><Description>Generated profile set for model simple_widget</Description>
+<Visibility>False</Visibility>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<Models />
+<ProfileDef><Entries><Entry name="Name" isRuntime="false"><UI type="TextInput"><Prompt>Name</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Page_Name" isRuntime="false"><UI type="TextInput"><Prompt>Page_Name</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Page_PageData" isRuntime="false"><UI type="TextInput"><Prompt>Page_PageData</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="PortletAdapter_BuilderCallEnabled" isRuntime="false"><UI type="Checkbox"><Prompt>PortletAdapter_BuilderCallEnabled</Prompt>
+<ExtraData>true,false,Enabled</ExtraData>
+</UI>
+</Entry>
+<Entry name="PortletName" isRuntime="false"><UI type="TextInput"><Prompt>PortletName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PortletTitle" isRuntime="false"><UI type="TextInput"><Prompt>PortletTitle</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Text_BuilderCallEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Text_BuilderCallEnabled</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Text_LittleText" isRuntime="false"><UI type="TextInput"><Prompt>Text_Text</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Title" isRuntime="false"><UI type="TextInput"><Prompt>Title</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="WidgetAdapter_BuilderCallEnabled" isRuntime="false"><UI type="Checkbox"><Prompt>WidgetAdapter_BuilderCallEnabled</Prompt>
+<ExtraData>true,false,</ExtraData>
+</UI>
+</Entry>
+<Entry name="WidgetAdapter_Category" isRuntime="false"><UI type="TextInput"><Prompt>WidgetAdapter_Category</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1248449372796" isContainer="true"><Values><Value name="Name"></Value>
+<Value name="Page_Name">_u_Page</Value>
+<Value name="Page_PageData">&lt;html&gt;
+    &lt;head&gt;&lt;title&gt;Default Test Page&lt;/title&gt;&lt;/head&gt;
+    &lt;body&gt;
+        &lt;form name="myForm" method="post"&gt;
+            &lt;div align="center"&gt;
+            	&lt;div style="font:14pt Arial;font-weight: bold;color: #336699;" name="bigText"&gt;&lt;/div&gt;&lt;br/&gt;
+	            &lt;span name="image"&gt;&lt;/span&gt;&lt;br/&gt;
+	            &lt;span  style="font:10pt Arial;" name="littleText" /&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</Value>
+<Value name="PortletAdapter_BuilderCallEnabled">true</Value>
+<Value name="PortletName"></Value>
+<Value name="PortletTitle"></Value>
+<Value name="Text_BuilderCallEnabled">true</Value>
+<Value name="Text_LittleText">a little text</Value>
+<Value name="Title">Title</Value>
+<Value name="WidgetAdapter_BuilderCallEnabled">false</Value>
+<Value name="WidgetAdapter_Category"></Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

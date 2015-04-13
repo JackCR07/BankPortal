@@ -1,0 +1,180 @@
+<Model id="factory/wizardbase/fp80_list_and_detail_consumer_base"><BuilderCallList><BuilderCall id="bc1"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2013. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2013. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Next Steps</Input>
+<Input name="BuilderCallEnabled">true</Input>
+<Input name="Comment">For further development of this model, you can add and modify any builders to customize the application.   You can also use Design view to work with page elements, for example to move fields around or by using right-click commands.
+
+With that profiling enabled, when you run the model, by default you will see a "desktop" view of the application.
+
+You can view and test both the Desktop, Tablet and Smartphone profiles from Designer.   To do this, open the "Applied Profiles" tab, and select the profile you want to view and click the "Apply" button.   After you have done this, when you run the model you will see the selected profile.    
+
+You can also profile other builder inputs according to device type, and you can apply different profiling for specific device types if you want.   For example, you could have different CSS style sheets applied for different types of smartphones if you want to have a different appearance for each device.</Input>
+<Input name="BuilderCallComment">For further development of this model, you can add and modify any builders to customize the application.   You can also use Design view to work with page elements, for example to move fields around or by using right-click commands.
+
+With that profiling enabled, when you run the model, by default you will see a "desktop" view of the application.
+
+You can view and test both the Desktop, Tablet and Smartphone profiles from Designer.   To do this, open the "Applied Profiles" tab, and select the profile you want to view and click the "Apply" button.   After you have done this, when you run the model you will see the selected profile.    
+
+You can also profile other builder inputs according to device type, and you can apply different profiling for specific device types if you want.   For example, you could have different CSS style sheets applied for different types of smartphones if you want to have a different appearance for each device.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseParentProfile">false</Input>
+<Input name="ImportOnce">true</Input>
+<Input name="ProfileHandling">None</Input>
+<Input name="Name">Theme</Input>
+<Input name="ModelName">imports/factory/desktoptheme85</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="UseParentProfile">true</Input>
+<Input name="ImportOnce">true</Input>
+<Input name="ProfileHandling">UseParentProfiling</Input>
+<Input name="Name">Theme</Input>
+<Input name="ModelName">imports/factory/multichanneltheme85</Input>
+<Input name="SetProfiledInputValues">false</Input>
+<Input name="_ProfiledInputs"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="multichannelStarterWizard:PortletAdapter_BuilderCallEnabled" />
+<Input name="BuilderCallCategory">General</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="Name" profile="multichannelStarterWizard:ServiceConsumer_Name" />
+<Input name="PortletTitle" profile="multichannelStarterWizard:PortletTitle" />
+</Inputs>
+</BuilderCall>
+<BuilderCall id = "bc20"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientApplication</BuilderDefID>
+<Inputs><Input name = "BuilderCallEnabled" profile="multichannelStarterWizard:ClientApplication_BuilderCallEnabled" />
+<Input name = "ParseDojo">true</Input>
+<Input name = "DojoMobile">true</Input>
+<Input name = "ExecuteScripts">true</Input>
+<Input name = "ImportedPageName">/factory/pages/client/client_app.html</Input>
+<Input name = "Name">client</Input>
+<Input name = "GenerateMain" profile="multichannelStarterWizard:ClientApplication_GenerateMain" />
+<Input name = "InitialAction">initialClientAction</Input>
+</Inputs>
+<Messages></Messages>
+</BuilderCall>
+<BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="UseAllOperations">true</Input>
+<Input name="OverrideInputs">true</Input>
+<Input name="Name" profile="multichannelStarterWizard:ServiceConsumer_Name" />
+<Input name="ProviderModel" profile="multichannelStarterWizard:ServiceConsumer_ProviderModel" />
+<Input name="OperationInputs" xmlProfile="multichannelStarterWizard:ServiceConsumer_OperationInputs" />
+<Input name="OperationName">all</Input>
+<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>byStatus</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>byExactStatus</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>all</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>getOrderDetails</Operation>
+<Mappings />
+</ValuesForOperation>
+</ContextVariables>
+</Input>
+<Input name="OperationDescription">[no description]
+Parameters:
+	Name:			results</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id = "bc23"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages></Messages>
+<Inputs><Input name = "Name">Next Steps Client Action List</Input>
+<Input name = "BuilderCallEnabled">true</Input>
+<Input name = "Comment">If you need to change the processing that happens  before displaying the page. You can add actions here.</Input>
+<Input name = "BuilderCallComment">If you need to change the processing that happens  before displaying the page. You can add actions here.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id = "bc17"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages></Messages>
+<Inputs><Input name = "BuilderCallEnabled" profile="multichannelStarterWizard:ApplicationPage_GenerateMain" />
+<Input name = "ReturnType">Object</Input>
+<Input name = "RenameExisting">false</Input>
+<Input name = "Actions" xmlProfile="multichannelStarterWizard:ActionList_Actions" />
+<Input name = "Name">main</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id = "bc22"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientActionListBuilder</BuilderDefID>
+<Messages></Messages>
+<Inputs><Input name = "BuilderCallEnabled" profile="multichannelStarterWizard:ClientApplication_BuilderCallEnabled" />
+<Input name = "CreationOption">Automatic</Input>
+<Input name = "Actions" xmlProfile="multichannelStarterWizard:ClientActionList_Actions" /> 
+<Input name = "Name">initialClientAction</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id = "bc16"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages></Messages>
+<Inputs><Input name = "Name">Next Steps Application Page</Input>
+<Input name = "BuilderCallEnabled">true</Input>
+<Input name = "Comment">This page can be changed to a different type of Application Page (Data View, Data Entry, ModelConatiner,Page Navigation allowing you to create custom application page flows.  You also might want to remove this page and add other high level page builders, this allows you to have models that follow our patterns for user interface  development.</Input>
+<Input name = "BuilderCallComment">This page can be changed to a different type of Application Page (Data View, Data Entry, ModelConatiner,Page Navigation allowing you to create custom application page flows.  You also might want to remove this page and add other high level page builders, this allows you to have models that follow our patterns for user interface development.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc14"><BuilderDefID>com.bowstreet.builders.webapp.ApplicationPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="Name" profile="multichannelStarterWizard:ServiceConsumer_Name" />
+<Input name = "PageType">EmptyPage</Input>
+<Input name = "UseTheme">true</Input>
+<Input name = "GenerateMain">false</Input>
+<Input name = "ApplicationPageType">ImportedPage</Input>
+<Input name = "PageHeaderText">This page should be replaced.</Input>
+<Input name = "PageURL">${Properties/bowstreet.Theme/ApplicationPage_ViewPageBase}</Input>
+<Input name = "InputPageURL">${Properties/bowstreet.Theme/ApplicationPage_InputPageBase}</Input>
+<Input name = "PageHeaderLocation">${Properties/bowstreet.Theme/ApplicationPage_PageHeaderLocation}</Input>
+<Input name = "DataPageCreateTagsLocation">${Properties/bowstreet.Theme/ApplicationPage__ViewDataLocation}</Input>
+<Input name = "DataPageInputCreateTagsLocation">${Properties/bowstreet.Theme/ApplicationPage_InputDataLocation}</Input>
+<Input name = "DataPageCancelButtonLocation">${Properties/bowstreet.Theme/ApplicationPage_CancelButtonLocation}</Input>
+<Input name = "DataPageSubmitButtonLocation">${Properties/bowstreet.Theme/ApplicationPage_SubmitButtonLocation}</Input>
+<Input name = "DataPageTemplateFile">${Properties/bowstreet.Theme/ApplicationPage_HTMLTemplate}</Input>
+<Input name = "DataPageValidateFromSchema">Both</Input>
+<Input name = "DataPageRequiredTextPrompt">*</Input>
+<Input name = "DataPageGenerateLabels">true</Input>
+<Input name = "DataPageInitializeInputs">OnModelLoad</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id = "bc10"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
+<Messages></Messages>
+<Inputs><Input name = "BuilderCallEnabled"></Input>
+<Input name = "AllPages">true</Input>
+<Input name = "AllPageRadio">All</Input>
+<Input name = "Pages"><data></data></Input>
+<Input name = "DisplayBehavior"><top></top></Input>
+<Input name = "ValidationBehavior"><top></top></Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

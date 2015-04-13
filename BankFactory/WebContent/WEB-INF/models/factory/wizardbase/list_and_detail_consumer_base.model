@@ -1,0 +1,184 @@
+<Model id="factory/wizardbase/new_list_and_detail_consumer_base"><BuilderCallList><BuilderCall id="bc9"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2013. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2013. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Next Steps</Input>
+<Input name="BuilderCallEnabled">true</Input>
+<Input name="Comment">For further development of this model, you can add and modify any builders to customize the application.   You can also use Design view to work with page elements, for example to move fields around or by using right-click commands.
+
+With that profiling enabled, when you run the model, by default you will see a "desktop" view of the application.
+
+You can view and test both the Desktop, Tablet and Smartphone profiles from Designer.   To do this, open the "Applied Profiles" tab, and select the profile you want to view and click the "Apply" button.   After you have done this, when you run the model you will see the selected profile.    
+
+You can also profile other builder inputs according to device type, and you can apply different profiling for specific device types if you want.   For example, you could have different CSS style sheets applied for different types of smartphones if you want to have a different appearance for each device.</Input>
+<Input name="BuilderCallComment">For further development of this model, you can add and modify any builders to customize the application.   You can also use Design view to work with page elements, for example to move fields around or by using right-click commands.
+
+With that profiling enabled, when you run the model, by default you will see a "desktop" view of the application.
+
+You can view and test both the Desktop, Tablet and Smartphone profiles from Designer.   To do this, open the "Applied Profiles" tab, and select the profile you want to view and click the "Apply" button.   After you have done this, when you run the model you will see the selected profile.    
+
+You can also profile other builder inputs according to device type, and you can apply different profiling for specific device types if you want.   For example, you could have different CSS style sheets applied for different types of smartphones if you want to have a different appearance for each device.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseParentProfile">false</Input>
+<Input name="ImportOnce">true</Input>
+<Input name="ProfileHandling">None</Input>
+<Input name="Name">Theme</Input>
+<Input name="ModelName">imports/factory/desktoptheme85</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="UseParentProfile">true</Input>
+<Input name="ImportOnce">true</Input>
+<Input name="ProfileHandling">UseParentProfiling</Input>
+<Input name="Name">Theme</Input>
+<Input name="ModelName">imports/factory/multichanneltheme85</Input>
+<Input name="SetProfiledInputValues">false</Input>
+<Input name="_ProfiledInputs"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc5"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="listanddetailconsumerbasepsWizard:PortletAdapter_BuilderCallEnabled" />
+<Input name="BuilderCallCategory">General</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="Name" profile="listanddetailconsumerbasepsWizard:ServiceConsumer_Name" />
+<Input name="PortletTitle" profile="listanddetailconsumerbasepsWizard:PortletTitle" />
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="UseAllOperations">true</Input>
+<Input name="OverrideInputs">true</Input>
+<Input name="Name" profile="listanddetailconsumerbasepsWizard:ServiceConsumer_Name" />
+<Input name="ProviderModel" profile="listanddetailconsumerbasepsWizard:ServiceConsumer_ProviderModel" />
+<Input name="OperationInputs" xmlProfile="listanddetailconsumerbasepsWizard:ServiceConsumer_OperationInputs" />
+<Input name="OperationName">all</Input>
+<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>byStatus</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>byExactStatus</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>all</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>getOrderDetails</Operation>
+<Mappings />
+</ValuesForOperation>
+</ContextVariables>
+</Input>
+<Input name="OperationDescription">[no description]
+Parameters:
+	Name:			results</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ViewAndFormBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="listanddetailconsumerbasepsWizard:ViewAndForm_BuilderCallEnabled" />
+<Input name="BuilderCallCategory">General</Input>
+<Input name="UseTheme">true</Input>
+<Input name="ViewPageURL">${Properties/bowstreet.Theme/ViewAndForm_ViewPageBase}</Input>
+<Input name="EnableDataPaging">true</Input>
+<Input name="CreateInputPage" profile="listanddetailconsumerbasepsWizard:ViewAndForm_CreateInputPage" />
+<Input name="InputPageURL">${Properties/bowstreet.Theme/ViewAndForm_InputPageBase}</Input>
+<Input name="EnableInputValidation">false</Input>
+<Input name="InputSubmitText">Submit</Input>
+<Input name="ViewPageBackButtonText">Back</Input>
+<Input name="InsertInputPage">false</Input>
+<Input name="CreateColumnLink" profile="listanddetailconsumerbasepsWizard:ViewAndForm_CreateColumnLink" />
+<Input name="LinkActionChoice" profile="listanddetailconsumerbasepsWizard:ViewAndForm_LinkActionChoice" />
+<Input name="DetailPageURL">${Properties/bowstreet.Theme/ViewAndForm_DetailPageBase}</Input>
+<Input name="DetailPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_DetailPageHTMLTemplate}</Input>
+<Input name="DetailPageBackButtonText">Back</Input>
+<Input name="CreateUpdatePage">false</Input>
+<Input name="UpdateAutoInitializeData">true</Input>
+<Input name="UpdatePageURL">${Properties/bowstreet.Theme/ViewAndForm_UpdatePageBase}</Input>
+<Input name="EnableUpdateValidation">false</Input>
+<Input name="UpdateLinkText">Edit</Input>
+<Input name="UpdateSubmitText">Submit</Input>
+<Input name="UpdateCancelText">Cancel</Input>
+<Input name="CreateMain">true</Input>
+<Input name="ViewPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_ViewPageHTMLTemplate}</Input>
+<Input name="InputPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_InputPageHTMLTemplate}</Input>
+<Input name="Name" profile="listanddetailconsumerbasepsWizard:ViewAndForm_Name" />
+<Input name="ViewMethod" profile="listanddetailconsumerbasepsWizard:ViewAndForm_ViewMethod" />
+<Input name="RowsPerPage">5</Input>
+<Input name="ModelName">factory/portletbase/view_and_form_base</Input>
+<Input name="SetProfiledInputValues">true</Input>
+<Input name="UniquePattern">function</Input>
+<Input name="LinkColumn" profile="listanddetailconsumerbasepsWizard:ViewAndForm_LinkColumn" />
+<Input name="DetailsMethod" profile="listanddetailconsumerbasepsWizard:ViewAndForm_DetailsMethod" />
+<Input name="InputPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_InputPageStyleSheetOverrideHTMLTemplate}</Input>
+<Input name="ViewPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_ViewPageStyleSheetOverride}</Input>
+<Input name="DetailPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" xmlProfile="listanddetailconsumerbasepsWizard:DataFieldSettings_BuilderCallEnabled" />
+<Input name="AllPages">true</Input>
+<Input name="AllPageRadio">All</Input>
+<Input name="Pages"><data />
+</Input>
+<Input name="DisplayBehavior" xmlProfile="listanddetailconsumerbasepsWizard:DataFieldSettings_DisplayBehavior" />
+<Input name="ValidationBehavior" xmlProfile="listanddetailconsumerbasepsWizard:DataFieldSettings_ValidationBehavior" />
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc9"><BuilderDefID>com.bowstreet.builders.webapp.DataLayoutBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="listanddetailconsumerbasepsWizard:DataLayout_BuilderCallEnabled" />
+<Input name="MoveLinkToListItem">true</Input>
+<Input name="AddLogging">false</Input>
+<Input name="AutomaticParentSelection">true</Input>
+<Input name="SingleField" profile="listanddetailconsumerbasepsWizard:DataLayout_SingleField" />
+<Input name="TemplateFile" profile="listanddetailconsumerbasepsWizard:DataLayout_TemplateFile" />
+<Input name="TemplateDescription">This template allows you to generate a list where each list item contains three columns of data across. There is a left column which is generally used for a thumbnail image, a center column with a top, middle, and bottom position and a right middle position. For example this could be used to display an image in the left column followed by a title in the "center_middle", and optionally use the remaining &lt;column&gt;_&lt;row&gt; positions for other related data. You can choose between the alternate list styles of rounded border, or edge-to-edge using the style sheets selection input.</Input>
+<Input name="LayoutFields" xmlProfile="listanddetailconsumerbasepsWizard:DataLayout_LayoutFields" />
+<Input name="StyleSheetFile" profile="listanddetailconsumerbasepsWizard:DataLayout_StyleSheetFile" />
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="Control">page_header_text</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>AllPages</Page>
+<NameSearch>page_header_text</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Text" profile="listanddetailconsumerbasepsWizard:Text_Text" />
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

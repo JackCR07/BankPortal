@@ -1,0 +1,26 @@
+<html>
+<head><title>Sample User Info Retrieval Page</title></head>
+<body>
+<!-- For best practices, change the form name to a unique name -->
+<form name="myForm" method="post">
+<h3 align="center">Sample User Info Retrieval Page</h3>
+
+<font color="red">
+NOTE - User information is ONLY available if the user is authenticated to the server prior to this request.
+<br/>
+See the security documentation (eg, Security Constraints, Login etc) for more information on setting up security. 
+<br />
+Expect "null" values from these APIs if not authenticated to this request/server.</font> 
+<br />
+<br />
+User ID/Name retrieved via webAppAccess.getUserInfo().getUserID(); is: 
+<span name="userid" />
+<br />
+<br />
+User Information (Attribute/Value name pairs built up in XML var in retrieveUserInfo Method)
+<br />
+<span name="userinfoplaceholder" rows="10" cols="80" />
+</form>
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+<Model id="factory/wizardbase/empty_base"><BuilderCallList><BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2002, 2006. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2002, 2006. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties>
+<Contained>false</Contained>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

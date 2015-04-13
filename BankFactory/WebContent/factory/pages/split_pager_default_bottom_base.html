@@ -1,0 +1,26 @@
+<%/* 
+  Copyright IBM Corp. 2011
+  This page is imported to form the execution-time UI for the
+  Split Pager builder. You can replace this with another HTML
+  file so long as you use the same tag names.
+*/%>
+<form method="post">
+  <div class="lotusui lotusui30" role="navigation" name="wrapper" style="height:auto;background-color:#F1F3F5;line-height:2em;min-width:500px">
+   <div class="lotusPaging">
+    <ul class="lotusLeft lotusInlinelist">
+      <li class="lotusFirst" style="display: inline;"><span name="showLabel">Show:</span>&nbsp;<a name="show5" href="javascript:;">5</a></li>
+      <li style="display: inline;"><a name="show10" href="javascript:;">10</a></li>
+      <li style="display: inline;"><a name="show20" href="javascript:;">20</a></li>
+      <li style="display: inline;"><a name="show50" href="javascript:;">50</a></li>
+      <li style="display: inline;"><a name="show100" href="javascript:;">100</a></li>
+      <li style="display: inline;"><a name="showAll" href="javascript:;">All</a></li>
+      <li style="display: inline;"class="lotusLast"> <span name="itemsLabel">items</span></li>
+    </ul>
+    <ul class="lotusRight lotusInlinelist">
+      <li style="display: inline;" class="lotusFirst"><a name="previousPage" href="javascript:;"><span name="previousLinkText">Previous</span></a></li>
+      <li style="display: inline;"><a name="nextPage" href="javascript:;"><span name="nextLinkText">Next</span></a></li>
+    </ul>
+    <div><span name="jumpToPageControl">Jump to page <input type="text" value="1" name="splitPagerExplicitPage" autocomplete="off" /> of 10</div>
+   </div>
+  </div>
+</form>

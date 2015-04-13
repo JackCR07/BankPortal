@@ -1,0 +1,195 @@
+<!-- This file lives in the project, and is used to request deployment actions.
+
+
+-->
+
+<project name="deployment" default="properties" basedir=".">
+	<description>The project deployment file calls the deployment configurations setup by the user. </description>
+
+	<target name="properties" depends="userProperties,defaultProperties">
+		<property name="taskClassPath"
+			value="${webcontent.location}/../.deployment/lib/wpfDeployment.jar;
+			${webcontent.location}/WEB-INF/lib/factory.jar;
+			${webcontent.location}/WEB-INF/lib/bstres.jar;
+			${webcontent.location}/WEB-INF/lib/bstres_n11.jar;
+			${webcontent.location}/WEB-INF/lib/jdom.jar;
+			${webcontent.location}/WEB-INF/lib/log4j.jar;
+			${webcontent.location}/WEB-INF/lib/commons-pool.jar;
+			${webcontent.location}/WEB-INF/clientLibs/j2ee.jar"/>
+	</target>
+
+	<target name="userProperties" if="dotBowstreet">
+		<property file="${dotBowstreet}" />
+	</target>
+
+	<target name="defaultProperties" unless="dotBowstreet">
+		<property file="../.bowstreet" />
+	</target>
+
+	<!-- Target for invoking standalone (app-server) deployment configuration. -->
+	<target name="standAloneConfig" depends="compile">
+		<ant antfile="deployment.xml" target="publish" dir="${tools.location}" output="${webcontent.location}/WEB-INF/logs/${standAlone.config}.log">
+			<property name="deployment.config" value="${standAlone.config}" />
+		</ant>
+	</target>
+
+
+	<!-- Target for building/rebuilding deployment war. Does not deploy application.-->
+	<target name="buildDeploymentWar" depends="compile">
+		<ant antfile="${project.location}/.deployment/publish_utils.xml"
+			target="configProjectExport"/>
+
+		<!-- If predeployment scripts exist, execute them -->
+		<ant antfile="${project.location}/.deployment/publish_utils.xml"
+			target="preDeploy"
+			output="${webcontent.location}/WEB-INF/logs/preDeployResults.log" />
+
+		<!-- Build deployment war -->
+		<ant antfile="deploymentwar.xml"
+			dir="${project.location}/.deployment"
+			output="${webcontent.location}/WEB-INF/logs/build.deployment.war.log" />
+
+		<!-- If postdeployment scripts exist, execute them -->
+		<ant antfile="${project.location}/.deployment/publish_utils.xml"
+			target="postDeploy"
+			output="${webcontent.location}/WEB-INF/logs/postDeployResults.log" />
+
+	</target>
+
+	<!-- Build portlet war.  Does not deploy application.  If invoking this on the command line
+		edit the following properties in ${project.location}/.deployment/portletwar.pfConfig for your target server:
+			wpf.portletapi.target=build286StandardPortletWar    (JSR-286)
+			wpf.portletapi.target=buildStandardPortletWar       (JSR-168)
+			wpf.portalversion=7.0      (for Portal 7.0)
+			wpf.portalversion=6.1.x    (for Portal 6.1, 6.1.5)
+			wpf.portalversion=WASPC    (for WebSphere App Server Portlet Container)
+	-->
+	<target name="buildPortletWar" depends="compile">
+		<property file="${project.location}/.deployment/portletwar.pfConfig" />
+
+		<ant antfile="${project.location}/.deployment/publish_utils.xml"
+			target="configProjectExport"/>
+
+		<!-- If predeployment scripts exist, execute them -->
+		<ant antfile="${project.location}/.deployment/publish_utils.xml"
+			target="preDeploy"
+			output="${webcontent.location}/WEB-INF/logs/preDeployResults.log" />
+
+		<!-- Build the portlet war. -->
+		<ant antfile="portletwar.xml"
+			dir="${project.location}/.deployment"
+			target="${wpf.portletapi.target}"
+			output="${webcontent.location}/WEB-INF/logs/build.portlet.war.log" />
+
+		<!-- If postdeployment scripts exist, execute them -->
+		<ant antfile="${project.location}/.deployment/publish_utils.xml"
+			target="postDeploy"
+			output="${webcontent.location}/WEB-INF/logs/postDeployResults.log" />
+
+	</target>
+
+	<target name="build-eclipse-compiler" description="compile project with Eclipse compiler">
+		<available classname="org.eclipse.jdt.core.JDTCompilerAdapter" property="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter" />
+	</target>
+
+	<target name="compile" depends="properties,build-eclipse-compiler">
+		<available file="${webcontent.location}/WEB-INF/source" property="j2ee.srcdir.exists" />
+		<antcall target="compileJ2EE" />
+		<antcall target="compileWEF" />
+	</target>
+
+	<!-- Build the classes from WEB-INF/source dir. -->
+	<target name="compileJ2EE" depends="properties,build-eclipse-compiler" if="j2ee.srcdir.exists">
+		<javac srcdir="${webcontent.location}/WEB-INF/source"
+			destdir="${webcontent.location}/WEB-INF/classes" includes="**"
+			source="1.6" target="1.6"
+			debug="on" debuglevel="lines,source,vars"
+			includeantruntime="false">
+			<classpath>
+				<fileset dir="${webcontent.location}/WEB-INF/lib">
+					<include name="*.jar" />
+				</fileset>
+				<fileset dir="${webcontent.location}/WEB-INF/clientLibs">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+
+		<copy todir="${webcontent.location}/WEB-INF/classes" preservelastmodified="yes">
+			<fileset dir="${webcontent.location}/WEB-INF/source" casesensitive="yes" >
+				<include name="**/*.properties" />
+			</fileset>
+		</copy>
+
+	</target>
+
+	<!-- Build the classes from WEB-INF/work/source dir. -->
+	<target name="compileWEF" depends="properties,build-eclipse-compiler">
+		<javac srcdir="${webcontent.location}/WEB-INF/work/source"
+			destdir="${webcontent.location}/WEB-INF/work/classes" includes="**"
+			source="1.6" target="1.6"
+			debug="on" debuglevel="lines,source,vars"
+			includeantruntime="false">
+			<classpath>
+				<pathelement location="${webcontent.location}/WEB-INF/classes" />
+				<fileset dir="${webcontent.location}/WEB-INF/lib">
+					<include name="*.jar" />
+				</fileset>
+				<fileset dir="${webcontent.location}/WEB-INF/work/lib">
+					<include name="*.jar" />
+				</fileset>
+				<fileset dir="${webcontent.location}/WEB-INF/clientLibs">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+
+		<copy todir="${webcontent.location}/WEB-INF/work/classes" preservelastmodified="yes">
+			<fileset dir="${webcontent.location}/WEB-INF/work/source" casesensitive="yes" >
+				<include name="**/*.properties" />
+			</fileset>
+		</copy>
+
+	</target>
+
+
+
+
+	<!--
+	 this target is used to make a factory image. The image.file parameter should point to the full
+	 file location of the output zip file. The image.root parameter should point to the WPF install Templates directory.
+	-->
+	<target name="makeFactoryImage">
+		<zip destfile="${runtime.image}">
+			<zipfileset dir="${image.root}/Project/wpf.war" prefix="WebContent/" />
+			<zipfileset dir="${image.root}/Project/META-INF/" prefix="META-INF" />
+		</zip>
+	</target>
+
+	<!--
+	 used to expand the factory image onto a source project. Once this task is invoked, featuresets
+	 can be added to the project.
+	-->
+	<target name="expandFactoryImage" depends="properties">
+		<unzip src="${runtime.image}" dest="${project.location}" overwrite="no" />
+	</target>
+
+	<!--
+	  Adds a featureset to a project that's already had the factory image expanded on top of it.
+	-->
+
+	<target name="addFeatureSet" depends="properties">
+		<taskdef name="featureset" classname="com.bowstreet.packaging.util.PackageTask" classpath="${webcontent.location}/WEB-INF/lib/packman.jar;${taskClassPath}" />
+		<featureset pkg="${pkg}" nomovepackage="true" force="false" skip="true" verbose="false" bowroot="${webcontent.location}/WEB-INF" />
+	</target>
+
+	<!--
+	Sets the http port for the application war with a specific port. If the property http.port
+	is set, it will use that.. otherwise the port will default to 10000.
+	-->
+	<target name="setServerPort" depends="properties">
+		<ant antfile="${project.location}/.deployment/publish_utils.xml" target="setServerPortUserDefined" />
+		<ant antfile="${project.location}/.deployment/publish_utils.xml" target="setServerPortDefault" />
+	</target>
+
+</project>

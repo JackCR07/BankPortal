@@ -1,0 +1,6 @@
+WEB-INF/config/datasources/**
+WEB-INF/ibm-web-bnd.xml
+WEB-INF/ibm-web-ext.xml
+WEB-INF/lib/xercesImpl.jar
+WEB-INF/lib/xml-apis.jar
+WEB-INF/lib/classparser.jar

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<BuilderDef id="" xmlns="http://www.bowstreet.com/2001/Schemas">
+    <ReadableName></ReadableName>
+    <GenHandlerClassName></GenHandlerClassName>
+    <HelpFile></HelpFile>
+    <RequiredFactoryVersion>5.0.0</RequiredFactoryVersion>
+    <Description></Description>
+    <Domains>
+            <Domain>WebApp</Domain>
+    </Domains>
+    <CreateModifyList></CreateModifyList>
+    <Category></Category>
+    <Keywords></Keywords>
+    
+    <BuilderData>
+        <BuilderDataEntry name="BuilderClassName"></BuilderDataEntry>
+    </BuilderData>
+    <CoordinatorClassName></CoordinatorClassName>
+
+    <InputDefinitions>
+
+    </InputDefinitions>
+
+    <GroupDefinitions>
+        <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" />
+    </GroupDefinitions>
+    <PageDefinitions>
+    </PageDefinitions>
+</BuilderDef>

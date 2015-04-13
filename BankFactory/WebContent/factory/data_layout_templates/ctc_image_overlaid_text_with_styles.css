@@ -1,0 +1,103 @@
+@CHARSET "ISO-8859-1";
+.wef_datalayout_list .grid {
+  -moz-box-sizing: border-box;
+  border:1px solid transparent;
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+.wef_datalayout_list .col_4 {
+  width: 33%;
+}
+.wef_datalayout_list .row_12 {
+  min-height: 300px;
+}
+.wef_datalayout_list .left {
+  border-left: 0 none;
+}
+.wefFlip .itemImage {
+  background: none repeat scroll 0 0 #222222;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+}
+.wefFlip .itemDetails {
+  background-color: rgba(20, 20, 20, 0.8);
+  bottom: 0;
+  color: #EEEEEE;
+  left: 0;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+}
+.wefFlip .itemDetails .itemTitle,.wefFlip .itemDetails .itemTitle a {
+  color: #CCEAFF;
+  font-size: 1.3em;
+  height: 62px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.wefFlip .itemDetails .itemTitle {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0 0 0 0;
+}
+.wefFlip .itemDetails {
+  background-color: rgba(20, 20, 20, 0.8);
+  bottom: 0;
+  color: #EEEEEE;
+  left: 0;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+}
+.wefFlip .itemDetails .itemTitle, .wefFlip .itemDetails .itemTitle a {
+  color: #CCEAFF;
+  font-size: 1.7em;
+  height: 62px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.wefFlip .itemDetails .itemTitle {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0 0 0 0;
+}
+.wefFlip .itemDetails .itemSummary {
+  font-size: 1em;
+  height: 50px;
+  max-height: 50px;
+  overflow: hidden;
+  padding: 0;
+}
+.wefFlip .itemDetails .itemSummary p {
+  color: #F0F0F0;
+  margin: 0;
+  padding: 0;
+}
+.wefFlip .itemDetails .itemSummary {
+  font-size: 1em;
+}
+.wef_datalayout_list .itemImage {
+  float: left;
+  overflow: hidden;
+}
+.wef_datalayout_list .itemTitle {
+  background: none repeat scroll 0 0 transparent;
+  box-shadow: none;
+  font-family: Georgia,"Times New Roman",Times,serif;
+  font-weight: normal;
+  font-size: 1.7em;
+}
+.wef_datalayout_list .itemDetails {
+  overflow: hidden;
+}
+.wef_datalayout_list .itemDetails {
+  overflow: hidden;
+}
+.wef_datalayout_list .itemSummary {
+  color: #444444;
+  line-height: 1.4;
+}

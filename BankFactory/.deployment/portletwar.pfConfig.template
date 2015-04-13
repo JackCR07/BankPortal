@@ -1,0 +1,9 @@
+#Fri Nov 09 14:54:45 EST 2007
+wpf.webxml.file=portlet.standard.web.xml
+wpf.description=This Deployment Configuration was generated for building a Portlet WAR.
+wpf.portletapi.target=build286StandardPortletWar
+wpf.portletwar.location=${project.location}
+wpf.configname=portletwar
+wpf.portlet.api=isJSR286
+wpf.portalversion=7.0
+wpf.include.dojo=false

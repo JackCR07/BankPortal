@@ -1,0 +1,103 @@
+<!--
+
+Build file for creating deployment WAR using Ant
+(see http://jakarta.apache.org/ant/index.html)
+Requires Ant version 1.5.x
+
+ *!todo rewrite note. inform users to use other ant script*
+ 
+-->
+
+<project name="build.deployment.war" default="buildDeploymentWar" basedir=".">
+
+	<!-- Sets common properties required for building targets. -->
+	<target name="properties">
+		<ant antfile="publish_utils.xml" target="preDeploy" />
+		<property file="../.bowstreet" />
+
+		<property name="taskClassPath"
+			value="${webcontent.location}/../.deployment/lib/wpfDeployment.jar;
+			${webcontent.location}/WEB-INF/lib/factory.jar;
+			${webcontent.location}/WEB-INF/lib/bstres.jar;
+			${webcontent.location}/WEB-INF/lib/bstres_n11.jar;
+			${webcontent.location}/WEB-INF/lib/jdom.jar;
+			${webcontent.location}/WEB-INF/lib/log4j.jar;
+			${webcontent.location}/WEB-INF/lib/commons-pool.jar;
+			${webcontent.location}/WEB-INF/clientLibs/j2ee.jar"/>
+	</target>
+
+	<target name="createTempDir">
+		<mkdir dir="${basedir}/temp"/>
+		<mkdir dir="${basedir}/temp/WEB-INF"/>
+	</target>
+
+	<!-- Creates the war from a Factory install image -->
+	<target name="buildDeploymentWar" depends="properties,createTempDir,setDeploymentProperties">
+		<mkdir dir="${build.deployment.war.builddir}" />
+
+		<!-- Generate the web.xml file -->
+		<taskdef name="generateWebXml" classname="com.bowstreet.deployment.WebXmlDescriptorProcessor" 
+			classpath="${taskClassPath}" />
+		<generateWebXml sourceFilePath="${webcontent.location}/WEB-INF/bin/deployment/standalone.web.xml" 
+			destFilePath="${basedir}/temp/WEB-INF/web.xml" 
+			extensionFilePath="${webcontent.location}/WEB-INF/bin/deployment/extensions/standalone.web"
+			rootDirectory="${webcontent.location}/WEB-INF" />
+
+		<!-- Update the app context. -->
+		<replace file="${basedir}/temp/WEB-INF/web.xml" token="@APP_CONTEXT@" value="${project.name}" encoding="UTF-8" />
+
+		<war warfile="${build.deployment.war.builddir}/${project.name}.war" webxml="${basedir}/temp/WEB-INF/web.xml" manifest="${webcontent.location}/META-INF/MANIFEST.MF">
+			<fileset dir="${webcontent.location}">
+				<include name="**/**" />
+				<excludesfile name="excludes/deploymentwar.excludes" />
+				<excludesfile name="excludes/allServers.excludes" />
+				<excludesfile name="excludes/production.excludes" />
+				<excludesfile name="${webcontent.location}/.excludeFromServer" />
+				<exclude name="WEB-INF/lib/portlet_adapter_ant.jar" />
+				<exclude name="WEB-INF/lib/portlet_adapter_common.jar" />
+				<exclude name="WEB-INF/lib/portlet_adapter286.jar" />
+				<exclude name="WEB-INF/lib/packman.jar" />
+				<exclude name="WEB-INF/lib/activation.jar" />
+				<exclude name="WEB-INF/lib/classparser.jar" />
+				<exclude name="WEB-INF/lib/xercesImpl.jar" />
+				<exclude name="WEB-INF/lib/xml-apis.jar" />
+				<exclude name="WEB-INF/lib/wsdl4j.jar" />
+				<exclude name="WEB-INF/lib/icu4j.jar" />
+			</fileset>
+			<fileset dir="${webcontent.location}">
+				<include name="WEB-INF/bin/compileJSP.bat" />
+				<include name="WEB-INF/bin/compileJSP" />
+				<include name="WEB-INF/clientLibs/j2ee.jar" />
+				<include name="WEB-INF/logs/placeholder.txt" />
+			</fileset>
+			<fileset dir="${basedir}/temp">
+				<include name="WEB-INF/config/bowstreet.properties" />
+				<include name="WEB-INF/config/cluster.properties" />
+			</fileset>
+		</war>
+
+		<delete dir="${basedir}/temp" />
+	</target>
+
+	<target name="setDeploymentProperties">
+		<mkdir dir="${basedir}/temp/WEB-INF/config" />
+
+		<copy todir="${basedir}/temp/WEB-INF/config">
+			<fileset dir="${webcontent.location}/WEB-INF/config">
+				<include name="bowstreet.properties" />
+				<include name="cluster.properties" />
+			</fileset>
+		</copy>
+
+		<replace file="${basedir}/temp/WEB-INF/config/bowstreet.properties">
+			<replacefilter token="bowstreet.settings.buildermanagerclass=com.bowstreet.generation.implementation.ReloadingXmlBuilderManager" value="bowstreet.settings.buildermanagerclass=com.bowstreet.generation.implementation.XmlBuilderManager" />
+			<replacefilter token="bowstreet.server.type=development" value="bowstreet.server.type=deployment" />
+			<replacefilter token="bowstreet.dynamic.class.load.checkTimestamp=true" value="bowstreet.dynamic.class.load.checkTimestamp=false" />
+		</replace>
+		<replace file="${basedir}/temp/WEB-INF/config/cluster.properties">
+			<replacefilter token="bowstreet.profiles.cache.waitTime=1" value="bowstreet.profiles.cache.waitTime=60" />
+		</replace>
+
+	</target>
+
+</project>

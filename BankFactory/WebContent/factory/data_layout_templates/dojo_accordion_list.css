@@ -1,0 +1,26 @@
+@IMPORT url("base_template_styles.css");  
+
+.vf_view_container {
+    width:100%;
+}
+
+.vf_view_list {
+   width:100%;
+}
+
+.wpfDojoAccordion .wpfDojoPaneColumn {
+	float:left;
+	width:33%;
+}
+	
+.wpfDojoAccordion .wpfDojoPaneRow {
+   height: 60px;
+   width:100%;
+}
+
+.wpfDojoAccordion .wpfDojoColumnItem {
+	margin: 2px;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden; 
+}

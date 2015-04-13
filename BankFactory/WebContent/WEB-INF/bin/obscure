@@ -1,0 +1,17 @@
+#!/bin/sh
+${JAVA_HOME}/bin/java -Xms8m -Xmx32m -classpath ../lib/factory.jar:../lib/bstres.jar:../lib/bstres_nl1.jar:../clientLibs/j2ee.jar:../classes:../lib -Dbowstreet.rootDirectory=.. com.bowstreet.util.ObscureProperty $*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoTreeBuilder">
+  <ReadableName>Dojo Tree</ReadableName>
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName>
+  <HelpFile>factory/product_documentation/designer/dojo_tree.html</HelpFile>
+  <RequiredFactoryVersion>6.1</RequiredFactoryVersion>
+  <Description>Creates a tree view of multi-level XML data</Description>
+  <Domains>
+    <Domain>WebApp</Domain>
+    <Domain>Consumer</Domain>
+  </Domains>
+  <CreateModifyList />
+  <Category>Page Elements, Rich UI</Category>
+  <Keywords>Dojo,Tree</Keywords>
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <BuilderData>
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoTreeBuilder</BuilderDataEntry>
+    <BuilderDataEntry name="IconName">treeview_pal</BuilderDataEntry>
+  </BuilderData>
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoTreeCoordinator</CoordinatorClassName>
+  <InputDefinitions>
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.RestrictedBuilderName">
+      <Prompt>Name</Prompt>
+      <InitialValue />
+      <HelpText />
+      <Page />
+      <Required>true</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation" />
+
+    <InputDefinition name="Data" base="com.bowstreet.core.Base.IndirectValue">
+      <Prompt>Data</Prompt>
+      <HelpText>XML data used to populate the tree</HelpText>
+      <Required>true</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+    <InputDefinition name="LabelElement" base="com.bowstreet.core.Base.StringData">
+      <Prompt>Label Element</Prompt>
+      <HelpText>Name of the XML element in the source data to be displayed as the tree label</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+    <InputDefinition name="ValueElement" base="com.bowstreet.core.Base.StringData">
+      <Prompt>Value Element</Prompt>
+      <HelpText>Name of the XML element in the source data to be displayed as the tree value</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+    <InputDefinition name="ItemIconType" base="com.bowstreet.core.Base.StringData" >
+      <Group>ItemIcons</Group>
+      <Prompt>Item Icon Type</Prompt>
+      <HelpText>Choose how to select the image to display next to each tree item.</HelpText>
+      <Required>false</Required>
+      <InitialValue>Default</InitialValue>
+      <Editor JavaClass="com.bowstreet.widget.ComboBox">
+        <Argument name="ListData">Default,None,Single,FolderLeaf,Expression</Argument>
+        <Argument name="ListLabels">Use Dojo default images,No item image,Same image for all elements,Separate images for folders and leaves,Advanced: select image based on JavaScript expression</Argument>
+      </Editor>
+    </InputDefinition>
+    <InputDefinition name="ItemIcon" base="com.bowstreet.builders.webapp.ImageBuilder.ImageName">
+      <Group>ItemIcons</Group>
+      <Prompt>Item Icon</Prompt>
+      <HelpText>Image to be shown next to each tree item</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+    <InputDefinition name="FolderItemIcon" base="com.bowstreet.builders.webapp.ImageBuilder.ImageName">
+      <Group>ItemIcons</Group>
+      <Prompt>Folder Item Icon</Prompt>
+      <HelpText>Image to be shown next to a tree item that has children</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+    <InputDefinition name="LeafItemIcon" base="com.bowstreet.builders.webapp.ImageBuilder.ImageName">
+      <Group>ItemIcons</Group>
+      <Prompt>Leaf Item Icon</Prompt>
+      <HelpText>Image to be shown next to a tree item that has no children</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+    <InputDefinition name="ItemIcons" base="com.bowstreet.core.Base.XMLData">
+      <Group>ItemIcons</Group>
+      <Prompt>Item Icons</Prompt>
+      <ProfileType>Value</ProfileType>
+      <HelpText>Select image for item based on the tree data or other JavaScript expression.</HelpText>
+      <Editor JavaClass="com.bowstreet.widget.List">
+        <Argument name="columns">2</Argument>
+        <Argument name="headings">Image, Script Expression</Argument>
+        <Argument name="columnTags">Image, Script</Argument>
+        <Argument name="rowtag">ImageIcon</Argument>
+        <Argument name="cellEditors">
+          <Editors>
+            <Editor JavaClass="com.bowstreet.widget.ServableContentChooser"/>
+            <Editor JavaClass="com.bowstreet.widget.TextField"/>
+          </Editors>
+        </Argument>
+      </Editor>
+    </InputDefinition>
+<!--
+    <InputDefinition name="OpenFolderIcon" base="com.bowstreet.builders.webapp.ImageBuilder.ImageName">
+      <Group>FolderIcons</Group>
+      <Prompt>Open Folder Icon</Prompt>
+      <HelpText>Image to be shown next to a tree element that has children</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+    <InputDefinition name="ClosedFolderIcon" base="com.bowstreet.builders.webapp.ImageBuilder.ImageName">
+      <Group>FolderIcons</Group>
+      <Prompt>Closed Folder Icon</Prompt>
+      <HelpText>Image to be shown next to a tree item that has no children</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+-->
+
+    <InputDefinition name="ClientSideDelivery" base="com.bowstreet.builders.webapp.EventDeclarationBuilder.ClientSideDelivery">
+      <Group>EventDelivery</Group>
+      <Visible>true</Visible>
+    </InputDefinition>
+
+    <InputDefinition name="ServerDelivery" base="com.bowstreet.builders.webapp.EventDeclarationBuilder.ServerDelivery">
+      <Group>EventDelivery</Group>
+      <Visible>true</Visible>
+    </InputDefinition>
+  </InputDefinitions>
+
+  <GroupDefinitions>
+    <GroupDefinition id="FolderIcons">
+        <Name>Folder Icons</Name>
+        <Description>Using these inputs, you can override the default icons used to indicate which tree elements are expanded and which are collapsed. </Description>
+        <BorderStyle>Etched</BorderStyle>
+        <IsCollapsible>true</IsCollapsible>
+        <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+    <GroupDefinition id="ItemIcons">
+        <Name>Item Icons</Name>
+        <Description>These inputs allow you to specify icons to place just to the left of the tree item text.</Description>
+        <BorderStyle>Etched</BorderStyle>
+        <IsCollapsible>true</IsCollapsible>
+        <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+
+    <GroupDefinition id="EventDelivery">
+        <Name>Event Delivery</Name>
+	  <Description>An event can be fired when the user clicks a node in the tree. The inputs in this section allow you to control how this event is delivered.</Description>
+	  <BorderStyle>Etched</BorderStyle>
+	  <IsCollapsible>true</IsCollapsible>
+	  <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" />
+  </GroupDefinitions>
+</BuilderDef>
+

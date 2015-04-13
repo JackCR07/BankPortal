@@ -1,0 +1,22 @@
+<ProfileSet name="com.bowstreet.profileset.SimpleLocaleValues" useQualifiedProfileNames="true"><Description>Has entries for country and language, hooked to a custom value provider which queries the Locale from the request.</Description>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<ValueClass>com.bowstreet.profiles.LocaleCustomValueClass</ValueClass>
+<Models />
+<ProfileDef><Entries><Entry name="CountryCode" isRuntime="false"><UI type="TextInput"><Prompt>Country Code</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="LanguageCode" isRuntime="false"><UI type="TextInput"><Prompt>Language Code</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1128630121459" isContainer="true"><Values><Value name="CountryCode">US</Value>
+<Value name="LanguageCode">en</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

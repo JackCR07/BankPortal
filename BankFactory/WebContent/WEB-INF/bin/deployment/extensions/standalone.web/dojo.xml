@@ -1,0 +1,13 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"">
+
+  <servlet>
+    <servlet-name>Dojo Servlet</servlet-name>
+    <servlet-class>com.bowstreet.webapp.engine.ZipServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Dojo Servlet</servlet-name>
+    <url-pattern>/factory/dojo/*</url-pattern>
+  </servlet-mapping>
+
+</web-app>

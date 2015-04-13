@@ -1,0 +1,67 @@
+<!--  **************************   WEF 8.5 Tablet UI Theme **********************************
+Copyright IBM Corp. 2013
+-->
+<Theme extends="/WEB-INF/factory/themes/WEF8.5_desktop.uitheme">
+
+    <!-- Switch to mobile RDD, to avoid Dojo RDD which doesn't work well on mobile -->
+    <DefaultRDD>/WEB-INF/factory/data_definitions/mobile/dojo_for_mobile_datadef.xml</DefaultRDD>
+
+    <!-- Mobile Buttons need to be a little taller, to be finger-clickable -->
+    <Button_ActionRole_Default>wefMobileTabletButton</Button_ActionRole_Default>
+
+    <Add_Default_Progress_Indicator>false</Add_Default_Progress_Indicator>
+    <Use_Smart_Refresh>true</Use_Smart_Refresh>
+    <DojoEnable_DisableThemeCSS>false</DojoEnable_DisableThemeCSS>
+
+    <!-- View and Form overrides -->
+	<ViewAndForm_ViewPageBase>/factory/pages/multichannel/tablet/view_and_form/view.html</ViewAndForm_ViewPageBase>
+    <ViewAndForm_DetailPageBase>/factory/pages/multichannel/tablet/view_and_form/details.html</ViewAndForm_DetailPageBase>
+    <ViewAndForm_UpdatePageBase>/factory/pages/multichannel/tablet/view_and_form/input.html</ViewAndForm_UpdatePageBase>
+    <ViewAndForm_Input_PageBase>/factory/pages/multichannel/tablet/view_and_form/input.html</ViewAndForm_Input_PageBase>
+    <InputForm_PageBase>/factory/pages/multichannel/tablet/view_and_form/input.html</InputForm_PageBase>
+
+    <!-- DSUI overrides -->
+    <DSUI_CreatePageHTML>/factory/pages/multichannel/tablet/dsui/create.html</DSUI_CreatePageHTML>
+    <DSUI_UpdatePageHTML>/factory/pages/multichannel/tablet/dsui/update.html</DSUI_UpdatePageHTML>
+    <DSUI_DetailsPageHTML>/factory/pages/multichannel/tablet/dsui/details.html</DSUI_DetailsPageHTML>
+    <DSUI_NoDetailsYetPageHTML>/factory/pages/multichannel/tablet/dsui/no_details_yet.html</DSUI_NoDetailsYetPageHTML>
+    <DSUI_QueryPageHTML>/factory/pages/multichannel/tablet/dsui/query.html</DSUI_QueryPageHTML>
+    <DSUI_SearchResultsPageHTML>/factory/pages/multichannel/tablet/dsui/search_results.html</DSUI_SearchResultsPageHTML>
+    <DSUI_FilterPageHTML>/factory/pages/multichannel/tablet/dsui/filter.html</DSUI_FilterPageHTML>
+    <DSUI_ListPageHTML>/factory/pages/multichannel/tablet/dsui/list_page.html</DSUI_ListPageHTML>
+
+    <ViewAndForm_ViewPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</ViewAndForm_ViewPageHTMLTemplate>
+    <ViewAndForm_DetailPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</ViewAndForm_DetailPageHTMLTemplate>
+    <ViewAndForm_InputPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</ViewAndForm_InputPageHTMLTemplate>
+    <ViewAndForm_UpdatePageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</ViewAndForm_UpdatePageHTMLTemplate>
+
+    <!-- Split pager too big for tablets -->
+    <DSUI_PagingControls>com.bowstreet.builders.webapp.PagingLinksBuilder</DSUI_PagingControls>
+
+    <DSUI_CreatePageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_CreatePageHTMLTemplate>
+    <DSUI_UpdatePageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_UpdatePageHTMLTemplate>
+    <DSUI_DetailsPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_DetailsPageHTMLTemplate>
+    <DSUI_QueryPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_QueryPageHTMLTemplate>
+    <DSUI_SearchPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_SearchPageHTMLTemplate>
+    <DSUI_FilterPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_FilterPageHTMLTemplate>
+    <DSUI_ListPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_ListPageHTMLTemplate>
+    <DSUI_HTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_HTMLTemplate>
+
+    <!-- Application Page  -->
+    <ApplicationPage_HTMLTemplate>/factory/html_templates/clean_label_above_themes.html</ApplicationPage_HTMLTemplate>
+    <ApplicationPage_ViewPageBase>/factory/pages/multichannel/tablet/application_page/view.html</ApplicationPage_ViewPageBase>
+    <ApplicationPage_InputPageBase>/factory/pages/multichannel/tablet/application_page/input.html</ApplicationPage_InputPageBase>
+    
+    <InputForm_HTMLTemplate>/factory/html_templates/form_label_above.html</InputForm_HTMLTemplate>
+
+    <!-- Simple two button pager -->    
+    <Paging_OverrideBuilderID>com.bowstreet.builders.webapp.PagingLinksBuilder</Paging_OverrideBuilderID>
+    <PagingLinks_HTMLPage>/factory/pages/multichannel/paging/paging_links.html</PagingLinks_HTMLPage>
+    <PagingLinks_StyleSheet>/factory/html_templates/WEF8.5_uitheme.css</PagingLinks_StyleSheet>
+    <PagingLinks_AlwaysShowLinks>true</PagingLinks_AlwaysShowLinks> 
+
+    <ColumnSort_Style>5</ColumnSort_Style>
+
+	<!-- Data Layout settings -->
+	<DataLayout_multichannel_ThumbnailList_StyleSheet>/factory/data_layout_templates/multichannel_thumbnail_list_small_uitheme.css</DataLayout_multichannel_ThumbnailList_StyleSheet>
+ </Theme>

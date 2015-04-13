@@ -1,0 +1,19 @@
+<ProfileSet name="PortletEditPageProperties" useQualifiedProfileNames="true"><Description>Properties associated with the edit page of a portlet</Description>
+<Visibility>False</Visibility>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<ValueClass>com.bowstreet.profiles.SelectPortletEditPage</ValueClass>
+<Models><Model>factory/adapters/CustomEditPage</Model>
+</Models>
+<ProfileDef><Entries><Entry name="PortletEditPage" isRuntime="false"><UI type="TextInput"><Prompt>Location of the base edit page</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1035392424416" isContainer="true"><Values><Value name="PortletEditPage">/factory/portletadapter/portlet_edit_page.html</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

@@ -1,0 +1,57 @@
+<HTML>
+<!--  
+    This is a very special template made for making a small group
+    of inputs into a horizontal group.  For example, if you have inputs
+    Name, Address, City, State, Zip, then try making a Data Hierarchy
+    Modifier to put City, State, and Zip into a group; label it "City, State, Zip"
+    and give it this template.
+    
+    This horizontal template is designed to work together with the prompt_above_input.html template.
+ -->
+<body>
+    <tr name="DisplayGroupWrapper"  class="DisplayFieldRow">
+      <td></td>
+      <td class="DisplayFieldCell">
+        <table>
+          <tr name="GroupContainer">
+            <HTMLWRAPPER name="DisplayGroup">
+              <HTMLWRAPPER name="DataContainer">
+                <td name="DisplayField">
+                    <span name="FieldLabel" class="DisplayFieldLabelText"/>
+                    <br />
+                    <span name="FieldElement" class="DisplayFieldElement" />
+                    <span name="FieldValidationError" class="ValidationErrorText" />
+                </td>
+              </HTMLWRAPPER>
+            </HTMLWRAPPER>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr name="DataEntryGroupWrapper"  class="DataEntryFieldRow">
+      <td></td>
+      <td class="DataEntryFieldCell">
+        <table>
+          <tr name="GroupContainer">
+            <HTMLWRAPPER name="DataEntryGroup">
+              <HTMLWRAPPER name="DataContainer">
+                <td name="DataEntryField">
+                    <label name="FieldLabel" class="DataEntryFieldLabelText" for="_field" />
+                    <br />
+                    <span name="FieldElement" class="DataEntryFieldElement" id="_field" />
+                    <span name="FieldValidationError" class="ValidationErrorText" />
+                </td>
+                <td name="DataEntryField_textinput">
+                    <label name="FieldLabel" class="DataEntryFieldLabelText" for="_field"/>
+                    <br />
+                    <input type="text" name="FieldElement" size="12"  class="DataEntryFieldElement" id="_field" />
+                    <span name="FieldValidationError" class="ValidationErrorText" />
+                </td>
+              </HTMLWRAPPER>
+            </HTMLWRAPPER>
+          </tr>
+        </table>
+      </td>
+    </tr>
+</body>
+</HTML>

@@ -1,0 +1,249 @@
+<Model id="factory/wizardbase/rest_provider"><BuilderCallList><BuilderCall id="bc92"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2011. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2002, 2006. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc93"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Next Steps</Input>
+<Input name="BuilderCallEnabled">true</Input>
+<Input name="Comment">You should be able to run this model and see the data
+.
+Here are some of the things you might want to do now that you have the model started.
+    In the  Services Definition Builder, you could  turn on the Generate WSDL choice if you would like to make this service exportable as a WSDL Service.  (This is used for external access to these services)
+    In the  Services Definition Builder, you could add logical operations. These are used by builders like the Data Services User Interface builders to build Create, Read, Updtae and Delete type applications.
+    You can also add other builders to extend the service ,service operations and transform data.</Input>
+<Input name="BuilderCallComment">You should be able to run this model and see the data
+.
+Here are some of the things you might want to do now that you have the model started.
+    In the  Services Definition Builder, you could  turn on the Generate WSDL choice if you would like to make this service exportable as a WSDL Service.  (This is used for external access to these services)
+    In the  Services Definition Builder, you could add logical operations. These are used by builders like the Data Services User Interface builders to build Create, Read, Updtae and Delete type applications.
+    You can also add other builders to extend the service ,service operations and transform data.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc53"><BuilderDefID>com.bowstreet.builders.webapp.RestCallBuilder</BuilderDefID>
+<Messages><Warning><Message>No parameter value specified for "threadID", you may want to specify fixed values for alternate generation time parameters.</Message>
+</Warning>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="URL" profile="wizardbase.REST_view_and_form:RestCall_URL">http://www-128.ibm.com/developerworks/forums/rss/rssmessages.jspa</Input>
+<Input name="Name" profile="wizardbase.REST_view_and_form:RestCall_Name">_u_modified</Input>
+<Input name="Parameters" xmlProfile="wizardbase.REST_view_and_form:RestCall_Parameters"><top><Argument><Name>threadID</Name>
+<Value />
+</Argument>
+</top>
+</Input>
+<Input name="CacheSchema">false</Input>
+<Input name="FollowRedirect">true</Input>
+<Input name="Timeout">30</Input>
+<Input name="HTTPHeaders"><top />
+</Input>
+<Input name="AutoCreateSchema">true</Input>
+<Input name="ReplyTypeSchema">_u_modified/rss</Input>
+<Input name="HTTPRequestType" profile="wizardbase.REST_view_and_form:RestCall_HTTPRequestType">GET</Input>
+<Input name="RestructureFeedData">true</Input>
+<Input name="SchemaURL" profile="wizardbase.REST_view_and_form:RestCall_SchemaURL">http://www-128.ibm.com/developerworks/forums/rss/rssmessages.jspa?threadID=200182</Input>
+<Input name="BasicAuth_Username" profile="wizardbase.REST_view_and_form:RestCall_BasicAuthUsername"></Input>
+<Input name="BasicAuth_Password" profile="wizardbase.REST_view_and_form:RestCall_BasicAuthPassword"></Input>
+<Input name="SchemaParameters" xmlProfile="wizardbase.REST_view_and_form:RestCall_SchemaParameters" />
+<Input name="SchemaUsername" profile="wizardbase.REST_view_and_form:RestCall_SchemaUsername"></Input>
+<Input name="SchemaPassword" profile="wizardbase.REST_view_and_form:RestCall_SchemaPassword"></Input>
+<Input name="BodyContentDataType" profile="wizardbase.REST_view_and_form:RestCall_BodyContentDataType"></Input>
+<Input name="BodyContentType" profile="wizardbase.REST_view_and_form:RestCall_BodyContentType"></Input>
+<Input name="RestructureFeedType">auto</Input>
+<Input name="IncludeSchemaResultAttributes" profile="wizardbase.REST_view_and_form:RestCall_IncludeSchemaResultAttributes"></Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[RestructureFeedDataHandler]]></CacheKey>
+<CacheValue><name>com.bowstreet.builders.webapp.methods.RestructureRSS2FeedData</name>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[schema:GET:false:true:http://www-128.ibm.com/developerworks/forums/rss/rssmessages.jspaauto]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element name="rss"><xsd:complexType><xsd:sequence><xsd:element ref="channel" minOccurs="1" maxOccurs="1" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="channel"><xsd:complexType><xsd:sequence><xsd:element ref="title" minOccurs="1" maxOccurs="1" />
+<xsd:element ref="link" minOccurs="1" maxOccurs="1" />
+<xsd:element ref="description" minOccurs="1" maxOccurs="1" />
+<xsd:element ref="language" minOccurs="1" maxOccurs="1" />
+<xsd:element ref="pubDate" minOccurs="1" maxOccurs="1" />
+<xsd:element ref="items" minOccurs="1" maxOccurs="1" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="title" type="xsd:string" />
+<xsd:element name="link" type="xsd:string" />
+<xsd:element name="description" type="xsd:string" />
+<xsd:element name="language" type="xsd:string" />
+<xsd:element name="pubDate" type="xsd:string" />
+<xsd:element name="items"><xsd:complexType><xsd:sequence><xsd:element ref="item" minOccurs="1" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="item"><xsd:complexType><xsd:sequence><xsd:element ref="title" minOccurs="1" maxOccurs="1" />
+<xsd:element ref="link" minOccurs="1" maxOccurs="1" />
+<xsd:element ref="description" minOccurs="1" maxOccurs="1" />
+<xsd:element ref="pubDate" minOccurs="1" maxOccurs="1" />
+<xsd:element ref="creationDate" minOccurs="1" maxOccurs="1" />
+<xsd:element ref="modificationDate" minOccurs="1" maxOccurs="1" />
+<xsd:element ref="date" minOccurs="1" maxOccurs="1" />
+<xsd:element ref="author" minOccurs="1" maxOccurs="1" />
+<xsd:element ref="replyCount" minOccurs="1" maxOccurs="1" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="creationDate" type="xsd:string" />
+<xsd:element name="modificationDate" type="xsd:string" />
+<xsd:element name="date" type="xsd:string" />
+<xsd:element name="author" type="xsd:string" />
+<xsd:element name="replyCount" type="xsd:string" />
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc78"><BuilderDefID>com.bowstreet.builders.webapp.ServiceDefinitionBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="wizardbase.REST_view_and_form:ServiceDefinition_BuilderCallEnabled">true</Input>
+<Input name="PublicService">true</Input>
+<Input name="ExportAsWSDL">false</Input>
+<Input name="MaintainState">true</Input>
+<Input name="GenerateStubAutomatically">false</Input>
+<Input name="AddTestingSupport">true</Input>
+<Input name="TestCreateMain">true</Input>
+<Input name="TestIncludeDocumentation">false</Input>
+<Input name="TestOverrideInputs">false</Input>
+<Input name="ServiceName" profile="wizardbase.REST_view_and_form:ServiceDefinition_ServiceName">_u_service</Input>
+<Input name="TestServiceName">_u_service</Input>
+<Input name="Name">_u_service</Input>
+<Input name="TestOperationInputs"><OverridenInputs><InputsForOperation><Operation>_u_op</Operation>
+<Inputs><top><Input><Name>_u_modifiedRestInputs</Name>
+</Input>
+<Input><Name>_u_modifiedRestInputs.Parameters</Name>
+</Input>
+<Input><Name>_u_modifiedRestInputs.Parameters.threadID</Name>
+</Input>
+</top>
+</Inputs>
+</InputsForOperation>
+</OverridenInputs>
+</Input>
+<Input name="LogicalOperations" xmlProfile="wizardbase.REST_view_and_form:ServiceDefinition_LogicalOperations"><Functions><FunctionDef><LogicalName>Create</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>RetrieveList</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>Search</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>Update</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>Delete</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>RetrieveOne</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+</Functions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc80"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="wizardbase.REST_view_and_form:ServiceDefinition_BuilderCallEnabled">true</Input>
+<Input name="InputStructureHandling" profile="wizardbase.REST_view_and_form:ServiceOperation_InputStructureHandling">FromOperation</Input>
+<Input name="InputAllowStructureEdit">false</Input>
+<Input name="InputAutomaticMapping">true</Input>
+<Input name="ResultStructureHandling" profile="wizardbase.REST_view_and_form:ServiceOperation_ResultStructureHandling">FromOperation</Input>
+<Input name="ResultAllowStructureEdit">false</Input>
+<Input name="ResultAutomaticMapping">true</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="CachingTimeout">3600</Input>
+<Input name="PreExecuteEventEnabled">disabled</Input>
+<Input name="PostExecuteEventEnabled">disabled</Input>
+<Input name="PagedDataResource">Default</Input>
+<Input name="DataService" profile="wizardbase.REST_view_and_form:ServiceDefinition_ServiceName">_u_service</Input>
+<Input name="ResultMappingTable"><Fields><Field><Name>title</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>link</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>description</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>pubDate</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>creationDate</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>modificationDate</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>date</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>author</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>replyCount</Name>
+<Type>string</Type>
+</Field>
+</Fields>
+</Input>
+<Input name="InputMappingTable"><Fields><Field><Name>Parameters/threadID</Name>
+<Type>string</Type>
+</Field>
+</Fields>
+</Input>
+<Input name="OperationName" profile="wizardbase.REST_view_and_form:ServiceOperation_OperationName">_u_op</Input>
+<Input name="TargetOperation" profile="wizardbase.REST_view_and_form:ServiceOperation_TargetOperation">DataServices/_u_modified/execute</Input>
+<Input name="ResultDescription" profile="wizardbase.REST_view_and_form:ServiceOperation_OperationDescription">Get Developerworks thread</Input>
+<Input name="OperationDescription" profile="wizardbase.REST_view_and_form:ServiceOperation_OperationDescription">Get Developerworks thread</Input>
+<Input name="Name">_u_op</Input>
+<Input name="InputDescription">Thread info</Input>
+<Input name="ResultElement" profile="wizardbase.REST_view_and_form:ServiceOperation_ResultElement">channel/items</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies><Dependency type="File">/factory/pages/service_test_index_page.html</Dependency>
+<Dependency type="Model">factory/portletbase/view_and_form_base</Dependency>
+<Dependency type="File">/factory/pages/view_and_form/input.html</Dependency>
+<Dependency type="File">/factory/html_templates/color_themes.html</Dependency>
+<Dependency type="File">/factory/pages/view_and_form/view.html</Dependency>
+<Dependency type="File">/factory/clientjavascript/dojo/progressindicator.js</Dependency>
+<Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
+<Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
+<Dependency type="Class">com.bowstreet.builderutilities.NameSequencer</Dependency>
+</Dependencies>
+<ExternalProperties><ExternalProperty id="Service2Enabled">true</ExternalProperty>
+<ExternalProperty id="DojoEnabled">true</ExternalProperty>
+</ExternalProperties>
+</Model>

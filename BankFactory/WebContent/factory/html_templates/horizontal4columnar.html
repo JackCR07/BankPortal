@@ -1,0 +1,66 @@
+<HTML>
+<!--  
+    This is a very special template made for making a small group
+    of inputs into a horizontal group.  For example, if you have inputs
+    Name, Address, City, State, Zip, then try making a Data Hierarchy
+    Modifier to put City, State, and Zip into a group; label it "City, State, Zip"
+    and give it this template.
+    This horizontal template is designed to work together with the columnar.html template.
+  -->
+<body>
+      <tr name="DisplayGroupWrapper" class="DisplayFieldRow">
+        <td width="5"/>
+        <HTMLWRAPPER name="LabelContainer">
+          <td  name="DisplayGroupLabel" class="DisplayFieldLabelCell">
+            <span name="LabelText" class="DisplayFieldLabelText">Sample Label</span>
+          </td>
+        </HTMLWRAPPER>
+        <td name="GroupContainer" class="DisplayFieldCell" >
+          <HTMLWRAPPER name="DisplayGroup">
+            <HTMLWRAPPER name="DataContainer">
+              <HTMLWRAPPER name="DisplayField">
+                <span name="FieldElement"  class="DisplayFieldElement">test</span>&nbsp;&nbsp;
+              </HTMLWRAPPER>
+           </HTMLWRAPPER>
+        </HTMLWRAPPER>
+    </td>
+      <td width="5"/>
+    </tr>
+    <tr name="DataEntryGroupWrapper"  class="DataEntryFieldRow">
+      <HTMLWRAPPER name="LabelContainer">
+        <td name="DataEntryGroupLabel" class="DataEntryFieldLabelCell">
+         <span name="LabelText" class="DataEntryFieldLabelText">Sample Label</span>
+        </td>
+      </HTMLWRAPPER>
+      <td  class="RequiredPromptCell"></td>
+      <td colspan="2" name="GroupContainer"><!-- extend over the validation error space in a normal row -->
+        <HTMLWRAPPER name="DataEntryGroup">
+          <HTMLWRAPPER name="DataContainer">
+            <!-- Note that I am NOT showing the required field prompt!  Delete "Skip" to show them. -->
+            <HTMLWRAPPER name="DataEntryField">
+              <span name="SkipFieldRequired" class="RequiredPromptText" />
+              <span name="FieldElement" class="DataEntryFieldElement" >test</span>
+              <span name="FieldValidationError" class="ValidationErrorText" />
+            </HTMLWRAPPER>
+            <HTMLWRAPPER name="DataEntryField_textinput">
+              <span name="SkipFieldRequired" class="RequiredPromptText" />
+              <input type="text" name="FieldElement" size="10"  class="DataEntryFieldElement" ></input>
+              <span name="FieldValidationError" class="ValidationErrorText" />
+            </HTMLWRAPPER>
+            <!-- These next two are there specifically to match my sample data.  -->
+            <HTMLWRAPPER name="DataEntryFieldByName_Zip">
+              <span name="SkipFieldRequired" class="RequiredPromptText" />
+              <input type="text" name="FieldElement" size="5"  class="DataEntryFieldElement" ></input>
+              <span name="FieldValidationError" class="ValidationErrorText" />
+            </HTMLWRAPPER>
+            <HTMLWRAPPER name="DataEntryFieldByName_CompanyZip">
+              <span name="SkipFieldRequired" class="RequiredPromptText" />
+              <input type="text" name="FieldElement" size="5"  class="DataEntryFieldElement" ></input>
+              <span name="FieldValidationError" class="ValidationErrorText" />
+            </HTMLWRAPPER>
+          </HTMLWRAPPER>
+        </HTMLWRAPPER>
+      </td>
+    </tr>
+</body>
+</HTML>

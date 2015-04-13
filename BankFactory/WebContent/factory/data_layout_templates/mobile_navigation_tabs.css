@@ -1,0 +1,56 @@
+@IMPORT url("base_template_styles.css");
+
+.wpfMobileTabRow {
+    height: 50px;
+    width: 100%;
+}
+
+.wpfMobileTabRow a.wpfSelectableRow {
+    float: left;
+    color: #000000;
+    text-decoration: none;
+}
+
+.wpfMobileTabRow .wpfTabText, .wpfTabImage {
+    text-align: center;
+    height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.wpfMobileTabRow .wpfTabImage img {
+    height: 100%;
+}
+
+.wpfMobileTabRow .wpfTabColumn {
+	
+    float: left;
+    height: 40px;
+    width: 100px;
+    padding: 2px;
+    margin: 2px;
+    background-color: #F0F0F0;
+	
+    margin: 0px;
+    border-left: 1px solid #999999;
+    border-right: 1px solid #999999;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #F0F0F0), color-stop(0.5, #E0E0E0), color-stop(1.0, #D0D0D0));
+}
+
+.wpfMobileTabRow .selected .wpfTabColumn {
+    background-color: #D0D0D0;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #D0D0D0), color-stop(0.5, #C0C0C0), color-stop(1.0, #B0B0B0));
+}
+
+.wpfMobileTabRow div:first-child a:first-child .wpfTabColumn {
+    border-left: 0px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+}
+
+.wpfMobileTabRow div:last-child a:last-child .wpfTabColumn {
+    border-right: 0px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+}

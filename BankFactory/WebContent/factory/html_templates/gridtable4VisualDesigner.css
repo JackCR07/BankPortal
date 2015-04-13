@@ -1,0 +1,33 @@
+/** Copyright 2005 IBM. */ /** General Style Classes */
+body {
+	color: #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+/** This is the layout table which wraps an entire Display Page **/
+.displayPageTable {
+	background-color: #EEEEEE;
+}
+
+/** This is the layout table which wraps an entire Display Page **/
+.dataEntryPageTable {
+	background-color: #EEEEEE;
+}
+
+/** for table background-color/border- can be used with cellspacing="1" to provide inner table borders **/
+.gridTable {
+	background-color: #EEEEEE;
+}
+
+.vf_view_container {
+	float: none !important;
+}
+
+.vf_field_container {
+	float: none !important;
+}
+
+.vf_view_list {
+	float: none !important;
+}

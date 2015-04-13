@@ -1,0 +1,147 @@
+/* Licensed Materials Property of IBM 5724-O03
+Copyright 2010. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.*/
+@import url(../gridtable_blue_WPF7.css);
+@import url(details_template_styles.css);
+@import url(mobile_portal_override.css);
+body{
+  margin: 0px;
+  background: #C8C8C8 url("background_stripes.jpg") repeat scroll 0 0 !important;
+  width: 100%;
+}
+
+.wpfMobilePage .vf_view_container{
+  width: 100%; 
+  padding: 0px 0px 0px 0px;
+  margin: 0px; 
+}
+
+.wpfMobilePage .vf_create_button{
+  width:100%;
+}
+
+.wpfMobilePage .vf_create_button input{
+  width: 100px;
+  display:block;
+  margin:0px auto;
+}
+
+.wpfMobilePage .displayPageTable{
+  float: none;
+  margin: 0px;
+  width: 97%;
+  margin-left: 4px;
+  margin-right: 0px;
+}
+
+.wpfMobilePage .vf_view_list{
+  float: none;
+  margin: 0px;
+}
+
+.wpfMobilePage .gridTable{
+  border-top: none;
+  border-left: 1px solid #000099;
+  border-bottom: 1px solid #000099;
+  border-right: 1px solid #000099;
+}
+
+.wpfMobilePage .ColumnGroupLabelEmpty{
+  border-bottom: thin solid #DDDDDD;
+}
+
+.wpfMobilePage .spacerColumn{
+  border-left: thin solid #808080;
+}
+
+.wpfMobilePage .spacerColumnGroupHeader{
+  border-bottom: thin solid #808080;
+  border-left: thin solid #808080;
+}
+
+.wpfMobilePage .tableHead,.wpfMobilePage .tableHeadAsc,.wpfMobilePage .tableHeadDesc{
+  background: -webkit-gradient(linear, left bottom, left top, from(#005588), to(#55bbff));
+  border-color: #005588 #55bbff #55bbff #005588;  
+  border-style: solid;
+  border-width: 1px;
+  padding-bottom: 2px;
+  overflow: hidden;
+  padding: 3px;
+  text-align: left;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.wpfMobilePage .tableHead:hover{
+  font-weight: bold;
+  background: -webkit-gradient(linear, left bottom, left top, from(#005588), to(#55bbff));
+}
+
+.wpfMobilePage .tableHeadAsc{
+  font-weight: bold;
+}
+
+.wpfMobilePage .tableHeadDesc{
+  font-weight: lighter;
+}
+
+.wpfMobilePage .tableCell{
+  border-bottom: none;
+  border-right: none;
+}
+
+.wpfMobilePage a.tableHeadSortLink:link,.wpfMobilePage a.tableHeadSortLink:active,.wpfMobilePage a.tableHeadSortLink:visited{
+  color: #FFFFFF;
+  font-size: 12px;
+}
+
+.wpfMobilePage a.tableHeadSortLink:hover{
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.wpfMobilePage .tableRowOdd{
+  background-color: #FFFFFF;
+}
+
+.wpfMobilePage .tableRowEven{
+  color: #000000;
+}
+
+.wpfMobilePageHeader{
+  clear:both;
+  overflow:hidden;
+  background-image: -moz-linear-gradient(bottom, #005588, #55bbff);
+  background: -webkit-gradient(linear, left bottom, left top, from(#005588), to(#55bbff));
+  height: 34px;
+  line-height: 28px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.wpfMobilePageHeader form{
+  display:inline;
+}
+
+.wpfMobilePageHeaderText{
+  font-size:1.6em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow:-1px 0 2px #001;
+  color: #0044AA;
+  background-color:#fff;
+  -webkit-border-radius:5px;
+  margin-top: 3px; margin-bottom: 2px;
+  width: 45%; 
+}
+
+.wpfMobilePage .DataEntryFieldRow input{
+ /*width: 100%;*/
+}
+
+.wpfMobilePage .DataEntryFieldRow .dijitTextBox,.wpfMobilePage .DataEntryFieldRow .dijitComboBox,.wpfMobilePage .DataEntryFieldRow .dijitSpinner{
+  -webkit-border-radius:5px;
+}
+

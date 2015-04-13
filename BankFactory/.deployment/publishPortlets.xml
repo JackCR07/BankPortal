@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" create-oids="true" type="update" xsi:noNamespaceSchemaLocation="PortalConfig_8.5.0.xsd">
+   <portal action="locate">
+      <web-app action="update" active="true" predeployed="true" removable="true" uid="com.bowstreet.portlet.WebAppRunner2_BankFactory.webmod">
+         <url>file:///$app_install_root$/WIN-3JVF8RJARSLCell/BankFactory.ear/BankFactory.war</url>
+         <context-root>/BankFactory</context-root>
+         <display-name>BankFactory</display-name>
+      </web-app>
+   </portal>
+</request>

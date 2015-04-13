@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoInlineEditBuilder">
+  <ReadableName>Dojo Inline Edit</ReadableName>
+  <GenHandlerClassName>com.bowstreet.builders.webapp.pageautomation.PageAutomationGenHandler</GenHandlerClassName>
+  <HelpFile>factory/product_documentation/designer/dojo_inline_edit.html</HelpFile>
+  <RequiredFactoryVersion>6.0.1</RequiredFactoryVersion>
+  <Description>Attaches an Inline Edit control to an existing Data Page field.</Description>
+  <Domains>
+    <Domain>WebApp</Domain>
+    <Domain>Consumer</Domain>
+  </Domains>
+  <Category>Page Elements,Rich UI</Category>
+  <Keywords>Page, Page Elements, Display, Flow Control, Layout</Keywords>
+
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <BuilderData>
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoInlineEditBuilder</BuilderDataEntry>
+    <BuilderDataEntry name="IconName">dojo_Inline</BuilderDataEntry>
+    <BuilderDataEntry name="PageLocation">onNamedTag</BuilderDataEntry>
+    <BuilderDataEntry name="ModifierInitializerClass">com.bowstreet.generation.implementation.PageAutomatonModifierBuilderInitialize</BuilderDataEntry>
+  </BuilderData>
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoInlineEditCoordinator</CoordinatorClassName>
+  <InputDefinitions>
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName">
+      <Prompt>Name</Prompt>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="Fields" base="com.bowstreet.core.WebAppBase.Fields">
+      <Type>Xml</Type>
+    </InputDefinition>
+
+
+    <InputDefinition name="AllowMultipleEdits"  base="com.bowstreet.core.Base.BooleanData">
+        <Prompt>Allow Multiple Edits</Prompt>
+        <HelpText>If checked, allows multiple fields to be in edit mode simultaneously, if false only a single field will be in edit mode at a time.</HelpText>
+        <Property>true</Property>
+        <InitialValue>false</InitialValue>
+        <EmptyValueReplacement>true</EmptyValueReplacement>
+    </InputDefinition>
+
+    <InputDefinition name="EditOnTextSelect"  base="com.bowstreet.core.Base.BooleanData">
+        <Prompt>Edit On Text Select</Prompt>
+        <HelpText>If checked, edit mode will be entered upon clicking the text, if false the edit image will be used to enter edit mode.</HelpText>
+        <Property>true</Property>
+        <InitialValue>false</InitialValue>
+        <EmptyValueReplacement>false</EmptyValueReplacement>
+    </InputDefinition>
+
+    <InputDefinition name="DoFormSubmission"  base="com.bowstreet.core.Base.BooleanData">
+        <Prompt>Submit Form</Prompt>
+        <HelpText>If checked, clicking the save button will submit the surrounding form.</HelpText>
+        <Property>true</Property>
+    </InputDefinition>
+
+   <InputDefinition name="Action" base="com.bowstreet.builders.webapp.ImageButtonBuilder.Action">
+            <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+   </InputDefinition>
+
+   <!-- Arguments Group Inputs -->
+   <InputDefinition name="InputMappings"  base="com.bowstreet.builders.webapp.ImageButtonBuilder.InputMappings">
+       <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+   </InputDefinition>
+   <InputDefinition name="EarlyArgumentEvaluation"  base="com.bowstreet.builders.webapp.ImageButtonBuilder.EarlyArgumentEvaluation">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+   </InputDefinition>
+   <!-- Arguments Group Inputs -->
+
+   <!-- Begin PostActionBehavior Group Inputs -->
+    <InputDefinition name="ShowAdvancedPostActionBehaviors" base="com.bowstreet.builders.webapp.ButtonBuilder.ShowAdvancedPostActionBehaviors">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        <Group>PostActionBehavior</Group>
+    </InputDefinition>
+    <InputDefinition name="PostActionBehavior" base="com.bowstreet.builders.webapp.ButtonBuilder.PostActionBehavior">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        <Group>PostActionBehavior</Group>
+    </InputDefinition>
+    <InputDefinition name="RefreshPageLocation" base="com.bowstreet.builders.webapp.ButtonBuilder.RefreshPageLocation">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        <Group>PostActionBehavior</Group>
+    </InputDefinition>
+    <InputDefinition name="DefaultRefreshPageLocation" base="com.bowstreet.builders.webapp.ButtonBuilder.DefaultRefreshPageLocation">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        <Group>PostActionBehavior</Group>
+    </InputDefinition>
+    <InputDefinition name="ExecuteEmbeddedScripts" base="com.bowstreet.builders.webapp.ButtonBuilder.ExecuteEmbeddedScripts">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        <Group>PostActionBehavior</Group>
+    </InputDefinition>
+    <InputDefinition name="AjaxLoadEventPrefix" base="com.bowstreet.builders.webapp.ButtonBuilder.AjaxLoadEventPrefix">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        <Group>PostActionBehavior</Group>
+    </InputDefinition>
+    
+   <!-- End PostActionBehavior Group Inputs -->
+
+
+   <!-- Begin EditImage Group -->
+   
+    <InputDefinition name="EditImage"  base="com.bowstreet.core.Base.IndirectServableContent">
+        <Prompt>Image</Prompt>
+        <Group>EditImage</Group>
+        <HelpText>Specify location (relative or absolute URL) of the default image to use</HelpText>
+        <Required>true</Required>
+        <Property>true</Property>
+        <Editor JavaClass="com.bowstreet.widget.Reference">
+            <Argument name="editor">
+                <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+                     <Argument name="filterExtensions">*.emf,*.wmf,*.jpg,*.jpeg,*.jfif,*.jpe,*.png,*.bmp,*.dib,*.rle,*.bmz,*.gif,*.gfa,*.emz,*.wmz</Argument>
+                     <Argument name="noShowWebInf">true</Argument>
+                </Editor>
+            </Argument>
+        </Editor>
+        <InitialValue>/factory/images/inline_edit/edit_gray.gif</InitialValue>
+    </InputDefinition>
+
+    <InputDefinition name="EditHoverImage"  base="com.bowstreet.core.Base.IndirectServableContent">
+        <Prompt>Hover Image</Prompt>
+        <Group>EditImage</Group>
+        <HelpText>Specify location (relative or absolute URL) of the hover (mouse over) image to use</HelpText>
+        <Property>true</Property>
+        <Editor JavaClass="com.bowstreet.widget.Reference">
+            <Argument name="editor">
+                <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+                      <Argument name="filterExtensions">*.emf,*.wmf,*.jpg,*.jpeg,*.jfif,*.jpe,*.png,*.bmp,*.dib,*.rle,*.bmz,*.gif,*.gfa,*.emz,*.wmz</Argument>
+                      <Argument name="noShowWebInf">true</Argument>
+                </Editor>
+            </Argument>
+        </Editor>
+        <InitialValue>/factory/images/inline_edit/edit.gif</InitialValue>
+    </InputDefinition>
+
+    <InputDefinition name="EditPressedImage"  base="com.bowstreet.core.Base.IndirectServableContent">
+        <Prompt>Pressed Image</Prompt>
+        <Group>EditImage</Group>
+        <HelpText>Specify location (relative or absolute URL) of the pressed (mouse down) image to use</HelpText>
+        <Property>true</Property>
+        <Editor JavaClass="com.bowstreet.widget.Reference">
+            <Argument name="editor">
+                <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+                     <Argument name="filterExtensions">*.emf,*.wmf,*.jpg,*.jpeg,*.jfif,*.jpe,*.png,*.bmp,*.dib,*.rle,*.bmz,*.gif,*.gfa,*.emz,*.wmz</Argument>
+                     <Argument name="noShowWebInf">true</Argument>
+                </Editor>
+            </Argument>
+        </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="EditImageWidth" base="com.bowstreet.core.Base.IndirectValue">
+        <Group>EditImage</Group>
+        <Prompt>Image Width</Prompt>
+        <Property>true</Property>
+    </InputDefinition>
+
+    <InputDefinition name="EditImageHeight" base="com.bowstreet.core.Base.IndirectValue">
+        <Group>EditImage</Group>
+        <Prompt>Image Height</Prompt>
+        <Property>true</Property>
+    </InputDefinition>
+
+    <InputDefinition name="EditAltText" base="com.bowstreet.core.Base.IndirectValue">
+        <Group>EditImage</Group>
+        <Prompt>Alt Text</Prompt>
+        <InitialValue>Edit</InitialValue>
+        <Property>true</Property>
+    </InputDefinition>
+
+   <!-- End EditImage Group -->
+
+  <!-- Begin SaveImage Group -->
+   <InputDefinition name="SaveImage"  base="com.bowstreet.core.Base.IndirectServableContent">
+       <Prompt>Image</Prompt>
+       <Group>SaveImage</Group>
+       <HelpText>Specify location (relative or absolute URL) of the default image to use</HelpText>
+       <Required>true</Required>
+       <Property>true</Property>
+       <Editor JavaClass="com.bowstreet.widget.Reference">
+           <Argument name="editor">
+               <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+                    <Argument name="filterExtensions">*.emf,*.wmf,*.jpg,*.jpeg,*.jfif,*.jpe,*.png,*.bmp,*.dib,*.rle,*.bmz,*.gif,*.gfa,*.emz,*.wmz</Argument>
+                    <Argument name="noShowWebInf">true</Argument>
+               </Editor>
+           </Argument>
+       </Editor>
+       <InitialValue>/factory/images/inline_edit/save.gif</InitialValue>
+   </InputDefinition>
+
+   <InputDefinition name="SaveHoverImage"  base="com.bowstreet.core.Base.IndirectServableContent">
+       <Prompt>Hover Image</Prompt>
+       <Group>SaveImage</Group>
+       <HelpText>Specify location (relative or absolute URL) of the hover (mouse over) image to use</HelpText>
+       <Property>true</Property>
+       <Editor JavaClass="com.bowstreet.widget.Reference">
+           <Argument name="editor">
+               <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+                     <Argument name="filterExtensions">*.emf,*.wmf,*.jpg,*.jpeg,*.jfif,*.jpe,*.png,*.bmp,*.dib,*.rle,*.bmz,*.gif,*.gfa,*.emz,*.wmz</Argument>
+                     <Argument name="noShowWebInf">true</Argument>
+               </Editor>
+           </Argument>
+       </Editor>
+   </InputDefinition>
+
+   <InputDefinition name="SavePressedImage"  base="com.bowstreet.core.Base.IndirectServableContent">
+       <Prompt>Pressed Image</Prompt>
+       <Group>SaveImage</Group>
+       <HelpText>Specify location (relative or absolute URL) of the pressed (mouse down) image to use</HelpText>
+       <Property>true</Property>
+       <Editor JavaClass="com.bowstreet.widget.Reference">
+           <Argument name="editor">
+               <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+                    <Argument name="filterExtensions">*.emf,*.wmf,*.jpg,*.jpeg,*.jfif,*.jpe,*.png,*.bmp,*.dib,*.rle,*.bmz,*.gif,*.gfa,*.emz,*.wmz</Argument>
+                    <Argument name="noShowWebInf">true</Argument>
+               </Editor>
+           </Argument>
+       </Editor>
+   </InputDefinition>
+
+    <InputDefinition name="SaveImageWidth" base="com.bowstreet.core.Base.IndirectValue">
+        <Group>SaveImage</Group>
+        <Prompt>Image Width</Prompt>
+        <Property>true</Property>
+    </InputDefinition>
+
+    <InputDefinition name="SaveImageHeight" base="com.bowstreet.core.Base.IndirectValue">
+        <Group>SaveImage</Group>
+        <Prompt>Image Height</Prompt>
+        <Property>true</Property>
+    </InputDefinition>
+
+    <InputDefinition name="SaveAltText" base="com.bowstreet.core.Base.IndirectValue">
+        <Group>SaveImage</Group>
+        <Prompt>Alt Text</Prompt>
+        <InitialValue>Save</InitialValue>
+        <Property>true</Property>
+    </InputDefinition>
+
+  <!-- End SaveImage Group -->
+
+  <!-- Begin CancelImage Group -->
+   <InputDefinition name="CancelImage"  base="com.bowstreet.core.Base.IndirectServableContent">
+       <Prompt>Image</Prompt>
+       <Group>CancelImage</Group>
+       <HelpText>Specify location (relative or absolute URL) of the default image to use</HelpText>
+       <Required>true</Required>
+       <Property>true</Property>
+       <Editor JavaClass="com.bowstreet.widget.Reference">
+           <Argument name="editor">
+               <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+                    <Argument name="filterExtensions">*.emf,*.wmf,*.jpg,*.jpeg,*.jfif,*.jpe,*.png,*.bmp,*.dib,*.rle,*.bmz,*.gif,*.gfa,*.emz,*.wmz</Argument>
+                    <Argument name="noShowWebInf">true</Argument>
+               </Editor>
+           </Argument>
+       </Editor>
+       <InitialValue>/factory/images/inline_edit/cancel.gif</InitialValue>
+   </InputDefinition>
+
+   <InputDefinition name="CancelHoverImage"  base="com.bowstreet.core.Base.IndirectServableContent">
+       <Prompt>Hover Image</Prompt>
+       <Group>CancelImage</Group>
+       <HelpText>Specify location (relative or absolute URL) of the hover (mouse over) image to use</HelpText>
+       <Property>true</Property>
+       <Editor JavaClass="com.bowstreet.widget.Reference">
+           <Argument name="editor">
+               <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+                     <Argument name="filterExtensions">*.emf,*.wmf,*.jpg,*.jpeg,*.jfif,*.jpe,*.png,*.bmp,*.dib,*.rle,*.bmz,*.gif,*.gfa,*.emz,*.wmz</Argument>
+                     <Argument name="noShowWebInf">true</Argument>
+               </Editor>
+           </Argument>
+       </Editor>
+   </InputDefinition>
+
+   <InputDefinition name="CancelPressedImage"  base="com.bowstreet.core.Base.IndirectServableContent">
+       <Prompt>Pressed Image</Prompt>
+       <Group>CancelImage</Group>
+       <HelpText>Specify location (relative or absolute URL) of the pressed (mouse down) image to use</HelpText>
+       <Property>true</Property>
+       <Editor JavaClass="com.bowstreet.widget.Reference">
+           <Argument name="editor">
+               <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+                    <Argument name="filterExtensions">*.emf,*.wmf,*.jpg,*.jpeg,*.jfif,*.jpe,*.png,*.bmp,*.dib,*.rle,*.bmz,*.gif,*.gfa,*.emz,*.wmz</Argument>
+                    <Argument name="noShowWebInf">true</Argument>
+               </Editor>
+           </Argument>
+       </Editor>
+   </InputDefinition>
+
+    <InputDefinition name="CancelImageWidth" base="com.bowstreet.core.Base.IndirectValue">
+        <Group>CancelImage</Group>
+        <Prompt>Image Width</Prompt>
+        <Property>true</Property>
+    </InputDefinition>
+    
+    <InputDefinition name="CancelImageHeight" base="com.bowstreet.core.Base.IndirectValue">
+        <Group>CancelImage</Group>
+        <Prompt>Image Height</Prompt>
+        <Property>true</Property>
+    </InputDefinition>
+   
+    <InputDefinition name="CancelAltText" base="com.bowstreet.core.Base.IndirectValue">
+        <Group>CancelImage</Group>
+        <Prompt>Alt Text</Prompt>
+        <InitialValue>Cancel</InitialValue>
+        <Property>true</Property>
+    </InputDefinition>
+   
+  <!-- End CancelImage Group -->
+
+    <InputDefinition name="TemplateFile" base="com.bowstreet.core.Base.ServableContent">
+        <Group>Advanced</Group>
+        <Prompt>Template File</Prompt>
+        <HelpText>Select an alternate template file for laying out the inline edit controls. See the default inline_edit.html for more details</HelpText>
+        <Required>false</Required>
+        <InitialValue>/factory/pages/inline_edit.html</InitialValue>
+	<Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+           <Argument name="filterExtensions">*.html,*.htm</Argument>
+           <Argument name="noShowWebInf">true</Argument>
+        </Editor>
+    </InputDefinition>
+    
+  </InputDefinitions> 
+  <GroupDefinitions> 
+       <GroupDefinition id="Arguments" base="com.bowstreet.core.Base.Arguments" />
+       <GroupDefinition id="EditImage">
+            <Name>Edit Button Images</Name>
+            <Description>Images for the "edit" button.</Description>
+            <BorderStyle>Etched</BorderStyle>
+            <IsCollapsible>true</IsCollapsible>
+            <InitiallyCollapsed>true</InitiallyCollapsed>
+        </GroupDefinition>
+        <GroupDefinition id="SaveImage">
+            <Name>Save Button Images</Name>
+            <Description>Images for the "save" button.</Description>
+            <BorderStyle>Etched</BorderStyle>
+            <IsCollapsible>true</IsCollapsible>
+            <InitiallyCollapsed>true</InitiallyCollapsed>
+        </GroupDefinition>
+        <GroupDefinition id="CancelImage">
+            <Name>Cancel Button Images</Name>
+            <Description>Images for the "cancel" button.</Description>
+            <BorderStyle>Etched</BorderStyle>
+            <IsCollapsible>true</IsCollapsible>
+            <InitiallyCollapsed>true</InitiallyCollapsed>
+        </GroupDefinition>
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" /> 
+    <GroupDefinition id="PostActionBehavior" base="com.bowstreet.core.WebAppBase.PostActionBehavior" />
+  </GroupDefinitions> 
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

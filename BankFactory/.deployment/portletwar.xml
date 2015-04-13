@@ -1,0 +1,255 @@
+<!--
+	Ant script for generating portlet wars.
+-->
+
+<project name="portletWar" default="build286StandardPortletWar" basedir=".">
+
+	<target name="properties" depends="makePortletWarLocation">
+
+		<!-- Test if the template lib dir has been set by the designer.-->
+		<condition property="isDesigner">
+			<available file="${template.lib.dir}" />
+		</condition>
+
+		<!-- used for the workspace/.deployment path -->
+		<property name=".deployment.location" value="${webcontent.location}/../.deployment" />
+
+		<property name="taskClassPath"
+			value="${webcontent.location}/../.deployment/lib/wpfDeployment.jar;
+			${webcontent.location}/WEB-INF/lib/factory.jar;
+			${webcontent.location}/WEB-INF/lib/bstres.jar;
+			${webcontent.location}/WEB-INF/lib/bstres_n11.jar;
+			${webcontent.location}/WEB-INF/lib/jdom.jar;
+			${webcontent.location}/WEB-INF/lib/log4j.jar;
+			${webcontent.location}/WEB-INF/lib/commons-pool.jar;
+			${webcontent.location}/WEB-INF/clientLibs/j2ee.jar"/>
+		<echo message="taskClassPath=${taskClassPath}"/>
+
+		<!-- set the portletWar property if it's not set. Usually this happens when the build is invoked from command line -->
+		<condition property="portletWar" value="${wpf.portletwar.location}/PA_${project.name}.war" >
+			<not>
+				<isset property="portletWar"/>
+			</not>
+		</condition>
+	</target>
+
+	<target name="makePortletWarLocation" if="wpf.portletwar.location">
+		<mkdir dir="${wpf.portletwar.location}" />
+	</target>
+
+	<target name="createTempDir">
+		<mkdir dir="${basedir}/temp"/>
+		<mkdir dir="${basedir}/temp/WEB-INF"/>
+	</target>
+
+	<target name="build286StandardPortletWar" depends="properties,createTempDir,setDeploymentProperties">
+
+		<property name="portlet.adapter.jar" value="portlet_adapter286.jar" />
+
+		<!-- Custom ant task for generating Java Standard Portlet descriptors. -->
+		<taskdef name="JavaStandardPortletXML" classname="com.bowstreet.anttasks.Portlet286XML"
+			classpath="${webcontent.location}/WEB-INF/lib/portlet_adapter_ant.jar;
+			${webcontent.location}/WEB-INF/lib/portlet_adapter_common.jar;
+			${taskClassPath}" />
+
+		<!-- Generate the portlet.xml file -->
+		<taskdef name="generatePortletXml"
+			classname="com.bowstreet.deployment.PortletDescriptorProcessor"
+			classpath="${taskClassPath}" />
+		<generatePortletXml sourceFilePath="${webcontent.location}/WEB-INF/bin/deployment/portlet_base.standard286"
+			destFilePath="${basedir}/temp/WEB-INF/portlet.xml.tmp"
+			extensionFilePath="${webcontent.location}/WEB-INF/bin/deployment/extensions/portlet.jsr286"
+			rootDirectory="${webcontent.location}/WEB-INF" />
+
+		<echo message="Building Java Standard portlet descriptor for ${project.name}." />
+		<JavaStandardPortletXML rootDirectory="${webcontent.location}/WEB-INF"
+			includeNonPortletModels="false"
+			templateFile="${basedir}/temp/WEB-INF/portlet.xml.tmp"
+			outputFile="${basedir}/temp/WEB-INF/portlet.xml"
+			uniqueSuffix="${project.name}">
+
+			<fileset>
+				<include name="**/*.model" />
+				<exclude name="**/portletbase/*.model" />
+				<exclude name="**/wizardbase/*.model" />
+			</fileset>
+		</JavaStandardPortletXML>
+
+		<delete file="${basedir}/temp/WEB-INF/portlet.xml.tmp" />
+
+		<!-- Generate the web.xml file -->
+		<taskdef name="generateWebXml" classname="com.bowstreet.deployment.WebXmlDescriptorProcessor"
+			classpath="${taskClassPath}" />
+		<generateWebXml sourceFilePath="${webcontent.location}/WEB-INF/bin/deployment/portlet.standard.web.xml"
+			destFilePath="${basedir}/temp/WEB-INF/web.xml"
+			extensionFilePath="${webcontent.location}/WEB-INF/bin/deployment/extensions/portlet.web" 
+			rootDirectory="${webcontent.location}/WEB-INF" />
+
+		<!-- Update the app context. -->
+		<replace file="${basedir}/temp/WEB-INF/web.xml" token="@APP_CONTEXT@" value="${project.name}" encoding="UTF-8" />
+
+		<echo message="Building Java JSR286 Standard Portlet war for ${project.name}." />
+		<condition property="include.dojo">
+			<istrue value="${wpf.include.dojo}" />
+		</condition>
+		<available file="${.deployment.location}/excludes/portletwar${wpf.portalversion}.excludes" property="use.portalversion.excludes" />
+		<war warfile="${portletWar}" webxml="${basedir}/temp/WEB-INF/web.xml" manifest="${webcontent.location}/META-INF/MANIFEST.MF">
+			<fileset dir="${webcontent.location}">
+				<include name="**/**" />
+				<excludesfile name="${webcontent.location}/.excludeFromServer" />
+				<excludesfile name="${.deployment.location}/excludes/allServers.excludes" />
+				<excludesfile name="${.deployment.location}/excludes/production.excludes" />
+				<excludesfile name="${.deployment.location}/excludes/portletwar.excludes" />
+				<excludesfile name="${.deployment.location}/excludes/dojo.excludes" unless="include.dojo"/>
+				<excludesfile name="${.deployment.location}/excludes/portletwar${wpf.portalversion}.excludes" if="use.portalversion.excludes"/>
+				<exclude name="WEB-INF/lib/wsdl4j.jar" />
+				<exclude name="WEB-INF/lib/xercesImpl.jar" />
+				<exclude name="WEB-INF/lib/xml-apis.jar" />
+			</fileset>
+			<!-- includes needed to be a part of there own fileset, or they were not getting included in the war. -->
+			<fileset dir="${webcontent.location}">
+				<include name="WEB-INF/bin/compileJSP.bat" />
+				<include name="WEB-INF/bin/compileJSP" />
+				<include name="WEB-INF/clientLibs/j2ee.jar" />
+				<include name="WEB-INF/clientLibs/portlet.jar" />
+				<include name="WEB-INF/logs/placeholder.txt" />
+			</fileset>
+			<fileset dir="${basedir}/temp">
+				<include name="WEB-INF/portlet.xml" />
+				<include name="WEB-INF/config/bowstreet.properties" />
+				<include name="WEB-INF/config/cluster.properties" />
+			</fileset>
+
+			<classes dir="${webcontent.location}/WEB-INF/classes">
+				<exclude name="**/*.dependency" />
+			</classes>
+		</war>
+
+		<delete dir="${basedir}/temp" />
+	</target>
+
+	<target name="setDeploymentProperties">
+		<mkdir dir="${basedir}/temp/WEB-INF/config" />
+
+		<copy todir="${basedir}/temp/WEB-INF/config">
+			<fileset dir="${webcontent.location}/WEB-INF/config">
+				<include name="bowstreet.properties" />
+				<include name="cluster.properties" />
+			</fileset>
+		</copy>
+
+		<replace file="${basedir}/temp/WEB-INF/config/bowstreet.properties">
+			<replacefilter token="bowstreet.settings.buildermanagerclass=com.bowstreet.generation.implementation.ReloadingXmlBuilderManager" value="bowstreet.settings.buildermanagerclass=com.bowstreet.generation.implementation.XmlBuilderManager" />
+			<replacefilter token="bowstreet.server.type=development" value="bowstreet.server.type=deployment" />
+			<replacefilter token="bowstreet.dynamic.class.load.checkTimestamp=true" value="bowstreet.dynamic.class.load.checkTimestamp=false" />
+		</replace>
+		<replace file="${basedir}/temp/WEB-INF/config/cluster.properties">
+			<replacefilter token="bowstreet.profiles.cache.waitTime=1" value="bowstreet.profiles.cache.waitTime=60" />
+		</replace>
+
+	</target>
+
+
+	<!-- Build a JSR 286 portlet.xml file -->
+	<target name="isJSR286" depends="properties">
+		<echo message="Generating Java Standard 2.0 (JSR 286) portlet descriptor."/>
+
+		<!-- Generate the portlet.xml file -->
+		<taskdef name="generatePortletXml"
+			classname="com.bowstreet.deployment.PortletDescriptorProcessor"
+			classpath="${taskClassPath}" />
+		<generatePortletXml sourceFilePath="${webcontent.location}/WEB-INF/bin/deployment/portlet_base.standard286"
+			destFilePath="${webcontent.location}/WEB-INF/portlet.xml.tmp"
+			extensionFilePath="${webcontent.location}/WEB-INF/bin/deployment/extensions/portlet.jsr286"
+			rootDirectory="${webcontent.location}/WEB-INF" />
+
+
+		<!-- Custom ant task for generating Java Standard Portlet descriptors. -->
+		<taskdef name="JavaStandard286PortletXML" classname="com.bowstreet.anttasks.Portlet286XML"
+			classpath="${webcontent.location}/WEB-INF/lib/portlet_adapter_ant.jar;
+			${webcontent.location}/WEB-INF/lib/portlet_adapter_common.jar;
+			${taskClassPath}" />
+
+		<JavaStandard286PortletXML rootDirectory="${webcontent.location}/WEB-INF"
+			includeNonPortletModels="false"
+			templateFile="${webcontent.location}/WEB-INF/portlet.xml.tmp"
+			outputFile="${webcontent.location}/WEB-INF/portlet.xml"
+			uniqueSuffix="${project.name}">
+
+			<fileset>
+				<include name="**/*.model" />
+				<exclude name="**/portletbase/*.model" />
+				<exclude name="**/wizardbase/*.model" />
+			</fileset>
+		</JavaStandard286PortletXML>
+
+		<delete file="${webcontent.location}/WEB-INF/portlet.xml.tmp" />
+
+		<antcall target="buildPortletEAR">
+			<param name="isJSR286" value="true" />
+		</antcall>
+
+	</target>
+
+	<target name="buildPortletEAR" depends="properties">
+		<!-- used for the workspace/.deployment path -->
+		<property name=".deployment.location" value="${webcontent.location}/../.deployment" />
+		<echo message="Building ${project.name} Portlet EAR." />
+		<!--Create a temporary directory to perform work in.-->
+		<mkdir dir="temp" />
+		<mkdir dir="temp/META-INF" />
+
+		<!-- Generate the web.xml file -->
+		<taskdef name="generateWebXml" classname="com.bowstreet.deployment.WebXmlDescriptorProcessor"
+			classpath="${taskClassPath}" />
+		<generateWebXml sourceFilePath="${webcontent.location}/WEB-INF/bin/deployment/standalone.web.xml"
+			destFilePath="${webcontent.location}/WEB-INF/web.xml"
+			extensionFilePath="${webcontent.location}/WEB-INF/bin/deployment/extensions/standalone.web" 
+			rootDirectory="${webcontent.location}/WEB-INF" />
+
+		<!-- Update the app context. -->
+		<replace file="${webcontent.location}/WEB-INF/web.xml" token="@APP_CONTEXT@" value="${project.name}" encoding="UTF-8" />
+
+		<!--Create a .war file in the working directory, based on the contents of the project. -->
+		<war warfile="temp/${project.name}.war" webxml="${webcontent.location}/WEB-INF/web.xml" manifest="${webcontent.location}/META-INF/MANIFEST.MF">
+			<fileset dir="${webcontent.location}">
+				<include name="**/**" />
+				<excludesfile name="${webcontent.location}/.excludeFromServer" />
+				<excludesfile name="${.deployment.location}/excludes/allServers.excludes" />
+				<excludesfile name="${.deployment.location}/excludes/dualmode.excludes" />
+
+				<exclude name="WEB-INF/lib/portlet_adapter286.jar" if="isJSR"/>
+
+			</fileset>
+			<fileset dir="${webcontent.location}">
+				<include name="WEB-INF/logs/placeholder.txt" />
+			</fileset>
+		</war>
+
+		<!--Copy the appropriate application metadata files to the working directory.-->
+		<copy todir="temp/META-INF">
+			<fileset dir="${.deployment.location}/templates/META-INF" />
+		</copy>
+
+		<!--Update the application.xml file in the META-INF directory based on the application name
+		         associated with the project (the project name). -->
+		<replace file="temp/META-INF/application.xml" propertyFile="${project.properties}" encoding="UTF-8">
+			<replacefilter token="@CONTEXT_ROOT@" property="project.name" />
+			<replacefilter token="@APP_NAME@" property="project.name" />
+			<replacefilter token="@WAR_NAME@" property="project.name" />
+		</replace>
+
+		<!--Create an .ear file using the previously created .war file, and the updated
+		         application metadata files.  This file is written to <WebSphere Root>/installableApps. -->
+		<ear earfile="${installable.dir}/${project.name}.ear" appxml="temp/META-INF/application.xml">
+			<fileset dir="temp">
+				<include name="**/**" />
+				<exclude name="**/application.xml"/>
+			</fileset>
+		</ear>
+
+		<!--Delete the working directory.-->
+		<delete dir="temp" />
+
+	</target>
+</project>

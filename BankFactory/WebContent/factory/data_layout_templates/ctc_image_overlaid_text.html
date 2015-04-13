@@ -1,0 +1,22 @@
+<meta
+data-template-id="ctc_ImgWithOverlaidText"
+data-template-bundle-name="com.bowstreet.builders.webapp.package"
+data-template-name-id="DataLayoutctc_ImgWithOverlaidTextName"
+data-template-description-id="DataLayoutctc_ImgWithOverlaidText"
+data-template-name="Image with overlaid text"
+data-template-description="This layout is used for image gallery lists that look like ones from the content template catalog.  There are two base layouts that are set by selecting a style sheet. The text with styles style sheet uses styles defined in our style sheets that match the original styles defined by ctc and can be used on portal pages or stand alone. The using ctc styles style sheet needs the portlet to be placed on a portal page that has the ctc style sheet on the page.  The theme setting will use the ctc's styles by default. Style sheet files that end in uitheme.css use styles that are defined in the themes css file."
+data-style-picker-file-names="/factory/data_layout_templates/ctc_base_image_overlaid_text_template_styles.css"
+data-container-style-picker-file-names="/factory/data_layout_templates/ctc_base_image_overlaid_text_template_container_styles.css"
+data-stylesheets="/factory/data_layout_templates/ctc_image_overlaid_text_using_ctc_styles_uitheme.css,/factory/data_layout_templates/ctc_image_overlaid_text_with_styles.css,/factory/data_layout_templates/blank.css"
+data-stylesheet-root-class-names="flipGrid,wefFlip,flipGridBlank"/>
+<div name="layout_list" class="wef_datalayout_list">
+	<div class="grid col_4 row_12 top bottom left"  name="list_item" data-repeat-wrapper="default" data-target-exact="containerLayoutStyles(clStyles)">
+		<div class="itemImage" data-target-exact="image_column_styles" data-target="image"></div>
+		<div class="itemDetails" data-target-exact="detail_styles" data-target-exact="detail">
+			<h3 class="itemTitle" data-target="item_title"></h3>
+			<div class="itemSummary" data-target-exact="summary_styles">
+				<p dir="ltr" data-target="item_summary"></p>
+			</div>
+		</div>
+	</div>
+</div>

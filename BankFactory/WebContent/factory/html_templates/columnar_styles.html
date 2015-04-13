@@ -1,0 +1,296 @@
+<HTML>
+<body><!-- For this template, I will assume display pages have 4 columns -->
+<!--
+  DisplayPageWrapper (contains PageContentsContainer) 
+  DisplayPageWrapper_<datatype> (contains PageContentsContainer) 
+-->
+  <span name="DisplayPageWrapper" style="background-color:#fffffff">  
+   <table>
+    <HTMLWRAPPER name="PageContentsContainer">
+      <!-- 
+        Note that all elements named "*Container" will be emptied! 
+        Their contents are kept (elsewhere) to define other nodes.  You can define
+        them inside the container for convenience, but it is not necessary to do so.
+      -->
+      <HTMLWRAPPER name="TableWrapper">
+        <HTMLWRAPPER name="LabelContainer">
+          <tr name="TableLabel">
+            <td  colspan="4" style="font:10pt Arial; font-weight:bold; background-color:#bbccbb">
+              <span name="LabelText" style="font:16pt Arial">Table Label</span>
+            </td>
+          </tr>
+        </HTMLWRAPPER>
+        <tr><td  colspan="3">
+        <HTMLWRAPPER name="_tableAndButton">
+        <div name="GroupContainer" style="text-align:center">
+        <HTMLWRAPPER name="PageContentsContainer">
+        <table name="Table" id="_table" cellspacing="0" cellpadding="3">
+          <tr name="OptionalColumnGroupHeaderContainer" /> 
+          <tr name="TableHeaderContainer" style="font:10pt Arial"> 
+          <!-- Note seven different column header types defined.  The PageAutomation 
+              code will choose the most specific one defined for each column. -->
+          <th name="ColumnHeader"  style="text-align:left"> 
+            <span name="HeaderElement">Def ColHead</span> </th>
+          <th name="ColumnHeaderSorted" style="text-align:left"> 
+            <a name="HeaderElement">Sort ColHead</a> </th>
+          <th name="ColumnHeader_int" style="text-align:center"> 
+            <span name="HeaderElement">int ColHead</span> </th>
+          <th name="ColumnHeaderSorted_int" style="text-align:center"> 
+            <a name="HeaderElement">sortint ColHead</a> 
+          </th>
+          <th name="ColumnHeader_float" style="text-align:center"> 
+            <span name="HeaderElement">float ColHead</span> </th>
+          <th name="ColumnHeaderSorted_float" style="text-align:center"> 
+            <a name="HeaderElement">sortfloat ColHead</a> 
+          </th>
+          <th name="ColumnHeader_double" style="text-align:center"> 
+            <span name="HeaderElement">double ColHead</span> 
+          </th>
+          <th name="ColumnHeaderSorted_double" style="text-align:center"> 
+            <a name="HeaderElement">sort double ColHead</a> </th>
+          <!-- Follows are the wrappers for Column Groups.  There are two special features 
+              built into these constructs:  First, there is a significant named element
+              "ColumnGroupHeaderCell" which will be given an attribute of colspan which 
+              will enable it to span the groups that it contains.  This MUST go on a TD node.
+              
+              That node has two additional attributes, colspan_multiplier and colspan_additional.
+              The first one is a multiplier which will be applied to the number of active leaf
+              children that the group contains.  This is set to something other than 1 if 
+              your template specifies that the columns get extra TD's, such as spacers.  The
+              multiplier will be applied to the count for THIS columnGroupHeader.  
+              
+              The other significant attribute is colspan_additional.  This represents the 
+              extra TD's that this construct adds.  Note that the corresponding SubHeaderWrapper
+              and the corresponding GroupContentsWrapper must add the same number.  This 
+              number will be added to the total number of columns represented by this 
+              ColumnGroup, and will be passed up to a containing column group (if you have nested
+              them).  
+             -->
+          <HTMLWRAPPER name="ColumnGroupHeader" style="text-align:center"> 
+             <td bgcolor="#cccccc"><img src="phony.gif" width="1" height="1" border="0" /></td>
+             <td name="ColumnGroupHeaderCell" colspan_multiplier="1" colspan_additional="1" align="center" style="font:16pt Arial; font-weight:bold; background-color:#cccccc"> 
+             <span name="HeaderElement"></span> 
+             </td>
+          </HTMLWRAPPER> 
+          <td name="ColumnGroupHeaderEmpty"> </td>
+          <HTMLWRAPPER name="ColumnGroupSubHeaderWrapper" style="text-align:center"> 
+            <td bgcolor="#cccccc"><img src="phony.gif" width="1" height="1" border="0" /></td>
+            <HTMLWRAPPER name="TableHeaderContainer" /> 
+          </HTMLWRAPPER> 
+          <HTMLWRAPPER name="ColumnGroupSubHeaderWrapperEmpty"> 
+            <HTMLWRAPPER name="TableHeaderContainer" /> 
+          </HTMLWRAPPER> 
+          <HTMLWRAPPER name="ColumnGroupContentsWrapper" style="text-align:center"> 
+            <td bgcolor="#cccccc"><img src="phony.gif" width="1" height="1" border="0" /></td>
+            <HTMLWRAPPER name="DataContainer" /> 
+          </HTMLWRAPPER> 
+          <HTMLWRAPPER name="ColumnGroupContentsWrapperEmpty"> 
+            <HTMLWRAPPER name="DataContainer" />
+          </HTMLWRAPPER>
+          </tr>
+          <!-- spacer row after the header, perhaps add an <hr /> here? -->
+          <tr>
+          <td colspan="100" height="0"></td>
+          </tr>
+          <HTMLWRAPPER name="RepeatElement"> 
+            <tr name="DataContainer" sequence_style="background-color: #f8f8f8; color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-weight:bold;,background-color: #e0e0e0; color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-weight:bold;"> 
+              <!-- As with headers, we define four column data types.  Code will choose best one. -->
+              <td name="ColumnData" style="text-align:left"> <span name="FieldElement">Def ColData </span> 
+                <span name="FieldValidationError" style="color:red; font:10pt Arial;"></span>
+              </td>
+              <td name="dummy"> 
+                <!-- Just to make the columns line up with headers -->
+              </td>
+              <td name="ColumnData_int" style="text-align:right"> <span name="FieldElement"> 1234</span>
+                <span name="FieldValidationError" style="color:red; font:10pt Arial;"></span></td>
+              <td name="dummy"> 
+                <!-- Just to make the columns line up with headers -->
+              </td>
+              <td name="ColumnData_float" style="text-align:right" align="right"> 
+                <span name="FieldElement">123.56</span><span name="FieldValidationError" style="color:red; font:10pt Arial;"></span>
+              </td>
+              <td name="dummy"> 
+                <!-- Just to make the columns line up with headers -->
+              </td>
+              <td name="ColumnData_double" style="text-align:right"><span name="FieldElement"> </span>
+                <span name="FieldValidationError" style="color:red; font:10pt Arial;"> </span>
+              </td>
+              <td name="dummy"> 
+                <!-- Just to make the columns line up with headers -->
+              </td>
+              <td name="ColumnData_autodelete" style="text-align:right"><span name="FieldElement"></span>
+                <span name="FieldValidationError" style="color:red; font:10pt Arial;"></span>
+              </td>
+            </tr>
+          </HTMLWRAPPER> 
+        </table>
+      </HTMLWRAPPER>
+          </div>
+          <span name="_buttonSpace"></span>
+          </HTMLWRAPPER>
+        
+          <!-- Place for "Empty Data" message -->
+          <HTMLWRAPPER name="EmptyDataContainer">
+            <table cellpadding="0" cellspacing="0" width="100%" name="TableEmptyData"><tr><td align="center">
+                <span  name="EmptyDataMessage" />
+            </td></tr></table>
+          </HTMLWRAPPER>
+      
+        </td></tr>
+    </HTMLWRAPPER> <!-- end TableWrapper -->
+      <HTMLWRAPPER name="DisplayGroupWrapper">
+        <HTMLWRAPPER name="LabelContainer">
+          
+          <tr  name="DisplayGroupLabel">
+           <td colspan="4" cellpadding="5" style="font:10pt Arial; font-weight:bold; background-color:#bbccbb">
+            <span name="LabelText">Display Group Label</span></td>
+          </tr>
+          
+        </HTMLWRAPPER>
+        <HTMLWRAPPER name="GroupContainer">
+        <HTMLWRAPPER name="DisplayGroup">
+        <HTMLWRAPPER name="DataContainer">
+        
+        <!-- Once again, PageAutomation code will choose the right one of these. -->
+        <tr name="DisplayField">
+          <td width="5%"/>
+          <td width="45%" style="font:10pt Arial;"><span name="FieldLabel" style="width:250; text-align:right">Display Field Label</span></td>
+          
+          <td width="45%" style="width:400">
+            <span name="FieldElement" style="font:10pt Arial; font-weight:bold;">Display Field Text</span>
+          </td>
+          <td width="5%" />
+        </tr>
+        
+        <tr name="DisplayFieldByName_Comments">
+          
+          <td width="5%" height="19"/> 
+          <td colspan="2" style="font:10pt Arial;font-weight:bold" height="19"> 
+           <span name="FieldElement">Comments Field Text. Note there is no label and it spans both columns.</span>
+          </td>
+          
+          <td width="5%" height="19"/> 
+        </tr>
+        
+        </HTMLWRAPPER>
+
+              <!-- This "groupComplete" section, with appropriate label, is created for every Display Group -->
+              <tr>
+                 <td width="5%"/>
+                 <td colspan="2"><span name="_groupComplete"></span></td>
+                 <td width="5%"/>
+              </tr>
+
+           </HTMLWRAPPER>
+        </HTMLWRAPPER>
+      </HTMLWRAPPER>      
+    </HTMLWRAPPER>
+   </table>  
+  </span><!-- end DisplayPageWrapper -->
+
+  <span name="DataEntryPageWrapper" style="background-color:#fffffff">  
+
+   <table>
+    <tr>
+      <td colspan="4" style="text-align: left; padding-left:10">
+        <span name="FullErrorLocation" style="color:red; font:10pt Arial;"></span>
+    </td>
+    </tr>
+    <HTMLWRAPPER name="PageContentsContainer">
+
+      <HTMLWRAPPER name="DataEntryGroupWrapper">
+        <HTMLWRAPPER name="LabelContainer">
+          <tr  name="DataEntryGroupLabel">
+           <td colspan="4" cellpadding="5" style="font:10pt Arial; font-weight:bold; background-color:#bbccbb">
+            <span name="LabelText"></span>
+           </td>
+          </tr>
+        </HTMLWRAPPER>
+        <HTMLWRAPPER name="GroupContainer">
+        <HTMLWRAPPER name="DataEntryGroup">
+          <HTMLWRAPPER name="DataContainer">
+            <tr name="DataEntryField">
+              <td style="width:250; text-align:right"><label name="FieldLabel" style="font:10pt Arial;" for="_field"></label></td>
+              <td style="width:35"><span name="FieldRequired"></span></td>
+              <td style="width:400"><span name="FieldElement" style="font:10pt Arial; font-weight:bold;" id="_field"></span></td>
+              <td style="width:400"><span name="FieldValidationError" style="color:red; font:10pt Arial;"></span></td>
+            </tr>
+            <tr name="DataEntryField_textinput">
+              <td style="width:250; text-align:right"><label name="FieldLabel" style="font:10pt Arial;" for="_field"></label></td>
+              <td style="width:35"><span name="FieldRequired"></span></td>
+              <td style="width:400"><input size="30" name="FieldElement" style="font:10pt Arial; font-weight:bold;" id="_field" /></td>
+              <td style="width:400"><span name="FieldValidationError" style="color:red; font:10pt Arial;"></span></td>
+            </tr>
+
+            <!--  Enable this to give textarea fields special handling
+
+            <HTMLWRAPPER name="DataEntryField_textarea">
+              <tr>
+                <td style="width:250; text-align:right" colspan="4">
+                  <label name="FieldLabel" style="font:10pt Arial;" for="_field"/>
+                </td>
+                <td align="left" colspan="4" style="padding-left:5">
+                  <textarea rows="9" cols="60" name="FieldElement" id="_field" /><br />
+                  <span name="FieldValidationError" style="color:red; font:10pt Arial;" />
+                </td>
+            </HTMLWRAPPER>
+            -->
+
+            </HTMLWRAPPER>
+            <tr>
+              <td width="5"/>
+              <td colspan="2"><span name="_groupComplete"></span></td>
+              <td width="5"/>
+            </tr>
+          </HTMLWRAPPER>
+        </HTMLWRAPPER>
+      </HTMLWRAPPER>
+
+          <!-- Here is a sample of overriding a single construct for just one specific Element, using "ByName" -->
+          <tr  name="DisplayGroupLabelByName_Customer">
+           <td colspan="4" cellpadding="5" style="font:16pt Arial;font-weight:bold" align="center"><br /><hr />
+            <span name="LabelText" /><br /><hr />
+           </td>
+          </tr>
+
+          <tr  name="DataEntryGroupLabelByName_Customer">
+           <td colspan="4" cellpadding="5" style="font:16pt Arial;font-weight:bold" align="center"><br /><hr />
+            <span name="LabelText" /><br /><hr />
+           </td>
+          </tr>
+    </HTMLWRAPPER>
+   </table>
+  </span><!-- end DataEntryPageWrapper -->
+
+  <tr name="DisplayGroup_NewsColumnBase"><td colspan="2" style="spacing:0; padding:0">
+        <table width="100%" cellpadding="0" cellspacing="0">
+        <tr name="DataContainer" />        
+        </table>
+    </td></tr>
+
+  <td name="DisplayGroupWrapper_NewsColumnCell" valign="top">
+    <table  cellpadding="3" cellspacing="1" width="100%">
+      <span name="LabelContainer"></span>
+      <span name="GroupContainer"></span>
+    </table>
+  </td>
+
+  <tr name="DataEntryGroup_NewsColumnBase"><td colspan="4" style="spacing:0; padding:0">
+        <table width="100%" cellpadding="0" cellspacing="0">
+        <tr name="DataContainer" />        
+        </table>
+    </td></tr>
+ 
+  <td name="DataEntryGroupWrapper_NewsColumnCell"  valign="top">
+    <table  cellpadding="3" cellspacing="1" width="100%">
+      <span name="LabelContainer"></span>
+      <span name="GroupContainer"></span>
+    </table>
+  </td>
+  
+  <tr name="table_SpecialWrapper"><td colspan="4" name="CleanContainer"></td></tr>
+  <td colspan="4" name="tr_SpecialWrapper"></td>
+
+
+</body>
+</HTML>

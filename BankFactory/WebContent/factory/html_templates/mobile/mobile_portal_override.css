@@ -1,0 +1,50 @@
+/* Licensed Materials - Property of IBM 
+5724-O03
+Copyright 2010. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+*/
+/* Style sheet to give additional room to the running portlet when using the Portal sample mobile theme. */
+
+.ibmPortalMain {
+	margin: 0px 0px 0px 0px;
+	border-width: 0px;
+	background-color: transparent;
+}
+.ibmPortalTitleBar {
+	margin: 0px 0px 0px 0px;
+	line-height: 1em;
+	min-height: 1em;
+	border-style: none;
+}
+.ibmPortalTitleBar ul.ibmPortalUtilList {
+	line-height: 1em;
+	list-style-type: none;
+	margin: 7px;
+	padding: 0;
+}
+.ibmPortalTitleBar .ibmPortalLogo {
+	height: 15px;
+	margin: 5px 0 0 5px;
+}
+.lotusWidget2 .lotusWidgetBody {
+	padding: 0px 0px 0px 0px;
+}
+.lotusWidget2 h2,.lotusWidget2 h2:hover {
+	padding-top: 0px;
+	min-height: 1em;
+}
+.ibmPortalControlContainer {
+	overflow-x: hidden;
+}
+.lotusMain,.lotusFooter {
+	background-color: transparent;
+	border-color: #CFCFCF;
+}
+.ibmPortalMain .ibmPortalBreadcrumbs {
+	border-style: none;
+	border-width: 0px;
+	font-size: 1.3em;
+	line-height: 1em;
+	margin: 0;
+	padding-left: 0px;
+}

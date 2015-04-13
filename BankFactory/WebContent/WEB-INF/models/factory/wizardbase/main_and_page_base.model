@@ -1,0 +1,70 @@
+<Model id="factory/wizardbase/main_and_page_base"><BuilderCallList><BuilderCall id="bc20"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2002, 2006. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2002, 2006. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Name">main</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>page1</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc17"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="mainandpagebaseps:ImportedPage_BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="LocalizationVariable">LocaleInfo</Input>
+<Input name="Name">page1</Input>
+<Input name="URL" profile="mainandpagebaseps:ImportedPage_URL">/factory/pages/main_and_page.html</Input>
+<Input name="FullyParse">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc19"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="mainandpagebaseps:Page_BuilderCallEnabled">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageData">&lt;html&gt;
+    &lt;head&gt;&lt;title&gt;Default Test Page&lt;/title&gt;&lt;/head&gt;
+    &lt;body&gt;
+        &lt;form name="myForm" method="post"&gt;
+            &lt;div&gt;
+              &lt;div style="font:12pt Arial;font-weight: bold;color: #336699;"&gt;Default Test Page&lt;/div&gt;&lt;br&gt;
+              &lt;span name="namedTag"&gt;Use a named tag to place the results of a builder call on a page.&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</Input>
+<Input name="Name">page1</Input>
+<Input name="FullyParse">true</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies><Dependency type="File">/factory/pages/main_and_page.html</Dependency>
+</Dependencies>
+<ExternalProperties />
+</Model>

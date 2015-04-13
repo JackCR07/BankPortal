@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoProgressIndicatorBuilder"> 
+  <ReadableName>Dojo Progress Indicator</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName> 
+  <HelpFile>factory/product_documentation/designer/dojo_progress_indicator.html</HelpFile> 
+  <RequiredFactoryVersion>6.1.5</RequiredFactoryVersion> 
+  <Description>Displays a progress indicator during AJAX operations</Description> 
+  <Domains> 
+    <Domain>WebApp</Domain> 
+    <Domain>Consumer</Domain>
+  </Domains> 
+  <CreateModifyList /> 
+  <Category>Navigation and Page Actions,Rich UI</Category> 
+  <Keywords /> 
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoProgressIndicatorBuilder</BuilderDataEntry> 
+  </BuilderData> 
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoProgressIndicatorCoordinator</CoordinatorClassName> 
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.RestrictedBuilderName">
+    </InputDefinition> 
+    <InputDefinition name="UseTheme" base="com.bowstreet.builders.webapp.pageautomation.DataPage.UseTheme" />
+    <InputDefinition name="Message" base="com.bowstreet.core.Base.IndirectValue"> 
+      <Prompt>Message</Prompt> 
+      <InitialValue>Loading - please wait...</InitialValue>       
+      <HelpText>Display this text during the operation</HelpText> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="ImageStyle" base="com.bowstreet.core.Base.ComboBox"> 
+      <Prompt>Image Style</Prompt> 
+      <InitialValue>Spinner</InitialValue> 
+      <HelpText>What image to display during the operation</HelpText> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+      <Editor>
+        <Argument name="ListLabels">no image,progress bar,animated spinner,custom image</Argument> 
+        <Argument name="ListData">None,Bar,Spinner,Custom</Argument> 
+        <Argument name="width">200</Argument> 
+        <Argument name="isEditable">true</Argument> 
+      </Editor> 
+    </InputDefinition> 
+    <InputDefinition name="Image" base="com.bowstreet.core.Base.ServableContent"> 
+      <Prompt>Image</Prompt> 
+      <InitialValue /> 
+      <HelpText>Custom image to display during the operation</HelpText> 
+      <Page /> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="DisplayMode" base="com.bowstreet.core.Base.ComboBox"> 
+      <Prompt>Display Mode</Prompt> 
+      <InitialValue>RefreshRegion</InitialValue>
+      <HelpText>Where to display the progress indicator</HelpText>
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>false</Callable> 
+      <Editor>
+        <Argument name="ListLabels">replace refresh region with indicator,display indicator over refresh region,insert indicator at bottom of refresh region,insert indicator at top of refresh region,contain indicator in a modal dialog,show indicator at specific location</Argument> 
+        <Argument name="ListData">RefreshRegion,OverRegion,InsertBottom,InsertTop,Dialog,SpecificLocation</Argument> 
+        <Argument name="width">300</Argument> 
+        <Argument name="isEditable">true</Argument> 
+      </Editor> 
+    </InputDefinition> 
+    <InputDefinition name="DisplayLocation" base="com.bowstreet.core.WebAppBase.PageLocation"> 
+      <Prompt>Display Location</Prompt> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="BasePage" base="com.bowstreet.core.Base.ServableContent"> 
+      <Prompt>Base Page</Prompt> 
+      <InitialValue>/factory/pages/dojo_progress_indicator_base.html</InitialValue> 
+      <HelpText>HTML to used as base for progress indicator display</HelpText> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="Selection" base="com.bowstreet.core.Base.ComboBox">
+      <Group>EventSelection</Group>
+      <Prompt>Selection</Prompt> 
+      <InitialValue>AllRequests</InitialValue> 
+      <HelpText>Should this indicator be used for all Ajax requests, or only for a specific named pair of load events?</HelpText>
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+      <Editor>
+        <Argument name="ListLabels">use this indicator for all Ajax requests,only show for specified event</Argument>
+        <Argument name="ListData">AllRequests,SpecificEvent</Argument> 
+        <Argument name="width">300</Argument> 
+        <Argument name="isEditable">true</Argument> 
+      </Editor> 
+    </InputDefinition> 
+    <InputDefinition name="EventPrefix" base="com.bowstreet.core.Base.ComboBox"> 
+      <Group>EventSelection</Group>
+      <Prompt>Event Prefix</Prompt>
+      <HelpText>Prefix for PreLoad/PostLoad event pair that will trigger this indicator</HelpText> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition>  
+  </InputDefinitions>  
+  <GroupDefinitions> 
+    <GroupDefinition id="EventSelection">
+      <Name>Event Selection</Name>
+      <Description>By default, this progress indicator will apply to all Ajax actions in this model. Using the inputs below, you can also choose to only display this indicator during a specific named Ajax operation.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+  </GroupDefinitions>  
+</BuilderDef> 

@@ -1,0 +1,25 @@
+<ProfileSet name="CompanyPortlet" useQualifiedProfileNames="true"><Description>auto-created</Description>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<Models><Model>factory/samples/portletadapter/CompanyPortlet</Model>
+</Models>
+<ProfileDef><Entries><Entry name="CompanyName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="CompanyB" last_modified="1033485236893" isContainer="true" parent="Default"><Values><Value name="CompanyName">Company B</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="CompanyA" last_modified="1033485236893" isContainer="true" parent="Default"><Values><Value name="CompanyName">Company A</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Default" last_modified="1033485236893" isContainer="true"><Values><Value name="CompanyName">Default Company Name</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

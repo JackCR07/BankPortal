@@ -1,0 +1,351 @@
+<Model id="factory/core/db_utils"><BuilderCallList><BuilderCall id="bc212"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">copyright</Input>
+<Input name="BuilderCallEnabled">true</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-Od03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-Od03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc28"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">README</Input>
+<Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="Comment">This model allows a web client to execute arbitrary SQL on the database associated with  the named DataSource.  It is intended for development use only.  Before an application developed with the IBM Factory is put into production this model should be removed as it constitites a potential security hole.  Note that all of the builders are disabled by default so the model cannot be run unless a correct set of profile inputs are provided to enable and regen the individual builders.</Input>
+<Input name="BuilderCallComment">This model allows a web client to execute arbitrary SQL on the database associated with  the named DataSource.  It is intended for development use only.  Before an application developed with the IBM Factory is put into production this model should be removed as it constitites a potential security hole.  Note that all of the builders are disabled by default so the model cannot be run unless a correct set of profile inputs are provided to enable and regen the individual builders.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc57"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Utility Builders</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc51"><BuilderDefID>com.bowstreet.builders.webapp.MethodCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="Name">validateDataSource</Input>
+<Input name="MethodName">SqlMetaDataUtil.validateDataSource</Input>
+<Input name="ArgumentSource1" profile="dbxmlschema:ds_JndiContextFactory"></Input>
+<Input name="ArgumentSource2" profile="dbxmlschema:ds_JndiUrl"></Input>
+<Input name="ArgumentSource3" profile="dbxmlschema:ds_JndiSecurityPrincipal"></Input>
+<Input name="ArgumentSource4" profile="dbxmlschema:ds_JndiSecurityCredentials"></Input>
+<Input name="ArgumentSource5" profile="dbxmlschema:ds_DataSourceName"></Input>
+<Input name="ArgumentType1">java.lang.String</Input>
+<Input name="ArgumentType2">java.lang.String</Input>
+<Input name="ArgumentType3">java.lang.String</Input>
+<Input name="ArgumentType4">java.lang.String</Input>
+<Input name="ArgumentType5">java.lang.String</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc65"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Response Encoding</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc63"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="UseInlineHandler">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="EventName">System:OnRequest</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>SqlMetaDataUtil.setUTF8Encoding</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Name">System:OnRequest</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc55"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">DB Schema Builders</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc5"><BuilderDefID>com.bowstreet.builders.webapp.SqlDataSourceBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dbxmlschema:fn_GetSchema">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="Name">getSchema_DataSource</Input>
+<Input name="JndiUrl" profile="dbxmlschema:ds_JndiUrl"></Input>
+<Input name="JndiContextFactory" profile="dbxmlschema:ds_JndiContextFactory"></Input>
+<Input name="DataSourceName" profile="dbxmlschema:ds_DataSourceName"></Input>
+<Input name="JndiSecurityPrincipal" profile="dbxmlschema:ds_JndiSecurityPrincipal"></Input>
+<Input name="JndiSecurityCredentials" profile="dbxmlschema:ds_JndiSecurityCredentials"></Input>
+<Input name="DataSourceUser" profile="dbxmlschema:ds_DataSourceUser"></Input>
+<Input name="DataSourcePassword" profile="dbxmlschema:ds_DataSourcePassword"></Input>
+<Input name="LoginTimeout">5</Input>
+<Input name="AcquireTimeout">5</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.SqlStatementBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dbxmlschema:fn_GetSchema">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="Name">getSchema_Statement</Input>
+<Input name="SqlStatement" profile="dbxmlschema:stmt_SqlStatement"></Input>
+<Input name="MaxRowSize">100</Input>
+<Input name="Concurrency" profile="dbxmlschema:stmt_Concurrency"></Input>
+<Input name="ScrollType" profile="dbxmlschema:stmt_ScrollType"></Input>
+<Input name="FetchDirection">Forward</Input>
+<Input name="FetchSize">1</Input>
+<Input name="InputParameters"><top />
+</Input>
+<Input name="ExecutionTimeout" profile="dbxmlschema:stmt_ExecutionTimeout"></Input>
+<Input name="MaxRows">1</Input>
+<Input name="MaxFieldSize">300</Input>
+<Input name="AutoCreateInputs" profile="dbxmlschema:stmt_AutoCreateInputs"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc21"><BuilderDefID>com.bowstreet.builders.webapp.SqlTransformToXmlBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dbxmlschema:fn_GetSchema">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="TransformType">Complete</Input>
+<Input name="DefaultSchemaTargetNameSpace">http://dgawron:7001/bowstreet/webengine/factory/core/db_utils/Transform</Input>
+<Input name="Name">getSchema_Transform</Input>
+<Input name="CustomTransforms"><top><Property><JdbcTypeName>CLOB</JdbcTypeName>
+<TransformMethod>notsupported</TransformMethod>
+</Property>
+</top>
+</Input>
+<Input name="TransformResult">CompleteXmlDocument</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="CreateVerboseXml" profile="dbxmlschema:xform_CreateVerboseXml"></Input>
+<Input name="TopElementName" profile="dbxmlschema:xform_TopElementName"></Input>
+<Input name="RowElementName" profile="dbxmlschema:xform_RowElementName"></Input>
+<Input name="UseColumnLabels" profile="dbxmlschema:xform_UseColumnLabels"></Input>
+<Input name="SchemaTargetNameSpace" profile="dbxmlschema:xform_SchemaTargetNameSpace"></Input>
+<Input name="AllowDataRetrieverConversion">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.webapp.SqlToXmlSchemaBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dbxmlschema:fn_GetSchema">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="StatementType">IndividualSqlStatement</Input>
+<Input name="GenerateSchema">OnEveryRegen</Input>
+<Input name="Name">getSchema_XmlSchema</Input>
+<Input name="SqlDataSource">getSchema_DataSource</Input>
+<Input name="SqlStatement">getSchema_Statement</Input>
+<Input name="SqlTransform">getSchema_Transform</Input>
+<Input name="XmlSchema"><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://127.0.0.1:7001/bowstreet/webengine/factory/core/db_utils/Database_Transform" targetNamespace="http://127.0.0.1:7001/bowstreet/webengine/factory/core/db_utils/Database_Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Tuesday, October 29, 2002 1:43:01 PM EST" from the content of XML Variable "Database_RawOutput"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:EMPLOYEE_ID" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:FIRST_NAME" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:LAST_NAME" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:EMAIL" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:PHONE_NUMBER" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:HIRE_DATE" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:JOB_ID" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:SALARY" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:COMMISSION_PCT" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:MANAGER_ID" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:DEPARTMENT_ID" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:DN" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EMPLOYEE_ID" type="xsd:decimal" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FIRST_NAME" type="xsd:string" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LAST_NAME" type="xsd:string" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EMAIL" type="xsd:string" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PHONE_NUMBER" type="xsd:string" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HIRE_DATE" type="xsd:dateTime" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="JOB_ID" type="xsd:string" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SALARY" type="xsd:decimal" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="COMMISSION_PCT" type="xsd:decimal" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MANAGER_ID" type="xsd:decimal" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DEPARTMENT_ID" type="xsd:decimal" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DN" type="xsd:string" />
+</xsd:schema>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc30"><BuilderDefID>com.bowstreet.builders.webapp.SqlDataSourceBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dbxmlschema:fn_VerifyDataSource">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="Name">verifyDataSource_DataSource</Input>
+<Input name="JndiUrl" profile="dbxmlschema:ds_JndiUrl"></Input>
+<Input name="JndiContextFactory" profile="dbxmlschema:ds_JndiContextFactory"></Input>
+<Input name="DataSourceName" profile="dbxmlschema:ds_DataSourceName"></Input>
+<Input name="JndiSecurityPrincipal" profile="dbxmlschema:ds_JndiSecurityPrincipal"></Input>
+<Input name="JndiSecurityCredentials" profile="dbxmlschema:ds_JndiSecurityCredentials"></Input>
+<Input name="DataSourceUser" profile="dbxmlschema:ds_DataSourceUser"></Input>
+<Input name="DataSourcePassword" profile="dbxmlschema:ds_DataSourcePassword"></Input>
+<Input name="LoginTimeout">5</Input>
+<Input name="AcquireTimeout">5</Input>
+<Input name="VerifyConnectivity">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc53"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">DB Metadata Builders</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc31"><BuilderDefID>com.bowstreet.builders.webapp.SqlDataSourceBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dbxmlschema:fn_GetDbMetaData">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="Name">getDbMetaData_DataSource</Input>
+<Input name="JndiUrl" profile="dbxmlschema:ds_JndiUrl"></Input>
+<Input name="JndiContextFactory" profile="dbxmlschema:ds_JndiContextFactory"></Input>
+<Input name="DataSourceName" profile="dbxmlschema:ds_DataSourceName"></Input>
+<Input name="JndiSecurityPrincipal" profile="dbxmlschema:ds_JndiSecurityPrincipal"></Input>
+<Input name="JndiSecurityCredentials" profile="dbxmlschema:ds_JndiSecurityCredentials"></Input>
+<Input name="DataSourceUser" profile="dbxmlschema:ds_DataSourceUser"></Input>
+<Input name="DataSourcePassword" profile="dbxmlschema:ds_DataSourcePassword"></Input>
+<Input name="LoginTimeout">5</Input>
+<Input name="AcquireTimeout">5</Input>
+<Input name="VerifyConnectivity">false</Input>
+<Input name="FetchDataSourceNames">Fetch DataSource Names</Input>
+<Input name="DataSourceNameValues">java:comp/env/jdbc/DB2V8</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc34"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dbxmlschema:fn_GetDbMetaData">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">getDbMetaData_CatalogName</Input>
+<Input name="Type">String</Input>
+<Input name="Value" profile="dbxmlschema:var_MetaDataCatalogName"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc35"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dbxmlschema:fn_GetDbMetaData">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">getDbMetaData_SchemaPattern</Input>
+<Input name="Type">String</Input>
+<Input name="Value" profile="dbxmlschema:var_MetaDataSchemaPattern"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc219"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dbxmlschema:fn_GetDbMetaData">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">getDbMetaData_TablePattern</Input>
+<Input name="Type">String</Input>
+<Input name="Value" profile="dbxmlschema:var_MetaDataTablePattern"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc216"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Messages><Warning><Message>The specified class com.bowstreet.builders.webapp.methods.SqlMetaDataUtil is not serializable, which may cause a loss of data during session failover.</Message>
+</Warning>
+</Messages>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="Extend">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">SqlMetaDataUtil</Input>
+<Input name="ClassName">com.bowstreet.builders.webapp.methods.SqlMetaDataUtil</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc218"><BuilderDefID>com.bowstreet.builders.webapp.ModelActionAccessBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Name">public actions</Input>
+<Input name="PublicActions"><top><Action><ActionName>SqlMetaDataUtil.addDatabaseAttributes</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.getColumns</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.getDataSourceNames</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.getExportedKeys</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.getImportedKeys</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.getPrimaryKeys</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.getProcedureColumns</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.getProcedures</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.getSchema</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.getTables</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.listDataSourcePaths</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.setUTF8Encoding</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.toXml</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.validateDataSource</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.verifyDataSource</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.createDatasource</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.createTable</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.deleteTable</ActionName>
+</Action>
+<Action><ActionName>SqlMetaDataUtil.tableExists</ActionName>
+</Action>
+<Action><ActionName>validateDataSource</ActionName>
+</Action>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><RequiredFactoryVersion>5.0.0</RequiredFactoryVersion>
+<Version>0.0.0</Version>
+<Description>Empty model (contains no builder calls).</Description>
+<Contained>false</Contained>
+<EnableGenerationCaching>true</EnableGenerationCaching>
+<Roles />
+<EnableFailover>false</EnableFailover>
+</Properties>
+<Dependencies><Dependency type="Class">com.bowstreet.builders.webapp.methods.SqlMetaDataUtil</Dependency>
+</Dependencies>
+<ExternalProperties />
+</Model>

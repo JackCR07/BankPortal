@@ -1,0 +1,14 @@
+IBM Web Experience Factory build/deployment web.xml handling:
+
+Because our projects support multiple deployment runtimes, we need to handle web.xml a bit differently than most projects.
+
+1. The in-place WEB-INF/web.xml file is rarely used, and you should never edit this file directly.  
+
+2. The web.xml templates are how the web.xml files begin.  During a build/deployment 
+request, we build upon the template for use in the WAR and EAR files.
+
+- portlet.standard.web.xml is used for Java Standard portlets.
+- standalone.web.xml is used on WAS servers for standalone webapps.
+- liberty.web.xml is used for standalone webapps on the liberty profile.
+
+- The portlet.*.ute.web.xml files are no longer in use because we no longer support the unified test environments.

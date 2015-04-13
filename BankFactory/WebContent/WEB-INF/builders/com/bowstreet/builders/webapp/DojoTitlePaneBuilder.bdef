@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoTitlePaneBuilder"> 
+  <ReadableName>Dojo Title Pane</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName> 
+  <HelpFile></HelpFile>
+  <RequiredFactoryVersion>6.1.5</RequiredFactoryVersion> 
+  <Description>Adds a Dojo Title Pane to the specified page element.</Description> 
+  <Domains> 
+    <Domain>WebApp</Domain> 
+    <Domain>Consumer</Domain>
+  </Domains> 
+  <CreateModifyList>
+     <CanModify type="[Unassigned Elements]" category="Dojo Containers">Adds a Dojo Title Pane.</CanModify>
+  </CreateModifyList>
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <Category>Dojo Containers,Page Elements,Rich UI</Category>
+  <Keywords>Form,Data Entry,Layout,Dojo,Widget</Keywords>
+
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoTitlePaneBuilder</BuilderDataEntry> 
+    <BuilderDataEntry name="DojoWidgetAttributes">
+        <DojoWidgetAttributes>
+            <DojoWidgetAttribute>
+                <BuilderInputName>TitlePaneTitle</BuilderInputName>
+                <DojoWidgetAttributeName>title</DojoWidgetAttributeName>
+                <DefaultValue></DefaultValue>
+            </DojoWidgetAttribute>
+            <DojoWidgetAttribute>
+                <BuilderInputName>TitlePaneOpen</BuilderInputName>
+                <DojoWidgetAttributeName>open</DojoWidgetAttributeName>
+                <DefaultValue>true</DefaultValue>
+            </DojoWidgetAttribute>
+        </DojoWidgetAttributes>
+    </BuilderDataEntry>
+    <BuilderDataEntry name="WidgetTypeInfo">
+        <WidgetTypeInfo>
+            <WidgetType>
+                <DojoType>dijit.TitlePane</DojoType>
+                <AttributeNames>duration</AttributeNames>
+                <Default>true</Default>
+            </WidgetType>
+        </WidgetTypeInfo>
+    </BuilderDataEntry>
+    <BuilderDataEntry name="IconName">editControl</BuilderDataEntry>
+    <BuilderDataEntry name="PageLocation">Wrapper</BuilderDataEntry>
+  </BuilderData>
+
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoFormElementsCoordinator</CoordinatorClassName>
+
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName"> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition>
+    
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation"> 
+      <Prompt></Prompt> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+     
+    <InputDefinition name="DojoType" base="com.bowstreet.core.Base.StringData">
+       <Prompt>Type</Prompt>
+       <HelpText>Choose Dojo element type, or specify your own.</HelpText>
+       <InitialValue>CustomExtension</InitialValue>
+       <Visible>false</Visible>
+    </InputDefinition>
+     
+    <!-- (BEGIN) Used for custom Dojo  type --> 
+    <InputDefinition name="CustomDojoType" base="com.bowstreet.core.Base.StringData">
+       <Prompt>Dojo Type</Prompt>
+       <HelpText>Specify the Dojo type. Example: dijit.form.NumberSpinner</HelpText>
+       <InitialValue>dijit.TitlePane</InitialValue>
+       <Visible>false</Visible>
+       <ProfileType>Value</ProfileType> 
+       <Callable>true</Callable> 
+    </InputDefinition>
+    
+    <InputDefinition name="AddRequires"  base="com.bowstreet.core.Base.BooleanData" >
+        <Prompt>Add to Requires</Prompt> 
+        <HelpText>Use this option to specify if the Dojo Type should also be added to the Dojo requires list.</HelpText>
+        <InitialValue>true</InitialValue>
+        <Visible>false</Visible>
+        <Required>false</Required>
+    </InputDefinition>      
+    
+    <InputDefinition name="ElementName" base="com.bowstreet.core.Base.StringData">
+       <Prompt>Element Name</Prompt>
+       <HelpText>Specify an optional new element name for the target. Example: "div"</HelpText>
+       <InitialValue>div</InitialValue>
+       <Visible>false</Visible> 
+       <ProfileType>Value</ProfileType> 
+       <Callable>true</Callable> 
+    </InputDefinition>
+
+    <InputDefinition name="TitlePaneTitle" base="com.bowstreet.core.Base.IndirectValue">
+       <Prompt>Title</Prompt>
+       <HelpText>Specify title text for the title pane</HelpText>
+       <InitialValue></InitialValue>
+       <Visible>true</Visible> 
+       <ProfileType>Value</ProfileType> 
+       <Callable>true</Callable> 
+    </InputDefinition>
+
+    <InputDefinition name="TitlePaneOpen" base="com.bowstreet.core.Base.IndirectValue">
+       <Prompt>Expanded</Prompt>
+       <HelpText>Specify whether the content pane should be expanded by default.</HelpText>
+       <InitialValue>true</InitialValue>
+       <Visible>true</Visible> 
+       <ProfileType>Value</ProfileType> 
+       <Callable>true</Callable> 
+       <Editor JavaClass="com.bowstreet.widget.Reference">
+         <Argument name="editor">
+           <Editor JavaClass="com.bowstreet.widget.CheckBox"/>
+         </Argument>
+       </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="Attributes"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Attributes">
+      <Group>Attributes</Group>
+      <Type>Xml</Type>
+    </InputDefinition> 
+      
+    <InputDefinition name="HandleExisting"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleExisting">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition> 
+       
+    <InputDefinition name="HandleMissingValue"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleMissingValue">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition> 
+ 
+    <InputDefinition name="Separator"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Separator">
+      <Group>Attributes</Group>
+      <InitialValue>;</InitialValue>
+    </InputDefinition>    
+  </InputDefinitions> 
+  
+  <GroupDefinitions>
+   <GroupDefinition id="Attributes">
+      <Name>Attributes</Name>
+      <Description>Optional attributes to apply to the target Dojo type.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>false</InitiallyCollapsed>
+    </GroupDefinition>
+  </GroupDefinitions>
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

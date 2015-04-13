@@ -1,0 +1,343 @@
+/* Copyright IBM Corp.2008,2010 */
+@import url(blue_buttons.css);
+
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+/* outer div.  Set up defaults. */
+div.pageWrapper{
+    font-family:  Verdana, sans-serif;
+}
+
+/* Wrapper and Label for Top Group containing only a Table  (Label is typically not used.) */
+div.TOCGroup{}
+div.TOCGroupLabel{}
+
+/* Wrapper and Label for the top group on the page.  (Label is typically not used.) */
+div.TopGroup{}
+div.TopGroupLabel{}
+
+/* Wrapper and Label for an "Outer" group.  This is a group that contains other groups. */
+div.OuterGroup{
+    border:  1px solid #99CCCC;
+}
+
+div.OuterGroupLabel{
+    font-family:  Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+div.LayoutColumnGroupLabel{
+    font-family:  Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+div.LayoutColumnGroupDiv{}
+
+fieldset.DisplayGroupFieldset{
+    padding: 1em;
+    background-color: #E8F2FE;
+    border: 1px solid #EFE2A3;
+    min-width: 25em;
+}
+
+fieldset.DataEntryGroupFieldset{
+    padding: 1em;
+    background-color: #E8F2FE;
+    border: 1px solid #EFE2A3;
+}
+
+.legend {}
+
+div.FieldWrapperDiv{
+    float:none;
+    clear:both;
+    padding: 2px;
+}
+
+span.label{
+}
+
+fieldset.DisplayGroupFieldset span.label{
+	margin-right: 1em;
+    display:block;
+    float: left;
+    color: #000000;
+    font-weight: bold;
+    font-size: 11px;
+    width: 12em;
+    text-align: right;
+}
+
+span.DataEntryFieldHolder, span.ValidationErrorHolder{
+    display:block;
+    float: left;
+}
+
+/* Field inputs or display elements */
+.outputData{
+    color: #000000;
+    font-size: 11px;
+}
+
+/* Links in data */
+a.outputData:link,a.outputData:active,a.outputData:visited{
+  color: #000000;
+  font-size: 11px;
+  text-decoration: underline;
+}
+
+a.outputData:hover{
+  color: #0000CC;
+  font-size: 11px;
+  text-decoration: underline;
+}
+
+span.FieldRequiredHolder{
+    display:block;
+    float: left;
+    width: 2.5em; 
+}
+
+span.requiredPrompt{
+  font-size: 11px;
+  font-weight: bold;
+  color: #FF0000;
+  padding: 1em;	
+}
+
+/* Validation error message text */
+span.errorMessage{
+  font-size: 11px;
+  color: #FF0000;
+  padding-left: 1em;
+}
+
+/* Text shown when query for table produced no records. */
+div.EmptyDataMessage{
+  font-size: 11px;
+  color: #0000CC;
+  width: 100%;
+  text-align: center;	
+}
+
+
+
+/* Table background-color/border- can be used with cellspacing="1" to provide inner table borders */
+.gridTable{
+  border: 1px solid #99CCCC;
+}
+
+.columnGroupHeadRow{}
+.ColumnGroupLabel{}
+
+.ColumnGroupLabelEmpty{
+  border-bottom: thin solid #DDDDDD;
+}
+
+.spacerColumn{
+  border-left: thin solid #808080;
+}
+
+.spacerColumnGroupHeader{
+  border-bottom: thin solid #808080;
+  border-left: thin solid #808080;
+}
+
+/* Table head row */
+.tableHeadRow{
+}
+
+/* Table head cells*/
+.tableHead,
+.tableHeadAsc,
+.tableHeadDesc{
+  background: #FFFFFF url(../images/table/header_blue.png) repeat-x scroll center top;
+  border-color: #FFFFFF #ACA899 #919191 #FFFFFF;
+  border-style: solid;
+  border-width: 1px;
+  padding-bottom: 2px;
+  overflow: hidden;
+  padding: 3px;
+  text-align: left;
+  font-style: normal;
+  font-size: 12px;
+}
+
+.tableHead{
+  font-weight: normal;
+}
+
+.tableHead:hover{
+  background: #60A1EA;
+  font-weight: normal;
+}
+
+.tableHeadAsc{
+  font-weight: bold;
+}
+.tableHeadDesc{
+  font-weight: lighter;
+}
+.tableCell{
+  border-bottom: 1px dotted #D5CDB5;
+  border-right: 1px dotted #D5CDB5;
+  overflow: hidden;
+  padding: 3px;
+  /* does not work in IE */
+  empty-cells: show;
+}
+
+/* for text in table header cells */
+.tableHeadText{
+  padding: 3px;
+}
+
+/* for links in table header cells, for sorting */
+a.tableHeadSortLink:link,a.tableHeadSortLink:active,a.tableHeadSortLink:visited
+ {
+  color: #333333;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+a.tableHeadSortLink:hover{
+  background: #60A1EA;
+  text-decoration: underline;
+}
+a img
+ {
+  vertical-align: text-bottom
+}
+/* Odd repeated rows */
+.tableRowOdd{
+  background-color: #FFFFFF;
+}
+
+/* Even repeated rows */
+.tableRowEven{
+  background-color: #E8F2FE;
+  color: #000000;
+}
+
+
+.outputDataRight{
+  font-size: 11px;
+  text-align: right;
+}
+
+/* Labels between sections of inputs or fields */
+.sectionLabel{
+  color: #333333;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 15px;
+}
+
+/* Table cells containing the sectionLabels
+.sectionLabelCell{
+  background-color: #DDDDDD;
+  text-indent: 3px;
+}
+ */
+ 
+input[type='button'].outputdata, button.outputdata, input.outputdata{
+  margin-right:5px;
+  margin-left:5px;
+  cursor:pointer;
+  padding:2px 7px 3px;
+  color: #ffffff !important;
+}
+
+
+
+
+
+.vf_buttons{
+  margin-top: 5px;
+  padding: 2px;
+  text-align: center;
+  clear:both;
+}
+.vf_smallButton{
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: center;
+  font-size:0.75em !important;
+  font-weight: bold;
+  height:16px;
+}
+
+
+.vf_view_container{
+  /* float left to grow with the size of the data (i.e. table)*/
+  /* doens't seem to work correctly in I.E.  */
+  float: left;
+  padding: 2px;
+  margin-right: 15px;
+}
+.vf_field_container{
+  /* float left to grow with the size of the data */
+  /* doens't seem to work correctly in I.E. */
+  float: left; 
+  margin-right: 15px;
+}
+
+.vf_fields, WPF_LayoutTable{
+  background-color: #E8F2FE;
+  border: 1px solid #EFE2A3;
+  text-align: left;  
+  margin-left: 0px; 
+  margin-right: 5px; 
+  padding-right: 5px;  
+  padding-left: 0px;  
+}
+
+.vf_fields .vf_fields 
+{
+    border: none; 
+}
+
+.vf_search_section{
+}
+
+.vf_view_list{
+  float: left; 
+  clear:both;
+}
+
+.vf_header{
+  text-align: center;
+}
+
+.vf_footer{
+  text-align: center;
+}
+
+.paging{
+  text-align: center;
+  margin-top: 7px;
+  margin-bottom: 2px;
+}
+
+.dsui_full_width table{
+  width: 100%;
+}
+
+div.NewsColumnWrapper{
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	clear: both;
+}
+
+div.NewsColumnCell {
+	float: left;
+}

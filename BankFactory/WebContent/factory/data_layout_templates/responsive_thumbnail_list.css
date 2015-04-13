@@ -1,0 +1,73 @@
+/* these are the styles that are used for the thumbnail multi-line list feature pack data layouts found in the 
+ /factory/html_templates/WEF8.5_uitheme.css file
+ You would include this style sheet using a style sheet builder if you want these styles but are
+ not using the theme file css on your page  
+ */
+.responsive_ThumbnailList .thumbnailListItem{
+ text-decoration:none;color:black;
+ width:100%;
+ min-height:75px;
+ min-width:65px;
+}
+.responsive_SmallThumbnailList  .thumbnailListItem{min-height:61px}
+.responsive_MediumThumbnailList .thumbnailListItem{min-height:75px}
+.responsive_LargeThumbnailList  .thumbnailListItem{min-height:90px}
+.responsive_ExtraLargeThumbnailList .thumbnailListItem{min-height:110px}
+.responsive_SmallThumbnailList  .wpfLeft {min-width:50px;min-height:50px}
+.responsive_MediumThumbnailList .wpfLeft {min-width:65px;min-height:65px}
+.responsive_LargeThumbnailList  .wpfLeft {min-width:80px;min-height:80px}
+.responsive_ExtraLargeThumbnailList .wpfLeft{min-width:100px;min-height:100px}
+.responsive_ThumbnailList .wpfLeft{float:left;padding:2px;margin-right:10px;}
+.responsive_ThumbnailList .listItem{white-space:nowrap;overflow:hidden;}
+.responsive_ThumbnailList .wpfCenterContainer{float:left; width:60%;}
+.responsive_ExtraLargeThumbnailList .wpfCenterContainer{ width:50%;}
+.responsive_ThumbnailList .wpfCenter{
+ padding-left:3px;
+ padding-right:3px;
+ text-overflow:ellipsis; 
+ white-space:nowrap;
+ overflow:hidden;
+ max-width:600px;
+ min-height:12px; 
+}
+.responsive_ThumbnailList .clSingleRowContainer .wpfCenter{display:table-cell;vertical-align:middle;}
+.responsive_SmallThumbnailList .clSingleRowContainer .wpfCenter{line-height:50px;}
+.responsive_MediumThumbnailList .clSingleRowContainer .wpfCenter{line-height:65px;}
+.responsive_LargeThumbnailList .clSingleRowContainer .wpfCenter{line-height:80px;}
+.responsive_ExtraLargeThumbnailList .clSingleRowContainer .wpfCenter{line-height:100px;}
+.responsive_ThumbnailList .clCenterWrapContainer .wpfCenter .wpfMiddle{
+ text-overflow:visible!important; 
+ white-space:normal!important;
+ overflow:visible!important; 
+ padding:2px !important;
+ line-height:normal;
+}
+.responsive_ThumbnailList .wpfRightContainer{
+ float:right;
+ margin-right:2px;
+ width:15%;
+}
+.responsive_ThumbnailList .thumbnailListItem .wpfLeft img{
+ -webkit-border-radius:8px;
+ width:65px;
+ height:65px;
+}
+.responsive_SmallThumbnailList .thumbnailListItem .wpfLeft img{width:50px;height:50px;}
+.responsive_MediumThumbnailList .thumbnailListItem .wpfLeft img{width:65px;height:65px;}
+.responsive_LargeThumbnailList .thumbnailListItem .wpfLeft img{width:80px;height:80px;}
+.responsive_ExtraLargeThumbnailList .thumbnailListItem .wpfLeft img{width:100px;height:100px;}
+.responsive_ThumbnailList .clSingleRowContainer .wpfTop, .responsive_ThumbnailList .clSingleRowContainer .wpfBottom{display:none;}
+.responsive_ThumbnailList .clArrowContainer{background-image:url("../../data_layout_templates/right_arrow.gif")!important;}
+.responsive_ThumbnailList .thumbnailListItem{
+ background-image:none;
+ background-repeat:no-repeat;
+ background-position:right;
+ border-bottom:1px solid #AAAAAA;
+ margin:5px 0 0 0;
+ padding:2px 0 2px 0;
+}
+@media all and (max-width:320px){
+.responsive_ThumbnailList .wpfCenterContainer{width:auto !important}
+.responsive_ThumbnailList .wpfCenter{max-width:240px}
+.responsive_ThumbnailList .wpfRightContainer{display:none}
+}

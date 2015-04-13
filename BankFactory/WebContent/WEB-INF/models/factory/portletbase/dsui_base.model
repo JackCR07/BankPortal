@@ -1,0 +1,2618 @@
+<Model id="factory/portletbase/dsui_base"><BuilderCallList><BuilderCall id="bc19"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_Base:always_false">true</Input>
+<Input name="UseAllOperations">true</Input>
+<Input name="OverrideInputs">false</Input>
+<Input name="UseDiscardableInputVariables">false</Input>
+<Input name="UseDiscardableVariables">false</Input>
+<Input name="EnableCaching">true</Input>
+<Input name="InheritProfile">true</Input>
+<Input name="Name">XXX</Input>
+<Input name="ProviderModel">samples/gettingstarted/OrdersServiceProvider</Input>
+<Input name="SelectOperations"><top><OperationSelected><Operation>createOrder</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>Creates a new XML "order" structure that is populated with the next order id. &lt;i&gt;See the addOrder operation.&lt;/i&gt;
+Parameters:
+	Name:			results
+	!ServiceConsumer2Coordinator.service_description!	A newly created XML order structure that is suitable to pass to the addOrder operation.</Description>
+</OperationSelected>
+<OperationSelected><Operation>getOrders</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>Gets all the order data from the XML Variable named "orders".
+Parameters:
+	Name:			results
+	!ServiceConsumer2Coordinator.service_description!	All the order data from the XML Variable named "orders".</Description>
+</OperationSelected>
+<OperationSelected><Operation>getOrder</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>Gets a row of XML data for the specified ORDER_ID within the input XML.
+Parameters:
+	Name:			inputs
+	!ServiceConsumer2Coordinator.service_description!	A Row "order" XML structure that contains a Row/ORDER_ID element with the order ID to fetch.
+
+	Name:			results
+	!ServiceConsumer2Coordinator.service_description!	A row of XML data for the specified ORDER_ID, or null if not found.</Description>
+</OperationSelected>
+<OperationSelected><Operation>searchOrders</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>Gets all the order data from the XML Variable named "orders".  Doesn't really search -- this is a dummy.
+Parameters:
+	Name:			inputs
+	!ServiceConsumer2Coordinator.service_description!	This ignores this input.  It just gets all the orders.
+
+	Name:			results
+	!ServiceConsumer2Coordinator.service_description!	All the order data from the XML Variable named "orders".</Description>
+</OperationSelected>
+<OperationSelected><Operation>getBillingOptions</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>Gets the billing code names that can be supplied to a lookup table builder as XML.
+Parameters:
+	Name:			results
+	!ServiceConsumer2Coordinator.service_description!	The billing code names that can be supplied to a lookup table builder as XML.</Description>
+</OperationSelected>
+<OperationSelected><Operation>deleteOrder</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>Deletes a row of XML data for the specified ORDER_ID within the "order" XML.
+Parameters:
+	Name:			inputs
+	!ServiceConsumer2Coordinator.service_description!	A Row "order" XML structure that contains a Row/ORDER_ID element with the order ID to delete.</Description>
+</OperationSelected>
+<OperationSelected><Operation>addOrder</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>Adds the specified "order" XML to the "orders" XML Variable data. &lt;i&gt;See the createOrder operation.&lt;/i&gt;
+Parameters:
+	Name:			inputs
+	!ServiceConsumer2Coordinator.service_description!	The populated "order" XML structure to be added.</Description>
+</OperationSelected>
+<OperationSelected><Operation>updateOrder</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>Updates an existing order with the data specified in the "order" input.
+Parameters:
+	Name:			inputs
+	!ServiceConsumer2Coordinator.service_description!	The updated order data.</Description>
+</OperationSelected>
+</top>
+</Input>
+<Input name="OperationInputs"><OverridenInputs><InputsForOperation><Operation>createOrder</Operation>
+<Inputs />
+</InputsForOperation>
+<InputsForOperation><Operation>getOrders</Operation>
+<Inputs />
+</InputsForOperation>
+<InputsForOperation><Operation>getOrder</Operation>
+</InputsForOperation>
+<InputsForOperation><Operation>searchOrders</Operation>
+</InputsForOperation>
+<InputsForOperation><Operation>getBillingOptions</Operation>
+<Inputs />
+</InputsForOperation>
+<InputsForOperation><Operation>deleteOrder</Operation>
+</InputsForOperation>
+<InputsForOperation><Operation>addOrder</Operation>
+</InputsForOperation>
+<InputsForOperation><Operation>updateOrder</Operation>
+<Inputs><top><Input><Name>Row</Name>
+</Input>
+<Input><Name>Row.ORDER_ID</Name>
+</Input>
+<Input><Name>Row.DATE_ORDERED</Name>
+</Input>
+<Input><Name>Row.STATUS</Name>
+</Input>
+<Input><Name>Row.DATE_SHIPPED</Name>
+</Input>
+<Input><Name>Row.QUANTITY</Name>
+</Input>
+<Input><Name>Row.AMOUNT</Name>
+</Input>
+<Input><Name>Row.BILLING</Name>
+</Input>
+<Input><Name>Row.SHIPPED</Name>
+</Input>
+<Input><Name>Row.STATE</Name>
+</Input>
+</top>
+</Inputs>
+</InputsForOperation>
+</OverridenInputs>
+</Input>
+<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>getOrders</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>createOrder</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>getOrder</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>searchOrders</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>getBillingOptions</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>deleteOrder</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>addOrder</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>updateOrder</Operation>
+<Mappings />
+</ValuesForOperation>
+</ContextVariables>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc51"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Core elements</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc39"><BuilderDefID>com.bowstreet.builders.webapp.LocalizedResourceBuilder</BuilderDefID>
+<Messages><Error><Message>Resource bundle "com.bowstreet.builders.webapp.dsui_base_resource1" not found.  If you just created it, you should rebuild the project, then regen the model.</Message>
+</Error>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_Base:LocalizedResource_BuilderCallEnabled">true</Input>
+<Input name="CreateVariableFromName">true</Input>
+<Input name="Name">zzResource</Input>
+<Input name="ResourceBundleName" profile="dsui_Base:LocalizedResource_ResourceBundleName">com.bowstreet.builders.webapp.dsui_base_resource1</Input>
+<Input name="EnableRuntimeLocalization" profile="dsui_Base:LocalizedResource_EnableRuntimeLocalization">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc21"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_Base:create_main_method">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">main</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName profile="dsui_Startup:StartOnPage">zzToViewPage</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc47"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_Base:SelectedRowVariableEnabled">true</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">zzSelectedRow</Input>
+<Input name="Type" profile="dsui_Base:SelectedRowSchema">XXXOrders/Row</Input>
+<Input name="Namespace">http://bowstreet.com/services/XMLProvider</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc49"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body" profile="dsui_Base:SaveSelectedMethodBody">{
+   IXml row = rowSet.findElement("Row/[ORDER_ID=" + id + "]/.." );
+   webAppAccess.getVariables().setXml("zzSelectedRow", row );
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">zzSaveSelectedRow</Input>
+<Input name="Arguments"><top><Argument><Name>rowSet</Name>
+<Type>IXml</Type>
+</Argument>
+<Argument><Name>id</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="XMLType">XXXOrders/Row</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc198"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">zzDirtyFlags</Input>
+<Input name="Type">XML</Input>
+<Input name="Value">&lt;IsDirty&gt;
+  &lt;List&gt;true&lt;/List&gt;
+  &lt;SearchResults&gt;true&lt;/SearchResults&gt;
+&lt;/IsDirty&gt;</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[<IsDirty>
+  <List>true</List>
+  <SearchResults>true</SearchResults>
+</IsDirty>]]></CacheKey>
+<CacheValue><IsDirty><List>true</List>
+<SearchResults>true</SearchResults>
+</IsDirty>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc23"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">List  Page</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc43"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ViewPageEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Name">zzToListPage</Input>
+<Input name="Actions"><Actions><Action><ActionType>Conditional</ActionType>
+<ActionName>IF (${Variables/zzDirtyFlags/IsDirty/List} != false) THEN</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName profile="dsui_ViewPage:PrepareViewPageAction">DataServices/XXX/getOrders</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>    Variables/zzDirtyFlags/IsDirty/List=false</ActionName>
+</Action>
+<Action><ActionType>Conditional</ActionType>
+<ActionName>ENDIF</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzList</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc202"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ViewPageEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzToListPageForceRequery</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzDirtyFlags/IsDirty/List=true</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzToListPage</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc17"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ViewPageImportedPageEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="LocalizationVariable">LocaleInfo</Input>
+<Input name="Name">zzList</Input>
+<Input name="URL" profile="dsui_Base:View_Page_URL">/factory/pages/dsui/list_page.html</Input>
+<Input name="URLModification">Absolute</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc137"><BuilderDefID>com.bowstreet.builders.webapp.InsertedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:InsertFilter_OnListPage_BuilderCallEnabled">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzList</Page>
+<NameSearch>search_section</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Page">zzFilter</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc25"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ViewPageEnabled">true</Input>
+<Input name="PageType">Infer</Input>
+<Input name="inputObjectType">String</Input>
+<Input name="CreateTags">true</Input>
+<Input name="UseTheme">false</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">LeaveNameless</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="InitializeInputsWhen">OnModelLoad</Input>
+<Input name="ValidateFromSchema">Both</Input>
+<Input name="BeanValidation">Both</Input>
+<Input name="ValidationMethodBehavior">CallAlways</Input>
+<Input name="ValidationErrorPlacement">ColumnRight</Input>
+<Input name="RequiredPromptPlacement">ColumnLeft</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="LocalizedResource">zzResource</Input>
+<Input name="TranslateHTMLLabels">true</Input>
+<Input name="TypedVariable" profile="dsui_ViewPage:ViewPage_DataPageVariable">DataServices/XXX/getOrders/results</Input>
+<Input name="PageName">zzList</Input>
+<Input name="CreateTagsLocation">data_placed_here</Input>
+<Input name="DefaultName">zzList</Input>
+<Input name="TemplateFile" profile="dsui_ViewPage:DataPage_TemplateFile">/factory/html_templates/color_themes.html</Input>
+<Input name="StyleSheetOverride" profile="dsui_ViewPage:DataPage_StyleSheetOverride"></Input>
+<Input name="RuntimeHTMLLabels" profile="dsui_Base:LocalizedResource_EnableRuntimeLocalization">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc69"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPageTableModifier</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ViewPageEnabled">true</Input>
+<Input name="DataPagingPageSize" profile="dsui_ViewPage:ListPage_DataPagingPageSize">5</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="DeleteColumnStyle" profile="dsui_ViewPage:ListPage_DeleteColumnStyle">Link</Input>
+<Input name="DeleteLinkText">${Variables/zzResource/Data/delete.column.buttonOrLink.text}</Input>
+<Input name="DeleteButtonText">Delete</Input>
+<Input name="DeleteMethodType">byKeyNoRemove</Input>
+<Input name="ManageColumns">false</Input>
+<Input name="PlaceAddedColumns">After</Input>
+<Input name="EmptyDataAction">HeadersMessage</Input>
+<Input name="FlattenChildren">NoChange</Input>
+<Input name="SingleField" profile="dsui_ViewPage:ListPage_Table_PageAuto_Selector">[zzList]zzList/RowSet/Row</Input>
+<Input name="ChildrenInfo"><Columns><Column><Name>ORDER_ID</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>DATE_ORDERED</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>STATUS</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>DATE_SHIPPED</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>QUANTITY</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>AMOUNT</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>BILLING</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>SHIPPED</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>STATE</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+</Columns>
+</Input>
+<Input name="LoopVarName">zzListLoopVar</Input>
+<Input name="CounterVarName">zzListCounterVar</Input>
+<Input name="EnableDataPaging" profile="dsui_ViewPage:ListPage_EnableDataPaging">true</Input>
+<Input name="PagingAsstName">zzListPagingAsst</Input>
+<Input name="Name">ListDCM</Input>
+<Input name="DeleteMethod">zzDeleteFromListPage</Input>
+<Input name="KeyField" profile="dsui_ViewPage:ListPage_KeyField">ORDER_ID</Input>
+<Input name="DeleteColumnHead">${Variables/zzResource/Data/delete.column.heading}</Input>
+<Input name="EmptyDataMessage">${Variables/zzResource/Data/list.page.no.data.found.message}</Input>
+<Input name="AddOtherColumns" profile="dsui_ViewPage:ListPage_AddOtherColumns">InsertedColumnEdit</Input>
+<Input name="DefaultName">Row</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc143"><BuilderDefID>com.bowstreet.builders.webapp.SplitPagerBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ListPage_EnableDataPaging">true</Input>
+<Input name="UseTheme" profile="dsui_ViewPage:ListPage_UseTheme">false</Input>
+<Input name="StyleSheet">${Properties/bowstreet.Theme/SplitPager_StyleSheet}</Input>
+<Input name="TopBasePage">${Properties/bowstreet.Theme/SplitPager_TopBasePage}</Input>
+<Input name="BottomBasePage">${Properties/bowstreet.Theme/SplitPager_BottomBasePage}</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzList</Page>
+<NameSearch>paging_buttons</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="AssistantName">zzListPagingAsst</Input>
+<Input name="UsePartialPageRefresh" profile="dsui_ViewPage:ListPage_Pager_UsePartialPageRefresh">true</Input>
+<Input name="UITypeOverride" profile="dsui_ViewPage:ListPage_Pager_UITypeOverride">Theme</Input>
+<Input name="UseRefreshLocation">true</Input>
+<Input name="DoFormSubmission">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc65"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ContinueFromViewMethodEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzContinueFromList</Input>
+<Input name="Arguments"><top><Argument><Name>id</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>continuation</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Actions"><Actions><Action><ActionType>Method</ActionType>
+<ActionName>zzSaveSelectedRow(${DataServices/XXX/getOrders/results},${Variables/zzViewLoopVar/Row/ORDER_ID})</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzToDetailPage</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Body" profile="dsui_ViewPage:ContinueFromViewMethodBody">{
+
+
+    // Line 1: zzSaveSelectedRow(${DataServices/XXX/getOrders/results},${Variables/zzViewLoopVar/Row/ORDER_ID})
+    zzSaveSelectedRow( webAppAccess,  webAppAccess.getDataServiceParameterXml("XXX", "getOrders", "results", null),  id  );
+
+    // Line 2: zzToDetailPage
+    webAppAccess.processAction("zzToDetailPage");
+    
+}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc74"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:VPageToDetaillinkEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="KeepCurrentPage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzList</Page>
+<NameSearch profile="dsui_ViewPage:PageLocation_ForLink">ORDER_ID</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Action">zzContinueFromList</Input>
+<Input name="InputMappings"><top><InputMapping><Name>zzContinueFromList_Arg_id</Name>
+<Value profile="dsui_ViewPage:RefIDFieldFromViewLoopVar">${Variables/zzListLoopVar/Row/ORDER_ID}</Value>
+</InputMapping>
+<InputMapping><Name>zzContinueFromList_Arg_continuation</Name>
+<Value>zzToDetailPage</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">zzContinueFromList</Input>
+<Input name="Name">ListPageToDetail</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc82"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ViewPageLinkToEventEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">true</Input>
+<Input name="PostActionBehavior" profile="dsui_DetailPage:EventLink_PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">true</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="KeepCurrentPage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzList</Page>
+<NameSearch profile="dsui_ViewPage:PageLocation_ForLink">ORDER_ID</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Action" profile="dsui_DetailPage:Fire_DetailEventName_Event">firezzModelNameDetailEvent</Input>
+<Input name="InputMappings"><top><InputMapping><Name profile="dsui_DetailPage:Fire_DetailEventName_Arg_id">firezzModelNameDetailEvent_Arg_id</Name>
+<Value profile="dsui_ViewPage:RefIDFieldFromViewLoopVar">${Variables/zzListLoopVar/Row/ORDER_ID}</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">zzContinueFromList</Input>
+<Input name="Name">ListPageToEvent</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc163"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ListPage_BackToFilterButtonEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzList</Page>
+<NameSearch>back_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/list.page.back.to.filter.text}</Input>
+<Input name="Action">zzToFilterPage</Input>
+<Input name="ActionURL">zzToFilterPage</Input>
+<Input name="Name">ListPage_BackButton</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc108"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ViewPageCreateNewButtonEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">false</Input>
+<Input name="Name">ListPage_Create</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzList</Page>
+<NameSearch>create_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/create.new.button.text}</Input>
+<Input name="InputMappings"><top><InputMapping><Name>zzToCreatePage_Arg1</Name>
+<Value>zzToListPage</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">zzToCreatePage</Input>
+<Input name="Action">zzToCreatePage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc165"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ListPage_toQueryPage_ButtonEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">ListPage_ToQuery</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzList</Page>
+<NameSearch>search_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/list.page.to.query.page.button.text}</Input>
+<Input name="Action">zzToQueryPage</Input>
+<Input name="ActionURL">zzToQueryPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc170"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ListPage_DeleteColumnEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzDeleteFromListPage</Input>
+<Input name="Arguments"><top><Argument><Name>id</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName profile="dsui_ViewPage:AssignArgIdToDeleteInputs">Assignment!DataServices/XXX/deleteOrder/inputs/Row/ORDER_ID=${Arguments/id}</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName profile="dsui_ViewPage:DeleteOperationAction">DataServices/XXX/deleteOrder</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzDirtyFlags/IsDirty/List=true</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzDirtyFlags/IsDirty/SearchResults=true</ActionName>
+</Action>
+<Action xmlEnablementProfile="dsui_ViewPage:ListToDeleteIsNOTCheckedStyle"><ActionType />
+<ActionName>zzToListPage</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc173"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ListPage_ToUpdatePage_ActionListEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzUpdateFromListPage</Input>
+<Input name="Arguments"><top><Argument><Name>id</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Actions"><Actions><Action xmlEnablementProfile="dsui_ViewPage:ListPageToUpdatePageViaDetailsOpActionEnabled"><ActionType>Method</ActionType>
+<ActionName>zzToUpdateUsingDetailsOpResults(zzToListPage,${Arguments/id})</ActionName>
+</Action>
+<Action xmlEnablementProfile="dsui_ViewPage:ListPageToUpdatePageViaSelectedRowDataActionEnabled"><ActionType>Method</ActionType>
+<ActionName profile="dsui_ViewPage:ListPageCallSaveSelectedRowDataAction">zzSaveSelectedRow(${DataServices/XXX/getOrders/results},${Arguments/id})</ActionName>
+</Action>
+<Action xmlEnablementProfile="dsui_ViewPage:ListPageToUpdatePageViaSelectedRowDataActionEnabled"><ActionType>Method</ActionType>
+<ActionName>zzToUpdateUsingSelectedRow(zzToListPage)</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc178"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages><Warning><Message>This BuilderCall overwrites the effect of another BuilderCall.  (This may be intentional, in which case this warning can be ignored.)</Message>
+</Warning>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ListPage_LinkToUpdatePage_Enabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="KeepCurrentPage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">ListPageToUpdateLink</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzList</Page>
+<NameSearch>InsertedColumnEdit</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/zzResource/Data/edit.column.button.text}</Input>
+<Input name="Action">zzUpdateFromListPage</Input>
+<Input name="InputMappings"><top><InputMapping><Name>zzUpdateFromListPage_Arg1</Name>
+<Value profile="dsui_ViewPage:RefIDFieldFromViewLoopVar">${Variables/zzListLoopVar/Row/ORDER_ID}</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">zzUpdateFromListPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc175"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ListPage_ButtonToUpdatePage_Enabled">false</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="KeepCurrentPage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">ListPageToUpdateButton</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzList</Page>
+<NameSearch>InsertedColumnEdit</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/zzResource/Data/edit.column.button.text}</Input>
+<Input name="Action">zzUpdateFromListPage</Input>
+<Input name="InputMappings"><top><InputMapping><Name>zzUpdateFromListPage_Arg1</Name>
+<Value profile="dsui_ViewPage:RefIDFieldFromViewLoopVar">${Variables/zzListLoopVar/Row/ORDER_ID}</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">zzUpdateFromListPage</Input>
+<Input name="Label">${Variables/zzResource/Data/edit.column.button.text}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc186"><BuilderDefID>com.bowstreet.builders.webapp.EnhancedTableModifierBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ListPage_DojoTableFeatures_Enabled">false</Input>
+<Input name="PageLocationType">Container</Input>
+<Input name="EnableInlineEdit">false</Input>
+<Input name="FireRowClick">false</Input>
+<Input name="FireRowDoubleClick">false</Input>
+<Input name="DoubleClickTime">500</Input>
+<Input name="AllowResize">true</Input>
+<Input name="AllowReorder">true</Input>
+<Input name="DojoType">CustomExtension</Input>
+<Input name="CustomDojoType">wpf.widget.EnhancedTable</Input>
+<Input name="AddRequires">true</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="HandleMissingValue">Ignore</Input>
+<Input name="Separator">;</Input>
+<Input name="Container" profile="dsui_ViewPage:ListPage_Table_PageAuto_Selector">[zzList]zzList/RowSet/Row</Input>
+<Input name="Name">zzList</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc188"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.Highlighter</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ListPage_Highlighter_Enabled">true</Input>
+<Input name="FieldSelector">Name</Input>
+<Input name="Method">Style</Input>
+<Input name="Color">LightBlue</Input>
+<Input name="Fields"><Fields><Field profile="dsui_ViewPage:ListPage_Table_PageAuto_Selector">[zzList]zzList/RowSet/Row</Field>
+</Fields>
+</Input>
+<Input name="Style"><top><Property><Name>color</Name>
+<Value profile="dsui_ViewPage:Highlighter_Color">#ffffff</Value>
+</Property>
+<Property><Name>background-color</Name>
+<Value profile="dsui_ViewPage:Highlighter_BackgroundColor">#60A1EA</Value>
+</Property>
+</top>
+</Input>
+<Input name="Name">ListPageHighlighter</Input>
+<Input name="DefaultName">Row</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc192"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_ViewPage:ListPageDeleteCheckedButtonEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class>vf_smallButton</class>
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzList</Page>
+<NameSearch profile="dsui_ViewPage:ListPage_PageAutoDelete_TagName">Row_PageAutoDeleteHeader</NameSearch>
+<InsertionModifier>After</InsertionModifier>
+<NewNodeName>zzDelCheckedButton</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/delete.checked.button.text}</Input>
+<Input name="Action">zzToListPage</Input>
+<Input name="ActionURL">zzToListPage</Input>
+<Input name="Name">DeleteCheckedOnList</Input>
+<Input name="class">vf_smallButton</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc33"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Filter Page</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc42"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_FilterPage:FilterPageEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Name">zzToFilterPage</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>zzFilter</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc35"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_FilterPage:FilterPageImportedPageEnabled">true</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="URLModification">Relative</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="UseJSPCode">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="FullyParse">false</Input>
+<Input name="LocalizationVariable">LocaleInfo</Input>
+<Input name="Name">zzFilter</Input>
+<Input name="URL" profile="dsui_Base:FilterPage_URL">/factory/pages/dsui/filter.html</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc37"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_FilterPage:FilterPageEnabled">true</Input>
+<Input name="PageType">DataEntry</Input>
+<Input name="inputObjectType">String</Input>
+<Input name="CreateTags">true</Input>
+<Input name="UseTheme">false</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">LeaveNameless</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="InitializeInputsWhen">OnModelLoad</Input>
+<Input name="ValidateFromSchema" profile="dsui_FilterPage:FilterPage_ValidateFromSchema">None</Input>
+<Input name="BeanValidation">Both</Input>
+<Input name="ValidationMethodBehavior">CallAlways</Input>
+<Input name="ValidationErrorPlacement">ColumnRight</Input>
+<Input name="RequiredPromptPlacement">ColumnLeft</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="LocalizedResource">zzResource</Input>
+<Input name="TranslateHTMLLabels">true</Input>
+<Input name="PageName">zzFilter</Input>
+<Input name="TypedVariable" profile="dsui_FilterPage:FilterPageDataPageVariable">DataServices/XXX/searchOrders/inputs</Input>
+<Input name="CreateTagsLocation">data_placed_here</Input>
+<Input name="DefaultName">zzFilter</Input>
+<Input name="ValidationSuccessAction">zzToListPageForceRequery</Input>
+<Input name="TemplateFile" profile="dsui_FilterPage:DataPage_TemplateFile">/factory/html_templates/color_themes.html</Input>
+<Input name="StyleSheetOverride" profile="dsui_FilterPage:DataPage_StyleSheetOverride"></Input>
+<Input name="RuntimeHTMLLabels" profile="dsui_Base:LocalizedResource_EnableRuntimeLocalization">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc41"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_FilterPage:SubmitFilterButtonEnabled">false</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzFilter</Page>
+<NameSearch>submit_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/filter.page.apply.filter.button.text}</Input>
+<Input name="Action">zzFilter_NextAction</Input>
+<Input name="ActionURL">zzToSearchResultsPage</Input>
+<Input name="Name">FilterSubmit</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc129"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Query Page</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc125"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_QueryPage:QueryPageEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzToQueryPage</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzDirtyFlags/IsDirty/SearchResults=true</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzQuery</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc127"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_QueryPage:QueryPage_ImportedPageEnabled">true</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="URLModification">Relative</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="UseJSPCode">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="FullyParse">false</Input>
+<Input name="LocalizationVariable">LocaleInfo</Input>
+<Input name="Name">zzQuery</Input>
+<Input name="URL" profile="dsui_Base:QueryPageURL">/factory/pages/dsui/query.html</Input>
+<Input name="EditPage">Edit Page</Input>
+<Input name="PageEditor">&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;DIV class="vf_field_container" name="vf_field_container"&gt;
+  &lt;DIV class="vf_header" name="vf_header"&gt;&lt;/DIV&gt;
+  &lt;FORM name="filter_form" method="POST"&gt;
+    &lt;DIV name="vf_fields"&gt;
+      &lt;SPAN name="query_data"&gt;&lt;/SPAN&gt;
+    &lt;/DIV&gt;
+    &lt;DIV class="vf_buttons" name="vf_buttons"&gt;
+      &lt;SPAN name="cancel_button"&gt;&lt;/SPAN&gt;
+      &lt;SPAN name="submit_button"&gt;&lt;/SPAN&gt;
+      &lt;SPAN name="extra_button1"&gt;&lt;/SPAN&gt;
+      &lt;SPAN name="extra_button2"&gt;&lt;/SPAN&gt;
+    &lt;/DIV&gt;
+  &lt;/FORM&gt;
+  &lt;DIV class="vf_footer" name="vf_footer"&gt;&lt;/DIV&gt;
+&lt;/DIV&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc131"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_QueryPage:QueryPageEnabled">true</Input>
+<Input name="PageType">DataEntry</Input>
+<Input name="inputObjectType">String</Input>
+<Input name="CreateTags">true</Input>
+<Input name="UseTheme">false</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">LeaveNameless</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="InitializeInputsWhen">OnModelLoad</Input>
+<Input name="ValidateFromSchema" profile="dsui_QueryPage:QueryPage_ValidateFromSchema">Both</Input>
+<Input name="BeanValidation">Both</Input>
+<Input name="ValidationMethodBehavior">CallAlways</Input>
+<Input name="ValidationErrorPlacement">ColumnRight</Input>
+<Input name="RequiredPromptPlacement">ColumnLeft</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="LocalizedResource">zzResource</Input>
+<Input name="TranslateHTMLLabels">true</Input>
+<Input name="RuntimeHTMLLabels" profile="dsui_Base:LocalizedResource_EnableRuntimeLocalization">true</Input>
+<Input name="TemplateFile" profile="dsui_QueryPage:DataPage_TemplateFile">/factory/html_templates/color_themes.html</Input>
+<Input name="TypedVariable" profile="dsui_QueryPage:QueryPage_DataPageVariable">DataServices/XXX/searchOrders/inputs</Input>
+<Input name="PageName">zzQuery</Input>
+<Input name="CreateTagsLocation">data_placed_here</Input>
+<Input name="DefaultName">zzQuery</Input>
+<Input name="ValidationSuccessAction">zzToSearchResultsPageForceRequery</Input>
+<Input name="StyleSheetOverride" profile="dsui_QueryPage:DataPage_StyleSheetOverride"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc133"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_QueryPage:QueryPage_SubmitButtonEnabled">false</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzQuery</Page>
+<NameSearch>submit_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/query.page.search.button.text}</Input>
+<Input name="Action">zzQuery_NextAction</Input>
+<Input name="ActionURL">zzToSearchResultsPage</Input>
+<Input name="Name">QuerySubmit</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc27"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Search Results Page</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc203"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:SearchResultsPageEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Name">zzToSearchResultsPage</Input>
+<Input name="Actions"><Actions><Action><ActionType>Conditional</ActionType>
+<ActionName>IF (${Variables/zzDirtyFlags/IsDirty/SearchResults} != false) THEN</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName profile="dsui_SearchResultsPage:SearchResultsAction">DataServices/XXX/searchOrders</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>    Variables/zzDirtyFlags/IsDirty/SearchResults=false</ActionName>
+</Action>
+<Action><ActionType>Conditional</ActionType>
+<ActionName>ENDIF</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzSearchResults</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:SearchResultsPageEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Name">zzToSearchResultsPageForceRequery</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzDirtyFlags/IsDirty/SearchResults=true</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzToSearchResultsPage</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc29"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:SearchResultsPageImportedPageEnabled">true</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="URLModification">Relative</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="UseJSPCode">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="FullyParse">false</Input>
+<Input name="LocalizationVariable">LocaleInfo</Input>
+<Input name="Name">zzSearchResults</Input>
+<Input name="URL" profile="dsui_Base:SearchResultsPage_URL">/factory/pages/dsui/search_results.html</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc135"><BuilderDefID>com.bowstreet.builders.webapp.InsertedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:Insert_QueryPage_BuilderCallEnabled">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzSearchResults</Page>
+<NameSearch>search_section</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Page">zzQuery</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc31"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:SearchResultsPageEnabled">true</Input>
+<Input name="PageType">ViewOnly</Input>
+<Input name="inputObjectType">String</Input>
+<Input name="CreateTags">true</Input>
+<Input name="UseTheme">false</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">LeaveNameless</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="InitializeInputsWhen">OnModelLoad</Input>
+<Input name="ValidateFromSchema">Both</Input>
+<Input name="BeanValidation">Both</Input>
+<Input name="ValidationMethodBehavior">CallAlways</Input>
+<Input name="ValidationErrorPlacement">ColumnRight</Input>
+<Input name="RequiredPromptPlacement">ColumnLeft</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="LocalizedResource">zzResource</Input>
+<Input name="TranslateHTMLLabels">true</Input>
+<Input name="TemplateFile" profile="dsui_SearchResultsPage:DataPage_TemplateFile">/factory/html_templates/color_themes.html</Input>
+<Input name="TypedVariable" profile="dsui_SearchResultsPage:SsearchResultsPage_DataPageVariable">DataServices/XXX/searchOrders/results</Input>
+<Input name="PageName">zzSearchResults</Input>
+<Input name="CreateTagsLocation">data_placed_here</Input>
+<Input name="DefaultName">zzSearchResults</Input>
+<Input name="StyleSheetOverride" profile="dsui_SearchResultsPage:DataPage_StyleSheetOverride"></Input>
+<Input name="RuntimeHTMLLabels" profile="dsui_Base:LocalizedResource_EnableRuntimeLocalization">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc71"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPageTableModifier</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:SearchResultsPageEnabled">true</Input>
+<Input name="DataPagingPageSize" profile="dsui_SearchResultsPage:ResultsPage_DataPagingPageSize">5</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="DeleteColumnStyle" profile="dsui_SearchResultsPage:ResultsPage_DeleteColumnStyle">Checkboxes</Input>
+<Input name="DeleteLinkText">${Variables/zzResource/Data/delete.column.buttonOrLink.text}</Input>
+<Input name="DeleteButtonText">Delete</Input>
+<Input name="DeleteMethodType">byKeyNoRemove</Input>
+<Input name="ManageColumns">false</Input>
+<Input name="PlaceAddedColumns">After</Input>
+<Input name="EmptyDataAction">HeadersMessage</Input>
+<Input name="FlattenChildren">NoChange</Input>
+<Input name="SingleField" profile="dsui_SearchResultsPage:ResultsPage_Table_Selector">[zzSearchResults]zzSearchResults/RowSet/Row</Input>
+<Input name="ChildrenInfo"><Columns><Column><Name>ORDER_ID</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>DATE_ORDERED</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>STATUS</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>DATE_SHIPPED</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>QUANTITY</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>AMOUNT</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>BILLING</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>SHIPPED</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>STATE</Name>
+<Status>Do Not Change</Status>
+<Heading>[Do Not Change]</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+</Columns>
+</Input>
+<Input name="LoopVarName">zzSearchResultsLoopVar</Input>
+<Input name="CounterVarName">zzSearchResultsCounterVar</Input>
+<Input name="DefaultName">Row</Input>
+<Input name="EmptyDataMessage">${Variables/zzResource/Data/results.page.no.data.found.message}</Input>
+<Input name="EnableDataPaging" profile="dsui_SearchResultsPage:ResultsPage_EnableDataPaging">true</Input>
+<Input name="PagingAsstName">zzSearchResultsPagingAsst</Input>
+<Input name="Name">ResultsDCM</Input>
+<Input name="AddOtherColumns" profile="dsui_SearchResultsPage:ResultsPage_AddOtherColumns">InsertedColumnEdit</Input>
+<Input name="DeleteMethod">zzDeleteFromSearchResultsPage</Input>
+<Input name="KeyField" profile="dsui_SearchResultsPage:ResultsPage_KeyField">ORDER_ID</Input>
+<Input name="DeleteColumnHead">${Variables/zzResource/Data/delete.column.heading}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc145"><BuilderDefID>com.bowstreet.builders.webapp.SplitPagerBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:ResultsPage_EnableDataPaging">true</Input>
+<Input name="UseTheme" profile="dsui_SearchResultsPage:ResultsPage_UseTheme">false</Input>
+<Input name="StyleSheet">${Properties/bowstreet.Theme/SplitPager_StyleSheet}</Input>
+<Input name="TopBasePage">${Properties/bowstreet.Theme/SplitPager_TopBasePage}</Input>
+<Input name="BottomBasePage">${Properties/bowstreet.Theme/SplitPager_BottomBasePage}</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzSearchResults</Page>
+<NameSearch>paging_buttons</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="AssistantName">zzSearchResultsPagingAsst</Input>
+<Input name="UsePartialPageRefresh" profile="dsui_SearchResultsPage:ResultsPage_Pager_UsePartialPageRefresh">true</Input>
+<Input name="UITypeOverride" profile="dsui_SearchResultsPage:ResultsPage_Pager_UITypeOverride"></Input>
+<Input name="UseRefreshLocation">true</Input>
+<Input name="DoFormSubmission">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc75"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:ContinueFromSRPageMethodEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzContinueFromSearchResults</Input>
+<Input name="Arguments"><top><Argument><Name>id</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>continuation</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Actions"><Actions><Action><ActionType>Method</ActionType>
+<ActionName>zzSaveSelectedRow(${DataServices/XXX/getOrders/results},${Variables/zzViewLoopVar/Row/ORDER_ID})</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzToDetailPage</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Body" profile="dsui_SearchResultsPage:ContinueFromSRPageMethodBody">{
+   zzSaveSelectedRow( webAppAccess,  webAppAccess.getDataServiceParameterXml("XXX", "searchOrders", "results", null),  id  );
+   webAppAccess.processAction(continuation);
+}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc63"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:SRPageBackButtonEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzSearchResults</Page>
+<NameSearch>back_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/results.page.back.to.query.button.text}</Input>
+<Input name="Action">zzToQueryPage</Input>
+<Input name="ActionURL">zzToFilterPage</Input>
+<Input name="Name">ResultsBackButton</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc149"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:ResultsPage_CreateButton_Enabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">false</Input>
+<Input name="Name">ResultsToCreate</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzSearchResults</Page>
+<NameSearch>create_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/create.new.button.text}</Input>
+<Input name="Action">zzToCreatePage</Input>
+<Input name="InputMappings"><top><InputMapping><Name>zzToCreatePage_Arg1</Name>
+<Value>zzToSearchResultsPage</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">zzToCreatePage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc73"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:SRPageLinkToDetailPageEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="KeepCurrentPage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzSearchResults</Page>
+<NameSearch profile="dsui_SearchResultsPage:PageLocation_Tag">ORDER_ID</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Action">zzContinueFromSearchResults</Input>
+<Input name="InputMappings"><top><InputMapping><Name>zzContinueFromSearchResults_Arg_id</Name>
+<Value profile="dsui_SearchResultsPage:RefIDFieldInSRPageLoopVar">${Variables/zzSearchResultsLoopVar/Row/ORDER_ID}</Value>
+</InputMapping>
+<InputMapping><Name>zzContinueFromSearchResults_Arg_continuation</Name>
+<Value>zzToDetailPage</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">zzContinueFromList</Input>
+<Input name="Name">SRPageToDetail</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc83"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:SRPageLinkToEventEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior" profile="dsui_DetailPage:EventLink_PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">true</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="KeepCurrentPage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzSearchResults</Page>
+<NameSearch profile="dsui_SearchResultsPage:PageLocation_Tag">ORDER_ID</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Action" profile="dsui_DetailPage:Fire_DetailEventName_Event">firezzModelNameDetailEvent</Input>
+<Input name="InputMappings"><top><InputMapping><Name profile="dsui_DetailPage:Fire_DetailEventName_Arg_id">firezzModelNameDetailEvent_Arg_id</Name>
+<Value profile="dsui_SearchResultsPage:RefIDFieldInSRPageLoopVar">${Variables/zzSearchResultsLoopVar/Row/ORDER_ID}</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">zzContinueFromList</Input>
+<Input name="Name">SRPageToEvent</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc168"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:ResultsPage_ToListPage_ButtonEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">ResultsToListButton</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzSearchResults</Page>
+<NameSearch>show_all_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/results.page.to.list.page.button.text}</Input>
+<Input name="Action">zzToListPage</Input>
+<Input name="ActionURL">zzToListPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc179"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:ResultsPage_DeleteColumnEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzDeleteFromSearchResultsPage</Input>
+<Input name="Arguments"><top><Argument><Name>id</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName profile="dsui_ViewPage:AssignArgIdToDeleteInputs">Assignment!DataServices/XXX/deleteOrder/inputs/Row/ORDER_ID=${Arguments/id}</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName profile="dsui_ViewPage:DeleteOperationAction">DataServices/XXX/deleteOrder</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzDirtyFlags/IsDirty/List=true</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzDirtyFlags/IsDirty/SearchResults=true</ActionName>
+</Action>
+<Action xmlEnablementProfile="dsui_SearchResultsPage:ResultsToDeleteIsNOTCheckedStyle"><ActionType />
+<ActionName>zzToSearchResultsPage</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc180"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:ResultsPage_ToUpdatePage_ActionListEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzUpdateFromSearchResultsPage</Input>
+<Input name="Arguments"><top><Argument><Name>id</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Actions"><Actions><Action xmlEnablementProfile="dsui_SearchResultsPage:ResultsPageToUpdatePageViaDetailsOpActionEnabled"><ActionType>Method</ActionType>
+<ActionName>zzToUpdateUsingDetailsOpResults(zzToSearchResultsPage,${Arguments/id})</ActionName>
+</Action>
+<Action xmlEnablementProfile="dsui_SearchResultsPage:ResultsPageToUpdatePageViaSelectedRowDataActionEnabled"><ActionType>Method</ActionType>
+<ActionName profile="dsui_SearchResultsPage:ResultsPageCallSaveSelectedRowDataAction">zzSaveSelectedRow(${DataServices/XXX/getOrders/results},${Arguments/id})</ActionName>
+</Action>
+<Action xmlEnablementProfile="dsui_SearchResultsPage:ResultsPageToUpdatePageViaSelectedRowDataActionEnabled"><ActionType>Method</ActionType>
+<ActionName>zzToUpdateUsingSelectedRow(zzToSearchResultsPage)</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc183"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages><Warning><Message>This BuilderCall overwrites the effect of another BuilderCall.  (This may be intentional, in which case this warning can be ignored.)</Message>
+</Warning>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:ResultsPage_LinkToUpdatePage_Enabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="KeepCurrentPage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">ResultsPageToUpdateLink</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzSearchResults</Page>
+<NameSearch>InsertedColumnEdit</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/zzResource/Data/edit.column.button.text}</Input>
+<Input name="Action">zzUpdateFromSearchResultsPage</Input>
+<Input name="InputMappings"><top><InputMapping><Name>zzUpdateFromSearchResultsPage_Arg1</Name>
+<Value profile="dsui_SearchResultsPage:RefIDFieldInSRPageLoopVar">${Variables/zzSearchResultsLoopVar/Row/ORDER_ID}</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">zzUpdateFromListPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc184"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:ResultsPage_ButtonToUpdatePage_Enabled">false</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="KeepCurrentPage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">ResultsPageToUpdateButton</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzSearchResults</Page>
+<NameSearch>InsertedColumnEdit</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/zzResource/Data/edit.column.button.text}</Input>
+<Input name="Action">zzUpdateFromSearchResultsPage</Input>
+<Input name="InputMappings"><top><InputMapping><Name>zzUpdateFromSearchResultsPage_Arg1</Name>
+<Value profile="dsui_SearchResultsPage:RefIDFieldInSRPageLoopVar">${Variables/zzSearchResultsLoopVar/Row/ORDER_ID}</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">zzUpdateFromListPage</Input>
+<Input name="Label">${Variables/zzResource/Data/edit.column.button.text}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc189"><BuilderDefID>com.bowstreet.builders.webapp.EnhancedTableModifierBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:ResultsPage_DojoTableFeatures_Enabled">false</Input>
+<Input name="PageLocationType">Container</Input>
+<Input name="EnableInlineEdit">false</Input>
+<Input name="FireRowClick">false</Input>
+<Input name="FireRowDoubleClick">false</Input>
+<Input name="DoubleClickTime">500</Input>
+<Input name="AllowResize">true</Input>
+<Input name="AllowReorder">true</Input>
+<Input name="DojoType">CustomExtension</Input>
+<Input name="CustomDojoType">wpf.widget.EnhancedTable</Input>
+<Input name="AddRequires">true</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="HandleMissingValue">Ignore</Input>
+<Input name="Separator">;</Input>
+<Input name="Container" profile="dsui_SearchResultsPage:ResultsPage_Table_Selector">[zzSearchResults]zzSearchResults/RowSet/Row</Input>
+<Input name="Name">zzSearchResults</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc190"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.Highlighter</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:ResultsPage_Highlighter_Enabled">true</Input>
+<Input name="FieldSelector">Name</Input>
+<Input name="Method">Style</Input>
+<Input name="Color">LightBlue</Input>
+<Input name="Fields"><Fields><Field profile="dsui_SearchResultsPage:ResultsPage_Table_Selector">[zzSearchResults]zzSearchResults/RowSet/Row</Field>
+</Fields>
+</Input>
+<Input name="Style"><top><Property><Name>color</Name>
+<Value profile="dsui_ViewPage:Highlighter_Color">#ffffff</Value>
+</Property>
+<Property><Name>background-color</Name>
+<Value profile="dsui_ViewPage:Highlighter_BackgroundColor">#60A1EA</Value>
+</Property>
+</top>
+</Input>
+<Input name="Name">SearchResultsPageHighlighter</Input>
+<Input name="DefaultName">Row</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc195"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_SearchResultsPage:ResultsPageDeleteCheckedButtonEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class>vf_smallButton</class>
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzSearchResults</Page>
+<NameSearch profile="dsui_SearchResultsPage:ResultsPage_PageAutoDelete_TagName">Row_PageAutoDeleteHeader</NameSearch>
+<InsertionModifier>After</InsertionModifier>
+<NewNodeName>zzDelCheckedButton</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/delete.checked.button.text}</Input>
+<Input name="Action">zzToSearchResultsPage</Input>
+<Input name="ActionURL">zzToListPage</Input>
+<Input name="Name">DeleteCheckedOnSR</Input>
+<Input name="class">vf_smallButton</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc45"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Detail Page</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc209"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:DetailsPageEnabled">true</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">zzDetailsReturnTo</Input>
+<Input name="Type">String</Input>
+<Input name="Value">zzToListPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc196"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:DetailsPageEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzToDetailPage</Input>
+<Input name="Actions"><Actions><Action xmlEnablementProfile="dsui_DetailPage:detailsFromServiceBool"><ActionType>Assignment</ActionType>
+<ActionName profile="dsui_DetailPage:AssignSelectedRowIDtoDetailsActionID">Assignment!DataServices/XXX/getOrder/inputs/Row/ORDER_ID=${Variables/zzSelectedRow/Row/ORDER_ID}</ActionName>
+</Action>
+<Action xmlEnablementProfile="dsui_DetailPage:detailsFromServiceBool"><ActionType />
+<ActionName profile="dsui_DetailPage:DetailsFetchAction">DataServices/XXX/getOrder</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzDetail</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc55"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:DetailsPageEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzToDetailPageWithArg</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName profile="dsui_DetailPage:AssignSelectedRowIDFromArgument">Assignment!Variables/zzSelectedRow/Row/ORDER_ID=${Arguments/id}</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzToDetailPage</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Arguments"><top><Argument><Name>id</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc53"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:DetailPageImportedPageEnabled">true</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="URLModification">Relative</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="UseJSPCode">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="FullyParse">false</Input>
+<Input name="LocalizationVariable">LocaleInfo</Input>
+<Input name="Name">zzDetail</Input>
+<Input name="URL" profile="dsui_Base:DetailsPageURL">/factory/pages/dsui/details.html</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc57"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:DetailsPageEnabled">true</Input>
+<Input name="PageType">ViewOnly</Input>
+<Input name="inputObjectType">String</Input>
+<Input name="CreateTags">true</Input>
+<Input name="UseTheme">false</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">LeaveNameless</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="InitializeInputsWhen">OnModelLoad</Input>
+<Input name="ValidateFromSchema">Both</Input>
+<Input name="BeanValidation">Both</Input>
+<Input name="ValidationMethodBehavior">CallAlways</Input>
+<Input name="ValidationErrorPlacement">ColumnRight</Input>
+<Input name="RequiredPromptPlacement">ColumnLeft</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="LocalizedResource">zzResource</Input>
+<Input name="TranslateHTMLLabels">true</Input>
+<Input name="PageName">zzDetail</Input>
+<Input name="TemplateFile" profile="dsui_DetailPage:DataPage_TemplateFile">/factory/html_templates/color_themes.html</Input>
+<Input name="TypedVariable" profile="dsui_DetailPage:DetailsPageDataPageVariable">DataServices/XXX/getOrder/results</Input>
+<Input name="CreateTagsLocation">data_placed_here</Input>
+<Input name="DefaultName">zzDetail</Input>
+<Input name="StyleSheetOverride" profile="dsui_DetailPage:DataPage_StyleSheetOverride"></Input>
+<Input name="RuntimeHTMLLabels" profile="dsui_Base:LocalizedResource_EnableRuntimeLocalization">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc153"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:DetailPageToUpdatePageButtonEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">false</Input>
+<Input name="Name">DetailsToUpdateButton</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzDetail</Page>
+<NameSearch>update_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/details.page.to.update.page.button.text}</Input>
+<Input name="Action">zzToUpdateUsingDetailsOpResults</Input>
+<Input name="InputMappings"><top><InputMapping><Name>zzToUpdateUsingDetailsOpResults_Arg1</Name>
+<Value>zzToDetailPage</Value>
+</InputMapping>
+<InputMapping><Name>zzToUpdateUsingDetailsOpResults_Arg2</Name>
+<Value />
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">zzToUpdatePage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc157"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:DetailsPage_BackToListButtonEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">false</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzDetail</Page>
+<NameSearch>back_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/details.page.back.to.list.button.text}</Input>
+<Input name="Action">zzIndirectReturn</Input>
+<Input name="ActionURL">zzList</Input>
+<Input name="InputMappings"><top><InputMapping><Name>zzIndirectReturn_Arg1</Name>
+<Value>zzDetailsReturnTo</Value>
+</InputMapping>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc206"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:DeleteFromDetails_ActionList_Enabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzDeleteFromDetailsPage</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName profile="dsui_DetailPage:AssignDetailsIDToDeleteInputsID">Assignment!DataServices/XXX/deleteOrder/inputs/RowToSelectOne/ORDER_ID=${DataServices/XXX/getOrder/results/Row/ORDER_ID}</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName profile="dsui_ViewPage:DeleteOperationAction">DataServices/XXX/deleteOrder</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzDirtyFlags/IsDirty/List=true</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzDirtyFlags/IsDirty/SearchResults=true</ActionName>
+</Action>
+<Action><ActionType>Method</ActionType>
+<ActionName>zzIndirectReturn(zzDetailsReturnTo)</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc207"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:DetailsPage_DeleteButton_Enabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">DetailsPageDelete</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzDetail</Page>
+<NameSearch>delete_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/details.page.delete.button.text}</Input>
+<Input name="Action">zzDeleteFromDetailsPage</Input>
+<Input name="ActionURL">zzDeleteFromDetailsPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc151"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">No Details Yet Page</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc139"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:NoDetailsYetPageRequired">true</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="URLModification">Relative</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="UseJSPCode">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="FullyParse">false</Input>
+<Input name="LocalizationVariable">LocaleInfo</Input>
+<Input name="Name">zzNoDetailsYetPage</Input>
+<Input name="URL" profile="dsui_Base:NoDetailsYetPage_URl">/factory/pages/dsui/no_details_yet.html</Input>
+<Input name="EditPage">Edit Page</Input>
+<Input name="PageEditor">&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;DIV class="vf_field_container" name="vf_field_container"&gt;
+ &lt;DIV class="vf_header" name="vf_header"&gt;&lt;/DIV&gt;
+ &lt;DIV name="vf_fields"&gt;
+   &lt;SPAN name="no_details_message"&gt;&lt;/SPAN&gt;
+ &lt;/DIV&gt;
+ &lt;DIV class="vf_buttons" name="vf_buttons"&gt;
+   &lt;SPAN name="back_button"&gt;&lt;/SPAN&gt;
+   &lt;SPAN name="update_button"&gt;&lt;/SPAN&gt;
+   &lt;SPAN name="extra_button1"&gt;&lt;/SPAN&gt;
+   &lt;SPAN name="extra_button2"&gt;&lt;/SPAN&gt;
+ &lt;/DIV&gt;
+ &lt;DIV class="vf_footer" name="vf_footer"&gt;&lt;/DIV&gt;
+&lt;/DIV&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc141"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:NoDetailsYetPageRequired">true</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="Control">no_details_message</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzNoDetailsYetPage</Page>
+<NameSearch>no_details_message</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Text">${Variables/zzResource/Data/no.details.yet.page.message}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc77"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Details Event</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc211"><BuilderDefID>com.bowstreet.builders.webapp.EventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:DetailEventDeclarationEnabled">true</Input>
+<Input name="ClientSideDelivery" profile="dsui_DetailPage:EventDeclaration_ClientSideDelivery">false</Input>
+<Input name="ServerDelivery" profile="dsui_DetailPage:EventDeclaration_ServerDelivery">true</Input>
+<Input name="EventName" profile="dsui_DetailPage:ToDetailsPage_EventName">zzModelNameDetailEvent</Input>
+<Input name="Arguments"><top><Argument><Name>id</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Name">zzModelNameDetailEvent</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc81"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:DetailEventServerSideEnabled">true</Input>
+<Input name="UseInlineHandler">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="EventName" profile="dsui_DetailPage:ToDetailsPage_EventName">zzModelNameDetailEvent</Input>
+<Input name="Arguments"><Arguments><Argument><Name>id</Name>
+<Type>String</Type>
+</Argument>
+</Arguments>
+</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName profile="dsui_DetailPage:AssignArgIdToDetailActionId">Assignment!DataServices/XXX/getOrder/inputs/Row/ORDER_ID=${Arguments/id}</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName profile="dsui_DetailPage:DetailsFetchAction">DataServices/XXX/getOrder</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzDetail</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="DefaultName">zzModelNameDetailEvent</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc87"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:ClientEventHandler_BuilderCallEnabled">false</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Event" profile="dsui_DetailPage:ToDetailsPage_EventName">zzModelNameDetailEvent</Input>
+<Input name="PageLocation"><CompletePageLocation><Node>(</Node>
+<Node>Page</Node>
+<Node>zzDetail</Node>
+<Node>,</Node>
+<Node>Page</Node>
+<Node>zzNoDetailsYetPage</Node>
+<Node>)</Node>
+<Node>NameSearch</Node>
+<Node>client_event_target</Node>
+</CompletePageLocation>
+</Input>
+<Input name="Action">zzDetail</Input>
+<Input name="ActionURL">zzToDetailPage</Input>
+<Input name="InputMappings"><top />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc213"><BuilderDefID>com.bowstreet.adapters.websphere.builders.C2ATagBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:CoopPortletSource_Enabled">false</Input>
+<Input name="C2ANamespace">http://www.ibm.com/pb/dsui/models</Input>
+<Input name="TagType">PBAction</Input>
+<Input name="OutputDefinitions"><top><OutputDefinition><C2AOutputTypeName />
+<C2AOutputType>string</C2AOutputType>
+<Value />
+<C2AOutputCaption>Record Identifier</C2AOutputCaption>
+<C2AOutputNamespace />
+<AliasList />
+<C2AOutputName>id</C2AOutputName>
+</OutputDefinition>
+<OutputDefinition><C2AOutputTypeName />
+<C2AOutputType>string</C2AOutputType>
+<Value />
+<C2AOutputCaption />
+<C2AOutputNamespace />
+<AliasList />
+</OutputDefinition>
+</top>
+</Input>
+<Input name="Name" profile="dsui_DetailPage:ToDetailsPage_EventName">zzModelNameDetailEvent</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc215"><BuilderDefID>com.bowstreet.adapters.websphere.builders.C2AEventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_DetailPage:CoopPortletTarget_Enabled">false</Input>
+<Input name="C2AInputType">string</Input>
+<Input name="C2ANamespace">http://www.ibm.com/pb/dsui/models</Input>
+<Input name="EventName" profile="dsui_DetailPage:ToDetailsPage_EventName">zzModelNameDetailEvent</Input>
+<Input name="C2AInputName">id</Input>
+<Input name="C2AInputCaption">Record Identifier</Input>
+<Input name="Arguments"><top><Argument><Name>id</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Name">zzModelNameDetailEvent</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc110"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Create Update Shared</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc103"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_CreatePage:CreatePageIndirectReturnEnabled">true</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">zzCreateUpdateReturnTo</Input>
+<Input name="Type">String</Input>
+<Input name="Value">zzToListPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc105"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_CreatePage:CreatePageIndirectReturnEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+	String action = webAppAccess.getVariables().getString(variableName);
+	if (action == null || action.length() == 0)
+	   action = "main";
+   // else we just trust that someone put a real action name in there.
+	webAppAccess.processAction(action);
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">zzIndirectReturn</Input>
+<Input name="Arguments"><top><Argument><Name>variableName</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc90"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Create Page</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc113"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_CreatePage:CreatePageEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzToCreatePage</Input>
+<Input name="Actions"><Actions><Action xmlEnablementProfile="dsui_CreatePage:CreatePageIndirectReturnEnabled"><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzCreateUpdateReturnTo=${Arguments/returnAction}</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName profile="dsui_CreatePage:ClearCreateOpInputs">Assignment!DataServices/XXX/addOrder/inputs=</ActionName>
+</Action>
+<Action xmlEnablementProfile="dsui_CreatePage:EnablePreCreatePageAction"><ActionType />
+<ActionName profile="dsui_CreatePage:PreCreatePageAction">DataServices/XXX/getBillingOptions</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzCreateError.clear</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzCreate</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Arguments"><top><Argument><Name>returnAction</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc92"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_CreatePage:CreatePageImportedPageEnabled">true</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="URLModification">Relative</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="UseJSPCode">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="FullyParse">false</Input>
+<Input name="LocalizationVariable">LocaleInfo</Input>
+<Input name="Name">zzCreate</Input>
+<Input name="URL" profile="dsui_Base:CreatePageURL">/factory/pages/dsui/create.html</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc94"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_CreatePage:CreatePageEnabled">true</Input>
+<Input name="PageType">DataEntry</Input>
+<Input name="inputObjectType">String</Input>
+<Input name="CreateTags">true</Input>
+<Input name="UseTheme">false</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">LeaveNameless</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="InitializeInputsWhen">OnModelLoad</Input>
+<Input name="ValidateFromSchema">Both</Input>
+<Input name="BeanValidation">Both</Input>
+<Input name="ValidationMethodBehavior">CallAlways</Input>
+<Input name="ValidationErrorPlacement">ColumnRight</Input>
+<Input name="RequiredPromptPlacement">ColumnLeft</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="LocalizedResource">zzResource</Input>
+<Input name="TranslateHTMLLabels">true</Input>
+<Input name="PageName">zzCreate</Input>
+<Input name="TemplateFile" profile="dsui_CreatePage:DataPage_TemplateFile">/factory/html_templates/color_themes.html</Input>
+<Input name="TypedVariable" profile="dsui_CreatePage:CreatePageDataPageVariable">DataServices/XXX/addOrder/inputs</Input>
+<Input name="CreateTagsLocation">data_placed_here</Input>
+<Input name="ValidationSuccessAction">zzFinishCreate</Input>
+<Input name="DefaultName">zzCreate</Input>
+<Input name="ValidationMethod" profile="dsui_CreatePage:CreatePage_PostSaveMethod"></Input>
+<Input name="StyleSheetOverride" profile="dsui_CreatePage:DataPage_StyleSheetOverride"></Input>
+<Input name="RuntimeHTMLLabels" profile="dsui_Base:LocalizedResource_EnableRuntimeLocalization">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc96"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_CreatePage:CreatePageEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzFinishCreate</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName profile="dsui_CreatePage:CreateAction">DataServices/XXX/createOrder</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzDirtyFlags/IsDirty/List=true</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzDirtyFlags/IsDirty/SearchResults=true</ActionName>
+</Action>
+<Action><ActionType>Method</ActionType>
+<ActionName profile="dsui_CreatePage:ActionAfterCreate">zzToListPage</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc100"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_CreatePage:CreatePageSubmitButtonEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzCreate</Page>
+<NameSearch>submit_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/create.page.submit.button.text}</Input>
+<Input name="Action">zzCreate_NextAction</Input>
+<Input name="ActionURL">zzCreate_NextAction</Input>
+<Input name="Name">CreatePageSubmit</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc147"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_CreatePage:CreatePage_CancelButtonEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">false</Input>
+<Input name="Name">CreatePageCancelButton</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzCreate</Page>
+<NameSearch>cancel_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/create.page.cancel.button.text}</Input>
+<Input name="Action">zzIndirectReturn</Input>
+<Input name="ActionURL">zzToListPage</Input>
+<Input name="InputMappings"><top><InputMapping><Name>zzIndirectReturn_Arg1</Name>
+<Value>zzCreateUpdateReturnTo</Value>
+</InputMapping>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc112"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Update Page</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc154"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_UpdatePage:ToUpdatePageUsingSelectedRowEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzToUpdateUsingSelectedRow</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzCreateUpdateReturnTo=${Arguments/returnAction}</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName profile="dsui_UpdatePage:AssignSelectedRowToUpdateInputs">Assignment!DataServices/XXX/updateOrder/inputs=${Variables/zzSelectedRow}</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzCloneAndCleanUpdateinputs</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzUpdateError.clear</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzUpdate</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Arguments"><top><Argument><Name>returnAction</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc116"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_UpdatePage:ToUpdatePageUsingDetailsOpResultsEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzToUpdateUsingDetailsOpResults</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzCreateUpdateReturnTo=${Arguments/returnAction}</ActionName>
+</Action>
+<Action><ActionType>Conditional</ActionType>
+<ActionName>IF (${Arguments/optionalID}) THEN</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName profile="dsui_CreatePage:ToCreatePage_AssignOptionalIDToDetailsInputs_Action">Assignment!DataServices/XXX/getOrder/inputs/Row/ORDER_ID=${Arguments/optionalID}</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName profile="dsui_DetailPage:DetailsFetchAction">DataServices/XXX/getOrder</ActionName>
+</Action>
+<Action><ActionType>Conditional</ActionType>
+<ActionName>ENDIF</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName profile="dsui_UpdatePage:AssignDetailOpResultsToUpdateOpInputs">Assignment!DataServices/XXX/updateOrder/inputs=${DataServices/XXX/getOrder/results}</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzCloneAndCleanUpdateinputs</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzUpdateError.clear</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>zzUpdate</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Arguments"><top><Argument><Name>returnAction</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>optionalID</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc200"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_UpdatePage:UpdatePageEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body" profile="dsui_UpdatePage:CloneAndCleanForUpdateMethodBody">{
+  IXml inputs = webAppAccess.getVariables().getXml("XXXUpdateOrderInputs");
+  IXml cloned = XmlUtil.create("Row");
+  if (inputs != null)
+	  cloned.copyContent(inputs);
+  webAppAccess.getVariables().setXml("XXXUpdateOrderInputs", cloned);
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">zzCloneAndCleanUpdateinputs</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc115"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_UpdatePage:UpdatePageImportedPageEnabled">true</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="URLModification">Relative</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="UseJSPCode">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="FullyParse">false</Input>
+<Input name="LocalizationVariable">LocaleInfo</Input>
+<Input name="Name">zzUpdate</Input>
+<Input name="URL" profile="dsui_Base:UpdatePage_URL">/factory/pages/dsui/update.html</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc118"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_UpdatePage:UpdatePageEnabled">true</Input>
+<Input name="PageType">DataEntry</Input>
+<Input name="inputObjectType">String</Input>
+<Input name="CreateTags">true</Input>
+<Input name="UseTheme">false</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">LeaveNameless</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="InitializeInputsWhen">OnModelLoad</Input>
+<Input name="ValidateFromSchema">Both</Input>
+<Input name="BeanValidation">Both</Input>
+<Input name="ValidationMethodBehavior">CallAlways</Input>
+<Input name="ValidationErrorPlacement">ColumnRight</Input>
+<Input name="RequiredPromptPlacement">ColumnLeft</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="LocalizedResource">zzResource</Input>
+<Input name="TranslateHTMLLabels">true</Input>
+<Input name="TemplateFile" profile="dsui_UpdatePage:DataPage_TemplateFile">/factory/html_templates/color_themes.html</Input>
+<Input name="TypedVariable" profile="dsui_UpdatePage:UpdatePageDataPageVariable">DataServices/XXX/updateOrder/inputs</Input>
+<Input name="PageName">zzUpdate</Input>
+<Input name="CreateTagsLocation">data_placed_here</Input>
+<Input name="DefaultName">zzUpdate</Input>
+<Input name="ValidationSuccessAction">zzFinishUpdate</Input>
+<Input name="ValidationMethod" profile="dsui_UpdatePage:UpdatePage_PostSaveMethod"></Input>
+<Input name="StyleSheetOverride" profile="dsui_UpdatePage:DataPage_StyleSheetOverride"></Input>
+<Input name="RuntimeHTMLLabels" profile="dsui_Base:LocalizedResource_EnableRuntimeLocalization">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc122"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_UpdatePage:UpdatePageEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">zzFinishUpdate</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName profile="dsui_UpdatePage:UpdateAction">DataServices/XXX/updateOrder</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzDirtyFlags/IsDirty/List=true</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/zzDirtyFlags/IsDirty/SearchResults=true</ActionName>
+</Action>
+<Action><ActionType>Method</ActionType>
+<ActionName profile="dsui_UpdatePage:ActionAfterUpdate">zzToListPage</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc159"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_UpdatePage:UpdatePage_SubmitButtonEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">UpdatePageSubmit</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzUpdate</Page>
+<NameSearch>submit_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/update.page.submit.button.text}</Input>
+<Input name="Action">zzUpdate_NextAction</Input>
+<Input name="ActionURL">zzUpdate_NextAction</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc161"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_UpdatePage:UPdatePage_CancelButtonEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">false</Input>
+<Input name="Name">UpdatePageCancel</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>zzUpdate</Page>
+<NameSearch>cancel_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">${Variables/zzResource/Data/update.page.cancel.button.text}</Input>
+<Input name="Action">zzIndirectReturn</Input>
+<Input name="InputMappings"><top><InputMapping><Name>zzIndirectReturn_Arg1</Name>
+<Value>zzCreateUpdateReturnTo</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">zzCreateUpdateReturn</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc67"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Excluded</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc120"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldDefinition</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="dsui_Base:always_false">true</Input>
+<Input name="FieldSelector">Name</Input>
+<Input name="GenerateLabels">NoChange</Input>
+<Input name="IsRepeated">NoChange</Input>
+<Input name="ChildrenCreateTags">NoChange</Input>
+<Input name="ChildrenGenerateLabels">NoChange</Input>
+<Input name="DisplayDirection">NoChange</Input>
+<Input name="PromoteChildren">NoChange</Input>
+<Input name="FieldBehavior">ViewOnly</Input>
+<Input name="IsRequired">NoChange</Input>
+<Input name="DataEntryControlType">NoChange</Input>
+<Input name="TextAreaWrap">off</Input>
+<Input name="SelectOptionsSource">NoChange</Input>
+<Input name="CheckBoxCheckedValue">true</Input>
+<Input name="CheckBoxUncheckedValue">false</Input>
+<Input name="Orientation">vertical</Input>
+<Input name="ViewOnlyControlType">NoChange</Input>
+<Input name="ActionControlType">Link</Input>
+<Input name="ButtonLabelSource">FieldData</Input>
+<Input name="LinkTextSource">FieldData</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="DataPagingPageSize">5</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="Separator">;</Input>
+<Input name="HTMLClassLabel">[No Change]</Input>
+<Input name="HTMLClassSectionLabel">[No Change]</Input>
+<Input name="HTMLClassOutputData">[No Change]</Input>
+<Input name="HTMLClassEntireTable">[No Change]</Input>
+<Input name="HTMLClassTableHead">[No Change]</Input>
+<Input name="HTMLClassTableRow">[No Change]</Input>
+<Input name="HTMLClassTableRowOdd">[No Change]</Input>
+<Input name="HTMLClassTableRowEven">[No Change]</Input>
+<Input name="Fields"><Fields><Field>[zzUpdate]zzUpdate/Row/ORDER_ID</Field>
+</Fields>
+</Input>
+<Input name="LookupTable">None</Input>
+<Input name="DefaultName">ORDER_ID</Input>
+<Input name="Name">MakeIDBeViewOnly</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc217"><BuilderDefID>com.bowstreet.builders.core.ArtifactHider</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Visibility">0</Input>
+<Input name="Name">zz</Input>
+<Input name="DoNotHideList">main,zzList,zzFilter,zzQuery,zzSearchResults,zzDetail,zzCreate,zzUpdate,zzSelectedRow,zzListCounterVar,zzListLoopVar,zzSearchResultsCounterVar,zzSearchResultsLoopVar,zzResource, zzNoDetailsYetPage</Input>
+<Input name="DoNotHideStartsWithList">zzContinue,zzDelete,zzTo</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies><Dependency type="Model">samples/gettingstarted/OrdersServiceProvider</Dependency>
+<Dependency type="File">/factory/pages/dsui/list_page.html</Dependency>
+<Dependency type="File">/factory/html_templates/color_themes.html</Dependency>
+<Dependency type="File">/factory/pages/split_pager_default_top_base.html</Dependency>
+<Dependency type="File">/factory/pages/split_pager_drop_down_bottom_base.html</Dependency>
+<Dependency type="File">/factory/pages/dsui/filter.html</Dependency>
+<Dependency type="File">/factory/pages/dsui/query.html</Dependency>
+<Dependency type="File">/factory/pages/dsui/search_results.html</Dependency>
+<Dependency type="File">/factory/pages/dsui/details.html</Dependency>
+<Dependency type="File">/factory/pages/dsui/no_details_yet.html</Dependency>
+<Dependency type="File">/factory/pages/dsui/create.html</Dependency>
+<Dependency type="File">/factory/pages/dsui/update.html</Dependency>
+<Dependency type="File">/factory/clientjavascript/dojo/progressindicator.js</Dependency>
+<Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
+<Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
+<Dependency type="Class">com.bowstreet.builderutilities.NameSequencer</Dependency>
+<Dependency type="File">/factory/pages/split_pager_default.css</Dependency>
+</Dependencies>
+<ExternalProperties><ExternalProperty id="DojoEnabled">true</ExternalProperty>
+<ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.dijit,dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem,dijit.form.FilteringSelect,dijit.form.DateTextBox,dijit.form.NumberTextBox,dijit.form.TextBox,dijit.form.CheckBox</ExternalProperty>
+</ExternalProperties>
+</Model>

@@ -1,0 +1,28 @@
+<span name="Stylesheet" />
+
+<%-- Begin: breadcrumbs --%>
+<table  role="presentation" name="BreadcrumbsLayout" cellpadding="0" cellspacing="0" border="0">
+  <tr  role="presentation">
+    <%-- A cell for any text to display before the breadcrumb items --%>
+    <td  role="presentation" name="BreadcrumbsTitle" nowrap>
+      <span name="BreadcrumbsTitleText" class="breadcrumbsTitleText" />
+    </td>
+    <%-- Begin: breadcrumb items.  Note the HTMLWRAPPER node will not be in the final HTML. --%>
+    <HTMLWRAPPER name="BreadcrumbsItemRepeat">
+    <%-- Begin: breadcrumb item --%>
+    <td  role="presentation" name="BreadcrumbsItem" nowrap>
+      <span name="BreadcrumbsItemText" class="breadcrumbsText" />
+      <span name="BreadcrumbsItemLink" class="breadcrumbsText" />
+    </td>
+    <%-- End: breadcrumb item --%>
+    <td  role="presentation" name="BreadcrumbsSeparator" nowrap>
+      <span name="BreadcrumbsSeparatorText" class="breadcrumbsSeparatorText" />
+    </td>
+    </HTMLWRAPPER>
+    <td  role="presentation" name="BreadcrumbsFinalCell" nowrap>
+      <span name="BreadcrumbsFinalItemText" class="breadcrumbsText" />
+    </td>
+    <%-- End: breadcrumb items --%>
+  </tr>
+</table>
+<%-- End: breadcrumbs --%>

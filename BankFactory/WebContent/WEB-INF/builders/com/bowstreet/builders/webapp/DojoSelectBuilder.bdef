@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<BuilderDef id="com.bowstreet.builders.webapp.DojoSelectBuilder" xmlns="http://www.bowstreet.com/2001/Schemas">
+    <ReadableName>Dojo Select</ReadableName>
+    <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName>
+    <HelpFile>factory/product_documentation/designer/select.htm</HelpFile>
+    <RequiredFactoryVersion>6.1.5</RequiredFactoryVersion>
+    <Description>Creates a Dojo Select input at a named tag or other location on a page or pages.</Description>
+    <Domains>
+        <Domain>WebApp</Domain>
+        <Domain>Consumer</Domain>
+    </Domains>
+    <CreateModifyList>
+      <CanModify type="Page" category="Page Elements">Adds a Dojo Select Input to the Page.</CanModify>
+      <CanModify type="[Unassigned Elements]" category="Page Elements">Adds a Dojo Select Input.</CanModify>
+    </CreateModifyList>
+    <Category>Page Elements</Category>
+    <Keywords>Input, Data Entry, Form, Page Construction</Keywords>
+    <BuilderData>
+        <BuilderDataEntry name="PickerVisibility">5</BuilderDataEntry>
+        <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoSelectBuilder</BuilderDataEntry>
+    </BuilderData>
+    <CoordinatorClassName>com.bowstreet.builders.webapp.ui.SelectRadioGroupCoordinator</CoordinatorClassName>
+
+    <InputDefinitions>
+        <InputDefinition name="Name"  base="com.bowstreet.core.Base.BuilderName" />
+        <InputDefinition name="PageLocation"  base="com.bowstreet.core.WebAppBase.PageLocation" />
+
+        <InputDefinition name="DojoWidgetType" base="com.bowstreet.core.Base.ComboBox">
+            <Prompt>Dojo Select Widget</Prompt>
+            <HelpText>Select which Dojo Select widget to use (default is dijit.form.FilteringSelect)</HelpText>
+            <InitialValue>dijit.form.FilteringSelect</InitialValue>
+            <Editor JavaClass="com.bowstreet.widget.ComboBox">
+                <Argument name="listData">,dijit.form.FilteringSelect,dijit.form.Select</Argument>
+            </Editor>
+        </InputDefinition>        
+        
+        <InputDefinition name="LookupTable" base="com.bowstreet.builders.webapp.SelectBuilder.LookupTable" />
+
+        <InputDefinition name="Options"  base="com.bowstreet.builders.webapp.SelectBuilder.Options" />
+
+        <!-- 
+          <InputDefinition name="Multiple"  base="com.bowstreet.builders.webapp.SelectBuilder.Multiple">
+          </InputDefinition>
+        -->
+
+        <InputDefinition name="SelectedValues"  base="com.bowstreet.builders.webapp.SelectBuilder.SelectedValues" />
+
+        <InputDefinition name="Value"  base="com.bowstreet.core.Base.HiddenValue" />
+
+        <!-- ValueTextElements (XML Data Source Elements) Group Inputs -->
+        <InputDefinition name="ValueKey" base="com.bowstreet.builders.webapp.CheckBoxGroupBuilder.ValueKey" />
+        <InputDefinition name="TextKey"  base="com.bowstreet.builders.webapp.CheckBoxGroupBuilder.TextKey" />
+        <!-- End ValueTextElements (XML Data Source Elements) Group Inputs -->
+
+        <InputDefinition name="RetainOptions"  base="com.bowstreet.builders.webapp.SelectBuilder.RetainOptions" />
+
+        <InputDefinition name="RemoveDuplicateOptions"  base="com.bowstreet.builders.webapp.SelectBuilder.RemoveDuplicateOptions" />
+        
+        <InputDefinition name="Attributes"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Attributes">
+            <Group>Attributes</Group>
+            <Type>Xml</Type>
+        </InputDefinition> 
+
+        <InputDefinition name="HandleExisting"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleExisting">
+            <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+            <Group>Attributes</Group>
+        </InputDefinition>
+
+        <InputDefinition name="HandleMissingValue"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleMissingValue">
+            <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+            <Group>Attributes</Group>
+        </InputDefinition>
+
+        <InputDefinition name="Separator"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Separator">
+            <Group>Attributes</Group>
+            <InitialValue>;</InitialValue>
+        </InputDefinition>
+
+        <InputDefinition name="HTMLAttributes" base="com.bowstreet.core.WebAppBase.HTMLAttributes" />
+    </InputDefinitions>
+
+    <GroupDefinitions>
+        <GroupDefinition id="ValueTextElements" base="com.bowstreet.builders.webapp.SelectBuilder.ValueTextElements" />
+        <GroupDefinition id="Attributes" base="com.bowstreet.builders.webapp.DojoFormElementsBuilder.Attributes">
+            <InitiallyCollapsed>true</InitiallyCollapsed>
+        </GroupDefinition>
+        
+        <GroupDefinition id="HTMLAttributes" base="com.bowstreet.core.WebAppBase.HTMLAttributes" />
+    </GroupDefinitions>
+</BuilderDef>

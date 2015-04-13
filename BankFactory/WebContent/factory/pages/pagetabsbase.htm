@@ -1,0 +1,33 @@
+<html>
+<body>
+<span name="tabbedPagesStyleSheet"></span>
+
+<%-- Begin: tabbed page table --%>
+<table  role="presentation" name="TabbedPagesLayoutTable" cellspacing="0" cellpadding="0" width="100%" border="0">
+  <tr  role="presentation"><%-- Begin: tab row --%>
+    <td  role="presentation" width="10" name="TabTableLeftIndentCell" class="tabStyle1Spacer"><%-- Begin: indent for tab row --%>
+      <span name="TabTableLeftIndentContent">&nbsp;</span>
+    </td><%-- End: indent for tab row --%>
+    <td  role="presentation" width="50" valign="top" align="left" nowrap>
+      <table  role="presentation" name="TabTable" width="100%" cellpadding="0" cellspacing="0" border="0"><%-- Begin: tabs table --%>
+        <tr  role="presentation" name="TabTableRow">
+          <HTMLWRAPPER name="TabItemRepeat">
+            <td  role="presentation" name="TabItemCell" nowrap><%-- Begin: tab cell --%>
+              <div class="TabImageRight">
+              <div class="TabImageLeft">
+              <div name="TabItemText">
+              </div></div></div>
+            </td><%-- End: tab cell --%>
+            <td  role="presentation" name="TabSpacerCell" class="tabStyle1Spacer">&nbsp;</td>
+          </HTMLWRAPPER>
+        </tr>
+      </table><%-- End: tabs table --%>
+    </td>
+    <%-- Begin: area to right of tabs --%>
+    <td  role="presentation" name="TabTableRightIndentCell" width="100%" align="right" class="tabStyle1Spacer"><span name="TabTableRightIndentContent">&nbsp;</span></td>
+    <%-- End: area to right of tabs --%>
+  </tr>
+</table>
+<%-- End: tabbed page table --%>
+</body>
+</html>

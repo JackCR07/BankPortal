@@ -1,0 +1,5 @@
+WEB-INF/lib/wsdl4j.jar
+WEB-INF/lib/xercesImpl.jar
+WEB-INF/lib/xml-apis.jar
+WEB-INF/lib/classparser.jar
+WEB-INF/lib/icu4j.jar

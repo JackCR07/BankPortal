@@ -1,0 +1,25 @@
+<%--
+  This page is imported to form the execution-time UI for the
+  Directory Search. You can replace this with another HTML
+  file so long as you use the same tag names, and taglib reference.
+ --%>
+<%-- jsp directive for people picker. This cannot be removed. --%>
+<%@ taglib prefix="wps" uri="/WEB-INF/tld/engine.tld"%>
+
+<span name="wrapper">
+  <span name="openPeoplePickerScript"/><%--  target for the client scripts --%>
+<table  role="presentation" cellspacing="0" cellpadding="0">
+ <tr  role="presentation">
+  <td  role="presentation">
+    <span name="targetInput" /><%-- target for the input that stores the chosen values. --%>
+  </td>
+  <td  role="presentation" valign="bottom">
+    <span name="searchBtn" align="middle" style="cursor:pointer;"  /><%-- The search button goes here --%>
+  </td>
+  <td  role="presentation" valign="bottom">
+    <span name="removeBtn" align="middle" style="cursor:pointer;" /><%-- The remove button goes here --%>
+  </td>
+  <td  role="presentation">
+ </tr>
+</table>
+</span>

@@ -1,0 +1,91 @@
+<!--  **************************   WEF 8.0 New Theme **********************************
+
+A theme is a collection of style information that can be used to drive builder inputs that provide the application UI in your model.
+This information can include but is not limited to HTML templates, style sheets (CSS), base pages, highlighting style, and paging style. 
+
+For more Theme information please see the "Themes and user interface control" section of the product documentation.
+
+-->
+<Theme extends="/WEB-INF/factory/themes/blue_WPF7.0.1.uitheme">
+    <!--  Sets the Dojo theme to claro if not specified in Dojo Enable builder -->
+    <DojoFallbackTheme>claro</DojoFallbackTheme>
+
+	<!-- Miscellaneous settings -->
+    <Use_Smart_Refresh>true</Use_Smart_Refresh>
+    <Add_Default_Progress_Indicator>true</Add_Default_Progress_Indicator>
+    <Progress_Indicator_DisplayMode>OverRegion</Progress_Indicator_DisplayMode>
+    <Progress_Indicator_Message>${Java/com.bowstreet.builders.webapp.usertext.Messages.getString("ProgressIndicator_DefaultLoadingMessage")}</Progress_Indicator_Message>
+    <ViewAndForm_HighlighterEnabled>false</ViewAndForm_HighlighterEnabled>
+    <DSUI_DojoColumnResizeAndReorderOnList>false</DSUI_DojoColumnResizeAndReorderOnList>
+    <DSUI_DojoColumnResizeAndReorderOnResults>false</DSUI_DojoColumnResizeAndReorderOnResults>
+    <DSUI_EnableRowHighlightingOnList>false</DSUI_EnableRowHighlightingOnList>
+    <DSUI_EnableRowHighlightingOnResults>false</DSUI_EnableRowHighlightingOnResults>
+
+	<!-- Style sheets (CSS) -->    
+    <DataPage_StyleSheetOverride>/factory/html_templates/clean.css</DataPage_StyleSheetOverride>
+    <ViewAndForm_ViewPageStyleSheetOverride>/factory/html_templates/clean.css</ViewAndForm_ViewPageStyleSheetOverride>
+    <ViewAndForm_DetailPageStyleSheetOverride>/factory/html_templates/clean.css</ViewAndForm_DetailPageStyleSheetOverride>
+    <ViewAndForm_UpdatePageStyleSheetOverride>/factory/html_templates/clean.css</ViewAndForm_UpdatePageStyleSheetOverride>
+    <ViewAndForm_InputPageStyleSheetOverride>/factory/html_templates/clean.css</ViewAndForm_InputPageStyleSheetOverride>
+    <Button_StyleSheet>/factory/html_templates/clean.css</Button_StyleSheet>
+    <DataPage_StyleSheetOverride>/factory/html_templates/clean.css</DataPage_StyleSheetOverride>
+    <ViewAndForm_ViewPageStyleSheetOverride>/factory/html_templates/clean.css</ViewAndForm_ViewPageStyleSheetOverride>
+    <ViewAndForm_DetailPageStyleSheetOverride>/factory/html_templates/clean.css</ViewAndForm_DetailPageStyleSheetOverride>
+    <ViewAndForm_UpdatePageStyleSheetOverride>/factory/html_templates/clean.css</ViewAndForm_UpdatePageStyleSheetOverride>
+    <ViewAndForm_InputPageStyleSheetOverride>/factory/html_templates/clean.css</ViewAndForm_InputPageStyleSheetOverride>
+    <InputForm_StyleSheetOverride>/factory/html_templates/clean.css</InputForm_StyleSheetOverride>
+    <DSUI_StyleSheetOverride>/factory/html_templates/clean.css</DSUI_StyleSheetOverride>
+	    
+    <!-- The following will default to DSUI_HTMLTemplate and DSUI_StyleSheetOverride if no value specified -->
+    <DSUI_CreatePageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_CreatePageHTMLTemplate>
+    <DSUI_CreatePageStyleSheetOverride>/factory/html_templates/clean.css</DSUI_CreatePageStyleSheetOverride>
+    <DSUI_UpdatePageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_UpdatePageHTMLTemplate>
+    <DSUI_UpdatePageStyleSheetOverride>/factory/html_templates/clean.css</DSUI_UpdatePageStyleSheetOverride>
+    <DSUI_DetailsPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_DetailsPageHTMLTemplate>
+    <DSUI_DetailsPageStyleSheetOverride>/factory/html_templates/clean.css</DSUI_DetailsPageStyleSheetOverride>
+    <DSUI_QueryPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_QueryPageHTMLTemplate>
+    <DSUI_QueryPageStyleSheetOverride>/factory/html_templates/clean.css</DSUI_QueryPageStyleSheetOverride>
+    <DSUI_SearchPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_SearchPageHTMLTemplate>
+    <DSUI_SearchPageStyleSheetOverride>/factory/html_templates/clean.css</DSUI_SearchPageStyleSheetOverride>
+    <DSUI_FilterPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_FilterPageHTMLTemplate>
+    <DSUI_FilterPageStyleSheetOverride>/factory/html_templates/clean.css</DSUI_FilterPageStyleSheetOverride>
+    <DSUI_ListPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_ListPageHTMLTemplate>
+    <DSUI_ListPageStyleSheetOverride>/factory/html_templates/clean.css</DSUI_ListPageStyleSheetOverride>
+
+	<!-- HTML Templates -->
+    <DataPage_HTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DataPage_HTMLTemplate>
+    <ViewAndForm_ViewPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</ViewAndForm_ViewPageHTMLTemplate>
+    <ViewAndForm_DetailPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</ViewAndForm_DetailPageHTMLTemplate>
+    <ViewAndForm_UpdatePageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</ViewAndForm_UpdatePageHTMLTemplate>
+    <ViewAndForm_InputPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</ViewAndForm_InputPageHTMLTemplate>
+    <InputForm_HTMLTemplate>/factory/html_templates/clean_label_above_themes.html</InputForm_HTMLTemplate>
+    <DSUI_HTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_HTMLTemplate>
+
+	<!-- Base pages - using the defaults at this point since this is commented out
+    <DSUI_CreatePageHTML>/factory/pages/dsui/create.html</DSUI_CreatePageHTML>
+    <DSUI_UpdatePageHTML>/factory/pages/dsui/update.html</DSUI_UpdatePageHTML>
+    <DSUI_DetailsPageHTML>/factory/pages/dsui/details.html</DSUI_DetailsPageHTML>
+    <DSUI_NoDetailsYetPageHTML>/factory/pages/dsui/no_details_yet.html</DSUI_NoDetailsYetPageHTML>
+    <DSUI_QueryPageHTML>/factory/pages/dsui/query.html</DSUI_QueryPageHTML>
+    <DSUI_SearchResultsPageHTML>/factory/pages/dsui/search_results.html</DSUI_SearchResultsPageHTML>
+    <DSUI_FilterPageHTML>/factory/pages/dsui/filter.html</DSUI_FilterPageHTML>
+    <DSUI_ListPageHTML>/factory/pages/dsui/list_page.html</DSUI_ListPageHTML>
+    <ViewAndForm_ViewPageBase>/factory/pages/view_and_form/view.html</ViewAndForm_ViewPageBase>
+    <ViewAndForm_DetailPageBase>/factory/pages/view_and_form/details.html</ViewAndForm_DetailPageBase>
+    <ViewAndForm_UpdatePageBase>/factory/pages/view_and_form/input.html</ViewAndForm_UpdatePageBase>
+    <ViewAndForm_InputPageBase>/factory/pages/view_and_form/input.html</ViewAndForm_InputPageBase>
+    <InputForm_PageBase>/factory/pages/view_and_form/input.html</InputForm_PageBase>
+	-->    
+
+	<!-- class name for action buttons -->
+	<Button_ActionRole_Default>wefCleanButton</Button_ActionRole_Default>
+	
+	<!-- These are currently using the blue styles -->
+    <ViewAndForm_PagingLinksStyleSheet>/factory/pages/paging/data_paging_links_blue.css</ViewAndForm_PagingLinksStyleSheet>
+    <ViewAndForm_PagingButtonsStyleSheet>/factory/pages/paging/data_paging_buttons_blue.css</ViewAndForm_PagingButtonsStyleSheet>
+    <PageBorder_BorderStyleFile>/factory/pages/borders/blue_border.css</PageBorder_BorderStyleFile>
+    <PageTabs_Style_Sheet_File_Name>/factory/pages/page_tabs/page_tabs_blue.css</PageTabs_Style_Sheet_File_Name>
+    <PagingLinks_StyleSheet>/factory/pages/paging/data_paging_links_blue.css</PagingLinks_StyleSheet>
+    <PagingButtons_StyleSheet>/factory/pages/paging/data_paging_buttons_blue.css</PagingButtons_StyleSheet>
+
+</Theme>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoDnDTargetBuilder"> 
+  <ReadableName>Dojo Drop Target</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName> 
+  <HelpFile>factory/product_documentation/designer/dojo_drop_target.html</HelpFile>
+  <RequiredFactoryVersion>6.0.1</RequiredFactoryVersion> 
+  <Description>Use this builder to specify a page location that is enabled as a Dojo drop target. </Description> 
+  <Domains> 
+    <Domain>WebApp</Domain> 
+    <Domain>Consumer</Domain>
+  </Domains> 
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <Category>Rich UI</Category>
+  <Keywords>Page, Page Elements, Display, Flow Control, Layout, Drag and drop</Keywords>
+
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoDnDTargetBuilder</BuilderDataEntry> 
+    <BuilderDataEntry name="IconName">target</BuilderDataEntry>
+    <BuilderDataEntry name="PageLocation">onNamedTag</BuilderDataEntry>
+  </BuilderData> 
+  <CoordinatorClassName />   
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName"> 
+      <Prompt>Name</Prompt> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation"> 
+      <Prompt>Page location</Prompt> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+   <InputDefinition name="DropAction" base="com.bowstreet.core.WebAppBase.MethodName">
+     <Prompt>Drop Action</Prompt>
+      <HelpText>Specify the action that will get call when the target is dropped. The Action must take a single argument.</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible> 
+      <Property>true</Property>
+   </InputDefinition>
+    <InputDefinition name="DropType" base="com.bowstreet.core.Base.StringData">
+       <Prompt>Drop Type</Prompt>
+       <HelpText>Specify a drop data filter type that is used to match the drag source.</HelpText>
+       <InitialValue>*</InitialValue>
+       <Property>true</Property>
+    </InputDefinition>
+   <!-- Begin PostActionBehavior Group Inputs -->
+    <InputDefinition name="ShowAdvancedPostActionBehaviors" base="com.bowstreet.builders.webapp.ButtonBuilder.ShowAdvancedPostActionBehaviors">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        <Group>PostActionBehavior</Group>
+    </InputDefinition>
+    <InputDefinition name="PostActionBehavior" base="com.bowstreet.builders.webapp.ButtonBuilder.PostActionBehavior">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        <Group>PostActionBehavior</Group>
+    </InputDefinition>
+    <InputDefinition name="RefreshPageLocation" base="com.bowstreet.builders.webapp.ButtonBuilder.RefreshPageLocation">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        <Group>PostActionBehavior</Group>
+    </InputDefinition>
+    <InputDefinition name="DefaultRefreshPageLocation" base="com.bowstreet.builders.webapp.ButtonBuilder.DefaultRefreshPageLocation">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        <Group>PostActionBehavior</Group>
+    </InputDefinition>
+    <InputDefinition name="ExecuteEmbeddedScripts" base="com.bowstreet.builders.webapp.ButtonBuilder.ExecuteEmbeddedScripts">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        <Group>PostActionBehavior</Group>
+    </InputDefinition>
+    <InputDefinition name="AjaxLoadEventPrefix" base="com.bowstreet.builders.webapp.ButtonBuilder.AjaxLoadEventPrefix">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        <Group>PostActionBehavior</Group>
+    </InputDefinition>
+    
+   <!-- End PostActionBehavior Group Inputs -->
+  </InputDefinitions>
+   
+  <GroupDefinitions> 
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" /> 
+    <GroupDefinition id="PostActionBehavior" base="com.bowstreet.core.WebAppBase.PostActionBehavior" />
+  </GroupDefinitions> 
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

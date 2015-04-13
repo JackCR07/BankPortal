@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.wizards.webapp.MobileListAndDetailConsumerWizard"> 
+  <ReadableName>Mobile List and Detail</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName> 
+  <HelpFile /> 
+  <RequiredFactoryVersion>7.0.1</RequiredFactoryVersion> 
+  <Description>This wizard builds a model using builders that can make it suitable for displaying on a smartphone or other mobile device.    It displays data from a data service, and it can create list and details views of data.  Behind the scenes it uses the View and Form Builder, with the Data Layout builder to create a list display and the theme builder to control the look and feel.</Description> 
+  <Domains> 
+    <Domain></Domain> 
+  </Domains> 
+  <CreateModifyList /> 
+  <Category>Service Consumers</Category> 
+  <Keywords /> 
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.wizards.webapp.MobileListAndDetailConsumerWizard</BuilderDataEntry> 
+    <BuilderDataEntry name="BaseModel">factory/wizardbase/mobile_list_and_detail_consumer_base</BuilderDataEntry> 
+  </BuilderData> 
+  <CoordinatorClassName>com.bowstreet.wizards.webapp.MobileListAndDetailConsumerWizardCoordinator</CoordinatorClassName> 
+  <InputDefinitions> 
+    <InputDefinition name="ServiceConsumer_Name" base="com.bowstreet.builders.webapp.ServiceConsumer2Builder.Name"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>    
+      <Prompt>Name</Prompt> 
+      <Page>Basics</Page>
+      <Visible>true</Visible>       
+      <Group>Name</Group>
+    </InputDefinition> 
+    
+    <InputDefinition name="ServiceConsumer_ProviderModel" base="com.bowstreet.builders.webapp.ServiceConsumer2Builder.ProviderModel"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Page>Basics</Page>
+      <Required>true</Required> 
+      <Visible>true</Visible>
+      <Group>ServiceProvider</Group>            
+    </InputDefinition> 
+
+    <InputDefinition name="PortletAdapter_BuilderCallEnabled" base="com.bowstreet.core.Base.BooleanData">
+        <Page>Basics</Page>
+        <InitialValue>true</InitialValue>
+        <Prompt>Deploy this model as a portlet</Prompt>     
+    </InputDefinition> 
+        
+    <InputDefinition name="WidgetAdapter_BuilderCallEnabled" base="com.bowstreet.core.Base.BooleanData"> 
+    	<Page>Basics</Page>
+ 		<InitialValue>false</InitialValue>
+        <Prompt>Deploy this model as a widget</Prompt>  		
+    </InputDefinition> 
+	
+    <InputDefinition name="NamePageInfo"  base="com.bowstreet.core.Base.ReadOnlyStringData">
+        <Prompt></Prompt>
+        <Page>WidgetInfo</Page>
+        <Visible>true</Visible>
+        <Editor>
+            <Argument name="label">Enter the title of your widget and choose a category.</Argument>
+            <Argument name="foreground">navy</Argument>
+        </Editor>
+    </InputDefinition>
+ 
+    <InputDefinition name="WidgetName" base="com.bowstreet.core.WidgetBase.WidgetTitle"> 
+        <Page>WidgetInfo</Page> 
+        <Visibility>false</Visibility>
+    </InputDefinition> 
+    <InputDefinition name="WidgetAdapter_Category" base="com.bowstreet.core.WidgetBase.WidgetCategory"> 
+        <Page>WidgetInfo</Page>
+        <Required>true</Required> 
+        <InitialValue>Favorites</InitialValue>
+        <Visibility>false</Visibility>        
+    </InputDefinition> 
+	
+    <InputDefinition name="PortletName" base="com.bowstreet.adapters.builders.PortletAdapterBuilder.Name">
+        <Page>PortletInfo</Page>
+        <Visibility>false</Visibility>
+    </InputDefinition>
+    <InputDefinition name="PortletTitle" base="com.bowstreet.adapters.builders.PortletAdapterBuilder.PortletTitle">
+        <Page>PortletInfo</Page>    
+        <Visibility>false</Visibility>
+    </InputDefinition>
+        
+    <InputDefinition name="ViewMethod" base="com.bowstreet.core.Base.ComboBox" >
+      <Prompt>View Data Operation</Prompt>
+      <Page>View</Page>  
+      <Visible>true</Visible>
+      <HelpText>Choose the service operation to retrieve the main view data.</HelpText>
+      <Group>ViewOperation</Group>
+    </InputDefinition>
+     
+    <InputDefinition name="ViewAndForm_ViewMethod" base="com.bowstreet.builders.webapp.ViewAndFormBuilder.ViewMethod"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>    
+    </InputDefinition> 
+       
+    <InputDefinition name="ServiceConsumer_OperationInputs" base="com.bowstreet.builders.webapp.ServiceConsumer2Builder.OperationInputs"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+    </InputDefinition> 
+    
+    <InputDefinition name="OperationInputs" base="com.bowstreet.core.Base.Arguments"> 
+      <Prompt>Input Values</Prompt>     
+      <Page>View</Page>
+      <Required>false</Required> 
+      <Visible>false</Visible> 
+      <Editor JavaClass="com.bowstreet.editor.uitools.widgets.ListWidget"> 
+        <Argument name="height">80</Argument> 
+        <Argument name="columns">2</Argument> 
+        <Argument name="headings">Name,Value</Argument> 
+        <Argument name="columnTags">Name,Value</Argument> 
+        <Argument name="rowtag">InputOverride</Argument> 
+        <Argument name="cellEditors"> 
+          <Editors> 
+            <Editor JavaClass="com.bowstreet.widget.Label" /> 
+            <Editor JavaClass="com.bowstreet.widget.Reference" /> 
+          </Editors> 
+        </Argument> 
+      </Editor> 
+      <Group>InputOverrides</Group>     
+    </InputDefinition>
+    
+    <InputDefinition name="ViewAndForm_CreateInputPage" base="com.bowstreet.builders.webapp.ViewAndFormBuilder.CreateInputPage"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Page>View</Page> 
+    </InputDefinition>      
+
+    <InputDefinition name="ViewAndForm_BuilderCallEnabled" base="com.bowstreet.builders.webapp.ViewAndFormBuilder.BuilderCallEnabled">   
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>    
+    </InputDefinition>
+
+    <InputDefinition name="ViewAndForm_CreateColumnLink" base="com.bowstreet.builders.webapp.ViewAndFormBuilder.CreateColumnLink"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Page>Details</Page>
+      <Visible>true</Visible>
+    </InputDefinition>     
+    
+    <InputDefinition name="ViewAndForm_LinkColumn" base="com.bowstreet.builders.webapp.ViewAndFormBuilder.LinkColumn"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator> 
+      <Page>Details</Page>
+      <Required>false</Required> 
+      <Visible>true</Visible>
+    </InputDefinition> 
+
+    <InputDefinition name="LinkActionChoice" base="com.bowstreet.core.Base.ComboBox" >
+       <Prompt>Details Action Type</Prompt>
+       <Page>Details</Page>
+       <InitialValue>rowdata</InitialValue>        
+       <Visible>true</Visible>
+       <HelpText>Choose to show details page from selected row data or other details action.</HelpText>       
+       <Editor JavaClass="com.bowstreet.editor.uitools.widgets.BComboBox">
+         <Argument name="width">500</Argument>
+         <Argument name="isEditable">false</Argument>
+         <Argument name="listLabels">Display data from another operation in this service,Get details data directly from the selected row</Argument>
+         <Argument name="listData">dataservice,rowdata</Argument>
+       </Editor>
+       <Group>DetailDataSource</Group>
+    </InputDefinition>
+                
+    <InputDefinition name="DetailsMethod" base="com.bowstreet.core.Base.ComboBox" >
+       <Prompt>Details Operation</Prompt>
+       <Page>Details</Page>  
+       <Visible>false</Visible>
+       <HelpText>Choose the service operation to retrieve the detail data.</HelpText>
+      <Group>DetailDataSource</Group>       
+    </InputDefinition>
+
+    <InputDefinition name="ColumnPageInfo"  base="com.bowstreet.core.Base.ReadOnlyStringData">
+        <Prompt></Prompt>
+        <Page>Column</Page>
+        <Visible>true</Visible>
+        <Editor>
+            <Argument name="label">Use the following table to change the label, the field type, and the options for the named field on all the selected pages.</Argument>
+            <Argument name="foreground">navy</Argument>
+        </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="DataFieldSettings_DisplayBehavior" base="com.bowstreet.builders.webapp.pageautomation.DataFieldSettings.DisplayBehavior"> 
+    	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        <Page>Column</Page>
+        <InitialValue></InitialValue>
+        <Editor> 
+           <Argument name="height">300</Argument> 
+        </Editor>
+    </InputDefinition> 
+
+    <InputDefinition name="DataFieldSettings_ValidationBehavior" base="com.bowstreet.builders.webapp.pageautomation.DataFieldSettings.ValidationBehavior"> 
+    	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+    </InputDefinition> 
+    <InputDefinition name="DefaultedFirstDetailInputMessage"  base="com.bowstreet.core.Base.ReadOnlyStringData">
+      <Prompt></Prompt>
+      <Visible>false</Visible>
+      <Editor>
+        <Argument name="label">A default value, based on the "selected row" variable, has been set for the first input to the details operation - you may need to change this value.</Argument>
+        <Argument name="foreground">blue</Argument>
+      </Editor>
+      <Page>DetailsInputs</Page>      
+      <Group>InputOverrides</Group>       
+    </InputDefinition>
+
+    <InputDefinition name="Text_Text" base="com.bowstreet.builders.webapp.TextBuilder.Text"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+       <Prompt>Page header text</Prompt>
+        <Page>Column</Page>
+        <Visible>true</Visible>
+    </InputDefinition>
+        
+    <InputDefinition name="DetailsOperationInputs" base="com.bowstreet.core.Base.Arguments">
+      <Prompt>Input Values</Prompt> 
+      <InitialValue /> 
+      <HelpText /> 
+      <Page>DetailsInputs</Page>
+      <Required>false</Required> 
+      <Visible>false</Visible>  
+      <Editor JavaClass="com.bowstreet.editor.uitools.widgets.ListWidget">  
+        <Argument name="columns">2</Argument> 
+        <Argument name="headings">Name,Value</Argument> 
+        <Argument name="columnTags">Name,Value</Argument> 
+        <Argument name="rowtag">InputOverride</Argument> 
+        <Argument name="cellEditors"> 
+          <Editors> 
+            <Editor JavaClass="com.bowstreet.widget.Label" /> 
+            <Editor JavaClass="com.bowstreet.widget.Reference" /> 
+          </Editors> 
+        </Argument> 
+      </Editor>
+      <Group>InputOverrides</Group>      
+    </InputDefinition> 
+    
+    <InputDefinition name="ViewAndForm_DetailsMethod" base="com.bowstreet.builders.webapp.ViewAndFormBuilder.DetailsMethod"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+    </InputDefinition>
+    
+    <InputDefinition name="ViewAndForm_LinkActionChoice" base="com.bowstreet.builders.webapp.ViewAndFormBuilder.LinkActionChoice"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+    </InputDefinition> 
+
+    
+    <InputDefinition name="ViewAndForm_Name" base="com.bowstreet.builders.webapp.ViewAndFormBuilder.Name"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+    </InputDefinition> 
+    <InputDefinition name="DataLayout_BuilderCallEnabled" base="com.bowstreet.builders.webapp.DataLayoutBuilder.BuilderCallEnabled">   
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>    
+    </InputDefinition>
+	<InputDefinition name="DataLayout_SingleField" base="com.bowstreet.builders.webapp.DataLayoutBuilder.SingleField">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+    </InputDefinition> 
+    <InputDefinition name="DataLayout_TemplateFile" base="com.bowstreet.builders.webapp.DataLayoutBuilder.TemplateFile"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Page>DataLayout</Page>      
+       <InitialValue>/factory/data_layout_templates/thumbnail_multiline_list_template.html</InitialValue>        
+    </InputDefinition> 
+    <InputDefinition name="DataLayout_TemplateDescription" base="com.bowstreet.builders.webapp.DataLayoutBuilder.TemplateDescription"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Page>DataLayout</Page>      
+    </InputDefinition> 
+    <InputDefinition name="DataLayout_StyleSheetFile" base="com.bowstreet.builders.webapp.DataLayoutBuilder.StyleSheetFile"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Page>DataLayout</Page>      
+    </InputDefinition> 
+    <InputDefinition name="DataLayout_LayoutFields" base="com.bowstreet.builders.webapp.DataLayoutBuilder.LayoutFields"> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Page>DataLayout</Page>      
+    </InputDefinition> 
+    <InputDefinition name="Device_Type_Profiling" base="com.bowstreet.core.Base.BooleanData">
+        <Page>DataLayout</Page>
+        <HelpText>Enable multi-channel profiling support, so that the Data Layout and Theme builders are only enabled for smartphone devices.</HelpText>
+        <InitialValue>false</InitialValue>
+        <Prompt>Enable Device Type Profiling</Prompt>     
+    </InputDefinition> 
+  </InputDefinitions> 
+  <GroupDefinitions>
+    <GroupDefinition id="Name">
+      <Name>Name</Name>
+      <Description>Enter a name which will be used as the name of this portlet and to name the builder calls used in the model.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>false</IsCollapsible>
+      <InitiallyCollapsed>false</InitiallyCollapsed>
+    </GroupDefinition>
+    <GroupDefinition id="ServiceProvider">
+      <Name>Service Provider</Name>
+      <Description>Specify the the service provider model that defines the operations to be used.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>false</IsCollapsible>
+      <InitiallyCollapsed>false</InitiallyCollapsed>
+    </GroupDefinition>
+    <GroupDefinition id="ViewOperation">
+      <Name>View Operation</Name>
+      <Description>Specify the the service operation that will provide the view data.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>false</IsCollapsible>
+      <InitiallyCollapsed>false</InitiallyCollapsed>
+    </GroupDefinition>
+    <GroupDefinition id="InputOverrides">
+      <Name>Input Overrides</Name>
+      <Description>Optionally provide initial values for the inputs to this operation.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>false</IsCollapsible>
+      <InitiallyCollapsed>false</InitiallyCollapsed>
+    </GroupDefinition>     
+    <GroupDefinition id="DetailDataSource">
+      <Name>Detail Data Source</Name>
+      <Description>The details can be extracted from the selected row in the view data, or by calling a separate service operation.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>false</IsCollapsible>
+      <InitiallyCollapsed>false</InitiallyCollapsed>
+    </GroupDefinition>          
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" /> 
+  </GroupDefinitions> 
+  <PageDefinitions> 
+    <PageDefinition id="Basics"> 
+      <Name>Name and Service</Name> 
+      <Description></Description> 
+    </PageDefinition>   
+    <PageDefinition id="WidgetInfo"> 
+      <Name>Widget Deployment Information</Name> 
+      <Description /> 
+    </PageDefinition> 
+    <PageDefinition id="PortletInfo"> 
+      <Name>Portlet Information</Name> 
+      <Description /> 
+    </PageDefinition>
+    <PageDefinition id="View"> 
+      <Name>Main View</Name> 
+      <Description>Configure the service operation used to show the main view</Description> 
+    </PageDefinition>
+    <PageDefinition id="Details"> 
+      <Name>Details</Name> 
+      <Description>Specify how to retrieve detail data</Description> 
+    </PageDefinition>
+    <PageDefinition id="DetailsInputs"> 
+      <Name>Details Inputs</Name> 
+      <Description>Provide inputs for the details operation</Description> 
+    </PageDefinition>    
+    <PageDefinition id="Column"> 
+      <Name>Field Settings Information</Name> 
+      <Description>Modify displayed columns.</Description> 
+    </PageDefinition> 
+    <PageDefinition id="DataLayout"> 
+      <Name>Data Layout Information</Name> 
+      <Description>Modify data layout.</Description> 
+    </PageDefinition> 
+  </PageDefinitions>
+</BuilderDef> 
+ 

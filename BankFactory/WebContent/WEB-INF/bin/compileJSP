@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Note: the ability to generate precompiled JSPs is deprecated and this feature
+# will be removed in a future release.
+
+JAVA_HOME=
+if test $JAVA_HOME
+then
+${JAVA_HOME}/bin/java -classpath ../lib:../lib/factory.jar:../classes:../lib/axis.jar:../lib/NCSO.jar:../lib/jakarta-poi.jar:../lib/commons-logging.jar:../lib/commons-pool.jar:../lib/commons-discovery.jar:../lib/commons-fileupload.jar:../lib/jdom.jar:../lib/bstres.jar:../lib/bstres_nl1.jar:../lib/log4j.jar:../lib/packman.jar:../clientLibs/j2ee.jar:${JAVA_HOME}/lib/tools.jar -Dbowstreet.rootDirectory=.. -Druntime.runningOnServer=true com.bowstreet.util.compile.JSPCompile -excludelist exclude_models.txt $*
+else
+echo
+echo "The JAVA_HOME environment variable must be set before running this script."
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+

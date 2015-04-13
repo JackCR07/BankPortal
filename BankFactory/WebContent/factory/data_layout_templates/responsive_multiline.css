@@ -1,0 +1,34 @@
+/* these are the styles that are used for the multi-line list feature pack data layouts found in the 
+ /factory/html_templates/WEF8.5_uitheme.css file
+ You would include this style sheet using a style sheet builder if you want these styles but are
+ not using the theme file css on your page  
+ */
+ .responsive_MultiLineList .multLineListItem{
+    background-image: none;
+    background-position: right center;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #AAAAAA;
+    margin: 5px 0 0;
+    padding: 2px 0;
+    clear:both;
+}
+.responsive_MultiLineList .wpfListColumn {float:left;width:33%}
+.cl1Column .wpfListCenterColumn,.cl1Column .wpfListRightColumn{display:none}
+.cl1Column .wpfListColumn{width:99%}
+.cl2ColumnEqual .wpfListColumn{float:left;width:49%}
+.cl2ColumnEqual .wpfListRightColumn{display:none}
+.cl2ColumnLeft .wpfListLeftColumn{width:69%}
+.cl2ColumnLeft .wpfListCenterColumn{width:29%}
+.cl2ColumnLeft .wpfListRightColumn{display:none}
+.cl2ColumnRight .wpfListLeftColumn{width:29%}
+.cl2ColumnRight .wpfListCenterColumn{width:69%}
+.cl2ColumnRight .wpfListRightColumn{display:none}
+.cl3ColumnCenter .wpfListLeftColumn,.cl3ColumnCenter .wpfListRightColumn{width:20%}
+.cl3ColumnCenter .wpfListCenterColumn{width:58%}
+.cl3x3ColumnGrid .wpfListColumnItem{min-height:1em;}
+.cl3x2ColumnGrid .wpfListColumnItem{min-height:1em;}
+.cl3x2ColumnGrid .wpfListBottomItem{display:none;}
+.responsive_MultiLineList .wpfListRow {display: table;width:100%;border-bottom:2px solid #F0F0F0;background-color: #F8F8F8}
+.responsive_MultiLineList .wpfListColumnItem {margin: 2px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
+.responsive_MultiLineList .wpfListColumnItem img{-webkit-border-top-left-radius:8px;-webkit-border-top-right-radius:8px;-webkit-border-bottom-left-radius:8px;-webkit-border-bottom-right-radius:8px;width:55px;height:55px}
+ 

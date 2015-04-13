@@ -1,0 +1,1138 @@
+<Model id="factory/portletbase/service_documentation_base"><BuilderCallList><BuilderCall id="bc212"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-Od03
+Copyright 2004, 2007, 2010. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">About this Model</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">This is the base model for the Service Documentation builder.
+
+This file should not be edited: if you want to change this functionality, first make a copy of this model and
+use the new copy as the value of the "Model Name" input in the Service Documentation builder.</Input>
+<Input name="BuilderCallComment">This is the base model for the Service Documentation builder.
+
+This file should not be edited: if you want to change this functionality, first make a copy of this model and
+use the new copy as the value of the "Model Name" input in the Service Documentation builder.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="servicedocumentationbaseps:CreateMain">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Name">main</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>_u_DocumentationPage</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc22"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">_u_DocumentationPage</Input>
+<Input name="URL" profile="servicedocumentationbaseps:OuterPageURL">factory/pages/ServiceDocumentation/outer.html</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="URLModification">None</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc28"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_DocumentationPage</Page>
+<NameSearch>usage</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text" profile="servicedocumentationbaseps:UsageText">Implemented</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc26"><BuilderDefID>com.bowstreet.builders.webapp.InsertedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_DocumentationPage</Page>
+<NameSearch>model</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Page">_u_ModelPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc29"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">_u_ModelPage</Input>
+<Input name="URL" profile="servicedocumentationbaseps:ModelPageURL">factory/pages/ServiceDocumentation/model.html</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="URLModification">None</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc33"><BuilderDefID>com.bowstreet.builders.webapp.InsertedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_ModelPage</Page>
+<NameSearch>service</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Page">_u_ServicePage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc30"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">_u_ServicePage</Input>
+<Input name="URL" profile="servicedocumentationbaseps:ServicePageURL">factory/pages/ServiceDocumentation/service.html</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="URLModification">None</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc35"><BuilderDefID>com.bowstreet.builders.webapp.InsertedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_ServicePage</Page>
+<NameSearch>operation</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Page">_u_OperationPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc31"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">_u_OperationPage</Input>
+<Input name="URL" profile="servicedocumentationbaseps:OperationPageURL">factory/pages/ServiceDocumentation/operation.html</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="URLModification">None</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc37"><BuilderDefID>com.bowstreet.builders.webapp.RepeatedRegionBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="StartIndex">1</Input>
+<Input name="SkipCount">0</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_DocumentationPage</Page>
+<NameSearch>models</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="SourceList">${MethodCall/_u_GetWebApps}</Input>
+<Input name="LoopVariable">_u_WebApp</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc91"><BuilderDefID>com.bowstreet.builders.webapp.RepeatedRegionBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="StartIndex">1</Input>
+<Input name="SkipCount">0</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_ServicePage</Page>
+<NameSearch>serviceProperties</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="SourceList">${MethodCall/_u_Service.getProperties}</Input>
+<Input name="LoopVariable">_u_PropertyName</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc41"><BuilderDefID>com.bowstreet.builders.webapp.RepeatedRegionBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="StartIndex">1</Input>
+<Input name="SkipCount">0</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_ModelPage</Page>
+<NameSearch>services</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="SourceList">${MethodCall/_u_GetServices}</Input>
+<Input name="LoopVariable">_u_Service</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc39"><BuilderDefID>com.bowstreet.builders.webapp.RepeatedRegionBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="StartIndex">1</Input>
+<Input name="SkipCount">0</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_ServicePage</Page>
+<NameSearch>operations</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="SourceList">${MethodCall/_u_Service.getOperations}</Input>
+<Input name="LoopVariable">_u_Operation</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc43"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_ModelPage</Page>
+<NameSearch>name</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${MethodCall/_u_WebApp.getModelName}</Input>
+<Input name="Name">modelName</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc45"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_ServicePage</Page>
+<NameSearch>name</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${MethodCall/_u_Service.getName}</Input>
+<Input name="Name">serviceName</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc73"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">operationDescription</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_OperationPage</Page>
+<NameSearch>description</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${MethodCall/_u_Operation.getDescription}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc47"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_OperationPage</Page>
+<NameSearch>name</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${MethodCall/_u_Operation.getName}</Input>
+<Input name="Name">operationName</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc49"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="PersistChoice">1</Input>
+<Input name="Extend">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">_u_WebApp</Input>
+<Input name="ClassName">com.bowstreet.webapp.WebApp</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc51"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="PersistChoice">1</Input>
+<Input name="Extend">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">_u_Service</Input>
+<Input name="ClassName">com.bowstreet.webapp.DataService</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc53"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="PersistChoice">1</Input>
+<Input name="Extend">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">_u_Operation</Input>
+<Input name="ClassName">com.bowstreet.webapp.ServiceOperation</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc55"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="PersistChoice">1</Input>
+<Input name="Extend">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">_u_Parameter</Input>
+<Input name="ClassName">com.bowstreet.webapp.ServiceParameter</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc58"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Iterator</Input>
+<Input name="Body" profile="servicedocumentationbaseps:GetWebAppsMethodBody">{
+    String modelName = "services/MethodProvider";
+    Collection webApps = new LinkedList();
+    webApps.add(WebAppUtils.getWebApp(modelName, null));
+    return webApps.iterator();
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">_u_GetWebApps</Input>
+<Input name="Imports"><Imports><Import>com.bowstreet.webapp.engine.WebAppUtils</Import>
+<Import>java.util.*</Import>
+</Imports>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc87"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Iterator</Input>
+<Input name="Body" profile="servicedocumentationbaseps:GetServicesMethodBody">{
+    WebApp webApp = (WebApp)webAppAccess.getVariables().getObject("_u_WebApp");
+    return webApp.getDataServices();
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">_u_GetServices</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc65"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="PersistChoice">1</Input>
+<Input name="Extend">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">_u_ParamIterator</Input>
+<Input name="ClassName">java.util.Iterator</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc67"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">_u_InitializeParameterIterator</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/_u_ParamIterator=${MethodCall/_u_Operation.getParameters}</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc69"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EventName">Page:_u_OperationPage:OnPageLoad</Input>
+<Input name="ActionName">_u_InitializeParameterIterator</Input>
+<Input name="Name">Page:_u_OperationPage:OnPageLoad</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc71"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageType">Infer</Input>
+<Input name="inputObjectType">Collection</Input>
+<Input name="CreateTags">true</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">LeaveNameless</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="InitializeInputsWhen">OnModelLoad</Input>
+<Input name="ValidateFromSchema">Both</Input>
+<Input name="BeanValidation">Both</Input>
+<Input name="ValidationMethodBehavior">CallAlways</Input>
+<Input name="ValidationErrorPlacement">ColumnRight</Input>
+<Input name="RequiredPromptPlacement">ColumnLeft</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="LocalizedResource">AddNew</Input>
+<Input name="TranslateHTMLLabels">false</Input>
+<Input name="TemplateFile">/factory/html_templates/gridtable.html</Input>
+<Input name="TypedVariable">Variables/_u_ParamIterator</Input>
+<Input name="beanCollectionClassname">com.bowstreet.webapp.ServiceParameter</Input>
+<Input name="PageName">_u_OperationPage</Input>
+<Input name="CreateTagsLocation">parameters</Input>
+<Input name="DefaultName">_u_OperationPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc75"><BuilderDefID>com.bowstreet.builders.webapp.LookupTableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="DataType">NewXmlData</Input>
+<Input name="VariableType">ValueTagLabelTag</Input>
+<Input name="GetDataFrom">BuilderInput</Input>
+<Input name="TablePosition">InFront</Input>
+<Input name="Name">_u_ParameterDirection</Input>
+<Input name="NewXmlData">&lt;Directions&gt;
+    &lt;Direction&gt;
+        &lt;Label&gt;Input&lt;/Label&gt;
+        &lt;Value&gt;0&lt;/Value&gt;
+    &lt;/Direction&gt;
+    &lt;Direction&gt;
+        &lt;Label&gt;Output&lt;/Label&gt;
+        &lt;Value&gt;1&lt;/Value&gt;
+    &lt;/Direction&gt;   
+    &lt;Direction&gt;
+        &lt;Label&gt;Input/Output&lt;/Label&gt;
+        &lt;Value&gt;2&lt;/Value&gt;
+    &lt;/Direction&gt;    
+&lt;/Directions&gt;</Input>
+<Input name="ValueElementName">Value</Input>
+<Input name="LabelElementName">Label</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc77"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldDefinition</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="FieldSelector">Name</Input>
+<Input name="GenerateLabels">NoChange</Input>
+<Input name="IsRepeated">NoChange</Input>
+<Input name="ChildrenCreateTags">NoChange</Input>
+<Input name="ChildrenGenerateLabels">NoChange</Input>
+<Input name="DisplayDirection">NoChange</Input>
+<Input name="FieldBehavior">NoChange</Input>
+<Input name="IsRequired">NoChange</Input>
+<Input name="DataEntryControlType">NoChange</Input>
+<Input name="TextAreaWrap">off</Input>
+<Input name="SelectOptionsSource">NoChange</Input>
+<Input name="CheckBoxCheckedValue">true</Input>
+<Input name="CheckBoxUncheckedValue">false</Input>
+<Input name="Orientation">vertical</Input>
+<Input name="ViewOnlyControlType">NoChange</Input>
+<Input name="ActionControlType">Link</Input>
+<Input name="ButtonLabelSource">FieldData</Input>
+<Input name="LinkTextSource">FieldData</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="DataPagingPageSize">5</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="Separator">;</Input>
+<Input name="HTMLClassLabel">[No Change]</Input>
+<Input name="HTMLClassSectionLabel">[No Change]</Input>
+<Input name="HTMLClassOutputData">[No Change]</Input>
+<Input name="HTMLClassEntireTable">[No Change]</Input>
+<Input name="HTMLClassTableHead">[No Change]</Input>
+<Input name="HTMLClassTableRow">[No Change]</Input>
+<Input name="HTMLClassTableRowOdd">[No Change]</Input>
+<Input name="HTMLClassTableRowEven">[No Change]</Input>
+<Input name="Fields"><Fields><Field>[_u_OperationPage]_u_OperationPage/ServiceParameter/ServiceParameter__direction</Field>
+</Fields>
+</Input>
+<Input name="LookupTable">_u_ParameterDirection</Input>
+<Input name="DefaultName">ServiceParameter__direction</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc79"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPageTableModifier</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="DataPagingPageSize">5</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="DeleteColumnStyle">No Delete Column</Input>
+<Input name="DeleteLinkText">Delete</Input>
+<Input name="DeleteButtonText">Delete</Input>
+<Input name="DeleteMethodType">byOrdinalNoRemove</Input>
+<Input name="ManageColumns">true</Input>
+<Input name="PlaceAddedColumns">After</Input>
+<Input name="SingleField">[_u_OperationPage]_u_OperationPage/ServiceParameter</Input>
+<Input name="ChildrenInfo"><Columns><Column><Name>ServiceParameter__name</Name>
+<Status>Do Not Change</Status>
+<Heading>Name</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>ServiceParameter__variableName</Name>
+<Status>Do Not Change</Status>
+<Heading>Variable</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>Type</Name>
+<Status>Do Not Change</Status>
+<Heading>Type</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>ServiceParameter__direction</Name>
+<Status>Do Not Change</Status>
+<Heading>Direction</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+</Columns>
+</Input>
+<Input name="AddOtherColumns">Type</Input>
+<Input name="DefaultName">ServiceParameter</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc81"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    try {
+    String svcParamLoopVarName = webAppAccess.getVariables().getString("_u_SvcParamLoopVarName");
+    ServiceParameter param = (ServiceParameter)webAppAccess.getVariables().getObject(svcParamLoopVarName);    
+    String varName = param.getVariableName();
+    WebApp svcWebApp = (WebApp)webAppAccess.getVariables().getObject("_u_WebApp");  
+    Variable var = svcWebApp.getVariable(varName);
+    String path = var.getSchemaPath();
+    if (path != null &amp;&amp; path.length() &gt; 0)
+    {
+        String showSchemaElements = webAppAccess.getVariables().getString("_u_ShowSchemaElements");
+        if (showSchemaElements == null || !"true".equals(showSchemaElements))
+            return path;
+        String schemaName, schemaPath;
+        int iSlash;
+        if ((iSlash = path.indexOf('/')) &lt; 0)
+        {
+            schemaName = path;
+            schemaPath = "";
+        }
+        else
+        {
+            schemaName = path.substring(0, iSlash);
+            schemaPath = path.substring(iSlash + 1);
+        }        
+        
+        List allElements = new ArrayList();
+        Schema schema = null;
+        schema = svcWebApp.getSchema(schemaName);
+        allElements  = schema.getSchema().getElements();
+        List omitThese = schema.getSchema().getNonLeafElements();
+        String pfx = schemaPath + "/";
+	    for (Iterator paths = allElements.iterator(); paths.hasNext();)
+	    {
+	        String p = (String)paths.next();
+	        if (!p.startsWith(pfx))
+	            omitThese.add(p);
+	    }
+	    System.out.println("allElements: " + allElements);	    
+	    System.out.println("omit these: " + omitThese);
+	    allElements.removeAll(omitThese);
+	    
+	    for (int i = 0; i &lt; allElements.size(); i++)
+	    {
+	        String p = allElements.get(i).toString();
+	        p = p.substring(pfx.length());
+	        allElements.set(i, p);
+	    }
+         
+        return path + " " + allElements;
+    }
+    String varType = var.getType();
+    return varType;
+    } catch (Exception e) {
+    return "(unknown)";
+    }
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">_u_GetParameterType</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc83"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages/>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_OperationPage</Page>
+<NameSearch>Type</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${MethodCall/_u_GetParameterType}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc85"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Value">ServiceParameterLoopVar</Input>
+<Input name="Type">String</Input>
+<Input name="Name">_u_SvcParamLoopVarName</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc89"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldDefinition</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="FieldSelector">Name</Input>
+<Input name="GenerateLabels">NoChange</Input>
+<Input name="IsRepeated">NoChange</Input>
+<Input name="ChildrenCreateTags">NoChange</Input>
+<Input name="ChildrenGenerateLabels">NoChange</Input>
+<Input name="DisplayDirection">NoChange</Input>
+<Input name="FieldBehavior">NoChange</Input>
+<Input name="IsRequired">NoChange</Input>
+<Input name="DataEntryControlType">NoChange</Input>
+<Input name="TextAreaWrap">off</Input>
+<Input name="SelectOptionsSource">NoChange</Input>
+<Input name="CheckBoxCheckedValue">true</Input>
+<Input name="CheckBoxUncheckedValue">false</Input>
+<Input name="Orientation">vertical</Input>
+<Input name="ViewOnlyControlType">NoChange</Input>
+<Input name="ActionControlType">Link</Input>
+<Input name="ButtonLabelSource">FieldData</Input>
+<Input name="LinkTextSource">FieldData</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="DataPagingPageSize">5</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="Separator">;</Input>
+<Input name="HTMLClassLabel">[No Change]</Input>
+<Input name="HTMLClassSectionLabel">[No Change]</Input>
+<Input name="HTMLClassOutputData">[No Change]</Input>
+<Input name="HTMLClassEntireTable">[No Change]</Input>
+<Input name="HTMLClassTableHead">[No Change]</Input>
+<Input name="HTMLClassTableRow">[No Change]</Input>
+<Input name="HTMLClassTableRowOdd">[No Change]</Input>
+<Input name="HTMLClassTableRowEven">[No Change]</Input>
+<Input name="Fields"><Fields><Field>[_u_OperationPage]_u_OperationPage/ServiceParameter/ServiceParameter__variableName</Field>
+</Fields>
+</Input>
+<Input name="LookupTable">None</Input>
+<Input name="Hide">true</Input>
+<Input name="DefaultName">ServiceParameter__variableName</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc93"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_ServicePage</Page>
+<NameSearch>servicePropertyName</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/_u_PropertyName}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc95"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    try
+    {
+        return "" + obj.getClass().getMethod("getProperty", new Class[] { String.class }).invoke(obj, new Object[] { propertyName });
+//        return "" + ((com.bowstreet.webapp.WebAppObjectBase)obj).getProperty(propertyName);
+    }
+    catch (Exception e)
+    {
+        e.printStackTrace();
+        return "";
+    }
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">_u_GetPropertyValue</Input>
+<Input name="Arguments"><top><Argument><Name>obj</Name>
+<Type>Object</Type>
+</Argument>
+<Argument><Name>propertyName</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc97"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_ServicePage</Page>
+<NameSearch>servicePropertyValue</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${MethodCall/_u_GetPropertyValue(${Variables/_u_Service},${Variables/_u_PropertyName})}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc99"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    if (iter == null || !iter.hasNext())
+        return "hide";
+    return "show";
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">_u_GetIteratorVisibility</Input>
+<Input name="Arguments"><top><Argument><Name>iter</Name>
+<Type>java.util.Iterator</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc101"><BuilderDefID>com.bowstreet.builders.webapp.VisibilitySetterBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ComparisonType">HideWhenFalse</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_ServicePage</Page>
+<NameSearch>servicePropertiesSection</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="FirstValue">${MethodCall/_u_GetIteratorVisibility(${MethodCall/_u_Service.getProperties})}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc103"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">IXml</Input>
+<Input name="Body">{
+    if (path == null || path.length() == 0)
+        return _u_Msg(webAppAccess, "no schema specified");
+    String schemaName;
+    int iSlash;
+    if ((iSlash = path.indexOf('/')) &lt; 0)
+        schemaName = path;
+    else
+        schemaName = path.substring(0, iSlash);
+    
+    Object obj = null;
+    int schemaType = -1;
+    try
+    {
+        WebApp webApp = com.bowstreet.webapp.engine.WebAppUtils.getWebApp(modelName, null);  
+        Schema schema = webApp.getSchema(schemaName);     
+        obj = schema.getOriginObject();
+        schemaType = schema.getType();
+    }
+    catch (Exception e)
+    {
+        return _u_Msg(webAppAccess,  "Cannot find schema " + schemaName + " - " + e.getMessage());
+    }
+    switch (schemaType)
+    {
+        case Schema.SCHEMA_ORIGIN_SOURCE:
+            webAppAccess.getHttpServletResponse().setContentType("text/xml");                
+            try {  return XmlUtil.parseXml(obj.toString());  } catch (Exception e) { return _u_Msg(webAppAccess, e.toString()); }
+        case Schema.SCHEMA_ORIGIN_URL:
+            try
+            {
+                webAppAccess.getHttpServletResponse().sendRedirect(obj.toString());
+            }
+            catch (Exception e)
+            {
+                return _u_Msg(webAppAccess, e.toString());
+            }
+            
+    }
+    return _u_Msg(webAppAccess, obj.toString());
+}
+
+private IXml _u_Msg(WebAppAccess webAppAccess, String s)
+{
+    webAppAccess.getHttpServletResponse().setContentType("text/html");    
+    IXml msg = XmlUtil.create("b");
+    msg.setText(s);
+    return msg;
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">_u_GetSchema</Input>
+<Input name="Arguments"><top><Argument><Name>modelName</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>path</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc107"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">true</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_OperationPage</Page>
+<NameSearch>Type</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Action">_u_GetSchema</Input>
+<Input name="InputMappings"><top><InputMapping><Name>model</Name>
+<Value>${MethodCall/_u_WebApp.getModelName}</Value>
+</InputMapping>
+<InputMapping><Name>path</Name>
+<Value>${MethodCall/_u_GetParameterType}</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">_u_GetSchema</Input>
+<Input name="ShowAdvancedPostActionBehaviors">true</Input>
+<Input name="PostActionBehavior">Standalone</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc109"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    if (com.bowstreet.util.StringUtil.isEmpty(text))
+        return "hide";
+    return "show";
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">_u_GetVisibilityForText</Input>
+<Input name="Arguments"><top><Argument><Name>text</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc111"><BuilderDefID>com.bowstreet.builders.webapp.VisibilitySetterBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ComparisonType">HideWhenFalse</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_OperationPage</Page>
+<NameSearch>operationDescriptionSection</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="FirstValue">${MethodCall/_u_GetVisibilityForText(${MethodCall/_u_Operation.getDescription})}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc113"><BuilderDefID>com.bowstreet.builders.webapp.AttributeSetterBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="HandleMissingValue">Ignore</Input>
+<Input name="Separator"> ;</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_OperationPage</Page>
+<NameSearch>DataContainer</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Attributes"><top><Attribute><Name>title</Name>
+<Value>${MethodCall/_u_GetParameterDescription}</Value>
+</Attribute>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc115"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    Object param = webAppAccess.getVariables().getObject("ServiceParameterLoopVar");
+    if (param == null)
+        return "";
+    webAppAccess.getVariables().setObject("_u_Parameter", param);
+    Map descs = (Map)webAppAccess.callMethod("_u_Parameter.getDescriptionsMap");
+    if (descs == null || descs.size() == 0)
+        return "";
+    if (descs.size() == 1)
+    {
+        Object desc = descs.values().iterator().next();
+        if (desc == null)
+            return "";
+        return desc.toString();
+    }
+    return descs.toString();
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">_u_GetParameterDescription</Input>
+<Input name="Imports"><Imports><Import>java.util.Map</Import>
+<Import>java.util.HashMap</Import>
+</Imports>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc121"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Type">String</Input>
+<Input name="Name">_u_ShowSchemaElements</Input>
+<Input name="Value" profile="servicedocumentationbaseps:ShowSchemaElements">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc125"><BuilderDefID>com.bowstreet.builders.webapp.PageEncodingBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="Encoding">UTF-8</Input>
+<Input name="AllPages">false</Input>
+<Input name="DecodeInputs">false</Input>
+<Input name="PageSettings"><PageSettings><Page><Name>_u_DocumentationPage</Name>
+<Use>true</Use>
+</Page>
+<Page><Name>_u_ModelPage</Name>
+<Use>true</Use>
+</Page>
+<Page><Name>_u_ServicePage</Name>
+<Use>true</Use>
+</Page>
+<Page><Name>_u_OperationPage</Name>
+<Use>true</Use>
+</Page>
+</PageSettings>
+</Input>
+<Input name="Name">_u_PageEncoding</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc128"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_DocumentationPage</Page>
+<NameSearch>service_report_prompt</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Java/com.bowstreet.builders.webapp.usertext.Messages.getString("ServiceDocumentation_service_report_prompt")}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc129"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_DocumentationPage</Page>
+<NameSearch>services_prompt</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Java/com.bowstreet.builders.webapp.usertext.Messages.getString("ServiceDocumentation_services_prompt")}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc131"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_ServicePage</Page>
+<NameSearch>service_prompt</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Java/com.bowstreet.builders.webapp.usertext.Messages.getString("ServiceDocumentation_services_prompt")}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc132"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_ServicePage</Page>
+<NameSearch>properties_prompt</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Java/com.bowstreet.builders.webapp.usertext.Messages.getString("ServiceDocumentation_properties_prompt")}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc130"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_OperationPage</Page>
+<NameSearch>operation_prompt</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Java/com.bowstreet.builders.webapp.usertext.Messages.getString("ServiceDocumentation_operation_prompt")}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc127"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_ModelPage</Page>
+<NameSearch>model_prompt</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Java/com.bowstreet.builders.webapp.usertext.Messages.getString("ServiceDocumentation_model_prompt")}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc213"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>_u_OperationPage</Page>
+<NameSearch>parameters_prompt</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Java/com.bowstreet.builders.webapp.usertext.Messages.getString("ServiceDocumentation_parameters_prompt")}</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><RequiredFactoryVersion>5.0.0</RequiredFactoryVersion>
+<Version>0.0.0</Version>
+<Description>Empty model (contains no builder calls).</Description>
+<Contained>false</Contained>
+<EnableGenerationCaching>true</EnableGenerationCaching>
+<Roles />
+<EnableFailover>false</EnableFailover>
+</Properties>
+<Dependencies><Dependency type="File">factory/pages/ServiceDocumentation/outer.html</Dependency>
+<Dependency type="File">factory/pages/ServiceDocumentation/model.html</Dependency>
+<Dependency type="File">factory/pages/ServiceDocumentation/service.html</Dependency>
+<Dependency type="File">factory/pages/ServiceDocumentation/operation.html</Dependency>
+<Dependency type="Class">com.bowstreet.webapp.WebApp</Dependency>
+<Dependency type="Class">com.bowstreet.webapp.DataService</Dependency>
+<Dependency type="Class">com.bowstreet.webapp.ServiceOperation</Dependency>
+<Dependency type="Class">com.bowstreet.webapp.ServiceParameter</Dependency>
+<Dependency type="Class">java.util.Iterator</Dependency>
+<Dependency type="File">/factory/html_templates/gridtable.html</Dependency>
+<Dependency type="Class">com.bowstreet.builderutilities.NameSequencer</Dependency>
+</Dependencies>
+<ExternalProperties />
+</Model>

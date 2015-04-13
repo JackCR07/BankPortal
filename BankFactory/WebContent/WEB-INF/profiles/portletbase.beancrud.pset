@@ -1,0 +1,1405 @@
+<ProfileSet name="portletbase.beancrud" useQualifiedProfileNames="true"><Description>auto-created</Description>
+<Visibility>False</Visibility>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<Models><Model>pageautomation/Beancrud</Model>
+<Model>factory/portletbase/Beancrud</Model>
+</Models>
+<ProfileDef><Entries><Entry name="EditFromViewButtonPageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewDetailAccessorsEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewDoEditALFetchAction" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DisableMainImportedPage" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DeleteFromViewEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionInitRetrieverMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="preApplyCreateMCName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionEditDFMFieldname" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="saveErrorHandlerEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="postApplyCreateErrorActionName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CancelEditButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CancelFromCreateButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DeleteMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Button_Action</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionCreatePageName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="doSaveForCreateErrorAction" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDeleteControlType" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="saveFromEditButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="cancelCreateButtonLabel" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="BackFromCreateButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDeleteLinkDFM" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="createFromMainTag" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewObjAccessorMethodname" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="preApplyCreateErrorActionName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewButtonEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DeleteFromViewButtonPageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDeleteFromCollectionMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DeleteActionListDeleteAction" isRuntime="false"><UI type="TextInput"><Prompt>Row0_input0</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DoSaveForCreateMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>Method_Body</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ActionAfterDelete" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CancelFromCreateButtonPageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DeleteFromViewButtonLabel1" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoEditPageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="MakeUIFromBeanAttributes" isRuntime="false"><UI type="TextInput"><Prompt>DataPage_CreateTags</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="preApplyMethodNameCreate" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="SaveFromEditButtonEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="backFromEditButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CancelEditButtonLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionIdDFMFieldname" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionHideEditLink" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CancelEditLinkEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDeleteFromCollectionMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CancelFromCreateLinkEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DoSaveMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="viewPageImportedPageURL" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="SaveFromCreateButtonPageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="editFromViewTag" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="FetchByKeyClassname" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="BackFromCreateLinkEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionIXmlForSchema" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionPageDoPaging" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="BackFromCreateButtonPageLocation1" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="EditFromViewEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="cancelCreateTagName" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="doSaveErrorAction" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="preApplyErrorActionName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CancelEditButtonEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DataPage_BeanValidation" isRuntime="false"><UI type="TextInput"><Prompt>DataPage_BeanValidation</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionImportedPageURL" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="saveOnEditPageTagName" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="postApplyErrorActionName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DCMContainerField" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="postApplyCreateMCName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewIdDFMFieldname" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="postApplyMCName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoEditForCreateALName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="SaveDataMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoViewPageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Link_PageLocation</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="clearCreatePageErrorsMethodName" isRuntime="false"><UI type="TextInput"><Prompt>clearCreatePageErrorsMethodName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionActionAfterDelete" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionViewlinkColname" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="PagingButtonsPageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoSaveALName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DoSaveForCreateFormName" isRuntime="false"><UI type="TextInput"><Prompt>DoSaveForCreateFormName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="createErrorHandlerEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="backFromEditBackButtonTagName" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionViewPageName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="BackFromViewButtonEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="NullMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDeleteDCMFieldname" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionGetCollectionMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="enableSupermodelMain" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDeleteFromViewDeleteAction" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionXml" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ApplyUpdatesCreateMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Button1_PageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="FetchByKeyColtypesVarname" isRuntime="false"><UI type="TextInput"><Prompt>Variable_Name</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionShowDelete" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CancelFromCreateButtonEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="createPageImportedPageURL" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="editFromViewButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoEditFromButtonALName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="BackFromEditPageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="MasterObjClassname" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionEditLinkDFM" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DisableEditImportedPage" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CreateFromMainButtonPageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionEditControlType" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="createFromMainButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewObjectLJOName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CreateFromMainButtonEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SaveFromCreateButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DeleteFromViewButtonEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionPageURL" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewButtonEnabled1" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionPAName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DPName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="BackFromViewButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoCreateFromButtonALName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDeleteDFMFieldname" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ConfirmDelete" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DataFieldDefinition_Fields" isRuntime="false"><UI type="TextInput"><Prompt>DataFieldDefinition_Fields</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionShowEdit" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DisableViewImportedPage" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDataRetrieverMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CreateEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="GetCurrentObject" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="theBeanCollectionIXmlForSchema" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DeleteButtonEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="editPageImportedPageURL" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="SaveFromCreateLinkEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionPagingButtonsTag" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDataPageDataSource" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CancelEditPageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SaveFromCreateButtonEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoViewFromEditPageName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewDoViewALFetchAction" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionActionAfterDeleteFromView" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="instantiateMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionLinkObjId" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="BackFromViewLinkEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Link_BuilderCallEnabled</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="backFromCreateButtonLabel" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoDeleteALDeleteAction" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionPageDisplayLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DeleteEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Button_BuilderCallEnabled</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="EditDataPageName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDeleteFromViewMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionMainPageName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="SaveFromEditButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionEditPageName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="createIdDFMFieldName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewLinkEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="EditFromViewButtonEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionPagePageSize" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoCreateALName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewFetchSelectedObjectMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DoDataPaging" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewPageDisplayLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataFieldDefinition1_Fields" isRuntime="false"><UI type="TextInput"><Prompt>DataFieldDefinition1_Fields</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDeleteFromViewMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoEditALName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DeleteFromViewArg" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="BackFromCreateButtonEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="FetchByKeyClassnameVarname" isRuntime="false"><UI type="TextInput"><Prompt>Variable_Name</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionHideDeleteLink" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="EditEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewFetchSelectedObjectMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="BackFromEditButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewGetCollectionMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ApplyUpdatesMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataPage_CreateBeanValidation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SaveFromEditLinkEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewDisableViewImportedPage" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="preApplyMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DeleteFromViewButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CreateDataPageName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DeleteLinkEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoViewALName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewObjAccessorColtypes" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="BackFromViewButtonPageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Link_PageLocation</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoViewTagName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewObjAccessorColnames" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewGetCollectionMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewDataPageName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="paResetMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ConfirmDeleteFromView" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="BackFromEditButtonEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="clearEditPageErrorsMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="saveOnCreatePageTagName" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="BackFromEditLinkEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="getViewObjObjIdMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="preApplyMCName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionPageDoDataPaging" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="paResetMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewObjObjId" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="EditIdDFMFieldName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="BackFromCreateButtonPageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="FetchByKeyColnamesVarname" isRuntime="false"><UI type="TextInput"><Prompt>Variable_Name</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="backFromCreateButtonTagName" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="DeleteFromViewLinkEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PagingButtonsName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionPageAddPagingButtons" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="SaveFromEditFormName" isRuntime="false"><UI type="TextInput"><Prompt>SaveFromEditFormName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="assignInstantiatedObjMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="getViewObjObjIdMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Button2_PageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoDeletePageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SaveFromEditButtonLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="preApplyCreateMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DisableCreateImportedPage" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="cancelEditButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Button_PageLocation" isRuntime="false"><UI type="TextInput"><Prompt>Button_PageLocation</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CreatePageDisplayLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="BackFromViewButtonLabel1" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="assignInstantiatedObjMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewObjAccessorClassname" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="enableSuperModelMain" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="postApplyMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DeleteActionListName" isRuntime="false"><UI type="TextInput"><Prompt>ActionList_Name</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="assignInstantiatedObjAction" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CreateFromMainButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionPADataSource" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="EditFromViewButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionPageSize" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionHideEditLinkHide" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewObjClassname" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionCollectionVarname" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="EditFromViewLinkEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDataPageName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoSaveForCreateALName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="FetchByKeyMethodNameVarname" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="saveFromCreateButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="deleteFromCollection_Method_Name" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewFetchSelectedObject2MethodBody" isRuntime="false"><UI type="TextInput"><Prompt>Method_Body</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDeleteFromViewALName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewLinkColumnName" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="postApplyCreateMethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionInitRetrieverMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CreateFromMainLinkEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="EditFromViewButtonLabel1" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionDoDeleteALName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CollectionPARetrieverLJOName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="EditSaveChanges" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DeleteMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>Method_Body</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="cancelEditButtonTagName" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="EditPageDisplayLocation" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="MasterObjectLJOName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewFetchSelectedObject2MethodName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1079109964289" isContainer="true"><Values><Value name="EditFromViewButtonPageLocation">&lt;SimplePageLocation&gt;&lt;Page profile="portletbase.beancrud:CollectionViewPageName"&gt;viewPage&lt;/Page&gt;
+&lt;NameSearch profile="portletbase.beancrud:editFromViewTag"&gt;editbutton&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="ViewDetailAccessorsEnabled">Enabled</Value>
+<Value name="ViewDoEditALFetchAction">fetchSelectedObject(${Variables/objId}, theBeanLJOCollection, viewObject, masterObject)</Value>
+<Value name="DisableMainImportedPage">Enabled</Value>
+<Value name="DeleteFromViewEnabled">Enabled</Value>
+<Value name="CollectionInitRetrieverMethodName">initRetriever</Value>
+<Value name="preApplyCreateMCName">preApplyCreateMC</Value>
+<Value name="CollectionEditDFMFieldname">[page]dp/collection/CLASS/Edit</Value>
+<Value name="saveErrorHandlerEnabled">Enabled</Value>
+<Value name="postApplyCreateErrorActionName">postApplyCreateErrorAction</Value>
+<Value name="CancelEditButtonLabel">cancel</Value>
+<Value name="CancelFromCreateButtonLabel">cancel</Value>
+<Value name="DeleteMethodName">delete</Value>
+<Value name="CollectionCreatePageName">createPage</Value>
+<Value name="doSaveForCreateErrorAction">testCreateErrorHandlerMethod</Value>
+<Value name="CollectionDeleteControlType">Link</Value>
+<Value name="saveFromEditButtonLabel">save</Value>
+<Value name="cancelCreateButtonLabel">cancel</Value>
+<Value name="BackFromCreateButtonLabel">back</Value>
+<Value name="CollectionDeleteLinkDFM">Enabled</Value>
+<Value name="createFromMainTag">createbutton</Value>
+<Value name="ViewObjAccessorMethodname">findByName</Value>
+<Value name="preApplyCreateErrorActionName">preApplyCreateErrorAction</Value>
+<Value name="ViewButtonEnabled">Disabled</Value>
+<Value name="DeleteFromViewButtonPageLocation">&lt;SimplePageLocation&gt;&lt;Page profile="portletbase.beancrud:CollectionViewPageName"&gt;viewPage&lt;/Page&gt;
+&lt;NameSearch&gt;deletebutton&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="CollectionDeleteFromCollectionMethodBody">{
+	String staticClassname = null;
+	String collectionVarname = "orgcharts";
+	Integer id = new Integer(objId);
+	Collection c = (Collection)webAppAccess.callMethod("getCollection", collectionVarname);
+	Iterator iter = c.iterator();
+	// Object objectToDelete = BeanMasterDetailMethods.getObject(id, iter);
+	try
+	{
+		// BeanMasterDetailMethods.callDeleteMethod(staticClassname, objectToDelete);
+		return;
+	}
+    catch (Exception e)
+    {
+        throw new com.bowstreet.util.WrappedException(e);
+    }		
+}</Value>
+<Value name="DeleteActionListDeleteAction">delete(${Arguments/objId})</Value>
+<Value name="DoSaveForCreateMethodBody">{
+    webAppAccess.callMethod("preApplyCreateMC", new Object[] {  });
+    webAppAccess.callMethod("createPage_SaveData", new Object[] {  });
+    webAppAccess.callMethod("postApplyCreateMC", new Object[] {  });
+    webAppAccess.callMethod("pa_reset", new Object[] {  });
+    webAppAccess.processPage("page");
+}</Value>
+<Value name="ActionAfterDelete">page</Value>
+<Value name="CancelFromCreateButtonPageLocation">&lt;SimplePageLocation&gt;&lt;Page&gt;createPage&lt;/Page&gt;
+&lt;NameSearch&gt;deletebutton&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="DeleteFromViewButtonLabel1">delete</Value>
+<Value name="CollectionDoEditPageLocation">&lt;SimplePageLocation&gt;&lt;Page&gt;page&lt;/Page&gt;
+&lt;NameSearch&gt;Edit&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="MakeUIFromBeanAttributes">true</Value>
+<Value name="preApplyMethodNameCreate">preApplyCreate</Value>
+<Value name="SaveFromEditButtonEnabled">Disabled</Value>
+<Value name="backFromEditButtonLabel">back</Value>
+<Value name="CancelEditButtonLocation">cancel</Value>
+<Value name="CollectionIdDFMFieldname">[page]dp/OrgChart/OrgChart___ID</Value>
+<Value name="CollectionHideEditLink">Disabled</Value>
+<Value name="CancelEditLinkEnabled">Enabled</Value>
+<Value name="CollectionDeleteFromCollectionMethodName">deleteFromCollection</Value>
+<Value name="CancelFromCreateLinkEnabled">Enabled</Value>
+<Value name="DoSaveMethodBody">{
+webAppAccess.callMethod("preApplyMC");
+webAppAccess.callMethod("editPage_SaveData");
+IXml errors = (IXml)webAppAccess.getVariables().getObject("editPageError");
+System.out.println("ERRORS=" + errors);
+if (errors != null &amp;&amp; errors.getChildren().size() &gt; 0)
+    webAppAccess.processPage("editPage");
+else
+{
+    webAppAccess.callMethod("postApplyMC"); 
+    webAppAccess.callMethod("pa_reset");
+    webAppAccess.processPage("page");
+}
+}</Value>
+<Value name="viewPageImportedPageURL">/factory/pages/beanmasterdetail_defaultpage.html</Value>
+<Value name="SaveFromCreateButtonPageLocation">&lt;SimplePageLocation&gt;&lt;Page&gt;createPage&lt;/Page&gt;
+&lt;NameSearch&gt;editbutton&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="editFromViewTag">editbutton</Value>
+<Value name="FetchByKeyClassname">fetchByKeyClassname</Value>
+<Value name="BackFromCreateLinkEnabled">Enabled</Value>
+<Value name="CollectionIXmlForSchema">&lt;collection&gt;
+&lt;/collection&gt;</Value>
+<Value name="CollectionPageDoPaging">Enabled</Value>
+<Value name="BackFromCreateButtonPageLocation1">backbutton</Value>
+<Value name="EditFromViewEnabled">Enabled</Value>
+<Value name="cancelCreateTagName">deletebutton</Value>
+<Value name="doSaveErrorAction">testErrorHandlerMethod</Value>
+<Value name="preApplyErrorActionName">preApplyErrorAction</Value>
+<Value name="CancelEditButtonEnabled">Disabled</Value>
+<Value name="DataPage_BeanValidation">Both</Value>
+<Value name="CollectionImportedPageURL">/factory/pages/beanmasterdetail_defaultpage.html</Value>
+<Value name="saveOnEditPageTagName">editbutton</Value>
+<Value name="postApplyErrorActionName">postApplyErrorAction</Value>
+<Value name="DCMContainerField">[page]dp/OrgChart</Value>
+<Value name="postApplyCreateMCName">postApplyCreateMC</Value>
+<Value name="ViewIdDFMFieldname">[viewPage]viewPage/OrgChartDetail/OrgChartDetail___ID</Value>
+<Value name="postApplyMCName">postApplyMC</Value>
+<Value name="CollectionDoEditForCreateALName">doEditForCreate</Value>
+<Value name="SaveDataMethodName"></Value>
+<Value name="CollectionDoViewPageLocation">&lt;SimplePageLocation&gt;&lt;Page&gt;page&lt;/Page&gt;
+&lt;NameSearch&gt;OrgChart__name&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="clearCreatePageErrorsMethodName">clear_createPage_Errors</Value>
+<Value name="CollectionActionAfterDelete">page</Value>
+<Value name="CollectionViewlinkColname">name</Value>
+<Value name="PagingButtonsPageLocation">&lt;SimplePageLocation&gt;&lt;Page&gt;page&lt;/Page&gt;
+&lt;NameSearch&gt;pagingbuttons&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="CollectionDoSaveALName">doSave</Value>
+<Value name="DoSaveForCreateFormName">DVV</Value>
+<Value name="createErrorHandlerEnabled">Enabled</Value>
+<Value name="backFromEditBackButtonTagName">backbutton</Value>
+<Value name="CollectionViewPageName">viewPage</Value>
+<Value name="BackFromViewButtonEnabled">Disabled</Value>
+<Value name="NullMethodName">nullMethod</Value>
+<Value name="CollectionDeleteDCMFieldname">[page]dp/OrgChart</Value>
+<Value name="CollectionGetCollectionMethodBody">{
+return (Collection)webAppAccess.getVariables().getObject(collectionVarname);
+}</Value>
+<Value name="enableSupermodelMain">Enabled</Value>
+<Value name="CollectionDeleteFromViewDeleteAction">deleteFromCollection</Value>
+<Value name="CollectionXml">&lt;collection&gt;
+&lt;OrgChart&gt;
+&lt;_ID /&gt;
+&lt;name /&gt;
+&lt;logoURL /&gt;
+&lt;date /&gt;
+&lt;version /&gt;
+&lt;/OrgChart&gt;
+&lt;OrgChart&gt;
+&lt;_ID /&gt;
+&lt;name /&gt;
+&lt;logoURL /&gt;
+&lt;date /&gt;
+&lt;version /&gt;
+&lt;/OrgChart&gt;
+&lt;/collection&gt;</Value>
+<Value name="ApplyUpdatesCreateMethodName">createPage_SaveData</Value>
+<Value name="Button1_PageLocation">&lt;SimplePageLocation&gt;&lt;Page profile="portletbase.beancrud:CollectionViewPageName"&gt;viewPage&lt;/Page&gt;
+&lt;NameSearch profile="portletbase.beancrud:editFromViewTag"&gt;editbutton&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="FetchByKeyColtypesVarname">fetchByKeyColtypes</Value>
+<Value name="CollectionShowDelete">true</Value>
+<Value name="CancelFromCreateButtonEnabled">Disabled</Value>
+<Value name="createPageImportedPageURL">/factory/pages/beanmasterdetail_defaultpage.html</Value>
+<Value name="editFromViewButtonLabel">edit</Value>
+<Value name="CollectionDoEditFromButtonALName">doEditFromButton</Value>
+<Value name="BackFromEditPageLocation">&lt;SimplePageLocation&gt;&lt;Page profile="portletbase.beancrud:CollectionEditPageName"&gt;editPage&lt;/Page&gt;
+&lt;NameSearch profile="portletbase.beancrud:backFromEditBackButtonTagName"&gt;backbutton&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="MasterObjClassname">com.bowstreet.qa.beans.OrgChart</Value>
+<Value name="CollectionEditLinkDFM">Enabled</Value>
+<Value name="DisableEditImportedPage">Enabled</Value>
+<Value name="CreateFromMainButtonPageLocation">&lt;SimplePageLocation&gt;&lt;Page&gt;page&lt;/Page&gt;
+&lt;NameSearch&gt;createbutton&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="CollectionEditControlType">Link</Value>
+<Value name="createFromMainButtonLabel">create</Value>
+<Value name="ViewObjectLJOName">viewObject</Value>
+<Value name="CreateFromMainButtonEnabled">Disabled</Value>
+<Value name="SaveFromCreateButtonLabel">save</Value>
+<Value name="DeleteFromViewButtonEnabled">Disabled</Value>
+<Value name="CollectionPageURL">/factory/pages/beanmasterdetail_defaultpage.html</Value>
+<Value name="ViewButtonEnabled1">Enabled</Value>
+<Value name="CollectionPAName">pa</Value>
+<Value name="DPName">[page]dp/OrgChart</Value>
+<Value name="BackFromViewButtonLabel">back</Value>
+<Value name="CollectionDoCreateFromButtonALName">doCreateFromButton</Value>
+<Value name="CollectionDeleteDFMFieldname">[page]dp/collection/CLASS/Delete</Value>
+<Value name="ConfirmDelete">Enabled</Value>
+<Value name="DataFieldDefinition_Fields">&lt;Fields&gt;&lt;Field profile="portletbase.beancrud:ViewIdDFMFieldname"&gt;[viewPage]viewPage/OrgChartDetail/OrgChartDetail___ID&lt;/Field&gt;
+&lt;/Fields&gt;</Value>
+<Value name="CollectionShowEdit">false</Value>
+<Value name="DisableViewImportedPage">Enabled</Value>
+<Value name="CollectionDataRetrieverMethodBody">{
+com.bowstreet.builders.webapp.methods.BeanCollectionDataRetriever bcr =
+	new com.bowstreet.builders.webapp.methods.BeanCollectionDataRetriever();
+webAppAccess.getVariables().setObject("bcRetriever", bcr);
+Variable v = webAppAccess.getVariables().getVariable("theBeanCollection");
+webAppAccess.callMethod("bcRetriever.setCollectionVariable", v);
+webAppAccess.callMethod("bcRetriever.setDoEdit", new Boolean(true));
+webAppAccess.callMethod("bcRetriever.setDoDelete", new Boolean(false));
+webAppAccess.callMethod("bcRetriever.setFetchSize", new Integer(6));
+return bcr;
+}</Value>
+<Value name="CreateEnabled">Enabled</Value>
+<Value name="GetCurrentObject">${Java/webAppAccess.getVariables().getObject("viewObject")}</Value>
+<Value name="theBeanCollectionIXmlForSchema">&lt;collection&gt;
+&lt;OrgChart&gt;&lt;fred/&gt;&lt;_ID /&gt;&lt;name/&gt;&lt;logoURL/&gt;&lt;date/&gt;&lt;version/&gt;&lt;/OrgChart&gt;
+&lt;OrgChart&gt;&lt;fred/&gt;&lt;_ID /&gt;&lt;name/&gt;&lt;logoURL/&gt;&lt;date/&gt;&lt;version/&gt;&lt;/OrgChart&gt;
+&lt;/collection&gt;</Value>
+<Value name="DeleteButtonEnabled">Disabled</Value>
+<Value name="editPageImportedPageURL">/factory/pages/beanmasterdetail_defaultpage.html</Value>
+<Value name="SaveFromCreateLinkEnabled">Enabled</Value>
+<Value name="CollectionPagingButtonsTag">pagingbuttons</Value>
+<Value name="CollectionDataPageDataSource">Variables/paData</Value>
+<Value name="CancelEditPageLocation">&lt;SimplePageLocation&gt;&lt;Page profile="portletbase.beancrud:CollectionEditPageName"&gt;editPage&lt;/Page&gt;
+&lt;NameSearch profile="portletbase.beancrud:cancelEditButtonTagName"&gt;deletebutton&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="SaveFromCreateButtonEnabled">Disabled</Value>
+<Value name="CollectionDoViewFromEditPageName">doViewFromEditPage</Value>
+<Value name="ViewDoViewALFetchAction">fetchSelectedObject(${Arguments/objId}, theBeanLJOCollection, viewObject, masterObject)</Value>
+<Value name="CollectionActionAfterDeleteFromView">page</Value>
+<Value name="instantiateMethodName">instantiate</Value>
+<Value name="CollectionLinkObjId">${Java/new Integer((((com.bowstreet.qa.beans.OrgChart)(webAppAccess.getVariables().getObject("OrgChartLoopVar")))).hashCode())}</Value>
+<Value name="BackFromViewLinkEnabled">Enabled</Value>
+<Value name="backFromCreateButtonLabel">backbutton</Value>
+<Value name="CollectionDoDeleteALDeleteAction">deleteFromCollection(${Arguments/objId})</Value>
+<Value name="CollectionPageDisplayLocation">data</Value>
+<Value name="DeleteEnabled">Enabled</Value>
+<Value name="EditDataPageName">editPage</Value>
+<Value name="CollectionDeleteFromViewMethodBody">{
+	String staticClassname = null;
+	String collectionVarname = "orgcharts";
+	Integer id = new Integer(objId);
+	Collection c = (Collection)webAppAccess.callMethod("getCollection", collectionVarname);
+	Iterator iter = c.iterator();
+	// Object objectToDelete = BeanMasterDetailMethods.getObject(id, iter);
+	try
+	{
+		// BeanMasterDetailMethods.callDeleteMethod(staticClassname, objectToDelete);
+		return;
+	}
+    catch (Exception e)
+    {
+        throw new com.bowstreet.util.WrappedException(e);
+    }		
+}</Value>
+<Value name="CollectionMainPageName">page</Value>
+<Value name="SaveFromEditButtonLabel">save</Value>
+<Value name="CollectionEditPageName">editPage</Value>
+<Value name="createIdDFMFieldName">[createPage]createPage/OrgChartDetail/OrgChartDetail___ID</Value>
+<Value name="ViewLinkEnabled">Enabled</Value>
+<Value name="EditFromViewButtonEnabled">Disabled</Value>
+<Value name="CollectionPagePageSize">5</Value>
+<Value name="CollectionDoCreateALName">doSaveForCreate</Value>
+<Value name="ViewFetchSelectedObjectMethodBody">{
+return webAppAccess.callMethod("fetchSelectedObject2", objId, "viewObject", "viewObject" );
+}</Value>
+<Value name="DoDataPaging">Enabled</Value>
+<Value name="ViewPageDisplayLocation">data</Value>
+<Value name="DataFieldDefinition1_Fields">&lt;Fields&gt;&lt;Field profile="portletbase.beancrud:CollectionIdDFMFieldname"&gt;[page]dp/OrgChart/OrgChart___ID&lt;/Field&gt;
+&lt;/Fields&gt;</Value>
+<Value name="CollectionDeleteFromViewMethodName">deleteFromView</Value>
+<Value name="CollectionDoEditALName">doEdit</Value>
+<Value name="DeleteFromViewArg">${Java/webAppAccess.getVariables().getObject("viewObject").hashCode()}</Value>
+<Value name="BackFromCreateButtonEnabled">Disabled</Value>
+<Value name="FetchByKeyClassnameVarname">fetchByKeyClassname</Value>
+<Value name="CollectionHideDeleteLink">Disabled</Value>
+<Value name="EditEnabled">Enabled</Value>
+<Value name="ViewFetchSelectedObjectMethodName">fetchSelectedObject</Value>
+<Value name="BackFromEditButtonLabel">back</Value>
+<Value name="ViewGetCollectionMethodBody">{
+Object c = webAppAccess.getVariables().getObject("theBeanLJOCollection");
+return c;
+}</Value>
+<Value name="ApplyUpdatesMethodName">editPage_SaveData</Value>
+<Value name="DataPage_CreateBeanValidation">Both</Value>
+<Value name="SaveFromEditLinkEnabled">Enabled</Value>
+<Value name="ViewDisableViewImportedPage">Enabled</Value>
+<Value name="preApplyMethodName">preApply</Value>
+<Value name="DeleteFromViewButtonLabel">delete</Value>
+<Value name="CreateDataPageName">createPage</Value>
+<Value name="DeleteLinkEnabled">Enabled</Value>
+<Value name="CollectionDoViewALName">doView</Value>
+<Value name="ViewObjAccessorColtypes">String,int</Value>
+<Value name="BackFromViewButtonPageLocation">&lt;SimplePageLocation&gt;&lt;Page profile="portletbase.beancrud:CollectionViewPageName"&gt;viewPage&lt;/Page&gt;
+&lt;NameSearch&gt;backbutton&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="CollectionDoViewTagName">OrgChart__name</Value>
+<Value name="ViewObjAccessorColnames">name,version</Value>
+<Value name="ViewGetCollectionMethodName">getCollection</Value>
+<Value name="ViewDataPageName">viewPage</Value>
+<Value name="paResetMethodBody">{
+webAppAccess.callMethod("pa.reset");
+}</Value>
+<Value name="ConfirmDeleteFromView">Enabled</Value>
+<Value name="BackFromEditButtonEnabled">Disabled</Value>
+<Value name="clearEditPageErrorsMethodName">clear_editPage_Errors</Value>
+<Value name="saveOnCreatePageTagName">editbutton</Value>
+<Value name="BackFromEditLinkEnabled">Enabled</Value>
+<Value name="getViewObjObjIdMethodBody">{
+	int hc = webAppAccess.getVariables().getObject("viewObject").hashCode();
+	webAppAccess.getVariables().setObject("objId", new Integer(hc));
+	return;
+}</Value>
+<Value name="preApplyMCName">preApplyMC</Value>
+<Value name="CollectionPageDoDataPaging">true</Value>
+<Value name="paResetMethodName">pa_reset</Value>
+<Value name="EditIdDFMFieldName">[editPage]editPage/OrgChartDetail/OrgChartDetail___ID</Value>
+<Value name="ViewObjObjId">webAppAccess.getVariables().getObject("viewObject").hashCode()</Value>
+<Value name="BackFromCreateButtonPageLocation">&lt;SimplePageLocation&gt;&lt;Page&gt;createPage&lt;/Page&gt;
+&lt;NameSearch&gt;backbutton&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="backFromCreateButtonTagName">backbutton</Value>
+<Value name="FetchByKeyColnamesVarname">fetchByKeyColnames</Value>
+<Value name="DeleteFromViewLinkEnabled">Enabled</Value>
+<Value name="PagingButtonsName">PagingButtons</Value>
+<Value name="CollectionPageAddPagingButtons">true</Value>
+<Value name="SaveFromEditFormName">DVV</Value>
+<Value name="assignInstantiatedObjMethodBody">{
+webAppAccess.getVariables().setObject("viewObject",
+	webAppAccess.callMethod("instantiate"));
+}</Value>
+<Value name="getViewObjObjIdMethodName">getViewObjObjId</Value>
+<Value name="Button2_PageLocation">&lt;SimplePageLocation&gt;&lt;Page profile="portletbase.beancrud:CollectionViewPageName"&gt;viewPage&lt;/Page&gt;
+&lt;NameSearch&gt;deletebutton&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="CollectionDoDeletePageLocation">&lt;SimplePageLocation&gt;&lt;Page&gt;page&lt;/Page&gt;
+&lt;NameSearch&gt;Delete&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="SaveFromEditButtonLocation">&lt;SimplePageLocation&gt;&lt;Page profile="portletbase.beancrud:CollectionEditPageName"&gt;editPage&lt;/Page&gt;
+&lt;NameSearch profile="portletbase.beancrud:saveOnEditPageTagName"&gt;editbutton&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="preApplyCreateMethodName">preApplyCreate</Value>
+<Value name="cancelEditButtonLabel">cancel</Value>
+<Value name="DisableCreateImportedPage">Enabled</Value>
+<Value name="Button_PageLocation">&lt;SimplePageLocation&gt;&lt;Page profile="portletbase.beancrud:CollectionViewPageName"&gt;viewPage&lt;/Page&gt;
+&lt;NameSearch&gt;backbutton&lt;/NameSearch&gt;
+&lt;/SimplePageLocation&gt;</Value>
+<Value name="CreatePageDisplayLocation">data</Value>
+<Value name="BackFromViewButtonLabel1">back</Value>
+<Value name="assignInstantiatedObjMethodName">assignInstantiatedObj</Value>
+<Value name="ViewObjAccessorClassname">com.bowstreet.qa.beans.OrgChart</Value>
+<Value name="assignInstantiatedObjAction">Assignment!viewObject=${MethodCall/instantiate}</Value>
+<Value name="DeleteActionListName">deleteActionList</Value>
+<Value name="postApplyMethodName">postApply</Value>
+<Value name="enableSuperModelMain">Enabled</Value>
+<Value name="CreateFromMainButtonLabel">create</Value>
+<Value name="CollectionPADataSource">${Variables/theBeanLJOCollection}</Value>
+<Value name="EditFromViewButtonLabel">edit</Value>
+<Value name="CollectionPageSize">6</Value>
+<Value name="ViewObjClassname">com.bowstreet.qa.beans.OrgChartDetail</Value>
+<Value name="CollectionHideEditLinkHide">true</Value>
+<Value name="CollectionCollectionVarname">theBeanLJOCollection</Value>
+<Value name="EditFromViewLinkEnabled">Enabled</Value>
+<Value name="CollectionDataPageName">dp</Value>
+<Value name="CollectionDoSaveForCreateALName">doSaveForCreate</Value>
+<Value name="FetchByKeyMethodNameVarname">fetchByKeyMethodname</Value>
+<Value name="saveFromCreateButtonLabel">save</Value>
+<Value name="deleteFromCollection_Method_Name">deleteFromCollection</Value>
+<Value name="ViewFetchSelectedObject2MethodBody">{
+   Integer id = new Integer(objID);
+   Collection c = null;
+   //         if we're working with a paging assistant fetch the collection from the Retriever - works
+   //         when we're working with an Iterator..
+   Object o = webAppAccess.getVariables().getVariable("pa_BeanRetriever");
+   if (o != null)
+   {
+      BeanCollectionDataRetriever bcr = (BeanCollectionDataRetriever)((Variable)o).getValue();
+      o = bcr.getCollection(0);
+   }
+   else
+      o = webAppAccess.callMethod("getCollection","${Variables/theBeanLJOCollection}");
+   Iterator iter = null;
+   if (o instanceof Collection)
+   {
+      c = (Collection)o;
+      iter = c.iterator();
+   }
+   else if (o instanceof Iterator)
+      iter = (Iterator)o;
+   else
+      throw new IllegalArgumentException("Collection or Iterator expected:" + o);
+   Object obj = null;
+   while (iter.hasNext())
+   {
+      obj = iter.next();
+      int hash = obj.hashCode();
+      if (hash == id.intValue())
+         break;
+   }
+   com.bowstreet.webapp.Variable detailClass = webAppAccess.getVariables().getVariable("viewObject");
+   com.bowstreet.webapp.Variable masterClass = webAppAccess.getVariables().getVariable("masterObject");
+   if (!masterClass.getObjectClassName().equals(detailClass.getObjectClassName()))
+   {
+      IXml objIXml = (IXml)webAppAccess.callMethod("bcMethods.toIXml", obj);
+      String clazz = webAppAccess.getVariables().getString("fetchByKeyClassname");
+      String method = webAppAccess.getVariables().getString("fetchByKeyMethodname");
+      String colnames = webAppAccess.getVariables().getString("fetchByKeyColnames");
+      String coltypes = webAppAccess.getVariables().getString("fetchByKeyColtypes");
+      Object args[] = new Object[5];
+      args[0] = objIXml;
+      args[1] = clazz;
+      args[2] = method;
+      args[3] = colnames;
+      args[4] = coltypes;
+      obj = webAppAccess.callMethod("bcMethods.fetchById", args);
+   }
+   webAppAccess.getVariables().setObject("viewObject", obj);
+   return obj;
+}</Value>
+<Value name="CollectionDeleteFromViewALName">doDeleteFromView</Value>
+<Value name="ViewLinkColumnName">name</Value>
+<Value name="postApplyCreateMethodName">postApplyCreate</Value>
+<Value name="CollectionInitRetrieverMethodBody">{
+Object o = com.bowstreet.builders.webapp.methods.BeanCollectionDataRetriever.getRetriever( webAppAccess, "${Variables/theBeanLJOCollection}");
+return (com.bowstreet.builders.webapp.methods.BeanCollectionDataRetriever)o;
+}</Value>
+<Value name="CreateFromMainLinkEnabled">Enabled</Value>
+<Value name="EditFromViewButtonLabel1">edit</Value>
+<Value name="CollectionDoDeleteALName">doDeleteFromCollection</Value>
+<Value name="ViewEnabled">Enabled</Value>
+<Value name="EditSaveChanges">saveChanges</Value>
+<Value name="CollectionPARetrieverLJOName">pa_retriever</Value>
+<Value name="DeleteMethodBody">{
+	String staticClassname = null;
+	String collectionVarname = "orgcharts";
+	Integer id = new Integer(objId);
+	Collection c = (Collection)webAppAccess.callMethod("getCollection", collectionVarname);
+	Iterator iter = c.iterator();
+	// Object objectToDelete = BeanMasterDetailMethods.getObject(id, iter);
+	try
+	{
+		// BeanMasterDetailMethods.callDeleteMethod(staticClassname, objectToDelete);
+		return; 
+	}
+    catch (Exception e)
+    {
+        throw new com.bowstreet.util.WrappedException(e);
+    }		
+}</Value>
+<Value name="EditPageDisplayLocation">data</Value>
+<Value name="cancelEditButtonTagName">deletebutton</Value>
+<Value name="MasterObjectLJOName">masterObject</Value>
+<Value name="ViewFetchSelectedObject2MethodName">fetchSelectedObject2</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

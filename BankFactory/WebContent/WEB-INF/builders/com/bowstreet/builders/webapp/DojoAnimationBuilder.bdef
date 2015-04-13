@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoAnimationBuilder"> 
+  <ReadableName>Dojo Animation</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName> 
+  <HelpFile>factory/product_documentation/designer/dojo_animation.html</HelpFile> 
+  <RequiredFactoryVersion>6.1</RequiredFactoryVersion> 
+  <Description>Apply an animated effect to a page element</Description> 
+  <Domains> 
+    <Domain>WebApp</Domain> 
+    <Domain>Consumer</Domain>
+  </Domains> 
+  <CreateModifyList> 
+    <CanModify xmlns="" type="[Unassigned Elements]" category="Rich UI" /> 
+    <CanModify xmlns="" type="Control" category="Rich UI" /> 
+  </CreateModifyList> 
+  <Category>Rich UI, Formatting and Visibility</Category> 
+  <Keywords /> 
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoAnimationBuilder</BuilderDataEntry> 
+    <BuilderDataEntry name="IconName">dojo_animation</BuilderDataEntry>
+    <BuilderDataEntry name="PageLocation">onNamedTag</BuilderDataEntry>
+  </BuilderData> 
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoAnimationCoordinator</CoordinatorClassName> 
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName"> 
+      <Prompt>Name</Prompt> 
+      <InitialValue /> 
+      <HelpText /> 
+      <Page /> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation"> 
+      <Prompt>Page location</Prompt> 
+      <InitialValue /> 
+      <HelpText /> 
+      <Page /> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType /> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="TriggerType" base="com.bowstreet.core.Base.ComboBox"> 
+      <Prompt>Trigger Type</Prompt> 
+      <InitialValue /> 
+      <HelpText>What should start this animation? Choices include a client event, an HTML event or JavaScript code.</HelpText> 
+      <Page /> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+      <Editor> 
+        <Argument name="ListLabels">Client Event,HTML Event,JavaScript</Argument> 
+        <Argument name="ListData">ClientEvent,HTMLEvent,JavaScript</Argument> 
+        <Argument name="width">200</Argument> 
+        <Argument name="isEditable">false</Argument> 
+      </Editor> 
+    </InputDefinition> 
+    <InputDefinition name="ClientEvent" base="com.bowstreet.builders.webapp.ClientEventHandlerBuilder.Event"> 
+      <Prompt>Client Event</Prompt> 
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator> 
+      <Required>false</Required>  
+    </InputDefinition> 
+    <InputDefinition name="TriggerIsTarget" base="com.bowstreet.core.Base.BooleanData"> 
+      <Prompt>Use Target As Trigger</Prompt> 
+      <InitialValue>true</InitialValue> 
+      <HelpText>Start the animation when an HTML event is recieved from the element indicated by the main page location.</HelpText>
+      <Page /> 
+      <Required>false</Required> 
+      <Visible>false</Visible> 
+      <ProfileType /> 
+      <Callable>false</Callable> 
+    </InputDefinition>    
+    <InputDefinition name="TriggerPageLocation" base="com.bowstreet.core.WebAppBase.PageLocation"> 
+      <Prompt>Trigger Location</Prompt> 
+      <HelpText>Start the animation when an HTML event is recieved from the element indicated by this page location.</HelpText>
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition>                      
+    <InputDefinition name="HTMLEvent" base="com.bowstreet.builders.webapp.HTMLEventActionBuilder.EventName"> 
+      <Prompt>HTMLEvent</Prompt> 
+      <InitialValue>onmouseover</InitialValue> 
+      <Required>false</Required> 
+      <HelpText>The HTML event used to start the animation.</HelpText>
+    </InputDefinition> 
+    <InputDefinition name="ScriptFunction" base="com.bowstreet.core.Base.IndirectValue"> 
+      <Prompt>JavaScript Function</Prompt> 
+      <InitialValue /> 
+      <HelpText>Provide the name of the JavaScript function that this builder should generate to initiate the animation.</HelpText> 
+      <Required>false</Required> 
+      <Page /> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="Effect" base="com.bowstreet.core.Base.ComboBox"> 
+      <Prompt>Effect</Prompt> 
+      <HelpText>Specify the effect to apply</HelpText> 
+      <Required>false</Required> 
+      <!-- The following labels cause a SEGCHK false positive. -->
+      <Editor> 
+        <Argument name="ListLabels">show,hide,fade in,fade out,slide by,wipe in,wipe out,highlight,move to location,move to ID,animate property</Argument> 
+        <Argument name="ListData">show,hide,fadeIn,fadeOut,slideBy,wipeIn,wipeOut,highlight,moveToLocation,moveToID,animateProperty</Argument> 
+        <Argument name="width">200</Argument> 
+        <Argument name="isEditable">true</Argument> 
+      </Editor> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+      <InitialValue /> 
+      <Page /> 
+    </InputDefinition> 
+    <InputDefinition name="Duration" base="com.bowstreet.core.Base.StringData"> 
+      <Prompt>Animation Duration</Prompt> 
+      <HelpText /> 
+      <Required>false</Required> 
+      <InitialValue /> 
+      <Page /> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="HighlightColor" base="com.bowstreet.core.Base.StringData"> 
+      <Prompt>Highlight Color</Prompt> 
+      <InitialValue /> 
+      <HelpText>The element's background color will be set to this, and then gradually returned to normal</HelpText> 
+      <Required>false</Required> 
+      <Page /> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="Top" base="com.bowstreet.core.Base.StringData"> 
+      <Prompt>Top</Prompt> 
+      <InitialValue /> 
+      <HelpText>Vertical sliding argument. A negative number will cause the tag to slide up, while a positive value will cause the tag to slide down.</HelpText> 
+      <Required>false</Required> 
+      <Page /> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="Left" base="com.bowstreet.core.Base.StringData"> 
+      <Prompt>Left</Prompt> 
+      <InitialValue /> 
+      <HelpText>Horizontal sliding argument. A negative number will cause the tag to slide left, while a positive value will cause the tag to slide right.</HelpText> 
+      <Required>false</Required> 
+      <Page /> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="DestinationPageLocation" base="com.bowstreet.core.WebAppBase.PageLocation"> 
+      <Prompt>Destination Location</Prompt> 
+      <HelpText /> 
+      <Required>false</Required> 
+      <InitialValue /> 
+      <Page /> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="DestinationID" base="com.bowstreet.core.Base.IndirectValue"> 
+      <Prompt>Destination Element ID</Prompt> 
+      <InitialValue /> 
+      <HelpText>The HTML "id" attribute value identifying the destination element.</HelpText> 
+      <Required>false</Required> 
+      <Page /> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="Property" base="com.bowstreet.core.Base.StringData"> 
+      <Prompt>Property</Prompt> 
+      <HelpText /> 
+      <Required>false</Required> 
+      <InitialValue /> 
+      <Page /> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="InitialValue" base="com.bowstreet.core.Base.StringData"> 
+      <Prompt>Initial Value</Prompt> 
+      <HelpText /> 
+      <Required>false</Required> 
+      <InitialValue /> 
+      <Page /> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="FinalValue" base="com.bowstreet.core.Base.StringData"> 
+      <Prompt>Final Value</Prompt> 
+      <HelpText /> 
+      <Required>false</Required> 
+      <InitialValue /> 
+      <Page /> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition>  
+    <InputDefinition name="FireCompletionEvent" base="com.bowstreet.core.Base.BooleanData"> 
+      <Group>Chaining</Group>
+      <Prompt>Fire Completion Event</Prompt> 
+      <InitialValue>true</InitialValue> 
+      <HelpText>Should a client-side event be generated and fired when this animation completes?</HelpText>
+      <Page /> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType /> 
+      <Callable>false</Callable>       
+    </InputDefinition>
+    <InputDefinition name="CompletionEventName" base="com.bowstreet.builders.webapp.EventDeclarationBuilder.EventName">
+      <Group>Chaining</Group> 
+      <Prompt>Completion Event Name</Prompt> 
+      <InitialValue /> 
+      <HelpText>Name of the client-side event that will be fired when the animation completes.</HelpText>
+      <Required>false</Required> 
+      <Visible>false</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="Easing" base="com.bowstreet.core.Base.StringData"> 
+      <Prompt>Easing</Prompt> 
+      <InitialValue /> 
+      <HelpText /> 
+      <Required>false</Required> 
+      <Group>Easing</Group> 
+      <Page /> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition>  
+  </InputDefinitions> 
+  <GroupDefinitions> 
+    <GroupDefinition id="Chaining"> 
+      <Name>Chaining</Name> 
+      <Description>You can use these inputs to arrange for a client-side event to be fired when the animation completes, allowing you to chain more than one effect together.</Description> 
+      <BorderStyle>Etched</BorderStyle> 
+      <IsCollapsible>true</IsCollapsible> 
+      <InitiallyCollapsed>true</InitiallyCollapsed> 
+    </GroupDefinition>
+    <GroupDefinition id="Easing"> 
+      <Name>Easing</Name> 
+      <Description>Optionally control the progress of the animation by specifying an "easing" function. Please see the Dojo documentation for information on the available choices and syntax for this advanced feature.</Description> 
+      <BorderStyle>Etched</BorderStyle> 
+      <IsCollapsible>true</IsCollapsible> 
+      <InitiallyCollapsed>true</InitiallyCollapsed> 
+    </GroupDefinition> 
+  </GroupDefinitions> 
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

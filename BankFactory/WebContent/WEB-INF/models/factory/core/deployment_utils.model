@@ -1,0 +1,126 @@
+<Model id="factory/core/deployment_utils"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="Extend">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">DeploymentUtils</Input>
+<Input name="ClassName">com.bowstreet.util.DeploymentUtils</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageData">&lt;html&gt;
+    &lt;body&gt;
+        &lt;span name="status"&gt;&lt;/span&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="FullyParse">false</Input>
+<Input name="Name">statusPage</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[<html>
+    <body>
+        <span name="status"></span>
+    </body>
+</html>]]></CacheKey>
+<CacheValue><HTMLData><HTML><HTMLContent><![CDATA[
+    ]]></HTMLContent>
+<BODY><HTMLContent><![CDATA[
+        ]]></HTMLContent>
+<SPAN name="status" />
+<HTMLContent><![CDATA[
+    ]]></HTMLContent>
+</BODY>
+<HTMLContent><![CDATA[
+]]></HTMLContent>
+</HTML>
+</HTMLData>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc9"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">status</Input>
+<Input name="Type">String</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc11"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>statusPage</Page>
+<NameSearch>status</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/status}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc12"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">updateProject</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/status=${MethodCall/DeploymentUtils.updateProject}</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>statusPage</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc13"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">updateProjectDebug</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/status=${MethodCall/DeploymentUtils.updateProjectDebug}</ActionName>
+</Action>
+<Action><ActionType>SystemOut</ActionType>
+<ActionName>${Variables/status}</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>statusPage</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ModelActionAccessBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Name">public actions</Input>
+<Input name="PublicActions"><top><Action><ActionName>updateProject</ActionName>
+</Action>
+<Action><ActionName>updateProjectDebug</ActionName>
+</Action>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies><Dependency type="Class">com.bowstreet.util.DeploymentUtils</Dependency>
+</Dependencies>
+<ExternalProperties />
+</Model>

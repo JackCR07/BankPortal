@@ -1,0 +1,53 @@
+@IMPORT url("base_template_styles.css");
+
+.vf_view_container {
+    width: 100%;
+}
+
+.vf_view_list {
+    width: 100%;
+}
+
+.wpfMultiLineNavListE2E a.wpfSelectableRow {
+    color: #000000;
+    text-decoration: none;
+}
+
+.wpfMultiLineNavListE2E .wpfListColumn {
+    float: left;
+}
+
+.wpfMultiLineNavListE2E .wpfListRow {
+    height: 65px;
+    width: 100%;
+    border-bottom: 1px solid #999999;
+    background-color: #F0F0F0;
+    background-image: url("right_arrow.gif"), -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #F0F0F0), color-stop(0.5, #E0E0E0), color-stop(1.0, #D0D0D0)) !important;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+}
+
+.wpfMultiLineNavListE2E .wpfListColumnItem {
+    margin: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.wpfMultiLineNavListE2E:hover {
+    cursor: pointer;
+}
+
+.wpfMultiLineNavListE2E .wpfListColumnItem img {
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    width: 55px;
+    height: 55px;
+}
+
+.wpfMultiLineNavListE2E .wpfGroupTitle {
+    font-weight: bold;
+    font-size: 17px;
+}

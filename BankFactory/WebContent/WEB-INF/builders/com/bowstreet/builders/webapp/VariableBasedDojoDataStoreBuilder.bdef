@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<BuilderDef id="com.bowstreet.builders.webapp.VariableBasedDojoDataStoreBuilder" xmlns="http://www.bowstreet.com/2001/Schemas">
+    <ReadableName>Variable Based Dojo Data Store</ReadableName>
+    <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName>
+    <HelpFile></HelpFile>
+    <RequiredFactoryVersion>6.0.1</RequiredFactoryVersion>
+    <Description>Adds a Dojo Data Store backed by a model variable to a specified page location.</Description>
+    <Domains>
+    <!-- hide this builder for now -->
+<!--        <Domain>WebApp</Domain>-->
+    </Domains>
+    <CreateModifyList>
+    </CreateModifyList>
+    <Category>Dojo Data Store,Page Elements, Rich UI</Category>
+    <Keywords>Dojo, Data</Keywords>
+    <BuilderData>
+        <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.VariableBasedDojoDataStoreBuilder</BuilderDataEntry>
+        <BuilderDataEntry name="IconName">dojo_DataStore</BuilderDataEntry>
+    </BuilderData>
+
+    <InputDefinitions>
+        <InputDefinition name="Name" base="com.bowstreet.core.Base.RestrictedBuilderName"/>
+
+        <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation"/>
+
+        <InputDefinition name="DataSource" base="com.bowstreet.builders.webapp.DojoDataStoreBuilder.DataSource">
+            <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        </InputDefinition>
+
+        <InputDefinition name="DataVariable" base="com.bowstreet.builders.webapp.DojoDataStoreBuilder.DataVariable">
+            <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        </InputDefinition>
+
+        <InputDefinition name="RootItem" base="com.bowstreet.core.Base.StringData">
+            <Prompt>Root Item</Prompt>
+            <HelpText>Specify the name of the repeating element in the data store.</HelpText>
+            <Required>true</Required>
+        </InputDefinition>
+
+        <InputDefinition name="KeyAttribute" base="com.bowstreet.core.Base.StringData">
+            <Prompt>Key Attribute</Prompt>
+            <HelpText>Specify the key attribute for uniquely identifying an item in the data store.</HelpText>
+            <Required>true</Required>
+        </InputDefinition>
+
+    </InputDefinitions>
+
+    <GroupDefinitions>
+        <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced"/>
+    </GroupDefinitions>
+</BuilderDef>

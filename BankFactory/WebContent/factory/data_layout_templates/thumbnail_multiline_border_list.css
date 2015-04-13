@@ -1,0 +1,97 @@
+@IMPORT url("base_template_styles.css");  
+
+body {
+  /* set left/right margin to 0 to go to edge */
+   margin-left: 0px;
+   margin-right: 0px;
+   width: 100%;
+}
+
+div.vf_view_container {
+    width:100%;
+    padding: 0px;
+}
+
+.vf_view_list {
+   width:100%;
+}
+
+.wpfThumbnailMultiLineListBD a.wpfSelectableRow {
+    color: #222222;
+    text-decoration: none;
+}
+
+.wpfThumbnailMultiLineListBD {
+    min-width: 305px;
+ }
+	
+.wpfThumbnailMultiLineListBD .wpfLeft {
+    float: left;
+    padding: 2px;
+}
+
+.wpfThumbnailMultiLineListBD .wpfCenterContainer {
+    float: left;
+    width: 60%;
+}   
+
+.wpfThumbnailMultiLineListBD .wpfCenter {
+    padding-left: 3px;
+    padding-right: 3px;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden; 
+}
+
+.wpfThumbnailMultiLineListBD .wpfRight {
+    float: right;
+    margin-right: 20px;
+    line-height: 58px;    
+    white-space: nowrap;
+    overflow: hidden;
+    width: 15%;
+}
+
+.wpfThumbnailMultiLineListBD .wpfListItem img
+{
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}
+
+/** style for list items **/
+.wpfThumbnailMultiLineListBD .wpfListItem
+{
+    background-image: url("right_arrow.gif");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: #F8F8F8;  
+    text-decoration: none;
+    color: #222222;
+    font-size: 15px;
+    margin-bottom: -1px;
+    text-decoration: none;
+    padding: 2px 2px;
+    border: 1px solid #999999;
+    height: 56px; 
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+/** Round the first and last child **/
+/* This varies based on if the link in on the entire row or on a field */
+.wpfThumbnailMultiLineListBD a:first-child>.wpfListItem,
+.wpfThumbnailMultiLineListBD>.wpfListItem:first-child  
+{
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+}
+
+/* This varies based on if the link in on the entire row or on a field */
+.wpfThumbnailMultiLineListBD a:last-child>.wpfListItem, 
+.wpfThumbnailMultiLineListBD>.wpfListItem:last-child
+{
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}

@@ -1,0 +1,16 @@
+factory/portlet/**
+META-INF/MANIFEST.MF
+WEB-INF/orion-web.xml
+WEB-INF/classes/**
+WEB-INF/config/.warName
+WEB-INF/lib/activation.jar
+WEB-INF/lib/classparser.jar
+WEB-INF/lib/icu4j.jar
+WEB-INF/lib/jstl.jar
+WEB-INF/lib/packman.jar
+WEB-INF/lib/pbportlet.jar
+WEB-INF/lib/standard.jar
+WEB-INF/lib/wsdl4j.jar
+WEB-INF/lib/xercesImpl.jar
+WEB-INF/lib/xml-apis.jar
+WEB-INF/weblogic.xml

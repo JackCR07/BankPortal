@@ -1,0 +1,195 @@
+<ProfileSet name="wizardbase.DB_view_and_form" useQualifiedProfileNames="true"><Description>Generated profile set for model database_widget</Description>
+<Visibility>False</Visibility>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<Models />
+<ProfileDef><Entries><Entry name="DataPageTableModifier_ChildrenInfo" isRuntime="false"><UI type="TextInput"><Prompt>DataPageTableModifier_ChildrenInfo</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataPageTableModifier_ManageColumns" isRuntime="false"><UI type="TextInput"><Prompt>DataPageTableModifier_ManageColumns</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataPageTableModifier_SingleField" isRuntime="false"><UI type="TextInput"><Prompt>DataPageTableModifier_SingleField</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="PortletAdapter_BuilderCallEnabled" isRuntime="false"><UI type="TextInput"><Prompt>PortletAdapter_BuilderCallEnabled</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="PortletName" isRuntime="false"><UI type="TextInput"><Prompt>PortletName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PortletTitle" isRuntime="false"><UI type="TextInput"><Prompt>PortletTitle</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_Name" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_Name</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_SqlDataSource" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_SqlDataSource</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_SqlStatement" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_SqlStatement</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Title" isRuntime="false"><UI type="TextInput"><Prompt>Title</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewAndForm_CreateColumnLink" isRuntime="false"><UI type="TextInput"><Prompt>ViewAndForm_CreateColumnLink</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewAndForm_EnableDataPaging" isRuntime="false"><UI type="TextInput"><Prompt>ViewAndForm_EnableDataPaging</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewAndForm_LinkColumn" isRuntime="false"><UI type="TextInput"><Prompt>ViewAndForm_LinkColumn</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewAndForm_RowsPerPage" isRuntime="false"><UI type="TextInput"><Prompt>ViewAndForm_RowsPerPage</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewAndForm_ViewMethod" isRuntime="false"><UI type="TextInput"><Prompt>ViewAndForm_ViewMethod</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="WidgetAdapter_BuilderCallEnabled" isRuntime="false"><UI type="Checkbox"><Prompt>WidgetAdapter_BuilderCallEnabled</Prompt>
+<ExtraData>true,false,Checkbox Label</ExtraData>
+</UI>
+</Entry>
+<Entry name="WidgetAdapter_Category" isRuntime="false"><UI type="TextInput"><Prompt>WidgetAdapter_Category</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1221749777380" isContainer="true"><Values><Value name="DataPageTableModifier_ChildrenInfo">&lt;Columns&gt;&lt;Column&gt;&lt;Name&gt;EMPNO&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;EMPNO&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;FIRSTNME&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;FIRSTNME&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;MIDINIT&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;MIDINIT&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;LASTNAME&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;LASTNAME&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;WORKDEPT&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;WORKDEPT&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;PHONENO&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;PHONENO&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;HIREDATE&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;HIREDATE&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;JOB&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;JOB&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;EDLEVEL&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;EDLEVEL&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;SEX&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;SEX&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;BIRTHDATE&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;BIRTHDATE&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;SALARY&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;SALARY&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;BONUS&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;BONUS&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;Column&gt;&lt;Name&gt;COMM&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;COMM&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;/Columns&gt;</Value>
+<Value name="DataPageTableModifier_ManageColumns">false</Value>
+<Value name="DataPageTableModifier_SingleField">[xxxx_ViewPage]xxxx_ViewPage/RowSet/Row</Value>
+<Value name="PortletAdapter_BuilderCallEnabled">false</Value>
+<Value name="PortletName"></Value>
+<Value name="PortletTitle"></Value>
+<Value name="SqlCall_Name">xxxx</Value>
+<Value name="SqlCall_SqlDataSource">java:comp/env/jdbc/MyDataSource</Value>
+<Value name="SqlCall_SqlStatement">select * from  qauser.EMPLOYEE</Value>
+<Value name="Title">Title</Value>
+<Value name="ViewAndForm_CreateColumnLink">true</Value>
+<Value name="ViewAndForm_EnableDataPaging">true</Value>
+<Value name="ViewAndForm_LinkColumn">LASTNAME</Value>
+<Value name="ViewAndForm_RowsPerPage">5</Value>
+<Value name="ViewAndForm_ViewMethod">DataServices/xxxx/execute</Value>
+<Value name="WidgetAdapter_BuilderCallEnabled">false</Value>
+<Value name="WidgetAdapter_Category"></Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

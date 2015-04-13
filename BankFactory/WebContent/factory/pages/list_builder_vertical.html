@@ -1,0 +1,56 @@
+<!--
+  This page is imported to form the execution-time UI for the
+  List Builder when displayed in vertical mode. You can replace
+  this with another HTML file so long as you use the same tag names.
+ -->
+
+<span name="listBefore" />
+
+<script language="JavaScript">
+<%@ include file="/factory/clientjavascript/list/list.js" %>
+</script>
+
+<!-- default style definitions -->
+<style name="style">
+.listBuilderButton {
+    align: center;
+    width: 110px
+}
+</style>
+
+<table  role="presentation" class="listBuilderOuterTable" name="listOuterTable" cellpadding="3" cellspacing="0" border="0">
+  <tr  role="presentation">
+    <td  role="presentation" class="listBuilderTitle" colspan="4"><label name="listSourceTitle"></label></td>
+  </tr>
+  <tr  role="presentation">
+    <td  role="presentation" align="center" colspan="4">
+      <select class="listBuilderSelect" multiple="true" name="listSourceSelect" size="8" width="150">
+      </select>
+    </td>
+  </tr>
+  <tr  role="presentation">
+    <td  role="presentation" align="center">
+        <input class="listBuilderButton" name="listAddButton" type="button">
+    </td>
+    <td  role="presentation" align="center">
+      <input class="listBuilderButton" name="listRemoveButton" type="button">
+    </td>
+    <td  role="presentation" align="center">
+      <input class="listBuilderButton" name="listAddAllButton" type="button">
+    </td>
+    <td  role="presentation" align="center">
+      <input class="listBuilderButton" name="listRemoveAllButton" type="button">
+    </td>
+  </tr>
+  <tr  role="presentation">
+    <td  role="presentation" class="listBuilderTitle" colspan="4"><label name="listTargetTitle"></label></td>
+  </tr>
+  <tr  role="presentation">
+    <td  role="presentation" align="center" colspan="4">
+      <select class="listBuilderSelect" multiple="true" name="listTargetSelect" size="8" width="150">
+      </select>
+    </td>
+  </tr>
+</table>
+
+<span name="listAfter" />

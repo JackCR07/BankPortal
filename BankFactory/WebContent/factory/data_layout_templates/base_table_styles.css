@@ -1,0 +1,27 @@
+/* the styles for this layout are contained in the **img base styles** section of the 
+ /factory/html_templates/responsive_uitheme.css file*/
+.wpfTitleText{}
+.wpfLargeTitleText{}
+.wpfLabelText{}
+.wpfSmallText{}
+.wpfLargeText{}
+.wpfItalicText{}
+.wpfSmallItalicText{}
+.wpfPaddingRight{}
+.wpfSpaceAfter:after{}
+.wpfArrowText{}
+.wpfArrowImage{}
+.hide{}
+.hideThemeThin{}
+.hideThemeNarrow{}
+.hideThemeWide{}
+.hidePhonePortrait{}
+.hidePhoneLandscape{}
+.hideTabletPortrait{}
+.hideTabletLandscape{}
+.wpfImageExtraExtraSmall{}
+.wpfImageExtraSmall{}
+.wpfImageSmall{}
+.wpfImageMedium{}
+.wpfImageLarge{}
+.wpfImageXLarge{}

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoDateTextBoxBuilder"> 
+  <ReadableName>Dojo Date/Time Picker</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName> 
+  <HelpFile></HelpFile>
+  <RequiredFactoryVersion>6.0.1</RequiredFactoryVersion> 
+  <Description>Adds a Dojo date or time picker to an existing text input.</Description> 
+  <Domains> 
+    <Domain>WebApp</Domain> 
+    <Domain>Consumer</Domain>
+  </Domains> 
+  <CreateModifyList>
+     <CanModify type="[Unassigned Elements]" category="Rich UI">Adds a Dojo date picker.</CanModify>
+   <CanModify xmlns="" type="Control" category="Rich UI" /> 
+  </CreateModifyList>
+  <Category>Page Elements,Rich UI</Category>
+  <Keywords>Form,Data Entry,Layout,Date,Calendar,Dojo</Keywords>
+
+  <BuilderData> 
+    <BuilderDataEntry name="PickerVisibility">5</BuilderDataEntry>
+    <BuilderDataEntry name="PageLocation">onNamedTag</BuilderDataEntry>
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoFormElementsBuilder</BuilderDataEntry> 
+    <BuilderDataEntry name="WidgetTypeInfo">
+        <WidgetTypeInfo>
+           <WidgetType>
+               <DojoType>dijit.form.DateTextBox</DojoType>
+               <AttributeNames>constraints,style</AttributeNames>
+           </WidgetType>
+        </WidgetTypeInfo>
+        <WidgetTypeInfo>
+           <WidgetType>
+               <DojoType>dijit.form.TimeTextBox</DojoType>
+               <AttributeNames>constraints,style</AttributeNames>
+           </WidgetType>
+        </WidgetTypeInfo>
+    </BuilderDataEntry>
+  </BuilderData> 
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoFormElementsCoordinator</CoordinatorClassName> 
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName"> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition>
+    
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation"> 
+      <Prompt></Prompt> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+     
+    <InputDefinition name="DojoType" base="com.bowstreet.core.Base.StringData">
+       <Prompt>Type</Prompt>
+       <HelpText>Choose the picker type</HelpText>
+       <InitialValue>dijit.form.DateTextBox</InitialValue>
+       <Editor JavaClass="com.bowstreet.widget.RadioBox">
+         <Argument name="listLabels">Date,Time</Argument>
+         <Argument name="listData">dijit.form.DateTextBox,dijit.form.TimeTextBox</Argument>
+       </Editor>
+    </InputDefinition>
+     
+    <InputDefinition name="Value" base="com.bowstreet.core.Base.IndirectValue">
+     <Visible>false</Visible> 
+    </InputDefinition> 
+       
+    <InputDefinition name="Attributes"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Attributes">
+      <Group>Attributes</Group>
+      <Type>Xml</Type>
+    </InputDefinition> 
+      
+    <InputDefinition name="HandleExisting"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleExisting">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition> 
+       
+    <InputDefinition name="HandleMissingValue"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleMissingValue">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition> 
+ 
+    <InputDefinition name="Separator"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Separator">
+      <Group>Attributes</Group>
+      <InitialValue>;</InitialValue>
+    </InputDefinition> 
+       
+  </InputDefinitions> 
+  <GroupDefinitions> 
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" /> 
+   <GroupDefinition id="Attributes">
+      <Name>Attributes</Name>
+      <Description>Optional attributes to apply to the target widget element.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+  </GroupDefinitions> 
+  
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

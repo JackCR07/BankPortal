@@ -1,0 +1,113 @@
+@IMPORT url("base_template_styles.css");
+
+.vf_view_container {
+    width:100%;
+}
+
+.vf_view_list {
+   width:100%;
+}
+
+.wpfThumbnailMultiLineShowHide .wpfListColumn {
+    float:left;
+    width:33%;
+}
+
+.wpfThumbnailMultiLineShowHide .wpfListColumnItem {
+    margin: 2px 0px;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden; 
+}
+
+.wpfThumbnailMultiLineShowHide .wpfFixedSection {
+    float:left;
+    width: 100%;
+    line-height: 1.5em; 
+    display: table;   
+}
+  
+.wpfThumbnailMultiLineShowHide .wpfFixedSection .wpfListColumnItemLeft a {
+    text-decoration: none;
+    color: #105CB6;
+}
+
+.wpfThumbnailMultiLineShowHide .wpfFixedSection .wpfListColumnItemLeft a:HOVER {
+    text-decoration: underline;
+}
+  
+.wpfThumbnailMultiLineShowHide .wpfHideSection {
+  display: table;   
+  width: 100%;      
+  padding-top: 7px;
+}  
+  
+.wpfThumbnailMultiLineShowHide .wpfHideSection .wpfListColumn {
+    float:left;
+    width:50%;
+}
+   
+.wpfThumbnailMultiLineShowHide .wpfHide {
+  display: none;   
+}  
+   
+.wpfThumbnailMultiLineShowHide .wpfListColumnRight {
+  float:right;  
+}   
+  
+.wpfThumbnailMultiLineShowHide .wpfListShowHideText:hover {
+    cursor: pointer;
+    color: #083773;
+}  
+
+.wpfThumbnailMultiLineShowHide .wpfListShowHideText  {
+  font-size: 0.9em;
+  color: #105CB6;
+  text-decoration: underline;
+}    
+  
+.wpfThumbnailMultiLineShowHide .wpfListColumnItemLeft {
+  float: left; 
+  width: 50%;
+}
+
+.wpfThumbnailMultiLineShowHide .wpfListShowHideText  {
+  float:right; 
+  color: #105CB6;
+}    
+
+.wpfThumbnailMultiLineShowHide {
+    padding-top: 5px;
+}
+
+.wpfThumbnailMultiLineShowHide .wpfListRow {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: table;
+  width: 100%;  
+  border-bottom: 2px solid #F0F0F0;
+  background-color: #F8F8F8;
+}
+
+.wpfThumbnailMultiLineShowHide .wpfLeftImage {
+    float: left;
+    padding: 5px 2px 2px 2px;
+    display: inline; 
+}
+
+.wpfThumbnailMultiLineShowHide .wpfShowHideListContent {
+    float: left;
+    width: 75%;
+}  
+
+.wpfThumbnailMultiLineShowHide .wpfHideSection .wpfListColumn {
+    width: 100%;
+}
+  
+.wpfThumbnailMultiLineShowHide .wpfListColumnItemLeft {
+  width: 90%;
+}
+
+.wpfThumbnailMultiLineShowHide .wpfShowHideToggle {
+    float: right;
+}  

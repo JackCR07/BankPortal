@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoTabContainerBuilder"> 
+  <ReadableName>Dojo Tab Container</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName> 
+  <HelpFile></HelpFile>
+  <RequiredFactoryVersion>6.1.5</RequiredFactoryVersion> 
+  <Description>Adds a Dojo Tab Container to the specified page element.</Description> 
+  <Domains> 
+    <Domain>WebApp</Domain> 
+    <Domain>Consumer</Domain>
+  </Domains> 
+  <CreateModifyList>
+     <CanModify type="[Unassigned Elements]" category="Dojo Containers">Adds a Dojo Tab Container.</CanModify>
+  </CreateModifyList>
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <Category>Dojo Containers,Page Elements,Rich UI</Category>
+  <Keywords>Form,Data Entry,Layout,Dojo,Widget</Keywords>
+
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoTabContainerBuilder</BuilderDataEntry> 
+    <BuilderDataEntry name="DojoWidgetAttributes">
+        <DojoWidgetAttributes>
+            <DojoWidgetAttribute>
+                <BuilderInputName>ContainerStyle</BuilderInputName>
+                <DojoWidgetAttributeName>style</DojoWidgetAttributeName>
+                <DefaultValue>true</DefaultValue>
+            </DojoWidgetAttribute>
+        </DojoWidgetAttributes>
+    </BuilderDataEntry>
+    <BuilderDataEntry name="WidgetTypeInfo">
+        <WidgetTypeInfo>
+            <WidgetType>
+                <DojoType>dijit.layout.TabContainer</DojoType>
+                <AttributeNames>tabPosition,tabStrip</AttributeNames>
+                <Default>true</Default>
+            </WidgetType>
+        </WidgetTypeInfo>
+    </BuilderDataEntry>
+    <BuilderDataEntry name="IconName">editControl</BuilderDataEntry>
+  </BuilderData>
+
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoContainerCoordinator</CoordinatorClassName>
+
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName"> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition>
+
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation">
+      <Prompt></Prompt> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+
+    <InputDefinition name="DojoType" base="com.bowstreet.core.Base.StringData">
+        <Prompt>Type</Prompt>
+        <InitialValue>CustomExtension</InitialValue>
+        <EmptyValueReplacement>CustomExtension</EmptyValueReplacement>  
+        <Visible>false</Visible>
+    </InputDefinition>
+
+    <InputDefinition name="CustomDojoType" base="com.bowstreet.core.Base.StringData">
+        <Prompt></Prompt>
+        <InitialValue>dijit.layout.TabContainer</InitialValue>
+        <EmptyValueReplacement>dijit.layout.TabContainer</EmptyValueReplacement>  
+        <Visible>false</Visible>
+        <ProfileType>Value</ProfileType> 
+        <Callable>true</Callable> 
+    </InputDefinition>
+
+    <InputDefinition name="AddRequires"  base="com.bowstreet.core.Base.BooleanData" >
+        <Prompt>Add to Requires</Prompt> 
+        <InitialValue>true</InitialValue>
+        <EmptyValueReplacement>true</EmptyValueReplacement>  
+        <Visible>false</Visible>
+        <Required>false</Required>
+    </InputDefinition>      
+    
+    <InputDefinition name="ElementName" base="com.bowstreet.core.Base.StringData">
+       <Prompt></Prompt>
+       <InitialValue>div</InitialValue>
+       <EmptyValueReplacement>div</EmptyValueReplacement>  
+       <Visible>false</Visible> 
+       <ProfileType>Value</ProfileType> 
+       <Callable>true</Callable> 
+    </InputDefinition>
+
+    <InputDefinition name="RequiresList" base="com.bowstreet.builders.webapp.DojoEnableBuilder.RequiresList">
+        <InitialValue><top><InputMapping><Name>dijit.layout.ContentPane</Name></InputMapping></top></InitialValue>
+        <EmptyValueReplacement><top><InputMapping><Name>dijit.layout.ContentPane</Name></InputMapping></top></EmptyValueReplacement>
+        <Visible>false</Visible>
+    </InputDefinition>
+    
+    <InputDefinition name="ContainerWidth" base="com.bowstreet.core.Base.IndirectValue">
+       <Prompt>Tab Container Width</Prompt>
+       <Required>false</Required>
+       <HelpText>Specify the width of the tab container (e.g. 500px).</HelpText>
+       <InitialValue>500px</InitialValue>
+       <EmptyValueReplacement>500px</EmptyValueReplacement>
+       <Visible>true</Visible>
+       <ProfileType>Value</ProfileType>
+       <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="ContainerHeight" base="com.bowstreet.core.Base.IndirectValue">
+       <Prompt>Tab Container Height</Prompt>
+       <Required>false</Required>
+       <HelpText>Specify the height of the tab container (e.g. 500px).</HelpText>
+       <InitialValue>500px</InitialValue>
+       <EmptyValueReplacement>500px</EmptyValueReplacement>
+       <Visible>true</Visible>
+       <ProfileType>Value</ProfileType>
+       <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="ContainerStyle" base="com.bowstreet.core.Base.IndirectValue">
+       <Prompt>Tab Container Size</Prompt>
+       <HelpText>Specify the style (e.g., width:100%; height:50%) of the tab container.</HelpText>
+       <InitialValue>width:500px; height:500px; padding:2px</InitialValue>
+       <EmptyValueReplacement>width:500px; height:500px; padding:2px</EmptyValueReplacement>
+       <Visible>false</Visible>
+       <ProfileType>Value</ProfileType>
+       <Callable>true</Callable>
+    </InputDefinition>
+    
+    <InputDefinition name="TabPanes">
+      <Prompt>Tab Panes</Prompt>
+      <Type>Xml</Type>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <Callable>true</Callable>
+      <ProfileType>XmlElements</ProfileType>
+      <Editor JavaClass="com.bowstreet.widget.List">
+          <Argument name="columns" inheritable="true">3</Argument>
+          <Argument name="headings" inheritable="true">Name,Title,Closable</Argument>
+          <Argument name="columnTags" inheritable="true">Name,Title,Closable</Argument>
+          <Argument name="rowtag" inheritable="true">Pane</Argument>
+          <Argument name="cellEditors" inheritable="true">
+                    <Editors>
+                        <Editor JavaClass="com.bowstreet.widget.TextField"/>
+                        <Editor JavaClass="com.bowstreet.widget.IndirectValue">
+                          <Argument name="inputs" inheritable="true">true</Argument>
+                          <Argument name="tryToDefaultToLoopVar" inheritable="true">true</Argument>
+                        </Editor>
+                        <Editor JavaClass="com.bowstreet.widget.Reference">
+                          <Argument name="editor">
+                            <Editor JavaClass="com.bowstreet.widget.CheckBox"/>
+                          </Argument>
+                        </Editor>
+                    </Editors>
+          </Argument>
+      </Editor>
+    </InputDefinition>
+    
+    <InputDefinition name="SelectedPane" base="com.bowstreet.core.Base.StringData">
+       <Prompt>Selected Pane</Prompt>
+       <HelpText></HelpText>
+       <Visible>true</Visible>
+       <ProfileType>Value</ProfileType>
+       <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="Attributes"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Attributes">
+      <Group>Attributes</Group>
+      <Type>Xml</Type>
+    </InputDefinition> 
+
+    <InputDefinition name="HandleExisting"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleExisting">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition> 
+
+    <InputDefinition name="HandleMissingValue"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleMissingValue">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition> 
+
+    <InputDefinition name="Separator"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Separator">
+      <Group>Attributes</Group>
+      <InitialValue>;</InitialValue>
+    </InputDefinition>    
+
+    <InputDefinition name="TargetPhase" base="com.bowstreet.builders.webapp.MethodBuilder.TargetPhase">
+        <InitialValue>PostConstruction</InitialValue>
+    </InputDefinition>
+
+  </InputDefinitions>
+
+  </InputDefinitions>
+  
+  <GroupDefinitions>
+   <GroupDefinition id="Attributes">
+      <Name>Attributes</Name>
+      <Description>Optional attributes to apply to the target Dojo type.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" /> 
+  </GroupDefinitions>
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

@@ -1,0 +1,31 @@
+<meta 
+data-template-id="responsive_MultiLineList"
+data-template-bundle-name="com.bowstreet.builders.webapp.package" 
+data-template-description-id="DataLayoutresponsive_MultiLineList" 
+data-template-name-id="DataLayoutresponsive_MultiLineListName" 
+data-template-description="This template generates a list in which each list item can contains three columns and three rows of data. You can use this layout to convert a grid table style to a list layout.  There are eight base layouts that are set by selecting a style sheet. These include layouts that vary from 1-3 columns and specify different column sizes.  The theme setting will use the three column equal layout.  Style sheet files that end in uitheme.css use styles that are defined in the themes css file." 
+data-template-name="Multi-Line List (Responsive)" 
+data-style-picker-file-names="/factory/data_layout_templates/responsive_base_multiline_template_styles.css" 
+data-container-style-picker-file-names="/factory/data_layout_templates/responsive_base_multiline_template_container_styles.css"
+data-stylesheets="/factory/data_layout_templates/responsive_multiline_3_column_equal_uitheme.css,/factory/data_layout_templates/responsive_multiline_1_column_uitheme.css,/factory/data_layout_templates/responsive_multiline_2_column_equal_uitheme.css,/factory/data_layout_templates/responsive_multiline_2_column_left_uitheme.css,/factory/data_layout_templates/responsive_multiline_2_column_right_uitheme.css,/factory/data_layout_templates/responsive_multiline_3_column_center_uitheme.css,/factory/data_layout_templates/responsive_multiline_3X3_grid_uitheme.css,/factory/data_layout_templates/responsive_multiline_3X2_grid_uitheme.css,/factory/data_layout_templates/blank.css" 
+data-stylesheet-root-class-names="responsive_MultiLineListLayout,cl1Column,cl2ColumnEqual,cl2ColumnLeft,cl2ColumnRight,cl3ColumnCenter,cl3x3ColumnGrid,cl3x2ColumnGrid,responsive_MultiLineListLayoutBlank" />
+<div  name="layout_list" class="wef_datalayout_list responsive_MultiLineList">
+     <div class="multLineListItem responsive_MultiLineListLayout" name="list_item" data-repeat-wrapper="default" data-target-exact="containerLayoutStyles(clStyles)">
+        <div class="wpfListColumn wpfListLeftColumn" data-target-exact="left_column_styles">
+          <div data-target="left_top" class="wpfListColumnItem wpfListTopItem" data-target-exact="left_top_styles"></div>
+          <div data-target="left_middle" class="wpfListColumnItem wpfListMiddleItem" data-target-exact="left_middle_styles"></div>
+          <div data-target="left_bottom" class="wpfListColumnItem wpfListBottomItem" data-target-exact="left_bottom_styles"></div>
+        </div>
+        <div class="wpfListColumn wpfListCenterColumn" data-target-exact="center_column_styles">
+          <div data-target="center_top" class="wpfListColumnItem wpfListTopItem" data-target-exact="center_top_styles"></div>
+          <div data-target="center_middle" class="wpfListColumnItem wpfListMiddleItem" data-target-exact="center_middle_styles"></div>
+          <div data-target="center_bottom" class="wpfListColumnItem wpfListBottomItem" data-target-exact="center_bottom_styles"></div>
+        </div>
+        <div class="wpfListColumn wpfListRightColumn" data-target-exact="right_column_styles">
+          <div data-target="right_top" class="wpfListColumnItem wpfListTopItem" data-target-exact="right_top_styles"></div>
+          <div data-target="right_middle" class="wpfListColumnItem wpfListMiddleItem" data-target-exact="right_middle_styles"></div>
+          <div data-target="right_bottom" class="wpfListColumnItem wpfListBottomItem" data-target-exact="right_bottom_styles"></div>
+        </div>
+     </div>
+</div>
+

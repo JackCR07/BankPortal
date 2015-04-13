@@ -1,0 +1,79 @@
+@IMPORT url("base_template_styles.css");  
+
+body {
+  /* set left/right margin to 0 to go to edge */
+   margin-left: 0px;
+   margin-right: 0px;
+   width: 100%;
+}
+
+div.vf_view_container {
+    width:100%;
+    padding: 0px;
+}
+
+.vf_view_list {
+   width:100%;
+}
+
+.wpfThumbnailSingleLineListE2E a.wpfSelectableRow {
+    color: #222222;
+    text-decoration: none;
+}
+
+.wpfThumbnailSingleLineListE2E {
+    min-width: 305px;
+    width:100%;
+ }
+    
+.wpfThumbnailSingleLineListE2E .wpfLeft {
+    float: left;
+    padding: 2px;
+}
+
+.wpfThumbnailSingleLineListE2E .wpfCenter {
+    padding-left: 3px;
+    padding-right: 3px;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden; 
+    line-height: 58px;  
+    float: left;
+    width: 55%;
+}
+
+.wpfThumbnailSingleLineListE2E .wpfRight {
+    float: right;
+    margin-right: 20px;
+    line-height: 58px;    
+    white-space: nowrap;
+    overflow: hidden;
+    width: 15%;
+}
+
+.wpfThumbnailSingleLineListE2E .wpfListItem img
+{
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}
+
+.wpfThumbnailSingleLineListE2E .wpfListItem
+{
+    background-image: url("right_arrow.gif");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: #F8F8F8;  
+    text-decoration: none;
+    color: #222222;
+    font-size: 15px;
+    text-decoration: none;
+    height: 56px; 
+    padding: 2px 0px 2px 0px;
+    border-top: 1px solid #AAAAAA;
+    border-bottom: 1px solid #AAAAAA;
+    border-left: none;
+    border-right: none;
+    margin: 0px 0px -1px 0px;
+}

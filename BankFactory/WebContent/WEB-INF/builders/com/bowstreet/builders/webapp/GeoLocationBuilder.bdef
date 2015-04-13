@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.GeoLocationBuilder"> 
+  <ReadableName>Geolocation</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName> 
+  <HelpFile /> 
+  <RequiredFactoryVersion>7.0.1</RequiredFactoryVersion> 
+  <Description>Use this builder to fetch the geographical location information from a supported device and fire a client or server event to handle the location processing.</Description> 
+  <Domains> 
+    <Domain>WebApp</Domain> 
+    <Domain>Consumer</Domain>
+    <Domain>Client</Domain>    
+  </Domains> 
+  <CreateModifyList> 
+    <CanModify xmlns="" type="Page" category="" /> 
+  </CreateModifyList> 
+  <Category>Mobile</Category> 
+  <Keywords /> 
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.GeoLocationBuilder</BuilderDataEntry> 
+  </BuilderData> 
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.GeoLocationCoordinator</CoordinatorClassName> 
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName"> 
+      <Prompt>Name</Prompt> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="TargetPage" base="com.bowstreet.core.Base.PageName"> 
+      <Prompt>Select Page</Prompt> 
+      <HelpText>Select the page to add the geolocation event support to.</HelpText> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="ReferenceElement" >
+      <Prompt>Reference Element</Prompt>
+      <HelpText>Specify an element that will be referenceable as 'this.geoElement' in a geolocation event handler.</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+      <Property>true</Property>
+      <Editor JavaClass="control.picker">
+        <Argument name="setInitialValue">false</Argument>
+        <Argument name="width">500</Argument>
+      </Editor>
+    </InputDefinition>
+    <InputDefinition name="EventType" base="com.bowstreet.core.Base.StringData"> 
+      <Prompt>Event Type</Prompt> 
+      <HelpText>Choose if the geolocation event will fire a server or client event for processing.</HelpText> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+      <InitialValue>Server</InitialValue>
+      <Editor JavaClass="com.bowstreet.widget.RadioBox">
+           <Argument name="ListData">Client,Server</Argument>
+           <Argument name="ListLabels">Client,Server</Argument>
+      </Editor>
+    </InputDefinition> 
+      
+    <InputDefinition name="FetchOnInitialLoad" base="com.bowstreet.core.Base.BooleanData"> 
+      <Prompt>Fetch on Initial Load</Prompt> 
+      <InitialValue>true</InitialValue> 
+      <HelpText>Set this to enable fetching the geolocation on the initial page load.</HelpText> 
+      <Page /> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+      
+    <InputDefinition name="EnableHighAccuracy" base="com.bowstreet.core.Base.BooleanData"> 
+      <Prompt>Enable High Accuracy</Prompt> 
+      <HelpText>The Enable High Accuracy provides a hint that you would like to receive the best possible results.</HelpText> 
+      <Page /> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+      <InitialValue>false</InitialValue>
+      <Group>PositionOptions</Group>
+    </InputDefinition> 
+    <InputDefinition name="Timeout" base="com.bowstreet.core.Base.StringData"> 
+      <Prompt>Timeout</Prompt> 
+      <InitialValue>5000</InitialValue>
+      <HelpText>Specifies the maximum length of time in milliseconds allowed to fetch the current position.</HelpText> 
+      <Page /> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+      <Group>PositionOptions</Group>
+    </InputDefinition> 
+    <InputDefinition name="MaximumAge" base="com.bowstreet.core.Base.StringData"> 
+      <Prompt>Maximum Age</Prompt> 
+      <InitialValue>10000</InitialValue>
+      <HelpText>Specifies the age in milliseconds of the cached position that your are willing to accept.</HelpText> 
+      <Page /> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+      <Group>PositionOptions</Group>
+    </InputDefinition> 
+  </InputDefinitions> 
+  <GroupDefinitions> 
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" /> 
+    <GroupDefinition id="PositionOptions"> 
+      <Name>Position Options</Name>
+      <Description>Position options passed to the geolocation functions.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>false</InitiallyCollapsed>
+    </GroupDefinition> 
+    
+  </GroupDefinitions> 
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

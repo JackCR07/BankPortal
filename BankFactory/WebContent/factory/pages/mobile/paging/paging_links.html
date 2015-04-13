@@ -1,0 +1,29 @@
+<%-- 
+  This page is imported to form the execution-time UI for the
+  Paging Links Builder. You can replace this with another HTML
+  file so long as you use the same tag names.
+ --%>
+<span name="stylesheet_location" />
+
+<div class="dataPagingContainer" align="center">
+<ul>
+  <li class="paging_previous">
+    <!-- target for the "previous page" link -->
+    <span class="dataPagingLink" name="prevlink"></span>
+  </li>
+  <li class="paging_next">
+    <!-- target for the "next page" link -->
+    <span class="dataPagingLink" name="nextlink"></span>
+  </li>
+</ul>
+<!-- add target to avoid warning, but don't show  -->
+<span name="firstlink" style="display: none;" />
+<span name="prepagelinks" style="display: none;">
+  <span name="prepagelink"/>
+</span>
+<span name="currentpage" style="display: none;" />
+<span name="postpagelinks" style="display: none;">
+  <span name="postpagelink" />
+</span>
+<span name="lastlink" style="display: none;" />
+</div>

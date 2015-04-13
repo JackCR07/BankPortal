@@ -1,0 +1,12 @@
+<!-- Licensed Materials - Property of IBM, 5724-O03, Copyright IBM Corp. 2012 -->
+<Handler name="Multichannel Device Class Handler">
+  <Description>Multichannel - Handler for profile selection based on IBM Portal supplied Device Class (Portal 7.0.0.2 and 8.0 or later)</Description>
+  <Selection class="com.ibm.wpf.profiles.mobile.DeviceClassProfileSelectionHandler">
+    <Properties>
+    </Properties>
+  </Selection>
+  <SegmentList class="com.ibm.wpf.profiles.mobile.DeviceClassProfileSelectionHandler">
+    <Properties>
+    </Properties>
+  </SegmentList>
+</Handler>

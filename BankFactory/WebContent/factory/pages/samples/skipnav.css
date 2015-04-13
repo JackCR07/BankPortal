@@ -1,0 +1,19 @@
+/* Copyright IBM Corp. 2011 */
+/* 
+ * Styles used to provide a "skip navigation" link which only is visible when tabbed to. 
+ */
+div#wpf_skip_nav_container {
+  position:relative;
+}
+div#wpf_skip_nav_container a.wpf_skip_nav_link {
+    position:absolute; top: -1000px; left:-1000px; height: 1px; width: 1px; overflow:hidden;
+}
+div#wpf_skip_nav_container a.wpf_skip_nav_link:active, div#wpf_skip_nav_container a.wpf_skip_nav_link:focus, div#wpf_skip_nav_container a.wpf_skip_nav_link:hover {
+  position: absolute; top:auto; left:auto; width:100%;
+  height: 1.2em;
+  z-index:100;
+  padding-bottom:15px;  
+  font-size:1em; font-weight:bold; text-align:right;  
+  color: black;
+  margin-bottom:25px;
+}

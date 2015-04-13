@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoFormDialogBuilder"> 
+  <ReadableName>Dojo Form Dialog</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName> 
+  <HelpFile /> 
+  <RequiredFactoryVersion>6.1.2</RequiredFactoryVersion> 
+  <Description>Dojo Form Dialog</Description> 
+  <Domains> 
+    <Domain>WebApp</Domain> 
+    <Domain>Consumer</Domain>
+  </Domains> 
+  <CreateModifyList /> 
+  <Category>Navigation and Page Actions, Rich UI</Category> 
+  <Keywords /> 
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoFormDialogBuilder</BuilderDataEntry>
+    <BuilderDataEntry name="IconName">dojo_Dialog</BuilderDataEntry>
+    <BuilderDataEntry name="PageLocation">onNamedTag</BuilderDataEntry>
+  </BuilderData> 
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoFormDialogCoordinator</CoordinatorClassName> 
+  <InputDefinitions> 
+        <InputDefinition name="Name" base="com.bowstreet.core.Base.RestrictedBuilderName"/>
+        
+        <InputDefinition name="ButtonOrLink" base="com.bowstreet.core.Base.StringData"> 
+            <Prompt>Trigger Type</Prompt> 
+            <InitialValue>Button</InitialValue>
+            <Editor JavaClass="com.bowstreet.widget.RadioBox">
+                <Argument name="ListData">Button,Link,Action</Argument> 
+                <Argument name="ListLabels">Button,Link,Action</Argument>
+            </Editor>
+        </InputDefinition> 
+        
+        <InputDefinition name="PageLocation"  base="com.bowstreet.core.WebAppBase.PageLocation">
+            <Required>false</Required> 
+        </InputDefinition>
+    	
+	    <InputDefinition name="ButtonLinkText" base="com.bowstreet.core.Base.IndirectValue"> 
+      		<Prompt>Text</Prompt> 
+      		<HelpText>Enter the text that you want displayed on the button or link.</HelpText>
+	      	<Required>false</Required> 
+	    </InputDefinition>
+
+        <InputDefinition name="TargetPage" base="com.bowstreet.core.Base.PageName">
+          <Prompt>Target Page</Prompt>
+          <HelpText>Select the page to which the Dojo Form Dialog is added.</HelpText>
+          <Required>false</Required>
+          <Visible>false</Visible>
+          <ProfileType>Value</ProfileType>
+          <Callable>true</Callable>
+          <Property>true</Property>
+        </InputDefinition>
+        
+       <InputDefinition name="TargetAction" base="com.bowstreet.core.WebAppBase.Action" >
+            <Group>DialogActionInfo</Group>
+            <Visible>false</Visible>
+            <Property>true</Property>
+            <ProfileType>Value</ProfileType>
+            <Callable>true</Callable>
+            <Editor JavaClass="com.bowstreet.editor.uitools.widgets.BActionChooser">
+                <Argument name="showSpecialActions" inheritable="true">false</Argument>
+                <Argument name="showPages" inheritable="true">false</Argument>
+                <Argument name="showMethodsWithArguments" inheritable="true">true</Argument>
+            </Editor>
+        </InputDefinition>
+
+
+        <InputDefinition name="InnerActionTypeUI"  base="com.bowstreet.builders.webapp.ButtonBuilder.ActionTypeUI">
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Inner</CoordinatorNamespace>
+            <HelpText>Either submit form or link to a model action</HelpText>
+            <InitialValue>MODEL_LINK</InitialValue>             
+            <Editor JavaClass="com.bowstreet.widget.ComboBox">
+                <Argument name="IsEditable" inheritable="true">false</Argument>
+                <Argument name="ListData" inheritable="true">MODEL_FORM,MODEL_LINK</Argument>
+                <Argument name="ListLabels" inheritable="true">Submit form and invoke action,Link to an action</Argument>
+            </Editor>
+        	<Group>DialogActionInfo</Group>
+        </InputDefinition>    	
+        <InputDefinition name="InnerActionType"  base="com.bowstreet.builders.webapp.ButtonBuilder.ActionType" >
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Inner</CoordinatorNamespace>
+        	<Group>DialogActionInfo</Group>
+        </InputDefinition>   
+        <InputDefinition name="InnerIsModelAction"  base="com.bowstreet.builders.webapp.ButtonBuilder.IsModelAction" >
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Inner</CoordinatorNamespace>
+        	<Group>DialogActionInfo</Group>
+        </InputDefinition>   
+        <InputDefinition name="InnerAction"  base="com.bowstreet.builders.webapp.ButtonBuilder.Action" >
+            <HelpText>Specify the model action to call which will populate the inner portion of the dialog.</HelpText>
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Inner</CoordinatorNamespace>
+        	<Group>DialogActionInfo</Group>
+        </InputDefinition>   
+        <InputDefinition name="InnerActionURL"       base="com.bowstreet.builders.webapp.ButtonBuilder.ActionURL" >
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Inner</CoordinatorNamespace>
+        	<Group>DialogActionInfo</Group>
+        </InputDefinition>   
+        <InputDefinition name="InnerScript"  base="com.bowstreet.builders.webapp.ButtonBuilder.Script" >
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Inner</CoordinatorNamespace>
+        	<Group>DialogActionInfo</Group>
+        </InputDefinition>   
+        <InputDefinition name="InnerInputMappings"  base="com.bowstreet.builders.webapp.ButtonBuilder.InputMappings" >
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Inner</CoordinatorNamespace>
+        	<Group>DialogActionInfo</Group>
+        </InputDefinition>   
+        <InputDefinition name="InnerEarlyArgumentEvaluation"  base="com.bowstreet.builders.webapp.ButtonBuilder.EarlyArgumentEvaluation" >
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Inner</CoordinatorNamespace>
+        	<Group>DialogActionInfo</Group>
+        </InputDefinition>   
+	    
+	    
+        <InputDefinition name="Page"  base="com.bowstreet.core.Base.PageName" >
+	      	<Prompt>Inner Page</Prompt> 
+            <HelpText>Select the page in your model you want to be displayed in the Dojo dialog.</HelpText>
+            <Visible>true</Visible>
+            <Required>true</Required>
+	      	<Group>DialogDisplayInfo</Group>
+	    </InputDefinition> 
+		<InputDefinition name="HideButtons"  base="com.bowstreet.core.Base.BooleanData" >
+	      	<Prompt>Hide all Buttons</Prompt> 
+            <HelpText>Check this option if you want this builder to hide all of the buttons on the specified inner page.</HelpText>
+            <Visible>true</Visible>
+            <Required>false</Required>
+	      	<Group>DialogDisplayInfo</Group>
+	    </InputDefinition> 	    
+	    
+	    <InputDefinition name="DialogTitle" base="com.bowstreet.core.Base.IndirectValue"> 
+	      	<Prompt>Dialog Title</Prompt> 
+            <HelpText>Specify the name you want to display in the title bar of the Dojo dialog.</HelpText>
+	      	<InitialValue>Dialog</InitialValue>
+	      	<Group>DialogDisplayInfo</Group>
+	    </InputDefinition> 
+	    <InputDefinition name="OKButtonText" base="com.bowstreet.core.Base.IndirectValue"> 
+	      	<Prompt>Submit Button Text</Prompt> 
+	      	<InitialValue>OK</InitialValue>
+            <Required>true</Required>
+	      	<Group>DialogDisplayInfo</Group>
+	    </InputDefinition> 
+	    <InputDefinition name="CancelButtonText" base="com.bowstreet.core.Base.IndirectValue"> 
+	      	<Prompt>Cancel Button Text</Prompt> 
+	      	<InitialValue>Cancel</InitialValue>
+            <Required>true</Required>
+	      	<Group>DialogDisplayInfo</Group>
+	    </InputDefinition> 
+	    
+	    <InputDefinition name="ButtonClass" base="com.bowstreet.core.Base.StringData"> 
+      		<Prompt>HTML Class for Buttons</Prompt> 
+      		<HelpText>Enter the name of the HTML class for the Submit and Cancel buttons.</HelpText>
+	      	<Required>false</Required> 
+	      	<Group>DialogDisplayInfo</Group>
+	    </InputDefinition>
+
+	    <InputDefinition name="ButtonStyle" base="com.bowstreet.core.Base.StringData"> 
+      		<Prompt>Style Attribute for Buttons</Prompt> 
+      		<HelpText>Enter the value for the style attribute for the Submit and Cancel buttons.</HelpText>
+	      	<Required>false</Required> 
+	      	<Group>DialogDisplayInfo</Group>
+	    </InputDefinition>
+
+	    <InputDefinition name="DialogWidth" base="com.bowstreet.core.Base.StringData"> 
+	      	<Prompt>Dialog Width</Prompt> 
+            <HelpText>Enter the value in pixels to set the dialog width.</HelpText>
+	      	<InitialValue>400</InitialValue>
+	      	<Group>DialogDisplayInfo</Group>
+	    </InputDefinition> 
+	    <InputDefinition name="DialogHeight" base="com.bowstreet.core.Base.StringData"> 
+	      <Prompt>Dialog Height</Prompt> 
+            <HelpText>Enter the value in pixels to set the dialog height.</HelpText>
+	      <InitialValue>350</InitialValue>
+	      <Group>DialogDisplayInfo</Group>
+	    </InputDefinition>
+    
+        <InputDefinition name="SubmitActionTypeUI"  base="com.bowstreet.builders.webapp.ButtonBuilder.ActionTypeUI">
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Submit</CoordinatorNamespace>
+            <HelpText>Either submit form or link to a model action.</HelpText>
+            <Editor JavaClass="com.bowstreet.widget.ComboBox">
+                <Argument name="IsEditable" inheritable="true">false</Argument>
+                <Argument name="ListData" inheritable="true">MODEL_FORM,MODEL_LINK</Argument>
+                <Argument name="ListLabels" inheritable="true">Submit form and invoke action,Link to an action</Argument>
+            </Editor>
+        	<Group>SubmitInfo</Group>
+        </InputDefinition>    	
+        <InputDefinition name="SubmitActionType"  base="com.bowstreet.builders.webapp.ButtonBuilder.ActionType" >
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Submit</CoordinatorNamespace>
+        	<Group>SubmitInfo</Group>
+        </InputDefinition>   
+        <InputDefinition name="SubmitIsModelAction"  base="com.bowstreet.builders.webapp.ButtonBuilder.IsModelAction" >
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Submit</CoordinatorNamespace>
+        	<Group>SubmitInfo</Group>
+        </InputDefinition>   
+        <InputDefinition name="SubmitAction"  base="com.bowstreet.builders.webapp.ButtonBuilder.Action" >
+            <HelpText>Specify the model action to call after the Dojo dialog form is successfully submitted.</HelpText>
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Submit</CoordinatorNamespace>
+        	<Group>SubmitInfo</Group>
+        </InputDefinition>   
+        <InputDefinition name="SubmitActionURL"       base="com.bowstreet.builders.webapp.ButtonBuilder.ActionURL" >
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Submit</CoordinatorNamespace>
+        	<Group>SubmitInfo</Group>
+        </InputDefinition>   
+        <InputDefinition name="SubmitScript"  base="com.bowstreet.builders.webapp.ButtonBuilder.Script" >
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Submit</CoordinatorNamespace>
+        	<Group>SubmitInfo</Group>
+        </InputDefinition>   
+<!-- Arguments Group Inputs -->
+        <InputDefinition name="SubmitInputMappings"  base="com.bowstreet.builders.webapp.ButtonBuilder.InputMappings">
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Submit</CoordinatorNamespace>
+        	<Group>SubmitInfo</Group>
+        </InputDefinition>   
+        <InputDefinition name="SubmitEarlyArgumentEvaluation"  base="com.bowstreet.builders.webapp.ButtonBuilder.EarlyArgumentEvaluation" >
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Submit</CoordinatorNamespace>
+        	<Group>SubmitInfo</Group>
+        </InputDefinition>   
+<!-- Arguments Group Inputs -->
+<!-- PostActionBehavior Group Inputs -->
+        <InputDefinition name="SubmitShowAdvancedPostActionBehaviors" base="com.bowstreet.builders.webapp.ButtonBuilder.ShowAdvancedPostActionBehaviors">
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Submit</CoordinatorNamespace>
+        	<Group>PostActionBehavior</Group>
+        </InputDefinition>   
+        <InputDefinition name="SubmitPostActionBehavior" base="com.bowstreet.builders.webapp.ButtonBuilder.PostActionBehavior">
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Submit</CoordinatorNamespace>
+        	<Group>PostActionBehavior</Group>
+        </InputDefinition>   
+        <InputDefinition name="SubmitRefreshPageLocation" base="com.bowstreet.builders.webapp.ButtonBuilder.RefreshPageLocation">
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Submit</CoordinatorNamespace>
+        	<Group>PostActionBehavior</Group>
+        </InputDefinition>   
+        <InputDefinition name="SubmitDefaultRefreshPageLocation" base="com.bowstreet.builders.webapp.ButtonBuilder.DefaultRefreshPageLocation">
+        	<UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        	<CoordinatorNamespace>Submit</CoordinatorNamespace>
+        	<Group>PostActionBehavior</Group>
+        </InputDefinition>   
+<!-- PostActionBehavior Group Inputs -->
+
+
+  </InputDefinitions> 
+  <GroupDefinitions> 
+    <GroupDefinition id="DialogActionInfo" base="com.bowstreet.core.Base.Arguments" >
+        <Name>Dialog Action Information</Name>
+        <Description>Specify the action which will populate the inner portion of the dialog.</Description>
+        <BorderStyle>Etched</BorderStyle>
+        <IsCollapsible>true</IsCollapsible>
+        <InitiallyCollapsed>false</InitiallyCollapsed>
+    </GroupDefinition>
+
+    <GroupDefinition id="DialogDisplayInfo" base="com.bowstreet.core.Base.Arguments" >
+        <Name>Dialog Display Information</Name>
+        <Description>Specify details for the display of the dialog.</Description>
+        <BorderStyle>Etched</BorderStyle>
+        <IsCollapsible>true</IsCollapsible>
+        <InitiallyCollapsed>false</InitiallyCollapsed>
+    </GroupDefinition>
+
+    <GroupDefinition id="SubmitInfo" base="com.bowstreet.core.Base.Arguments" >
+        <Name>Submit Action Information</Name>
+        <Description>Specify the action to be performed when the dialog is submitted.</Description>
+        <BorderStyle>Etched</BorderStyle>
+        <IsCollapsible>true</IsCollapsible>
+        <InitiallyCollapsed>false</InitiallyCollapsed>
+    </GroupDefinition>
+
+    <GroupDefinition id="PostActionBehavior" base="com.bowstreet.core.WebAppBase.PostActionBehavior">
+        <Name>Submit Post-Action Behavior</Name>
+    </GroupDefinition>
+
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" /> 
+  </GroupDefinitions> 
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

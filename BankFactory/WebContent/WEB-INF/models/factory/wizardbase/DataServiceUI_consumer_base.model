@@ -1,0 +1,310 @@
+<Model id="factory/wizardbase/DataServiceUI_consumer_base"><BuilderCallList><BuilderCall id="bc9"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM
+5724-O03
+(C) Copyright 2010. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM
+5724-O03
+(C) Copyright 2002, 2006. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
+<Messages><Error><Message>The following Builder Inputs are required but do not have values:  Name</Message>
+</Error>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="Name" profile="DSUIWizard:ServiceConsumer_Name" />
+<Input name="PortletTitle" profile="DSUIWizard:ServiceConsumer_Name" />
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseParentProfile">false</Input>
+<Input name="ImportOnce">true</Input>
+<Input name="ProfileHandling">None</Input>
+<Input name="Name">Theme</Input>
+<Input name="ModelName">imports/factory/desktoptheme85</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="UseParentProfile">true</Input>
+<Input name="ImportOnce">true</Input>
+<Input name="ProfileHandling">UseParentProfiling</Input>
+<Input name="Name">Theme</Input>
+<Input name="ModelName">imports/factory/multichanneltheme85</Input>
+<Input name="SetProfiledInputValues">false</Input>
+<Input name="_ProfiledInputs"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc5"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<Messages><Error><Message>The following Builder Inputs are required but do not have values:  Name, Provider Model</Message>
+</Error>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="UseAllOperations">true</Input>
+<Input name="OverrideInputs">false</Input>
+<Input name="Name" profile="DSUIWizard:ServiceConsumer_Name" />
+<Input name="ProviderModel" profile="DSUIWizard:ServiceConsumer_ProviderModel" />
+<Input name="OperationInputs" xmlProfile="DSUIWizard:ServiceConsumer_OperationInputs" />
+<Input name="OperationName">all</Input>
+<Input name="ContextVariables" xmlProfile="DSUIWizard:ServiceConsumer_ContextVariables" />
+<Input name="OperationDescription">[no description]
+Parameters:
+	Name:			results</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.DataServicesUserInterface</BuilderDefID>
+<Messages><Error><Message>The following Builder Inputs are required but do not have values:  Name, Data Service, Choose Pages / Operations</Message>
+</Error>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="DSUIWizard:DataServicesUserInterface_BuilderCallEnabled" />
+<Input name="UseTheme" profile="DSUIWizard:DataServicesUserInterface_UseTheme" />
+<Input name="EnableDataPagingOnList" profile="DSUIWizard:DataServicesUserInterface_EnableDataPagingOnList" />
+<Input name="RowsPerPageOnList" profile="DSUIWizard:DataServicesUserInterface_RowsPerPageOnList" />
+<Input name="PagingControlsOnList" profile="DSUIWizard:DataServicesUserInterface_PagingControlsOnList" />
+<Input name="UsePartialRefreshForPagingOnList" profile="DSUIWizard:DataServicesUserInterface_UsePartialRefreshForPagingOnList" />
+<Input name="DojoColumnResizeAndReorderOnList" profile="DSUIWizard:DataServicesUserInterface_DojoColumnResizeAndReorderOnList" />
+<Input name="EnableRowHighlightingOnList" profile="DSUIWizard:DataServicesUserInterface_EnableRowHighlightingOnList" />
+<Input name="FilterOnList" profile="DSUIWizard:DataServicesUserInterface_FilterOnList" />
+<Input name="ListLinkToDetails" profile="DSUIWizard:DataServicesUserInterface_ListLinkToDetails" />
+<Input name="ListLinkToEvent" profile="DSUIWizard:DataServicesUserInterface_ListLinkToEvent" />
+<Input name="ListToUpdate" profile="DSUIWizard:DataServicesUserInterface_ListToUpdate" />
+<Input name="ListToDelete" profile="DSUIWizard:DataServicesUserInterface_ListToDelete" />
+<Input name="EnableDataPagingOnResults" profile="DSUIWizard:DataServicesUserInterface_EnableDataPagingOnResults" />
+<Input name="RowsPerPageOnResults" profile="DSUIWizard:DataServicesUserInterface_RowsPerPageOnResults" />
+<Input name="PagingControlsOnResults" profile="DSUIWizard:DataServicesUserInterface_PagingControlsOnResults" />
+<Input name="UsePartialRefreshForPagingOnResults" profile="DSUIWizard:DataServicesUserInterface_UsePartialRefreshForPagingOnResults" />
+<Input name="DojoColumnResizeAndReorderOnResults" profile="DSUIWizard:DataServicesUserInterface_DojoColumnResizeAndReorderOnResults" />
+<Input name="EnableRowHighlightingOnResults" profile="DSUIWizard:DataServicesUserInterface_EnableRowHighlightingOnResults" />
+<Input name="SearchOnResults" profile="DSUIWizard:DataServicesUserInterface_SearchOnResults" />
+<Input name="ResultsLinkToDetails" profile="DSUIWizard:DataServicesUserInterface_ResultsLinkToDetails" />
+<Input name="ResultsLinkToEvent" profile="DSUIWizard:DataServicesUserInterface_ResultsLinkToEvent" />
+<Input name="ResultsToUpdate" profile="DSUIWizard:DataServicesUserInterface_ResultsToUpdate" />
+<Input name="SearchResultsToDelete" profile="DSUIWizard:DataServicesUserInterface_SearchResultsToDelete" />
+<Input name="PostUpdate" profile="DSUIWizard:DataServicesUserInterface_PostUpdate" />
+<Input name="PostCreate" profile="DSUIWizard:DataServicesUserInterface_PostCreate" />
+<Input name="AllButtons">All</Input>
+<Input name="CreateMainMethod">true</Input>
+<Input name="RowHighlightColor">${Properties/bowstreet.Theme/DSUI_RowHightlightColor}</Input>
+<Input name="RowHighlightBackgroundColor">${Properties/bowstreet.Theme/DSUI_RowHightlightBackgroundColor}</Input>
+<Input name="ListPageURL">${Properties/bowstreet.Theme/DSUI_ListPageHTML}</Input>
+<Input name="ListPageHTMLTemplate">${Properties/bowstreet.Theme/DSUI_ListPageHTMLTemplate}</Input>
+<Input name="ListPageStyleSheetOverride">${Properties/bowstreet.Theme/DSUI_ListPageStyleSheetOverride}</Input>
+<Input name="FilterPageURL">${Properties/bowstreet.Theme/DSUI_FilterPageHTML}</Input>
+<Input name="FilterPageHTMLTemplate">${Properties/bowstreet.Theme/DSUI_FilterPageHTMLTemplate}</Input>
+<Input name="FilterPageStyleSheetOverride">${Properties/bowstreet.Theme/DSUI_FilterPageStyleSheetOverride}</Input>
+<Input name="SearchResultsPageURL">${Properties/bowstreet.Theme/DSUI_SearchResultsPageHTML}</Input>
+<Input name="SearchResultsPageHTMLTemplate">${Properties/bowstreet.Theme/DSUI_SearchPageHTMLTemplate}</Input>
+<Input name="SearchResultsPageStyleSheetOverride">${Properties/bowstreet.Theme/DSUI_SearchPageStyleSheetOverride}</Input>
+<Input name="QueryPageURL">${Properties/bowstreet.Theme/DSUI_QueryPageHTML}</Input>
+<Input name="QueryPageHTMLTemplate">${Properties/bowstreet.Theme/DSUI_QueryPageHTMLTemplate}</Input>
+<Input name="QueryPageStyleSheetOverride">${Properties/bowstreet.Theme/DSUI_QueryPageStyleSheetOverride}</Input>
+<Input name="DetailsPageURL">${Properties/bowstreet.Theme/DSUI_DetailsPageHTML}</Input>
+<Input name="DetailsPageHTMLTemplate">${Properties/bowstreet.Theme/DSUI_DetailsPageHTMLTemplate}</Input>
+<Input name="DetailsPageStyleSheetOverride">${Properties/bowstreet.Theme/DSUI_DetailsPageStyleSheetOverride}</Input>
+<Input name="NoDetailsYetPage_URL">${Properties/bowstreet.Theme/DSUI_NoDetailsYetPageHTML}</Input>
+<Input name="UpdatePageURL">${Properties/bowstreet.Theme/DSUI_UpdatePageHTML}</Input>
+<Input name="UpdatePageHTMLTemplate">${Properties/bowstreet.Theme/DSUI_UpdatePageHTMLTemplate}</Input>
+<Input name="UpdatePageStyleSheetOverride">${Properties/bowstreet.Theme/DSUI_UpdatePageStyleSheetOverride}</Input>
+<Input name="CreatePageURL">${Properties/bowstreet.Theme/DSUI_CreatePageHTML}</Input>
+<Input name="CreatePageHTMLTemplate">${Properties/bowstreet.Theme/DSUI_CreatePageHTMLTemplate}</Input>
+<Input name="CreatePageStyleSheetOverride">${Properties/bowstreet.Theme/DSUI_CreatePageStyleSheetOverride}</Input>
+<Input name="Pages" xmlProfile="DSUIWizard:DataServicesUserInterface_Pages" />
+<Input name="StartOnPage" profile="DSUIWizard:DataServicesUserInterface_StartOnPage" />
+<Input name="ListLinkToDetailsColumn" profile="DSUIWizard:DataServicesUserInterface_ListLinkToDetailsColumn" />
+<Input name="ResultsLinkToDetailsColumn" profile="DSUIWizard:DataServicesUserInterface_ResultsLinkToDetailsColumn" />
+<Input name="ResourceBundleName" profile="DSUIWizard:DataServicesUserInterface_ResourceBundleName" />
+<Input name="AllLabels"><top>
+<resource>
+    <Key>create.new.button.text</Key>
+    <Text>Create</Text>
+</resource>
+<resource>
+    <Key>create.page.submit.button.text</Key>
+    <Text>Submit</Text>
+</resource>
+<resource>
+    <Key>create.page.cancel.button.text</Key>
+    <Text>Cancel</Text>
+</resource>
+<resource>
+    <Key>delete.checked.button.text</Key>
+    <Text>Delete</Text>
+</resource>
+<resource>
+    <Key>delete.column.heading</Key>
+    <Text></Text>
+</resource>
+<resource>
+    <Key>delete.column.buttonOrLink.text</Key>
+    <Text>Delete</Text>
+</resource>
+<resource>
+    <Key>details.page.back.to.list.button.text</Key>
+    <Text>Back</Text>
+</resource>
+<resource>
+    <Key>details.page.to.update.page.button.text</Key>
+    <Text>Edit</Text>
+</resource>
+<resource>
+    <Key>edit.column.button.heading</Key>
+    <Text></Text>
+</resource>
+<resource>
+    <Key>edit.column.button.text</Key>
+    <Text>Edit</Text>
+</resource>
+<resource>
+    <Key>ErrorMessage.ErrorIntro</Key>
+    <Text>The following fields have errors:</Text>
+</resource>
+<resource>
+    <Key>ErrorMessage.DateCompare</Key>
+    <Text>The date failed the following comparison:</Text>
+</resource>
+<resource>
+    <Key>ErrorMessage.Required</Key>
+    <Text>This field is required.</Text>
+</resource>
+<resource>
+    <Key>ErrorMessage.Long</Key>
+    <Text>Not recognized as a Long value.</Text>
+</resource>
+<resource>
+    <Key>ErrorMessage.FloatingPoint</Key>
+    <Text>Not recognized as a Floating Point value.</Text>
+</resource>
+<resource>
+    <Key>ErrorMessage.Boolean</Key>
+    <Text>Not recognized as a Boolean value.</Text>
+</resource>
+<resource>
+    <Key>ErrorMessage.DateTime</Key>
+    <Text>Not recognized as a DateTime value.</Text>
+</resource>
+<resource>
+    <Key>ErrorMessage.Byte</Key>
+    <Text>Not recognized as a Byte value.</Text>
+</resource>
+<resource>
+    <Key>ErrorMessage.Integer</Key>
+    <Text>Not recognized as an Integer value.</Text>
+</resource>
+<resource>
+    <Key>InsertedColumnEdit</Key>
+    <Text></Text>
+</resource>
+<resource>
+    <Key>filter.page.apply.filter.button.text</Key>
+    <Text>Apply Filter</Text>
+</resource>
+<resource>
+    <Key>list.page.back.to.filter.text</Key>
+    <Text>Back</Text>
+</resource>
+<resource>
+    <Key>list.page.to.query.page.button.text</Key>
+    <Text>Search</Text>
+</resource>
+<resource>
+    <Key>list.page.no.data.found.message</Key>
+    <Text>The query did not return any data.</Text>
+</resource>
+<resource>
+    <Key>no.details.yet.page.message</Key>
+    <Text>Select a record and the details will be shown here.</Text>
+</resource>
+<resource>
+    <Key>query.page.search.button.text</Key>
+    <Text>Search</Text>
+</resource>
+<resource>
+    <Key>results.page.no.data.found.message</Key>
+    <Text>The query did not return any data.</Text>
+</resource>
+<resource>
+    <Key>results.page.back.to.query.button.text</Key>
+    <Text>Back</Text>
+</resource>
+<resource>
+    <Key>details.page.delete.button.text</Key>
+    <Text>Delete</Text>
+</resource>
+<resource>
+    <Key>results.page.to.list.page.button.text</Key>
+    <Text>View All</Text>
+</resource>
+<resource>
+    <Key>update.page.cancel.button.text</Key>
+    <Text>Cancel</Text>
+</resource>
+<resource>
+    <Key>update.page.submit.button.text</Key>
+    <Text>Submit</Text>
+</resource>
+</top>
+</Input>
+<Input name="DataService" profile="DSUIWizard:DataServicesUserInterface_DataService" />
+<Input name="DetailsEventName" profile="DSUIWizard:DataServicesUserInterface_DetailsEventName" />
+<Input name="IndividualButtons"><data><ListToCreate>false</ListToCreate>
+<ListToFilter>false</ListToFilter>
+<ApplyFilter>false</ApplyFilter>
+<ListToQuery>false</ListToQuery>
+<SearchResultsToCreate>false</SearchResultsToCreate>
+<SearchResultsToQuery>false</SearchResultsToQuery>
+<ApplyQuery>false</ApplyQuery>
+<SearchResultsToList>false</SearchResultsToList>
+<DetailsToUpdate>false</DetailsToUpdate>
+<DetailsToList>false</DetailsToList>
+<DetailsToSearchResults>false</DetailsToSearchResults>
+<CreatePageSubmit>false</CreatePageSubmit>
+<CreatePageCancel>false</CreatePageCancel>
+<UpdatePageSubmit>false</UpdatePageSubmit>
+<UpdatePageCancel>false</UpdatePageCancel>
+</data>
+</Input>
+<Input name="ResourceBundleNameChangedByUser">true</Input>
+<Input name="Name" profile="DSUIWizard:DataServicesUserInterface_Name" />
+<Input name="EventBehavior" profile="DSUIWizard:DataServicesUserInterface_EventBehavior">Both</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
+<Messages><Error><Message>The following Builder Inputs are required but do not have values:  DisplayBehavior, ValidationBehavior</Message>
+</Error>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="DSUIWizard:DataFieldSettings_BuilderCallEnabled">false</Input>
+<Input name="AllPages">true</Input>
+<Input name="AllPageRadio">All</Input>
+<Input name="Pages"><data />
+</Input>
+<Input name="DisplayBehavior" xmlProfile="DSUIWizard:DataFieldSettings_DisplayBehavior" />
+<Input name="ValidationBehavior" xmlProfile="DSUIWizard:DataFieldSettings_ValidationBehavior" />
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies />
+<ExternalProperties><ExternalProperty id="PortletModel">true</ExternalProperty>
+<ExternalProperty id="PortletName">theConsumer</ExternalProperty>
+<ExternalProperty id="PortletTitle">theConsumer</ExternalProperty>
+<ExternalProperty id="PortletDefaultLocale">en</ExternalProperty>
+<ExternalProperty id="PortletModeEdit">false</ExternalProperty>
+<ExternalProperty id="PortletModeEditDefaults">false</ExternalProperty>
+<ExternalProperty id="PortletModeConfig">false</ExternalProperty>
+<ExternalProperty id="PortletModeHelp">false</ExternalProperty>
+</ExternalProperties>
+</Model>

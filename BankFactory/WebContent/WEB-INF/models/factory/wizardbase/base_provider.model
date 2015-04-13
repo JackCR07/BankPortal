@@ -1,0 +1,87 @@
+<Model id="factory/wizardbase/base_provider"><BuilderCallList><BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2011. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2002, 2006. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Next Steps</Input>
+<Input name="BuilderCallEnabled">true</Input>
+<Input name="Comment">You should be able to run this model and see the data.
+
+Here are some of the things you might want to do now that you have the model started.
+    In the  Services Definition Builder, you could  turn on the Generate WSDL choice if you would like to make this service exportable as a WSDL Service.  (This is used for external access to these services)
+    In the  Services Definition Builder, you could add logical operations. These are used by builders like the Data Services User Interface builders to build Create, Read, Updtae and Delete type applications.
+    You can also add other builders to create the service ,service operations and transform data.</Input>
+<Input name="BuilderCallComment">You should be able to run this model and see the data.
+
+Here are some of the things you might want to do now that you have the model started.
+    In the  Services Definition Builder, you could  turn on the Generate WSDL choice if you would like to make this service exportable as a WSDL Service.  (This is used for external access to these services)
+    In the  Services Definition Builder, you could add logical operations. These are used by builders like the Data Services User Interface builders to build Create, Read, Updtae and Delete type applications.
+    You can also add other builders to create the service ,service operations and transform data.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.ServiceDefinitionBuilder</BuilderDefID>
+<Messages><Error><Message>The following Builder Inputs are required but do not have values:  Service Name</Message>
+</Error>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="PublicService">true</Input>
+<Input name="ExportAsWSDL">false</Input>
+<Input name="WrappedDocLiteral">false</Input>
+<Input name="MaintainState">false</Input>
+<Input name="AddTestingSupport">true</Input>
+<Input name="TestCreateMain">true</Input>
+<Input name="TestIncludeDocumentation">false</Input>
+<Input name="TestOverrideInputs">false</Input>
+<Input name="LogicalOperations"><Functions><FunctionDef><LogicalName>Create</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>RetrieveList</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>Search</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>Update</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>Delete</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>RetrieveOne</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+</Functions>
+</Input>
+<Input name="ServiceName" profile="baseproviderps:ServiceDefinition_ServiceName"></Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

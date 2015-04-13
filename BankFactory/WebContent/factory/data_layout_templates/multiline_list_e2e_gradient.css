@@ -1,0 +1,49 @@
+@IMPORT url("base_template_styles.css");  
+
+.vf_view_container {
+    width:100%;
+}
+
+.vf_view_list {
+   width:100%;
+}
+
+.wpfMultiLineListLayoutE2E a.wpfSelectableRow {
+    color: #000000;
+    text-decoration: none;
+}
+
+.wpfMultiLineListLayoutE2E .wpfListColumn {
+    float:left;
+    width:33%;
+}
+
+.wpfMultiLineListLayoutE2E .wpfListRow {
+   display: table;   
+   width:100%;
+   border-bottom: 2px solid #F0F0F0;
+   background-color: #F8F8F8;
+}
+
+.wpfMultiLineListLayoutE2E .wpfListColumnItem {
+    margin: 2px;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden; 
+}
+
+.wpfMultiLineListLayoutE2E .wpfListColumnItem img
+{
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    width: 55px;
+    height: 55px;
+}
+
+.wpfMultiLineListLayoutE2E .wpfListRow {
+    background-image : url("right_arrow.gif"), -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #F0F0F0), color-stop(0.5, #E0E0E0), color-stop(1.0, #D0D0D0));
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+}

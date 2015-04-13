@@ -1,0 +1,291 @@
+<ProfileSet name="databaseserviceproviderps" useQualifiedProfileNames="true"><Description>Generated profile set for model database_service_provider</Description>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<Models />
+<ProfileDef><Entries><Entry name="OperationEnabled2" isRuntime="false"><UI type="TextInput"><Prompt>OperationEnabled2</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="OperationEnabled3" isRuntime="false"><UI type="TextInput"><Prompt>OperationEnabled3</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="OperationEnabled4" isRuntime="false"><UI type="TextInput"><Prompt>OperationEnabled4</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="OperationEnabled5" isRuntime="false"><UI type="TextInput"><Prompt>OperationEnabled5</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="OperationName1" isRuntime="false"><UI type="TextInput"><Prompt>OperationName1</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="OperationName2" isRuntime="false"><UI type="TextInput"><Prompt>OperationName2</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="OperationName3" isRuntime="false"><UI type="TextInput"><Prompt>OperationName3</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="OperationName4" isRuntime="false"><UI type="TextInput"><Prompt>OperationName4</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="OperationName5" isRuntime="false"><UI type="TextInput"><Prompt>OperationName5</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceDefinition_GenerateWSDL" isRuntime="false"><UI type="Checkbox"><Prompt>ServiceDefinition_GenerateWSDL</Prompt>
+<ExtraData>true,false,expose as WSDL</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceDefinition_ServiceName" isRuntime="false"><UI type="TextInput"><Prompt>ServiceDefinition_ServiceName</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_InputStructureHandling1" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_InputStructureHandling1</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_InputStructureHandling2" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_InputStructureHandling</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_InputStructureHandling3" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_InputStructureHandling3</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_InputStructureHandling4" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_InputStructureHandling4</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_InputStructureHandling5" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_InputStructureHandling5</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_ResultSchema1" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_ResultSchema1</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_ResultSchema2" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_ResultSchema2</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_ResultSchema3" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_ResultSchema3</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_ResultSchema4" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_ResultSchema4</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_ResultSchema5" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_ResultSchema5</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_ResultStructureHandling1" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_ResultStructureHandling</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_ResultStructureHandling2" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_ResultStructureHandling2</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_ResultStructureHandling3" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_ResultStructureHandling3</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_ResultStructureHandling4" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_ResultStructureHandling4</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_ResultStructureHandling5" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_ResultStructureHandling5</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_TargetOperation1" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_TargetOperation1</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_TargetOperation2" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_TargetOperation2</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_TargetOperation3" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_TargetOperation3</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_TargetOperation4" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_TargetOperation4</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_TargetOperation5" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_TargetOperation5</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_Name1" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_Name1</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_Name2" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_Name2</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_Name3" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_Name3</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_Name4" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_Name4</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_Name5" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_Name5</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_Parameters1" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_Parameters1</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_Parameters2" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_Parameters2</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_Parameters3" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_Parameters3</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_Parameters4" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_Parameters4</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_Parameters5" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_Parameters5</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_SqlDataSource1" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_SqlDataSource1</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_SqlDataSource2" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_SqlDataSource2</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_SqlDataSource3" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_SqlDataSource3</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_SqlDataSource4" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_SqlDataSource4</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_SqlDataSource5" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_SqlDataSource5</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_SqlStatement1" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_SqlStatement1</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_SqlStatement2" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_SqlStatement2</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_SqlStatement3" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_SqlStatement3</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_SqlStatement4" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_SqlStatement4</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SqlCall_SqlStatement5" isRuntime="false"><UI type="TextInput"><Prompt>SqlCall_SqlStatement5</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1248451559484" isContainer="true"><Values><Value name="OperationEnabled2">false</Value>
+<Value name="OperationEnabled3">false</Value>
+<Value name="OperationEnabled4">false</Value>
+<Value name="OperationEnabled5">false</Value>
+<Value name="OperationName1">operation1</Value>
+<Value name="OperationName2">operation2</Value>
+<Value name="OperationName3">operation3</Value>
+<Value name="OperationName4">operation4</Value>
+<Value name="OperationName5">operation5</Value>
+<Value name="ServiceDefinition_GenerateWSDL">false</Value>
+<Value name="ServiceDefinition_ServiceName">theService</Value>
+<Value name="ServiceOperation_InputStructureHandling1">FromOperation</Value>
+<Value name="ServiceOperation_InputStructureHandling2">FromOperation</Value>
+<Value name="ServiceOperation_InputStructureHandling3">FromOperation</Value>
+<Value name="ServiceOperation_InputStructureHandling4">FromOperation</Value>
+<Value name="ServiceOperation_InputStructureHandling5">FromOperation</Value>
+<Value name="ServiceOperation_ResultSchema1"></Value>
+<Value name="ServiceOperation_ResultSchema2"></Value>
+<Value name="ServiceOperation_ResultSchema3"></Value>
+<Value name="ServiceOperation_ResultSchema4"></Value>
+<Value name="ServiceOperation_ResultSchema5"></Value>
+<Value name="ServiceOperation_ResultStructureHandling1">FromOperation</Value>
+<Value name="ServiceOperation_ResultStructureHandling2">FromOperation</Value>
+<Value name="ServiceOperation_ResultStructureHandling3">FromOperation</Value>
+<Value name="ServiceOperation_ResultStructureHandling4">FromOperation</Value>
+<Value name="ServiceOperation_ResultStructureHandling5">FromOperation</Value>
+<Value name="ServiceOperation_TargetOperation1">DataServices/call1/execute</Value>
+<Value name="ServiceOperation_TargetOperation2">DataServices/call2/execute</Value>
+<Value name="ServiceOperation_TargetOperation3">DataServices/call3/execute</Value>
+<Value name="ServiceOperation_TargetOperation4">DataServices/call4/execute</Value>
+<Value name="ServiceOperation_TargetOperation5">DataServices/call5/execute</Value>
+<Value name="SqlCall_Name1">call1</Value>
+<Value name="SqlCall_Name2">call2</Value>
+<Value name="SqlCall_Name3">call3</Value>
+<Value name="SqlCall_Name4">call4</Value>
+<Value name="SqlCall_Name5">call5</Value>
+<Value name="SqlCall_Parameters1">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/call1Inputs/Parameter1Value}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="SqlCall_Parameters2">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/call2Inputs/Parameter1Value}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="SqlCall_Parameters3">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/call3Inputs/Parameter1Value}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="SqlCall_Parameters4">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/call4Inputs/Parameter1Value}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="SqlCall_Parameters5">&lt;top&gt;&lt;Parameter&gt;&lt;Position&gt;1&lt;/Position&gt;
+&lt;Direction&gt;Input&lt;/Direction&gt;
+&lt;TypeCast&gt;Automatic&lt;/TypeCast&gt;
+&lt;ValueSetCastMethod&gt;${Variables/call5Inputs/Parameter1Value}&lt;/ValueSetCastMethod&gt;
+&lt;/Parameter&gt;
+&lt;/top&gt;</Value>
+<Value name="SqlCall_SqlDataSource1">java:comp/env/jdbc/sample</Value>
+<Value name="SqlCall_SqlDataSource2">java:comp/env/jdbc/sample</Value>
+<Value name="SqlCall_SqlDataSource3">java:comp/env/jdbc/sample</Value>
+<Value name="SqlCall_SqlDataSource4">java:comp/env/jdbc/sample</Value>
+<Value name="SqlCall_SqlDataSource5">java:comp/env/jdbc/sample</Value>
+<Value name="SqlCall_SqlStatement1">select * from ORDERS where STATUS like ?</Value>
+<Value name="SqlCall_SqlStatement2">select * from ORDERS where STATUS like ?</Value>
+<Value name="SqlCall_SqlStatement3">select * from ORDERS where STATUS like ?</Value>
+<Value name="SqlCall_SqlStatement4">select * from ORDERS where STATUS like ?</Value>
+<Value name="SqlCall_SqlStatement5">select * from ORDERS where STATUS like ?</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

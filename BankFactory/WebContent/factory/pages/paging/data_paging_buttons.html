@@ -1,0 +1,35 @@
+<%-- 
+  This page is imported to form the execution-time UI for the
+  Paging Buttons Builder. You can replace this with another HTML
+  file so long as you use the same tag names.
+ --%>
+<span name="stylesheet_location" /><%-- default style definitions --%>
+
+<span name="wrapper">
+<table  role="presentation" class="dataPagingButton" cellspacing="0" cellpadding="0">
+ <tr  role="presentation">
+  <td  role="presentation">
+    <%-- target for the "first page" image button --%>
+    <span border="0" vspace="0" hspace="0" class="dataPagingButton" name="firstbtn" />
+  </td>
+  <td  role="presentation">
+    <%-- target for the "previous page" image button --%>
+    <span border="0" vspace="0" hspace="0" class="dataPagingButton" name="prevbtn" />
+  </td>
+  <td  role="presentation" valign="bottom">
+    <%-- the range of displayed records/pages goes here --%>
+    <span name="displayed_pages" class="dataPagingButton">
+    &nbsp;&nbsp;<span name="range" />&nbsp;&nbsp;
+    </span>
+  </td>
+  <td  role="presentation">
+    <%-- target for the "next page" image button --%>
+    <span border="0" vspace="0" hspace="0" class="dataPagingButton" name="nextbtn" />
+  </td>
+  <td  role="presentation">
+    <%-- target for the "last page" image button --%>
+    <span border="0" vspace="0" hspace="0" class="dataPagingButton" name="lastbtn" />
+  </td>
+ </tr>
+</table>
+</span>

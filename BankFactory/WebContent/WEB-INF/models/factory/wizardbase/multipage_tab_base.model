@@ -1,0 +1,148 @@
+<Model id="factory/wizardbase/fp80_list_and_detail_consumer_base"><BuilderCallList><BuilderCall id="bc1"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2013. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2013. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Next Steps</Input>
+<Input name="BuilderCallEnabled">true</Input>
+<Input name="Comment">For further development of this model, you can add and modify any builders to customize the application.   You can also use Design view to work with page elements, for example to move fields around or by using right-click commands.
+
+With that profiling enabled, when you run the model, by default you will see a "desktop" view of the application.
+
+You can view and test both the Desktop, Tablet and Smartphone profiles from Designer.   To do this, open the "Applied Profiles" tab, and select the profile you want to view and click the "Apply" button.   After you have done this, when you run the model you will see the selected profile.    
+
+You can also profile other builder inputs according to device type, and you can apply different profiling for specific device types if you want.   For example, you could have different CSS style sheets applied for different types of smartphones if you want to have a different appearance for each device.</Input>
+<Input name="BuilderCallComment">For further development of this model, you can add and modify any builders to customize the application.   You can also use Design view to work with page elements, for example to move fields around or by using right-click commands.
+
+With that profiling enabled, when you run the model, by default you will see a "desktop" view of the application.
+
+You can view and test both the Desktop, Tablet and Smartphone profiles from Designer.   To do this, open the "Applied Profiles" tab, and select the profile you want to view and click the "Apply" button.   After you have done this, when you run the model you will see the selected profile.    
+
+You can also profile other builder inputs according to device type, and you can apply different profiling for specific device types if you want.   For example, you could have different CSS style sheets applied for different types of smartphones if you want to have a different appearance for each device.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseParentProfile">false</Input>
+<Input name="ImportOnce">true</Input>
+<Input name="ProfileHandling">None</Input>
+<Input name="Name">Theme</Input>
+<Input name="ModelName">imports/factory/desktoptheme85</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="UseParentProfile">true</Input>
+<Input name="ImportOnce">true</Input>
+<Input name="ProfileHandling">UseParentProfiling</Input>
+<Input name="Name">Theme</Input>
+<Input name="ModelName">imports/factory/multichanneltheme85</Input>
+<Input name="SetProfiledInputValues">false</Input>
+<Input name="_ProfiledInputs"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="tabWizard:PortletAdapter_BuilderCallEnabled" />
+<Input name="BuilderCallCategory">General</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="Name" profile="tabWizard:ServiceConsumer_Name" />
+<Input name="PortletTitle" profile="tabWizard:PortletTitle" />
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc9"><BuilderDefID>com.bowstreet.builders.webapp.ApplicationPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="tabWizard:ApplicationPage_BuilderCallEnabled1" />
+<Input name="PageType">ModelContainer</Input>
+<Input name="GenerateMain">true</Input>
+<Input name="UseTheme">true</Input>
+<Input name="Name" profile="tabWizard:ApplicationPage_Name1" />
+<Input name="PageHeaderText" profile="tabWizard:ApplicationPage_PageHeaderText1" />
+<Input name = "ModelContainerModelFile" profile="tabWizard:ApplicationPage_ModelContainerModelFile1" />
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.ApplicationPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="tabWizard:ApplicationPage_BuilderCallEnabled2" />
+<Input name="PageType">ModelContainer</Input>
+<Input name="GenerateMain">false</Input>
+<Input name="UseTheme">true</Input>
+<Input name="Name" profile="tabWizard:ApplicationPage_Name2" />
+<Input name="PageHeaderText" />
+<Input name = "ModelContainerModelFile" profile="tabWizard:ApplicationPage_ModelContainerModelFile2" />
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc11"><BuilderDefID>com.bowstreet.builders.webapp.ApplicationPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="tabWizard:ApplicationPage_BuilderCallEnabled3" />
+<Input name="PageType">ModelContainer</Input>
+<Input name="GenerateMain">false</Input>
+<Input name="UseTheme">true</Input>
+<Input name="Name" profile="tabWizard:ApplicationPage_Name3" />
+<Input name="PageHeaderText" />
+<Input name = "ModelContainerModelFile" profile="tabWizard:ApplicationPage_ModelContainerModelFile3" />
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc12"><BuilderDefID>com.bowstreet.builders.webapp.ApplicationPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="tabWizard:ApplicationPage_BuilderCallEnabled4" />
+<Input name="PageType">ModelContainer</Input>
+<Input name="GenerateMain">false</Input>
+<Input name="UseTheme">true</Input>
+<Input name="Name" profile="tabWizard:ApplicationPage_Name4" />
+<Input name="PageHeaderText"/>
+<Input name = "ModelContainerModelFile" profile="tabWizard:ApplicationPage_ModelContainerModelFile4" />
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc13"><BuilderDefID>com.bowstreet.builders.webapp.ApplicationPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="tabWizard:ApplicationPage_BuilderCallEnabled5" />
+<Input name="PageType">ModelContainer</Input>
+<Input name="GenerateMain">false</Input>
+<Input name="UseTheme">true</Input>
+<Input name="Name" profile="tabWizard:ApplicationPage_Name5" />
+<Input name = "ModelContainerModelFile" profile="tabWizard:ApplicationPage_ModelContainerModelFile5" />
+</Inputs>
+</BuilderCall>
+<BuilderCall id = "bc14"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages></Messages>
+<Inputs><Input name = "Name">Next Steps Page Navigation</Input>
+<Input name = "BuilderCallEnabled">true</Input>
+<Input name = "Comment">You can change the navigation to a variety of formats or can can group the navigation items. You also can add a back button tag on a set of specified target pages for navigation.</Input>
+<Input name = "BuilderCallComment">You can change the navigation to a variety of formats or can can group the navigation items. You also can add a back button tag on a set of specified target pages for navigation.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id = "bc15"><BuilderDefID>com.bowstreet.builders.webapp.PageNavigationBuilder</BuilderDefID>
+<Inputs><Input name = "BuilderCallEnabled">true</Input>
+<Input name = "Navigation" xmlProfile="tabWizard:PageNavigation_Navigation"/>
+<Input name = "Groups"><top></top></Input>
+<Input name = "ActionType">link</Input>
+<Input name = "TargetPages"><top></top></Input>
+<Input name = "MakeUniqueElementNames">true</Input>
+<Input name = "PageLocation"><SimplePageLocation><Page>AllPages</Page><NameSearch>page_header_text</NameSearch><InsertionModifier>Before</InsertionModifier><NewNodeName></NewNodeName></SimplePageLocation></Input>
+<Input name = "TemplateFile">/factory/data_layout_templates/navigation_tabs_template.html</Input>
+<Input name = "StyleSheetFile">/factory/data_layout_templates/navigation_tabs_clean.css</Input>
+<Input name = "Name" profile="tabWizard:ServiceConsumer_Name" />
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

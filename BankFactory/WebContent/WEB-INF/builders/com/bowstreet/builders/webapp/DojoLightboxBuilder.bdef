@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoLightboxBuilder"> 
+  <ReadableName>Dojo Lightbox</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName> 
+  <HelpFile></HelpFile>
+  <RequiredFactoryVersion>6.1.5</RequiredFactoryVersion> 
+  <Description>Adds a Dojo Lightbox to the specified page element.</Description> 
+  <Domains> 
+    <Domain>WebApp</Domain> 
+    <Domain>Consumer</Domain>
+  </Domains> 
+  <CreateModifyList>
+     <CanModify type="[Unassigned Elements]" category="Rich UI">Adds a Dojo Lightbox.</CanModify>
+  </CreateModifyList>
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <Category>Page Elements,Rich UI</Category>
+  <Keywords>Form,Data Entry,Layout,Dojo,Widget</Keywords>
+
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoLightboxBuilder</BuilderDataEntry> 
+    <BuilderDataEntry name="DojoWidgetAttributes">
+        <DojoWidgetAttributes>
+            <DojoWidgetAttribute>
+                <BuilderInputName>ContainerStyle</BuilderInputName>
+                <DojoWidgetAttributeName>style</DojoWidgetAttributeName>
+                <DefaultValue>true</DefaultValue>
+            </DojoWidgetAttribute>
+        </DojoWidgetAttributes>
+    </BuilderDataEntry>
+    <BuilderDataEntry name="IconName">editControl</BuilderDataEntry>
+  </BuilderData>
+
+<!--  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoFormElementsCoordinator</CoordinatorClassName> -->
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.BaseHTMLCoordinator</CoordinatorClassName> 
+
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName"> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition>
+
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation">
+      <Prompt></Prompt> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+
+    <InputDefinition name="ElementName" base="com.bowstreet.core.Base.StringData">
+       <Prompt></Prompt>
+       <InitialValue>div</InitialValue>
+       <EmptyValueReplacement>div</EmptyValueReplacement>  
+       <Visible>false</Visible> 
+       <ProfileType>Value</ProfileType> 
+       <Callable>true</Callable> 
+    </InputDefinition>
+
+    <InputDefinition name="LightboxData"  base="com.bowstreet.core.Base.IndirectValue">
+       <Prompt>Lightbox Data</Prompt>
+       <HelpText>Specify an xml-typed varaible for the builder.</HelpText>
+       <Property>true</Property>
+      <Required>true</Required> 
+    </InputDefinition>
+
+
+    <InputDefinition name="DisplayMode"  base="com.bowstreet.core.Base.Select">
+        <Prompt>Display Mode</Prompt>
+        <HelpText>Specify if Lightbox should display grouped or individual images.</HelpText>
+        <InitialValue>individual</InitialValue>
+        <Property>true</Property>
+        <Editor JavaClass="com.bowstreet.widget.ComboBox">
+            <Argument name="listData">individual,grouped</Argument>
+            <Argument name="listLabels">individual,grouped</Argument>
+            <Argument name="isEditable">false</Argument>
+        </Editor>
+    </InputDefinition>
+    
+<!--
+    <InputDefinition name="ContainerStyle" base="com.bowstreet.core.Base.IndirectValue">
+       <Prompt>Accordion Container Size</Prompt>
+       <HelpText>Specify the style (e.g., width:100%; height:50%) of the Accordion container.</HelpText>
+       <InitialValue>width:100%; height:100%;</InitialValue>
+       <EmptyValueReplacement>width:100%; height:100%;</EmptyValueReplacement>
+       <Visible>false</Visible>
+       <ProfileType>Value</ProfileType>
+       <Callable>true</Callable>
+    </InputDefinition>
+-->    
+
+    <InputDefinition name="HrefElement"  base="com.bowstreet.core.Base.String">
+       <Group>ElementMapping</Group>
+       <Prompt>Link href</Prompt>
+       <HelpText>The name of the element you want to use as the Lightbox image href.</HelpText>
+       <InitialValue>href</InitialValue>
+       <Property>true</Property>
+    </InputDefinition>
+
+    <InputDefinition name="LabelElement"  base="com.bowstreet.core.Base.String">
+       <Group>ElementMapping</Group>
+       <Prompt>Link label</Prompt>
+       <HelpText>The name of the element you want to use as the Lightbox link label.</HelpText>
+       <InitialValue>label</InitialValue>
+       <Property>true</Property>
+    </InputDefinition>
+
+    <InputDefinition name="TitleElement"  base="com.bowstreet.core.Base.String">
+       <Group>ElementMapping</Group>
+       <Prompt>Title</Prompt>
+       <HelpText>The name of the element you want to use as the Lightbox image title.</HelpText>
+       <InitialValue>title</InitialValue>
+       <Property>true</Property>
+    </InputDefinition>
+
+        <InputDefinition name="Attributes"  base="com.bowstreet.core.Base.XMLData">
+            <Group>Attributes</Group>
+            <Property>true</Property>
+            <Editor JavaClass="com.bowstreet.widget.List">
+                <Argument name="columns">2</Argument>
+                <Argument name="headings">Name,Value</Argument>
+                <Argument name="columnTags">Name,Value</Argument>
+                <Argument name="rowtag">Attribute</Argument>
+                <Argument name="height">200</Argument>
+                <Argument name="cellEditors">
+                    <Editors>
+                        <Editor JavaClass="com.bowstreet.widget.Reference">
+                            <Argument name="editor">                    
+                                <Editor JavaClass="com.bowstreet.widget.ComboBox">
+                                    <Argument name="isEditable">true</Argument>
+                                    <Argument name="listData"> ,class,style</Argument>
+                                </Editor>
+                            </Argument>
+                        </Editor>
+                        <Editor JavaClass="com.bowstreet.widget.IndirectValue" />
+                    </Editors>
+                </Argument>
+            </Editor>
+            <Prompt>Attribute List</Prompt>
+            <HelpText>Name/value pairs of attributes to set</HelpText>
+        </InputDefinition>
+
+    <InputDefinition name="HandleExisting"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleExisting">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition> 
+
+    <InputDefinition name="HandleMissingValue"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleMissingValue">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition> 
+
+    <InputDefinition name="Separator"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Separator">
+      <Group>Attributes</Group>
+      <InitialValue>;</InitialValue>
+    </InputDefinition>    
+
+    <InputDefinition name="LinkSeparator"  base="com.bowstreet.core.Base.IndirectValue">
+      <InitialValue>&nbsp;</InitialValue>     
+      <Prompt>Link Separator</Prompt>
+      <HelpText>Specify content that will be used to separate individual Lightbox links.</HelpText>
+      <Group>Advanced</Group>
+      <Property>true</Property>
+    </InputDefinition>    
+
+  </InputDefinitions>
+  
+  <GroupDefinitions>
+   <GroupDefinition id="Advanced">
+      <Name>Advanced</Name>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+   <GroupDefinition id="ElementMapping">
+      <Name>Element Mapping</Name>
+      <Description>Specify which elements should be mapped to the associated Lightbox attributes.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+   <GroupDefinition id="Attributes">
+      <Name>Attributes</Name>
+      <Description>Optional attributes to apply to the target Dojo type.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" /> 
+  </GroupDefinitions>
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

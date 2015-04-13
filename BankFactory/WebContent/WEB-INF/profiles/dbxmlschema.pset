@@ -1,0 +1,139 @@
+<ProfileSet name="dbxmlschema" useQualifiedProfileNames="true"><Description>Generate XML schemas from DB data</Description>
+<Visibility>False</Visibility>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<ValueClass>com.bowstreet.profiles.ProfileFromRequestPreservingDefaults</ValueClass>
+<Models><Model>factory/core/db_utils</Model>
+</Models>
+<ProfileDef><Entries><Entry name="ds_JndiSecurityPrincipal" isRuntime="false"><UI type="TextInput"><Prompt>JNDI Security Principal</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ds_JndiContextFactory" isRuntime="false"><UI type="TextInput"><Prompt>JNDI Context Factory</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="fn_GetDbMetaData" isRuntime="false"><UI type="Select"><Prompt>Get DB MetaData</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="stmt_InputParameters" isRuntime="false"><UI type="TextInput"><Prompt>Input Parameters</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="fn_GetSchema" isRuntime="false"><UI type="Select"><Prompt>Get Schema</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="var_MetaDataCatalogName" isRuntime="false"><UI type="TextInput"><Prompt>MetaData Catalog Name</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ds_JndiUrl" isRuntime="false"><UI type="TextInput"><Prompt>JNDI URL</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="xform_TopElementName" isRuntime="false"><UI type="TextInput"><Prompt>Top Element Name</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ds_DataSourceUser" isRuntime="false"><UI type="TextInput"><Prompt>DataSource User</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ds_DataSourceName" isRuntime="false"><UI type="TextInput"><Prompt>Data Source Name</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="xform_UseColumnLabels" isRuntime="false"><UI type="Checkbox"><Prompt>Use Column Labels</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="stmt_Concurrency" isRuntime="false"><UI type="Select"><Prompt>Concurrency</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="stmt_AutoCreateInputs" isRuntime="false"><UI type="TextInput"><Prompt>Auto Create Inputs</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="var_MetaDataSchemaPattern" isRuntime="false"><UI type="TextInput"><Prompt>MetaData Schema Pattern</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="xform_RowElementName" isRuntime="false"><UI type="TextInput"><Prompt>Row Element Name</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="xform_SchemaTargetNameSpace" isRuntime="false"><UI type="TextInput"><Prompt>Schema Target NameSpace</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="stmt_ScrollType" isRuntime="false"><UI type="Select"><Prompt>Scroll Type</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="var_MetaDataTablePattern" isRuntime="false"><UI type="TextInput"><Prompt>MetaData Table Pattern</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="fn_VerifyDataSource" isRuntime="false"><UI type="Select"><Prompt>Verify DataSource</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ds_DataSourcePassword" isRuntime="false"><UI type="TextInput"><Prompt>DataSource Password</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ds_VerifyConnectivity" isRuntime="false"><UI type="Checkbox"><Prompt>Verify Connectivity</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="stmt_ExecutionTimeout" isRuntime="false"><UI type="TextInput"><Prompt>Execution Timeout</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ds_JndiSecurityCredentials" isRuntime="false"><UI type="TextInput"><Prompt>JNDI Security Credentials</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="xform_CreateVerboseXml" isRuntime="false"><UI type="Checkbox"><Prompt>Create Verbose XML</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="stmt_SqlStatement" isRuntime="false"><UI type="TextArea"><Prompt>SQL Statement</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1046275846710" isContainer="true"><Values><Value name="ds_JndiSecurityPrincipal"></Value>
+<Value name="ds_JndiContextFactory"></Value>
+<Value name="fn_GetDbMetaData">Disabled</Value>
+<Value name="stmt_InputParameters"></Value>
+<Value name="fn_GetSchema">Disabled</Value>
+<Value name="var_MetaDataCatalogName"></Value>
+<Value name="ds_JndiUrl"></Value>
+<Value name="xform_TopElementName"></Value>
+<Value name="ds_DataSourceUser"></Value>
+<Value name="ds_DataSourceName"></Value>
+<Value name="xform_UseColumnLabels"></Value>
+<Value name="stmt_Concurrency"></Value>
+<Value name="stmt_AutoCreateInputs"></Value>
+<Value name="var_MetaDataSchemaPattern"></Value>
+<Value name="xform_RowElementName"></Value>
+<Value name="xform_SchemaTargetNameSpace"></Value>
+<Value name="stmt_ScrollType"></Value>
+<Value name="var_MetaDataTablePattern"></Value>
+<Value name="fn_VerifyDataSource">Disabled</Value>
+<Value name="ds_DataSourcePassword"></Value>
+<Value name="ds_VerifyConnectivity">false</Value>
+<Value name="stmt_ExecutionTimeout"></Value>
+<Value name="ds_JndiSecurityCredentials"></Value>
+<Value name="xform_CreateVerboseXml"></Value>
+<Value name="stmt_SqlStatement"></Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

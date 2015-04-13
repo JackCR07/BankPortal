@@ -1,0 +1,219 @@
+<!--  **************************   WEF 8.5 UI Theme **********************************
+Copyright IBM Corp. 2013
+
+A theme is a collection of style information that can be used to drive builder inputs that provide the application UI in your model.
+This information can include but is not limited to HTML templates, style sheets (CSS), base pages, highlighting style, and paging style. 
+
+For more Theme information please see the "Themes and user interface control" section of the product documentation.
+
+-->
+<Theme>
+    <Use_Smart_Refresh>true</Use_Smart_Refresh>
+    <DesignViewStyleSheet>/factory/html_templates/WEFVisualDesigner.css</DesignViewStyleSheet>
+
+    <!--  Button styles -->
+    <Button_ActionRole_Default>wefDesktopButton</Button_ActionRole_Default>
+    <Button_StyleSheet>/factory/html_templates/WEF8.5_uitheme.css</Button_StyleSheet>
+
+    <!-- DataPage Builder -->
+    <DataPage_HTMLTemplate>/factory/html_templates/clean_themes.html</DataPage_HTMLTemplate>
+    <DataPage_StyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</DataPage_StyleSheetOverride>
+
+    <!-- View and Form -->
+    <ViewAndForm_EnablePagingLinks>true</ViewAndForm_EnablePagingLinks>
+
+    <ViewAndForm_PagingLinksMaxLinks>5</ViewAndForm_PagingLinksMaxLinks>
+    <ViewAndForm_PagingLinksPageBase>/factory/pages/paging/data_paging_links.html</ViewAndForm_PagingLinksPageBase>
+    <ViewAndForm_PagingLinksFirstLinkText><<</ViewAndForm_PagingLinksFirstLinkText>
+    <ViewAndForm_PagingLinksPrevLinkText><</ViewAndForm_PagingLinksPrevLinkText>
+    <ViewAndForm_PagingLinksNextLinkText>></ViewAndForm_PagingLinksNextLinkText>
+    <ViewAndForm_PagingLinksLastLinkText>>></ViewAndForm_PagingLinksLastLinkText>
+    <ViewAndForm_PagingLinksStyleSheet>/factory/pages/paging/data_paging_links_blue.css</ViewAndForm_PagingLinksStyleSheet>
+    <ViewAndForm_PagingButtonsUseTheme>true</ViewAndForm_PagingButtonsUseTheme>
+    <ViewAndForm_PagingButtonsPageBase>/factory/pages/paging/data_paging_buttons.html</ViewAndForm_PagingButtonsPageBase>
+    <ViewAndForm_PagingButtonsStyleSheet>/factory/pages/paging/data_paging_buttons_blue.css</ViewAndForm_PagingButtonsStyleSheet>
+
+    <ViewAndForm_HighlighterEnabled>false</ViewAndForm_HighlighterEnabled>
+    <ViewAndForm_HighlighterForeground>#000000</ViewAndForm_HighlighterForeground>
+    <ViewAndForm_HighlighterBackground>#60A1EA</ViewAndForm_HighlighterBackground>
+
+    <ViewAndForm_ViewPageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</ViewAndForm_ViewPageStyleSheetOverride>
+    <ViewAndForm_DetailPageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</ViewAndForm_DetailPageStyleSheetOverride>
+    <ViewAndForm_UpdatePageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</ViewAndForm_UpdatePageStyleSheetOverride>
+    <ViewAndForm_InputPageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</ViewAndForm_InputPageStyleSheetOverride>
+    <ViewAndForm_ViewPageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</ViewAndForm_ViewPageStyleSheetOverride>
+    <ViewAndForm_DetailPageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</ViewAndForm_DetailPageStyleSheetOverride>
+    <ViewAndForm_UpdatePageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</ViewAndForm_UpdatePageStyleSheetOverride>
+    <ViewAndForm_InputPageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</ViewAndForm_InputPageStyleSheetOverride>
+
+    <ViewAndForm_ViewPageHTMLTemplate>/factory/html_templates/clean_themes.html</ViewAndForm_ViewPageHTMLTemplate>
+    <ViewAndForm_DetailPageHTMLTemplate>/factory/html_templates/clean_themes.html</ViewAndForm_DetailPageHTMLTemplate>
+    <ViewAndForm_UpdatePageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</ViewAndForm_UpdatePageHTMLTemplate>
+    <ViewAndForm_InputPageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</ViewAndForm_InputPageHTMLTemplate>
+
+    <ViewAndForm_ViewPageBase>/factory/pages/multichannel/desktop/view_and_form/view.html</ViewAndForm_ViewPageBase>
+    <ViewAndForm_DetailPageBase>/factory/pages/multichannel/desktop/view_and_form/details.html</ViewAndForm_DetailPageBase>
+    <ViewAndForm_UpdatePageBase>/factory/pages/multichannel/desktop/view_and_form/input.html</ViewAndForm_UpdatePageBase>
+    <ViewAndForm_InputPageBase>/factory/pages/multichannel/desktop/view_and_form/input.html</ViewAndForm_InputPageBase>
+
+    <!-- Input Form -->
+    <InputForm_HTMLTemplate>/factory/html_templates/clean_themes.html</InputForm_HTMLTemplate>
+    <InputForm_PageBase>/factory/pages/multichannel/desktop/view_and_form/input.html</InputForm_PageBase>
+    <InputForm_StyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</InputForm_StyleSheetOverride>
+
+    <PageBorder_BorderTemplateFile>/factory/pages/borders/border_base.html</PageBorder_BorderTemplateFile>
+    <PageBorder_BorderStyleFile>/factory/pages/borders/blue_border.css</PageBorder_BorderStyleFile>
+
+    <!-- Page Tabs Builder-->
+    <PageTabs_Layout_Page>/factory/pages/tabsLayout.htm</PageTabs_Layout_Page>
+    <PageTabs_Tab_Html>/factory/pages/pagetabsbase.htm</PageTabs_Tab_Html>
+    <PageTabs_Tab_Bckg_Class>tabbedPagesTabCell</PageTabs_Tab_Bckg_Class>
+    <PageTabs_Tab_Selected_Class>tabbedPagesTabCellSelected</PageTabs_Tab_Selected_Class>
+    <PageTabs_Tab_Text_Class>tabbedPagesTabText</PageTabs_Tab_Text_Class>
+    <PageTabs_Selected_Text_Class>tabbedPagesTabTextSelected</PageTabs_Selected_Text_Class>
+    <PageTabs_Tab_Spacer_Class>tabbedPagesTabSpacer</PageTabs_Tab_Spacer_Class>
+    <PageTabs_Content_Area_Class>tabbedPagesContentArea</PageTabs_Content_Area_Class>
+    <PageTabs_Style_Sheet_File_Name>/factory/pages/page_tabs/page_tabs_blue.css</PageTabs_Style_Sheet_File_Name>
+    <PageTabs_Style_Sheet_File_Name>/factory/pages/page_tabs/page_tabs_blue.css</PageTabs_Style_Sheet_File_Name>
+
+    <Paging_OverrideBuilderID>com.bowstreet.builders.webapp.SplitPagerBuilder</Paging_OverrideBuilderID>
+
+    <!-- Paging Links -->
+    <PagingLinks_HTMLPage>/factory/pages/paging/data_paging_links.html</PagingLinks_HTMLPage>
+    <PagingLinks_OverrideLinkText>true</PagingLinks_OverrideLinkText>
+    <PagingLinks_FirstLinkText><<</PagingLinks_FirstLinkText>
+    <PagingLinks_PrevLinkText><</PagingLinks_PrevLinkText>
+    <PagingLinks_NextLinkText>></PagingLinks_NextLinkText>
+    <PagingLinks_LastLinkText>>></PagingLinks_LastLinkText>
+    <PagingLinks_StyleSheet>/factory/pages/paging/data_paging_links_blue.css</PagingLinks_StyleSheet>
+
+    <!--  Paging Buttons -->
+    <PagingButtons_HTMLPage>/factory/pages/paging/data_paging_buttons.html</PagingButtons_HTMLPage>
+    <PagingButtons_FirstImageWidth>21</PagingButtons_FirstImageWidth>
+    <PagingButtons_FirstImageHeight>21</PagingButtons_FirstImageHeight>
+    <PagingButtons_PrevImageWidth>21</PagingButtons_PrevImageWidth>
+    <PagingButtons_PrevImageHeight>21</PagingButtons_PrevImageHeight>
+    <PagingButtons_NextImageWidth>21</PagingButtons_NextImageWidth>
+    <PagingButtons_NextImageHeight>21</PagingButtons_NextImageHeight>
+    <PagingButtons_LastImageWidth>21</PagingButtons_LastImageWidth>
+    <PagingButtons_LastImageHeight>21</PagingButtons_LastImageHeight>
+    <PagingButtons_LastButtonUnboundedEnablement>Disable</PagingButtons_LastButtonUnboundedEnablement>
+    <PagingButtons_StyleSheet>/factory/pages/paging/data_paging_buttons_blue.css</PagingButtons_StyleSheet>
+    <PagingButtons_FirstNormalButtonImage>/factory/images/paging/blue/firstpg.gif</PagingButtons_FirstNormalButtonImage>
+    <PagingButtons_FirstHoverButtonImage>/factory/images/paging/blue/firstpg.gif</PagingButtons_FirstHoverButtonImage>
+    <PagingButtons_FirstPressedButtonImage>/factory/images/paging/blue/firstpg_dn.gif</PagingButtons_FirstPressedButtonImage>
+    <PagingButtons_FirstDisabledButtonImage>/factory/images/paging/blue/firstpg_dis.gif</PagingButtons_FirstDisabledButtonImage>
+    <PagingButtons_PrevNormalButtonImage>/factory/images/paging/blue/prevpg.gif</PagingButtons_PrevNormalButtonImage>
+    <PagingButtons_PrevHoverButtonImage>/factory/images/paging/blue/prevpg.gif</PagingButtons_PrevHoverButtonImage>
+    <PagingButtons_PrevPressedButtonImage>/factory/images/paging/blue/prevpg_dn.gif</PagingButtons_PrevPressedButtonImage>
+    <PagingButtons_PrevDisabledButtonImage>/factory/images/paging/blue/prevpg_dis.gif</PagingButtons_PrevDisabledButtonImage>
+    <PagingButtons_NextNormalButtonImage>/factory/images/paging/blue/nextpg.gif</PagingButtons_NextNormalButtonImage>
+    <PagingButtons_NextHoverButtonImage>/factory/images/paging/blue/nextpg.gif</PagingButtons_NextHoverButtonImage>
+    <PagingButtons_NextPressedButtonImage>/factory/images/paging/blue/nextpg_dn.gif</PagingButtons_NextPressedButtonImage>
+    <PagingButtons_NextDisabledButtonImage>/factory/images/paging/blue/nextpg_dis.gif</PagingButtons_NextDisabledButtonImage>
+    <PagingButtons_LastNormalButtonImage>/factory/images/paging/blue/lastpg.gif</PagingButtons_LastNormalButtonImage>
+    <PagingButtons_LastHoverButtonImage>/factory/images/paging/blue/lastpg.gif</PagingButtons_LastHoverButtonImage>
+    <PagingButtons_LastPressedButtonImage>/factory/images/paging/blue/lastpg_dn.gif</PagingButtons_LastPressedButtonImage>
+    <PagingButtons_LastDisabledButtonImage>/factory/images/paging/blue/lastpg_dis.gif</PagingButtons_LastDisabledButtonImage>
+    
+    <!-- 
+        Set the styles to be used for the Split Pager builder.  This will arrange for
+        the OneUI styles to be used from the page if they're pre-defined (as will be the case
+        in modern Portals) - if those styles are not in the page, it will define the ones it needs.
+    -->
+    <SplitPager_StyleSheet>/factory/clientjavascript/styles/loadCSS.jsp?css=/factory/pages/split_pager_default.css&rule=.lotusui&xcss=/factory/pages/split_pager_oneui.css&as=.js</SplitPager_StyleSheet>
+    <!-- Use a drop-down control in Split Pager -->
+    <SplitPager_BottomBasePage>/factory/pages/multichannel/paging/split_pager_drop_down_bottom_base.html</SplitPager_BottomBasePage>
+    <SplitPager_TopBasePage>/factory/pages/multichannel/paging/split_pager_default_top_base.html</SplitPager_TopBasePage>
+	
+	<!-- 1=Link,  2=Link&Image, 3=One Image, 4=Two Images, 5=No UI    -->
+    <ColumnSort_Style>2</ColumnSort_Style>
+    <ColumnSort_Image_Asc>/factory/images/sort/arrow_none.gif</ColumnSort_Image_Asc>
+    <ColumnSort_Image_Asc_Select>/factory/images/sort/arrow_up.gif</ColumnSort_Image_Asc_Select>
+    <ColumnSort_Image_Desc_Select>/factory/images/sort/arrow_down.gif</ColumnSort_Image_Desc_Select>
+
+    <!-- DSUI -->
+    <DSUI_CreatePageHTML>/factory/pages/multichannel/desktop/dsui/create.html</DSUI_CreatePageHTML>
+    <DSUI_UpdatePageHTML>/factory/pages/multichannel/desktop/dsui/update.html</DSUI_UpdatePageHTML>
+    <DSUI_DetailsPageHTML>/factory/pages/multichannel/desktop/dsui/details.html</DSUI_DetailsPageHTML>
+    <DSUI_NoDetailsYetPageHTML>/factory/pages/multichannel/desktop/dsui/no_details_yet.html</DSUI_NoDetailsYetPageHTML>
+    <DSUI_QueryPageHTML>/factory/pages/multichannel/desktop/dsui/query.html</DSUI_QueryPageHTML>
+    <DSUI_SearchResultsPageHTML>/factory/pages/multichannel/desktop/dsui/search_results.html</DSUI_SearchResultsPageHTML>
+    <DSUI_FilterPageHTML>/factory/pages/multichannel/desktop/dsui/filter.html</DSUI_FilterPageHTML>
+    <DSUI_ListPageHTML>/factory/pages/multichannel/desktop/dsui/list_page.html</DSUI_ListPageHTML>
+
+    <DSUI_UsePartialRefresh>false</DSUI_UsePartialRefresh>
+    <DSUI_PagingControls>com.bowstreet.builders.webapp.SplitPagerBuilder</DSUI_PagingControls>
+    <!-- Make color black so that when a column is set to be an input the text will show up, otherwise it will be white on white -->
+    <DSUI_RowHightlightColor>#000000</DSUI_RowHightlightColor>
+    <DSUI_RowHightlightBackgroundColor>#60A1EA</DSUI_RowHightlightBackgroundColor>
+
+    <DSUI_DojoColumnResizeAndReorderOnList>false</DSUI_DojoColumnResizeAndReorderOnList>
+    <DSUI_DojoColumnResizeAndReorderOnResults>false</DSUI_DojoColumnResizeAndReorderOnResults>
+    <DSUI_EnableRowHighlightingOnList>false</DSUI_EnableRowHighlightingOnList>
+    <DSUI_EnableRowHighlightingOnResults>false</DSUI_EnableRowHighlightingOnResults>
+    <DSUI_CreatePageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_CreatePageHTMLTemplate>
+    <DSUI_CreatePageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</DSUI_CreatePageStyleSheetOverride>
+    <DSUI_UpdatePageHTMLTemplate>/factory/html_templates/clean_label_above_themes.html</DSUI_UpdatePageHTMLTemplate>
+    <DSUI_UpdatePageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</DSUI_UpdatePageStyleSheetOverride>
+    <DSUI_DetailsPageHTMLTemplate>/factory/html_templates/clean_themes.html</DSUI_DetailsPageHTMLTemplate>
+    <DSUI_DetailsPageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</DSUI_DetailsPageStyleSheetOverride>
+    <DSUI_QueryPageHTMLTemplate>/factory/html_templates/clean_themes.html</DSUI_QueryPageHTMLTemplate>
+    <DSUI_QueryPageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</DSUI_QueryPageStyleSheetOverride>
+    <DSUI_SearchPageHTMLTemplate>/factory/html_templates/clean_themes.html</DSUI_SearchPageHTMLTemplate>
+    <DSUI_SearchPageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</DSUI_SearchPageStyleSheetOverride>
+    <DSUI_FilterPageHTMLTemplate>/factory/html_templates/clean_themes.html</DSUI_FilterPageHTMLTemplate>
+    <DSUI_FilterPageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</DSUI_FilterPageStyleSheetOverride>
+    <DSUI_ListPageHTMLTemplate>/factory/html_templates/clean_themes.html</DSUI_ListPageHTMLTemplate>
+    <DSUI_ListPageStyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</DSUI_ListPageStyleSheetOverride>
+    <DSUI_HTMLTemplate>/factory/html_templates/clean_themes.html</DSUI_HTMLTemplate>
+
+    <DSUI_StyleSheetOverride>/factory/html_templates/WEF8.5_uitheme.css</DSUI_StyleSheetOverride>
+	
+    <!-- Application Page  -->
+    <ApplicationPage_ViewPageBase>/factory/pages/multichannel/desktop/application_page/view.html</ApplicationPage_ViewPageBase>
+    <ApplicationPage_InputPageBase>/factory/pages/multichannel/desktop/application_page/input.html</ApplicationPage_InputPageBase>
+    <ApplicationPage__ViewDataLocation>data</ApplicationPage__ViewDataLocation>
+    <ApplicationPage_InputDataLocation>input_data</ApplicationPage_InputDataLocation>
+    <ApplicationPage_SubmitButtonLocation>update_button</ApplicationPage_SubmitButtonLocation>
+    <ApplicationPage_CancelButtonLocation>back_button</ApplicationPage_CancelButtonLocation>
+    <ApplicationPage_PageHeaderLocation>page_header_text</ApplicationPage_PageHeaderLocation>
+    <ApplicationPage_FullErrorLocation></ApplicationPage_FullErrorLocation>
+    <ApplicationPage_HTMLTemplate>/factory/html_templates/clean_themes.html</ApplicationPage_HTMLTemplate>
+    
+    <!-- 
+      Adds the specified Dojo requires by default. If empty or missing "dijit.dijit" will always be added.
+      You can add multiple values using a comma separator. 
+      If you want to exclude any of these defaults(including "dijit.dijit") you must set this property to "none". 
+    -->
+    <DojoEnable_DefaultRequires>dijit.dijit</DojoEnable_DefaultRequires>
+    <!--  Sets the Dojo theme to claro if not specified in Dojo Enable builder -->
+    <DojoFallbackTheme>claro</DojoFallbackTheme>
+
+	<!-- Miscellaneous settings -->
+    <Add_Default_Progress_Indicator>true</Add_Default_Progress_Indicator>
+    <Progress_Indicator_DisplayMode>OverRegion</Progress_Indicator_DisplayMode>
+    <Progress_Indicator_Message>${Java/com.bowstreet.builders.webapp.usertext.Messages.getString("ProgressIndicator_DefaultLoadingMessage")}</Progress_Indicator_Message>
+
+	<!-- Data Layout settings -->
+	<DataLayout_responsive_ThumbnailList_StyleSheet>/factory/data_layout_templates/responsive_thumbnail_list_medium_uitheme.css</DataLayout_responsive_ThumbnailList_StyleSheet>
+	<DataLayout_responsive_ThumbnailInfo_StyleSheet>/factory/data_layout_templates/responsive_thumbnail_info.css</DataLayout_responsive_ThumbnailInfo_StyleSheet>
+	<DataLayout_responsive_MultiLineList_StyleSheet>/factory/data_layout_templates/responsive_multiline_3_column_equal_uitheme.css</DataLayout_responsive_MultiLineList_StyleSheet>
+	<DataLayout_ctc_CatalogList_StyleSheet>/factory/data_layout_templates/ctc_catalog_list_using_styles_from_ctc_uitheme.css</DataLayout_ctc_CatalogList_StyleSheet>
+	<DataLayout_ctc_ImgWithOverlaidText>/factory/data_layout_templates/ctc_image_overlaid_text_using_ctc_styles_uitheme.css</DataLayout_ctc_ImgWithOverlaidText>
+	<DataLayout_MobileNavigationList_StyleSheet>/factory/html_templates/WEF8.5_uitheme.css</DataLayout_MobileNavigationList_StyleSheet>
+
+	<!-- The source html to use as the outer "Aggregator" page that child pages are nested in, for Client Applications -->
+    	<ClientApplication_AggregatorPage>/factory/pages/client/client_app.html</ClientApplication_AggregatorPage>
+
+	<HD_HTMLTemplate>/factory/html_templates/gridtable.html</HD_HTMLTemplate>
+	<HD_StyleSheet>/factory/pages/hierarchydrilldown.css</HD_StyleSheet>
+	<HD_BreadcrumbPage>/factory/pages/breadcrumbs.html</HD_BreadcrumbPage>
+	<HD_BreadcrumbPageStyleSheet>/factory/pages/breadcrumbsstyles.css</HD_BreadcrumbPageStyleSheet>
+	<HD_BreadcrumbTextStyleClass></HD_BreadcrumbTextStyleClass>
+	<HD_BreadcrumbSeparatorStyleClass></HD_BreadcrumbSeparatorStyleClass>
+	<HD_BreadcrumbSeparator></HD_BreadcrumbSeparator>
+	<HD_BreadcrumbPrefixText></HD_BreadcrumbPrefixText>
+	<SIL_BasePage>/factory/pages/legend_base.htm</SIL_BasePage>
+	<SIL_StyleSheet>/factory/pages/legend_base.css</SIL_StyleSheet>
+</Theme>

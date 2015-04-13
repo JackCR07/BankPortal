@@ -1,0 +1,25 @@
+/* Copyright IBM Corp. 2010 */
+/* Styles for Split Pager UI. Should only be used if the OneUI / Enterprise theme is 
+ * not in use in the page, as it overwrites these definitions.  Use /factory/clientjavascript/styles/loadCSS.jsp
+ * to conditionally load this or other files based on the presence of certain style definitions.
+ */
+.lotusLeft{float:left;text-align:left;}
+.lotusRight{float:right;text-align:right;}
+li.lotusFirst, li.lotusLast{padding-left:0;border-left-width:0;}
+.lotusInlinelist{margin:0;padding:0;list-style-type:none;display:inline;}
+.lotusInlinelist li{display:inline;margin:0;padding:0 7px;border-left-width:1px;border-left-style:solid;}
+.lotusInlinelist li.lotusFirst, .lotusui .lotusInlinelist li.lotusLast{padding-left:0;border-left-width:0;}
+.lotusInlinelist li.lotusFirst, .lotusInlinelist li.lotusLast{border-left-width:0;padding-left:0;}
+.lotusPaging {padding-bottom:3px;height:2em;line-height:2em;clear:both;text-align:center;font-size:.9em;background-color:#FAFAFA;border:1px solid #EEE;}
+.lotusPaging input{width:20px;text-align:center;font:inherit;height:1em;line-height:1em;}
+.lotusPaging a, .lotusPaging a:visited{font-weight:bold !important;}
+.lotusPaging a:hover, .lotusPaging a:focus, .lotusPaging a:active{color:#05386B;}
+.lotusPaging a:hover, .lotusPaging a:focus, .lotusPaging a:active{text-decoration:underline;}
+.lotusPaging a{color:#105CB6;}
+.lotusPaging a, .lotusPaging a:visited{font-weight:bold !important;}
+.lotusPaging a{text-decoration:none;}
+.lotusPaging div, .lotusPaging .lotusInlinelist li.lotusFirst{padding-left:5px}
+.lotusPaging .lotusInlinelist li{padding:0 6px;}
+.lotusPaging .lotusInlinelist li.lotusLast{padding-left:0}
+div.lotusLeft, div.lotusRight, div.lotusPaging div{display:inline;}
+.lotusLeft{float:left;text-align:left;}

@@ -1,0 +1,187 @@
+<Model id="factory/portletbase/runtime_profile_selection"><BuilderCallList>
+		<BuilderCall id = "bc212">
+			<BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+			<Messages></Messages>
+			<Inputs>
+				<Input name = "Name">copyright</Input>
+				<Input name = "BuilderCallEnabled">false</Input>
+				<Input name = "Comment">Licensed Materials - Property of IBM 
+5724-Od03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+				<Input name = "BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+			</Inputs>
+		</BuilderCall>
+<BuilderCall id="bc37"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+    final String key = (String) webAppAccess.callMethod( "getInitializationKey" );
+    final boolean keyFound = webAppAccess.getHttpServletRequest().getAttribute( key ) != null;
+    
+    if( keyFound )
+    {
+	    final String actionName = (String) webAppAccess.callMethod( "getRelocatedMainActionName" );
+
+        if( actionName != null &amp;&amp; actionName.length() &gt; 0 )
+        	webAppAccess.processAction( actionName );
+    }
+    else
+    {
+        webAppAccess.getHttpServletRequest().setAttribute( key, "true" );
+        webAppAccess.processPage( "TopLevelPage" );
+    }
+}</Input>
+<Input name="Name" profile="runtime.profile.selection:mainActionName">main</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc54"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    return "com.bowstreet.builders.webapp.RuntimeProfileSelection." + webAppAccess.getModelName();
+}</Input>
+<Input name="Name">getInitializationKey</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc56"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Name">getRelocatedMainActionName</Input>
+<Input name="Body" profile="runtime.profile.selection:getRelocatedMainActionNameBody">{ return null; }</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc58"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Name">getProfileName</Input>
+<Input name="Body" profile="runtime.profile.selection:getProfileNameBody">{ return null; }</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc46"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+        // Get a reference to the model whose profle we are setting at runtime and 
+        // get the name of the profile.  This profile name will be the value supplied by 
+        // the "Profile Name" input of the builder or the value from the "Default Profile 
+        // Name" input if the former does not name a valid profile.  If the default is 
+        // also invalid, then NULL is returned. 
+        final LinkedModel model = webAppAccess.getLinkedModel( "LinkToSelf" ); 
+        String profileName = (String) webAppAccess.callMethod( "getProfileName" ); 
+         
+        if( profileName != null &amp;&amp; profileName.trim().length() &gt; 0 )
+        {
+            // apply explicit profiles from the parent to the linked model too if there are any 
+            if(model.getInheritExplicitProfile())
+            {
+                RegenSettings regenSettings = webAppAccess.getWebApp().getRegenSettings();
+                if(regenSettings != null)
+                {
+                    com.bowstreet.generation.ProfileData profileData = regenSettings.getProfileData();
+                    if(profileData != null)
+                    {
+                        String explicitProfiles = profileData.getExplicitProfiles();
+                        if(explicitProfiles != null &amp;&amp; explicitProfiles.length() &gt; 0)
+                        {
+                            profileName = com.bowstreet.util.StringUtil.strcat(profileName.trim(), ",", explicitProfiles);
+                        }
+                    }
+                }
+            }
+            
+            model.setProfileName(profileName.trim());
+        }
+}</Input>
+<Input name="Name">setModelProfile</Input>
+<Input name="Imports"><Imports />
+</Input>
+<Input name="Arguments"><top />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc52"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="runtime.profile.selection:enablePageDispatcher">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+    com.bowstreet.builders.webapp.methods.InsertedPage.dispatch( webAppAccess );
+}</Input>
+<Input name="Name">_pageDispatcher</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc21"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageData">&lt;span&gt;
+&lt;%
+    final WebAppAccess inner = webAppAccess.getLinkedModelInstance( "LinkToSelf" );
+    final String innerPage = inner.getCurrentPage();
+    com.bowstreet.builders.webapp.methods.InsertedPage.insert( inner, innerPage, true );
+%&gt;
+&lt;/span&gt;</Input>
+<Input name="Name">TopLevelPage</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[<span>
+<%
+    final WebAppAccess inner = webAppAccess.getLinkedModelInstance( "LinkToSelf" );
+    final String innerPage = inner.getCurrentPage();
+    com.bowstreet.builders.webapp.methods.InsertedPage.insert( inner, innerPage, true );
+%>
+</span>]]></CacheKey>
+<CacheValue><HTMLData><HTMLContent><![CDATA[<SPAN>
+<%
+    final WebAppAccess inner = webAppAccess.getLinkedModelInstance( "LinkToSelf" );
+    final String innerPage = inner.getCurrentPage();
+    com.bowstreet.builders.webapp.methods.InsertedPage.insert( inner, innerPage, true );
+%>
+</SPAN>]]></HTMLContent>
+</HTMLData>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc48"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EventName">Page:TopLevelPage:OnPageLoad</Input>
+<Input name="ActionName">setModelProfile</Input>
+<Input name="Name">Page:TopLevelPage:OnPageLoad</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><RequiredFactoryVersion>5.0.0</RequiredFactoryVersion>
+<Version>0.0.0</Version>
+<Description>New Model</Description>
+<Contained>false</Contained>
+<EnableGenerationCaching>true</EnableGenerationCaching>
+<Roles />
+<EnableFailover>false</EnableFailover>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request create-oids="true" type="update" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="@SCHEMA@">
+  <portal action="locate">
+    <web-app action="update" active="true" predeployed="true" removable="true" uid="@WEBAPP_UID@">
+      <url>file:///$app_install_root$/@NODE@/@APPNAME@.ear/@APPNAME@.war</url>
+      <context-root>/@APPNAME@</context-root>
+      <display-name>@APPNAME@</display-name>
+
+      <portlet-app action="locate" name="@PORTLETAPP_UID@" uid="@PORTLETAPP_UID@">
+        <portlet action="locate" name="@PORTLET_NAME@" objectid="@PORTLET_OID@" />
+      </portlet-app>
+    </web-app>
+
+    <content-node action="delete" uniquename="@PROJECT_PAGE@" />
+
+    <content-node action="locate" objectid="ibm.portal.Home" uniquename="ibm.portal.Home" />
+
+    <content-node action="update" active="true" allportletsallowed="true" content-parentref="ibm.portal.Home" create-type="explicit" type="label" uniquename="@PROJECT_PAGE@" objectid="@PROJECT_PAGE@">
+      <supported-markup markup="html" update="set" />
+      <localedata locale="en">
+        <title>@PAGE_TITLE@</title>
+      </localedata>
+    </content-node>
+
+    <content-node action="update" active="true" allportletsallowed="true" content-parentref="ibm.portal.Home" create-type="explicit" type="page" uniquename="@PROJECT_PAGE@" objectid="@PAGE_OID@">
+      <supported-markup markup="html" update="set" />
+      <localedata locale="en">
+        <title>@PAGE_TITLE@</title>
+      </localedata>
+      <parameter name="resourceaggregation.profile" type="string" update="set"><![CDATA[profiles/profile_full.json]]></parameter>
+      <component action="update" active="true" ordinal="100" type="container" orientation="H">
+        <component action="update" active="true" ordinal="100" type="container" orientation="V" name="main">
+          <component action="update" active="true" ordinal="100" type="control" uniquename="@PORTLET_WINDOW_ID@">
+            <portletinstance action="update" portletref="@PORTLET_OID@" objectid="@PORTLET_INSTANCE_OID@" />
+          </component>
+        </component>
+        <component action="update" active="true" ordinal="200" type="container" orientation="V" />
+      </component>
+    </content-node>
+
+    <cross-page-wire action="update" immediate-switch="false" ordinal="0" source-pageref="@PAGE_OID@" source-portletinstanceref="@PORTLET_INSTANCE_OID@" source-property="@EVENT@" target-action="@EVENT@" target-pageref="@PAGE_OID@" target-param="@EVENT@" target-portletinstanceref="@PORTLET_INSTANCE_OID@" user="anonymous portal user" />
+
+  </portal>
+</request>

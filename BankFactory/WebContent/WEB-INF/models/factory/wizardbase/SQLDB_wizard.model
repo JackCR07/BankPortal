@@ -1,0 +1,481 @@
+<Model id="factory/wizardbase/DB_wizard"><BuilderCallList><BuilderCall id="bc14"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM
+5724-O03
+(C) Copyright 2010. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM
+5724-O03
+(C) Copyright 2010. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc15"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Next Steps</Input>
+<Input name="BuilderCallEnabled">true</Input>
+<Input name="Comment">You should be able to run this model and see the data, or deploy it as a widget and see the data there.
+Assuming you've picked a valid data source and table, you should be able to run this model and see the data, and deploy it as a portlet or widget and see the data there.
+
+Here are some of the things you might want to do now that you have the model started.
+
+In the  SQL Data Services Builder, you could add filtering (which controls what's returned in List view) or add search inputs.
+
+In the Data Services User Interface builder, you can change paging options and you can control the screen-to-screen navigation.
+
+In the Data Field Settings builder, you can change validation options for form fields, and you can control other behavior of data fields.
+
+You can also add other builders and work in Design view to customize the user interface.   For example, you can drag fields in Design view to reorder them, or you can use the palette available on the right-hand side of Design view to add other elements to a page.
+</Input>
+<Input name="BuilderCallComment">You should be able to run this model and see the data, or deploy it as a widget and see the data there.
+Assuming you've picked a valid data source and table, you should be able to run this model and see the data, and deploy it as a portlet or widget and see the data there.
+
+Here are some of the things you might want to do now that you have the model started.
+
+In the  SQL Data Services Builder, you could add filtering (which controls what's returned in List view) or add search inputs.
+
+In the Data Services User Interface builder, you can change paging options and you can control the screen-to-screen navigation.
+
+In the Data Field Settings builder, you can change validation options for form fields, and you can control other behavior of data fields.
+
+You can also add other builders and work in Design view to customize the user interface.   For example, you can drag fields in Design view to reorder them, or you can use the palette available on the right-hand side of Design view to add other elements to a page.
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc16"><BuilderDefID>com.bowstreet.builders.webapp.WidgetAdapterBuilder</BuilderDefID>
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="wizardbase.DB_DSUI:WidgetAdapter_BuilderCallEnabled">false</Input>
+<Input name="Name" profile="wizardbase.DB_DSUI:SqlCall_Name">xxxx</Input>
+<Input name="WidgetTitle" profile="wizardbase.DB_DSUI:Title">Title</Input>
+<Input name="WidgetDefaultLocale">en</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomEditDefaultsPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="WidgetCategory" profile="wizardbase.DB_DSUI:WidgetAdapter_Category"></Input>
+<Input name="WidgetDescription">Database Model</Input>
+<Input name="WidgetIcon">/factory/images/widget/default_icon.gif</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc18"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="wizardbase.DB_DSUI:PortletAdapter_BuilderCallEnabled">false</Input>
+<Input name="PortletDefaultLocale">en</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomEditDefaultsPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="RCPLaunchMenu">none</Input>
+<Input name="RCPTitleBar">show</Input>
+<Input name="RCPViewType">portlet</Input>
+<Input name="Name" profile="wizardbase.DB_DSUI:PortletName"></Input>
+<Input name="PortletTitle" profile="wizardbase.DB_DSUI:PortletTitle"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.SqlDataServicesBuilder</BuilderDefID>
+<Messages><Error><Message></Message>
+<Message></Message>
+</Error>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="EntityTypeToFetch">Tables</Input>
+<Input name="AddTestingSupport">false</Input>
+<Input name="Name" profile="wizardbase.DB_DSUI:SqlDataServices_Name"/>
+<Input name="SqlDataSource" profile="wizardbase.DB_DSUI:SqlDataServices_SqlDataSource"/>
+<Input name = "NameLabels" profile="wizardbase.DB_DSUI:SqlDataServices_NameLabels"/>
+<Input name = "NameValues" profile="wizardbase.DB_DSUI:SqlDataServices_NameValues"/>
+<Input name="EntityName" profile="wizardbase.DB_DSUI:SqlDataServices_EntityName"/>
+<Input name="KeyField" profile="wizardbase.DB_DSUI:SqlDataServices_KeyField"/>
+<Input name="OperationsToCreate" xmlProfile="wizardbase.DB_DSUI:SqlDataServices_OperationsToCreate"/>
+<Input name = "PublicService">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.DataServicesUserInterface</BuilderDefID>
+<Messages><Error><Message></Message>
+</Error>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseTheme" profile="wizardbase.DB_DSUI:DataServicesUserInterface_UseTheme">true</Input>
+<Input name="EnableDataPagingOnList" profile="wizardbase.DB_DSUI:DataServicesUserInterface_EnableDataPagingOnList">true</Input>
+<Input name="RowsPerPageOnList" profile="wizardbase.DB_DSUI:DataServicesUserInterface_RowsPerPageOnList">5</Input>
+<Input name="PagingControlsOnList" profile="wizardbase.DB_DSUI:DataServicesUserInterface_PagingControlsOnList">Theme</Input>
+<Input name="UsePartialRefreshForPagingOnList" profile="wizardbase.DB_DSUI:DataServicesUserInterface_UsePartialRefreshForPagingOnList">${Properties/bowstreet.Theme/DSUI_UsePartialRefresh}</Input>
+<Input name="DojoColumnResizeAndReorderOnList" profile="wizardbase.DB_DSUI:DataServicesUserInterface_DojoColumnResizeAndReorderOnList">true</Input>
+<Input name="EnableRowHighlightingOnList" profile="wizardbase.DB_DSUI:DataServicesUserInterface_EnableRowHighlightingOnList">true</Input>
+<Input name="FilterOnList" profile="wizardbase.DB_DSUI:DataServicesUserInterface_FilterOnList">true</Input>
+<Input name="ListLinkToDetails" profile="wizardbase.DB_DSUI:DataServicesUserInterface_ListLinkToDetails">true</Input>
+<Input name="ListLinkToEvent" profile="wizardbase.DB_DSUI:DataServicesUserInterface_ListLinkToEvent">true</Input>
+<Input name="ListToUpdate" profile="wizardbase.DB_DSUI:DataServicesUserInterface_ListToUpdate">None</Input>
+<Input name="ListToDelete" profile="wizardbase.DB_DSUI:DataServicesUserInterface_ListToDelete">No Delete Column</Input>
+<Input name="EnableDataPagingOnResults" profile="wizardbase.DB_DSUI:DataServicesUserInterface_EnableDataPagingOnResults">true</Input>
+<Input name="RowsPerPageOnResults" profile="wizardbase.DB_DSUI:DataServicesUserInterface_RowsPerPageOnResults">5</Input>
+<Input name="PagingControlsOnResults" profile="wizardbase.DB_DSUI:DataServicesUserInterface_PagingControlsOnResults">Theme</Input>
+<Input name="UsePartialRefreshForPagingOnResults" profile="wizardbase.DB_DSUI:DataServicesUserInterface_UsePartialRefreshForPagingOnResults">${Properties/bowstreet.Theme/DSUI_UsePartialRefresh}</Input>
+<Input name="DojoColumnResizeAndReorderOnResults" profile="wizardbase.DB_DSUI:DataServicesUserInterface_DojoColumnResizeAndReorderOnResults">true</Input>
+<Input name="EnableRowHighlightingOnResults" profile="wizardbase.DB_DSUI:DataServicesUserInterface_EnableRowHighlightingOnResults">true</Input>
+<Input name="SearchOnResults" profile="wizardbase.DB_DSUI:DataServicesUserInterface_SearchOnResults">false</Input>
+<Input name="ResultsLinkToDetails" profile="wizardbase.DB_DSUI:DataServicesUserInterface_ResultsLinkToDetails">true</Input>
+<Input name="ResultsLinkToEvent" profile="wizardbase.DB_DSUI:DataServicesUserInterface_ResultsLinkToEvent">true</Input>
+<Input name="ResultsToUpdate" profile="wizardbase.DB_DSUI:DataServicesUserInterface_ResultsToUpdate">None</Input>
+<Input name="SearchResultsToDelete" profile="wizardbase.DB_DSUI:DataServicesUserInterface_SearchResultsToDelete">No Delete Column</Input>
+<Input name="PostUpdate" profile="wizardbase.DB_DSUI:DataServicesUserInterface_PostUpdate">DetailsAlways</Input>
+<Input name="PostCreate" profile="wizardbase.DB_DSUI:DataServicesUserInterface_PostCreate">DetailsAlways</Input>
+<Input name="AllButtons">All</Input>
+<Input name="CreateMainMethod">true</Input>
+<Input name="RowHighlightColor">${Properties/bowstreet.Theme/DSUI_RowHightlightColor}</Input>
+<Input name="RowHighlightBackgroundColor">${Properties/bowstreet.Theme/DSUI_RowHightlightBackgroundColor}</Input>
+<Input name="ListPageURL">${Properties/bowstreet.Theme/DSUI_ListPageHTML}</Input>
+<Input name="ListPageHTMLTemplate">${Properties/bowstreet.Theme/DSUI_ListPageHTMLTemplate}</Input>
+<Input name="ListPageStyleSheetOverride">${Properties/bowstreet.Theme/DSUI_ListPageStyleSheetOverride}</Input>
+<Input name="FilterPageURL">${Properties/bowstreet.Theme/DSUI_FilterPageHTML}</Input>
+<Input name="FilterPageHTMLTemplate">${Properties/bowstreet.Theme/DSUI_FilterPageHTMLTemplate}</Input>
+<Input name="FilterPageStyleSheetOverride">${Properties/bowstreet.Theme/DSUI_FilterPageStyleSheetOverride}</Input>
+<Input name="SearchResultsPageURL">${Properties/bowstreet.Theme/DSUI_SearchResultsPageHTML}</Input>
+<Input name="SearchResultsPageHTMLTemplate">${Properties/bowstreet.Theme/DSUI_SearchPageHTMLTemplate}</Input>
+<Input name="SearchResultsPageStyleSheetOverride">${Properties/bowstreet.Theme/DSUI_SearchPageStyleSheetOverride}</Input>
+<Input name="QueryPageURL">${Properties/bowstreet.Theme/DSUI_QueryPageHTML}</Input>
+<Input name="QueryPageHTMLTemplate">${Properties/bowstreet.Theme/DSUI_QueryPageHTMLTemplate}</Input>
+<Input name="QueryPageStyleSheetOverride">${Properties/bowstreet.Theme/DSUI_QueryPageStyleSheetOverride}</Input>
+<Input name="DetailsPageURL">${Properties/bowstreet.Theme/DSUI_DetailsPageHTML}</Input>
+<Input name="DetailsPageHTMLTemplate">${Properties/bowstreet.Theme/DSUI_DetailsPageHTMLTemplate}</Input>
+<Input name="DetailsPageStyleSheetOverride">${Properties/bowstreet.Theme/DSUI_DetailsPageStyleSheetOverride}</Input>
+<Input name="NoDetailsYetPage_URL">${Properties/bowstreet.Theme/DSUI_NoDetailsYetPageHTML}</Input>
+<Input name="UpdatePageURL">${Properties/bowstreet.Theme/DSUI_UpdatePageHTML}</Input>
+<Input name="UpdatePageHTMLTemplate">${Properties/bowstreet.Theme/DSUI_UpdatePageHTMLTemplate}</Input>
+<Input name="UpdatePageStyleSheetOverride">${Properties/bowstreet.Theme/DSUI_UpdatePageStyleSheetOverride}</Input>
+<Input name="CreatePageURL">${Properties/bowstreet.Theme/DSUI_CreatePageHTML}</Input>
+<Input name="CreatePageHTMLTemplate">${Properties/bowstreet.Theme/DSUI_CreatePageHTMLTemplate}</Input>
+<Input name="CreatePageStyleSheetOverride">${Properties/bowstreet.Theme/DSUI_CreatePageStyleSheetOverride}</Input>
+<Input name="Pages" xmlProfile="wizardbase.DB_DSUI:DataServicesUserInterface_Pages"><top><RetrieveList>true</RetrieveList>
+<Search>true</Search>
+<RetrieveOne>true</RetrieveOne>
+<Update>true</Update>
+<Create>true</Create>
+<Delete>true</Delete>
+</top>
+</Input>
+<Input name="StartOnPage" profile="wizardbase.DB_DSUI:DataServicesUserInterface_StartOnPage">ToListPage</Input>
+<Input name="ListLinkToDetailsColumn" profile="wizardbase.DB_DSUI:DataServicesUserInterface_ListLinkToDetailsColumn">EMPNO</Input>
+<Input name="ResultsLinkToDetailsColumn" profile="wizardbase.DB_DSUI:DataServicesUserInterface_ResultsLinkToDetailsColumn">EMPNO</Input>
+<Input name="ResourceBundleName" profile="wizardbase.DB_DSUI:DataServicesUserInterface_ResourceBundleName">fddffd</Input>
+<Input name="AllLabels"><top><resource><Key>ErrorMessage.Long</Key>
+<Text>Not recognized as a Long value.</Text>
+</resource>
+<resource><Key>create.new.button.text</Key>
+<Text>Create</Text>
+</resource>
+<resource><Key>list.page.no.data.found.message</Key>
+<Text>The query did not return any data.</Text>
+</resource>
+<resource><Key>results.page.no.data.found.message</Key>
+<Text>The query did not return any data.</Text>
+</resource>
+<resource><Key>details.page.back.to.list.button.text</Key>
+<Text>Back</Text>
+</resource>
+<resource><Key>ErrorMessage.Required</Key>
+<Text>This field is required.</Text>
+</resource>
+<resource><Key>list.page.back.to.filter.text</Key>
+<Text>Back</Text>
+</resource>
+<resource><Key>details.page.to.update.page.button.text</Key>
+<Text>Edit</Text>
+</resource>
+<resource><Key>ErrorMessage.DateCompare</Key>
+<Text>The date failed the following comparison: </Text>
+</resource>
+<resource><Key>update.page.submit.button.text</Key>
+<Text>Submit</Text>
+</resource>
+<resource><Key>ErrorMessage.FloatingPoint</Key>
+<Text>Not recognized as a Floating Point value.</Text>
+</resource>
+<resource><Key>list.page.to.query.page.button.text</Key>
+<Text>Search</Text>
+</resource>
+<resource><Key>delete.checked.button.text</Key>
+<Text>Delete</Text>
+</resource>
+<resource><Key>results.page.back.to.query.button.text</Key>
+<Text>Back</Text>
+</resource>
+<resource><Key>details.page.delete.button.text</Key>
+<Text>Delete</Text>
+</resource>
+<resource><Key>results.page.to.list.page.button.text</Key>
+<Text>View All</Text>
+</resource>
+<resource><Key>update.page.cancel.button.text</Key>
+<Text>Cancel</Text>
+</resource>
+<resource><Key>edit.column.button.heading</Key>
+<Text></Text>
+</resource>
+<resource><Key>ErrorMessage.Boolean</Key>
+<Text>Not recognized as a Boolean value.</Text>
+</resource>
+<resource><Key>ErrorMessage.DateTime</Key>
+<Text>Not recognized as a DateTime value.</Text>
+</resource>
+<resource><Key>ErrorMessage.Byte</Key>
+<Text>Not recognized as a Byte value.</Text>
+</resource>
+<resource><Key>create.page.submit.button.text</Key>
+<Text>Submit</Text>
+</resource>
+<resource><Key>ErrorMessage.Integer</Key>
+<Text>Not recognized as an Integer value.</Text>
+</resource>
+<resource><Key>delete.column.heading</Key>
+<Text></Text>
+</resource>
+<resource><Key>filter.page.apply.filter.button.text</Key>
+<Text>Apply Filter</Text>
+</resource>
+<resource><Key>InsertedColumnEdit</Key>
+<Text></Text>
+</resource>
+<resource><Key>no.details.yet.page.message</Key>
+<Text>Select a record and the details will be shown here.</Text>
+</resource>
+<resource><Key>edit.column.button.text</Key>
+<Text>Edit</Text>
+</resource>
+<resource><Key>ErrorMessage.ErrorIntro</Key>
+<Text>The following fields have errors:</Text>
+</resource>
+<resource><Key>delete.column.buttonOrLink.text</Key>
+<Text>Delete</Text>
+</resource>
+<resource><Key>create.page.cancel.button.text</Key>
+<Text>Cancel</Text>
+</resource>
+<resource><Key>query.page.search.button.text</Key>
+<Text>Search</Text>
+</resource>
+<resource><Key>Cxzcx_Summary</Key>
+<Text>Cxzcx Summary</Text>
+</resource>
+<resource><Key>Employee_Number</Key>
+<Text>Employee Number</Text>
+</resource>
+<resource><Key>Firstnme</Key>
+<Text>Firstnme</Text>
+</resource>
+<resource><Key>Midinit</Key>
+<Text>Midinit</Text>
+</resource>
+<resource><Key>Last_Name</Key>
+<Text>Last Name</Text>
+</resource>
+<resource><Key>Work_Department</Key>
+<Text>Work Department</Text>
+</resource>
+<resource><Key>Phone_Number</Key>
+<Text>Phone Number</Text>
+</resource>
+<resource><Key>Hire_Date</Key>
+<Text>Hire Date</Text>
+</resource>
+<resource><Key>Job</Key>
+<Text>Job</Text>
+</resource>
+<resource><Key>Edlevel</Key>
+<Text>Edlevel</Text>
+</resource>
+<resource><Key>Sex</Key>
+<Text>Sex</Text>
+</resource>
+<resource><Key>Birth_Date</Key>
+<Text>Birth Date</Text>
+</resource>
+<resource><Key>Salary</Key>
+<Text>Salary</Text>
+</resource>
+<resource><Key>Bonus</Key>
+<Text>Bonus</Text>
+</resource>
+<resource><Key>Comm</Key>
+<Text>Comm</Text>
+</resource>
+<resource><Key>Cxzcx_Details</Key>
+<Text>Cxzcx Details</Text>
+</resource>
+<resource><Key>Dsffsd_Summary</Key>
+<Text>Dsffsd Summary</Text>
+</resource>
+<resource><Key>Dsffsd_Details</Key>
+<Text>Dsffsd Details</Text>
+</resource>
+</top>
+</Input>
+<Input name="DataService" profile="wizardbase.DB_DSUI:DataServicesUserInterface_DataService"></Input>
+<Input name="DetailsEventName" profile="wizardbase.DB_DSUI:DataServicesUserInterface_DetailsEventName"></Input>
+<Input name="IndividualButtons"><data><ListToCreate>false</ListToCreate>
+<ListToFilter>false</ListToFilter>
+<ApplyFilter>false</ApplyFilter>
+<ListToQuery>false</ListToQuery>
+<SearchResultsToCreate>false</SearchResultsToCreate>
+<SearchResultsToQuery>false</SearchResultsToQuery>
+<ApplyQuery>false</ApplyQuery>
+<SearchResultsToList>false</SearchResultsToList>
+<DetailsToUpdate>false</DetailsToUpdate>
+<DetailsToList>false</DetailsToList>
+<DetailsToSearchResults>false</DetailsToSearchResults>
+<CreatePageSubmit>false</CreatePageSubmit>
+<CreatePageCancel>false</CreatePageCancel>
+<UpdatePageSubmit>false</UpdatePageSubmit>
+<UpdatePageCancel>false</UpdatePageCancel>
+</data>
+</Input>
+<Input name="ResourceBundleNameChangedByUser">true</Input>
+<Input name="Name" profile="wizardbase.DB_DSUI:DataServicesUserInterface_Name"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc17"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="AllPages">true</Input>
+<Input name="AllPageRadio">All</Input>
+<Input name="Pages"><data />
+</Input>
+<Input name="DisplayBehavior" xmlProfile="wizardbase.DB_DSUI:DataFieldSettings_DisplayBehavior"><top><DispInfo><Name>FIRSTNME</Name>
+<Label>[Do Not Change]</Label>
+<DataType>string</DataType>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>MIDINIT</Name>
+<Label>[Do Not Change]</Label>
+<DataType>string</DataType>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>LASTNAME</Name>
+<Label>[Do Not Change]</Label>
+<DataType>string</DataType>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>WORKDEPT</Name>
+<Label>[Do Not Change]</Label>
+<DataType>string</DataType>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>PHONENO</Name>
+<Label>[Do Not Change]</Label>
+<DataType>string</DataType>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>HIREDATE</Name>
+<Label>[Do Not Change]</Label>
+<DataType>string</DataType>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>JOB</Name>
+<Label>[Do Not Change]</Label>
+<DataType>string</DataType>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>EDLEVEL</Name>
+<Label>[Do Not Change]</Label>
+<DataType>string</DataType>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>SEX</Name>
+<Label>[Do Not Change]</Label>
+<DataType>string</DataType>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>BIRTHDATE</Name>
+<Label>[Do Not Change]</Label>
+<DataType>string</DataType>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>SALARY</Name>
+<Label>[Do Not Change]</Label>
+<DataType>string</DataType>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>BONUS</Name>
+<Label>[Do Not Change]</Label>
+<DataType>string</DataType>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>COMM</Name>
+<Label>[Do Not Change]</Label>
+<DataType>string</DataType>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>EMPNO</Name>
+<Label>[Do Not Change]</Label>
+<DataType>string</DataType>
+<LookupTable />
+</DispInfo>
+</top>
+</Input>
+<Input name="ValidationBehavior" xmlProfile="wizardbase.DB_DSUI:DataFieldSettings_ValidationBehavior"><top><ValidationInfo><Name>FIRSTNME</Name>
+<Required>[Do Not Change]</Required>
+<ValidationOp>[Do Not Change]</ValidationOp>
+</ValidationInfo>
+<ValidationInfo><Name>MIDINIT</Name>
+<Required>[Do Not Change]</Required>
+<ValidationOp>[Do Not Change]</ValidationOp>
+</ValidationInfo>
+<ValidationInfo><Name>LASTNAME</Name>
+<Required>[Do Not Change]</Required>
+<ValidationOp>[Do Not Change]</ValidationOp>
+</ValidationInfo>
+<ValidationInfo><Name>WORKDEPT</Name>
+<Required>[Do Not Change]</Required>
+<ValidationOp>[Do Not Change]</ValidationOp>
+</ValidationInfo>
+<ValidationInfo><Name>PHONENO</Name>
+<Required>[Do Not Change]</Required>
+<ValidationOp>[Do Not Change]</ValidationOp>
+</ValidationInfo>
+<ValidationInfo><Name>HIREDATE</Name>
+<Required>[Do Not Change]</Required>
+<ValidationOp>[Do Not Change]</ValidationOp>
+</ValidationInfo>
+<ValidationInfo><Name>JOB</Name>
+<Required>[Do Not Change]</Required>
+<ValidationOp>[Do Not Change]</ValidationOp>
+</ValidationInfo>
+<ValidationInfo><Name>EDLEVEL</Name>
+<Required>[Do Not Change]</Required>
+<ValidationOp>[Do Not Change]</ValidationOp>
+</ValidationInfo>
+<ValidationInfo><Name>SEX</Name>
+<Required>[Do Not Change]</Required>
+<ValidationOp>[Do Not Change]</ValidationOp>
+</ValidationInfo>
+<ValidationInfo><Name>BIRTHDATE</Name>
+<Required>[Do Not Change]</Required>
+<ValidationOp>[Do Not Change]</ValidationOp>
+</ValidationInfo>
+<ValidationInfo><Name>SALARY</Name>
+<Required>[Do Not Change]</Required>
+<ValidationOp>[Do Not Change]</ValidationOp>
+</ValidationInfo>
+<ValidationInfo><Name>BONUS</Name>
+<Required>[Do Not Change]</Required>
+<ValidationOp>[Do Not Change]</ValidationOp>
+</ValidationInfo>
+<ValidationInfo><Name>COMM</Name>
+<Required>[Do Not Change]</Required>
+<ValidationOp>[Do Not Change]</ValidationOp>
+</ValidationInfo>
+<ValidationInfo><Name>EMPNO</Name>
+<Required>[Do Not Change]</Required>
+<ValidationOp>[Do Not Change]</ValidationOp>
+</ValidationInfo>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

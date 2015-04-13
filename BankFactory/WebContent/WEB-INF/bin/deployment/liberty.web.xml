@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+  version="2.5" metadata-complete="true">
+  <!-- See WEB-INF/bin/deployment/web.xml.readme for information on changing web.xml templates -->
+  <display-name>WEF</display-name>
+  <description>IBM Web Experience Factory</description>
+   
+  <!-- Define application event listeners. -->
+  <listener>
+    <listener-class>
+      com.bowstreet.servlet.ObjectLifeCycleHandler
+    </listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>WebEngineServlet</servlet-name>
+    <servlet-class>
+      com.bowstreet.webapp.engine.WebAppServlet
+    </servlet-class>
+    <init-param>
+      <param-name>bowstreet.URLMapper</param-name>
+      <param-value>
+        com.bowstreet.webapp.util.WebAppURLMapper
+      </param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+    <!-- For internal use only - no URL mapping defined -->
+    <servlet-name>J2EEDeploymentHandler</servlet-name>
+    <servlet-class>
+      com.bowstreet.servlet.J2EEDeploymentHandler
+    </servlet-class>
+    <init-param>
+      <param-name>bowstreet.rootDirectory</param-name>
+      <param-value>extractedfactory4</param-value>
+    </init-param>
+    <init-param>
+      <param-name>bowstreet.archiveVersion</param-name>
+      <param-value>1</param-value>
+    </init-param>
+    <init-param>
+      <param-name>bowstreet.extractionDirectory.1</param-name>
+      <param-value>WEB-INF</param-value>
+    </init-param>
+    <init-param>
+      <param-name>bowstreet.extractionDirectory.2</param-name>
+      <param-value>[html]</param-value>
+    </init-param>
+    <init-param>
+      <param-name>websphere1.string</param-name>
+      <param-value>^.*websphere.*$</param-value>
+    </init-param>
+    <init-param>
+      <param-name>websphere1.provider</param-name>
+      <param-value>IBM</param-value>
+    </init-param>
+    <init-param>
+      <param-name>bowstreet.appContext</param-name>
+      <param-value>@APP_CONTEXT@</param-value>
+    </init-param>
+    <init-param>
+      <param-name>websphere1.implementation</param-name>
+      <param-value>WebSphere</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>AjaxServlet</servlet-name>
+    <servlet-class>com.bowstreet.servlet.AjaxServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WebEngineServlet</servlet-name>
+    <url-pattern>/webengine/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxServlet</servlet-name>
+    <url-pattern>/ajax/*</url-pattern>
+  </servlet-mapping>
+  <!-- This is required for wsdl enabled services that generate wsdl that import xsd schema files -->
+  <mime-mapping>
+    <extension>xsd</extension>
+    <mime-type>text/xml</mime-type>
+  </mime-mapping>
+  <welcome-file-list>
+    <!-- This should be modified or removed for customer deployments. -->
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/factory/webapp/defaulterror_web.jsp</location>
+  </error-page>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>http://www.bowstreet.com/webapp-taglib</taglib-uri>
+      <taglib-location>/WEB-INF/bowst_webapp.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+</web-app>
+

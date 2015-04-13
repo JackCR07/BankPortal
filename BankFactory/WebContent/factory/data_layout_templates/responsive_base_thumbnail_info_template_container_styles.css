@@ -1,0 +1,11 @@
+/* the styles for this layout are contained in the **base styles** section of the 
+ /factory/html_templates/WEF8.5_uitheme.css file*/
+@CHARSET "ISO-8859-1";
+.cl3PerLine{}
+.cl4PerLine{}
+.cl5PerLine{}
+.clWidth300{}
+.clThemeThinContainer{}
+@IMPORT url("responsive_base_template_container_styles.css");
+@IMPORT url("responsive_base_img_template_conatinaer_styles.css");
+@IMPORT url("responsive_base_hide_template_styles.css");

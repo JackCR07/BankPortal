@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoDropDownButtonBuilder"> 
+  <ReadableName>Dojo Drop Down Button</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName> 
+  <HelpFile /> 
+  <RequiredFactoryVersion>6.1</RequiredFactoryVersion> 
+  <Description>Adds a Dojo Drop down Button with menu items to a specified page location.</Description> 
+  <Domains> 
+    <Domain>WebApp</Domain> 
+    <Domain>Consumer</Domain>
+  </Domains> 
+  <CreateModifyList> 
+    <CanModify xmlns="" type="Page" category="Navigation and Page Actions">Puts, on the Page, a Dojo Drop Down Button which will fire an event when pressed.</CanModify> 
+    <CanModify xmlns="" type="[Unassigned Elements]" category="Navigation and Page Actions">Adds a Dojo Drop Down Button which will fire an event when pressed.</CanModify> 
+  </CreateModifyList> 
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <Category>Navigation and Page Actions, Rich UI</Category> 
+  <Keywords>Page Elements,Navigation and Page Actions,Dojo</Keywords> 
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoDropDownButtonBuilder</BuilderDataEntry> 
+    <BuilderDataEntry name="IconName">buttonControl</BuilderDataEntry>
+  </BuilderData> 
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoDropDownButtonCoordinator</CoordinatorClassName>
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.RestrictedBuilderName"> 
+      <Prompt>Name</Prompt> 
+      <InitialValue /> 
+      <HelpText /> 
+      <Page /> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation"> 
+      <Prompt>Page location</Prompt> 
+      <InitialValue /> 
+      <HelpText /> 
+      <Page /> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    <InputDefinition name="Label" base="com.bowstreet.builders.webapp.ButtonBuilder.Label"> 
+      <Page /> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    
+       <InputDefinition name="MenuItems">
+          <Type>Xml</Type>
+          <Required>false</Required>
+          <Visible>true</Visible>
+          <ProfileType>XmlElements</ProfileType>
+          <Callable>true</Callable> 
+          <InitialValue /> 
+         <HelpText>Menu Items</HelpText> 
+          <Editor JavaClass="com.bowstreet.designer.builders.widgets.ListInputWidget">
+             <Argument name="width">250</Argument>
+             <Argument name="height">250</Argument>
+             <Argument name="weights">30,70</Argument>                               
+             <Argument name="columns">2</Argument>
+             <Argument name="headings">Type,Name</Argument>
+             <Argument name="columnTags">Type,Name</Argument>
+             <Argument name="rowtag">MenuItemInputs</Argument>
+             <Argument name="title">Menu Items</Argument>
+             <Argument name="allowReorder">true</Argument>
+             <Argument name="allowAdd">true</Argument>
+             
+             <Argument name="cellEditors"> 
+             <Editors> 
+                <Editor JavaClass="com.bowstreet.widget.ComboBox">
+                    <Argument name="isEditable">false</Argument>
+                    <Argument name="listData">MenuItem,Separator</Argument> 
+                    <Argument name="listLabels">Menu Item,Separator</Argument>
+                    <Argument name="selectItem">MenuItem</Argument>                             
+                </Editor>    
+                <Editor JavaClass="com.bowstreet.widget.TextField">     
+                    <Argument name="name">Name</Argument>
+                </Editor> 
+            </Editors> 
+            </Argument> 
+            
+             <Argument name="inputEditors">
+                <Editors>
+                   <Editor JavaClass="com.bowstreet.widget.Reference"> 
+                      <Argument name="name">Label</Argument>
+                      <Argument name="prompt">Label</Argument>
+                      <Argument name="visible">true</Argument>
+                      <Argument name="initialValue"></Argument>
+                   </Editor>
+                   <Editor JavaClass="com.bowstreet.editor.uitools.widgets.BTextField"> 
+                      <Argument name="name">ImageClass</Argument>
+                      <Argument name="visible">true</Argument>
+                      <Argument name="prompt">Image Class</Argument>
+                   </Editor>
+                   <Editor JavaClass="com.bowstreet.widget.CheckBox"> 
+                      <Argument name="name">ClientSideDelivery</Argument>
+                      <Argument name="prompt">Client Side Delivery</Argument>
+                      <Argument name="visible">true</Argument>
+                      <Argument name="initialValue">false</Argument>
+                   </Editor>
+                   <Editor JavaClass="com.bowstreet.widget.CheckBox"> 
+                      <Argument name="name">ServerDelivery</Argument>
+                      <Argument name="prompt">Server Side Delivery</Argument>
+                      <Argument name="visible">true</Argument>
+                      <Argument name="initialValue">true</Argument>
+                   </Editor>
+                  <Editor JavaClass="com.bowstreet.widget.List">
+                            <Argument name="visible">true</Argument>
+                            <Argument name="name">Arguments</Argument>
+                            <Argument name="prompt">Arguments</Argument>
+                            <Argument name="height" inheritable="true">112</Argument>
+                            <Argument name="columns" inheritable="true">3</Argument>
+                            <Argument name="headings" inheritable="true">Name,Data Type,Value</Argument>
+                            <Argument name="columnTags" inheritable="true">Name,Type,Value</Argument>
+                            <Argument name="rowtag" inheritable="true">Argument</Argument>
+                            <Argument name="cellEditors" inheritable="true">
+                                <Editors>
+                                    <Editor JavaClass="com.bowstreet.widget.TextField"/>
+                                <Editor JavaClass="com.bowstreet.widget.ComboBox">
+                                    <Argument name="listData" inheritable="true">String,IXml,Object,Boolean,Byte,Character,Double,Float,Integer,Long,Short</Argument>
+                                    <Argument name="isEditable" inheritable="true">true</Argument>
+                                </Editor>
+                                <Editor JavaClass="com.bowstreet.widget.Reference">     
+                                    <Argument name="editor">
+                                        <Editor JavaClass="com.bowstreet.widget.TextField">
+                                            <Argument name="isEditable" >true</Argument> 
+                                        </Editor>     
+                                    </Argument>
+                                </Editor> 
+                                
+                                </Editors>
+                            </Argument>
+                  </Editor>           
+                </Editors>
+             </Argument>
+          </Editor>
+       </InputDefinition>      
+    
+       <InputDefinition name="ClientSideEventPrefix" base="com.bowstreet.core.Base.IndirectValue">
+           <Group>ClientEventDelivery</Group>        
+           <Required>false</Required>
+           <Prompt>Client Event Prefix</Prompt>
+           <HelpText>Optional prefix added to the client event to make a unique name.</HelpText>
+           <Property>true</Property>
+       </InputDefinition>
+    
+       <!-- Begin PostActionBehavior Group Inputs -->
+        <InputDefinition name="ShowAdvancedPostActionBehaviors" base="com.bowstreet.builders.webapp.ButtonBuilder.ShowAdvancedPostActionBehaviors">
+            <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+            <Group>PostActionBehavior</Group>
+        </InputDefinition>
+        <InputDefinition name="PostActionBehavior" base="com.bowstreet.builders.webapp.ButtonBuilder.PostActionBehavior">
+            <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+            <Group>PostActionBehavior</Group>
+        </InputDefinition>
+        <InputDefinition name="RefreshPageLocation" base="com.bowstreet.builders.webapp.ButtonBuilder.RefreshPageLocation">
+            <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+            <Group>PostActionBehavior</Group>
+        </InputDefinition>
+        <InputDefinition name="DefaultRefreshPageLocation" base="com.bowstreet.builders.webapp.ButtonBuilder.DefaultRefreshPageLocation">
+            <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+            <Group>PostActionBehavior</Group>
+        </InputDefinition>
+        <InputDefinition name="ExecuteEmbeddedScripts" base="com.bowstreet.builders.webapp.ButtonBuilder.ExecuteEmbeddedScripts">
+            <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+            <Group>PostActionBehavior</Group>
+        </InputDefinition>
+        <InputDefinition name="AjaxLoadEventPrefix" base="com.bowstreet.builders.webapp.ButtonBuilder.AjaxLoadEventPrefix">
+            <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+            <Group>PostActionBehavior</Group>
+        </InputDefinition>
+       
+        
+       <!-- End PostActionBehavior Group Inputs -->
+    
+  </InputDefinitions> 
+  <GroupDefinitions> 
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" /> 
+    <GroupDefinition id="PostActionBehavior" base="com.bowstreet.core.WebAppBase.PostActionBehavior" />
+  </GroupDefinitions> 
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

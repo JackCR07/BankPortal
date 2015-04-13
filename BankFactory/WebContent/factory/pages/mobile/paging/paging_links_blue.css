@@ -1,0 +1,28 @@
+/** Copyright 2010 IBM. */
+@import url("paging_links_phone.css");
+
+.dataPagingContainer {
+    border:1px solid #000066;
+    -webkit-border-image: url(../../../images/mobile/button.png) 0 12 0 12;
+    border-width: 0px 8px 0px 8px;
+}
+
+.dataPagingContainer a {
+    color:#FFFFFF;
+    font-size: 1.8em;
+    font-weight: bold;
+    line-height: 17px; 
+}
+
+.dataPagingContainer a.dataPagingLinkDisable {
+    color:#D0D0D0;
+}
+
+.dataPagingContainer li.paging_previous a{
+     border-right:1px solid #888888;
+}
+
+.dataPagingContainer li.paging_next a{
+    border-left:1px solid #D0D0D0;
+}
+

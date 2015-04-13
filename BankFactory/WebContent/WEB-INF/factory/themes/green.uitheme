@@ -1,0 +1,62 @@
+<!--  **************************  Green Theme **********************************
+
+A theme is a collection of style information that can be used to drive builder inputs that provide the application UI in your model.
+This information can include but is not limited to HTML templates, style sheets (CSS), base pages, highlighting style, and paging style. 
+
+This theme file extents the wpfbase.uitheme theme and changes the look of the page header, buttons, pager, 
+and tables to use a green color scheme.
+See wpfbase.uitheme for base features.
+
+For more Theme information please see the "Themes and user interface control" section of the product documentation.
+
+-->
+<Theme extends="/WEB-INF/factory/themes/wpfbase.uitheme">
+    <DataPage_StyleSheetOverride>/factory/html_templates/gridtable_green.css</DataPage_StyleSheetOverride>
+
+    <ViewAndForm_ViewPageStyleSheetOverride>/factory/html_templates/gridtable_green.css</ViewAndForm_ViewPageStyleSheetOverride>
+
+    <ViewAndForm_DetailPageStyleSheetOverride>/factory/html_templates/gridtable_green.css</ViewAndForm_DetailPageStyleSheetOverride>
+
+    <ViewAndForm_UpdatePageStyleSheetOverride>/factory/html_templates/gridtable_green.css</ViewAndForm_UpdatePageStyleSheetOverride>
+
+    <ViewAndForm_InputPageStyleSheetOverride>/factory/html_templates/gridtable_green.css</ViewAndForm_InputPageStyleSheetOverride>
+
+    <ViewAndForm_PagingLinksStyleSheet>/factory/pages/paging/data_paging_links_green.css</ViewAndForm_PagingLinksStyleSheet>
+    <ViewAndForm_PagingButtonsStyleSheet>/factory/pages/paging/data_paging_buttons_green.css</ViewAndForm_PagingButtonsStyleSheet>
+
+    <ViewAndForm_HighlighterBackground>#CCFFCC</ViewAndForm_HighlighterBackground>
+    <ViewAndForm_HighlighterForeground>#000000</ViewAndForm_HighlighterForeground>
+
+    <InputForm_StyleSheetOverride>/factory/html_templates/gridtable_green.css</InputForm_StyleSheetOverride>
+
+    <PageBorder_BorderStyleFile>/factory/pages/borders/green_border.css</PageBorder_BorderStyleFile>
+
+    <PageTabs_Style_Sheet_File_Name>/factory/pages/page_tabs/page_tabs_green.css</PageTabs_Style_Sheet_File_Name>
+
+    <PagingLinks_StyleSheet>/factory/pages/paging/data_paging_links_green.css</PagingLinks_StyleSheet>
+  
+    <PagingButtons_StyleSheet>/factory/pages/paging/data_paging_buttons_green.css</PagingButtons_StyleSheet>
+    
+    <PagingButtons_FirstNormalButtonImage>/factory/images/paging/green/firstpg.gif</PagingButtons_FirstNormalButtonImage>
+    <PagingButtons_FirstHoverButtonImage>/factory/images/paging/green/firstpg.gif</PagingButtons_FirstHoverButtonImage>
+    <PagingButtons_FirstPressedButtonImage>/factory/images/paging/green/firstpg_dn.gif</PagingButtons_FirstPressedButtonImage>
+    <PagingButtons_FirstDisabledButtonImage>/factory/images/paging/green/firstpg_dis.gif</PagingButtons_FirstDisabledButtonImage>
+    <PagingButtons_PrevNormalButtonImage>/factory/images/paging/green/prevpg.gif</PagingButtons_PrevNormalButtonImage>
+    <PagingButtons_PrevHoverButtonImage>/factory/images/paging/green/prevpg.gif</PagingButtons_PrevHoverButtonImage>
+    <PagingButtons_PrevPressedButtonImage>/factory/images/paging/green/prevpg_dn.gif</PagingButtons_PrevPressedButtonImage>
+    <PagingButtons_PrevDisabledButtonImage>/factory/images/paging/green/prevpg_dis.gif</PagingButtons_PrevDisabledButtonImage>
+    <PagingButtons_NextNormalButtonImage>/factory/images/paging/green/nextpg.gif</PagingButtons_NextNormalButtonImage>
+    <PagingButtons_NextHoverButtonImage>/factory/images/paging/green/nextpg.gif</PagingButtons_NextHoverButtonImage>
+    <PagingButtons_NextPressedButtonImage>/factory/images/paging/green/nextpg_dn.gif</PagingButtons_NextPressedButtonImage>
+    <PagingButtons_NextDisabledButtonImage>/factory/images/paging/green/nextpg_dis.gif</PagingButtons_NextDisabledButtonImage>
+    <PagingButtons_LastNormalButtonImage>/factory/images/paging/green/lastpg.gif</PagingButtons_LastNormalButtonImage>
+    <PagingButtons_LastHoverButtonImage>/factory/images/paging/green/lastpg.gif</PagingButtons_LastHoverButtonImage>
+    <PagingButtons_LastPressedButtonImage>/factory/images/paging/green/lastpg_dn.gif</PagingButtons_LastPressedButtonImage>
+    <PagingButtons_LastDisabledButtonImage>/factory/images/paging/green/lastpg_dis.gif</PagingButtons_LastDisabledButtonImage>
+    
+    <DSUI_StyleSheetOverride>/factory/html_templates/gridtable_green.css</DSUI_StyleSheetOverride>
+    
+    <DSUI_RowHightlightColor>#000000</DSUI_RowHightlightColor>
+    <DSUI_RowHightlightBackgroundColor>#CCFFCC</DSUI_RowHightlightBackgroundColor>
+</Theme>
+

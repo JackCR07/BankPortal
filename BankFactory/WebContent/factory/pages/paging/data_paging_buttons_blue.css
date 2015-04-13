@@ -1,0 +1,24 @@
+TABLE.dataPagingButton{
+  padding-bottom: 3px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 3px;
+  background-color: #E8F2FE;
+  border: 1px solid #99CCCC;
+  font-size: ${requestScope.cssRules.fontSize.normal};
+  /* Center table */
+  margin-left: auto;
+  margin-right: auto;
+}
+IMG.dataPagingButton{
+  vertical-align: middle;
+  padding-left: 3px;
+  padding-right: 3px;
+} 
+SPAN.dataPagingButton{
+  vertical-align: middle;
+  color: #0080FF;
+}
+.dataPagingCurrentPage{
+  font-weight: bold;
+}

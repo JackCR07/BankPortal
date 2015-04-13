@@ -1,0 +1,220 @@
+<ProfileSet name="wizardbase.REST_view_and_form" useQualifiedProfileNames="true"><Description>Generated profile set for model REST_widget</Description>
+<Visibility>False</Visibility>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<Models />
+<ProfileDef><Entries><Entry name="DataPageTableModifier_ChildrenInfo" isRuntime="false"><UI type="TextInput"><Prompt>DataPageTableModifier_ChildrenInfo</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataPageTableModifier_ManageColumns" isRuntime="false"><UI type="TextInput"><Prompt>DataPageTableModifier_ManageColumns</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="DataPageTableModifier_SingleField" isRuntime="false"><UI type="TextInput"><Prompt>DataPageTableModifier_SingleField</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Name" isRuntime="false"><UI type="TextInput"><Prompt>Name</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PortletAdapter_BuilderCallEnabled" isRuntime="false"><UI type="TextInput"><Prompt>PortletAdapter_BuilderCallEnabled</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="PortletName" isRuntime="false"><UI type="TextInput"><Prompt>PortletName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PortletTitle" isRuntime="false"><UI type="TextInput"><Prompt>PortletTitle</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="RestCall_BasicAuthPassword" isRuntime="false"><UI type="TextInput"><Prompt>RestCall_BasicAuthPassword</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="RestCall_BasicAuthUsername" isRuntime="false"><UI type="TextInput"><Prompt>RestCall_BasicAuthUsername</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="RestCall_BodyContentDataType" isRuntime="false"><UI type="TextInput"><Prompt>RestCall_BodyContentDataType</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="RestCall_BodyContentType" isRuntime="false"><UI type="TextInput"><Prompt>RestCall_BodyContentType</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="RestCall_HTTPRequestType" isRuntime="false"><UI type="TextInput"><Prompt>RestCall_HTTPRequestType</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="RestCall_Name" isRuntime="false"><UI type="TextInput"><Prompt>RestCall_Name</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="RestCall_Parameters" isRuntime="false"><UI type="TextInput"><Prompt>RestCall_Parameters</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="RestCall_SchemaParameters" isRuntime="false"><UI type="TextInput"><Prompt>RestCall_SchemaParameters</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="RestCall_SchemaPassword" isRuntime="false"><UI type="TextInput"><Prompt>RestCall_SchemaPassword</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="RestCall_SchemaURL" isRuntime="false"><UI type="TextInput"><Prompt>RestCall_SchemaURL</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="RestCall_SchemaUsername" isRuntime="false"><UI type="TextInput"><Prompt>RestCall_SchemaUsername</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="RestCall_URL" isRuntime="false"><UI type="TextInput"><Prompt>RestCall_URL</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceDefinition_BuilderCallEnabled" isRuntime="false"><UI type="TextInput"><Prompt>ServiceDefinition_BuilderCallEnabled</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceDefinition_ServiceName" isRuntime="false"><UI type="TextInput"><Prompt>ServiceDefinition_ServiceName</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_InputStructureHandling" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_InputStructureHandling</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_OperationDescription" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_OperationDescription</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_OperationName" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_OperationName</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_ResultElement" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_ResultElement</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_ResultStructureHandling" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_ResultStructureHandling</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ServiceOperation_TargetOperation" isRuntime="false"><UI type="TextInput"><Prompt>ServiceOperation_TargetOperation</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Title" isRuntime="false"><UI type="TextInput"><Prompt>Title</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewAndForm_CreateColumnLink" isRuntime="false"><UI type="TextInput"><Prompt>ViewAndForm_CreateColumnLink</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewAndForm_CreateInputPage" isRuntime="false"><UI type="TextInput"><Prompt>ViewAndForm_CreateInputPage</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewAndForm_EnableDataPaging" isRuntime="false"><UI type="TextInput"><Prompt>ViewAndForm_EnableDataPaging</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewAndForm_InsertInputPage" isRuntime="false"><UI type="TextInput"><Prompt>ViewAndForm_InsertInputPage</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewAndForm_LinkColumn" isRuntime="false"><UI type="TextInput"><Prompt>ViewAndForm_LinkColumn</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewAndForm_RowsPerPage" isRuntime="false"><UI type="TextInput"><Prompt>ViewAndForm_RowsPerPage</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewAndForm_ViewMethod" isRuntime="false"><UI type="TextInput"><Prompt>ViewAndForm_ViewMethod</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="WidgetAdapter_BuilderCallEnabled" isRuntime="false"><UI type="TextInput"><Prompt>WidgetAdapter_BuilderCallEnabled</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="WidgetAdapter_Category" isRuntime="false"><UI type="TextInput"><Prompt>WidgetAdapter_Category</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1221670253206" isContainer="true"><Values><Value name="DataPageTableModifier_ChildrenInfo">&lt;Columns&gt;&lt;Column&gt;&lt;Name&gt;item&lt;/Name&gt;
+&lt;Status&gt;Do Not Change&lt;/Status&gt;
+&lt;Heading&gt;item&lt;/Heading&gt;
+&lt;Width&gt;&lt;/Width&gt;
+&lt;Alignment&gt;Default&lt;/Alignment&gt;
+&lt;Sortable&gt;Not Sortable&lt;/Sortable&gt;
+&lt;/Column&gt;
+&lt;/Columns&gt;</Value>
+<Value name="DataPageTableModifier_ManageColumns">true</Value>
+<Value name="DataPageTableModifier_SingleField">[_u__ViewPage]_u__ViewPage/items</Value>
+<Value name="Name">_u_</Value>
+<Value name="PortletAdapter_BuilderCallEnabled">false</Value>
+<Value name="PortletName"></Value>
+<Value name="PortletTitle"></Value>
+<Value name="RestCall_BasicAuthPassword"></Value>
+<Value name="RestCall_BasicAuthUsername"></Value>
+<Value name="RestCall_BodyContentDataType"></Value>
+<Value name="RestCall_BodyContentType"></Value>
+<Value name="RestCall_HTTPRequestType">GET</Value>
+<Value name="RestCall_Name">_u_modified</Value>
+<Value name="RestCall_Parameters">&lt;top&gt;&lt;Argument&gt;&lt;Name&gt;threadID&lt;/Name&gt;
+&lt;Value /&gt;
+&lt;/Argument&gt;
+&lt;/top&gt;</Value>
+<Value name="RestCall_SchemaParameters"></Value>
+<Value name="RestCall_SchemaPassword"></Value>
+<Value name="RestCall_SchemaURL">http://www-128.ibm.com/developerworks/forums/rss/rssmessages.jspa?threadID=200182</Value>
+<Value name="RestCall_SchemaUsername"></Value>
+<Value name="RestCall_URL">http://www-128.ibm.com/developerworks/forums/rss/rssmessages.jspa</Value>
+<Value name="ServiceDefinition_BuilderCallEnabled">true</Value>
+<Value name="ServiceDefinition_ServiceName">_u_service</Value>
+<Value name="ServiceOperation_InputStructureHandling">FromOperation</Value>
+<Value name="ServiceOperation_OperationDescription">Get Developerworks thread</Value>
+<Value name="ServiceOperation_OperationName">_u_op</Value>
+<Value name="ServiceOperation_ResultElement">channel/items</Value>
+<Value name="ServiceOperation_ResultStructureHandling">FromOperation</Value>
+<Value name="ServiceOperation_TargetOperation">DataServices/_u_modified/execute</Value>
+<Value name="Title"></Value>
+<Value name="ViewAndForm_CreateColumnLink">false</Value>
+<Value name="ViewAndForm_CreateInputPage">true</Value>
+<Value name="ViewAndForm_EnableDataPaging">true</Value>
+<Value name="ViewAndForm_InsertInputPage">false</Value>
+<Value name="ViewAndForm_LinkColumn">title</Value>
+<Value name="ViewAndForm_RowsPerPage">8</Value>
+<Value name="ViewAndForm_ViewMethod">DataServices/_u_service/_u_op</Value>
+<Value name="WidgetAdapter_BuilderCallEnabled">false</Value>
+<Value name="WidgetAdapter_Category"></Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="simpler" last_modified="1221670253206" isContainer="false" parent="Default"><Values><Value name="DataPageTableModifier_SingleField">[_u__ViewPage]_u__ViewPage/rows</Value>
+<Value name="PortletAdapter_BuilderCallEnabled">false</Value>
+<Value name="RestCall_Name">_u_rest</Value>
+<Value name="RestCall_Parameters">&lt;top /&gt;</Value>
+<Value name="RestCall_SchemaParameters">&lt;top /&gt;</Value>
+<Value name="RestCall_SchemaURL"></Value>
+<Value name="RestCall_URL">http://localhost:9080/mashuphub/client/plugin/generate/entryid/17/pluginid/17</Value>
+<Value name="ServiceDefinition_BuilderCallEnabled">false</Value>
+<Value name="ViewAndForm_CreateInputPage">false</Value>
+<Value name="ViewAndForm_ViewMethod">DataServices/_u_rest/execute</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

@@ -1,0 +1,326 @@
+<Model id="factory/wizardbase/DB_wizard"><BuilderCallList><BuilderCall id="bc14"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2002 - 2008. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2002, 2006. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc15"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Next Steps</Input>
+<Input name="BuilderCallEnabled">true</Input>
+<Input name="Comment">Assuming you've picked a valid query, you should be able to run this model and see the data, or deploy it as a widget and see the data there.
+
+Here are some of the things you might want to change in the existing Builders.
+
+In the  SQL Call Builder
+ - Modify your query, perhaps adding question marks in it for inputs to the query.  Then you could go to the View and Form Builder and have it create an Input Page.
+
+In the View and Form Builder
+ - If your table is very long, turn on Paging and specify how many rows at a time you want it to display.
+ - If you want to manage the HTML that goes around the table, change "View Page HTML" to a file of your own and edit it.  Just be sure that the named elements which are on the simple one are also in your new one.
+ - To change the look of the table, try a different HTML Template File.  Creating these is an advanced subject, but choosing from the shipped ones is easy.
+ - Change settings that affect the details page, including whether or not it is available.
+
+In the Data Column Modifier
+ - Change the headings, width, alignment, and sorting type of each of the columns.  Or hide some of the columns.</Input>
+<Input name="BuilderCallComment">Assuming you've picked a valid query, you should be able to run this model and see the data, or deploy it as a widget and see the data there.
+
+Here are some of the things you might want to change in the existing Builders.
+
+In the  SQL Call Builder
+ - Modify your query, perhaps adding question marks in it for inputs to the query.  Then you could go to the View and Form Builder and have it create an Input Page.
+
+In the View and Form Builder
+ - If your table is very long, turn on Paging and specify how many rows at a time you want it to display.
+ - If you want to manage the HTML that goes around the table, change "View Page HTML" to a file of your own and edit it.  Just be sure that the named elements which are on the simple one are also in your new one.
+ - To change the look of the table, try a different HTML Template File.  Creating these is an advanced subject, but choosing from the shipped ones is easy.
+ - Change settings that affect the details page, including whether or not it is available.
+
+In the Data Column Modifier
+ - Change the headings, width, alignment, and sorting type of each of the columns.  Or hide some of the columns.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc16"><BuilderDefID>com.bowstreet.builders.webapp.WidgetAdapterBuilder</BuilderDefID>
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="wizardbase.DB_view_and_form:WidgetAdapter_BuilderCallEnabled">false</Input>
+<Input name="Name" profile="wizardbase.DB_view_and_form:SqlCall_Name">xxxx</Input>
+<Input name="WidgetTitle" profile="wizardbase.DB_view_and_form:Title">Title</Input>
+<Input name="WidgetDefaultLocale">en</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomEditDefaultsPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="WidgetCategory" profile="wizardbase.DB_view_and_form:WidgetAdapter_Category"></Input>
+<Input name="WidgetDescription">Database Model</Input>
+<Input name="WidgetIcon">/factory/images/widget/default_icon.gif</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc18"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="wizardbase.DB_view_and_form:PortletAdapter_BuilderCallEnabled">false</Input>
+<Input name="PortletDefaultLocale">en</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomEditDefaultsPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="RCPLaunchMenu">none</Input>
+<Input name="RCPTitleBar">show</Input>
+<Input name="RCPViewType">portlet</Input>
+<Input name="Name" profile="wizardbase.DB_view_and_form:PortletName">_u_</Input>
+<Input name="PortletTitle" profile="wizardbase.DB_view_and_form:PortletTitle">_u_</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc9"><BuilderDefID>com.bowstreet.builders.webapp.SqlCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EntityTypeToFetch">Tables</Input>
+<Input name="StatementType">Select</Input>
+<Input name="ParameterBinding">AutoCreateXMLVariable</Input>
+<Input name="TransformResult">CompleteXmlDocument</Input>
+<Input name="SchemaGeneration">FromSQLStatement</Input>
+<Input name="SchemaRegenTime">OnlyWhenSQLBuilderChangesAreDetected</Input>
+<Input name="SchemaImportRule">ImportOnlyAtDesignTime</Input>
+<Input name="Name" profile="wizardbase.DB_view_and_form:SqlCall_Name">xxxx</Input>
+<Input name="Parameters"><top />
+</Input>
+<Input name="FetchDataSourceNames">Fetch DataSource Names</Input>
+<Input name="SqlDataSourceValues">java:comp/env/jdbc/derby,java:comp/env/jdbc/eCommerce,java:comp/env/jdbc/sample,java:comp/env/jdbc/dashboarddb</Input>
+<Input name="SqlDataSource" profile="wizardbase.DB_view_and_form:SqlCall_SqlDataSource">java:comp/env/jdbc/MyDataSource</Input>
+<Input name="SqlStatement" profile="wizardbase.DB_view_and_form:SqlCall_SqlStatement">select * from  qauser.EMPLOYEE</Input>
+<Input name="FetchEntityNames">Fetch Entity Names</Input>
+<Input name="Concurrency">ReadOnly</Input>
+<Input name="ScrollType">Insensitive</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[$Child$call1Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call1StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/b1/webengine/factory/wizardbase/database_service_provider/call1Transform" targetNamespace="http://localhost:8080/b1/webengine/factory/wizardbase/database_service_provider/call1Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Wednesday, May 3, 2006 2:37:49 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$operQuerySchema$[java:comp/env/jdbc/MyDataSource][null][null][select *
+from
+  qauser.EMPLOYEE][<InputParameters />
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/LWF/webengine/sql/operQueryTransform" targetNamespace="http://localhost:8080/LWF/webengine/sql/operQueryTransform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation><xsd:documentation xml:lang="en">Schema automatically generated on "Thursday, May 1, 2008 10:26:50 AM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element name="RowSet" type="cns:RowSetType" />
+<xsd:complexType name="RowSetType"><xsd:sequence><xsd:element ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="Row"><xsd:complexType><xsd:sequence><xsd:element name="EMPNO" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="FIRSTNME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="MIDINIT" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="LASTNAME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="WORKDEPT" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="PHONENO" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="HIREDATE" type="xsd:dateTime" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="JOB" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="EDLEVEL" type="xsd:short" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="SEX" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="BIRTHDATE" type="xsd:dateTime" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="SALARY" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="BONUS" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="COMM" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc11"><BuilderDefID>com.bowstreet.builders.webapp.ViewAndFormBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseTheme">true</Input>
+<Input name="ViewPageURL">/factory/pages/view_and_form/view.html</Input>
+<Input name="EnableDataPaging" profile="wizardbase.DB_view_and_form:ViewAndForm_EnableDataPaging">true</Input>
+<Input name="CreateInputPage">false</Input>
+<Input name="InputPageURL">/factory/pages/view_and_form/input.html</Input>
+<Input name="EnableInputValidation">true</Input>
+<Input name="InputSubmitText">Submit</Input>
+<Input name="ViewPageBackButtonText">Back</Input>
+<Input name="InsertInputPage">false</Input>
+<Input name="CreateColumnLink" profile="wizardbase.DB_view_and_form:ViewAndForm_CreateColumnLink">true</Input>
+<Input name="LinkActionChoice">rowdata</Input>
+<Input name="DetailPageURL">/factory/pages/view_and_form/details.html</Input>
+<Input name="DetailPageHTMLTemplate">/factory/html_templates/gridtable.html</Input>
+<Input name="DetailPageBackButtonText">Back</Input>
+<Input name="CreateUpdatePage">false</Input>
+<Input name="UpdateAutoInitializeData">true</Input>
+<Input name="UpdatePageURL">/factory/pages/view_and_form/input.html</Input>
+<Input name="EnableUpdateValidation">false</Input>
+<Input name="UpdateLinkText">Edit</Input>
+<Input name="UpdateSubmitText">Submit</Input>
+<Input name="UpdateCancelText">Cancel</Input>
+<Input name="CreateMain">true</Input>
+<Input name="ViewPageHTMLTemplate">/factory/html_templates/gridtable.html</Input>
+<Input name="InputPageHTMLTemplate">/factory/html_templates/gridtable.html</Input>
+<Input name="EnablePagingButtons">true</Input>
+<Input name="Name" profile="wizardbase.DB_view_and_form:SqlCall_Name">xxxx</Input>
+<Input name="ViewMethod" profile="wizardbase.DB_view_and_form:ViewAndForm_ViewMethod">DataServices/xxxx/execute</Input>
+<Input name="ModelName">factory/portletbase/view_and_form_base</Input>
+<Input name="SetProfiledInputValues">true</Input>
+<Input name="UniquePattern">function</Input>
+<Input name="RowsPerPage" profile="wizardbase.DB_view_and_form:ViewAndForm_RowsPerPage">5</Input>
+<Input name="LinkColumn" profile="wizardbase.DB_view_and_form:ViewAndForm_LinkColumn">LASTNAME</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc13"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPageTableModifier</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="DataPagingPageSize">5</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="DeleteColumnStyle">No Delete Column</Input>
+<Input name="DeleteLinkText">Delete</Input>
+<Input name="DeleteButtonText">Delete</Input>
+<Input name="DeleteMethodType">None</Input>
+<Input name="ManageColumns" profile="wizardbase.DB_view_and_form:DataPageTableModifier_ManageColumns">false</Input>
+<Input name="PlaceAddedColumns">After</Input>
+<Input name="EmptyDataAction">HeadersMessage</Input>
+<Input name="FlattenChildren">NoChange</Input>
+<Input name="SingleField" profile="wizardbase.DB_view_and_form:DataPageTableModifier_SingleField">[xxxx_ViewPage]xxxx_ViewPage/RowSet/Row</Input>
+<Input name="ChildrenInfo" xmlProfile="wizardbase.DB_view_and_form:DataPageTableModifier_ChildrenInfo"><Columns><Column><Name>EMPNO</Name>
+<Status>Do Not Change</Status>
+<Heading>EMPNO</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>FIRSTNME</Name>
+<Status>Do Not Change</Status>
+<Heading>FIRSTNME</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>MIDINIT</Name>
+<Status>Do Not Change</Status>
+<Heading>MIDINIT</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>LASTNAME</Name>
+<Status>Do Not Change</Status>
+<Heading>LASTNAME</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>WORKDEPT</Name>
+<Status>Do Not Change</Status>
+<Heading>WORKDEPT</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>PHONENO</Name>
+<Status>Do Not Change</Status>
+<Heading>PHONENO</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>HIREDATE</Name>
+<Status>Do Not Change</Status>
+<Heading>HIREDATE</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>JOB</Name>
+<Status>Do Not Change</Status>
+<Heading>JOB</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>EDLEVEL</Name>
+<Status>Do Not Change</Status>
+<Heading>EDLEVEL</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>SEX</Name>
+<Status>Do Not Change</Status>
+<Heading>SEX</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>BIRTHDATE</Name>
+<Status>Do Not Change</Status>
+<Heading>BIRTHDATE</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>SALARY</Name>
+<Status>Do Not Change</Status>
+<Heading>SALARY</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>BONUS</Name>
+<Status>Do Not Change</Status>
+<Heading>BONUS</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>COMM</Name>
+<Status>Do Not Change</Status>
+<Heading>COMM</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+</Columns>
+</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

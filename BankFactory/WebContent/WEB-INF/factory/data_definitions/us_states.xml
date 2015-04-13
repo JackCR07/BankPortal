@@ -1,0 +1,234 @@
+<DataDefinitions resources="com.bowstreet.builders.webapp.usertext.messages">
+	<!-- lookup table with 50 US states -->	 
+	<DataDefinition name="base_US_StatesLookup">
+		<LookupTable>states</LookupTable>
+	</DataDefinition>
+    
+    <LookupTables>
+        <LookupTable>
+            <BuilderID>com.bowstreet.builders.webapp.LookupTableBuilder</BuilderID>
+            <ReadableName>U.S. States</ReadableName>
+            <Name>states</Name>
+            <Inputs>
+                <Input name="DataType">NewXmlData</Input>
+                <Input name="GetDataFrom">BuilderInput</Input>
+                <Input name="TablePosition">InFront</Input>
+                <Input name="Name">states</Input>
+                <Input name="ValueElementName">value</Input>
+                <Input name="LabelElementName">name</Input>
+                <Input name="NewXmlData">
+                    <lookup>
+                        <entry>
+                            <value></value>
+                            <name></name>
+                        </entry>
+                        <entry>
+                            <value>AL</value>
+                            <name resource_key="US_State_AL">Alabama</name>
+                        </entry>
+                        <entry>
+                            <value>AK</value>
+                            <name resource_key="US_State_AK">Alaska</name>
+                        </entry>
+                        <entry>
+                            <value>AZ</value>
+                            <name resource_key="US_State_AZ">Arizona</name>
+                        </entry>
+                        <entry>
+                            <value>AR</value>
+                            <name resource_key="US_State_AR">Arkansas</name>
+                        </entry>
+                        <entry>
+                            <value>CA</value>
+                            <name resource_key="US_State_CA">California</name>
+                        </entry>
+                        <entry>
+                            <value>CO</value>
+                            <name resource_key="US_State_CO">Colorado</name>
+                        </entry>
+                        <entry>
+                            <value>CT</value>
+                            <name resource_key="US_State_CT">Connecticut</name>
+                        </entry>
+                        <entry>
+                            <value>DC</value>
+                            <name resource_key="US_State_DC">D.C.</name>
+                        </entry>
+                        <entry>
+                            <value>DE</value>
+                            <name resource_key="US_State_DE">Delaware</name>
+                        </entry>
+                        <entry>
+                            <value>FL</value>
+                            <name resource_key="US_State_FL">Florida</name>
+                        </entry>
+                        <entry>
+                            <value>GA</value>
+                            <name resource_key="US_State_GA">Georgia</name>
+                        </entry>
+                        <entry>
+                            <value>HI</value>
+                            <name resource_key="US_State_HI">Hawaii</name>
+                        </entry>
+                        <entry>
+                            <value>ID</value>
+                            <name resource_key="US_State_ID">Idaho</name>
+                        </entry>
+                        <entry>
+                            <value>IL</value>
+                            <name resource_key="US_State_IL">Illinois</name>
+                        </entry>
+                        <entry>
+                            <value>IN</value>
+                            <name resource_key="US_State_IN">Indiana</name>
+                        </entry>
+                        <entry>
+                            <value>IA</value>
+                            <name resource_key="US_State_IA">Iowa</name>
+                        </entry>
+                        <entry>
+                            <value>KS</value>
+                            <name resource_key="US_State_KS">Kansas</name>
+                        </entry>
+                        <entry>
+                            <value>KY</value>
+                            <name resource_key="US_State_KY">Kentucky</name>
+                        </entry>
+                        <entry>
+                            <value>LA</value>
+                            <name resource_key="US_State_LA">Louisiana</name>
+                        </entry>
+                        <entry>
+                            <value>ME</value>
+                            <name resource_key="US_State_ME">Maine</name>
+                        </entry>
+                        <entry>
+                            <value>MD</value>
+                            <name resource_key="US_State_MD">Maryland</name>
+                        </entry>
+                        <entry>
+                            <value>MA</value>
+                            <name resource_key="US_State_MA">Massachusetts</name>
+                        </entry>
+                        <entry>
+                            <value>MI</value>
+                            <name resource_key="US_State_MI">Michigan</name>
+                        </entry>
+                        <entry>
+                            <value>MN</value>
+                            <name resource_key="US_State_MN">Minnesota</name>
+                        </entry>
+                        <entry>
+                            <value>MS</value>
+                            <name resource_key="US_State_MS">Mississippi</name>
+                        </entry>
+                        <entry>
+                            <value>MO</value>
+                            <name resource_key="US_State_MO">Missouri</name>
+                        </entry>
+                        <entry>
+                            <value>MT</value>
+                            <name resource_key="US_State_MT">Montana</name>
+                        </entry>
+                        <entry>
+                            <value>NE</value>
+                            <name resource_key="US_State_NE">Nebraska</name>
+                        </entry>
+                        <entry>
+                            <value>NV</value>
+                            <name resource_key="US_State_NV">Nevada</name>
+                        </entry>
+                        <entry>
+                            <value>NH</value>
+                            <name resource_key="US_State_NH">New Hampshire</name>
+                        </entry>
+                        <entry>
+                            <value>NJ</value>
+                            <name resource_key="US_State_NJ">New Jersey</name>
+                        </entry>
+                        <entry>
+                            <value>NM</value>
+                            <name resource_key="US_State_NM">New Mexico</name>
+                        </entry>
+                        <entry>
+                            <value>NY</value>
+                            <name resource_key="US_State_NY">New York</name>
+                        </entry>
+                        <entry>
+                            <value>NC</value>
+                            <name resource_key="US_State_NC">North Carolina</name>
+                        </entry>
+                        <entry>
+                            <value>ND</value>
+                            <name resource_key="US_State_ND">North Dakota</name>
+                        </entry>
+                        <entry>
+                            <value>OH</value>
+                            <name resource_key="US_State_OH">Ohio</name>
+                        </entry>
+                        <entry>
+                            <value>OK</value>
+                            <name resource_key="US_State_OK">Oklahoma</name>
+                        </entry>
+                        <entry>
+                            <value>OR</value>
+                            <name resource_key="US_State_OR">Oregon</name>
+                        </entry>
+                        <entry>
+                            <value>PA</value>
+                            <name resource_key="US_State_PA">Pennsylvania</name>
+                        </entry>
+                        <entry>
+                            <value>RI</value>
+                            <name resource_key="US_State_RI">Rhode Island</name>
+                        </entry>
+                        <entry>
+                            <value>SC</value>
+                            <name resource_key="US_State_SC">South Carolina</name>
+                        </entry>
+                        <entry>
+                            <value>SD</value>
+                            <name resource_key="US_State_SD">South Dakota</name>
+                        </entry>
+                        <entry>
+                            <value>TN</value>
+                            <name resource_key="US_State_TN">Tennessee</name>
+                        </entry>
+                        <entry>
+                            <value>TX</value>
+                            <name resource_key="US_State_TX">Texas</name>
+                        </entry>
+                        <entry>
+                            <value>UT</value>
+                            <name resource_key="US_State_UT">Utah</name>
+                        </entry>
+                        <entry>
+                            <value>VT</value>
+                            <name resource_key="US_State_VT">Vermont</name>
+                        </entry>
+                        <entry>
+                            <value>VA</value>
+                            <name resource_key="US_State_VA">Virginia</name>
+                        </entry>
+                        <entry>
+                            <value>WA</value>
+                            <name resource_key="US_State_WA">Washington</name>
+                        </entry>
+                        <entry>
+                            <value>WV</value>
+                            <name resource_key="US_State_WV">West Virginia</name>
+                        </entry>
+                        <entry>
+                            <value>WI</value>
+                            <name resource_key="US_State_WI">Wisconsin</name>
+                        </entry>
+                        <entry>
+                            <value>WY</value>
+                            <name resource_key="US_State_WY">Wyoming</name>
+                        </entry>
+                    </lookup>
+                </Input>
+            </Inputs>
+        </LookupTable>
+    </LookupTables>
+</DataDefinitions>

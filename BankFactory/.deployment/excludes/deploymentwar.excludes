@@ -1,0 +1,10 @@
+factory/gettingstarted/**
+factory/pages/default_portletcustomizerpage.html
+factory/pages/PortletCustomizer/**
+factory/portlet/**
+factory/portletadapter/**
+META-INF/**
+WEB-INF/classes/**/*.class
+WEB-INF/classes/**/*.dependency
+WEB-INF/config/install/**
+WEB-INF/work/lib/placeholder.txt

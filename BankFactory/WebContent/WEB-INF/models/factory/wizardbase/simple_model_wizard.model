@@ -1,0 +1,139 @@
+<Model id="factory/wizardbase/simple_model_wizard"><BuilderCallList><BuilderCall id="bc20"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2002 - 2008. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2002, 2006. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc98"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
+<Messages><Error><Message>The following Builder Inputs are required but do not have values:  Name</Message>
+</Error>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="wizardbase.simple_model:PortletAdapter_BuilderCallEnabled">true</Input>
+<Input name="PortletDefaultLocale">en</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomEditDefaultsPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="RCPLaunchMenu">none</Input>
+<Input name="RCPTitleBar">show</Input>
+<Input name="RCPViewType">portlet</Input>
+<Input name="Name" profile="wizardbase.simple_model:PortletName"></Input>
+<Input name="PortletTitle" profile="wizardbase.simple_model:PortletTitle"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc23"><BuilderDefID>com.bowstreet.builders.webapp.WidgetAdapterBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="wizardbase.simple_model:WidgetAdapter_BuilderCallEnabled">false</Input>
+<Input name="Name" profile="wizardbase.simple_model:Name"></Input>
+<Input name="WidgetTitle" profile="wizardbase.simple_model:Title">Title</Input>
+<Input name="WidgetDefaultLocale">en</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomEditDefaultsPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="WidgetCategory" profile="wizardbase.simple_model:WidgetAdapter_Category"></Input>
+<Input name="WidgetDescription">Simple Widget</Input>
+<Input name="WidgetIcon">/factory/images/widget/default_icon.gif</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Name">main</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName profile="wizardbase.simple_model:Page_Name">_u_Page</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc19"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageData" profile="wizardbase.simple_model:Page_PageData">&lt;html&gt;
+    &lt;head&gt;&lt;title&gt;Default Test Page&lt;/title&gt;&lt;/head&gt;
+    &lt;body&gt;
+        &lt;form name="myForm" method="post"&gt;
+            &lt;div&gt;
+            	&lt;div style="font:14pt Arial;font-weight: bold;color: #336699;" name="bigText"&gt;&lt;/div&gt;&lt;br/&gt;
+	            &lt;span name="image"&gt;&lt;/span&gt;&lt;br/&gt;
+	            &lt;span  style="font:10pt Arial;" name="littleText" /&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</Input>
+<Input name="Name" profile="wizardbase.simple_model:Page_Name">_u_Page</Input>
+<Input name="FullyParse">true</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[<html>
+    <head><title>Default Test Page</title></head>
+    <body>
+        <form name="myForm" method="post">
+            <div>
+            	<div style="font:14pt Arial;font-weight: bold;color: #336699;" name="bigText"></div><br/>
+	            <span name="image"></span><br/>
+	            <span  style="font:10pt Arial;" name="littleText" />
+            </div>
+        </form>
+    </body>
+</html>]]></CacheKey>
+<CacheValue><HTMLData><HTML>
+    <HEAD><TITLE>Default Test Page</TITLE>
+</HEAD>
+
+    <BODY>
+        <FORM name="myForm" method="post">
+            <DIV>
+            	<DIV style="font:14pt Arial;font-weight: bold;color: #336699;" name="bigText" />
+<BR />
+
+	            <SPAN name="image" />
+<BR />
+
+	            <SPAN style="font:10pt Arial;" name="littleText" />
+
+            </DIV>
+
+        </FORM>
+
+    </BODY>
+
+</HTML>
+</HTMLData>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc29"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="wizardbase.simple_model:Text_BuilderCallEnabled">true</Input>
+<Input name="QuoteText">false</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="Control">littleText</Input>
+<Input name="PageLocation"><SimplePageLocation><Page profile="wizardbase.simple_model:Page_Name">_u_Page</Page>
+<NameSearch>littleText</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Text" profile="wizardbase.simple_model:Text_LittleText">a little text</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

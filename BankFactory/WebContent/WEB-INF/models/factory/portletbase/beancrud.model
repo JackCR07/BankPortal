@@ -1,0 +1,2070 @@
+<Model id="factory/portletbase/beancrud"><BuilderCallList>
+		<BuilderCall id = "bc212">
+			<BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+			<Messages></Messages>
+			<Inputs>
+				<Input name = "Name">copyright</Input>
+				<Input name = "BuilderCallEnabled">false</Input>
+				<Input name = "Comment">Licensed Materials - Property of IBM 
+5724-Od03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+				<Input name = "BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+© Copyright 2004, 2007. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+			</Inputs>
+		</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Actions"><Actions><Action><ActionType>Method</ActionType>
+<ActionName>m2</ActionName>
+</Action>
+<Action><ActionType>Page</ActionType>
+<ActionName>page</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Name">main</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+java.util.Collection c = new java.util.Vector();
+c.add(new com.bowstreet.qa.beans.OrgChart("ibm"));
+for (int i=1; i&lt;20; i++)
+	c.add(new com.bowstreet.qa.beans.OrgChart("bowstreet_"+i));
+webAppAccess.getVariables().setObject("theBeanLJOCollection", c);
+webAppAccess.getVariables().setObject("myBeanVarCollection", c);
+webAppAccess.getVariables().setObject("theBeanLJO", new com.bowstreet.qa.beans.OrgChart("gr"));
+webAppAccess.getVariables().setObject("myBeanVar", new com.bowstreet.qa.beans.OrgChart("gr"));
+}</Input>
+<Input name="Name">m2</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc15"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+System.out.println("processing in m3..");
+com.bowstreet.qa.beans.OrgChart o = (com.bowstreet.qa.beans.OrgChart)
+	webAppAccess.getVariables().getObject("theBeanLJO");
+System.out.println("got the new object:" + o.toString());
+return o.toString();
+}</Input>
+<Input name="Name">m3</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="Extend">false</Input>
+<Input name="Name">theBeanLJO</Input>
+<Input name="ClassName">com.bowstreet.qa.beans.OrgChart</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="Extend">false</Input>
+<Input name="Name">theBeanLJOCollection</Input>
+<Input name="ClassName">java.util.Collection</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc9"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Type">Object</Input>
+<Input name="Name">myBeanVar</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Type">Object</Input>
+<Input name="Name">myBeanVarCollection</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc145"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">==</Input>
+<Input name="BuilderCallEnabled">Enabled</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc144"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">MAIN PAGE</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc5"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:DisableMainImportedPage">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="URL" profile="portletbase.beancrud:CollectionImportedPageURL">/factory/pages/beanmasterdetail_defaultpage.html</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionMainPageName">page</Input>
+<Input name="PageEditor">&lt;html&gt;
+
+&lt;head&gt;&lt;link rel="stylesheet" href="/testfiles/pageautomation/pageautomationsample.css"&gt;&lt;/link&gt;
+&lt;title&gt;&lt;/title&gt;&lt;/head&gt;
+
+&lt;body&gt;
+&lt;form name="DVV"&gt;
+&lt;span name="data"/&gt;
+&lt;span name="pagingbuttons"/&gt;
+&lt;span name="backbutton"/&gt;&amp;nbsp;&lt;span name="createbutton"/&gt;&amp;nbsp;&lt;span name="editbutton"/&gt;&amp;nbsp;&lt;span name="deletebutton"/&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;span name="data2"/&gt;
+&lt;span name="pagingbuttons2"/&gt;
+&lt;/form&gt;
+&lt;br&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc1"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageType">ViewOnly</Input>
+<Input name="beanIsCollection">true</Input>
+<Input name="beanLevelsDeep">1</Input>
+<Input name="CreateTags" profile="portletbase.beancrud:MakeUIFromBeanAttributes">true</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">LeaveNameless</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="ValidateFromSchema">Both</Input>
+<Input name="ValidationErrorPlacement">ColumnRight</Input>
+<Input name="RequiredPromptPlacement">ColumnLeft</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionDataPageName">dp</Input>
+<Input name="TypedVariable" profile="portletbase.beancrud:CollectionDataPageDataSource">Variables/paData</Input>
+<Input name="PageName" profile="portletbase.beancrud:CollectionMainPageName">page</Input>
+<Input name="CreateTagsLocation" profile="portletbase.beancrud:CollectionPageDisplayLocation">data</Input>
+<Input name="beanCollectionClassname" profile="portletbase.beancrud:MasterObjClassname">com.bowstreet.qa.beans.OrgChart</Input>
+<Input name="UsingDataPageReferenceStyle">true</Input>
+<Input name="inputObjectType">Collection</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc53"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:DoDataPaging">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="Extend">false</Input>
+<Input name="ClassName">com.bowstreet.builders.webapp.methods.BeanCollectionDataRetriever</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionPARetrieverLJOName">pa_retriever</Input>
+<Input name="InstantiateMethod" profile="portletbase.beancrud:CollectionInitRetrieverMethodName">initRetriever</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc56"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:DoDataPaging">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">BeanCollectionDataRetriever</Input>
+<Input name="Body" profile="portletbase.beancrud:CollectionInitRetrieverMethodBody">{
+Object o = com.bowstreet.builders.webapp.methods.BeanCollectionDataRetriever.getRetriever( webAppAccess, "${Variables/theBeanLJOCollection}");
+return (com.bowstreet.builders.webapp.methods.BeanCollectionDataRetriever)o;
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionInitRetrieverMethodName">initRetriever</Input>
+<Input name="Imports"><Imports><Import>com.bowstreet.builders.webapp.methods.BeanCollectionDataRetriever</Import>
+</Imports>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc57"><BuilderDefID>com.bowstreet.builders.webapp.PagingAssistantBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:DoDataPaging">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageSize" profile="portletbase.beancrud:CollectionPageSize">6</Input>
+<Input name="AutomaticInitialization">false</Input>
+<Input name="SourceData_Type">Custom</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionPAName">pa</Input>
+<Input name="SourceData_Custom">pa_retriever</Input>
+<Input name="DataSource" profile="portletbase.beancrud:CollectionPARetrieverLJOName">pa_retriever</Input>
+<Input name="AutomaticReset">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc58"><BuilderDefID>com.bowstreet.builders.webapp.PagingButtonsBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:DoDataPaging">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RangeTextFormat"></Input>
+<Input name="FirstNormalButtonImage">/factory/images/paging/firstpg.jpg</Input>
+<Input name="FirstHoverButtonImage">/factory/images/paging/firstpg.jpg</Input>
+<Input name="FirstPressedButtonImage">/factory/images/paging/firstpg_dn.jpg</Input>
+<Input name="FirstDisabledButtonImage">/factory/images/paging/firstpg_disabled.jpg</Input>
+<Input name="FirstImageWidth">17</Input>
+<Input name="FirstImageHeight">19</Input>
+<Input name="FirstImageAltText">First</Input>
+<Input name="PrevNormalButtonImage">/factory/images/paging/prevpg.jpg</Input>
+<Input name="PrevHoverButtonImage">/factory/images/paging/prevpg.jpg</Input>
+<Input name="PrevPressedButtonImage">/factory/images/paging/prevpg_dn.jpg</Input>
+<Input name="PrevDisabledButtonImage">/factory/images/paging/prevpg_disabled.jpg</Input>
+<Input name="PrevImageWidth">17</Input>
+<Input name="PrevImageHeight">19</Input>
+<Input name="PrevImageAltText">Previous</Input>
+<Input name="NextNormalButtonImage">/factory/images/paging/nextpg.jpg</Input>
+<Input name="NextHoverButtonImage">/factory/images/paging/nextpg.jpg</Input>
+<Input name="NextPressedButtonImage">/factory/images/paging/nextpg_dn.jpg</Input>
+<Input name="NextDisabledButtonImage">/factory/images/paging/nextpg_disabled.jpg</Input>
+<Input name="NextImageWidth">17</Input>
+<Input name="NextImageHeight">19</Input>
+<Input name="NextImageAltText">Next</Input>
+<Input name="LastNormalButtonImage">/factory/images/paging/lastpg.jpg</Input>
+<Input name="LastHoverButtonImage">/factory/images/paging/lastpg.jpg</Input>
+<Input name="LastPressedButtonImage">/factory/images/paging/lastpg_dn.jpg</Input>
+<Input name="LastDisabledButtonImage">/factory/images/paging/lastpg_disabled.jpg</Input>
+<Input name="LastImageWidth">17</Input>
+<Input name="LastImageHeight">19</Input>
+<Input name="LastImageAltText">Last</Input>
+<Input name="HTMLPage">/factory/pages/data_paging_buttons.html</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="Name" profile="portletbase.beancrud:PagingButtonsName">PagingButtons</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:PagingButtonsPageLocation"><SimplePageLocation><Page>page</Page>
+<NameSearch>pagingbuttons</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="AssistantName" profile="portletbase.beancrud:CollectionPAName">pa</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc18"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">==</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc22"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPageTableModifier</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:CollectionEditLinkDFM">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="DeleteColumnStyle">No Delete Column</Input>
+<Input name="DeleteLinkText">Delete</Input>
+<Input name="DeleteButtonText">Delete</Input>
+<Input name="DeleteMethodType">byKeyRemove</Input>
+<Input name="ManageColumns">false</Input>
+<Input name="PlaceAddedColumns">After</Input>
+<Input name="DataPagingPageSize">7</Input>
+<Input name="Name">edit_col</Input>
+<Input name="SingleField" profile="portletbase.beancrud:DCMContainerField">[page]dp/OrgChart</Input>
+<Input name="ChildrenInfo"><Columns><Column><Name>_ID</Name>
+<Status>Do Not Change</Status>
+<Heading>_ID</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>name</Name>
+<Status>Do Not Change</Status>
+<Heading>name</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>date</Name>
+<Status>Do Not Change</Status>
+<Heading>date</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>version</Name>
+<Status>Do Not Change</Status>
+<Heading>version</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>logoURL</Name>
+<Status>Do Not Change</Status>
+<Heading>logoURL</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>Delete</Name>
+<Status>Do Not Change</Status>
+<Heading>Delete</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>Edit</Name>
+<Status>Do Not Change</Status>
+<Heading>Edit</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+</Columns>
+</Input>
+<Input name="AddOtherColumns">Edit</Input>
+<Input name="EnableDataPaging">false</Input>
+<Input name="DeleteMethod">sub</Input>
+<Input name="KeyField">_ID</Input>
+<Input name="DefaultName">OrgChart</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc42"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPageTableModifier</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:CollectionDeleteLinkDFM">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="DeleteColumnStyle">No Delete Column</Input>
+<Input name="DeleteLinkText">Delete</Input>
+<Input name="DeleteButtonText">Delete</Input>
+<Input name="DeleteMethodType">byKeyRemove</Input>
+<Input name="ManageColumns">false</Input>
+<Input name="PlaceAddedColumns">After</Input>
+<Input name="DataPagingPageSize">7</Input>
+<Input name="Name">del_col</Input>
+<Input name="SingleField" profile="portletbase.beancrud:DCMContainerField">[page]dp/OrgChart</Input>
+<Input name="ChildrenInfo"><Columns><Column><Name>_ID</Name>
+<Status>Do Not Change</Status>
+<Heading>_ID</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>name</Name>
+<Status>Do Not Change</Status>
+<Heading>name</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>date</Name>
+<Status>Do Not Change</Status>
+<Heading>date</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>version</Name>
+<Status>Do Not Change</Status>
+<Heading>version</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>logoURL</Name>
+<Status>Do Not Change</Status>
+<Heading>logoURL</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>Delete</Name>
+<Status>Do Not Change</Status>
+<Heading>Delete</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+<Column><Name>Edit</Name>
+<Status>Do Not Change</Status>
+<Heading>Edit</Heading>
+<Width />
+<Alignment>Default</Alignment>
+<Sortable>Not Sortable</Sortable>
+</Column>
+</Columns>
+</Input>
+<Input name="AddOtherColumns">Delete</Input>
+<Input name="EnableDataPaging">false</Input>
+<Input name="DeleteMethod">sub</Input>
+<Input name="KeyField">_ID</Input>
+<Input name="DefaultName">OrgChart</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc23"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:CollectionEditLinkDFM">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionDoEditALName">doEdit</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:CollectionDoEditPageLocation"><SimplePageLocation><Page>page</Page>
+<NameSearch>Edit</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="InputMappings"><top><InputMapping><Name>objId</Name>
+<Value profile="portletbase.beancrud:CollectionLinkObjId">${Java/new Integer((((com.bowstreet.qa.beans.OrgChart)(webAppAccess.getVariables().getObject("OrgChartLoopVar")))).hashCode())}</Value>
+<Type>Object</Type>
+</InputMapping>
+</top>
+</Input>
+<Input name="Text">edit</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc24"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:CollectionDeleteLinkDFM">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Action" profile="portletbase.beancrud:DeleteActionListName">deleteActionList</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:CollectionDoDeletePageLocation"><SimplePageLocation><Page>page</Page>
+<NameSearch>Delete</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">delete</Input>
+<Input name="InputMappings"><top><InputMapping><Value profile="portletbase.beancrud:CollectionLinkObjId">${Java/new Integer((((com.bowstreet.qa.beans.OrgChart)(webAppAccess.getVariables().getObject("OrgChartLoopVar")))).hashCode())}</Value>
+<Name>objidToDelete</Name>
+</InputMapping>
+</top>
+</Input>
+<Input name="Name">Delete</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc143"><BuilderDefID>com.bowstreet.builders.webapp.AttributeSetterBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:ConfirmDelete">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="Separator"> ;</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:CollectionDoDeletePageLocation"><SimplePageLocation><Page>page</Page>
+<NameSearch>Delete</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Attributes"><top><Attribute><Name>onclick</Name>
+<Value>if (!confirm("Are you sure you want to delete this object?"))return false;</Value>
+</Attribute>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc43"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:ViewEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:CollectionDoViewPageLocation"><SimplePageLocation><Page>page</Page>
+<NameSearch>OrgChart__name</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionDoViewALName">doView</Input>
+<Input name="InputMappings"><top><InputMapping><Value profile="portletbase.beancrud:CollectionLinkObjId">${Java/new Integer((((com.bowstreet.qa.beans.OrgChart)(webAppAccess.getVariables().getObject("OrgChartLoopVar")))).hashCode())}</Value>
+<Name>objID</Name>
+</InputMapping>
+</top>
+</Input>
+<Input name="Name">View</Input>
+<Input name="Form">dvp</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc162"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:CreateFromMainLinkEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:CreateFromMainButtonPageLocation"><SimplePageLocation><Page>page</Page>
+<NameSearch>createbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionDoCreateFromButtonALName">doCreateFromButton</Input>
+<Input name="InputMappings"><top />
+</Input>
+<Input name="Name">create</Input>
+<Input name="Form">dvp</Input>
+<Input name="Text" profile="portletbase.beancrud:CreateFromMainButtonLabel">create</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc137"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:CreateFromMainButtonEnabled">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">Submit form and invoke action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:CreateFromMainButtonPageLocation"><SimplePageLocation><Page>page</Page>
+<NameSearch>createbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name" profile="portletbase.beancrud:CreateFromMainButtonLabel">create</Input>
+<Input name="Label" profile="portletbase.beancrud:CreateFromMainButtonLabel">create</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionDoCreateFromButtonALName">doCreateFromButton</Input>
+<Input name="InputMappings"><top />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc25"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">==</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc26"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">VIEW</Input>
+<Input name="BuilderCallEnabled">Enabled</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc34"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:ViewEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Actions"><Actions><Action><ActionType>Method</ActionType>
+<ActionName profile="portletbase.beancrud:ViewDoViewALFetchAction">fetchSelectedObject(${Arguments/objId}, theBeanLJOCollection, viewObject, masterObject)</ActionName>
+</Action>
+<Action><ActionType>Page</ActionType>
+<ActionName profile="portletbase.beancrud:CollectionViewPageName">viewPage</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionDoViewALName">doView</Input>
+<Input name="Arguments"><top><Argument><Name>objId</Name>
+<Type>Object</Type>
+</Argument>
+<Argument><Name>collectionVarname</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc51"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Body" profile="portletbase.beancrud:ViewGetCollectionMethodBody">{
+Object c = webAppAccess.getVariables().getObject("theBeanLJOCollection");
+return c;
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:ViewGetCollectionMethodName">getCollection</Input>
+<Input name="Arguments"><top />
+</Input>
+<Input name="Public">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc35"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Body" profile="portletbase.beancrud:ViewFetchSelectedObject2MethodBody">{
+   Integer id = new Integer(objID);
+   Collection c = null;
+   //         if we're working with a paging assistant fetch the collection from the Retriever - works
+   //         when we're working with an Iterator..
+   Object o = webAppAccess.getVariables().getVariable("pa_BeanRetriever");
+   if (o != null)
+   {
+      BeanCollectionDataRetriever bcr = (BeanCollectionDataRetriever)((Variable)o).getValue();
+      o = bcr.getCollection(0);
+   }
+   else
+      o = webAppAccess.callMethod("getCollection","${Variables/theBeanLJOCollection}");
+   Iterator iter = null;
+   if (o instanceof Collection)
+   {
+      c = (Collection)o;
+      iter = c.iterator();
+   }
+   else if (o instanceof Iterator)
+      iter = (Iterator)o;
+   else
+      throw new IllegalArgumentException("Collection or Iterator expected:" + o);
+   Object obj = null;
+   while (iter.hasNext())
+   {
+      obj = iter.next();
+      int hash = obj.hashCode();
+      if (hash == id.intValue())
+         break;
+   }
+   com.bowstreet.webapp.Variable detailClass = webAppAccess.getVariables().getVariable("viewObject");
+   com.bowstreet.webapp.Variable masterClass = webAppAccess.getVariables().getVariable("masterObject");
+   if (!masterClass.getObjectClassName().equals(detailClass.getObjectClassName()))
+   {
+      IXml objIXml = (IXml)webAppAccess.callMethod("bcMethods.toIXml", obj);
+      String clazz = webAppAccess.getVariables().getString("fetchByKeyClassname");
+      String method = webAppAccess.getVariables().getString("fetchByKeyMethodname");
+      String colnames = webAppAccess.getVariables().getString("fetchByKeyColnames");
+      String coltypes = webAppAccess.getVariables().getString("fetchByKeyColtypes");
+      Object args[] = new Object[5];
+      args[0] = objIXml;
+      args[1] = clazz;
+      args[2] = method;
+      args[3] = colnames;
+      args[4] = coltypes;
+      obj = webAppAccess.callMethod("bcMethods.fetchById", args);
+   }
+   webAppAccess.getVariables().setObject("viewObject", obj);
+   return obj;
+}</Input>
+<Input name="Arguments"><top><Argument><Name>objID</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>viewObject</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>masterObject</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Name" profile="portletbase.beancrud:ViewFetchSelectedObject2MethodName">fetchSelectedObject2</Input>
+<Input name="Imports"><Imports><Import>com.bowstreet.builders.webapp.methods.BeanCollectionDataRetriever</Import>
+</Imports>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc166"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Body" profile="portletbase.beancrud:ViewFetchSelectedObjectMethodBody">{
+return webAppAccess.callMethod("fetchSelectedObject2", objId, "viewObject", "viewObject" );
+}</Input>
+<Input name="Arguments"><top><Argument><Name>objId</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Name" profile="portletbase.beancrud:ViewFetchSelectedObjectMethodName">fetchSelectedObject</Input>
+<Input name="Imports"><Imports><Import>com.bowstreet.builders.webapp.methods.BeanCollectionDataRetriever</Import>
+</Imports>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc27"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="Extend">false</Input>
+<Input name="Name" profile="portletbase.beancrud:MasterObjectLJOName">masterObject</Input>
+<Input name="ClassName" profile="portletbase.beancrud:MasterObjClassname">com.bowstreet.qa.beans.OrgChart</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc28"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="Extend">false</Input>
+<Input name="Name" profile="portletbase.beancrud:ViewObjectLJOName">viewObject</Input>
+<Input name="ClassName" profile="portletbase.beancrud:ViewObjClassname">com.bowstreet.qa.beans.OrgChartDetail</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc29"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:DisableViewImportedPage">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionViewPageName">viewPage</Input>
+<Input name="URL" profile="portletbase.beancrud:viewPageImportedPageURL">/factory/pages/beanmasterdetail_defaultpage.html</Input>
+<Input name="PageEditor">&lt;html&gt;
+
+&lt;head&gt;&lt;link rel="stylesheet" href="/testfiles/pageautomation/pageautomationsample.css"&gt;&lt;/link&gt;
+&lt;title&gt;&lt;/title&gt;&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;form name="DVV"&gt;
+&lt;span name="data"/&gt;
+&lt;span name="pagingbuttons"/&gt;
+&lt;span name="backbutton"/&gt;&amp;nbsp;&lt;span name="createbutton"/&gt;&amp;nbsp;&lt;span name="editbutton"/&gt;&amp;nbsp;&lt;span name="deletebutton"/&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;span name="data2"/&gt;
+&lt;span name="pagingbuttons2"/&gt;
+&lt;span name="create2"/&gt;&amp;nbsp;
+&lt;/form&gt;
+&lt;br&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;</Input>
+<Input name="EditPage">Edit Page</Input>
+<Input name="EditSave">Save Page</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc30"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:ViewEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageType">ViewOnly</Input>
+<Input name="CreateTags" profile="portletbase.beancrud:MakeUIFromBeanAttributes">true</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">AddNames</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="ValidateFromSchema">Both</Input>
+<Input name="ValidationErrorPlacement">ColumnRight</Input>
+<Input name="RequiredPromptPlacement">ColumnLeft</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="Name" profile="portletbase.beancrud:ViewDataPageName">viewPage</Input>
+<Input name="TypedVariable" profile="portletbase.beancrud:ViewObjectLJOName">viewObject</Input>
+<Input name="PageName" profile="portletbase.beancrud:CollectionViewPageName">viewPage</Input>
+<Input name="CreateTagsLocation" profile="portletbase.beancrud:ViewPageDisplayLocation">data</Input>
+<Input name="beanLevelsDeep">0</Input>
+<Input name="beanCollectionClassname" profile="portletbase.beancrud:ViewObjClassname">com.bowstreet.qa.beans.OrgChartDetail</Input>
+<Input name="UsingDataPageReferenceStyle">true</Input>
+<Input name="inputObjectType">Bean</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc155"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:BackFromViewLinkEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionMainPageName">page</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:BackFromViewButtonPageLocation"><SimplePageLocation><Page profile="portletbase.beancrud:CollectionViewPageName">viewPage</Page>
+<NameSearch>backbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="InputMappings"><top />
+</Input>
+<Input name="Text" profile="portletbase.beancrud:BackFromViewButtonLabel">back</Input>
+<Input name="Name">backFromView</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc31"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:BackFromViewButtonEnabled">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:BackFromViewButtonPageLocation"><SimplePageLocation><Page profile="portletbase.beancrud:CollectionViewPageName">viewPage</Page>
+<NameSearch>backbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">backFromView</Input>
+<Input name="Label" profile="portletbase.beancrud:BackFromViewButtonLabel">back</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionMainPageName">page</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc156"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:EditFromViewLinkEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionDoEditFromButtonALName">doEditFromButton</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:EditFromViewButtonPageLocation"><SimplePageLocation><Page profile="portletbase.beancrud:CollectionViewPageName">viewPage</Page>
+<NameSearch profile="portletbase.beancrud:editFromViewTag">editbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="InputMappings"><top><InputMapping><Name>objId</Name>
+<Value profile="portletbase.beancrud:DeleteFromViewArg">${Java/webAppAccess.getVariables().getObject("viewObject").hashCode()}</Value>
+<Type>String</Type>
+</InputMapping>
+</top>
+</Input>
+<Input name="Text" profile="portletbase.beancrud:EditFromViewButtonLabel">edit</Input>
+<Input name="Name">editFromView</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc32"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:EditFromViewButtonEnabled">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:EditFromViewButtonPageLocation"><SimplePageLocation><Page profile="portletbase.beancrud:CollectionViewPageName">viewPage</Page>
+<NameSearch profile="portletbase.beancrud:editFromViewTag">editbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">editFromView</Input>
+<Input name="Label" profile="portletbase.beancrud:EditFromViewButtonLabel">edit</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionDoEditFromButtonALName">doEditFromButton</Input>
+<Input name="InputMappings"><top><InputMapping><Name>objId</Name>
+<Value profile="portletbase.beancrud:DeleteFromViewArg">${Java/webAppAccess.getVariables().getObject("viewObject").hashCode()}</Value>
+</InputMapping>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc158"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:DeleteFromViewLinkEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Action" profile="portletbase.beancrud:DeleteActionListName">deleteActionList</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:DeleteFromViewButtonPageLocation"><SimplePageLocation><Page profile="portletbase.beancrud:CollectionViewPageName">viewPage</Page>
+<NameSearch>deletebutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="InputMappings"><top><InputMapping><Name>objId</Name>
+<Value profile="portletbase.beancrud:DeleteFromViewArg">${Java/webAppAccess.getVariables().getObject("viewObject").hashCode()}</Value>
+<Type>String</Type>
+</InputMapping>
+</top>
+</Input>
+<Input name="Text" profile="portletbase.beancrud:DeleteFromViewButtonLabel">delete</Input>
+<Input name="Name">deleteFromView</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc33"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:DeleteFromViewButtonEnabled">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:DeleteFromViewButtonPageLocation"><SimplePageLocation><Page profile="portletbase.beancrud:CollectionViewPageName">viewPage</Page>
+<NameSearch>deletebutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">deleteFromView</Input>
+<Input name="Label" profile="portletbase.beancrud:DeleteFromViewButtonLabel">delete</Input>
+<Input name="Action" profile="portletbase.beancrud:DeleteActionListName">deleteActionList</Input>
+<Input name="InputMappings"><top><InputMapping><Value profile="portletbase.beancrud:DeleteFromViewArg">${Java/webAppAccess.getVariables().getObject("viewObject").hashCode()}</Value>
+<Name>objIdToDelete</Name>
+</InputMapping>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc142"><BuilderDefID>com.bowstreet.builders.webapp.AttributeSetterBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:ConfirmDeleteFromView">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="HandleExisting">PrependNew</Input>
+<Input name="Separator"> ;</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:DeleteFromViewButtonPageLocation"><SimplePageLocation><Page profile="portletbase.beancrud:CollectionViewPageName">viewPage</Page>
+<NameSearch>deletebutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Attributes"><top><Attribute><Name>onclick</Name>
+<Value>if (!confirm("Are you sure you want to delete this object?"))return false;</Value>
+</Attribute>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc48"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="Extend">false</Input>
+<Input name="Name">bcMethods</Input>
+<Input name="ClassName">com.bowstreet.builders.webapp.methods.BeanMasterDetailMethods</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc38"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">==</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc64"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">DELETE</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc147"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Name" profile="portletbase.beancrud:DeleteActionListName">deleteActionList</Input>
+<Input name="Actions"><Actions><Action><ActionType>Method</ActionType>
+<ActionName profile="portletbase.beancrud:DeleteActionListDeleteAction">delete(${Arguments/objId})</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName profile="portletbase.beancrud:ActionAfterDelete">page</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Arguments"><top><Argument><Name>objId</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc69"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body" profile="portletbase.beancrud:DeleteMethodBody">{
+	String staticClassname = null;
+	String collectionVarname = "orgcharts";
+	Integer id = new Integer(objId);
+	Collection c = (Collection)webAppAccess.callMethod("getCollection", collectionVarname);
+	Iterator iter = c.iterator();
+	// Object objectToDelete = BeanMasterDetailMethods.getObject(id, iter);
+	try
+	{
+		// BeanMasterDetailMethods.callDeleteMethod(staticClassname, objectToDelete);
+		return; 
+	}
+    catch (Exception e)
+    {
+        throw new com.bowstreet.util.WrappedException(e);
+    }		
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:DeleteMethodName">delete</Input>
+<Input name="Arguments"><top><Argument><Name>objId</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Imports"><Imports />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc71"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">==</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc70"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">EDIT</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc92"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:EditEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Actions"><Actions><Action><ActionType></ActionType>
+<ActionName profile="portletbase.beancrud:clearEditPageErrorsMethodName">clear_editPage_Errors</ActionName>
+</Action>
+<Action><ActionType>Page</ActionType>
+<ActionName profile="portletbase.beancrud:CollectionEditPageName">editPage</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionDoEditFromButtonALName">doEditFromButton</Input>
+<Input name="Arguments"><top><Argument><Name>objId</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc88"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:EditEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Actions"><Actions><Action><ActionType>Method</ActionType>
+<ActionName profile="portletbase.beancrud:ViewDoViewALFetchAction">fetchSelectedObject(${Arguments/objId}, theBeanLJOCollection, viewObject, masterObject)</ActionName>
+</Action>
+<Action><ActionType></ActionType>
+<ActionName profile="portletbase.beancrud:clearEditPageErrorsMethodName">clear_editPage_Errors</ActionName>
+</Action>
+<Action><ActionType>Page</ActionType>
+<ActionName profile="portletbase.beancrud:CollectionEditPageName">editPage</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionDoEditALName">doEdit</Input>
+<Input name="Arguments"><top><Argument><Name>objId</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc81"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:DisableEditImportedPage">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionEditPageName">editPage</Input>
+<Input name="URL" profile="portletbase.beancrud:editPageImportedPageURL">/factory/pages/beanmasterdetail_defaultpage.html</Input>
+<Input name="PageEditor">&lt;html&gt;
+
+&lt;head&gt;&lt;link rel="stylesheet" href="/testfiles/pageautomation/pageautomationsample.css"&gt;&lt;/link&gt;
+&lt;title&gt;&lt;/title&gt;&lt;/head&gt;
+
+&lt;body&gt;
+&lt;form name="DVV"&gt;
+&lt;span name="data"/&gt;
+&lt;span name="pagingbuttons"/&gt;
+&lt;span name="backbutton"/&gt;&amp;nbsp;&lt;span name="editbutton"/&gt;&amp;nbsp;&lt;span name="deletebutton"/&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;span name="data2"/&gt;
+&lt;span name="pagingbuttons2"/&gt;
+&lt;/form&gt;
+&lt;br&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc82"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:EditEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageType">DataEntry</Input>
+<Input name="CreateTags" profile="portletbase.beancrud:MakeUIFromBeanAttributes">true</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">AddNames</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="ValidateFromSchema">Both</Input>
+<Input name="ValidationErrorPlacement">ColumnRight</Input>
+<Input name="RequiredPromptPlacement">ColumnLeft</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="Name" profile="portletbase.beancrud:EditDataPageName">editPage</Input>
+<Input name="TypedVariable" profile="portletbase.beancrud:ViewObjectLJOName">viewObject</Input>
+<Input name="PageName" profile="portletbase.beancrud:CollectionEditPageName">editPage</Input>
+<Input name="CreateTagsLocation" profile="portletbase.beancrud:EditPageDisplayLocation">data</Input>
+<Input name="beanLevelsDeep">0</Input>
+<Input name="beanCollectionClassname" profile="portletbase.beancrud:ViewObjClassname">com.bowstreet.qa.beans.OrgChartDetail</Input>
+<Input name="UsingDataPageReferenceStyle">true</Input>
+<Input name="SaveDataMethodName" profile="portletbase.beancrud:CollectionDoSaveALName">doSave</Input>
+<Input name="DisableSubmitEvent">true</Input>
+<Input name="BeanValidation" profile="portletbase.beancrud:DataPage_BeanValidation">Both</Input>
+<Input name="inputObjectType">Bean</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc104"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:ViewEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Actions"><Actions><Action><ActionType>Page</ActionType>
+<ActionName profile="portletbase.beancrud:CollectionViewPageName">viewPage</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionDoViewFromEditPageName">doViewFromEditPage</Input>
+<Input name="Arguments"><top />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc159"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:BackFromEditLinkEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionMainPageName">page</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:BackFromEditPageLocation"><SimplePageLocation><Page profile="portletbase.beancrud:CollectionEditPageName">editPage</Page>
+<NameSearch profile="portletbase.beancrud:backFromEditBackButtonTagName">backbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="InputMappings"><top />
+</Input>
+<Input name="Text" profile="portletbase.beancrud:BackFromEditButtonLabel">back</Input>
+<Input name="Name">backFromEdit</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc84"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:BackFromEditButtonEnabled">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:BackFromEditPageLocation"><SimplePageLocation><Page profile="portletbase.beancrud:CollectionEditPageName">editPage</Page>
+<NameSearch profile="portletbase.beancrud:backFromEditBackButtonTagName">backbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">backFromEdit</Input>
+<Input name="Label" profile="portletbase.beancrud:BackFromEditButtonLabel">back</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionMainPageName">page</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc160"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:CancelEditLinkEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionMainPageName">page</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:CancelEditPageLocation"><SimplePageLocation><Page profile="portletbase.beancrud:CollectionEditPageName">editPage</Page>
+<NameSearch profile="portletbase.beancrud:cancelEditButtonTagName">deletebutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="InputMappings"><top />
+</Input>
+<Input name="Text" profile="portletbase.beancrud:CancelEditButtonLabel">cancel</Input>
+<Input name="Name">cancelEdit</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc87"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:CancelEditButtonEnabled">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:CancelEditPageLocation"><SimplePageLocation><Page profile="portletbase.beancrud:CollectionEditPageName">editPage</Page>
+<NameSearch profile="portletbase.beancrud:cancelEditButtonTagName">deletebutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">cancelEdit</Input>
+<Input name="Label" profile="portletbase.beancrud:CancelEditButtonLabel">cancel</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionMainPageName">page</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc161"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:SaveFromEditLinkEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionDoSaveALName">doSave</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:SaveFromEditButtonLocation"><SimplePageLocation><Page profile="portletbase.beancrud:CollectionEditPageName">editPage</Page>
+<NameSearch profile="portletbase.beancrud:saveOnEditPageTagName">editbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="InputMappings"><top><InputMapping><Name>objId</Name>
+<Value profile="portletbase.beancrud:DeleteFromViewArg">${Java/webAppAccess.getVariables().getObject("viewObject").hashCode()}</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="Text" profile="portletbase.beancrud:SaveFromEditButtonLabel">save</Input>
+<Input name="Name">saveFromEdit</Input>
+<Input name="Form" profile="portletbase.beancrud:SaveFromEditFormName">DVV</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc85"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:SaveFromEditButtonEnabled">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">Submit form and invoke action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:SaveFromEditButtonLocation"><SimplePageLocation><Page profile="portletbase.beancrud:CollectionEditPageName">editPage</Page>
+<NameSearch profile="portletbase.beancrud:saveOnEditPageTagName">editbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">saveFromEdit</Input>
+<Input name="Label" profile="portletbase.beancrud:SaveFromEditButtonLabel">save</Input>
+<Input name="InputMappings"><top><InputMapping><Name>objId</Name>
+<Value profile="portletbase.beancrud:DeleteFromViewArg">${Java/webAppAccess.getVariables().getObject("viewObject").hashCode()}</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionDoSaveALName">doSave</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc89"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">==</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc90"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">SAVE AFTER EDIT</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc150"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:EditEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body" profile="portletbase.beancrud:DoSaveMethodBody">{
+webAppAccess.callMethod("preApplyMC");
+webAppAccess.callMethod("editPage_SaveData");
+IXml errors = (IXml)webAppAccess.getVariables().getObject("editPageError");
+System.out.println("ERRORS=" + errors);
+if (errors != null &amp;&amp; errors.getChildren().size() &gt; 0)
+    webAppAccess.processPage("editPage");
+else
+{
+    webAppAccess.callMethod("postApplyMC"); 
+    webAppAccess.callMethod("pa_reset");
+    webAppAccess.processPage("page");
+}
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionDoSaveALName">doSave</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc140"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body" profile="portletbase.beancrud:paResetMethodBody">{
+webAppAccess.callMethod("pa.reset");
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:paResetMethodName">pa_reset</Input>
+<Input name="Arguments"><top />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc105"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:NullMethodName">nullMethod</Input>
+<Input name="Arguments"><top><Argument><Name>obj</Name>
+<Type>Object</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc98"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+System.out.println("in pre-apply method");
+/* Simple Code Samples - See help for further info
+Get a string variable value,
+String value = webAppAccess.getVariables().getString("MyVariable");
+
+Set a string variable value,
+webAppAccess.getVariables().setString("MyVariable", "Value");
+
+Call a method,
+webAppAccess.callMethod("MethodName", arg1, arg2);
+
+Execute service calls,
+webAppAccess.callMethod("ServiceCallName.invoke");
+
+Process page inputs,
+webAppAccess.getRequestInputs().getInputValue("InputName");
+
+Display a page,
+webAppAccess.processPage("PageName");
+*/
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:preApplyMethodName">preApply</Input>
+<Input name="Arguments"><top><Argument><Name>obj</Name>
+<Type>Object</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc99"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+/* Simple Code Samples - See help for further info
+Get a string variable value,
+String value = webAppAccess.getVariables().getString("MyVariable");
+
+Set a string variable value,
+webAppAccess.getVariables().setString("MyVariable", "Value");
+
+Call a method,
+webAppAccess.callMethod("MethodName", arg1, arg2);
+
+Execute service calls,
+webAppAccess.callMethod("ServiceCallName.invoke");
+
+Process page inputs,
+webAppAccess.getRequestInputs().getInputValue("InputName");
+
+Display a page,
+webAppAccess.processPage("PageName");
+*/
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:preApplyErrorActionName">preApplyErrorAction</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc97"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+System.out.println("in post-apply method");
+/* Simple Code Samples - See help for further info
+Get a string variable value,
+String value = webAppAccess.getVariables().getString("MyVariable");
+
+Set a string variable value,
+webAppAccess.getVariables().setString("MyVariable", "Value");
+
+Call a method,
+webAppAccess.callMethod("MethodName", arg1, arg2);
+
+Execute service calls,
+webAppAccess.callMethod("ServiceCallName.invoke");
+
+Process page inputs,
+webAppAccess.getRequestInputs().getInputValue("InputName");
+
+Display a page,
+webAppAccess.processPage("PageName");
+*/
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:postApplyMethodName">postApply</Input>
+<Input name="Arguments"><top><Argument><Name>obj</Name>
+<Type>Object</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc100"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+/* Simple Code Samples - See help for further info
+Get a string variable value,
+String value = webAppAccess.getVariables().getString("MyVariable");
+
+Set a string variable value,
+webAppAccess.getVariables().setString("MyVariable", "Value");
+
+Call a method,
+webAppAccess.callMethod("MethodName", arg1, arg2);
+
+Execute service calls,
+webAppAccess.callMethod("ServiceCallName.invoke");
+
+Process page inputs,
+webAppAccess.getRequestInputs().getInputValue("InputName");
+
+Display a page,
+webAppAccess.processPage("PageName");
+*/
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:postApplyErrorActionName">postApplyErrorAction</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc101"><BuilderDefID>com.bowstreet.builders.webapp.ErrorHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:saveErrorHandlerEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ErrorAction" profile="portletbase.beancrud:CollectionDoSaveALName">doSave</Input>
+<Input name="ActionName" profile="portletbase.beancrud:doSaveErrorAction">testErrorHandlerMethod</Input>
+<Input name="Name">testErrorHandler</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc110"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+HttpServletRequest request = webAppAccess.getHttpServletRequest();
+Throwable ex = (Throwable)request.getAttribute("bowstreet.errorhandler.Exception");
+System.out.println("ERROR! - in error handler:" + ex);
+webAppAccess.processPage("viewPage");
+}</Input>
+<Input name="Name">testErrorHandlerMethod</Input>
+<Input name="Arguments"><top />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc107"><BuilderDefID>com.bowstreet.builders.webapp.MethodCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="MethodName" profile="portletbase.beancrud:preApplyMethodName">preApply</Input>
+<Input name="Name" profile="portletbase.beancrud:preApplyMCName">preApplyMC</Input>
+<Input name="ArgumentSource1" profile="portletbase.beancrud:GetCurrentObject">${Java/webAppAccess.getVariables().getObject("viewObject")}</Input>
+<Input name="ArgumentType1">Object</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc106"><BuilderDefID>com.bowstreet.builders.webapp.MethodCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="MethodName" profile="portletbase.beancrud:postApplyMethodName">postApply</Input>
+<Input name="Name" profile="portletbase.beancrud:postApplyMCName">postApplyMC</Input>
+<Input name="ArgumentSource1" profile="portletbase.beancrud:GetCurrentObject">${Java/webAppAccess.getVariables().getObject("viewObject")}</Input>
+<Input name="ArgumentType1">Object</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc111"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">==</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc112"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">CREATE</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc113"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:CreateEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Actions"><Actions><Action><ActionType>assignInstantiatedObj</ActionType>
+<ActionName profile="portletbase.beancrud:assignInstantiatedObjMethodName">assignInstantiatedObj</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName profile="portletbase.beancrud:clearCreatePageErrorsMethodName">clear_createPage_Errors</ActionName>
+</Action>
+<Action><ActionType>Page</ActionType>
+<ActionName profile="portletbase.beancrud:CollectionCreatePageName">createPage</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionDoCreateFromButtonALName">doCreateFromButton</Input>
+<Input name="Arguments"><top />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc139"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body" profile="portletbase.beancrud:assignInstantiatedObjMethodBody">{
+webAppAccess.getVariables().setObject("viewObject",
+	webAppAccess.callMethod("instantiate"));
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:assignInstantiatedObjMethodName">assignInstantiatedObj</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc138"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="Body">{
+System.out.println("in instantiate method");
+return new com.bowstreet.qa.beans.OrgChartDetail();
+/* Simple Code Samples - See help for further info
+Get a string variable value,
+String value = webAppAccess.getVariables().getString("MyVariable");
+
+Set a string variable value,
+webAppAccess.getVariables().setString("MyVariable", "Value");
+
+Call a method,
+webAppAccess.callMethod("MethodName", arg1, arg2);
+
+Execute service calls,
+webAppAccess.callMethod("ServiceCallName.invoke");
+
+Process page inputs,
+webAppAccess.getRequestInputs().getInputValue("InputName");
+
+Display a page,
+webAppAccess.processPage("PageName");
+*/
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:instantiateMethodName">instantiate</Input>
+<Input name="Arguments"><top />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc115"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:DisableCreateImportedPage">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionCreatePageName">createPage</Input>
+<Input name="URL" profile="portletbase.beancrud:createPageImportedPageURL">/factory/pages/beanmasterdetail_defaultpage.html</Input>
+<Input name="PageEditor">&lt;html&gt;
+
+&lt;head&gt;&lt;link rel="stylesheet" href="/testfiles/pageautomation/pageautomationsample.css"&gt;&lt;/link&gt;
+&lt;title&gt;&lt;/title&gt;&lt;/head&gt;
+
+&lt;body&gt;
+&lt;form name="DVV"&gt;
+&lt;span name="data"/&gt;
+&lt;span name="pagingbuttons"/&gt;
+&lt;span name="backbutton"/&gt;&amp;nbsp;&lt;span name="editbutton"/&gt;&amp;nbsp;&lt;span name="deletebutton"/&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;span name="data2"/&gt;
+&lt;span name="pagingbuttons2"/&gt;
+&lt;/form&gt;
+&lt;br&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc116"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:CreateEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageType">DataEntry</Input>
+<Input name="CreateTags" profile="portletbase.beancrud:MakeUIFromBeanAttributes">true</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">AddNames</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="ValidateFromSchema">Both</Input>
+<Input name="ValidationErrorPlacement">ColumnRight</Input>
+<Input name="RequiredPromptPlacement">ColumnLeft</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="Name" profile="portletbase.beancrud:CreateDataPageName">createPage</Input>
+<Input name="TypedVariable" profile="portletbase.beancrud:ViewObjectLJOName">viewObject</Input>
+<Input name="PageName" profile="portletbase.beancrud:CollectionCreatePageName">createPage</Input>
+<Input name="CreateTagsLocation" profile="portletbase.beancrud:CreatePageDisplayLocation">data</Input>
+<Input name="beanLevelsDeep">0</Input>
+<Input name="beanCollectionClassname" profile="portletbase.beancrud:ViewObjClassname">com.bowstreet.qa.beans.OrgChartDetail</Input>
+<Input name="UsingDataPageReferenceStyle">true</Input>
+<Input name="SaveDataMethodName" profile="portletbase.beancrud:CollectionDoSaveALName">doSave</Input>
+<Input name="DisableSubmitEvent">true</Input>
+<Input name="BeanValidation" profile="portletbase.beancrud:DataPage_CreateBeanValidation">Both</Input>
+<Input name="inputObjectType">Bean</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc163"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:BackFromCreateLinkEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionMainPageName">page</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:BackFromCreateButtonPageLocation"><SimplePageLocation><Page>createPage</Page>
+<NameSearch>backbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="InputMappings"><top />
+</Input>
+<Input name="Text" profile="portletbase.beancrud:BackFromCreateButtonLabel">back</Input>
+<Input name="Name">backFromCreate</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc119"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:BackFromCreateButtonEnabled">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:BackFromCreateButtonPageLocation"><SimplePageLocation><Page>createPage</Page>
+<NameSearch>backbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">backFromCreate</Input>
+<Input name="Label" profile="portletbase.beancrud:BackFromCreateButtonLabel">back</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionMainPageName">page</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc164"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:CancelFromCreateLinkEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionMainPageName">page</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:CancelFromCreateButtonPageLocation"><SimplePageLocation><Page>createPage</Page>
+<NameSearch>deletebutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="InputMappings"><top />
+</Input>
+<Input name="Text" profile="portletbase.beancrud:CancelFromCreateButtonLabel">cancel</Input>
+<Input name="Name">cancelCreate</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc120"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:CancelFromCreateButtonEnabled">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">Link to an action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:CancelFromCreateButtonPageLocation"><SimplePageLocation><Page>createPage</Page>
+<NameSearch>deletebutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">cancelCreate</Input>
+<Input name="Label" profile="portletbase.beancrud:CancelFromCreateButtonLabel">cancel</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionMainPageName">page</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc165"><BuilderDefID>com.bowstreet.builders.webapp.LinkBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:SaveFromCreateLinkEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionDoSaveForCreateALName">doSaveForCreate</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:SaveFromCreateButtonPageLocation"><SimplePageLocation><Page>createPage</Page>
+<NameSearch>editbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="InputMappings"><top><InputMapping><Name>objId</Name>
+<Value profile="portletbase.beancrud:DeleteFromViewArg">${Java/webAppAccess.getVariables().getObject("viewObject").hashCode()}</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="Text" profile="portletbase.beancrud:SaveFromCreateButtonLabel">save</Input>
+<Input name="Name">saveFromCreate</Input>
+<Input name="Form" profile="portletbase.beancrud:DoSaveForCreateFormName">DVV</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc121"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:SaveFromCreateButtonEnabled">Disabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">Submit form and invoke action</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation" profile="portletbase.beancrud:SaveFromCreateButtonPageLocation"><SimplePageLocation><Page>createPage</Page>
+<NameSearch>editbutton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">saveFromCreate</Input>
+<Input name="Label" profile="portletbase.beancrud:SaveFromCreateButtonLabel">save</Input>
+<Input name="InputMappings"><top><InputMapping><Name>objId</Name>
+<Value profile="portletbase.beancrud:DeleteFromViewArg">${Java/webAppAccess.getVariables().getObject("viewObject").hashCode()}</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="Action" profile="portletbase.beancrud:CollectionDoSaveForCreateALName">doSaveForCreate</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc122"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">==</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc123"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">SAVE AFTER CREATE</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc154"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:CreateEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body" profile="portletbase.beancrud:DoSaveForCreateMethodBody">{
+    webAppAccess.callMethod("preApplyCreateMC", new Object[] {  });
+    webAppAccess.callMethod("createPage_SaveData", new Object[] {  });
+    webAppAccess.callMethod("postApplyCreateMC", new Object[] {  });
+    webAppAccess.callMethod("pa_reset", new Object[] {  });
+    webAppAccess.processPage("page");
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:CollectionDoSaveForCreateALName">doSaveForCreate</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc126"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+System.out.println("in pre-apply (create) method");
+/* Simple Code Samples - See help for further info
+Get a string variable value,
+String value = webAppAccess.getVariables().getString("MyVariable");
+
+Set a string variable value,
+webAppAccess.getVariables().setString("MyVariable", "Value");
+
+Call a method,
+webAppAccess.callMethod("MethodName", arg1, arg2);
+
+Execute service calls,
+webAppAccess.callMethod("ServiceCallName.invoke");
+
+Process page inputs,
+webAppAccess.getRequestInputs().getInputValue("InputName");
+
+Display a page,
+webAppAccess.processPage("PageName");
+*/
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:preApplyMethodNameCreate">preApplyCreate</Input>
+<Input name="Arguments"><top><Argument><Name>obj</Name>
+<Type>Object</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc127"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+/* Simple Code Samples - See help for further info
+Get a string variable value,
+String value = webAppAccess.getVariables().getString("MyVariable");
+
+Set a string variable value,
+webAppAccess.getVariables().setString("MyVariable", "Value");
+
+Call a method,
+webAppAccess.callMethod("MethodName", arg1, arg2);
+
+Execute service calls,
+webAppAccess.callMethod("ServiceCallName.invoke");
+
+Process page inputs,
+webAppAccess.getRequestInputs().getInputValue("InputName");
+
+Display a page,
+webAppAccess.processPage("PageName");
+*/
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:preApplyCreateErrorActionName">preApplyCreateErrorAction</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc128"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+System.out.println("in post-apply (create) method");
+Collection c = (java.util.Collection)webAppAccess.getVariables().getObject("theBeanLJOCollection");
+c.add(obj);
+webAppAccess.callMethod("pa.reset");
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:postApplyCreateMethodName">postApplyCreate</Input>
+<Input name="Arguments"><top><Argument><Name>obj</Name>
+<Type>Object</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc129"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+/* Simple Code Samples - See help for further info
+Get a string variable value,
+String value = webAppAccess.getVariables().getString("MyVariable");
+
+Set a string variable value,
+webAppAccess.getVariables().setString("MyVariable", "Value");
+
+Call a method,
+webAppAccess.callMethod("MethodName", arg1, arg2);
+
+Execute service calls,
+webAppAccess.callMethod("ServiceCallName.invoke");
+
+Process page inputs,
+webAppAccess.getRequestInputs().getInputValue("InputName");
+
+Display a page,
+webAppAccess.processPage("PageName");
+*/
+}</Input>
+<Input name="Name" profile="portletbase.beancrud:postApplyCreateErrorActionName">postApplyCreateErrorAction</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc130"><BuilderDefID>com.bowstreet.builders.webapp.ErrorHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:createErrorHandlerEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ErrorAction" profile="portletbase.beancrud:CollectionDoSaveForCreateALName">doSaveForCreate</Input>
+<Input name="ActionName" profile="portletbase.beancrud:doSaveForCreateErrorAction">testCreateErrorHandlerMethod</Input>
+<Input name="Name">testErrorHandler</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc131"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase.beancrud:enableSupermodelMain">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+HttpServletRequest request = webAppAccess.getHttpServletRequest();
+Throwable ex = (Throwable)request.getAttribute("bowstreet.errorhandler.Exception");
+System.out.println("ERROR! - in create error handler:" + ex);
+webAppAccess.processPage("viewPage");
+}</Input>
+<Input name="Name">testCreateErrorHandlerMethod</Input>
+<Input name="Arguments"><top />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc136"><BuilderDefID>com.bowstreet.builders.webapp.MethodCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="Name" profile="portletbase.beancrud:preApplyCreateMCName">preApplyCreateMC</Input>
+<Input name="MethodName" profile="portletbase.beancrud:preApplyCreateMethodName">preApplyCreate</Input>
+<Input name="ArgumentType1">Object</Input>
+<Input name="ArgumentSource1" profile="portletbase.beancrud:GetCurrentObject">${Java/webAppAccess.getVariables().getObject("viewObject")}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc134"><BuilderDefID>com.bowstreet.builders.webapp.MethodCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="MethodName" profile="portletbase.beancrud:postApplyCreateMethodName">postApplyCreate</Input>
+<Input name="Name" profile="portletbase.beancrud:postApplyCreateMCName">postApplyCreateMC</Input>
+<Input name="ArgumentSource1" profile="portletbase.beancrud:GetCurrentObject">${Java/webAppAccess.getVariables().getObject("viewObject")}</Input>
+<Input name="ArgumentType1">Object</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc135"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">==</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><RequiredFactoryVersion>5.0.0</RequiredFactoryVersion>
+<Version>0.0.0</Version>
+<Description>Empty model (contains no builder calls).</Description>
+<Contained>false</Contained>
+<EnableGenerationCaching>true</EnableGenerationCaching>
+<Roles />
+<EnableFailover>false</EnableFailover>
+</Properties>
+<Dependencies><Dependency type="Class">com.bowstreet.qa.beans.OrgChart</Dependency>
+<Dependency type="Class">java.util.Collection</Dependency>
+<Dependency type="File">/factory/pages/beanmasterdetail_defaultpage.html</Dependency>
+<Dependency type="Class">com.bowstreet.builders.webapp.methods.BeanCollectionDataRetriever</Dependency>
+<Dependency type="File">/factory/pages/data_paging_buttons.html</Dependency>
+<Dependency type="Class">com.bowstreet.qa.beans.OrgChart</Dependency>
+<Dependency type="Class">com.bowstreet.qa.beans.OrgChartDetail</Dependency>
+<Dependency type="File">/factory/pages/beanmasterdetail_defaultpage.html</Dependency>
+<Dependency type="Class">com.bowstreet.builders.webapp.methods.BeanMasterDetailMethods</Dependency>
+<Dependency type="File">/factory/pages/beanmasterdetail_defaultpage.html</Dependency>
+<Dependency type="File">/factory/pages/beanmasterdetail_defaultpage.html</Dependency>
+<Dependency type="Class">com.bowstreet.builderutilities.NameSequencer</Dependency>
+</Dependencies>
+<ExternalProperties />
+</Model>

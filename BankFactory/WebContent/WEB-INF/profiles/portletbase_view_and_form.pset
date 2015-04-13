@@ -1,0 +1,445 @@
+<ProfileSet name="portletbase_view_and_form" useQualifiedProfileNames="true"><Description>auto-created</Description>
+<Visibility>False</Visibility>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<Models><Model>factory/portletbase/view_and_form_base</Model>
+</Models>
+<ProfileDef><Entries><Entry name="Button_BuilderCallEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Button_BuilderCallEnabled</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="Button_Label" isRuntime="false"><UI type="TextInput"><Prompt>Button_Label</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CreateColumnLink" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CreateDetailPage" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CreateInputPage" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="CreateMain" isRuntime="false"><UI type="TextInput"><Prompt>CreateMain</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CreateSampleDetailsPage" isRuntime="false"><UI type="TextInput"><Prompt>CreateSampleDetailsPage</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CreateSampleInputPage" isRuntime="false"><UI type="TextInput"><Prompt>CreateSampleInputPage</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CreateSampleViewPage" isRuntime="false"><UI type="TextInput"><Prompt>CreateSampleViewPage</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="CreateUpdatePage" isRuntime="false"><UI type="TextInput"><Prompt>CreateUpdatePage</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DataPageViewVariable" isRuntime="false"><UI type="TextInput"><Prompt>DataPageViewVariable</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DetailBackButtonBuilderCallEnabled" isRuntime="false"><UI type="TextInput"><Prompt>DetailBackButtonBuilderCallEnabled</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DetailBackButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>DetailBackButtonLabel</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DetailPage" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DetailPageHTMLTemplate" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DetailPageStyleSheetOverride" isRuntime="false"><UI type="TextInput"><Prompt>DetailPageStyleSheetOverride</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DetailPageUIFromSchema" isRuntime="false"><UI type="TextInput"><Prompt>DetailPageUIFromSchema</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="DetailPageURL" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="EnableDataPaging" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="EnablePagingButtons" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="EnablePagingLinks" isRuntime="false"><UI type="TextInput"><Prompt>EnablePagingLinks</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="EnabledPagingLinks" isRuntime="false"><UI type="TextInput"><Prompt>EnabledPagingLinks</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="HighlightRow" isRuntime="false"><UI type="TextInput"><Prompt>HighlightRow</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="HighlighterBackground" isRuntime="false"><UI type="TextInput"><Prompt>HighlighterBackground</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="HighlighterEnabled" isRuntime="false"><UI type="TextInput"><Prompt>HighlighterEnabled</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="HighlighterForeground" isRuntime="false"><UI type="TextInput"><Prompt>HighlighterForeground</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="InputPageHTMLTemplate" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="InputPageMainEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="InputPageStyleSheetOverride" isRuntime="false"><UI type="TextInput"><Prompt>InputPageStyleSheetOverride</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="InputPageUIFromSchema" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="InputPageURL" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="InputPageValidateFromSchema" isRuntime="false"><UI type="TextInput"><Prompt>InputPageValidateFromSchema</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="InputPageVariable" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="InputSubmitText" isRuntime="false"><UI type="TextInput"><Prompt>InputSubmitText</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="InputValidationMethod" isRuntime="false"><UI type="TextInput"><Prompt>InputValidationMethod</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="InputValidationMethodBehavior" isRuntime="false"><UI type="TextInput"><Prompt>InputValidationMethodBehavior</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="InsertInputPage" isRuntime="false"><UI type="TextInput"><Prompt>InsertInputPage</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="LinkAction" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="LinkColumn" isRuntime="false"><UI type="TextArea"><Prompt>Prompt</Prompt>
+<ExtraData>rows=25,cols=25,wrap=false</ExtraData>
+</UI>
+</Entry>
+<Entry name="LinkText" isRuntime="false"><UI type="TextInput"><Prompt>LinkText</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="Name" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="NoInputPage" isRuntime="false"><UI type="TextInput"><Prompt>NoInputPage</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PagingAssistantViewVariable" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="PagingButtonsHTMLPage" isRuntime="false"><UI type="TextInput"><Prompt>PagingButtonsHTMLPage</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PagingButtonsUseTheme" isRuntime="false"><UI type="TextInput"><Prompt>Paging Buttons Use Theme</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PagingLinksFirstLinkText" isRuntime="false"><UI type="TextInput"><Prompt>PagingLinks_FirstLinkText</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PagingLinksHTMLPage" isRuntime="false"><UI type="TextInput"><Prompt>PagingLinks_HTMLPage</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PagingLinksHTMLPage1" isRuntime="false"><UI type="TextInput"><Prompt>PagingLinks_HTMLPage</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PagingLinksLastLinkText" isRuntime="false"><UI type="TextInput"><Prompt>PagingLinks_LastLinkText</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PagingLinksMaxLinks" isRuntime="false"><UI type="TextInput"><Prompt>PagingLinksMaxLinks</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PagingLinksNextLinkText" isRuntime="false"><UI type="TextInput"><Prompt>PagingLinks_NextLinkText</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PagingLinksPrevLinkText" isRuntime="false"><UI type="TextInput"><Prompt>PagingLinks_PrevLinkText</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="PagingLinksStyleSheet" isRuntime="false"><UI type="TextInput"><Prompt>Paging Links Style Sheet</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ResourceBundleName" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="RowsPerPage" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="SelectedRowVariable" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="UpdateCancelEnabled" isRuntime="false"><UI type="TextInput"><Prompt>UpdateCancelEnabled</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="UpdateCancelText" isRuntime="false"><UI type="TextInput"><Prompt>UpdateCancelText</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="UpdateLinkEnabled" isRuntime="false"><UI type="TextInput"><Prompt>UpdateLinkEnabled</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="UpdateLinkPage" isRuntime="false"><UI type="TextInput"><Prompt>UpdateLinkPage</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="UpdateLinkText" isRuntime="false"><UI type="TextInput"><Prompt>UpdateLinkText</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="UpdatePageStyleSheetOverride" isRuntime="false"><UI type="TextInput"><Prompt>UpdatePageStyleSheetOverride</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="UpdatePageURL" isRuntime="false"><UI type="TextInput"><Prompt>UpdatePageURL</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="UpdatePageValidateFromSchema" isRuntime="false"><UI type="TextInput"><Prompt>UpdatePageValidateFromSchema</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="UpdatePageVariable" isRuntime="false"><UI type="TextInput"><Prompt>UpdatePageVariable</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="UpdateSubmitText" isRuntime="false"><UI type="TextInput"><Prompt>UpdateSubmitText</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="UpdateSuccessAction" isRuntime="false"><UI type="TextInput"><Prompt>UpdateSuccessAction</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="UpdateValidationMethod" isRuntime="false"><UI type="TextInput"><Prompt>UpdateValidationMethod</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="UpdateValidationMethodBehavior" isRuntime="false"><UI type="TextInput"><Prompt>UpdateValidationMethodBehavior</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="UsePartialRefreshForPaging" isRuntime="false"><UI type="Checkbox"><Prompt>UsePartialRefreshForPaging</Prompt>
+<ExtraData>true,false,</ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewBackButtonBuilderCallEnabled" isRuntime="false"><UI type="TextInput"><Prompt>ViewBackButtonBuilderCallEnabled</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewBackButtonLabel" isRuntime="false"><UI type="TextInput"><Prompt>ViewBackButtonLabel</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewMainEnabled" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewMethod" isRuntime="false"><UI type="TextInput"><Prompt>ViewMethod</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewPageHTMLTemplate" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewPageStyleSheetOverride" isRuntime="false"><UI type="TextInput"><Prompt>ViewPageStyleSheetOverride</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewPageUIFromSchema" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewPageURL" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewResultsAvailable" isRuntime="false"><UI type="TextInput"><Prompt>ViewResultsAvailable</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ViewVariable" isRuntime="false"><UI type="TextInput"><Prompt>Prompt</Prompt>
+<ExtraData></ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1240505233199" isContainer="true"><Values><Value name="Button_BuilderCallEnabled">true</Value>
+<Value name="Button_Label"></Value>
+<Value name="CreateColumnLink">true</Value>
+<Value name="CreateDetailPage">true</Value>
+<Value name="CreateInputPage">true</Value>
+<Value name="CreateMain">true</Value>
+<Value name="CreateSampleDetailsPage"></Value>
+<Value name="CreateSampleInputPage"></Value>
+<Value name="CreateSampleViewPage"></Value>
+<Value name="CreateUpdatePage">true</Value>
+<Value name="DataPageViewVariable">Variables/function_PagingData</Value>
+<Value name="DetailBackButtonBuilderCallEnabled">true</Value>
+<Value name="DetailBackButtonLabel"></Value>
+<Value name="DetailPage">/factory/html_templates/columnar.html</Value>
+<Value name="DetailPageHTMLTemplate">/factory/html_templates/gridtable.html</Value>
+<Value name="DetailPageStyleSheetOverride"></Value>
+<Value name="DetailPageUIFromSchema">true</Value>
+<Value name="DetailPageURL">/factory/pages/view_and_form/details.html</Value>
+<Value name="EnableDataPaging">Enabled</Value>
+<Value name="EnablePagingButtons">Enabled</Value>
+<Value name="EnablePagingLinks">false</Value>
+<Value name="EnabledPagingLinks">false</Value>
+<Value name="HighlightRow">[function_ViewPage]function_ViewPage</Value>
+<Value name="HighlighterBackground">#60A1EA</Value>
+<Value name="HighlighterEnabled">true</Value>
+<Value name="HighlighterForeground">#ffffff</Value>
+<Value name="InputPageHTMLTemplate">/factory/html_templates/gridtable.html</Value>
+<Value name="InputPageMainEnabled">Enabled</Value>
+<Value name="InputPageStyleSheetOverride"></Value>
+<Value name="InputPageUIFromSchema">true</Value>
+<Value name="InputPageURL">/factory/pages/view_and_form/input.html</Value>
+<Value name="InputPageValidateFromSchema">None</Value>
+<Value name="InputPageVariable">Variables/function_Imports</Value>
+<Value name="InputSubmitText">Edit Details</Value>
+<Value name="InputValidationMethod"></Value>
+<Value name="InputValidationMethodBehavior"></Value>
+<Value name="InsertInputPage">true</Value>
+<Value name="LinkAction">function_ViewPage</Value>
+<Value name="LinkColumn">OBJTYPE</Value>
+<Value name="LinkText"></Value>
+<Value name="Name">function</Value>
+<Value name="NoInputPage">false</Value>
+<Value name="PagingAssistantViewVariable">${Variables/function_Tables/Tables/OBJTYPES}</Value>
+<Value name="PagingButtonsHTMLPage">/factory/pages/data_paging_buttons.html</Value>
+<Value name="PagingButtonsUseTheme"></Value>
+<Value name="PagingLinksFirstLinkText">First</Value>
+<Value name="PagingLinksHTMLPage">/factory/pages/data_paging_links.html</Value>
+<Value name="PagingLinksHTMLPage1">/factory/pages/data_paging_links.html</Value>
+<Value name="PagingLinksLastLinkText">Last</Value>
+<Value name="PagingLinksMaxLinks">5</Value>
+<Value name="PagingLinksNextLinkText">Next</Value>
+<Value name="PagingLinksPrevLinkText">Prev</Value>
+<Value name="PagingLinksStyleSheet"></Value>
+<Value name="ResourceBundleName"></Value>
+<Value name="RowsPerPage">5</Value>
+<Value name="SelectedRowVariable">Variables/function_Paging</Value>
+<Value name="UpdateCancelEnabled">true</Value>
+<Value name="UpdateCancelText">Cancel</Value>
+<Value name="UpdateLinkEnabled">true</Value>
+<Value name="UpdateLinkPage">function_DetailsPage</Value>
+<Value name="UpdateLinkText">Edit</Value>
+<Value name="UpdatePageStyleSheetOverride"></Value>
+<Value name="UpdatePageURL">/factory/pages/view_and_form/input.html</Value>
+<Value name="UpdatePageValidateFromSchema">None</Value>
+<Value name="UpdatePageVariable">Variables/function_Imports</Value>
+<Value name="UpdateSubmitText">Edit Details</Value>
+<Value name="UpdateSuccessAction">function_ShowResults</Value>
+<Value name="UpdateValidationMethod"></Value>
+<Value name="UpdateValidationMethodBehavior"></Value>
+<Value name="UsePartialRefreshForPaging">false</Value>
+<Value name="ViewBackButtonBuilderCallEnabled">true</Value>
+<Value name="ViewBackButtonLabel"></Value>
+<Value name="ViewMainEnabled">Disabled</Value>
+<Value name="ViewMethod">function.execute</Value>
+<Value name="ViewPageHTMLTemplate">/factory/html_templates/gridtable.html</Value>
+<Value name="ViewPageStyleSheetOverride"></Value>
+<Value name="ViewPageUIFromSchema">true</Value>
+<Value name="ViewPageURL">/factory/pages/view_and_form/view.html</Value>
+<Value name="ViewResultsAvailable">Enabled</Value>
+<Value name="ViewVariable">Variables/function_PagingData</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Details" last_modified="1240505233199" isContainer="false" parent="Default"><Values><Value name="CreateDetailPage">Enabled</Value>
+<Value name="UsePartialRefreshForPaging">false</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="NoInput" last_modified="1240505233199" isContainer="true" parent="Default"><Values><Value name="CreateDetailPage">Disabled</Value>
+<Value name="CreateInputPage">Disabled</Value>
+<Value name="DetailPageHTMLTemplate">/factory/html_templates/gridtable.html</Value>
+<Value name="InputPageHTMLTemplate">/factory/html_templates/gridtable.html</Value>
+<Value name="InputPageMainEnabled">Disabled</Value>
+<Value name="InputPageVariable">Variables/_name_Imports</Value>
+<Value name="Name">function</Value>
+<Value name="UsePartialRefreshForPaging">false</Value>
+<Value name="ViewMainEnabled">Enabled</Value>
+<Value name="ViewPageHTMLTemplate">/factory/html_templates/gridtable.html</Value>
+<Value name="ViewPageUIFromSchema">true</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="NoPaging" last_modified="1240505233199" isContainer="true" parent="Default"><Values><Value name="CreateDetailPage">Disabled</Value>
+<Value name="CreateInputPage">Disabled</Value>
+<Value name="EnableDataPaging">Disabled</Value>
+<Value name="EnablePagingButtons">Disabled</Value>
+<Value name="EnabledPagingLinks">false</Value>
+<Value name="InputPageMainEnabled">Disabled</Value>
+<Value name="RowsPerPage">10000</Value>
+<Value name="UsePartialRefreshForPaging">false</Value>
+<Value name="ViewMainEnabled">Enabled</Value>
+<Value name="ViewVariable">Variables/function_Tables/Tables/OBJTYPES</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

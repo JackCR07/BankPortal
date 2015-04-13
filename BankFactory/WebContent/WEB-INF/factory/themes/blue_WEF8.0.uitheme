@@ -1,0 +1,19 @@
+<!--  **************************   WEF 8.0 Blue Theme **********************************
+
+A theme is a collection of style information that can be used to drive builder inputs that provide the application UI in your model.
+This information can include but is not limited to HTML templates, style sheets (CSS), base pages, highlighting style, and paging style. 
+
+This theme file extents the blue_WPF7.0.1.uitheme theme to override settings specific to WEF 8.0.
+
+For more Theme information please see the "Themes and user interface control" section of the product documentation.
+
+-->
+<Theme extends="/WEB-INF/factory/themes/blue_WPF7.0.1.uitheme">
+    
+    <!--  Sets the Dojo theme to claro if not specified in Dojo Enable builder -->
+    <DojoFallbackTheme>claro</DojoFallbackTheme>
+
+    <DSUI_DojoColumnResizeAndReorderOnList>false</DSUI_DojoColumnResizeAndReorderOnList>
+    <DSUI_DojoColumnResizeAndReorderOnResults>false</DSUI_DojoColumnResizeAndReorderOnResults>
+    
+</Theme>

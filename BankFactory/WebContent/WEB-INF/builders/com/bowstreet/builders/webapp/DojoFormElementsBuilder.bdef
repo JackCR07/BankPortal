@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoFormElementsBuilder">
+  <ReadableName>Dojo Page Element</ReadableName>
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName>
+  <HelpFile></HelpFile>
+  <RequiredFactoryVersion>6.0.1</RequiredFactoryVersion>
+  <Description>Adds a Dojo widget modifier to an existing page element (e.g. text input), or allows you to add a specified Dojo type to a target page element.</Description>
+  <Domains>
+    <Domain>WebApp</Domain>
+    <Domain>Consumer</Domain>
+    <Domain>Client</Domain>
+  </Domains>
+  <CreateModifyList>
+     <CanModify type="[Unassigned Elements]" category="Rich UI">Adds a Dojo widget modifier.</CanModify>
+     <CanModify xmlns="" type="Control" category="Rich UI" />
+  </CreateModifyList>
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <Category>Page Elements,Rich UI</Category>
+  <Keywords>Form,Data Entry,Layout,Dojo,Widget</Keywords>
+
+  <BuilderData>
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoFormElementsBuilder</BuilderDataEntry>
+    <BuilderDataEntry name="WidgetTypeInfo">
+        <WidgetTypeInfo>
+           <WidgetType>
+               <DojoType>dijit.form.CurrencyTextBox</DojoType>
+               <AttributeNames>currency,fractional,locale,pattern,places,strict,symbol,type,constraints,invalidMessage,promptMessage,required</AttributeNames>
+           </WidgetType>
+        </WidgetTypeInfo>
+        <WidgetTypeInfo>
+           <WidgetType>
+               <DojoType>dijit.form.NumberTextBox</DojoType>
+               <AttributeNames>locale,pattern,places,strict,type,constraints,invalidMessage,promptMessage,required</AttributeNames>
+           </WidgetType>
+        </WidgetTypeInfo>
+        <WidgetTypeInfo>
+           <WidgetType>
+               <DojoType>dijit.form.TextBox</DojoType>
+               <AttributeNames>lowercase,maxlength,propercase,size,trim,uppercase</AttributeNames>
+           </WidgetType>
+        </WidgetTypeInfo>
+        <WidgetTypeInfo>
+           <WidgetType>
+               <DojoType>dijit.form.ValidationTextBox</DojoType>
+               <AttributeNames>regExp,constraints,invalidMessage,promptMessage,required</AttributeNames>
+           </WidgetType>
+        </WidgetTypeInfo>
+        <WidgetTypeInfo>
+           <WidgetType>
+               <DojoType>Custom</DojoType>
+               <AttributeNames></AttributeNames>
+           </WidgetType>
+        </WidgetTypeInfo>
+    </BuilderDataEntry>
+    <BuilderDataEntry name="IconName">editControl</BuilderDataEntry>
+    <BuilderDataEntry name="PageLocation">onNamedTag</BuilderDataEntry>
+  </BuilderData>
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoFormElementsCoordinator</CoordinatorClassName>
+  <InputDefinitions>
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName">
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation">
+      <Prompt></Prompt>
+      <Required>true</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="DojoType" base="com.bowstreet.core.Base.StringData">
+       <Prompt>Type</Prompt>
+       <HelpText>Choose Dojo element type, or specify your own.</HelpText>
+       <InitialValue>dijit.form.TextBox</InitialValue>
+       <Editor JavaClass="com.bowstreet.widget.RadioBox">
+         <Argument name="listLabels">Text,Validation,Number,Currency,Specify Dojo Type</Argument>
+         <Argument name="listData">dijit.form.TextBox,dijit.form.ValidationTextBox,dijit.form.NumberTextBox,dijit.form.CurrencyTextBox,Custom</Argument>
+       </Editor>
+    </InputDefinition>
+
+    <!-- (BEGIN) Used for custom Dojo  type -->
+    <InputDefinition name="CustomDojoType" base="com.bowstreet.core.Base.StringData">
+       <Prompt>Dojo Type *</Prompt>
+       <HelpText>Specify the Dojo type. Example: dijit.form.NumberSpinner</HelpText>
+       <InitialValue></InitialValue>
+       <Visible>false</Visible>
+       <ProfileType>Value</ProfileType>
+       <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="AddRequires"  base="com.bowstreet.core.Base.BooleanData" >
+        <Prompt>Add to Requires</Prompt>
+        <HelpText>Use this option to specify if the Dojo Type should also be added to the Dojo requires list.</HelpText>
+        <InitialValue>true</InitialValue>
+        <Visible>true</Visible>
+        <Required>false</Required>
+    </InputDefinition>
+
+    <InputDefinition name="ElementName" base="com.bowstreet.core.Base.StringData">
+       <Prompt>Element Name</Prompt>
+       <HelpText>Specify an optional new element name for the target. Example: "select"</HelpText>
+       <InitialValue></InitialValue>
+       <Visible>false</Visible>
+       <ProfileType>Value</ProfileType>
+       <Callable>true</Callable>
+    </InputDefinition>
+
+    <!-- (END) Used for custom Dojo  type -->
+
+
+    <InputDefinition name="Value" base="com.bowstreet.core.Base.IndirectValue">
+     <Visible>false</Visible>
+    </InputDefinition>
+
+    <InputDefinition name="Attributes"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Attributes">
+      <Group>Attributes</Group>
+      <Type>Xml</Type>
+    </InputDefinition>
+
+    <InputDefinition name="HandleExisting"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleExisting">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition>
+
+    <InputDefinition name="HandleMissingValue"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleMissingValue">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition>
+
+    <InputDefinition name="Separator"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Separator">
+      <Group>Attributes</Group>
+      <InitialValue>;</InitialValue>
+    </InputDefinition>
+
+    <InputDefinition name="RequiresList" base="com.bowstreet.builders.webapp.DojoEnableBuilder.RequiresList">
+      <Group>RequiresList</Group>
+    </InputDefinition>
+
+    <InputDefinition name="Script"  base="com.bowstreet.builders.webapp.DojoEnableBuilder.Script">
+        <Group>Script</Group>
+    </InputDefinition>
+
+    <InputDefinition name="CSSFiles" base="com.bowstreet.builders.webapp.DojoEnableBuilder.CSSFiles">
+      <Group>CSSFiles</Group>
+    </InputDefinition>
+
+    <InputDefinition name="ModuleUrlCSSFiles" base="com.bowstreet.builders.webapp.DojoEnableBuilder.ModuleUrlCSSFiles">
+      <Group>CSSFiles</Group>
+    </InputDefinition>
+
+   <InputDefinition name="HTMLContent"  base="com.bowstreet.core.Base.PageData">
+        <Group>HTMLContent</Group>
+        <Required>false</Required>
+        <Prompt>HTML Content</Prompt>
+        <HelpText>Specify any optional content to add within the target element (e.g. &lt;option&gt;MA&lt;/option&gt;&lt;option&gt;CT&lt;/option&gt;).</HelpText>
+        <Property>true</Property>
+        <Editor JavaClass="com.bowstreet.widget.Reference">
+            <Argument name="editor">
+                <Editor JavaClass="com.bowstreet.widget.HtmlWidget">
+                    <Argument name="height">300</Argument>
+                </Editor>
+            </Argument>
+        </Editor>
+    </InputDefinition>
+
+  </InputDefinitions>
+
+  <GroupDefinitions>
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" />
+   <GroupDefinition id="Attributes">
+      <Name>Attributes</Name>
+      <Description>Optional attributes to apply to the target Dojo type.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>false</InitiallyCollapsed>
+    </GroupDefinition>
+  <GroupDefinition id="RequiresList">
+      <Name>Requires List</Name>
+      <Description>Specify optional Dojo requires package names.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+  <GroupDefinition id="Script">
+      <Name>Script</Name>
+      <Description>Specify optional JavaScript code to insert.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+  <GroupDefinition id="CSSFiles">
+      <Name>CSS Files</Name>
+      <Description>Specify optional CSS files to add to the target page.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+  <GroupDefinition id="HTMLContent">
+      <Name>HTML Content</Name>
+      <Description>Specify any optional content to add within the target element.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+  </GroupDefinitions>
+
+  <PageDefinitions />
+</BuilderDef>
+

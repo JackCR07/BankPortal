@@ -1,0 +1,30 @@
+/** Copyright 2010 IBM. */
+.dataPagingContainer {
+    width:95%; 
+    height:25px;
+    margin-left:5px; 
+    padding:0;
+}
+
+.dataPagingContainer li {
+    display:block;
+    float:left;
+    padding-top:3px;  
+    margin:0px;  
+    width:50%;
+    text-align:center;
+}
+
+.dataPagingContainer ul {
+    float:left;
+    margin:0px;  
+    padding:0px;  
+    width:100%;
+}
+
+.dataPagingContainer a {
+    display:block;
+    text-decoration:none;
+}
+
+

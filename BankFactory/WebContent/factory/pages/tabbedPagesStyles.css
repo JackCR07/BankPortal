@@ -1,0 +1,89 @@
+	/** This stylesheet provides sample styles for use with the tabbed pages builder.  **/
+
+
+	/** regular unselected tab style */
+	.tabbedPagesTabCell {
+		text-align: center; 	
+	  	text-decoration: none;
+		border-top: 1px solid #666666;
+		border-bottom: 1px solid #003366;
+		border-right: 1px solid #666666;
+		border-left: 1px solid #666666;
+		background-color: #e8e8e8;
+		background-image:none;
+  	}
+	  	
+	/** selected tab style */  	
+	.tabbedPagesTabCellSelected {
+		text-align: center;
+		text-decoration: none;	
+		background-image: none;	
+		border-top: 1px solid #003366;
+		border-bottom: 0px solid #003366;
+		border-right: 1px solid #003366;
+		border-left: 1px solid #003366; 
+		background-color: #FFFFFF;
+		background-image: none;
+	}
+	
+	/** regular unselected tab text style */			
+	.tabbedPagesTabText {
+		font-family: Verdana, Tahoma, Arial, "MS Sans Serif";  	
+		font-weight: bold;
+		font-size: 10px;
+		color: #333333;
+		text-decoration:none; 
+		display: block; 
+		margin:0; 
+		padding:4px 6px 4px 6px;
+		cursor:pointer; 
+	}
+	
+	/** if using link option, provide a hover style for unselected tabs */
+	a.tabbedPagesTabText:hover	{
+		text-decoration:underline; 
+	}		
+	
+	/** selected tab text style */		
+	.tabbedPagesTabTextSelected {
+		font-family: Verdana, Tahoma, Arial, "MS Sans Serif";  
+		font-weight: bold;
+		font-size: 10px;
+		color: #004E98;	
+		text-decoration:none; 
+		display: block; 
+		margin:0; 
+		padding:4px 6px 4px 6px; 
+		cursor:pointer;		
+	}	
+	
+	/** Just has a bottom solid border to form top of container, for use between tabs or in the same row as tabs */
+	.tabbedPagesTabSpacer	{
+		border-top: 0px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-right: 0px solid #003366;
+		border-left: 0px solid #003366;
+	}
+	.tabbedPagesTabSpacer1	{
+		border-top: 0px solid #003366;
+		border-bottom: 5px solid #FF0000;
+		border-right: 0px solid #003366;
+		border-left: 0px solid #003366;
+	}
+	/** The main content area has a solid border on sides and bottom (top is provided by spacer style above. */	
+	.tabbedPagesContentArea	{
+		background-color: #FFFFFF;
+		padding: 5px;
+		border-top: 0px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-right: 1px solid #003366;
+		border-left: 1px solid #003366;
+	}
+	.tabbedPagesContentArea1	{
+		background-color: #FF0000;
+		padding: 5px;
+		border-top: 0px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-right: 1px solid #003366;
+		border-left: 1px solid #003366;
+	}

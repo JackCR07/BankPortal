@@ -1,0 +1,30 @@
+<%/* 
+  Copyright IBM Corp. 2011
+  This page is imported to form the execution-time UI for the
+  Split Pager builder. You can replace this with another HTML
+  file so long as you use the same tag names.
+*/%>
+<form method="post">
+  <div class="lotusui lotusui30" role="navigation" name="wrapper" style="height:auto;background-color:#F1F3F5;line-height:2em;min-width:400px">
+   <div class="lotusPaging">
+    <div class="lotusLeft" <% String ua = request.getHeader("User-Agent"); if (ua != null && ua.indexOf("Firefox") >= 0) { %> style="margin-top:-3px" <% } %> >
+      <div dojoType="dijit.form.DropDownButton">
+        <span name="menuShowCurrentLabel">Show current items</span>
+        <div dojoType="dijit.Menu">
+          <div dojoType="dijit.MenuItem" name="menuShow5"><span name="menuShow5Label">Show 5 items</span></div>
+          <div dojoType="dijit.MenuItem" name="menuShow10"><span name="menuShow10Label">Show 10 items</span></div>
+          <div dojoType="dijit.MenuItem" name="menuShow20"><span name="menuShow20Label">Show 20 items</span></div>
+          <div dojoType="dijit.MenuItem" name="menuShow50"><span name="menuShow50Label">Show 50 items</span></div>
+          <div dojoType="dijit.MenuItem" name="menuShow100"><span name="menuShow100Label">Show 100 items</span></div>
+          <div dojoType="dijit.MenuItem" name="menuShowAll"><span name="menuShowAllLabel">Show all items</span></div>
+        </div>
+      </div>
+    </div>
+    <ul class="lotusRight lotusInlinelist">
+      <li style="display: inline;" class="lotusFirst"><a name="previousPage" href="javascript:;"><span name="previousLinkText">Previous</span></a></li>
+      <li style="display: inline;"><a name="nextPage" href="javascript:;"><span name="nextLinkText">Next</span></a></li>
+    </ul>
+    <div name="jumpToPageControl">Jump to page <input type="text" value="1" name="splitPagerExplicitPage" autocomplete="off" /> of 10</div>
+   </div>
+  </div>
+</form>

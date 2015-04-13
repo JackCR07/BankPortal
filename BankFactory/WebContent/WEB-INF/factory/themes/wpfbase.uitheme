@@ -1,0 +1,133 @@
+<!--  **************************  Base Theme **********************************
+
+A theme is a collection of style information that can be used to drive builder inputs that provide the application UI in your model.
+This information can include but is not limited to HTML templates, style sheets (CSS), base pages, highlighting style, and paging style. 
+
+This theme file provides the base features for other themes files to extend
+
+For more Theme information please see the "Themes and user interface control" section of the product documentation.
+
+-->
+<Theme>
+    <DataPage_HTMLTemplate>/factory/html_templates/color_themes.html</DataPage_HTMLTemplate>
+
+    <ViewAndForm_ViewPageHTMLTemplate>/factory/html_templates/color_themes.html</ViewAndForm_ViewPageHTMLTemplate>
+    <ViewAndForm_ViewPageBase>/factory/pages/view_and_form/view.html</ViewAndForm_ViewPageBase>
+
+    <ViewAndForm_DetailPageHTMLTemplate>/factory/html_templates/color_themes.html</ViewAndForm_DetailPageHTMLTemplate>
+    <ViewAndForm_DetailPageBase>/factory/pages/view_and_form/details.html</ViewAndForm_DetailPageBase>
+
+    <ViewAndForm_UpdatePageHTMLTemplate>/factory/html_templates/color_themes.html</ViewAndForm_UpdatePageHTMLTemplate>
+    <ViewAndForm_UpdatePageBase>/factory/pages/view_and_form/input.html</ViewAndForm_UpdatePageBase>
+
+    <ViewAndForm_InputPageHTMLTemplate>/factory/html_templates/color_themes.html</ViewAndForm_InputPageHTMLTemplate>
+    <ViewAndForm_InputPageBase>/factory/pages/view_and_form/input.html</ViewAndForm_InputPageBase>
+
+    <ViewAndForm_EnablePagingLinks>true</ViewAndForm_EnablePagingLinks>
+    <ViewAndForm_PagingLinksMaxLinks>5</ViewAndForm_PagingLinksMaxLinks>
+
+    <ViewAndForm_PagingLinksPageBase>/factory/pages/paging/data_paging_links.html</ViewAndForm_PagingLinksPageBase>
+    <ViewAndForm_PagingLinksFirstLinkText><<</ViewAndForm_PagingLinksFirstLinkText>
+    <ViewAndForm_PagingLinksPrevLinkText><</ViewAndForm_PagingLinksPrevLinkText>
+    <ViewAndForm_PagingLinksNextLinkText>></ViewAndForm_PagingLinksNextLinkText>
+    <ViewAndForm_PagingLinksLastLinkText>>></ViewAndForm_PagingLinksLastLinkText>
+
+    <ViewAndForm_PagingButtonsUseTheme>true</ViewAndForm_PagingButtonsUseTheme>
+    <ViewAndForm_PagingButtonsPageBase>/factory/pages/paging/data_paging_buttons.html</ViewAndForm_PagingButtonsPageBase>
+    
+    <ViewAndForm_HighlighterEnabled>true</ViewAndForm_HighlighterEnabled>
+
+    <InputForm_HTMLTemplate>/factory/html_templates/color_themes.html</InputForm_HTMLTemplate>
+    <InputForm_PageBase>/factory/pages/view_and_form/input.html</InputForm_PageBase>
+
+    <PageBorder_BorderTemplateFile>/factory/pages/borders/border_base.html</PageBorder_BorderTemplateFile>
+
+    <PageTabs_Layout_Page>/factory/pages/tabsLayout.htm</PageTabs_Layout_Page>
+    <PageTabs_Tab_Html>/factory/pages/pagetabsbase.htm</PageTabs_Tab_Html>
+    <PageTabs_Tab_Bckg_Class>tabbedPagesTabCell</PageTabs_Tab_Bckg_Class>
+    <PageTabs_Tab_Selected_Class>tabbedPagesTabCellSelected</PageTabs_Tab_Selected_Class>
+    <PageTabs_Tab_Text_Class>tabbedPagesTabText</PageTabs_Tab_Text_Class>
+    <PageTabs_Selected_Text_Class>tabbedPagesTabTextSelected</PageTabs_Selected_Text_Class>
+    <PageTabs_Tab_Spacer_Class>tabbedPagesTabSpacer</PageTabs_Tab_Spacer_Class>
+    <PageTabs_Content_Area_Class>tabbedPagesContentArea</PageTabs_Content_Area_Class>
+    
+    <Paging_OverrideBuilderID>com.bowstreet.builders.webapp.SplitPagerBuilder</Paging_OverrideBuilderID>
+
+    <PagingLinks_HTMLPage>/factory/pages/paging/data_paging_links.html</PagingLinks_HTMLPage>
+    <PagingLinks_OverrideLinkText>true</PagingLinks_OverrideLinkText>
+    <PagingLinks_FirstLinkText><<</PagingLinks_FirstLinkText>
+    <PagingLinks_PrevLinkText><</PagingLinks_PrevLinkText>
+    <PagingLinks_NextLinkText>></PagingLinks_NextLinkText>
+    <PagingLinks_LastLinkText>>></PagingLinks_LastLinkText>
+
+    <PagingButtons_HTMLPage>/factory/pages/paging/data_paging_buttons.html</PagingButtons_HTMLPage>
+    <PagingButtons_FirstImageWidth>21</PagingButtons_FirstImageWidth>
+    <PagingButtons_FirstImageHeight>21</PagingButtons_FirstImageHeight>
+    <PagingButtons_PrevImageWidth>21</PagingButtons_PrevImageWidth>
+    <PagingButtons_PrevImageHeight>21</PagingButtons_PrevImageHeight>
+    <PagingButtons_NextImageWidth>21</PagingButtons_NextImageWidth>
+    <PagingButtons_NextImageHeight>21</PagingButtons_NextImageHeight>
+    <PagingButtons_LastImageWidth>21</PagingButtons_LastImageWidth>
+    <PagingButtons_LastImageHeight>21</PagingButtons_LastImageHeight>
+    <PagingButtons_LastButtonUnboundedEnablement>Disable</PagingButtons_LastButtonUnboundedEnablement>
+	
+	
+	<!-- 1=Link,  2=Link&Image, 3=One Image, 4=Two Images, 5=No UI    -->
+    <ColumnSort_Style>2</ColumnSort_Style>
+    <ColumnSort_Image_Asc>/factory/images/sort/arrow_none.gif</ColumnSort_Image_Asc>
+    <ColumnSort_Image_Asc_Select>/factory/images/sort/arrow_up.gif</ColumnSort_Image_Asc_Select>
+    <!-- <ColumnSort_Image_Desc></ColumnSort_Image_Desc> -->
+    <ColumnSort_Image_Desc_Select>/factory/images/sort/arrow_down.gif</ColumnSort_Image_Desc_Select>
+	<!--<ColumnSort_Use_Css>true</ColumnSort_Use_Css> -->
+	<!-- <ColumnSort_Partial_Page_Refresh>true</ColumnSort_Partial_Page_Refresh> -->
+	
+
+    <DSUI_CreatePageHTML>/factory/pages/dsui/create.html</DSUI_CreatePageHTML>
+    <DSUI_UpdatePageHTML>/factory/pages/dsui/update.html</DSUI_UpdatePageHTML>
+    <DSUI_DetailsPageHTML>/factory/pages/dsui/details.html</DSUI_DetailsPageHTML>
+    <DSUI_NoDetailsYetPageHTML>/factory/pages/dsui/no_details_yet.html</DSUI_NoDetailsYetPageHTML>
+    <DSUI_QueryPageHTML>/factory/pages/dsui/query.html</DSUI_QueryPageHTML>
+    <DSUI_SearchResultsPageHTML>/factory/pages/dsui/search_results.html</DSUI_SearchResultsPageHTML>
+    <DSUI_FilterPageHTML>/factory/pages/dsui/filter.html</DSUI_FilterPageHTML>
+    <DSUI_ListPageHTML>/factory/pages/dsui/list_page.html</DSUI_ListPageHTML>
+    <DSUI_UsePartialRefresh>false</DSUI_UsePartialRefresh>
+    <DSUI_StyleSheetOverride></DSUI_StyleSheetOverride>
+    <DSUI_HTMLTemplate>/factory/html_templates/color_themes.html</DSUI_HTMLTemplate>
+    <DSUI_PagingControls>com.bowstreet.builders.webapp.SplitPagerBuilder</DSUI_PagingControls>
+    <DSUI_RowHightlightColor>#FFFFFF</DSUI_RowHightlightColor>
+    <DSUI_RowHightlightBackgroundColor>#60A1EA</DSUI_RowHightlightBackgroundColor>
+    <DSUI_DojoColumnResizeAndReorderOnList>true</DSUI_DojoColumnResizeAndReorderOnList>
+    <DSUI_DojoColumnResizeAndReorderOnResults>true</DSUI_DojoColumnResizeAndReorderOnResults>
+    <DSUI_EnableRowHighlightingOnList>true</DSUI_EnableRowHighlightingOnList>
+    <DSUI_EnableRowHighlightingOnResults>true</DSUI_EnableRowHighlightingOnResults>
+    
+    <!-- 
+        Set the styles to be used for the Split Pager builder.  This will arrange for
+        the OneUI styles to be used from the page if they're pre-defined (as will be the case
+        in modern Portals) - if those styles are not in the page, it will define the ones it needs.
+    -->
+    <SplitPager_StyleSheet>/factory/clientjavascript/styles/loadCSS.jsp?css=/factory/pages/split_pager_default.css&rule=.lotus&xcss=/factory/pages/split_pager_oneui.css&as=.js</SplitPager_StyleSheet>
+
+    <!-- The bottom base is overridden in blue_WPF7.0.1  -->
+    <SplitPager_BottomBasePage>/factory/pages/split_pager_default_bottom_base.html</SplitPager_BottomBasePage>
+    <SplitPager_TopBasePage>/factory/pages/split_pager_default_top_base.html</SplitPager_TopBasePage>
+	
+    <!-- 
+      Adds the specified Dojo requires by default. If empty or missing "dijit.dijit" will always be added.
+      You can add multiple values using a comma separator. 
+      If you want to exclude any of these defaults(including "dijit.dijit") you must set this property to "none". 
+    -->
+    <DojoEnable_DefaultRequires>dijit.dijit</DojoEnable_DefaultRequires>
+
+	<HD_HTMLTemplate>/factory/html_templates/gridtable.html</HD_HTMLTemplate>
+	<HD_StyleSheet>/factory/pages/hierarchydrilldown.css</HD_StyleSheet>
+	<HD_BreadcrumbPage>/factory/pages/breadcrumbs.html</HD_BreadcrumbPage>
+	<HD_BreadcrumbPageStyleSheet>/factory/pages/breadcrumbsstyles.css</HD_BreadcrumbPageStyleSheet>
+	<HD_BreadcrumbTextStyleClass></HD_BreadcrumbTextStyleClass>
+	<HD_BreadcrumbSeparatorStyleClass></HD_BreadcrumbSeparatorStyleClass>
+	<HD_BreadcrumbSeparator></HD_BreadcrumbSeparator>
+	<HD_BreadcrumbPrefixText></HD_BreadcrumbPrefixText>
+	<SIL_BasePage>/factory/pages/legend_base.htm</SIL_BasePage>
+	<SIL_StyleSheet>/factory/pages/legend_base.css</SIL_StyleSheet>
+</Theme>
+

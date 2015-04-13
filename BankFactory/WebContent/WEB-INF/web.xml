@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AUTOMATICALLY GENERATED DEPLOYMENT DESCRIPTOR - DO NOT EDIT -->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="WebApp_ID" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5" metadata-complete="true">
+   <description>IBM Web Experience Factory</description>
+   <display-name>BankFactory</display-name>
+   <filter>
+      <filter-name>ResponseHeaderFilter</filter-name>
+      <filter-class>com.bowstreet.servlet.ResponseHeaderFilter</filter-class>
+      <init-param>
+         <param-name>DefaultInstance</param-name>
+         <param-value>true</param-value>
+      </init-param>
+      <init-param>
+         <param-name>debug</param-name>
+         <param-value>false</param-value>
+      </init-param>
+      <init-param>
+         <param-name>Cache-Control</param-name>
+         <param-value>max-age=28800</param-value>
+      </init-param>
+   </filter>
+   <filter-mapping>
+      <filter-name>ResponseHeaderFilter</filter-name>
+      <url-pattern>/factory/clientjavascript/*</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+      <filter-name>ResponseHeaderFilter</filter-name>
+      <url-pattern>/factory/data_layout_templates/*</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+      <filter-name>ResponseHeaderFilter</filter-name>
+      <url-pattern>/factory/dojo/*</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+      <filter-name>ResponseHeaderFilter</filter-name>
+      <url-pattern>/factory/html_templates/*</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+      <filter-name>ResponseHeaderFilter</filter-name>
+      <url-pattern>/factory/images/*</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+      <filter-name>ResponseHeaderFilter</filter-name>
+      <url-pattern>/factory/pages/*</url-pattern>
+   </filter-mapping>
+   <listener>
+      <listener-class>com.bowstreet.servlet.ObjectLifeCycleHandler</listener-class>
+   </listener>
+   <servlet>
+      <servlet-name>WebEngineServlet</servlet-name>
+      <servlet-class>com.bowstreet.webapp.engine.WebAppServlet</servlet-class>
+      <init-param>
+         <param-name>bowstreet.URLMapper</param-name>
+         <param-value>com.bowstreet.webapp.util.WebAppURLMapper</param-value>
+      </init-param>
+      <load-on-startup>2</load-on-startup>
+      <security-role-ref id="SecurityRoleRef_1">
+         <role-name>IBMAdministrators</role-name>
+         <role-link>IBMAdministrators</role-link>
+      </security-role-ref>
+      <security-role-ref id="SecurityRoleRef_2">
+         <role-name>SOAPUsers</role-name>
+         <role-link>SOAPUsers</role-link>
+      </security-role-ref>
+      <security-role-ref id="SecurityRoleRef_3">
+         <role-name>AllAuthenticatedUsers</role-name>
+         <role-link>AllAuthenticatedUsers</role-link>
+      </security-role-ref>
+   </servlet>
+   <servlet>
+      <servlet-name>J2EEDeploymentHandler</servlet-name>
+      <servlet-class>com.bowstreet.servlet.J2EEDeploymentHandler</servlet-class>
+      <init-param>
+         <param-name>bowstreet.rootDirectory</param-name>
+         <param-value>extractedfactory4</param-value>
+      </init-param>
+      <init-param>
+         <param-name>bowstreet.archiveVersion</param-name>
+         <param-value>1</param-value>
+      </init-param>
+      <init-param>
+         <param-name>bowstreet.extractionDirectory.1</param-name>
+         <param-value>WEB-INF</param-value>
+      </init-param>
+      <init-param>
+         <param-name>bowstreet.extractionDirectory.2</param-name>
+         <param-value>[html]</param-value>
+      </init-param>
+      <init-param>
+         <param-name>websphere1.string</param-name>
+         <param-value>^.*websphere.*$</param-value>
+      </init-param>
+      <init-param>
+         <param-name>websphere1.provider</param-name>
+         <param-value>IBM</param-value>
+      </init-param>
+      <init-param>
+         <param-name>bowstreet.appContext</param-name>
+         <param-value>BankFactory</param-value>
+      </init-param>
+      <init-param>
+         <param-name>websphere1.implementation</param-name>
+         <param-value>WebSphere</param-value>
+      </init-param>
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+   <servlet>
+      <servlet-name>AjaxServlet</servlet-name>
+      <servlet-class>com.bowstreet.servlet.AjaxServlet</servlet-class>
+   </servlet>
+   <servlet>
+      <servlet-name>Dojo Servlet</servlet-name>
+      <servlet-class>com.bowstreet.webapp.engine.ZipServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>WebEngineServlet</servlet-name>
+      <url-pattern>/webengine/*</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>AjaxServlet</servlet-name>
+      <url-pattern>/ajax/*</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>Dojo Servlet</servlet-name>
+      <url-pattern>/factory/dojo/*</url-pattern>
+   </servlet-mapping>
+   <mime-mapping>
+      <extension>xsd</extension>
+      <mime-type>text/xml</mime-type>
+   </mime-mapping>
+   <welcome-file-list>
+      <welcome-file>index.jsp</welcome-file>
+   </welcome-file-list>
+   <error-page>
+      <exception-type>java.lang.Throwable</exception-type>
+      <location>/factory/webapp/defaulterror_web.jsp</location>
+   </error-page>
+   <jsp-config>
+      <taglib>
+         <taglib-uri>http://www.bowstreet.com/webapp-taglib</taglib-uri>
+         <taglib-location>/WEB-INF/bowst_webapp.tld</taglib-location>
+      </taglib>
+   </jsp-config>
+   <security-constraint id="SecurityConstraint_1">
+      <web-resource-collection id="WebResourceCollection_1">
+         <web-resource-name>Generated JSP pages</web-resource-name>
+         <url-pattern>/genjsp/*</url-pattern>
+      </web-resource-collection>
+      <auth-constraint id="AuthConstraint_1">
+         <description>Roles allowed to execute generated pages under genjsp
+        directory.</description>
+         <role-name>IBMAdministrators</role-name>
+      </auth-constraint>
+   </security-constraint>
+   <security-constraint id="SecurityConstraint_3">
+      <web-resource-collection id="WebResourceCollection_3">
+         <web-resource-name>ForceLogin</web-resource-name>
+         <url-pattern>/factory/webapp/authorizationloginhandler.jsp</url-pattern>
+      </web-resource-collection>
+      <auth-constraint id="AuthConstraint_3">
+         <description>Roles allowed through forced login redirect page
+        (typically all roles)</description>
+         <role-name>IBMAdministrators</role-name>
+         <role-name>AllAuthenticatedUsers</role-name>
+      </auth-constraint>
+   </security-constraint>
+   <security-constraint id="SecurityConstraint_4">
+      <web-resource-collection id="WebResourceCollection_4">
+         <web-resource-name>ProtectedSampleModels</web-resource-name>
+         <url-pattern>/webengine/factory/samples/protectedSamples/*</url-pattern>
+      </web-resource-collection>
+      <auth-constraint id="AuthConstraint_4">
+         <description>Roles allowed to execute sample protected models under
+        factory/samples/protectedSamples</description>
+         <role-name>IBMAdministrators</role-name>
+         <role-name>AllAuthenticatedUsers</role-name>
+      </auth-constraint>
+   </security-constraint>
+   <security-constraint id="SecurityConstraint_5">
+      <web-resource-collection id="WebResourceCollection_5">
+         <web-resource-name>PortalDocMgrProtectedSampleModels</web-resource-name>
+         <url-pattern>/webengine/samples/Portal_Doc_Mgr/*</url-pattern>
+      </web-resource-collection>
+      <auth-constraint id="AuthConstraint_5">
+         <description>Roles allowed to execute sample protected models under
+        samples/Portal_Doc_Mgr</description>
+         <role-name>IBMAdministrators</role-name>
+         <role-name>AllAuthenticatedUsers</role-name>
+      </auth-constraint>
+   </security-constraint>
+   <login-config id="LoginConfig_1">
+      <auth-method>FORM</auth-method>
+      <realm-name>WebAppAuthentication</realm-name>
+      <form-login-config id="FormLoginConfig_1">
+         <form-login-page>/factory/login/login.jsp</form-login-page>
+         <form-error-page>/factory/login/login.jsp?TryAgain=true</form-error-page>
+      </form-login-config>
+   </login-config>
+   <security-role id="SecurityRole_1">
+      <description>IBM Administrators</description>
+      <role-name>IBMAdministrators</role-name>
+   </security-role>
+   <security-role id="SecurityRole_2">
+      <description>Example SOAP Users Role</description>
+      <role-name>SOAPUsers</role-name>
+   </security-role>
+   <security-role id="SecurityRole_3">
+      <description>All Authenticated Users Role</description>
+      <role-name>AllAuthenticatedUsers</role-name>
+   </security-role>
+</web-app>

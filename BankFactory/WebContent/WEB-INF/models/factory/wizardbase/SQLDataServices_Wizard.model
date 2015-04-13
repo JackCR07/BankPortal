@@ -1,0 +1,23 @@
+<Model id="factory/wizardbase/SQLDataServices_Wizard"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.SqlDataServicesBuilder</BuilderDefID>
+<Messages><Error><Message>The specified profile entry does not exist: SQLDataServicesWizardps:SqlDataServices_EntityName</Message>
+<Message>The following Builder Inputs are required but do not have values:  Name, SQL DataSource, Entity Name, Key Field</Message>
+</Error>
+</Messages>
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="EntityTypeToFetch">Tables</Input>
+<Input name="AddTestingSupport">true</Input>
+<Input name="Name" profile="SQLDataServicesWizardps:SqlDataServices_Name"/>
+<Input name="SqlDataSource" profile="SQLDataServicesWizardps:SqlDataServices_SqlDataSource"/>
+<Input name = "NameLabels" profile="SQLDataServicesWizardps:SqlDataServices_NameLabels"/>
+<Input name = "NameValues" profile="SQLDataServicesWizardps:SqlDataServices_NameValues"/>
+<Input name="EntityName" profile="SQLDataServicesWizardps:SqlDataServices_EntityName"/>
+<Input name="KeyField" profile="SQLDataServicesWizardps:SqlDataServices_KeyField"/>
+<Input name="OperationsToCreate" xmlProfile="SQLDataServicesWizardps:SqlDataServices_OperationsToCreate"/>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

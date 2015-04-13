@@ -1,0 +1,19 @@
+<%-- Template file used by the Inline Edit Builder.
+     The name of this file can be specified as an input to the Inline Edit Builder.
+     You can create your own template file to provide an alternate layout.
+     When creating a template you must maintain the following tagged "id" elements:
+     inputContainerNode - The input control element(s) are placed within this element. This is initially hidden.
+     textDisplayNode - The read-only text value that gets displayed in the non-edit mode is placed within this element. This is initially visible.
+     editImageNode - The image tag for the edit icon. This is initially visible.
+     saveImageNode - The image tag for the save icon. This is initially hidden.
+     cancelImageNode - The image tag for the cancel icon. This is initially hidden.
+ --%>
+<table cellpadding="0"  border="0">
+  <tr valign="top">
+    <td valign="middle"><div style="display: none" inline_edit_id="inputContainerNode"></div></td>
+    <td valign="middle"><div inline_edit_id="textDisplayNode" style="display: "></div></td>                                          
+    <td valign="middle"><img inline_edit_id="editImageNode" style="display: " border="0" hspace="0" vspace="0"></td>
+    <td valign="middle"><img inline_edit_id="saveImageNode" style="display: none" border="0" hspace="0" vspace="0" ></td>
+    <td valign="middle"><img inline_edit_id="cancelImageNode" style="display: none" border="0" hspace="0" vspace="0" ></td>
+  </tr>
+</table>

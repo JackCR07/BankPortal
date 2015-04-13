@@ -1,0 +1,60 @@
+/** Copyright IBM Corp. 2011 */
+@IMPORT url("mobile_table.css");
+
+.wpfMobilePage .wpfMobilePageHeader{
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0.0, #A0A0A0), color-stop(0.8, #E8E8E8), color-stop(1.0, #D0D0D0));
+    background-image: -moz-linear-gradient(bottom, #D0D0D0, #C0C0C0);
+    border-bottom: 1px solid #AAA; 
+}
+
+.wpfMobilePage .wpfMobilePageHeaderText{
+    color: #000000;
+    background-color: transparent;
+}
+
+/** for table background-color/border- can be used with cellspacing="1" to provide inner table borders **/
+.wpfMobilePage .gridTable {
+    border: 1px solid #3F3F3F ;
+}
+
+.wpfMobilePage .ColumnGroupLabelEmpty {
+    border-bottom: thin solid #DDDDDD;
+}
+
+.wpfMobilePage .spacerColumn {
+    border-left: thin solid #808080;
+}
+
+.wpfMobilePage .spacerColumnGroupHeader {
+    border-bottom: thin solid #808080;
+    border-left: thin solid #808080;
+}
+
+
+/** for table head cells**/
+.wpfMobilePage .tableHead,.wpfMobilePage .tableHeadAsc,.wpfMobilePage .tableHeadDesc, .wpfMobilePage .tableHead:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #C3C3C3), color-stop(0.5, #787878), color-stop(1.0, #A5A5A5));      
+    background-image: -moz-linear-gradient(bottom, #C0C0C0, #888888);
+    border-color: #FFFFFF #3F3F3F #3F3F3F #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    padding-bottom: 2px;
+    overflow: hidden;
+    padding: 3px;
+    text-align: left;
+    font-style: normal;
+    font-size: 12px;
+    font-weight:bold;
+    color: #FFFFFF;
+}
+
+
+.wpfMobilePage .tableRowEven {
+    background-color: #E1E1E1;
+    color: #000000;
+}
+
+/** for links in table header cells, for sorting **/
+.wpfMobilePage a.tableHeadSortLink:hover{
+    background-color: transparent;
+}

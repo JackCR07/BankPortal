@@ -1,0 +1,118 @@
+<ProfileSet name="multichannel_deviceclass_base" useQualifiedProfileNames="true"><Description>Base Profile Set for Mobile Device Type detection. Create a new profile set from this profile set, do not edit it directly.</Description>
+<LastModifiedBy>mburati</LastModifiedBy>
+<ProfileSelectionClass>Multichannel Device Class Handler</ProfileSelectionClass>
+<Models><Model>xhtml/profiled_data_view</Model>
+</Models>
+<ProfileDef><Entries><Entry name="DesktopDevice" isRuntime="false"><UI type="Checkbox"><Prompt>Desktop Device</Prompt>
+<ExtraData>true,false,</ExtraData>
+</UI>
+</Entry>
+<Entry name="MobileDevice" isRuntime="false"><UI type="Checkbox"><Prompt>Mobile Device</Prompt>
+<ExtraData>true,false,Checkbox Label</ExtraData>
+</UI>
+</Entry>
+<Entry name="SmartPhoneDevice" isRuntime="false"><UI type="Checkbox"><Prompt>Smart Phone Device</Prompt>
+<ExtraData>true,false,Checkbox Label</ExtraData>
+</UI>
+</Entry>
+<Entry name="TabletDevice" isRuntime="false"><UI type="Checkbox"><Prompt>Tablet Device</Prompt>
+<ExtraData>true,false,Checkbox Label</ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Browser" last_modified="1296245467646" isContainer="true" parent="Default"><Values><Value name="DesktopDevice" inherited_from="Default" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="MobileDevice" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="SmartPhoneDevice" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="TabletDevice" inherited_from="Default" inherited="true" edit_status="inheritedLocked">false</Value>
+</Values>
+<Roles><Role>Browser</Role>
+</Roles>
+</Profile>
+<Profile name="Default" last_modified="1296245467646" isContainer="true"><Values><Value name="DesktopDevice" effects_child="true">true</Value>
+<Value name="MobileDevice" effects_child="true">false</Value>
+<Value name="SmartPhoneDevice" effects_child="true">false</Value>
+<Value name="TabletDevice" effects_child="true">false</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Smartphone" last_modified="1296245485725" isContainer="true" parent="Default"><Values><Value name="DesktopDevice" effects_child="true">false</Value>
+<Value name="MobileDevice" effects_child="true">true</Value>
+<Value name="SmartPhoneDevice" effects_child="true">true</Value>
+<Value name="TabletDevice" effects_child="true">false</Value>
+</Values>
+<Roles><Role>Mobile</Role>
+</Roles>
+</Profile>
+<Profile name="Smartphone.Android" last_modified="1296245485725" isContainer="false" parent="Smartphone"><Values><Value name="DesktopDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="MobileDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="SmartPhoneDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="TabletDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">false</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Smartphone.BlackBerry" last_modified="1296245485725" isContainer="false" parent="Smartphone"><Values><Value name="DesktopDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="MobileDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="SmartPhoneDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="TabletDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">false</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Smartphone.iOS" last_modified="1296245485725" isContainer="false" parent="Smartphone"><Values><Value name="DesktopDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="MobileDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="SmartPhoneDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="TabletDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">false</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Smartphone.iPhone" last_modified="1296245485725" isContainer="false" parent="Smartphone"><Values><Value name="DesktopDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="MobileDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="SmartPhoneDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="TabletDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">false</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Smartphone.iPod" last_modified="1296245485725" isContainer="false" parent="Smartphone"><Values><Value name="DesktopDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="MobileDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="SmartPhoneDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="TabletDevice" inherited_from="Smartphone" inherited="true" edit_status="inheritedLocked">false</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Tablet" last_modified="1296245489194" isContainer="true" parent="Default"><Values><Value name="DesktopDevice" effects_child="true">false</Value>
+<Value name="MobileDevice" effects_child="true">true</Value>
+<Value name="SmartPhoneDevice" effects_child="true">false</Value>
+<Value name="TabletDevice" effects_child="true">true</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Tablet.Android" last_modified="1303936223431" isContainer="false" parent="Tablet"><Values><Value name="DesktopDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="MobileDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="SmartPhoneDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="TabletDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">true</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Tablet.PlayBook" last_modified="1303936223431" isContainer="false" parent="Tablet"><Values><Value name="DesktopDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="MobileDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="SmartPhoneDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="TabletDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">true</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Tablet.Xoom" last_modified="1303936223431" isContainer="false" parent="Tablet"><Values><Value name="DesktopDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="MobileDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="SmartPhoneDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="TabletDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">true</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Tablet.iPad" last_modified="1296245489194" isContainer="false" parent="Tablet"><Values><Value name="DesktopDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="MobileDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">true</Value>
+<Value name="SmartPhoneDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">false</Value>
+<Value name="TabletDevice" inherited_from="Tablet" inherited="true" edit_status="inheritedLocked">true</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

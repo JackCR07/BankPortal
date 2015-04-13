@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoSliderBuilder">
+  <ReadableName>Dojo Slider</ReadableName>
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName>
+  <HelpFile></HelpFile>
+  <RequiredFactoryVersion>6.0.1</RequiredFactoryVersion>
+  <Description>Adds a Dojo slider to an existing text input.</Description>
+  <Domains>
+    <Domain>WebApp</Domain>
+    <Domain>Consumer</Domain>
+  </Domains>
+  <CreateModifyList>
+    <CanModify type="[Unassigned Elements]" category="Rich UI">Adds a Dojo slider.</CanModify>
+    <CanModify xmlns="" type="Control" category="Rich UI" />
+  </CreateModifyList>
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <Category>Page Elements,Rich UI</Category>
+  <Keywords>Form,Data Entry,Layout,Dojo</Keywords>
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+
+  <BuilderData>
+    <BuilderDataEntry name="IconName">dojoSlider</BuilderDataEntry>
+    <BuilderDataEntry name="PageLocation">onNamedTag</BuilderDataEntry>
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoSliderBuilder</BuilderDataEntry>
+    <BuilderDataEntry name="WidgetTypeInfo">
+      <WidgetTypeInfo>
+        <WidgetType>
+          <DojoType>dijit.form.HorizontalSlider</DojoType>
+          <AttributeNames>clickSelect,constraints,pageIncrement,style</AttributeNames>
+        </WidgetType>
+      </WidgetTypeInfo>
+      <WidgetTypeInfo>
+        <WidgetType>
+          <DojoType>dijit.form.VerticalSlider</DojoType>
+          <AttributeNames>clickSelect,constraints,pageIncrement,style</AttributeNames>
+        </WidgetType>
+      </WidgetTypeInfo>
+    </BuilderDataEntry>
+    <BuilderDataEntry name="DojoWidgetAttributes">
+      <DojoWidgetAttributes>
+        <DojoWidgetAttribute>
+          <BuilderInputName>Minimum</BuilderInputName>
+          <DojoWidgetAttributeName>minimum</DojoWidgetAttributeName>
+        </DojoWidgetAttribute>
+        <DojoWidgetAttribute>
+          <BuilderInputName>Maximum</BuilderInputName>
+          <DojoWidgetAttributeName>maximum</DojoWidgetAttributeName>
+        </DojoWidgetAttribute>
+        <DojoWidgetAttribute>
+          <BuilderInputName>DiscreteValues</BuilderInputName>
+          <DojoWidgetAttributeName>discreteValues</DojoWidgetAttributeName>
+        </DojoWidgetAttribute>
+        <DojoWidgetAttribute>
+          <BuilderInputName>ShowButtons</BuilderInputName>
+          <DojoWidgetAttributeName>showButtons</DojoWidgetAttributeName>
+          <DefaultValue>true</DefaultValue>
+        </DojoWidgetAttribute>
+      </DojoWidgetAttributes>
+    </BuilderDataEntry>
+  </BuilderData>
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoSliderCoordinator</CoordinatorClassName>
+  <InputDefinitions>
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName">
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation">
+      <Prompt></Prompt>
+      <Required>true</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="DojoType" base="com.bowstreet.core.Base.StringData">
+      <Prompt>Type</Prompt>
+      <InitialValue>CustomExtension</InitialValue>
+      <EmptyValueReplacement>CustomExtension</EmptyValueReplacement>
+      <Visible>false</Visible>
+    </InputDefinition>
+
+    <InputDefinition name="CustomDojoType" base="com.bowstreet.core.Base.StringData">
+      <Prompt>Orientation</Prompt>
+      <HelpText>Choose the slider orientation</HelpText>
+      <InitialValue>dijit.form.HorizontalSlider</InitialValue>
+      <EmptyValueReplacement>dijit.form.HorizontalSlider</EmptyValueReplacement>
+      <Editor JavaClass="com.bowstreet.widget.RadioBox">
+        <Argument name="listLabels">Horizontal,Vertical</Argument>
+        <Argument name="listData">dijit.form.HorizontalSlider,dijit.form.VerticalSlider</Argument>
+      </Editor>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="Width" base="com.bowstreet.core.Base.IndirectValue">
+      <Prompt>Width</Prompt>
+      <HelpText>Specify a width for the slider control</HelpText>
+      <InitialValue>400px</InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="Height" base="com.bowstreet.core.Base.IndirectValue">
+      <Prompt>Height</Prompt>
+      <HelpText>Specify a height for the slider control</HelpText>
+      <InitialValue>40px</InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="AddRequires" base="com.bowstreet.core.Base.BooleanData" >
+      <Prompt>Add to Requires</Prompt>
+      <InitialValue>false</InitialValue>
+      <EmptyValueReplacement>false</EmptyValueReplacement>
+      <Visible>false</Visible>
+      <Required>false</Required>
+    </InputDefinition>
+    
+    <InputDefinition name="ElementName" base="com.bowstreet.core.Base.StringData">
+      <Prompt></Prompt>
+      <InitialValue>div</InitialValue>
+      <EmptyValueReplacement>div</EmptyValueReplacement>
+      <Visible>false</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="RequiresList" base="com.bowstreet.builders.webapp.DojoEnableBuilder.RequiresList">
+      <InitialValue><top><InputMapping><Name>dijit.form.Slider</Name></InputMapping></top></InitialValue>
+      <EmptyValueReplacement><top><InputMapping><Name>dijit.form.Slider</Name></InputMapping></top></EmptyValueReplacement>
+      <Visible>false</Visible>
+    </InputDefinition>
+    
+    <InputDefinition name="Minimum" base="com.bowstreet.core.Base.IndirectValue">
+      <Prompt>Minimum</Prompt>
+      <HelpText>Specify the minimum value</HelpText>
+      <InitialValue></InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="Maximum" base="com.bowstreet.core.Base.IndirectValue">
+      <Prompt>Maximum</Prompt>
+      <HelpText>Specify the maximum value</HelpText>
+      <InitialValue></InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="DiscreteValues" base="com.bowstreet.core.Base.IndirectValue">
+      <Prompt>Discrete Values</Prompt>
+      <HelpText>Specify the number of slider positions</HelpText>
+      <InitialValue></InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="ShowButtons" base="com.bowstreet.core.Base.IndirectBoolean">
+      <Prompt>Show Buttons</Prompt>
+      <HelpText>Specify whether increment/decrement buttons are shown</HelpText>
+      <InitialValue>true</InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="ShowValue" base="com.bowstreet.core.Base.BooleanData">
+      <Prompt>Show Value</Prompt>
+      <HelpText>Specify the slider value is shown</HelpText>
+      <InitialValue>true</InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="TopLabelType" base="com.bowstreet.core.Base.ComboBox">
+      <Group>Labels</Group>
+      <Prompt>Top/Left Label Type</Prompt>
+      <HelpText>Specify the type of labels to use.</HelpText>
+      <InitialValue>none</InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+      <Editor>
+        <Argument name="ListLabels">None,Numeric,Percent,Custom</Argument>
+        <Argument name="ListData">none,numeric,percent,custom</Argument>
+        <Argument name="width">200</Argument>
+        <Argument name="isEditable">false</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="TopLabelCount" base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Labels</Group>
+      <Prompt>Top/Left Label Count</Prompt>
+      <HelpText>Specify the number of numeric labels</HelpText>
+      <InitialValue></InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="TopLabelFormat" base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Labels</Group>
+      <Prompt>Top/Left Label Number Format</Prompt>
+      <HelpText>Specify the number format for numeric labels</HelpText>
+      <InitialValue></InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="TopCustomLabels" base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Labels</Group>
+      <Prompt>Top/Left Custom Labels</Prompt>
+      <HelpText>Specify a comma separated list of labels or XML variable</HelpText>
+      <InitialValue></InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="TopRuleSize" base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Labels</Group>
+      <Prompt>Top/Left Rule Size</Prompt>
+      <HelpText>Specify a size for the rule</HelpText>
+      <InitialValue>5px</InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="TopRuleStyle" base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Labels</Group>
+      <Prompt>Top/Left Rule Style</Prompt>
+      <HelpText>Specify a style for the rule</HelpText>
+      <InitialValue></InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="TopLabelSize" base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Labels</Group>
+      <Prompt>Top/Left Label Size</Prompt>
+      <HelpText>Specify a size for the labels</HelpText>
+      <InitialValue>1.2em</InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="TopLabelStyle" base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Labels</Group>
+      <Prompt>Top/Left Label Style</Prompt>
+      <HelpText>Specify a style for the labels</HelpText>
+      <InitialValue></InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="BottomLabelType" base="com.bowstreet.core.Base.ComboBox">
+      <Group>Labels</Group>
+      <Prompt>Bottom/Right Label Type</Prompt>
+      <HelpText>Specify the type of labels to use.</HelpText>
+      <InitialValue>none</InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+      <Editor>
+        <Argument name="ListLabels">None,Numeric,Percent,Custom</Argument>
+        <Argument name="ListData">none,numeric,percent,custom</Argument>
+        <Argument name="width">200</Argument>
+        <Argument name="isEditable">false</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="BottomLabelCount" base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Labels</Group>
+      <Prompt>Bottom/Right Label Count</Prompt>
+      <HelpText>Specify the number of numeric labels</HelpText>
+      <InitialValue></InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="BottomLabelFormat" base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Labels</Group>
+      <Prompt>Bottom/Right Label Number Format</Prompt>
+      <HelpText>Specify the number format for numeric labels</HelpText>
+      <InitialValue></InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="BottomCustomLabels" base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Labels</Group>
+      <Prompt>Bottom/Right Custom Labels</Prompt>
+      <HelpText>Specify a comma separated list of labels or XML variable</HelpText>
+      <InitialValue></InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="BottomRuleSize" base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Labels</Group>
+      <Prompt>Bottom/Right Rule Size</Prompt>
+      <HelpText>Specify a size for the rule</HelpText>
+      <InitialValue>5px</InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="BottomRuleStyle" base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Labels</Group>
+      <Prompt>Bottom/Right Rule Style</Prompt>
+      <HelpText>Specify a style for the rule</HelpText>
+      <InitialValue></InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="BottomLabelSize" base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Labels</Group>
+      <Prompt>Bottom/Right Label Size</Prompt>
+      <HelpText>Specify a size for the labels</HelpText>
+      <InitialValue>1.2em</InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="BottomLabelStyle" base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Labels</Group>
+      <Prompt>Bottom/Right Label Style</Prompt>
+      <HelpText>Specify a style for the labels</HelpText>
+      <InitialValue></InitialValue>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="Value" base="com.bowstreet.core.Base.IndirectValue">
+      <Visible>false</Visible>
+    </InputDefinition>
+
+    <InputDefinition name="Attributes" base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Attributes">
+      <Group>Attributes</Group>
+      <Type>Xml</Type>
+    </InputDefinition>
+
+    <InputDefinition name="HandleExisting" base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleExisting">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition>
+
+    <InputDefinition name="HandleMissingValue" base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleMissingValue">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition>
+
+    <InputDefinition name="Separator" base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Separator">
+      <Group>Attributes</Group>
+      <InitialValue>;</InitialValue>
+    </InputDefinition>
+
+    <InputDefinition name="Script"  base="com.bowstreet.builders.webapp.DojoEnableBuilder.Script">
+        <Group>Script</Group>
+    </InputDefinition>
+
+
+  </InputDefinitions>
+  <GroupDefinitions>
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced"/>
+    <GroupDefinition id="Attributes">
+      <Name>Attributes</Name>
+      <Description>Optional attributes to apply to the target widget element.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+    <GroupDefinition id="Labels">
+      <Name>Labels</Name>
+      <Description>Optional labels to apply to the slider.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+    <GroupDefinition id="Script" base="com.bowstreet.builders.webapp.DojoEnableBuilder.Script">
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>    
+  </GroupDefinitions>
+  <PageDefinitions />
+</BuilderDef>

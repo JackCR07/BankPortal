@@ -1,0 +1,233 @@
+<html>
+<body>
+  <div name="DisplayPageWrapper"><%-- Begin: Display Page Wrapper --%>
+
+    <table class="displayPageTable" cellpadding="3" cellspacing="1" name="OuterTable">
+      <div name="PageContentsContainer">
+
+        <div name="DisplayGroupWrapper"><%-- Begin: Display Group Wrapper --%>
+          <div name="LabelContainer">
+            <tr name="DisplayGroupLabel">
+              <td colspan="2" height="25" class="sectionLabelCell" nowrap><div name="LabelText" class="sectionLabel">Section Label</div></td>
+            </tr>
+          </div>
+          <div name="GroupContainer">
+            <div name="DisplayGroup">
+              <%-- Begin: Data display fields --%>
+              <div name="DataContainer">
+                <tr name="DisplayField" class="DisplayFieldRow">
+                  <td class="labelCell" height="27" align="right" valign="top" nowrap>&nbsp;&nbsp;&nbsp;<div name="FieldLabel" class="label">Field Label</div></td>
+                  <td width="100%" class="outputDataCell" valign="top"><div name="FieldElement" class="outputData">Field Value</div></td>
+                </tr>
+              </div><%-- End: Data display fields --%>
+            </div>
+          </div>
+        </div>  <%-- End: DisplayGroupWrapper --%>
+
+      <%-- Begin: Table Wrapper.  Note that this will sit inside DisplayPageWrapper or DataEntryPageWrapper --%>
+      <tr name="TableWrapper"><td colspan="4" class="outputDataCell" style="padding:0px" width="100%">
+          <div name="_tableAndButton">
+          <div name="GroupContainer">
+          <table name="Table" width="100%" class="gridTable" cellspacing="0" cellpadding="3">  <%-- Begin: Table --%>
+          <tr name="TableHeaderContainer" class="tableHeadRow">    <%-- Begin: table header row --%>
+            <%-- Generic column header --%>
+            <th name="ColumnHeader" class="tableHead" nowrap><div name="HeaderElement" class="tableHeadText">Header</div></th>
+            <%-- Sorted column header- useful for applying correct style to sorting link --%>
+            <th name="ColumnHeaderSorted" class="tableHead" nowrap><a href="#" name="HeaderElement" class="tableHeadSortLink">Header Sorted</a></th>
+            <%-- These columns are specifically for Details,Edit and Delete and provide centering and the right style --%>
+            <th name="ColumnHeaderByName_Details" width="50" class="tableHead" align="center" nowrap><div name="HeaderElement" class="tableHeadText">Details</div></th>
+            <th name="ColumnHeaderByName_Edit" width="50" class="tableHead" align="center" nowrap><div name="HeaderElement" class="tableHeadText">Edit</div></th>
+            <th name="ColumnHeaderByName_Delete" width="50" class="tableHead" align="center" nowrap><div name="HeaderElement" class="tableHeadText">Delete</div></th>
+            <%-- This column is more general for any columns where the field is made into a button, for example auto delete, but only where data field modifiers make the column a button --%>
+            <th name="ColumnHeader_button" class="tableHead" align="center" nowrap><div name="HeaderElement" class="tableHeadText">Auto Delete</div></th>
+            <%-- These columns are specifically for decimal values and provide centering and the right style --%>
+            <th name="ColumnHeader_decimal" class="tableHead" align="center" nowrap><div name="HeaderElement" class="tableHeadText">Decimal</div></th>
+            <th name="ColumnHeaderSorted_decimal" class="tableHead" align="center" nowrap><a name="HeaderElement" class="tableHeadSortLink">Decimal Sorted</a></th>
+            <%-- These columns are specifically for dates and provide centering and the right style --%>
+            <th name="ColumnHeader_integer" class="tableHead" align="center" nowrap><div name="HeaderElement" class="tableHeadText">Integer</div></th>
+            <th name="ColumnHeaderSorted_integer" class="tableHead" align="center" nowrap><a name="HeaderElement" class="tableHeadSortLink">Integer Sorted</a></th>
+            <th name="ColumnHeader_int" class="tableHead" align="center" nowrap><div name="HeaderElement" class="tableHeadText">Integer</div></th>
+            <th name="ColumnHeaderSorted_int" class="tableHead" align="center" nowrap><a name="HeaderElement" class="tableHeadSortLink">Integer Sorted</a></th>
+            <th name="ColumnHeader_float" class="tableHead" align="center" nowrap><div name="HeaderElement" class="tableHeadText">Integer</div></th>
+            <th name="ColumnHeaderSorted_float" class="tableHead" align="center" nowrap><a name="HeaderElement" class="tableHeadSortLink">Integer Sorted</a></th>
+            <th name="ColumnHeader_double" class="tableHead" align="center" nowrap><div name="HeaderElement" class="tableHeadText">Integer</div></th>
+            <th name="ColumnHeaderSorted_double" class="tableHead" align="center" nowrap><a name="HeaderElement" class="tableHeadSortLink">Integer Sorted</a></th>
+            <th name="ColumnHeader_date" class="tableHead" align="center" nowrap><div name="HeaderElement" class="tableHeadText">Date</div></th>
+            <th name="ColumnHeaderSorted_date" class="tableHead" align="center" nowrap><a name="HeaderElement" class="tableHeadSortLink">Date Sorted</a></th>
+            <th name="ColumnHeader_year" class="tableHead" align="center" nowrap><div name="HeaderElement" class="tableHeadText">Year</div></th>
+            <th name="ColumnHeaderSorted_year" class="tableHead" align="center" nowrap><a name="HeaderElement" class="tableHeadSortLink">Year Sorted</a></th>
+          </tr><%-- End: table header row --%>
+          <%-- Begin: repeated data rows --%>
+          <tbody name="RepeatElement">
+          <tr name="DataContainer" sequence_class="tableRowOdd,tableRowEven" >
+            <%-- Cells that match the above header columns.  No special treatment for sorted cells. --%>
+            <td name="ColumnData" valign="top"><div name="FieldElement" class="outputData" ></div><div name="FieldValidationError" class="ValidationErrorText" /></td>
+            <td name="ColumnDataByName_Details" class="outputData" valign="top" align="center"><div name="FieldElement" class="actionButton"></div></td>
+            <td name="ColumnDataByName_Edit" class="outputData" valign="top" align="center"><div name="FieldElement" class="actionButton"></div></td>
+            <td name="ColumnDataByName_Delete" class="outputData" valign="top" align="center"><div name="FieldElement" class="actionButton"></div></td>
+            <td name="ColumnData_button" class="outputData" valign="top" align="center"><div name="FieldElement" class="actionButton">Button</div></td>
+            <td name="ColumnData_decimal" class="outputData" valign="top" align="right" nowrap><div name="FieldElement">Decimal</div></td>
+            <td name="ColumnData_integer" valign="top"  class="outputDataRight"><div name="FieldElement" class="outputDataRight" nowrap>Integer</div></td>
+            <td name="ColumnData_int" valign="top" class="outputDataRight"><div name="FieldElement" class="outputDataRight" nowrap>Integer</div></td>
+            <td name="ColumnData_float" valign="top" class="outputDataRight"><div name="FieldElement" class="outputDataRight" nowrap>Integer</div></td>
+            <td name="ColumnData_double" valign="top" class="outputDataRight"><div name="FieldElement" class="outputDataRight" nowrap>Integer</div></td>
+            <td name="ColumnData_date" valign="top" align="center"><div name="FieldElement" class="outputData" nowrap>Date</div></td>
+            <td name="ColumnData_year" valign="top" align="center"><div name="FieldElement" class="outputData" nowrap>Year</div></td>
+          </tr>
+          </tbody><%-- End: repeated data rows --%>
+          <tr name="SummaryContainer" class="tableSummaryRow">
+            <td name="ColumnSummary" valign="top"><div name="DataElement" class="outputData" ></div><div name="FieldValidationError" class="ValidationErrorText" /></td>
+            <td name="ColumnSummary_button" class="outputData" valign="top" align="center"><div name="DataElement" class="actionButton"></div></td>
+            <td name="ColumnSummary_decimal" class="outputData" valign="top" align="right" nowrap><div name="DataElement"></div></td>
+            <td name="ColumnSummary_integer" valign="top"  class="outputDataRight"><div name="DataElement" class="outputDataRight" nowrap></div></td>
+            <td name="ColumnSummary_int" valign="top" class="outputDataRight"><div name="DataElement" class="outputDataRight" nowrap></div></td>
+            <td name="ColumnSummary_float" valign="top" class="outputDataRight"><div name="DataElement" class="outputDataRight" nowrap></div></td>
+            <td name="ColumnSummary_double" valign="top" class="outputDataRight"><div name="DataElement" class="outputDataRight" nowrap></div></td>
+            <td name="ColumnSummary_date" valign="top" align="center"><div name="DataElement" class="outputData" nowrap></div></td>
+            <td name="ColumnSummary_year" valign="top" align="center"><div name="DataElement" class="outputData" nowrap></div></td>
+          </tr>
+        </table><%-- End: Table --%>
+        </div><%-- End: GroupContainer --%>
+          <div name="_buttonSpace" />
+        </div>
+
+        <%-- Place for "Empty Data" message --%>
+        <div name="EmptyDataContainer">
+          <table cellpadding="0" cellspacing="0" width="100%" name="TableEmptyData" ><tr class="EmptyDataMessageRow"><td align="center" class="EmptyDataMessageCell">
+            <div  name="EmptyDataMessage" class="emptyDataMessage" />
+          </td></tr></table>
+        </div>
+      </td></tr><%-- End: Table Wrapper --%>
+
+      </div><%-- End: PageContentsContainer --%>
+    </table>
+
+        <script type="text/javascript">  <%-- Add stylesheet, using DOM script to insert in HEAD, if possible. --%>
+        var _bst_wroteGridtableCSS = false;
+        if (document.getElementsByTagName && document.getElementById)
+        {
+            var styleSheetLinkID = "_bst_gridtable_css_link";
+            var styleSheetLinkElement = document.getElementById(styleSheetLinkID);
+            if (!styleSheetLinkElement)
+            {
+                var head;
+                var heads = document.getElementsByTagName("head");
+                if (!heads || heads.length == 0)
+                {
+                    var html = document.getElementsByTagName("html")[0];
+                    if (html)
+                    {
+                        head = document.createElement("head");
+                        html.appendChild(head);
+                    }
+                }
+                else head = heads[0];
+                if (head)
+                {
+                    var link = document.createElement("link");
+                    link.setAttribute("id", styleSheetLinkID);
+                    link.setAttribute("rel", "STYLESHEET");
+                    link.setAttribute("type", "text/css");
+                    link.setAttribute("href", "/factory/html_templates/gridtable.css");
+                    head.appendChild(link);
+                    _bst_wroteGridtableCSS = true;
+                }
+            }
+        }
+        if (!_bst_wroteGridtableCSS)
+        {
+            document.write('<LINK rel="STYLESHEET" type="text/css" href="/factory/html_templates/gridtable.css">');
+        }
+        </script>
+  </div><%-- End: Display Page Wrapper --%>
+
+  <%-- Begin: Data Entry Page Wrapper --%>
+  <div name="DataEntryPageWrapper">
+    <table width="" class="dataEntryPageTable" cellpadding="3" cellspacing="1"  name="OuterTable">
+      <div name="PageContentsContainer">
+        <div name="DataEntryGroupWrapper">
+          <div name="LabelContainer">
+            <tr name="DataEntryGroupLabel">
+              <td colspan="2" height="25" class="sectionLabelCell" nowrap><div name="LabelText" class="sectionLabel">Section Label</div></td>
+            </tr>
+          </div>
+          <div name="GroupContainer">
+            <div name="DataEntryGroup">
+              <div name="DataContainer">  <%-- Begin: Data entry fields --%>
+                <tr name="DataEntryField" class="DataEntryFieldRow">
+                  <td class="labelCell" align="right" valign="top" height="27" nowrap>
+                    <label name="FieldLabel" class="label" for="_field">Field Label</label>&nbsp;<div name="FieldRequired" class="requiredPrompt"></div>
+                  </td>
+                  <td width="100%" class="outputDataCell" valign="top" nowrap>
+                  <input name="FieldElement" class="outputData" value="Field Value" id="_field"/>
+                  <div name="FieldValidationError" class="errorMessage" nowrap></div>
+                  </td>
+                </tr>
+              </div><%-- End: Data entry fields --%>
+            </div>
+          </div>
+        </div><%-- End: Data entry/form fields --%>
+      </div>
+    </table>
+        <script type="text/javascript">  <%-- Add stylesheet, using DOM script to insert in HEAD, if possible. --%>
+        var _bst_wroteGridtableCSS = false;
+        if (document.getElementsByTagName && document.getElementById)
+        {
+            var styleSheetLinkID = "_bst_gridtable_css_link";
+            var styleSheetLinkElement = document.getElementById(styleSheetLinkID);
+            if (!styleSheetLinkElement)
+            {
+                var head;
+                var heads = document.getElementsByTagName("head");
+                if (!heads || heads.length == 0)
+                {
+                    var html = document.getElementsByTagName("html")[0];
+                    if (html)
+                    {
+                        head = document.createElement("head");
+                        html.appendChild(head);
+                    }
+                }
+                else head = heads[0];
+                if (head)
+                {
+                    var link = document.createElement("link");
+                    link.setAttribute("id", styleSheetLinkID);
+                    link.setAttribute("rel", "STYLESHEET");
+                    link.setAttribute("type", "text/css");
+                    link.setAttribute("href", "/factory/html_templates/gridtable.css");
+                    head.appendChild(link);
+                    _bst_wroteGridtableCSS = true;
+                }
+            }
+        }
+        if (!_bst_wroteGridtableCSS)
+        {
+            document.write('<LINK rel="STYLESHEET" type="text/css" href="/factory/html_templates/gridtable.css">');
+        }
+        </script>
+  </div><%-- End: Data Entry Page Wrapper --%>
+
+  <div name="DisplayGroup_NewsColumnBase">
+    <tr name="DataContainer" class="NewsColumnWrapper" />
+  </div>
+
+  <td name="DisplayGroupWrapper_NewsColumnCell" class="NewsColumnCell" valign="top" width="33%">
+    <table class="displayPageTable" cellpadding="0" cellspacing="0" width="">
+      <div name="LabelContainer"></div>
+      <div name="GroupContainer"></div>
+    </table>
+  </td>
+
+  <div name="DataEntryGroup_NewsColumnBase">
+    <tr name="DataContainer" class="NewsColumnWrapper" />
+  </div>
+
+  <td name="DataEntryGroupWrapper_NewsColumnCell" class="NewsColumnCell"  valign="top" width="33%">
+    <table class="dataEntryPageTable" cellpadding="0" cellspacing="0" width="">
+      <div name="LabelContainer"></div>
+      <div name="GroupContainer"></div>
+    </table>
+  </td>
+</body>
+</html>

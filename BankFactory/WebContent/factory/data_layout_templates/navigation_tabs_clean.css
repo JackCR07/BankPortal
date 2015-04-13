@@ -1,0 +1,80 @@
+@IMPORT url("base_template_styles.css");
+
+.wpfNavTabRow {
+position: relative;
+border-bottom: 1px solid #ccc;
+z-index: 1;
+margin-top: 8px;
+margin-bottom: 10px;
+zoom: 1;
+padding: 0;
+// overflow: hidden;
+}
+
+.wpfNavTabs {
+margin: 0;
+padding: 0;
+position: relative;
+bottom: -1px;
+overflow: hidden;
+list-style: none;
+zoom: 1;
+}
+	
+.wpfNavTabRow a.wpfSelectableRow {
+    float: left;
+    color: #000000;
+    text-decoration: none;
+    
+font-weight: bold;
+}
+
+.wpfNavTabRow .wpfTabColumn {
+padding: 6px 8px;
+display: block;
+text-decoration: none;
+line-height: 1;
+white-space: nowrap;
+background-color: #e0e0e0;
+border: 1px solid #e0e0e0;
+margin-right: 2px;
+padding-left: 3px;
+float: left;
+}
+
+.wpfNavTabRow .selected .wpfTabColumn {
+	    // background-color: #D0D0D0;
+	background-color: #fff;
+border-bottom-color: #fff;
+background-color: #fff;
+border-color: #aaa #aaa #fff;
+}
+
+.wpfNavTabRow .selected {
+	background-color: #fff;
+border-bottom-color: #fff;
+background-color: #fff;
+border-color: #aaa #aaa #fff;
+
+	    // background-color: #D0D0D0;
+}
+.wpfNavTabRow .wpfTabText, .wpfTabImage {
+    text-align: center;
+    height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.wpfNavTabRow .wpfTabImage img {
+    height: 20px;
+}
+
+.wpfNavTabRow .wpfTabColumn .wpfTabColumnContents {
+    min-width: 65px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}

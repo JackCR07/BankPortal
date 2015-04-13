@@ -1,0 +1,11 @@
+The Build deployment war build file has moved to the projectDeploy.xml file available in 
+your projects WebContent directory.  
+
+You need ant configured to run ant on the command line.  
+
+On the command line:
+cd <project>\WebContent
+ant -f projectDeploy.xml buildDeploymentWar
+
+
+

@@ -1,0 +1,66 @@
+#!/bin/sh
+# *******************************************************************************************
+# * Licensed Materials - Property of IBM                                                    *
+# * 5724-O03                                                                                *
+# * (C) Copyright 2002, 2006. IBM Corp. All rights reserved.                                *
+# * US Government Users Restricted Rights - Use, duplication or disclosure restricted by    *
+# * GSA ADP Schedule Contract with IBM Corp.                                                *
+# *                                                                                         *
+# * The Program may contain sample source code or programs, which illustrate programming    *
+# * techniques. You may only copy, modify, and distribute these samples internally. These   *
+# * samples have not been tested under all conditions and are provided to you by IBM        *
+# * without obligation of support of any kind.                                              *
+# *                                                                                         *
+# * IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE   *
+# * EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING   *
+# * BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS    *
+# * FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL     *
+# * SUPPORT, IF ANY.                                                                        *
+# *******************************************************************************************
+
+# * Builder API wrapper class generator
+# * First argument is builder definition ID, or a package ID 
+# * e.g., com.bowstreet.builders.webapp.LinkBuilder
+# * This is a reference implementation!  No support is implied.
+
+# Test for missing argument.
+if test -z $1; then
+    echo " ";
+    echo "usage: genbuilderapi builderID [builderID ...]";
+    echo "example: genbuilderapi com.bowstreet.builders.webapp.LinkBuilder";
+    echo " ";
+    echo "For the builderID, you can specify just a package and all builders";
+    echo "within that package will have their API classes generated.";
+    echo "example: genbuilderapi com.bowstreet.samples";
+    echo "will generate API classes for all the sample builders.";
+    echo " ";
+    echo "Note: if the compilation step fails, add tools.jar to the CLASSPATH";
+    echo " ";
+    exit 2;
+fi
+
+
+# Test for missing JAVA_HOME environment path
+if test -z $JAVA_HOME
+then
+    echo "The JAVA_HOME environment variable must be set before running this script.";
+    exit 2;
+fi
+
+
+# Test to see if tools.jar exists in java home, or referenced in the users classpath.
+if  [[ ! ( -e "$JAVA_HOME/lib/tools.jar" ||  $CLASSPATH =~ "tools.jar" )   ]] ; then
+    echo " ";
+    echo "You must have a tools.jar either in your classpath or in $JAVA_HOME/lib";
+    echo " ";
+    exit 2;
+fi
+
+
+# Loop through the included parameters and generate.
+for param in $*;
+do
+    $JAVA_HOME/bin/java -Xms32m -Xmx196m -classpath .:../lib/activation.jar:../lib/commons-pool.jar:../lib/bstres.jar:../lib/bstres_nl1.jar:../lib/jdom.jar:../lib/log4j.jar:../lib/factory.jar:../clientLibs/builderui.jar:../clientLibs/j2ee.jar:../lib/wsdl4j.jar:../classes:../lib:$JAVA_HOME/lib/tools.jar:$CLASSPATH -Dbowstreet.rootDirectory=".." com.bowstreet.builderutilities.BuilderAPIGenerator $param;
+done;	
+
+exit 0;

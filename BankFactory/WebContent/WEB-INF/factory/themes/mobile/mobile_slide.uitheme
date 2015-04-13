@@ -1,0 +1,27 @@
+<!--  **************************  Mobile Theme with Slide Transition **********************************
+
+A theme is a collection of style information that can be used to drive builder inputs that provide the application UI in your model.
+This information can include but is not limited to HTML templates, style sheets (CSS), base pages, highlighting style, and paging style. 
+
+This theme file extends the mobile.uitheme and pulls in CSS class definitions that implement a slide transition.
+
+For more Theme information please see the "Themes and user interface control" section of the product documentation.
+
+-->
+
+<Theme extends="/WEB-INF/factory/themes/mobile/mobile.uitheme">
+    <DataPage_StyleSheetOverride>/factory/html_templates/mobile/mobile_table_slide.css</DataPage_StyleSheetOverride>
+    <ViewAndForm_ViewPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table_slide.css</ViewAndForm_ViewPageStyleSheetOverride>
+    <ViewAndForm_DetailPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table_slide.css</ViewAndForm_DetailPageStyleSheetOverride>
+    <ViewAndForm_UpdatePageStyleSheetOverride>/factory/html_templates/mobile/mobile_table_slide.css</ViewAndForm_UpdatePageStyleSheetOverride>
+    <ViewAndForm_InputPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table_slide.css</ViewAndForm_InputPageStyleSheetOverride>
+    <DSUI_StyleSheetOverride>/factory/html_templates/mobile/mobile_table_slide.css</DSUI_StyleSheetOverride>
+    <DSUI_CreatePageStyleSheetOverride>/factory/html_templates/mobile/mobile_table_slide.css</DSUI_CreatePageStyleSheetOverride>
+    <DSUI_UpdatePageStyleSheetOverride>/factory/html_templates/mobile/mobile_table_slide.css</DSUI_UpdatePageStyleSheetOverride>
+    <DSUI_DetailsPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table_slide.css</DSUI_DetailsPageStyleSheetOverride>
+    <DSUI_QueryPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table_slide.css</DSUI_QueryPageStyleSheetOverride>
+    <DSUI_SearchPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table_slide.css</DSUI_SearchPageStyleSheetOverride>
+    <DSUI_FilterPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table_slide.css</DSUI_FilterPageStyleSheetOverride>
+    <DSUI_ListPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table_slide.css</DSUI_ListPageStyleSheetOverride>
+    <InputForm_StyleSheetOverride>/factory/html_templates/mobile/mobile_table_slide.css</InputForm_StyleSheetOverride>
+</Theme>

@@ -1,0 +1,9 @@
+.lotusLeft{
+  float:left;text-align:left;
+}
+.lotusRight{
+  float:right;text-align:right;
+}
+.lotusInlinelist li{
+  display:inline;margin:0;padding:0 7px;border-left-width:1px;border-left-style:solid;
+}

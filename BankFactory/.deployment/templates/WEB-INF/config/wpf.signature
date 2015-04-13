@@ -1,0 +1,4 @@
+
+project.name=@PROJECT_NAME@
+publish.timestamp=@PUBLISH_TIMESTAMP@
+

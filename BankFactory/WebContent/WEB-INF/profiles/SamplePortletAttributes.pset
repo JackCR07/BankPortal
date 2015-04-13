@@ -1,0 +1,30 @@
+<ProfileSet name="SamplePortletAttributes" useQualifiedProfileNames="true"><Description>profile set used in portlet adapter edit page sample</Description>
+<Visibility>False</Visibility>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<Models />
+<ProfileDef><Entries><Entry name="bgcolor" isRuntime="false">
+<UI type="Select"><Prompt>background color</Prompt>
+<ExtraData>white,aquamarine,hotpink,plum</ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1033485864475" isContainer="true"><Values><Value name="bgcolor">white</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Hunter" last_modified="1033492444248" isContainer="true" parent="Default"><Values><Value name="bgcolor">aquamarine</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Scarlet" last_modified="1033492444248" isContainer="true" parent="Default"><Values><Value name="bgcolor">hotpink</Value>
+</Values>
+<Roles />
+</Profile>
+<Profile name="Violet" last_modified="1033492444248" isContainer="true" parent="Default"><Values><Value name="bgcolor">plum</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

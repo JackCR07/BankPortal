@@ -1,0 +1,75 @@
+<ProfileSet name="servicedocumentationbaseps" useQualifiedProfileNames="true"><Description>Generated profile set for model service_documentation_base</Description>
+<Visibility>False</Visibility>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<Models />
+<ProfileDef><Entries><Entry name="CreateMain" isRuntime="false"><UI type="TextInput"><Prompt>CreateMain</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="GetServicesMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>GetServicesMethodBody</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="GetWebAppsMethodBody" isRuntime="false"><UI type="TextInput"><Prompt>GetWebAppsMethodBody</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ModelPageURL" isRuntime="false"><UI type="TextInput"><Prompt>ModelPageURL</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="OperationPageURL" isRuntime="false"><UI type="TextInput"><Prompt>OperationPageURL</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="OuterPageURL" isRuntime="false"><UI type="TextInput"><Prompt>OuterPageURL</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ServicePageURL" isRuntime="false"><UI type="TextInput"><Prompt>ServicePageURL</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ShowSchemaElements" isRuntime="false"><UI type="TextInput"><Prompt>ShowSchemaElements</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="ShowSchemaLink" isRuntime="false"><UI type="TextInput"><Prompt>ShowSchemaLink</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="SingleServiceName" isRuntime="false"><UI type="TextInput"><Prompt>SingleServiceName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="UsageText" isRuntime="false"><UI type="TextInput"><Prompt>UsageText</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1132168244556" isContainer="true"><Values><Value name="CreateMain">true</Value>
+<Value name="GetServicesMethodBody">{
+    WebApp webApp = (WebApp)webAppAccess.getVariables().getObject("_u_WebApp");
+    return webApp.getDataServices();
+}</Value>
+<Value name="GetWebAppsMethodBody">{
+    String modelName = "services/MethodProvider";
+    Collection webApps = new LinkedList();
+    webApps.add(WebAppUtils.getWebApp(modelName, null));
+    return webApps.iterator();
+}</Value>
+<Value name="ModelPageURL">factory/pages/ServiceDocumentation/model.html</Value>
+<Value name="OperationPageURL">factory/pages/ServiceDocumentation/operation.html</Value>
+<Value name="OuterPageURL">factory/pages/ServiceDocumentation/outer.html</Value>
+<Value name="ServicePageURL">factory/pages/ServiceDocumentation/service.html</Value>
+<Value name="ShowSchemaElements">true</Value>
+<Value name="ShowSchemaLink">false</Value>
+<Value name="SingleServiceName"></Value>
+<Value name="UsageText">Implemented</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

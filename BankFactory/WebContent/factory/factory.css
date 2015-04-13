@@ -1,0 +1,59 @@
+BODY {	
+FONT-SIZE: 13px; FONT-FAMILY: verdana,Arial
+}
+TABLE { 
+	FONT-SIZE: 13px; FONT-FAMILY: verdana,Arial
+}
+BUTTON {
+	FONT-SIZE: 13px; FONT-FAMILY: verdana,Arial
+}
+INPUT {
+	FONT-SIZE: 13px; FONT-FAMILY: verdana,Arial
+}
+SELECT {
+	FONT-SIZE: 13px; FONT-FAMILY: verdana,Arial
+}
+TEXTAREA {
+	FONT-SIZE: 13px; FONT-FAMILY: verdana,Arial
+}
+A {
+	COLOR: #3366cc; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #000033
+}
+H1 { 
+color: #004E8E; font-weight: bold; font-size: 18px; font-family: Arial, Helvetica;
+}
+H2{
+ color: #004E8E; font-weight: bold; font-size: 13px; font-family: Arial, Helvetica; 
+ }
+
+
+.labelField {color:#000000;font:bold 9pt Arial;text-align:left;}
+.orangeLabel {color:#FF4500;font:bold 9pt Arial;text-align:left;}
+.dataField {color:#000000;font:9pt Arial;}
+.propertyField {color:#000000;font:bold 10pt Arial;}
+.captionField {color:#000000;font:9pt Arial;}
+.errorText {color:#FF0000;font:9pt Arial;font-weight:bold;}
+.warningText {color:#000099;font:9pt Arial;font-weight:bold;}
+.commentText {color:#339900;font:9pt Arial;}
+.headerField {color:#000000;font:bold 14pt Arial}
+.subHeaderField {color:#000000;font:bold 12pt Arial}
+.headerBarText {color:#FFFFFF;font:bold 9pt Arial;text-align:left;}
+
+.headerBarLink {color:#FFFFFF;text-decoration:underline;font:9pt Arial;text-align:left;}
+A.headerBarLink:link {color:#FFFFFF;text-decoration:underline;font:9pt Arial;text-align:left;}
+A.headerBarLink:active {color:#FFFFFF;text-decoration:underline;font:9pt Arial;text-align:left;}
+A.headerBarLink:visited {color:#FFFFFF;text-decoration:underline;font:9pt Arial;text-align:left;}
+
+
+.button100 {font:8pt Arial;width:100px;}
+.button150 {font:8pt Arial;width:150px;}
+.button200 {font:8pt Arial;width:200px;}
+.button250 {font:8pt Arial;width:250px;}
+
+
+.bg1 {background-color:#EFEFEF;}
+.bg2 {background-color:#6673A9;font-size: 8pt;}
+.bg3 {background-color:#CCCCCC;}

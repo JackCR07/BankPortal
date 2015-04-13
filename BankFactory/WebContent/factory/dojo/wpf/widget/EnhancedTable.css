@@ -1,0 +1,22 @@
+.wpfTableColumnResizing {
+	cursor: col-resize !important;
+}
+/* override the base dojoDndItemBefore to move the indicator bar to the left edge of the target cell */
+.tableHeadRow .dojoDndItemBefore {
+	border-left:2px solid #336699;
+	border-top:1px solid #FFFFFF !important;
+}
+/* override the base dojoDndItemAfter to move the indicator bar to the right edge of the target cell */
+.tableHeadRow .dojoDndItemAfter {
+	border-right:2px solid #336699;
+	border-bottom:1px solid #919191 !important;
+}
+.tableHeadRow .dojoDndItemOver {
+	padding:3px;
+}
+.tableHeadRow .dojoDndItemAnchor {
+	padding:3px;
+}
+.tableHeadRow .dojoDndItem {
+	display:table-cell;
+}

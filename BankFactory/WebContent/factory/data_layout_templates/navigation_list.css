@@ -1,0 +1,20 @@
+/** styles used by Data Layout Template style sheets **/
+@IMPORT url("base_template_styles.css");
+
+ul.wpfNavListContainer {
+    list-style-type: disc;
+}
+
+.wpfNavListContainer a.wpfSelectableRow {
+    color: #000000;
+    text-decoration: none;
+}
+
+.wpfNavListContainer .wpfLargeTitleText {
+    font-size: 14px;
+}
+
+.wpfNavListContainer .wpfGroupTitle {
+    font-weight: bold;
+    font-size: 17px;
+}

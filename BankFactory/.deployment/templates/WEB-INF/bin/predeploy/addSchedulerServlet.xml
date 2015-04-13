@@ -1,0 +1,19 @@
+<project name="addSchedulerServlet" basedir="." default="execute">
+
+	<target name="execute">
+		<antcall target="addSchedulerServlet" />
+	</target>
+
+	<target name="addSchedulerServlet">
+		<ant antfile="${tools.location}/publish/publish_utils.xml" target="addaServlet">
+			<property name="comment" value="Scheduler servlet for Alerting features." />
+			<property name="servletName" value="SchedulerInit" />
+			<property name="displayName" value="SchedulerInit" />
+			<property name="servletClass" value="com.bowstreet.util.scheduler.init.SchedulerInitializationServlet" />
+			<property name="loadOnStartup" value="3" />
+			<property name="urlPattern" value="/SchedulerInit" />
+			<property name="webXmlFile" value="${project.location}/WEB-INF/web.xml" />
+		</ant>
+	</target>	
+
+</project>

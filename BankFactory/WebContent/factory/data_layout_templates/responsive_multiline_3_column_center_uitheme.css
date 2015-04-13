@@ -1,0 +1,5 @@
+/* the styles for this layout are contained in the **responsive_MultiLineList** section of the 
+ /factory/html_templates/WEF8.5_uitheme.css file
+ the import is used only if you add this file with a style sheet builder not the data layout builder*/
+@IMPORT url("responsive_base_styles.css");
+@IMPORT url("responsive_multiline.css");

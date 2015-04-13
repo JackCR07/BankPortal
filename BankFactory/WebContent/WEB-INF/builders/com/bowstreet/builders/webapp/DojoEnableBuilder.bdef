@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoEnableBuilder">
+  <ReadableName>Dojo Enable</ReadableName>
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName>
+  <HelpFile>factory/product_documentation/designer/dojo_enable.html</HelpFile>
+  <RequiredFactoryVersion>6.0.0</RequiredFactoryVersion>
+  <Description>Dojo enables a model page</Description>
+  <Domains>
+    <Domain>WebApp</Domain>
+    <Domain>Consumer</Domain>
+    <Domain>Client</Domain>
+  </Domains>
+  <Category>Rich UI</Category>
+  <Keywords>Page, Page Elements, Display, Flow Control, Layout</Keywords>
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <BuilderData>
+    <BuilderDataEntry name="PickerVisibility">5</BuilderDataEntry>
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoEnableBuilder</BuilderDataEntry>
+    <BuilderDataEntry name="IconName">dojo_Enable</BuilderDataEntry>
+  </BuilderData>
+  <CoordinatorClassName />
+  <InputDefinitions>
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName">
+      <Prompt>Name</Prompt>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="PageName" base="com.bowstreet.core.Base.PageName">
+      <Prompt>Select Page</Prompt>
+      <HelpText>Select the page to dojo enable</HelpText>
+      <Required>true</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+      <Property>true</Property>
+    </InputDefinition>
+
+    <InputDefinition name="RequiresList" base="com.bowstreet.core.Base.XMLData">
+      <Prompt>Requires Package List</Prompt>
+      <Type>Xml</Type>
+      <InitialValue />
+      <HelpText>Enter additional requires</HelpText>
+      <Page />
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <Callable>true</Callable>
+      <Property>true</Property>
+      <Editor JavaClass="com.bowstreet.editor.uitools.widgets.ListWidget">
+        <Argument name="columns">1</Argument>
+        <Argument name="headings">Name</Argument>
+        <Argument name="columnTags">Name</Argument>
+        <Argument name="rowtag">InputMapping</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="Script"  base="com.bowstreet.core.Base.StringData">
+        <Prompt>JavaScript</Prompt>
+        <HelpText>Specify JavaScript code to insert</HelpText>
+        <Property>true</Property>
+        <Editor JavaClass="com.bowstreet.widget.MethodEditor">
+              <Argument name="height">200</Argument>
+              <Argument name="linewrap">true</Argument>
+        </Editor>
+    </InputDefinition>
+
+
+    <InputDefinition name="ScriptFiles" base="com.bowstreet.core.Base.XMLData">
+      <Prompt>JavaScript Files</Prompt>
+      <Type>Xml</Type>
+      <HelpText>Specify any additional JavaScript files you want to add to the target page.</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <Callable>true</Callable>
+      <Property>true</Property>
+      <Editor JavaClass="com.bowstreet.editor.uitools.widgets.ListWidget">
+        <Argument name="columns">1</Argument>
+        <Argument name="headings">Name</Argument>
+        <Argument name="columnTags">Name</Argument>
+        <Argument name="rowtag">InputMapping</Argument>
+        <Argument name="cellEditors">
+          <Editors>
+            <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+                <Argument name="isEditable">true</Argument>
+                <Argument name="noShowWebInf">true</Argument>
+            </Editor>
+          </Editors>
+        </Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="CSSFiles" base="com.bowstreet.core.Base.XMLData">
+      <Prompt>CSS Files</Prompt>
+      <Type>Xml</Type>
+      <HelpText>Specify any additional CSS files you want to add to the target page.</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <Callable>true</Callable>
+      <Property>true</Property>
+      <Editor JavaClass="com.bowstreet.editor.uitools.widgets.ListWidget">
+        <Argument name="columns">1</Argument>
+        <Argument name="headings">Name</Argument>
+        <Argument name="columnTags">Name</Argument>
+        <Argument name="rowtag">InputMapping</Argument>
+        <Argument name="cellEditors">
+          <Editors>
+            <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+                <Argument name="isEditable">true</Argument>
+                <Argument name="noShowWebInf">true</Argument>
+            </Editor>
+          </Editors>
+        </Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="ModuleUrlCSSFiles" base="com.bowstreet.core.Base.XMLData">
+      <Prompt>Dojo CSS Files</Prompt>
+      <Type>Xml</Type>
+      <HelpText>Specify any additional Dojo CSS files you want to add to the target page using dojo.moduleUrl(..) to construct the URL.</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <Callable>true</Callable>
+      <Property>true</Property>
+      <Editor JavaClass="com.bowstreet.editor.uitools.widgets.ListWidget">
+        <Argument name="columns">2</Argument>
+        <Argument name="headings">Module Name,Name</Argument>
+        <Argument name="columnTags">ModuleName,Name</Argument>
+        <Argument name="rowtag">Row</Argument>
+        <Argument name="cellEditors">
+          <Editors>
+            <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+                <Argument name="isEditable">true</Argument>
+                <Argument name="noShowWebInf">true</Argument>
+            </Editor>
+          </Editors>
+        </Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="Theme" base="com.bowstreet.core.Base.ComboBox">
+      <Prompt>Theme</Prompt>
+      <HelpText>Select which Dojo theme to apply</HelpText>
+      <Editor JavaClass="com.bowstreet.widget.ComboBox">
+        <Argument name="listLabels">,claro</Argument>
+        <Argument name="listData">,claro</Argument>
+      </Editor>
+    </InputDefinition>
+
+  </InputDefinitions>
+  <GroupDefinitions>
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" />
+  </GroupDefinitions>
+  <PageDefinitions />
+</BuilderDef>
+

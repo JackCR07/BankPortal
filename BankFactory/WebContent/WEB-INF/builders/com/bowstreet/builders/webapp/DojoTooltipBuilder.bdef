@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoTooltipBuilder"> 
+  <ReadableName>Dojo Tooltip</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName> 
+  <HelpFile>factory/product_documentation/designer/dojo_tooltip.html</HelpFile>
+  <RequiredFactoryVersion>6.0.1</RequiredFactoryVersion> 
+  <Description>Displays a popup text box when you mouse over a target page control. The text can be a simple caption string, or an entire page in your model.</Description> 
+  <Domains> 
+    <Domain>WebApp</Domain> 
+    <Domain>Consumer</Domain>
+  </Domains> 
+  <Category>Rich UI</Category>
+  <Keywords>Page, Page Elements, Display, Flow Control, Layout</Keywords>
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoTooltipBuilder</BuilderDataEntry> 
+    <BuilderDataEntry name="IconName">dojo_Tool_tip</BuilderDataEntry>
+    <BuilderDataEntry name="PageLocation">onNamedTag</BuilderDataEntry>
+  </BuilderData> 
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoTooltipCoordinator</CoordinatorClassName> 
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName"> 
+      <Prompt>Name</Prompt> 
+      <HelpText>Enter a name for this builder call</HelpText> 
+      <Required>false</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition>
+    
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation"> 
+      <Prompt></Prompt> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+    
+    <InputDefinition name="TooltipType" base="com.bowstreet.core.Base.StringData">
+       <Prompt>Tooltip Type</Prompt>
+       <HelpText>Choose the Tooltip Type</HelpText>
+       <InitialValue>Text</InitialValue>
+       <Property>true</Property>
+       <Editor JavaClass="com.bowstreet.widget.RadioBox">
+         <Argument name="listLabels">Text,Action</Argument>
+         <Argument name="listData">Text,Action</Argument>
+       </Editor>
+    </InputDefinition>
+   
+    <InputDefinition name="TooltipText" base="com.bowstreet.core.Base.IndirectValue" >
+      <Prompt>Tooltip Text</Prompt>
+      <HelpText>Specify the text for the Tooltip</HelpText>
+      <Required>false</Required>
+      <Visible>false</Visible> 
+      <Property>true</Property>
+   </InputDefinition>
+    
+   <InputDefinition name="TooltipAction" base="com.bowstreet.core.WebAppBase.Action">
+     <Prompt>Tooltip Action</Prompt>
+      <HelpText>Specify the action for the Tooltip. The Action must process a page or return the tip text.</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible> 
+      <Property>true</Property>
+   </InputDefinition>
+   
+   <InputDefinition name="InputMappings" base="com.bowstreet.core.Base.InputMappings" />
+    
+    
+   <InputDefinition name="Width" base="com.bowstreet.core.Base.IndirectValue"> 
+      <Prompt>Tooltip Width</Prompt> 
+      <HelpText>Optional width of the tooltip in pixels</HelpText>
+      <Required>false</Required> 
+      <Visible>false</Visible> 
+   </InputDefinition> 
+    
+   <InputDefinition name="Height" base="com.bowstreet.core.Base.IndirectValue"> 
+      <Prompt>Tooltip Height</Prompt> 
+      <HelpText>Optional height of the tooltip in pixels</HelpText>
+      <Required>false</Required>  
+      <Visible>false</Visible> 
+   </InputDefinition> 
+       
+   <InputDefinition name="Position" base="com.bowstreet.core.Base.ComboBox">
+      <Prompt>Tooltip Position</Prompt>
+      <HelpText>Optional position of the tooltip</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <Property>true</Property>
+      <Editor>
+         <Argument name="ListLabels">Before,After,Above,Below</Argument>
+         <Argument name="ListData">before,after,above,below</Argument>
+         <Argument name="width">200</Argument>
+         <Argument name="isEditable">false</Argument>
+      </Editor>
+   </InputDefinition>
+
+  </InputDefinitions> 
+  <GroupDefinitions> 
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" /> 
+  </GroupDefinitions> 
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

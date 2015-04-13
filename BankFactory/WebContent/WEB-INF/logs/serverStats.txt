@@ -1,0 +1,10 @@
+*-- TIME: [2015-04-08 15:57:24,435] --* 
+Category: bowstreet.system.server.logging.serverStats.default
+Priority: INFO
+Thread:   Web Experience Factory (server stats logging)
+Msg:      Server Statistics Log Started
+Websphere Portlet Factory version: 8.5.0 Release WEF8.5_20140414-1110
+
+
+
+

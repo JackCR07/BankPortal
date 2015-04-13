@@ -1,0 +1,11 @@
+/** styles used by Data Layout Template style sheets **/
+@IMPORT url("base_template_styles.css");  
+
+ul.wpfUnOrderedList {
+list-style-type: disc;
+}
+
+.wpfUnOrderedList a.wpfSelectableRow {
+    color: #000000;
+    text-decoration: none;
+}

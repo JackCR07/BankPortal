@@ -1,0 +1,22 @@
+<%/* Template file used by the Page Loading Indicator builder.
+     The name of this file can be specified as an input to the Page Loading Indicator builder.
+     You can create your own template file to provide an alternate layout.
+     When creating a template you must maintain the following tagged elements:
+     wrapper - the outer element which will be replaced with the action results
+     image - The specified progress image will be attached here.
+     message - Any user-specified message text will go here.
+   */ %>
+<html>
+  <head />
+  <body>
+    <form method="post">
+      <center name="wrapper" style="height:100%;width:100%">
+        <span name="image"/>
+        <br />
+        <i name="message"></i>
+      </center>
+      <% /* This section is used to forward request inputs to the called action. */ %>      
+      <span name="savedInputs" />
+    </form>
+  </body>
+</html>

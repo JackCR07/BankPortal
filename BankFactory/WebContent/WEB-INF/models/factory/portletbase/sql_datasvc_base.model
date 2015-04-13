@@ -1,0 +1,1149 @@
+<Model id="factory/portletbase/sql_datasvc_base"><BuilderCallList><BuilderCall id="bc17"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallCategory">General</Input>
+<Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">true</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-O03 
+(C) Copyright 2004, 2006. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03 
+(C) Copyright 2004, 2006. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc39"><BuilderDefID>com.bowstreet.builders.webapp.SqlDataSourceBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
+<Input name="Name">WPFEmployeeDataSource</Input>
+<Input name="DataSourceName" profile="portletbase_sql_crud:SqlDataSource">java:comp/env/jdbc/MyDataSource</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ServiceDefinitionBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallCategory">General</Input>
+<Input name="PublicService" profile="portletbase_sql_crud:PublicService">true</Input>
+<Input name="ExportAsWSDL">false</Input>
+<Input name="MaintainState" profile="portletbase_sql_crud:maintainState">false</Input>
+<Input name="GenerateStubAutomatically">false</Input>
+<Input name="AddTestingSupport" profile="portletbase_sql_crud:enableTestingSupport">false</Input>
+<Input name="TestCreateMain">true</Input>
+<Input name="TestIncludeDocumentation">false</Input>
+<Input name="TestOverrideInputs">true</Input>
+<Input name="ServiceName" profile="portletbase_sql_crud:ServiceName">Employees</Input>
+<Input name="TestServiceName">Employees</Input>
+<Input name="Name">Employees</Input>
+<Input name="TestOperationInputs"><top />
+</Input>
+<Input name="StubModel">samples/sql_service/SqlWPFEmployeeStub</Input>
+<Input name="LogicalOperations"><Functions><FunctionDef><LogicalName>Create</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>Update</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>Delete</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+</Functions>
+</Input>
+<Input name="BuilderCallEnabled" profile="portletbase_sql_crud:enableCore">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc61"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">List</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc27"><BuilderDefID>com.bowstreet.builders.webapp.SqlCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_sql_crud:enableListRecords">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EntityTypeToFetch">Tables</Input>
+<Input name="StatementType">Select</Input>
+<Input name="ParameterBinding">AutoCreateXMLVariable</Input>
+<Input name="TransformResult" profile="portletbase_sql_crud:EnablePaging">PagedXmlDataRetriever</Input>
+<Input name="SchemaGeneration">FromSQLStatement</Input>
+<Input name="SchemaRegenTime">OnlyWhenSQLBuilderChangesAreDetected</Input>
+<Input name="SchemaImportRule">ImportOnlyAtDesignTime</Input>
+<Input name="Name">WPFEmployeeList</Input>
+<Input name="Parameters" xmlProfile="portletbase_sql_crud:listParameters"><top />
+</Input>
+<Input name="FetchDataSourceNames">Fetch DataSource Names</Input>
+<Input name="SqlDataSourceValues">jdbc/wpdbDS,jdbc/syncDS,jdbc/designerDS,jdbc/DefaultEJBTimerDataSource,jdbc/wpf_samples</Input>
+<Input name="SqlDataSource">java:comp/env/jdbc/MyDataSource</Input>
+<Input name="SqlStatement" profile="portletbase_sql_crud:listRecordsSql">select EMPNO from samp.EMPLOYEE</Input>
+<Input name="Concurrency">ReadOnly</Input>
+<Input name="ScrollType">Insensitive</Input>
+<Input name="AllowDataRetrieverConversion" profile="portletbase_sql_crud:AllowXmlConversion">false</Input>
+<Input name="SqlDataSourceBuilder">WPFEmployeeDataSource</Input>
+<Input name="SqlDataSourceOverride">"WPFEmployeeDataSource" is set as the SQL DataSource override builder</Input>
+<Input name="LogSqlStatements" profile="portletbase_sql_crud:enableSqlLogging"></Input>
+<Input name="TopElementName" profile="portletbase_sql_crud:ListTopElementName"></Input>
+<Input name="RowElementName" profile="portletbase_sql_crud:ListRowElementName"></Input>
+<Input name="UseColumnLabels">true</Input>
+<Input name="RowCountCalculation">Unspecified</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[$Child$call1Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call1StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/b1/webengine/factory/wizardbase/database_service_provider/call1Transform" targetNamespace="http://localhost:8080/b1/webengine/factory/wizardbase/database_service_provider/call1Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Wednesday, May 3, 2006 2:37:49 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$getWPFEmployeeListQuerySchema$[jdbc/sample][null][null][select EMPNO, FIRSTNME, LASTNAME from EMPLOYEE][<InputParameters />
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>WPFEmployees</TopElementName>
+][<RowElementName>WPFEmployeeSummary</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:9081/cuda7-10/webengine/samples/sql_service/SqlWPFEmployeeService/getWPFEmployeeListQueryTransform" targetNamespace="http://localhost:9081/cuda7-10/webengine/samples/sql_service/SqlWPFEmployeeService/getWPFEmployeeListQueryTransform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation><xsd:documentation xml:lang="en">Schema automatically generated on "Wednesday, August 9, 2006 1:39:58 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element name="WPFEmployees" type="cns:WPFEmployeesType" />
+<xsd:complexType name="WPFEmployeesType"><xsd:sequence><xsd:element ref="cns:WPFEmployeeSummary" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="WPFEmployeeSummary"><xsd:complexType><xsd:sequence><xsd:element name="EMPNO" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="FIRSTNME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="LASTNAME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$getWPFEmployeeListSQLSchema$[java:comp/env/jdbc/MyDataSource][null][null][select EMPNO from samp.EMPLOYEE][<InputParameters />
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>WPFEmployees</TopElementName>
+][<RowElementName>WPFEmployeeSummary</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://factory/portletbase/sql_datasvc_base/getWPFEmployeeListSQL" targetNamespace="http://factory/portletbase/sql_datasvc_base/getWPFEmployeeListSQL" elementFormDefault="qualified" attributeFormDefault="unqualified"><xsd:annotation><xsd:documentation xml:lang="en">Schema automatically generated on "Wednesday, May 5, 2010 12:00:11 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element name="WPFEmployees" type="cns:WPFEmployeesType" />
+<xsd:complexType name="WPFEmployeesType"><xsd:sequence><xsd:element ref="cns:WPFEmployeeSummary" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="WPFEmployeeSummary"><xsd:complexType><xsd:sequence><xsd:element name="EMPNO" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_sql_crud:enableListRecords">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="InputStructureHandling">FromOperation</Input>
+<Input name="InputAllowStructureEdit">false</Input>
+<Input name="InputAutomaticMapping">true</Input>
+<Input name="ResultStructureHandling">FromOperation</Input>
+<Input name="ResultSchema" />
+<Input name="ResultAllowStructureEdit">false</Input>
+<Input name="ResultAutomaticMapping">true</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="CachingTimeout">3600</Input>
+<Input name="PreExecuteEventEnabled">disabled</Input>
+<Input name="PostExecuteEventEnabled">disabled</Input>
+<Input name="DataService" profile="portletbase_sql_crud:ServiceName">Employees</Input>
+<Input name="ResultMappingTable"><Fields />
+</Input>
+<Input name="InputMappingTable"><Fields />
+</Input>
+<Input name="OperationName" profile="portletbase_sql_crud:listOpName">getEmployeeList</Input>
+<Input name="TargetOperation">DataServices/WPFEmployeeList/execute</Input>
+<Input name="Name">getEmployeeList</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc71"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Search</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc49"><BuilderDefID>com.bowstreet.builders.webapp.SqlCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_sql_crud:enableSearchRecords">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EntityTypeToFetch">Tables</Input>
+<Input name="StatementType">Select</Input>
+<Input name="ParameterBinding">AutoCreateXMLVariable</Input>
+<Input name="TransformResult" profile="portletbase_sql_crud:EnablePaging">PagedXmlDataRetriever</Input>
+<Input name="SchemaGeneration">FromSQLStatement</Input>
+<Input name="SchemaRegenTime">OnlyWhenSQLBuilderChangesAreDetected</Input>
+<Input name="SchemaImportRule">ImportOnlyAtDesignTime</Input>
+<Input name="Name">WPFEmployeeSearch</Input>
+<Input name="Parameters" xmlProfile="portletbase_sql_crud:searchParameters"><top><Parameter><Position>1</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/searchForEmployeesSQLInputs/EMPNO}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>2</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/searchForEmployeesSQLInputs/FIRSTNME}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>3</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/searchForEmployeesSQLInputs/LASTNAME}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>4</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/searchForEmployeesSQLInputs/WORKDEPT}</ValueSetCastMethod>
+</Parameter>
+</top>
+</Input>
+<Input name="FetchDataSourceNames">Fetch DataSource Names</Input>
+<Input name="SqlDataSourceValues">java:comp/env/jdbc/MyDataSource</Input>
+<Input name="SqlDataSource">java:comp/env/jdbc/MyDataSource</Input>
+<Input name="SqlStatement" profile="portletbase_sql_crud:searchRecordsSql">select EMPNO, FIRSTNME, LASTNAME, WORKDEPT from samp.EMPLOYEE 
+where EMPNO like ? and FIRSTNME like ? and LASTNAME like ? and WORKDEPT like ?</Input>
+<Input name="Concurrency">ReadOnly</Input>
+<Input name="ScrollType">Insensitive</Input>
+<Input name="AllowDataRetrieverConversion" profile="portletbase_sql_crud:AllowXmlConversion">false</Input>
+<Input name="SqlDataSourceBuilder">WPFEmployeeDataSource</Input>
+<Input name="SqlDataSourceOverride">"WPFEmployeeDataSource" is set as the SQL DataSource override builder</Input>
+<Input name="LogSqlStatements" profile="portletbase_sql_crud:enableSqlLogging"></Input>
+<Input name="InputParametersAreSearchCriteria">true</Input>
+<Input name="TopElementName" profile="portletbase_sql_crud:SearchTopElementName"></Input>
+<Input name="RowElementName" profile="portletbase_sql_crud:SearchRowElementName"></Input>
+<Input name="UseColumnLabels">true</Input>
+<Input name="RowCountCalculation">Unspecified</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[$Child$call1Schema$[java:comp/env/jdbc/sample][null][null][select * from ORDERS where STATUS like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/call1StatementForSchema_argInput1}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:8080/b1/webengine/factory/wizardbase/database_service_provider/call1Transform" targetNamespace="http://localhost:8080/b1/webengine/factory/wizardbase/database_service_provider/call1Transform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:documentation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en">Schema automatically generated on "Wednesday, May 3, 2006 2:37:49 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSet" type="cns:RowSetType" />
+<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RowSetType"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Row"><xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:sequence xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ORDER_ID" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_ORDERED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="STATUS" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DATE_SHIPPED" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QUANTITY" type="xsd:integer" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AMOUNT" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BILLING" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$getWPFEmployeeListQuerySchema$[jdbc/sample][null][null][select EMPNO, FIRSTNME, LASTNAME from EMPLOYEE][<InputParameters />
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>WPFEmployees</TopElementName>
+][<RowElementName>WPFEmployeeSummary</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:9081/cuda7-10/webengine/samples/sql_service/SqlWPFEmployeeService/getWPFEmployeeListQueryTransform" targetNamespace="http://localhost:9081/cuda7-10/webengine/samples/sql_service/SqlWPFEmployeeService/getWPFEmployeeListQueryTransform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation><xsd:documentation xml:lang="en">Schema automatically generated on "Wednesday, August 9, 2006 1:39:58 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element name="WPFEmployees" type="cns:WPFEmployeesType" />
+<xsd:complexType name="WPFEmployeesType"><xsd:sequence><xsd:element ref="cns:WPFEmployeeSummary" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="WPFEmployeeSummary"><xsd:complexType><xsd:sequence><xsd:element name="EMPNO" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="FIRSTNME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="LASTNAME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$getWPFEmployeeListSQLSchema$[jdbc/sampledb][null][null][select EMPNO, FIRSTNME, LASTNAME from demo.EMPLOYEE][<InputParameters />
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>WPFEmployees</TopElementName>
+][<RowElementName>WPFEmployeeSummary</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://localhost:10044/cougar/webengine/samples/sql_service/SqlWPFEmployeeService/getWPFEmployeeListSQLTransform" targetNamespace="http://localhost:10044/cougar/webengine/samples/sql_service/SqlWPFEmployeeService/getWPFEmployeeListSQLTransform" elementFormDefault="unqualified" attributeFormDefault="unqualified"><xsd:annotation><xsd:documentation xml:lang="en">Schema automatically generated on "Tuesday, August 22, 2006 1:15:54 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element name="WPFEmployees" type="cns:WPFEmployeesType" />
+<xsd:complexType name="WPFEmployeesType"><xsd:sequence><xsd:element ref="cns:WPFEmployeeSummary" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="WPFEmployeeSummary"><xsd:complexType><xsd:sequence><xsd:element name="EMPNO" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="FIRSTNME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="LASTNAME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$searchForWPFEmployeesSQLSchema$[java:comp/env/jdbc/MyDataSource][null][null][select EMPNO, FIRSTNME, LASTNAME, WORKDEPT from samp.EMPLOYEE 
+where EMPNO like ? and FIRSTNME like ? and LASTNAME like ? and WORKDEPT like ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/searchForWPFEmployeesSQLStatementForSchemaInputsEMPNO}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+<Parameter><Position>2</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/searchForWPFEmployeesSQLStatementForSchemaInputsFIRSTNME}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+<Parameter><Position>3</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/searchForWPFEmployeesSQLStatementForSchemaInputsLASTNAME}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+<Parameter><Position>4</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/searchForWPFEmployeesSQLStatementForSchemaInputsWORKDEPT}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>WPFEmployees</TopElementName>
+][<RowElementName>WPFEmployeeSummary</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://factory/portletbase/sql_datasvc_base/searchForWPFEmployeesSQL" targetNamespace="http://factory/portletbase/sql_datasvc_base/searchForWPFEmployeesSQL" elementFormDefault="qualified" attributeFormDefault="unqualified"><xsd:annotation><xsd:documentation xml:lang="en">Schema automatically generated on "Thursday, March 4, 2010 3:04:41 PM EST" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element name="WPFEmployees" type="cns:WPFEmployeesType" />
+<xsd:complexType name="WPFEmployeesType"><xsd:sequence><xsd:element ref="cns:WPFEmployeeSummary" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="WPFEmployeeSummary"><xsd:complexType><xsd:sequence><xsd:element name="EMPNO" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="FIRSTNME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="LASTNAME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="WORKDEPT" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc51"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_sql_crud:enableSearchRecords">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="InputStructureHandling">FromOperation</Input>
+<Input name="InputAllowStructureEdit">false</Input>
+<Input name="InputAutomaticMapping">true</Input>
+<Input name="ResultStructureHandling">FromOperation</Input>
+<Input name="ResultAllowStructureEdit">false</Input>
+<Input name="ResultAutomaticMapping">true</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="CachingTimeout">3600</Input>
+<Input name="PreExecuteEventEnabled">disabled</Input>
+<Input name="PostExecuteEventEnabled">disabled</Input>
+<Input name="DataService" profile="portletbase_sql_crud:ServiceName">Employees</Input>
+<Input name="ResultMappingTable"><Fields><Field><Name>EMPNO</Name>
+<Type>string</Type>
+<Value>${Results/EMPNO}</Value>
+</Field>
+<Field><Name>FIRSTNME</Name>
+<Type>string</Type>
+<Value>${Results/FIRSTNME}</Value>
+</Field>
+<Field><Name>LASTNAME</Name>
+<Type>string</Type>
+<Value>${Results/LASTNAME}</Value>
+</Field>
+<Field><Name>WORKDEPT</Name>
+<Type>string</Type>
+<Value>${Results/WORKDEPT}</Value>
+</Field>
+</Fields>
+</Input>
+<Input name="InputMappingTable"><top><Field><Name>EMPNO</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>FIRSTNME</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>LASTNAME</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>WORKDEPT</Name>
+<Type>string</Type>
+</Field>
+</top>
+</Input>
+<Input name="OperationName" profile="portletbase_sql_crud:searchOpName">searchForEmployees</Input>
+<Input name="TargetOperation">DataServices/WPFEmployeeSearch/execute</Input>
+<Input name="Name">searchForWPFEmployees</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc65"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Create</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc44"><BuilderDefID>com.bowstreet.builders.webapp.SqlCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_sql_crud:enableCreateRecord">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EntityTypeToFetch">Tables</Input>
+<Input name="StatementType">Insert</Input>
+<Input name="ParameterBinding">AutoCreateXMLVariable</Input>
+<Input name="TransformResult">CompleteXmlDocument</Input>
+<Input name="SchemaGeneration">FromSQLStatement</Input>
+<Input name="SchemaRegenTime">OnlyWhenSQLBuilderChangesAreDetected</Input>
+<Input name="SchemaImportRule">ImportOnlyAtDesignTime</Input>
+<Input name="Name">WPFEmployeeCreate</Input>
+<Input name="Parameters" xmlProfile="portletbase_sql_crud:createParameters"><top><Parameter><Position>1</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/createEmployeeRecordSQLInputs/EMPNO}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>2</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/createEmployeeRecordSQLInputs/FIRSTNME}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>3</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/createEmployeeRecordSQLInputs/MIDINIT}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>4</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/createEmployeeRecordSQLInputs/LASTNAME}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>5</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/createEmployeeRecordSQLInputs/WORKDEPT}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>6</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/createEmployeeRecordSQLInputs/PHONENO}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>7</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/createEmployeeRecordSQLInputs/HIREDATE}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>8</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/createEmployeeRecordSQLInputs/JOB}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>9</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/createEmployeeRecordSQLInputs/EDLEVEL}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>10</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/createEmployeeRecordSQLInputs/SEX}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>11</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/createEmployeeRecordSQLInputs/BIRTHDATE}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>12</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/createEmployeeRecordSQLInputs/SALARY}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>13</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/createEmployeeRecordSQLInputs/BONUS}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>14</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/createEmployeeRecordSQLInputs/COMM}</ValueSetCastMethod>
+</Parameter>
+</top>
+</Input>
+<Input name="FetchDataSourceNames">Fetch DataSource Names</Input>
+<Input name="SqlDataSourceValues">jdbc/sampledb,jdbc/sample,jdbc/DefaultEJBTimerDataSource,jdbc/syncDS,jdbc/designerDS,jdbc/wpdbDS,jdbc/v5/dashbrd,jdbc/v5/dashboard</Input>
+<Input name="SqlDataSource">java:comp/env/jdbc/MyDataSource</Input>
+<Input name="FetchEntityNames">Fetch Entity Names</Input>
+<Input name="NameLabels">Schema: SYS; Table: SYSALIASES,Schema: SYS; Table: SYSCHECKS,Schema: SYS; Table: SYSCOLUMNS,Schema: SYS; Table: SYSCONGLOMERATES,Schema: SYS; Table: SYSCONSTRAINTS,Schema: SYS; Table: SYSDEPENDS,Schema: SYS; Table: SYSFILES,Schema: SYS; Table: SYSFOREIGNKEYS,Schema: SYS; Table: SYSKEYS,Schema: SYS; Table: SYSSCHEMAS,Schema: SYS; Table: SYSSTATEMENTS,Schema: SYS; Table: SYSSTATISTICS,Schema: SYS; Table: SYSTABLES,Schema: SYS; Table: SYSTRIGGERS,Schema: SYS; Table: SYSVIEWS,Schema: SYSIBM; Table: SYSDUMMY1,Schema: DEMO; Table: COMPENSATIONBUDGET,Schema: DEMO; Table: DEPARTMENT,Schema: DEMO; Table: EMPLOYEE,Schema: DEMO; Table: HIRINGCANDIDATETYPES</Input>
+<Input name="NameValues">null;SYS;SYSALIASES,null;SYS;SYSCHECKS,null;SYS;SYSCOLUMNS,null;SYS;SYSCONGLOMERATES,null;SYS;SYSCONSTRAINTS,null;SYS;SYSDEPENDS,null;SYS;SYSFILES,null;SYS;SYSFOREIGNKEYS,null;SYS;SYSKEYS,null;SYS;SYSSCHEMAS,null;SYS;SYSSTATEMENTS,null;SYS;SYSSTATISTICS,null;SYS;SYSTABLES,null;SYS;SYSTRIGGERS,null;SYS;SYSVIEWS,null;SYSIBM;SYSDUMMY1,null;DEMO;COMPENSATIONBUDGET,null;DEMO;DEPARTMENT,null;DEMO;EMPLOYEE,null;DEMO;HIRINGCANDIDATETYPES</Input>
+<Input name="EntityName">null;DEMO;EMPLOYEE</Input>
+<Input name="GenerateSampleSql">Generate Sample SQL</Input>
+<Input name="SampleSql">insert into DEMO.EMPLOYEE
+  (EMPNO, FIRSTNME, MIDINIT, LASTNAME, WORKDEPT, PHONENO, HIREDATE, JOB, EDLEVEL, SEX, BIRTHDATE, SALARY, BONUS, COMM)
+values
+  (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</Input>
+<Input name="SampleParameters"><top><Parameter><Position>1</Position>
+<Direction>Input</Direction>
+<DbType>CHAR</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>2</Position>
+<Direction>Input</Direction>
+<DbType>VARCHAR</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>3</Position>
+<Direction>Input</Direction>
+<DbType>CHAR</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>4</Position>
+<Direction>Input</Direction>
+<DbType>VARCHAR</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>5</Position>
+<Direction>Input</Direction>
+<DbType>CHAR</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>6</Position>
+<Direction>Input</Direction>
+<DbType>CHAR</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>7</Position>
+<Direction>Input</Direction>
+<DbType>DATE</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>8</Position>
+<Direction>Input</Direction>
+<DbType>CHAR</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>9</Position>
+<Direction>Input</Direction>
+<DbType>SMALLINT</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>10</Position>
+<Direction>Input</Direction>
+<DbType>CHAR</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>11</Position>
+<Direction>Input</Direction>
+<DbType>DATE</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>12</Position>
+<Direction>Input</Direction>
+<DbType>DECIMAL</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>13</Position>
+<Direction>Input</Direction>
+<DbType>DECIMAL</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>14</Position>
+<Direction>Input</Direction>
+<DbType>DECIMAL</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+</top>
+</Input>
+<Input name="SqlStatement" profile="portletbase_sql_crud:createRecordSql">insert into samp.EMPLOYEE
+  (EMPNO, FIRSTNME, MIDINIT, LASTNAME, WORKDEPT, PHONENO, HIREDATE, JOB, EDLEVEL, SEX, BIRTHDATE, SALARY, BONUS, COMM)
+values
+  (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</Input>
+<Input name="AllowDataRetrieverConversion">false</Input>
+<Input name="SqlDataSourceBuilder">WPFEmployeeDataSource</Input>
+<Input name="SqlDataSourceOverride">"WPFEmployeeDataSource" is set as the SQL DataSource override builder</Input>
+<Input name="LogSqlStatements" profile="portletbase_sql_crud:enableSqlLogging"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc46"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_sql_crud:enableCreateRecord">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="InputStructureHandling">FromOperation</Input>
+<Input name="InputAllowStructureEdit">false</Input>
+<Input name="InputAutomaticMapping">true</Input>
+<Input name="ResultStructureHandling">None</Input>
+<Input name="ResultAllowStructureEdit">false</Input>
+<Input name="ResultAutomaticMapping">true</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="CachingTimeout">3600</Input>
+<Input name="PreExecuteEventEnabled">action</Input>
+<Input name="PostExecuteEventEnabled">disabled</Input>
+<Input name="DataService" profile="portletbase_sql_crud:ServiceName">Employees</Input>
+<Input name="ResultMappingTable"><Fields />
+</Input>
+<Input name="InputMappingTable"><top />
+</Input>
+<Input name="OperationName" profile="portletbase_sql_crud:createOpName">createEmployeeRecord</Input>
+<Input name="TargetOperation">DataServices/WPFEmployeeCreate/execute</Input>
+<Input name="Name">createWPFEmployeeRecord</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc63"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Retrieve</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc54"><BuilderDefID>com.bowstreet.builders.webapp.SqlCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_sql_crud:enableRetrieveRecord">false</Input>
+<Input name="EntityTypeToFetch">Tables</Input>
+<Input name="StatementType">Select</Input>
+<Input name="ParameterBinding">AutoCreateXMLVariable</Input>
+<Input name="PreserveAutomaticBindings">false</Input>
+<Input name="Concurrency">ReadOnly</Input>
+<Input name="ScrollType">Insensitive</Input>
+<Input name="TransformResult">CompleteXmlDocument</Input>
+<Input name="SchemaGeneration">FromAlternateSQLStatement</Input>
+<Input name="SchemaRegenTime">OnlyWhenSQLBuilderChangesAreDetected</Input>
+<Input name="SchemaImportRule">ImportOnlyAtDesignTime</Input>
+<Input name="AllowDynamicSQL">false</Input>
+<Input name="AllowDataRetrieverConversion">false</Input>
+<Input name="Name">WPFEmployeeRetrieve</Input>
+<Input name="Parameters" xmlProfile="portletbase_sql_crud:retrieveParameters"><top><Parameter><Position>1</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/getEmployeeRecordSQLInputs/EMPNO}</ValueSetCastMethod>
+</Parameter>
+</top>
+</Input>
+<Input name="FetchDataSourceNames">Fetch DataSource Names</Input>
+<Input name="SqlDataSourceValues">java:comp/env/jdbc/MyDataSource</Input>
+<Input name="SqlDataSource">java:comp/env/jdbc/MyDataSource</Input>
+<Input name="FetchEntityNames">Fetch Entity Names</Input>
+<Input name="NameLabels">Schema: SAMP; Table: CL_SCHED,Schema: SAMP; Table: DEPARTMENT,Schema: SAMP; Table: EMPLOYEE,Schema: SAMP; Table: EMP_ACT,Schema: SAMP; Table: EMP_PHOTO,Schema: SAMP; Table: EMP_RESUME,Schema: SAMP; Table: IN_TRAY,Schema: SAMP; Table: ORG,Schema: SAMP; Table: PROJECT,Schema: SAMP; Table: SALES,Schema: SAMP; Table: STAFF</Input>
+<Input name="NameValues">null;SAMP;CL_SCHED,null;SAMP;DEPARTMENT,null;SAMP;EMPLOYEE,null;SAMP;EMP_ACT,null;SAMP;EMP_PHOTO,null;SAMP;EMP_RESUME,null;SAMP;IN_TRAY,null;SAMP;ORG,null;SAMP;PROJECT,null;SAMP;SALES,null;SAMP;STAFF</Input>
+<Input name="EntityName">null;SAMP;EMPLOYEE</Input>
+<Input name="GenerateSampleSql">Generate Sample SQL</Input>
+<Input name="SampleSql">select
+  EMPNO, FIRSTNME, MIDINIT, LASTNAME, WORKDEPT, PHONENO, HIREDATE, JOB, EDLEVEL, SEX, BIRTHDATE, SALARY, BONUS, COMM
+from
+  SAMP.EMPLOYEE WHERE EMPNO = ?</Input>
+<Input name="SampleParameters"><top />
+</Input>
+<Input name="ApplySampleSql">Apply Sample SQL</Input>
+<Input name="SqlStatement" profile="portletbase_sql_crud:retrieveRecordSql">select * from samp.EMPLOYEE where EMPNO = ?</Input>
+<Input name="SqlDataSourceBuilder">WPFEmployeeDataSource</Input>
+<Input name="SqlDataSourceOverride">"WPFEmployeeDataSource" is set as the SQL DataSource override builder</Input>
+<Input name="TopElementName" profile="portletbase_sql_crud:RetrieveTopElementName"></Input>
+<Input name="RowElementName" profile="portletbase_sql_crud:RetrieveRowElementName"></Input>
+<Input name="UseColumnLabels">true</Input>
+<Input name="AlternateSqlStatement" profile="portletbase_sql_crud:retrieveRecordAltSql">select * from samp.EMPLOYEE</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[$Child$getWPFRecordSQLSchema$[java:comp/env/jdbc/MyDataSource][null][null][select * from samp.EMPLOYEE where EMPNO = ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/getWPFRecordSQLStatementForSchemaInputsEMPNO}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://factory/portletbase/sql_datasvc_base/getWPFRecordSQL" targetNamespace="http://factory/portletbase/sql_datasvc_base/getWPFRecordSQL" elementFormDefault="qualified" attributeFormDefault="unqualified"><xsd:annotation><xsd:documentation xml:lang="en">Schema automatically generated on "Thursday, March 11, 2010 10:11:21 PM EST" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element name="RowSet" type="cns:RowSetType" />
+<xsd:complexType name="RowSetType"><xsd:sequence><xsd:element ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="Row"><xsd:complexType><xsd:sequence><xsd:element name="EMPNO" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="FIRSTNME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="MIDINIT" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="LASTNAME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="WORKDEPT" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="PHONENO" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="HIREDATE" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="JOB" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="EDLEVEL" type="xsd:short" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="SEX" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="BIRTHDATE" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="SALARY" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="BONUS" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="COMM" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$getWPFEmployeeRecordSQLSchema$[java:comp/env/jdbc/MyDataSource][null][null][select * from samp.EMPLOYEE where EMPNO = ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/getWPFEmployeeRecordSQLStatementForSchemaInputsEMPNO}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://factory/portletbase/sql_datasvc_base/getWPFEmployeeRecordSQL" targetNamespace="http://factory/portletbase/sql_datasvc_base/getWPFEmployeeRecordSQL" elementFormDefault="qualified" attributeFormDefault="unqualified"><xsd:annotation><xsd:documentation xml:lang="en">Schema automatically generated on "Friday, March 12, 2010 5:35:09 PM EST" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element name="RowSet" type="cns:RowSetType" />
+<xsd:complexType name="RowSetType"><xsd:sequence><xsd:element ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="Row"><xsd:complexType><xsd:sequence><xsd:element name="EMPNO" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="FIRSTNME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="MIDINIT" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="LASTNAME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="WORKDEPT" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="PHONENO" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="HIREDATE" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="JOB" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="EDLEVEL" type="xsd:short" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="SEX" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="BIRTHDATE" type="xsd:date" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="SALARY" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="BONUS" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+<xsd:element name="COMM" type="xsd:decimal" minOccurs="1" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$WPFEmployeeRetrieveSchema$[java:comp/env/jdbc/MyDataSource][null][null][select * from samp.EMPLOYEE where EMPNO = ?][<InputParameters><Parameter><Position>1</Position>
+<TypeCast>Automatic</TypeCast>
+<Value>${Variables/WPFEmployeeRetrieveStatementForSchemaInputsEMPNO}</Value>
+<SampleData>0</SampleData>
+</Parameter>
+</InputParameters>
+][null][null][<CreateVerboseXml>false</CreateVerboseXml>
+][<TopElementName>RowSet</TopElementName>
+][<RowElementName>Row</RowElementName>
+][<UseColumnLabels>false</UseColumnLabels>
+]]]></CacheKey>
+<CacheValue><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cns="http://factory/portletbase/sql_datasvc_base/WPFEmployeeRetrieve" targetNamespace="http://factory/portletbase/sql_datasvc_base/WPFEmployeeRetrieve" elementFormDefault="qualified" attributeFormDefault="unqualified"><xsd:annotation><xsd:documentation xml:lang="en">Schema automatically generated on "Monday, May 24, 2010 3:38:30 PM EDT" from the content of XML Variable "getSchema_TransformXml"</xsd:documentation>
+</xsd:annotation>
+<xsd:element name="RowSet" type="cns:RowSetType" />
+<xsd:complexType name="RowSetType"><xsd:sequence><xsd:element ref="cns:Row" minOccurs="0" maxOccurs="unbounded" />
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="Row"><xsd:complexType><xsd:sequence><xsd:element name="EMPNO" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="FIRSTNME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="MIDINIT" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="LASTNAME" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="WORKDEPT" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true" />
+<xsd:element name="PHONENO" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true" />
+<xsd:element name="HIREDATE" type="xsd:date" minOccurs="0" maxOccurs="1" nillable="true" />
+<xsd:element name="JOB" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true" />
+<xsd:element name="EDLEVEL" type="xsd:short" minOccurs="1" maxOccurs="1" nillable="false" />
+<xsd:element name="SEX" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true" />
+<xsd:element name="BIRTHDATE" type="xsd:date" minOccurs="0" maxOccurs="1" nillable="true" />
+<xsd:element name="SALARY" type="xsd:decimal" minOccurs="0" maxOccurs="1" nillable="true" />
+<xsd:element name="BONUS" type="xsd:decimal" minOccurs="0" maxOccurs="1" nillable="true" />
+<xsd:element name="COMM" type="xsd:decimal" minOccurs="0" maxOccurs="1" nillable="true" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc59"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_sql_crud:enableRetrieveRecord">false</Input>
+<Input name="InputStructureHandling">FromOperation</Input>
+<Input name="InputAllowStructureEdit">false</Input>
+<Input name="InputAutomaticMapping">true</Input>
+<Input name="ResultStructureHandling">Specify</Input>
+<Input name="ResultAllowStructureEdit">false</Input>
+<Input name="ResultAutomaticMapping">true</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="CachingTimeout">3600</Input>
+<Input name="PreExecuteEventEnabled">disabled</Input>
+<Input name="PostExecuteEventEnabled">disabled</Input>
+<Input name="PagedDataResource">Default</Input>
+<Input name="DataService" profile="portletbase_sql_crud:ServiceName">Employees</Input>
+<Input name="ResultMappingTable"><Fields />
+</Input>
+<Input name="InputMappingTable"><Fields />
+</Input>
+<Input name="OperationName" profile="portletbase_sql_crud:retrieveOpName">getEmployeeRecord</Input>
+<Input name="TargetOperation">DataServices/WPFEmployeeRetrieve/execute</Input>
+<Input name="InputSchema">getWPFRecordSQLInputs/getWPFRecordSQLInputs</Input>
+<Input name="Name">getEmployeeRecord</Input>
+<Input name="ResultSchema" profile="portletbase_sql_crud:RetrieveOpResultSchema"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc67"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Update</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc42"><BuilderDefID>com.bowstreet.builders.webapp.SqlCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_sql_crud:enableUpdateRecord">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EntityTypeToFetch">Tables</Input>
+<Input name="StatementType">Update</Input>
+<Input name="ParameterBinding">AutoCreateXMLVariable</Input>
+<Input name="TransformResult">None</Input>
+<Input name="SchemaGeneration">OmitGenerationStep</Input>
+<Input name="SchemaRegenTime">OnlyWhenSQLBuilderChangesAreDetected</Input>
+<Input name="SchemaImportRule">ImportOnlyAtDesignTime</Input>
+<Input name="Name">WPFEmployeeUpdate</Input>
+<Input name="FetchDataSourceNames">Fetch DataSource Names</Input>
+<Input name="SqlDataSourceValues">java:comp/env/jdbc/MyDataSource</Input>
+<Input name="SqlDataSource">java:comp/env/jdbc/MyDataSource</Input>
+<Input name="FetchEntityNames">Fetch Entity Names</Input>
+<Input name="GenerateSampleSql">Generate Sample SQL</Input>
+<Input name="SampleSql">update
+  FACTORYADMIN.EMPLOYEE
+set
+  FIRSTNME = ?, MIDINIT = ?, LASTNAME = ?, WORKDEPT = ?, PHONENO = ?, HIREDATE = ?, JOB = ?, EDLEVEL = ?, SEX = ?, BIRTHDATE = ?, SALARY = ?, BONUS = ?, COMM = ?
+where
+  A.EMPNO = ?</Input>
+<Input name="SampleParameters"><top><Parameter><Position>1</Position>
+<Direction>Input</Direction>
+<DbType>VARCHAR</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>2</Position>
+<Direction>Input</Direction>
+<DbType>CHARacter</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>3</Position>
+<Direction>Input</Direction>
+<DbType>VARCHAR</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>4</Position>
+<Direction>Input</Direction>
+<DbType>CHARacter</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>5</Position>
+<Direction>Input</Direction>
+<DbType>CHARacter</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>6</Position>
+<Direction>Input</Direction>
+<DbType>DATE</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>7</Position>
+<Direction>Input</Direction>
+<DbType>CHARacter</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>8</Position>
+<Direction>Input</Direction>
+<DbType>SMALLINT</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>9</Position>
+<Direction>Input</Direction>
+<DbType>CHARacter</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>10</Position>
+<Direction>Input</Direction>
+<DbType>DATE</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>11</Position>
+<Direction>Input</Direction>
+<DbType>DECimal</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>12</Position>
+<Direction>Input</Direction>
+<DbType>DECimal</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>13</Position>
+<Direction>Input</Direction>
+<DbType>DECimal</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+<Parameter><Position>14</Position>
+<Direction>Input</Direction>
+<DbType>CHARacter</DbType>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod />
+</Parameter>
+</top>
+</Input>
+<Input name="ApplySampleSql">Apply Sample SQL</Input>
+<Input name="SqlStatement" profile="portletbase_sql_crud:updateRecordSql">update
+  samp.EMPLOYEE
+set
+  FIRSTNME = ?, MIDINIT = ?, LASTNAME = ?, WORKDEPT = ?, PHONENO = ?, HIREDATE = ?, JOB = ?, EDLEVEL = ?, SEX = ?, BIRTHDATE = ?, SALARY = ?, BONUS = ?, COMM = ?
+where
+  EMPNO = ?</Input>
+<Input name="Parameters" xmlProfile="portletbase_sql_crud:updateParameters"><top><Parameter><Position>1</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/updateEmployeeRecordSQLInputs/FIRSTNME}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>2</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/updateEmployeeRecordSQLInputs/MIDINIT}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>3</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/updateEmployeeRecordSQLInputs/LASTNAME}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>4</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/updateEmployeeRecordSQLInputs/WORKDEPT}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>5</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/updateEmployeeRecordSQLInputs/PHONENO}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>6</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/updateEmployeeRecordSQLInputs/HIREDATE}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>7</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/updateEmployeeRecordSQLInputs/JOB}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>8</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/updateEmployeeRecordSQLInputs/EDLEVEL}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>9</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/updateEmployeeRecordSQLInputs/SEX}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>10</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/updateEmployeeRecordSQLInputs/BIRTHDATE}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>11</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/updateEmployeeRecordSQLInputs/SALARY}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>12</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/updateEmployeeRecordSQLInputs/BONUS}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>13</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/updateEmployeeRecordSQLInputs/COMM}</ValueSetCastMethod>
+</Parameter>
+<Parameter><Position>14</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/updateEmployeeRecordSQLInputs/EMPNO}</ValueSetCastMethod>
+</Parameter>
+</top>
+</Input>
+<Input name="Concurrency">Updatable</Input>
+<Input name="ScrollType">Forward</Input>
+<Input name="AllowDataRetrieverConversion">false</Input>
+<Input name="PreserveAutomaticBindings">false</Input>
+<Input name="SqlDataSourceBuilder">WPFEmployeeDataSource</Input>
+<Input name="SqlDataSourceOverride">"WPFEmployeeDataSource" is set as the SQL DataSource override builder</Input>
+<Input name="LogSqlStatements" profile="portletbase_sql_crud:enableSqlLogging"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc43"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_sql_crud:enableUpdateRecord">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="InputStructureHandling">FromOperation</Input>
+<Input name="InputAllowStructureEdit">false</Input>
+<Input name="UpdateInputsButton">Update Field List</Input>
+<Input name="InputAutomaticMapping">true</Input>
+<Input name="ResultStructureHandling">None</Input>
+<Input name="ResultAllowStructureEdit">false</Input>
+<Input name="UpdateResultsButton">Update Field List</Input>
+<Input name="ResultAutomaticMapping">true</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="CachingTimeout">3600</Input>
+<Input name="PreExecuteEventEnabled">disabled</Input>
+<Input name="PostExecuteEventEnabled">disabled</Input>
+<Input name="DataService" profile="portletbase_sql_crud:ServiceName">Employees</Input>
+<Input name="ResultMappingTable"><Fields />
+</Input>
+<Input name="InputMappingTable"><top />
+</Input>
+<Input name="OperationName" profile="portletbase_sql_crud:updateOpName">updateEmployeeRecord</Input>
+<Input name="TargetOperation">DataServices/WPFEmployeeUpdate/execute</Input>
+<Input name="Name">updateWPFEmployeeRecord</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc69"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Delete</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc47"><BuilderDefID>com.bowstreet.builders.webapp.SqlCallBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_sql_crud:enableDeleteRecord">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="EntityTypeToFetch">Tables</Input>
+<Input name="StatementType">Delete</Input>
+<Input name="ParameterBinding">AutoCreateXMLVariable</Input>
+<Input name="TransformResult">CompleteXmlDocument</Input>
+<Input name="SchemaGeneration">FromSQLStatement</Input>
+<Input name="SchemaRegenTime">OnlyWhenSQLBuilderChangesAreDetected</Input>
+<Input name="SchemaImportRule">ImportOnlyAtDesignTime</Input>
+<Input name="Name">WPFEmployeeDelete</Input>
+<Input name="Parameters" xmlProfile="portletbase_sql_crud:deleteParameters"><top><Parameter><Position>1</Position>
+<Direction>Input</Direction>
+<TypeCast>Automatic</TypeCast>
+<ValueSetCastMethod>${Variables/deleteWPFEmployeeRecordSQLInputs/KEYFIELD}</ValueSetCastMethod>
+</Parameter>
+</top>
+</Input>
+<Input name="FetchDataSourceNames">Fetch DataSource Names</Input>
+<Input name="SqlDataSourceValues">java:comp/env/jdbc/MyDataSource</Input>
+<Input name="SqlDataSource">java:comp/env/jdbc/MyDataSource</Input>
+<Input name="FetchEntityNames">Fetch Entity Names</Input>
+<Input name="NameLabels">Schema: SYS; Table: SYSALIASES,Schema: SYS; Table: SYSCHECKS,Schema: SYS; Table: SYSCOLUMNS,Schema: SYS; Table: SYSCONGLOMERATES,Schema: SYS; Table: SYSCONSTRAINTS,Schema: SYS; Table: SYSDEPENDS,Schema: SYS; Table: SYSFILES,Schema: SYS; Table: SYSFOREIGNKEYS,Schema: SYS; Table: SYSKEYS,Schema: SYS; Table: SYSSCHEMAS,Schema: SYS; Table: SYSSTATEMENTS,Schema: SYS; Table: SYSSTATISTICS,Schema: SYS; Table: SYSTABLES,Schema: SYS; Table: SYSTRIGGERS,Schema: SYS; Table: SYSVIEWS,Schema: SYSIBM; Table: SYSDUMMY1,Schema: DEMO; Table: COMPENSATIONBUDGET,Schema: DEMO; Table: DEPARTMENT,Schema: DEMO; Table: EMPLOYEE,Schema: DEMO; Table: HIRINGCANDIDATETYPES</Input>
+<Input name="NameValues">null;SYS;SYSALIASES,null;SYS;SYSCHECKS,null;SYS;SYSCOLUMNS,null;SYS;SYSCONGLOMERATES,null;SYS;SYSCONSTRAINTS,null;SYS;SYSDEPENDS,null;SYS;SYSFILES,null;SYS;SYSFOREIGNKEYS,null;SYS;SYSKEYS,null;SYS;SYSSCHEMAS,null;SYS;SYSSTATEMENTS,null;SYS;SYSSTATISTICS,null;SYS;SYSTABLES,null;SYS;SYSTRIGGERS,null;SYS;SYSVIEWS,null;SYSIBM;SYSDUMMY1,null;DEMO;COMPENSATIONBUDGET,null;DEMO;DEPARTMENT,null;DEMO;EMPLOYEE,null;DEMO;HIRINGCANDIDATETYPES</Input>
+<Input name="EntityName">null;DEMO;EMPLOYEE</Input>
+<Input name="GenerateSampleSql">Generate Sample SQL</Input>
+<Input name="SampleParameters"><top />
+</Input>
+<Input name="SqlStatement" profile="portletbase_sql_crud:deleteRecordSql">delete from
+  samp.EMPLOYEE 
+where
+ EMPNO = ?</Input>
+<Input name="AllowDataRetrieverConversion">false</Input>
+<Input name="PreserveAutomaticBindings">true</Input>
+<Input name="SqlDataSourceBuilder">WPFEmployeeDataSource</Input>
+<Input name="SqlDataSourceOverride">"WPFEmployeeDataSource" is set as the SQL DataSource override builder</Input>
+<Input name="LogSqlStatements" profile="portletbase_sql_crud:enableSqlLogging"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc48"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_sql_crud:enableDeleteRecord">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="InputStructureHandling">FromOperation</Input>
+<Input name="InputAllowStructureEdit">false</Input>
+<Input name="InputAutomaticMapping">true</Input>
+<Input name="ResultStructureHandling">None</Input>
+<Input name="ResultAllowStructureEdit">false</Input>
+<Input name="ResultAutomaticMapping">true</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="CachingTimeout">3600</Input>
+<Input name="PreExecuteEventEnabled">disabled</Input>
+<Input name="PostExecuteEventEnabled">disabled</Input>
+<Input name="DataService" profile="portletbase_sql_crud:ServiceName">Employees</Input>
+<Input name="ResultMappingTable"><Fields />
+</Input>
+<Input name="InputMappingTable"><Fields />
+</Input>
+<Input name="OperationName" profile="portletbase_sql_crud:deleteOpName">deleteEmployeeRecord</Input>
+<Input name="TargetOperation">DataServices/WPFEmployeeDelete/execute</Input>
+<Input name="Name">deleteWPFEmployeeRecord</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><RequiredFactoryVersion>5.0.0</RequiredFactoryVersion>
+<Version>0.0.0</Version>
+<Description>Empty model (contains no builder calls).</Description>
+<Contained>false</Contained>
+<EnableGenerationCaching>true</EnableGenerationCaching>
+<Roles />
+<EnableFailover>false</EnableFailover>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

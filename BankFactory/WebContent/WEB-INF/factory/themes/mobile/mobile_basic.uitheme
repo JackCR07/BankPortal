@@ -1,0 +1,28 @@
+<!--  **************************  Basic Mobile Theme **********************************
+
+A theme is a collection of style information that can be used to drive builder inputs that provide the application UI in your model.
+This information can include but is not limited to HTML templates, style sheets (CSS), base pages, highlighting style, and paging style. 
+
+This theme file extents the mobile_gray.uitheme and disables the inclusion of several client side features.
+This is useful to reduce the amount of HTTP requests when bandwidth is limited.
+
+For more Theme information please see the "Themes and user interface control" section of the product documentation.
+
+The following are disabled:
+ * Dojo Input Form controls
+ * Dojo Theme CSS
+ * Smart Page Refresh
+ * Progress Indicator 
+ 
+ -->
+<Theme extends="/WEB-INF/factory/themes/mobile/mobile_gray.uitheme">
+  
+    <DefaultRDD>/WEB-INF/factory/data_definitions/mobile/basic_mobile_datadef.xml</DefaultRDD>
+
+    <Add_Default_Progress_Indicator>false</Add_Default_Progress_Indicator>
+ 
+    <Use_Smart_Refresh>false</Use_Smart_Refresh>
+  
+    <DojoEnable_DisableThemeCSS>true</DojoEnable_DisableThemeCSS>
+    
+</Theme>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.DojoDataStoreBuilder">
+  <ReadableName>Dojo Data Store</ReadableName>
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName>
+  <HelpFile></HelpFile>
+  <RequiredFactoryVersion>6.0.1</RequiredFactoryVersion>
+  <Description>Adds a Dojo Data Store to a specified page location.</Description>
+  <Domains>
+    <Domain>WebApp</Domain>
+    <Domain>Consumer</Domain>
+  </Domains>
+  <CreateModifyList>
+  </CreateModifyList>
+  <Category>Page Elements, Rich UI</Category>
+  <Keywords>Dojo,Data</Keywords>
+
+  <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+  <BuilderData>
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.DojoDataStoreBuilder</BuilderDataEntry>
+    <BuilderDataEntry name="WidgetTypeInfo">
+        <WidgetTypeInfo>
+           <WidgetType>
+               <DojoType>wpf.data.WPFXmlStore</DojoType>
+               <AttributeNames>url,sendQuery,rootItem,keyAttribute,attributeMap,label</AttributeNames>
+           </WidgetType>
+        </WidgetTypeInfo>
+        <WidgetTypeInfo>
+           <WidgetType>
+               <DojoType>Custom</DojoType>
+               <AttributeNames></AttributeNames>
+           </WidgetType>
+        </WidgetTypeInfo>
+    </BuilderDataEntry>
+    <BuilderDataEntry name="IconName">dojo_DataStore</BuilderDataEntry>
+    <BuilderDataEntry name="PageLocation">onNamedTag</BuilderDataEntry>
+  </BuilderData>
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.DojoDataStoreCoordinator</CoordinatorClassName>
+  <InputDefinitions>
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName">
+      <Required>true</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation">
+      <Prompt></Prompt>
+      <Required>true</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="DojoType" base="com.bowstreet.core.Base.StringData">
+       <Prompt>Type</Prompt>
+       <HelpText>Choose Dojo element type</HelpText>
+       <InitialValue>wpf.data.WPFXmlStore</InitialValue>
+       <Editor JavaClass="com.bowstreet.widget.RadioBox">
+         <Argument name="listLabels">XmlStore,Custom</Argument>
+         <Argument name="listData">wpf.data.WPFXmlStore,Custom</Argument>
+       </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="DataSource" base="com.bowstreet.core.Base.StringData" >
+         <Prompt>Data Source *</Prompt>
+         <InitialValue></InitialValue>
+            <HelpText>Data Source</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+            <Editor JavaClass="com.bowstreet.widget.ActionChooser">
+                <Argument name="width">200</Argument>
+                <Argument name="isEditable">true</Argument>
+                <Argument name="showSpecialActions">false</Argument>
+                <Argument name="showMethodsWithArguments">false</Argument>
+                <Argument name="showMethods">false</Argument>
+                <Argument name="useMethodArgumentsDialog">false</Argument>
+                <Argument name="showTypePrefix">true</Argument>
+                <Argument name="showDataServices">true</Argument>
+                <Argument name="showPages">false</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="DataVariable" base="com.bowstreet.builders.webapp.pageautomation.DataPage.TypedVariable" >
+            <Prompt>Data Variable *</Prompt>
+            <InitialValue></InitialValue>
+            <HelpText>Variable that will contain data after the Data Source method has been executed.</HelpText>
+            <Required>false</Required>
+            <Visible>false</Visible>
+            <Property>true</Property>
+            <Editor>
+                <Argument name="showSchemas">false</Argument>
+                <Argument name="showSpecialChoices">false</Argument>
+                <Argument name="width">200</Argument>
+                <Argument name="isEditable">true</Argument>
+            </Editor>
+        </InputDefinition>
+
+
+    <!-- (BEGIN) Used for custom Dojo data store type -->
+    <InputDefinition name="CustomDojoType" base="com.bowstreet.core.Base.StringData">
+       <Prompt>Data Store *</Prompt>
+       <HelpText>Specify the Dojo data store type. Example: dojox.data.JsonRestStore</HelpText>
+       <InitialValue></InitialValue>
+       <Visible>true</Visible>
+       <ProfileType>Value</ProfileType>
+       <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="AddRequires"  base="com.bowstreet.builders.webapp.DojoFormElementsBuilder.AddRequires" >
+        <HelpText>Use this option to specify if the custom Data Store should be added to the Dojo requires list.</HelpText>
+    </InputDefinition>
+
+    <!-- (END) Used for custom Dojo data store type -->
+
+   <InputDefinition name="UniqueID" base="com.bowstreet.core.Base.IndirectValue">
+        <Required>false</Required>
+       <Prompt>Unique ID</Prompt>
+       <HelpText>Optional unique ID to reference the Dojo data store.</HelpText>
+       <Property>true</Property>
+   </InputDefinition>
+
+    <InputDefinition name="Value" base="com.bowstreet.core.Base.IndirectValue">
+     <Visible>false</Visible>
+    </InputDefinition>
+
+    <InputDefinition name="Attributes"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Attributes">
+      <Group>Attributes</Group>
+      <Type>Xml</Type>
+    </InputDefinition>
+
+    <InputDefinition name="HandleExisting"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleExisting">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition>
+
+    <InputDefinition name="HandleMissingValue"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.HandleMissingValue">
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+      <Group>Attributes</Group>
+    </InputDefinition>
+
+    <InputDefinition name="Separator"  base="com.bowstreet.builders.webapp.AttributeSetterBuilder.Separator">
+      <Group>Attributes</Group>
+      <InitialValue>;</InitialValue>
+    </InputDefinition>
+
+    <InputDefinition name="RequiresList" base="com.bowstreet.builders.webapp.DojoEnableBuilder.RequiresList">
+      <Group>RequiresList</Group>
+    </InputDefinition>
+
+    <InputDefinition name="Script"  base="com.bowstreet.builders.webapp.DojoEnableBuilder.Script">
+        <Group>Script</Group>
+    </InputDefinition>
+
+  </InputDefinitions>
+
+  <GroupDefinitions>
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" />
+   <GroupDefinition id="Attributes" base="com.bowstreet.builders.webapp.DojoFormElementsBuilder.Attributes">
+    </GroupDefinition>
+  <GroupDefinition id="RequiresList" base="com.bowstreet.builders.webapp.DojoFormElementsBuilder.RequiresList">
+    </GroupDefinition>
+  <GroupDefinition id="Script" base="com.bowstreet.builders.webapp.DojoFormElementsBuilder.Script">
+    </GroupDefinition>
+  </GroupDefinitions>
+
+  <PageDefinitions />
+</BuilderDef>
+

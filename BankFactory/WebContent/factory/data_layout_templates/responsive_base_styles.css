@@ -1,0 +1,55 @@
+/* these are the styles that are used as template base styles for data layouts found in the 
+ /factory/html_templates/WEF8.5_uitheme.css file
+ You would include this style sheet using a style sheet builder if you want these styles but are
+ not using the theme file css on your page  
+ */
+.wpfImageExtraExtraSmall{width:16px!important;height:16px!important;}
+.wpfImageExtraSmall{width:30px!important;height:30px!important;}
+.wpfImageSmall{width:50px!important;height:50px!important;}
+.wpfImageMedium{width:65px!important;height:65px!important;}
+.wpfImageLarge{width:80px!important;height:80px!important;}
+.wpfImageXLarge{
+ min-width:100px!important;
+ max-width:200px!important;
+ min-height:100px!important;
+ max-height:200px!important;
+}
+.wpfCtcImageContainerBorder{
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    margin-left: 2px;
+}
+.wpfArrowContainer:after {content: ">";font-weight: bold;}
+.wpfArrowImage{background-image:url("../../data_layout_templates/right_arrow.gif")!important; background-repeat: no-repeat!important; background-position: right!important;}
+.wef_datalayout_list .clImagePadding5 img{padding:5px;}
+.wef_datalayout_list .clImagePadding10 img{padding:10px;}
+.wpfRightAlignText {margin-right: 0px; text-align: right; margin-left: auto;}
+.wpfTitleText{font-weight:bold}
+.wpfLabelText{font-weight:bold;padding-right:3px}
+.wpfLargeTitleText, .wpfLargeText{font-weight:bold;font-size:1.2em}
+.wpfItalicText{font-style:italic}
+.wpfSmallText{font-weight:lighter;font-size:.8em}
+.wpfSmallItalicText{font-style:italic;font-weight:lighter;font-size:.8em}
+.wpfPaddingRight{padding-right:3px}
+.wpfSelectableRow:hover{cursor:pointer}
+a.wpfSelectableRow {color: #000000;text-decoration: none}
+.wpfSpaceAfter:after{content: '\00a0'} /* adds a non-breaking space */
+.hide{display:none}
+.wpthemeThin .hideThemeThin,.wpthemeNarrow .hideThemeNarrow,.wpthemeMedium .hideThemeMedium, .wpthemeWide .hideThemeWide{display:none}
+.wpfFixed1EMItemHeight{padding-right:1em;}
+/* Phone (portrait) */
+@media only screen and (max-width: 320px){
+.hidePhonePortrait{display:none}
+}
+/* Phone (landscape) */
+@media only screen and (min-width: 321px){
+.hidePhoneLandscape{display:none}
+}
+/* tablet (landscape) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape){
+.hideTabletPortrait{display:none}
+}
+/* tablet (portrait) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait){
+.hideTabletLandscape{display:none}
+}

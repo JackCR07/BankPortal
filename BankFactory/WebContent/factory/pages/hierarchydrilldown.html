@@ -1,0 +1,57 @@
+<% if (!JSPSupport.inTag(request,"BODY")) { %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<% } %>
+<html>
+<body>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr role="presentation">
+<td role="presentation">
+<form name="HierarchyForm">
+	<table role="presentation" name="portletContentsTable" width="100%" cellpadding="0" cellspacing="0" border="0">
+		
+		<tr role="presentation">
+			<td role="presentation" colspan="2">
+				<span name="pageTitle" class="pageTitle"/>
+			</td>
+		</tr>
+		<tr role="presentation">
+			
+					
+			<td role="presentation" align="right" colspan="2">
+				<table role="presentation" name="contextMenuTable" cellpadding="1" cellspacing="1">
+					<tr role="presentation">
+						<td role="presentation"><span name="exportToExcelControl" /></td>
+						<td role="presentation"><span name="printPageControl" /></td>
+						<td role="presentation" align="right"><span name="contextMenu" /></td>
+						<td role="presentation" align="right"><span name="adminBtn"/><span name="adminBtn2"/></td>
+					</tr>
+				</table>									
+			</td>
+			
+			
+		</tr>
+		<!-- the data table will be placed on the span in this row -->
+		<tr role="presentation">
+			<td role="presentation" colspan="2" class="verticalPadding">
+				<span name="outdata">
+					<span name="data" />
+				</span>
+			</td>
+		</tr>
+		<!-- an optional row for paging control and a legend -->
+		<tr role="presentation">
+			<td role="presentation" valign="top" class="verticalPadding">
+				<span name="paging" />
+			</td>
+			<td role="presentation" valign="top" align="right" class="verticalPadding">
+				<span name="legend" />
+			</td>			
+		</tr>
+ 	
+	</table>
+</form>
+</td>
+</tr>
+</table>
+</body>
+</html>

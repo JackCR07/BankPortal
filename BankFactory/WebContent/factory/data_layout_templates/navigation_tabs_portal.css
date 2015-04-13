@@ -1,0 +1,48 @@
+@IMPORT url("navigation_tabs.css");
+
+.wpfNavTabRow {
+    background: #474747;
+    background: linear-gradient(#474747, #111111) repeat scroll 0 0 #111111;
+    background: -moz-linear-gradient(#474747, #111111) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#474747), color-stop(100%,#111111));
+    background: -webkit-linear-gradient(top, #474747 0%,#111111 100%);
+}
+
+.wpfNavTabRow div:first-child a:first-child {margin-left:  auto}
+.wpfNavTabRow div:last-child a:last-child   {margin-right: auto}
+
+@media only screen and (min-width: 400px){
+.wpfNavTabRow div:first-child a:first-child {margin-left: 50px;}
+.wpfNavTabRow div:last-child a:last-child   {margin-right: 50px;}
+}
+
+.wpfNavTabRow .wpfTabColumn {
+    height: 50px;
+    margin: 0px;
+
+    padding: 0px;
+    border: none;
+    background: none;
+
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+
+    color: #DDDDDD;
+    font-weight: normal;
+    text-shadow: 0 1px 2px #000000;
+}
+
+.wpfNavTabRow .selected .wpfTabColumn {
+    border-left-color: #585858;
+    border-right-color: #585858;
+
+    background: #585858;
+    background: linear-gradient(#585858, #161616) repeat scroll 0 0 #161616;
+    background: -moz-linear-gradient(#585858, #161616) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#585858), color-stop(100%,#161616));
+    background: -webkit-linear-gradient(top, #585858 0%,#161616 100%);
+    box-shadow: 1px 0 0 #111111, -1px 0 0 #111111, 0 0 0 #111111 inset, 0 0 0 #111111 inset;
+
+    color: #FFFFFF;
+    font-weight: normal;
+}

@@ -1,0 +1,87 @@
+<!--  **************************  Blue Mobile Theme **********************************
+
+A theme is a collection of style information that can be used to drive builder inputs that provide the application UI in your model.
+This information can include but is not limited to HTML templates, style sheets (CSS), base pages, highlighting style, and paging style. 
+
+This theme file extents the blue_WPF7.0.1.uitheme theme and changes the look of the page header, buttons, pager, 
+and tables to be compatible with mobile device layouts. The styles referenced by this theme create a blue color scheme.
+
+For more Theme information please see the "Themes and user interface control" section of the product documentation.
+
+-->
+<Theme extends="/WEB-INF/factory/themes/blue_WPF7.0.1.uitheme">
+    
+    <DefaultRDD>/WEB-INF/factory/data_definitions/mobile/dojo_mobile_datadef.xml</DefaultRDD>
+    
+    <DataPage_StyleSheetOverride>/factory/html_templates/mobile/mobile_table.css</DataPage_StyleSheetOverride>
+    
+    <ViewAndForm_HighlighterEnabled>false</ViewAndForm_HighlighterEnabled>
+    <ViewAndForm_ViewPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table.css</ViewAndForm_ViewPageStyleSheetOverride>
+    <ViewAndForm_ViewPageHTMLTemplate>/factory/html_templates/form_label_above.html</ViewAndForm_ViewPageHTMLTemplate>
+    <ViewAndForm_DetailPageHTMLTemplate>/factory/html_templates/form_label_above.html</ViewAndForm_DetailPageHTMLTemplate>
+    <ViewAndForm_DetailPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table.css</ViewAndForm_DetailPageStyleSheetOverride>
+    <ViewAndForm_UpdatePageHTMLTemplate>/factory/html_templates/form_label_above.html</ViewAndForm_UpdatePageHTMLTemplate>
+    <ViewAndForm_UpdatePageStyleSheetOverride>/factory/html_templates/mobile/mobile_table.css</ViewAndForm_UpdatePageStyleSheetOverride>
+    <ViewAndForm_InputPageHTMLTemplate>/factory/html_templates/form_label_above.html</ViewAndForm_InputPageHTMLTemplate>
+
+    <ViewAndForm_InputPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table.css</ViewAndForm_InputPageStyleSheetOverride>
+    <ViewAndForm_ViewPageBase>/factory/pages/mobile/view_and_form/view.html</ViewAndForm_ViewPageBase>
+    <ViewAndForm_DetailPageBase>/factory/pages/mobile/view_and_form/details.html</ViewAndForm_DetailPageBase>
+    <ViewAndForm_UpdatePageBase>/factory/pages/mobile/view_and_form/input.html</ViewAndForm_UpdatePageBase>
+    <ViewAndForm_InputPageBase>/factory/pages/mobile/view_and_form/input.html</ViewAndForm_InputPageBase>
+    
+    
+    <DSUI_DojoColumnResizeAndReorderOnList>false</DSUI_DojoColumnResizeAndReorderOnList>
+    <DSUI_DojoColumnResizeAndReorderOnResults>false</DSUI_DojoColumnResizeAndReorderOnResults>
+    <DSUI_EnableRowHighlightingOnList>false</DSUI_EnableRowHighlightingOnList>
+    <DSUI_EnableRowHighlightingOnResults>false</DSUI_EnableRowHighlightingOnResults>
+    <DSUI_StyleSheetOverride>/factory/html_templates/mobile/mobile_table.css</DSUI_StyleSheetOverride>
+    <DSUI_HTMLTemplate>/factory/html_templates/color_themes.html</DSUI_HTMLTemplate>
+    <DSUI_CreatePageHTMLTemplate>/factory/html_templates/form_label_above.html</DSUI_CreatePageHTMLTemplate>
+    <DSUI_CreatePageHTML>/factory/pages/mobile/dsui/create.html</DSUI_CreatePageHTML>
+    <DSUI_CreatePageStyleSheetOverride>/factory/html_templates/mobile/mobile_table.css</DSUI_CreatePageStyleSheetOverride>
+    <DSUI_UpdatePageHTMLTemplate>/factory/html_templates/form_label_above.html</DSUI_UpdatePageHTMLTemplate>
+    <DSUI_UpdatePageHTML>/factory/pages/mobile/dsui/update.html</DSUI_UpdatePageHTML>
+    <DSUI_UpdatePageStyleSheetOverride>/factory/html_templates/mobile/mobile_table.css</DSUI_UpdatePageStyleSheetOverride>
+    <DSUI_DetailsPageHTMLTemplate>/factory/html_templates/form_label_above.html</DSUI_DetailsPageHTMLTemplate>
+    <DSUI_DetailsPageHTML>/factory/pages/mobile/dsui/details.html</DSUI_DetailsPageHTML>
+    <DSUI_DetailsPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table.css</DSUI_DetailsPageStyleSheetOverride>
+    <DSUI_NoDetailsYetPageHTML>/factory/pages/mobile/dsui/no_details_yet.html</DSUI_NoDetailsYetPageHTML>
+    <DSUI_QueryPageHTML>/factory/pages/mobile/dsui/query.html</DSUI_QueryPageHTML>
+    <DSUI_QueryPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table.css</DSUI_QueryPageStyleSheetOverride>
+    <DSUI_SearchResultsPageHTML>/factory/pages/mobile/dsui/search_results.html</DSUI_SearchResultsPageHTML>
+    <DSUI_SearchPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table.css</DSUI_SearchPageStyleSheetOverride>
+    <DSUI_FilterPageHTML>/factory/pages/mobile/dsui/filter.html</DSUI_FilterPageHTML>
+    <DSUI_FilterPageHTMLTemplate>/factory/html_templates/form_label_above.html</DSUI_FilterPageHTMLTemplate>
+    <DSUI_FilterPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table.css</DSUI_FilterPageStyleSheetOverride>
+    <DSUI_ListPageHTML>/factory/pages/mobile/dsui/list_page.html</DSUI_ListPageHTML>
+    <DSUI_ListPageStyleSheetOverride>/factory/html_templates/mobile/mobile_table.css</DSUI_ListPageStyleSheetOverride>
+
+
+    <InputForm_HTMLTemplate>/factory/html_templates/form_label_above.html</InputForm_HTMLTemplate>
+    <InputForm_StyleSheetOverride>/factory/html_templates/mobile/mobile_table.css</InputForm_StyleSheetOverride>
+    <InputForm_PageBase>/factory/pages/mobile/view_and_form/input.html</InputForm_PageBase>
+
+    <!-- Simple two button pager -->    
+    <Paging_OverrideBuilderID>com.bowstreet.builders.webapp.PagingLinksBuilder</Paging_OverrideBuilderID>
+    <PagingLinks_HTMLPage>/factory/pages/mobile/paging/paging_links.html</PagingLinks_HTMLPage>
+    <PagingLinks_StyleSheet>/factory/pages/mobile/paging/paging_links_blue.css</PagingLinks_StyleSheet>
+    <PagingLinks_AlwaysShowLinks>true</PagingLinks_AlwaysShowLinks> 
+        
+    
+    <Button_StyleSheet>/factory/html_templates/mobile/mobile_buttons.css</Button_StyleSheet>
+    
+    <ColumnSort_Style>5</ColumnSort_Style>
+    
+    <!--  **************************  Data Layout Style Sheet Override **********************************                          -->
+    <!-- This is an example of how to override a Data Layout Builder style sheet for a given layout template in a theme file       -->
+    <!-- The theme element name is based on the data layout template's ID using the following prefix/suffix                        -->
+    <!--  "DataLayout_" + <Template ID>  + "_StyleSheet"                                                                           -->
+    <!-- You will find the template's ID in the template html file specified using the data-template-id attribute                     -->
+    <!-- For example the thumbnail_multiline_list_template.html file specifies the data-template-id="MobileMultiLineList" ID value --> 
+    <!-- Using that ID you will use <DataLayout_MobileMultiLineList_StyleSheet> as the element name in the Theme file.             --> 
+    <!-- For example:  
+     <DataLayout_MobileMultiLineList_StyleSheet>/factory/data_layout_templates/thumbnail_multiline_border_list.css</DataLayout_MobileMultiLineList_StyleSheet>
+    -->
+    
+</Theme>

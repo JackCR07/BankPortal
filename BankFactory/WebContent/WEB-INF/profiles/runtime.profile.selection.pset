@@ -1,0 +1,36 @@
+<ProfileSet name="runtime.profile.selection" useQualifiedProfileNames="true"><Description>Generated profile set for model runtime_profile_selection</Description>
+<LastModifiedBy>Administrator</LastModifiedBy>
+<ProfileSelectionClass>Explicit Handler</ProfileSelectionClass>
+<Models />
+<ProfileDef><Entries><Entry name="enablePageDispatcher" isRuntime="false"><UI type="TextInput"><Prompt>enablePageDispatcher</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="getProfileNameBody" isRuntime="false"><UI type="TextInput"><Prompt>getProfileNameBody</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="getRelocatedMainActionNameBody" isRuntime="false"><UI type="TextInput"><Prompt>getRelocatedMainActionNameBody</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="mainActionName" isRuntime="false"><UI type="TextInput"><Prompt>mainActionName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+<Entry name="thisModelName" isRuntime="false"><UI type="TextInput"><Prompt>thisModelName</Prompt>
+<ExtraData>60</ExtraData>
+</UI>
+</Entry>
+</Entries>
+</ProfileDef>
+<Profiles><Profile name="Default" last_modified="1095701378769" isContainer="true"><Values><Value name="enablePageDispatcher">true</Value>
+<Value name="getProfileNameBody">{ return null; }</Value>
+<Value name="getRelocatedMainActionNameBody">{ return null; }</Value>
+<Value name="mainActionName">main</Value>
+<Value name="thisModelName">thisModelName</Value>
+</Values>
+<Roles />
+</Profile>
+</Profiles>
+</ProfileSet>

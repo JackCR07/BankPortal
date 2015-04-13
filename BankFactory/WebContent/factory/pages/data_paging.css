@@ -1,0 +1,18 @@
+TABLE.dataPagingButton {
+  padding-bottom: 3px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 3px;
+  background-color: #F5F5F5;
+  border: 1px solid #808080;
+  font-size: ${requestScope.cssRules.fontSize.normal};
+}
+IMG.dataPagingButton {
+  vertical-align: middle
+}
+SPAN.dataPagingButton {
+  vertical-align: middle
+}
+.dataPagingCurrentPage {
+  font-weight: bold
+}
