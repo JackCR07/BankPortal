@@ -40,8 +40,9 @@ You can also profile other builder inputs according to device type, and you can 
 <Input name="BuilderCallCategory">General</Input>
 <Input name="CustomEditPageType">None</Input>
 <Input name="CustomConfigurePageType">None</Input>
-<Input name="Name">CreateTransaccionConsumer</Input>
+<Input name="Name">CreateTransaccionPortlet</Input>
 <Input name="PortletTitle">Realizar Transaccion</Input>
+<Input name="CustomEditDefaultsPageType">None</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
@@ -50,7 +51,7 @@ You can also profile other builder inputs according to device type, and you can 
 <Input name="BuilderCallCategory">General</Input>
 <Input name="UseAllOperations">true</Input>
 <Input name="OverrideInputs">true</Input>
-<Input name="Name">CreateTransaccionConsumer</Input>
+<Input name="Name">CreateTransaccionConsumerService</Input>
 <Input name="ProviderModel">providers/CreateTransaccion/CreateTransaccionModel</Input>
 <Input name="OperationInputs"><OverridenInputs><InputsForOperation><Operation>CreateTransaccionOperation</Operation>
 <Inputs><top><Input><Name>operation1</Name>
@@ -69,16 +70,7 @@ You can also profile other builder inputs according to device type, and you can 
 </OverridenInputs>
 </Input>
 <Input name="OperationName">all</Input>
-<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>byStatus</Operation>
-<Mappings />
-</ValuesForOperation>
-<ValuesForOperation><Operation>byExactStatus</Operation>
-<Mappings />
-</ValuesForOperation>
-<ValuesForOperation><Operation>all</Operation>
-<Mappings />
-</ValuesForOperation>
-<ValuesForOperation><Operation>getOrderDetails</Operation>
+<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>CreateTransaccionOperation</Operation>
 <Mappings />
 </ValuesForOperation>
 </ContextVariables>
@@ -86,6 +78,16 @@ You can also profile other builder inputs according to device type, and you can 
 <Input name="OperationDescription">[no description]
 Parameters:
 	Name:			results</Input>
+<Input name="SelectOperations"><top><OperationSelected><Operation>CreateTransaccionOperation</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>No description was provided.
+Parameters:
+	Name:			inputs
+
+	Name:			results</Description>
+</OperationSelected>
+</top>
+</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ViewAndFormBuilder</BuilderDefID>
@@ -117,13 +119,12 @@ Parameters:
 <Input name="ViewPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_ViewPageHTMLTemplate}</Input>
 <Input name="InputPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_InputPageHTMLTemplate}</Input>
 <Input name="Name">CreateTransaccionConsumerView</Input>
-<Input name="ViewMethod">DataServices/CreateTransaccionConsumer/CreateTransaccionOperation</Input>
+<Input name="ViewMethod">DataServices/CreateTransaccionConsumerService/CreateTransaccionOperation</Input>
 <Input name="RowsPerPage">5</Input>
 <Input name="ModelName">factory/portletbase/view_and_form_base</Input>
 <Input name="SetProfiledInputValues">true</Input>
 <Input name="UniquePattern">xyzzy7</Input>
-<Input name="LinkColumn"></Input>
-<Input name="DetailsMethod"></Input>
+<Input name="DetailsMethod" />
 <Input name="InputPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_InputPageStyleSheetOverrideHTMLTemplate}</Input>
 <Input name="ViewPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_ViewPageStyleSheetOverride}</Input>
 <Input name="DetailPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</Input>
@@ -403,8 +404,7 @@ Parameters:
       &lt;Value&gt;2&lt;/Value&gt;
       &lt;Label&gt;Credito&lt;/Label&gt;
    &lt;/item&gt;
-&lt;/top&gt;
-</Input>
+&lt;/top&gt;</Input>
 <Input name="VariableType">ValueTagLabelTag</Input>
 <Input name="ValueElementName">Value</Input>
 <Input name="LabelElementName">Label</Input>
@@ -468,7 +468,7 @@ webAppAccess.processPage("PageName");
 <Dependency type="File">/factory/pages/paging/data_paging_links_blue.css</Dependency>
 </Dependencies>
 <ExternalProperties><ExternalProperty id="PortletModel">true</ExternalProperty>
-<ExternalProperty id="PortletName">CreateTransaccionConsumer</ExternalProperty>
+<ExternalProperty id="PortletName">CreateTransaccionPortlet</ExternalProperty>
 <ExternalProperty id="PortletTitle">Realizar Transaccion</ExternalProperty>
 <ExternalProperty id="PortletDefaultLocale">en</ExternalProperty>
 <ExternalProperty id="TestPortalPage"></ExternalProperty>

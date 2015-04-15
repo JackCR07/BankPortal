@@ -1,4 +1,4 @@
-<Model id="consumers/GetTransaccionesConsumer"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Model id="consumers/GetTransaccion/GetTransaccionModel"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
 <Messages />
 <Inputs><Input name="Name">Next Steps</Input>
 <Input name="BuilderCallEnabled">true</Input>
@@ -40,8 +40,8 @@ You can also profile other builder inputs according to device type, and you can 
 <Input name="BuilderCallCategory">General</Input>
 <Input name="CustomEditPageType">None</Input>
 <Input name="CustomConfigurePageType">None</Input>
-<Input name="Name">GetTransaccionesService</Input>
-<Input name="PortletTitle">GetTransacciones</Input>
+<Input name="Name">GetTransacciones</Input>
+<Input name="PortletTitle">GetTransaccionesPortlet</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
@@ -50,8 +50,8 @@ You can also profile other builder inputs according to device type, and you can 
 <Input name="BuilderCallCategory">General</Input>
 <Input name="UseAllOperations">true</Input>
 <Input name="OverrideInputs">true</Input>
-<Input name="Name">GetTransaccionesService</Input>
-<Input name="ProviderModel">providers/GetTransaccionesProvider</Input>
+<Input name="Name">GetTransacciones</Input>
+<Input name="ProviderModel">providers/GetTransacciones/GetTransaccionesProvider</Input>
 <Input name="OperationInputs"><OverridenInputs><InputsForOperation><Operation>GetTransaccionesOperation</Operation>
 <Inputs><top><Input><Name>operation1</Name>
 </Input>
@@ -77,7 +77,16 @@ You can also profile other builder inputs according to device type, and you can 
 </OverridenInputs>
 </Input>
 <Input name="OperationName">all</Input>
-<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>GetTransaccionesOperation</Operation>
+<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>byStatus</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>byExactStatus</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>all</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>getOrderDetails</Operation>
 <Mappings />
 </ValuesForOperation>
 </ContextVariables>
@@ -85,16 +94,6 @@ You can also profile other builder inputs according to device type, and you can 
 <Input name="OperationDescription">[no description]
 Parameters:
 	Name:			results</Input>
-<Input name="SelectOperations"><top><OperationSelected><Operation>GetTransaccionesOperation</Operation>
-<OperationEnabled>true</OperationEnabled>
-<Description>No description was provided.
-Parameters:
-	Name:			inputs
-
-	Name:			results</Description>
-</OperationSelected>
-</top>
-</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ViewAndFormBuilder</BuilderDefID>
@@ -110,7 +109,7 @@ Parameters:
 <Input name="InputSubmitText">Submit</Input>
 <Input name="ViewPageBackButtonText">Back</Input>
 <Input name="InsertInputPage">false</Input>
-<Input name="CreateColumnLink">true</Input>
+<Input name="CreateColumnLink">false</Input>
 <Input name="LinkActionChoice">rowdata</Input>
 <Input name="DetailPageURL">${Properties/bowstreet.Theme/ViewAndForm_DetailPageBase}</Input>
 <Input name="DetailPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_DetailPageHTMLTemplate}</Input>
@@ -125,14 +124,14 @@ Parameters:
 <Input name="CreateMain">true</Input>
 <Input name="ViewPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_ViewPageHTMLTemplate}</Input>
 <Input name="InputPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_InputPageHTMLTemplate}</Input>
-<Input name="Name">GetTransaccionesServiceView</Input>
-<Input name="ViewMethod">DataServices/GetTransaccionesService/GetTransaccionesOperation</Input>
+<Input name="Name">GetTransaccionesView</Input>
+<Input name="ViewMethod">DataServices/GetTransacciones/GetTransaccionesOperation</Input>
 <Input name="RowsPerPage">5</Input>
 <Input name="ModelName">factory/portletbase/view_and_form_base</Input>
 <Input name="SetProfiledInputValues">true</Input>
 <Input name="UniquePattern">xyzzy7</Input>
-<Input name="LinkColumn">numero_transaccion</Input>
-<Input name="DetailsMethod" />
+<Input name="LinkColumn">id_transaccion</Input>
+<Input name="DetailsMethod"></Input>
 <Input name="InputPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_InputPageStyleSheetOverrideHTMLTemplate}</Input>
 <Input name="ViewPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_ViewPageStyleSheetOverride}</Input>
 <Input name="DetailPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</Input>
@@ -142,7 +141,7 @@ Parameters:
 <Messages />
 <Inputs><Input name="BuilderCallEnabled" />
 <Input name="AllPages">true</Input>
-<Input name="AllPageRadio">All</Input>
+<Input name="AllPageRadio">current</Input>
 <Input name="Pages"><data />
 </Input>
 <Input name="DisplayBehavior"><top><DispInfo><Name>id_transaccion</Name>
@@ -166,7 +165,7 @@ Parameters:
 <DispInfo><Name>fecha_transaccion</Name>
 <Label>[Fecha Transaccion]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
+<DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>tipo_transaccion</Name>
@@ -214,13 +213,13 @@ Parameters:
 <DispInfo><Name>fecha_mov_mayor_a</Name>
 <Label>[Fecha Mov Mayor A]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
+<DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>fecha_mov_menor_a</Name>
 <Label>[Fecha Mov Menor A]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
+<DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>mon_trans_mayor_a</Name>
@@ -284,6 +283,91 @@ Parameters:
 </top>
 </Input>
 <Input name="DefaultName">All pages</Input>
+<Input name="CurPageDisplayBehavior"><data><DispInfo><Name>id_cuenta</Name>
+<Label>[Id Cuenta]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_DojoSelect</DataType>
+<Sort>[Off]</Sort>
+<LookupTable>Cuentas</LookupTable>
+</DispInfo>
+<DispInfo><Name>id_tipo_transaccion</Name>
+<Label>[Id Tipo Transaccion]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>fecha_mov_mayor_a</Name>
+<Label>[Fecha Mov Mayor A]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Date: yyyy-MM-dd]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>fecha_mov_menor_a</Name>
+<Label>[Fecha Mov Menor A]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Date: yyyy-MM-dd]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>mon_trans_mayor_a</Name>
+<Label>[Mon Trans Mayor A]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>mon_trans_menor_a</Name>
+<Label>[Mon Trans Menor A]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>n_trans_mayor_a</Name>
+<Label>[N Trans Mayor A]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>n_trans_menor_a</Name>
+<Label>[N Trans Menor A]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+</data>
+</Input>
+<Input name="CurValidationBehavior"><data><ValidationInfo><Name>id_cuenta</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>id_tipo_transaccion</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>fecha_mov_mayor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>fecha_mov_menor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>mon_trans_mayor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>mon_trans_menor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>n_trans_mayor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>n_trans_menor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+</data>
+</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
@@ -300,21 +384,256 @@ Parameters:
 <Input name="LookupTable">None</Input>
 <Input name="HTMLAttributes"><HTMLAttributes />
 </Input>
-<Input name="Text">Transacciones</Input>
+<Input name="Text"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc12"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    return webAppAccess.getUserInfo().getUserID();
+/* Simple Code Samples - See help for further info
+Get a string variable value,
+String value = webAppAccess.getVariables().getString("MyVariable");
+
+Set a string variable value,
+webAppAccess.getVariables().setString("MyVariable", "Value");
+
+Call a method,
+webAppAccess.callMethod("MethodName", arg1, arg2);
+
+Execute service calls,
+webAppAccess.callMethod("ServiceCallName.invoke");
+
+Process page inputs,
+webAppAccess.getRequestInputs().getInputValue("InputName");
+
+Display a page,
+webAppAccess.processPage("PageName");
+*/
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">ObtenerUsuario</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc14"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseAllOperations">true</Input>
+<Input name="OverrideInputs">true</Input>
+<Input name="CreateLookupTables">true</Input>
+<Input name="AssociateLookupTables">true</Input>
+<Input name="UseDiscardableInputVariables">false</Input>
+<Input name="UseDiscardableVariables">false</Input>
+<Input name="EnableCaching">true</Input>
+<Input name="InheritProfile">true</Input>
+<Input name="Name">ObtenerCuentas</Input>
+<Input name="ProviderModel">providers/GetCuentasProvider</Input>
+<Input name="SelectOperations"><top><OperationSelected><Operation>GetCuentasSO</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>No description was provided.
+Parameters:
+	Name:			inputs
+
+	Name:			results</Description>
+</OperationSelected>
+</top>
+</Input>
+<Input name="OperationInputs"><top><InputsForOperation><Operation>GetCuentasSO</Operation>
+<Inputs><top><Input><Name>operation1</Name>
+</Input>
+<Input><Name>operation1.id_cliente</Name>
+<Value>${MethodCall/ObtenerUsuario}</Value>
+</Input>
+<Input><Name>operation1.id_tipo_cuenta</Name>
+<Value>-1</Value>
+</Input>
+<Input><Name>operation1.fecha_mayor_a</Name>
+<Value>null</Value>
+</Input>
+<Input><Name>operation1.fecha_menor_a</Name>
+<Value>null</Value>
+</Input>
+<Input><Name>operation1.saldo_mayor_a</Name>
+<Value>-1</Value>
+</Input>
+<Input><Name>operation1.saldo_menor_a</Name>
+<Value>-1</Value>
+</Input>
+</top>
+</Inputs>
+</InputsForOperation>
+</top>
+</Input>
+<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>GetCuentasSO</Operation>
+<Mappings />
+</ValuesForOperation>
+</ContextVariables>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc16"><BuilderDefID>com.bowstreet.builders.webapp.LookupTableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="DataType">DataServiceData</Input>
+<Input name="NewXmlData"><top><item><Value>value1</Value>
+<Label>label1</Label>
+</item>
+<item><Value>value2</Value>
+<Label>label2</Label>
+</item>
+</top>
+</Input>
+<Input name="VariableType">ValueTagLabelTag</Input>
+<Input name="ValueElementName">id_cuenta</Input>
+<Input name="LabelElementName">numero_cuenta</Input>
+<Input name="DataServiceValueElementName">operation1Response/cuenta/id_cuenta</Input>
+<Input name="DataServiceLabelElementName">operation1Response/cuenta/numero_cuenta</Input>
+<Input name="GetDataFrom">BuilderInput</Input>
+<Input name="TablePosition">InFront</Input>
+<Input name="LabelValueFilterMode">LabelValue</Input>
+<Input name="Name">Cuentas</Input>
+<Input name="DataServiceData">DataServices/ObtenerCuentas/GetCuentasSO</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc17"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="AllPages">false</Input>
+<Input name="AllPageRadio">All</Input>
+<Input name="Pages"><data><GetTransaccionesView_InputPage>true</GetTransaccionesView_InputPage>
+</data>
+</Input>
+<Input name="DisplayBehavior"><data><DispInfo><Name>id_cuenta</Name>
+<Label>[Id Cuenta]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_DojoSelect</DataType>
+<Sort>[Off]</Sort>
+<LookupTable>Cuentas</LookupTable>
+</DispInfo>
+<DispInfo><Name>id_tipo_transaccion</Name>
+<Label>[Id Tipo Transaccion]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_DojoSelect</DataType>
+<Sort>[Off]</Sort>
+<LookupTable>TipoTransaccion</LookupTable>
+</DispInfo>
+<DispInfo><Name>fecha_mov_mayor_a</Name>
+<Label>[Fecha Mov Mayor A]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Date: yyyy-MM-dd]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>fecha_mov_menor_a</Name>
+<Label>[Fecha Mov Menor A]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Date: yyyy-MM-dd]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>mon_trans_mayor_a</Name>
+<Label>[Mon Trans Mayor A]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>mon_trans_menor_a</Name>
+<Label>[Mon Trans Menor A]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>n_trans_mayor_a</Name>
+<Label>[N Trans Mayor A]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>n_trans_menor_a</Name>
+<Label>[N Trans Menor A]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+</data>
+</Input>
+<Input name="ValidationBehavior"><data><ValidationInfo><Name>id_cuenta</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>id_tipo_transaccion</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>fecha_mov_mayor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>fecha_mov_menor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>mon_trans_mayor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>mon_trans_menor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>n_trans_mayor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>n_trans_menor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+</data>
+</Input>
+<Input name="Name">GetTransaccionesView_InputPagemenu</Input>
+<Input name="DefaultName">GetTransaccionesView_InputPage </Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc19"><BuilderDefID>com.bowstreet.builders.webapp.LookupTableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="DataType">NewXmlData</Input>
+<Input name="NewXmlData">&lt;top&gt;
+   &lt;item&gt;
+      &lt;Value&gt;1&lt;/Value&gt;
+      &lt;Label&gt;Credito&lt;/Label&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;Value&gt;2&lt;/Value&gt;
+      &lt;Label&gt;Debito&lt;/Label&gt;
+   &lt;/item&gt;
+&lt;/top&gt;
+</Input>
+<Input name="VariableType">ValueTagLabelTag</Input>
+<Input name="ValueElementName">Value</Input>
+<Input name="LabelElementName">Label</Input>
+<Input name="DataServiceValueElementName">Value</Input>
+<Input name="DataServiceLabelElementName">Label</Input>
+<Input name="GetDataFrom">BuilderInput</Input>
+<Input name="TablePosition">InFront</Input>
+<Input name="LabelValueFilterMode">LabelValue</Input>
+<Input name="Name">TipoTransaccion</Input>
 </Inputs>
 </BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
 <Dependencies><Dependency type="Model">imports/factory/multichanneltheme85</Dependency>
-<Dependency type="Model">providers/GetTransaccionesProvider</Dependency>
+<Dependency type="Model">providers/GetTransacciones/GetTransaccionesProvider</Dependency>
 <Dependency type="Model">factory/portletbase/view_and_form_base</Dependency>
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/input.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_label_above_themes.html</Dependency>
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/view.html</Dependency>
 <Dependency type="File">/factory/pages/paging/data_paging_links.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_themes.html</Dependency>
-<Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/details.html</Dependency>
+<Dependency type="Model">providers/GetCuentasProvider</Dependency>
 <Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
 <Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
 <Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
@@ -325,8 +644,8 @@ Parameters:
 <Dependency type="Class">com.bowstreet.builderutilities.NameSequencer</Dependency>
 </Dependencies>
 <ExternalProperties><ExternalProperty id="PortletModel">true</ExternalProperty>
-<ExternalProperty id="PortletName">GetTransaccionesService</ExternalProperty>
-<ExternalProperty id="PortletTitle">GetTransacciones</ExternalProperty>
+<ExternalProperty id="PortletName">GetTransacciones</ExternalProperty>
+<ExternalProperty id="PortletTitle">GetTransaccionesPortlet</ExternalProperty>
 <ExternalProperty id="PortletDefaultLocale">en</ExternalProperty>
 <ExternalProperty id="TestPortalPage"></ExternalProperty>
 <ExternalProperty id="PortletModeEdit">false</ExternalProperty>
@@ -335,6 +654,6 @@ Parameters:
 <ExternalProperty id="PortletModeHelp">false</ExternalProperty>
 <ExternalProperty id="DojoEnabled">true</ExternalProperty>
 <ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
-<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.NumberTextBox,dijit.form.TextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.Select,dijit.form.DateTextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
 </ExternalProperties>
 </Model>
