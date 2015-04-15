@@ -1,5 +1,5 @@
 /**
- * Title:        _CreateTransaccionModel_Default
+ * Title:        _GetTransaccionModel_Default
  *
  * Licensed Materials - Property of IBM
  * 5724-O03
@@ -9,7 +9,7 @@
  *
  * Description:  Generated methods class for IBM Web Experience Factory application.
  *
- * This code was automatically generated at 03:04:52 PM on Apr 15, 2015
+ * This code was automatically generated at 03:44:07 PM on Apr 15, 2015
  * by the IBM Web Experience Factory -- do not edit manually.
  * Generated using the following Profiles - 
  {
@@ -17,7 +17,7 @@
  }
  *
  */
-package genjava.consumers.CreateTransaccion;
+package genjava.consumers.GetTransaccion;
 
 
 /* begin method imports */
@@ -63,7 +63,7 @@ import javax.servlet.http.*;
 /**
  * Auto-generated methods class for IBM Web Experience Factory application.
  */
-public class _CreateTransaccionModel_Default  implements IExemplar
+public class _GetTransaccionModel_Default  implements IExemplar
 {
 
 /**
@@ -71,19 +71,19 @@ public class _CreateTransaccionModel_Default  implements IExemplar
  */
 public Object newInstance()
 {
-   return new _CreateTransaccionModel_Default();
+   return new _GetTransaccionModel_Default();
 }
 
 /*begin*/
 /**
- * Generated Method [CreateTransaccionConsumerServiceCreateTransaccionOperation]
+ * Generated Method [GetTransaccionesGetTransaccionesOperation]
  */
-public IXml CreateTransaccionConsumerServiceCreateTransaccionOperation(WebAppAccess webAppAccess)
+public IXml GetTransaccionesGetTransaccionesOperation(WebAppAccess webAppAccess)
 {
 //	The following webapp variables should be populated prior to invoking this method.
-//	CreateTransaccionConsumerServiceCreateTransaccionOperationInputs
+//	GetTransaccionesGetTransaccionesOperationInputs
 
-	Object result = webAppAccess.callMethod("CreateTransaccionConsumerService.executeOperation", "CreateTransaccionOperation", Boolean.FALSE );
+	Object result = webAppAccess.callMethod("GetTransacciones.executeOperation", "GetTransaccionesOperation", Boolean.FALSE );
 	if (result instanceof WebAppAccessConsumer) {
 		((WebAppAccessConsumer)result).setWebAppAccess(webAppAccess);
 	}
@@ -92,15 +92,19 @@ public IXml CreateTransaccionConsumerServiceCreateTransaccionOperation(WebAppAcc
 
 
 /**
- * Generated Method [CreateTransaccionConsumerServiceCreateTransaccionOperationWithArgs]
+ * Generated Method [GetTransaccionesGetTransaccionesOperationWithArgs]
  */
-public IXml CreateTransaccionConsumerServiceCreateTransaccionOperationWithArgs(WebAppAccess webAppAccess, String arg1, String arg2, String arg3, String arg4)
+public IXml GetTransaccionesGetTransaccionesOperationWithArgs(WebAppAccess webAppAccess, String arg1, String arg2, String arg3, String arg4, String arg5, String arg6, String arg7, String arg8)
 {
-	com.bowstreet.builderutilities.PageAutomationRuntime.assign(webAppAccess,"CreateTransaccionConsumerServiceCreateTransaccionOperationInputs/operation1/id_cuenta_origen", arg1, false );
-	com.bowstreet.builderutilities.PageAutomationRuntime.assign(webAppAccess,"CreateTransaccionConsumerServiceCreateTransaccionOperationInputs/operation1/numero_cuenta_destino", arg2, false );
-	com.bowstreet.builderutilities.PageAutomationRuntime.assign(webAppAccess,"CreateTransaccionConsumerServiceCreateTransaccionOperationInputs/operation1/id_tipo_transaccion", arg3, false );
-	com.bowstreet.builderutilities.PageAutomationRuntime.assign(webAppAccess,"CreateTransaccionConsumerServiceCreateTransaccionOperationInputs/operation1/monto_transferido", arg4, false );
-	Object result = webAppAccess.callMethod("CreateTransaccionConsumerService.executeOperation", "CreateTransaccionOperation", Boolean.TRUE );
+	com.bowstreet.builderutilities.PageAutomationRuntime.assign(webAppAccess,"GetTransaccionesGetTransaccionesOperationInputs/operation1/id_cuenta", arg1, false );
+	com.bowstreet.builderutilities.PageAutomationRuntime.assign(webAppAccess,"GetTransaccionesGetTransaccionesOperationInputs/operation1/id_tipo_transaccion", arg2, false );
+	com.bowstreet.builderutilities.PageAutomationRuntime.assign(webAppAccess,"GetTransaccionesGetTransaccionesOperationInputs/operation1/fecha_mov_mayor_a", arg3, false );
+	com.bowstreet.builderutilities.PageAutomationRuntime.assign(webAppAccess,"GetTransaccionesGetTransaccionesOperationInputs/operation1/fecha_mov_menor_a", arg4, false );
+	com.bowstreet.builderutilities.PageAutomationRuntime.assign(webAppAccess,"GetTransaccionesGetTransaccionesOperationInputs/operation1/mon_trans_mayor_a", arg5, false );
+	com.bowstreet.builderutilities.PageAutomationRuntime.assign(webAppAccess,"GetTransaccionesGetTransaccionesOperationInputs/operation1/mon_trans_menor_a", arg6, false );
+	com.bowstreet.builderutilities.PageAutomationRuntime.assign(webAppAccess,"GetTransaccionesGetTransaccionesOperationInputs/operation1/n_trans_mayor_a", arg7, false );
+	com.bowstreet.builderutilities.PageAutomationRuntime.assign(webAppAccess,"GetTransaccionesGetTransaccionesOperationInputs/operation1/n_trans_menor_a", arg8, false );
+	Object result = webAppAccess.callMethod("GetTransacciones.executeOperation", "GetTransaccionesOperation", Boolean.TRUE );
 	if (result instanceof WebAppAccessConsumer) {
 		((WebAppAccessConsumer)result).setWebAppAccess(webAppAccess);
 	}
@@ -109,24 +113,24 @@ public IXml CreateTransaccionConsumerServiceCreateTransaccionOperationWithArgs(W
 
 
 /**
- * Generated Method [CreateTransaccionConsumerService_createHelper]
+ * Generated Method [GetTransacciones_createHelper]
  */
-public Object CreateTransaccionConsumerService_createHelper(WebAppAccess webAppAccess)
+public Object GetTransacciones_createHelper(WebAppAccess webAppAccess)
 {
     com.bowstreet.builders.webapp.ServiceConsumer2DataHelper helper = new com.bowstreet.builders.webapp.ServiceConsumer2DataHelper();
-    helper.setName("CreateTransaccionConsumerService");
+    helper.setName("GetTransacciones");
     return helper;
 }
 
 /**
- * Generated Method [CreateTransaccionConsumerView_Paging_createHelper]
+ * Generated Method [GetTransaccionesView_Paging_createHelper]
  */
-public com.bowstreet.builders.webapp.methods.PagingAssistant CreateTransaccionConsumerView_Paging_createHelper(WebAppAccess webAppAccess)
+public com.bowstreet.builders.webapp.methods.PagingAssistant GetTransaccionesView_Paging_createHelper(WebAppAccess webAppAccess)
 {
     com.bowstreet.builders.webapp.methods.PagingAssistant asst;
     asst = new com.bowstreet.builders.webapp.methods.PagingAssistant();
     asst.preserveLocation(false);
-    asst.setName("CreateTransaccionConsumerView_Paging");
+    asst.setName("GetTransaccionesView_Paging");
     asst.setTopLevelTagName("operation1Response");
     asst.reset(webAppAccess);
     int rowsPerPage;
@@ -137,25 +141,52 @@ public com.bowstreet.builders.webapp.methods.PagingAssistant CreateTransaccionCo
 }
 
 /**
- * Generated Method [CreateTransaccionConsumerView_Paging_createRetriever]
+ * Generated Method [GetTransaccionesView_Paging_createRetriever]
  */
-public DataRetriever CreateTransaccionConsumerView_Paging_createRetriever(WebAppAccess webAppAccess)
+public DataRetriever GetTransaccionesView_Paging_createRetriever(WebAppAccess webAppAccess)
 {
-    DataRetriever dr = (DataRetriever)PagingAssistant.findDataRetriever(webAppAccess, webAppAccess.getVariables().getObject("CreateTransaccionConsumerServiceCreateTransaccionOperationResults"), true, true);
+    DataRetriever dr = (DataRetriever)PagingAssistant.findDataRetriever(webAppAccess, webAppAccess.getVariables().getObject("GetTransaccionesGetTransaccionesOperationResults"), true, true);
 
     return dr;
 }
 
 /**
- * Generated Method [CreateTransaccionConsumerView_Paging_CreateHelper]
+ * Generated Method [GetTransaccionesView_Paging_CreateHelper]
  */
-public com.bowstreet.builders.webapp.methods.PagingLinks CreateTransaccionConsumerView_Paging_CreateHelper(WebAppAccess webAppAccess)
+public com.bowstreet.builders.webapp.methods.PagingLinks GetTransaccionesView_Paging_CreateHelper(WebAppAccess webAppAccess)
 {
     PagingAssistant asst;
-    asst = (PagingAssistant)webAppAccess.getVariables().getObject("CreateTransaccionConsumerView_Paging");
+    asst = (PagingAssistant)webAppAccess.getVariables().getObject("GetTransaccionesView_Paging");
     PagingLinks lnks = new PagingLinks(asst);
     lnks.setMaxLinks(DataConverter.toInteger("5").intValue());
     return lnks;
+}
+
+/**
+ * Generated Method [ObtenerUsuario]
+ */
+public String ObtenerUsuario(WebAppAccess webAppAccess)
+{ 
+    return webAppAccess.getUserInfo().getUserID(); 
+/* Simple Code Samples - See help for further info 
+Get a string variable value, 
+String value = webAppAccess.getVariables().getString("MyVariable"); 
+ 
+Set a string variable value, 
+webAppAccess.getVariables().setString("MyVariable", "Value"); 
+ 
+Call a method, 
+webAppAccess.callMethod("MethodName", arg1, arg2); 
+ 
+Execute service calls, 
+webAppAccess.callMethod("ServiceCallName.invoke"); 
+ 
+Process page inputs, 
+webAppAccess.getRequestInputs().getInputValue("InputName"); 
+ 
+Display a page, 
+webAppAccess.processPage("PageName"); 
+*/ 
 }
 
 /**
@@ -212,46 +243,46 @@ public Object _IRResolver_1(WebAppAccess webAppAccess)
 }
 
 /**
- * Generated Method [CuentasUsuarioGetXmlData]
+ * Generated Method [CuentasGetXmlData]
  */
-public IXml CuentasUsuarioGetXmlData(WebAppAccess webAppAccess)
+public IXml CuentasGetXmlData(WebAppAccess webAppAccess)
 {
   // Invoke data service operation.
   webAppAccess.callMethod("ObtenerCuentasGetCuentasSO");
   // Extract the XML content, if any.  Otherwise ignore the content.
   final Object content = webAppAccess.getVariables().getObject("ObtenerCuentasGetCuentasSOResults");
-  return (content instanceof IXml) ? (IXml) CuentasUsuarioFilterXml( webAppAccess, (IXml) content ) : null;
+  return (content instanceof IXml) ? (IXml) CuentasFilterXml( webAppAccess, (IXml) content ) : null;
 }
 
 
 /**
- * Generated Method [CuentasUsuarioGetValueTagName]
+ * Generated Method [CuentasGetValueTagName]
  */
-public String CuentasUsuarioGetValueTagName(WebAppAccess webAppAccess)
+public String CuentasGetValueTagName(WebAppAccess webAppAccess)
 {
   return "id_cuenta";
 }
 
 /**
- * Generated Method [CuentasUsuarioGetLabelTagName]
+ * Generated Method [CuentasGetLabelTagName]
  */
-public String CuentasUsuarioGetLabelTagName(WebAppAccess webAppAccess)
+public String CuentasGetLabelTagName(WebAppAccess webAppAccess)
 {
   return "numero_cuenta";
 }
 
 /**
- * Generated Method [CuentasUsuarioGetParentTagName]
+ * Generated Method [CuentasGetParentTagName]
  */
-public String CuentasUsuarioGetParentTagName(WebAppAccess webAppAccess)
+public String CuentasGetParentTagName(WebAppAccess webAppAccess)
 {
   return "UserAddition";
 }
 
 /**
- * Generated Method [CuentasUsuarioToLabel]
+ * Generated Method [CuentasToLabel]
  */
-public String CuentasUsuarioToLabel(WebAppAccess webAppAccess, String value)
+public String CuentasToLabel(WebAppAccess webAppAccess, String value)
 {
   if (value == null) return null;
   String label = null;
@@ -260,8 +291,8 @@ public String CuentasUsuarioToLabel(WebAppAccess webAppAccess, String value)
   {
     // Get the tag names that identify the value and label elements
     // in the source data XML.
-    final String valueTagName = CuentasUsuarioGetValueTagName(webAppAccess);
-    final String labelTagName = CuentasUsuarioGetLabelTagName(webAppAccess);
+    final String valueTagName = CuentasGetValueTagName(webAppAccess);
+    final String labelTagName = CuentasGetLabelTagName(webAppAccess);
 
     // Setup the XPATH expresion that is used to find the label that
     // corresponds to the given value.
@@ -270,7 +301,7 @@ public String CuentasUsuarioToLabel(WebAppAccess webAppAccess, String value)
     // Get any additional data from the XML variable.  This variable
     // is either provided by the modeller directly or is created from
     // the additional data input of the lookup table builder.
-    final IXml additionalDataXml = DataConverter.toIXml(webAppAccess.getVariables().getObject("CuentasUsuarioAdditionalXmlData"));
+    final IXml additionalDataXml = DataConverter.toIXml(webAppAccess.getVariables().getObject("CuentasAdditionalXmlData"));
     String labelFromAdditionalData = null;
 
     if( additionalDataXml != null )
@@ -299,7 +330,7 @@ public String CuentasUsuarioToLabel(WebAppAccess webAppAccess, String value)
       // There was no override label in the additional data, so get
       // the main lookup table data and see if there is a match.
 
-      final IXml lookupTable = (IXml) webAppAccess.callMethod( "CuentasUsuarioGetXmlData" );
+      final IXml lookupTable = (IXml) webAppAccess.callMethod( "CuentasGetXmlData" );
 
       if( lookupTable != null )
       {
@@ -325,9 +356,9 @@ public String CuentasUsuarioToLabel(WebAppAccess webAppAccess, String value)
 
 
 /**
- * Generated Method [CuentasUsuarioToValue]
+ * Generated Method [CuentasToValue]
  */
-public String CuentasUsuarioToValue(WebAppAccess webAppAccess, String label)
+public String CuentasToValue(WebAppAccess webAppAccess, String label)
 {
   if (label == null) return null;
   String value = null;
@@ -336,8 +367,8 @@ public String CuentasUsuarioToValue(WebAppAccess webAppAccess, String label)
   {
     // Get the tag names that identify the value and label elements
     // in the source data XML.
-    final String valueTagName = CuentasUsuarioGetValueTagName(webAppAccess);
-    final String labelTagName = CuentasUsuarioGetLabelTagName(webAppAccess);
+    final String valueTagName = CuentasGetValueTagName(webAppAccess);
+    final String labelTagName = CuentasGetLabelTagName(webAppAccess);
 
     // Setup the XPATH expresion that is used to find the value that
     // corresponds to the given label.
@@ -346,7 +377,7 @@ public String CuentasUsuarioToValue(WebAppAccess webAppAccess, String label)
     // Get any additional data from the XML variable.  This variable
     // is either provided by the modeller directly or is created from
     // the additional data input of the lookup table builder.
-    final IXml additionalDataXml = DataConverter.toIXml(webAppAccess.getVariables().getObject("CuentasUsuarioAdditionalXmlData"));
+    final IXml additionalDataXml = DataConverter.toIXml(webAppAccess.getVariables().getObject("CuentasAdditionalXmlData"));
     String valueFromAdditionalData = null;
 
     if( additionalDataXml != null )
@@ -375,7 +406,7 @@ public String CuentasUsuarioToValue(WebAppAccess webAppAccess, String label)
       // There was no override value in the additional data, so get
       // the main lookup table data and see if there is a match.
 
-      final IXml lookupTable = (IXml) webAppAccess.callMethod( "CuentasUsuarioGetXmlData" );
+      final IXml lookupTable = (IXml) webAppAccess.callMethod( "CuentasGetXmlData" );
 
       if( lookupTable != null )
       {
@@ -401,12 +432,12 @@ public String CuentasUsuarioToValue(WebAppAccess webAppAccess, String label)
 
 
 /**
- * Generated Method [CuentasUsuarioFilterXml]
+ * Generated Method [CuentasFilterXml]
  */
-public IXml CuentasUsuarioFilterXml(WebAppAccess webAppAccess, IXml data)
+public IXml CuentasFilterXml(WebAppAccess webAppAccess, IXml data)
 {
-  String labelTag = CuentasUsuarioGetLabelTagName(webAppAccess);
-  String valueTag = CuentasUsuarioGetValueTagName(webAppAccess);
+  String labelTag = CuentasGetLabelTagName(webAppAccess);
+  String valueTag = CuentasGetValueTagName(webAppAccess);
   if (StringUtil.isEmpty(labelTag) || StringUtil.isEmpty(valueTag))
     return data;
   data = data.cloneElement();
@@ -420,27 +451,27 @@ public IXml CuentasUsuarioFilterXml(WebAppAccess webAppAccess, IXml data)
 }
 
 /**
- * Generated Method [CuentasUsuarioGetLookupTable]
+ * Generated Method [CuentasGetLookupTable]
  */
-public IXml CuentasUsuarioGetLookupTable(WebAppAccess webAppAccess)
+public IXml CuentasGetLookupTable(WebAppAccess webAppAccess)
 {
   // Fetch the content of the main lookup table.  If no main table
   // exists, then create an empty one as a default.
-  IXml lookupTable = (IXml) webAppAccess.callMethod( "CuentasUsuarioGetXmlData" );
+  IXml lookupTable = (IXml) webAppAccess.callMethod( "CuentasGetXmlData" );
   lookupTable = (lookupTable == null) ? XmlUtil.create( "LookupTable" ) : lookupTable.cloneElement();
 
   // Get any additional data from the XML variable.  This variable
   // is either provided by the modeller directly or is created from
   // the additional data input of the lookup table builder.
-  final IXml additionalDataXml = DataConverter.toIXml(webAppAccess.getVariables().getObject("CuentasUsuarioAdditionalXmlData"));
+  final IXml additionalDataXml = DataConverter.toIXml(webAppAccess.getVariables().getObject("CuentasAdditionalXmlData"));
 
   if( additionalDataXml != null )
   {
     // Get the tag names that identify the value and label elements
     // in the source data XML.
-    final String valueTagName = CuentasUsuarioGetValueTagName(webAppAccess);
-    final String labelTagName = CuentasUsuarioGetLabelTagName(webAppAccess);
-    final String parentTagName = CuentasUsuarioGetParentTagName(webAppAccess);
+    final String valueTagName = CuentasGetValueTagName(webAppAccess);
+    final String labelTagName = CuentasGetLabelTagName(webAppAccess);
+    final String parentTagName = CuentasGetParentTagName(webAppAccess);
 
     // Setup the XPATH prefix expresion that is used to find values in
     // the lookup table XML.
@@ -500,44 +531,44 @@ public IXml CuentasUsuarioGetLookupTable(WebAppAccess webAppAccess)
 
 
 /**
- * Generated Method [TipoTransaccionesGetXmlData]
+ * Generated Method [TipoTransaccionGetXmlData]
  */
-public IXml TipoTransaccionesGetXmlData(WebAppAccess webAppAccess)
+public IXml TipoTransaccionGetXmlData(WebAppAccess webAppAccess)
 {
   // Extract the XML content, if any.  Otherwise ignore the content.
-  final Object content = webAppAccess.getVariables().getObject("TipoTransaccionesXmlData");
-  return (content instanceof IXml) ? (IXml) TipoTransaccionesFilterXml( webAppAccess, (IXml) content ) : null;
+  final Object content = webAppAccess.getVariables().getObject("TipoTransaccionXmlData");
+  return (content instanceof IXml) ? (IXml) TipoTransaccionFilterXml( webAppAccess, (IXml) content ) : null;
 }
 
 
 /**
- * Generated Method [TipoTransaccionesGetValueTagName]
+ * Generated Method [TipoTransaccionGetValueTagName]
  */
-public String TipoTransaccionesGetValueTagName(WebAppAccess webAppAccess)
+public String TipoTransaccionGetValueTagName(WebAppAccess webAppAccess)
 {
   return "Value";
 }
 
 /**
- * Generated Method [TipoTransaccionesGetLabelTagName]
+ * Generated Method [TipoTransaccionGetLabelTagName]
  */
-public String TipoTransaccionesGetLabelTagName(WebAppAccess webAppAccess)
+public String TipoTransaccionGetLabelTagName(WebAppAccess webAppAccess)
 {
   return "Label";
 }
 
 /**
- * Generated Method [TipoTransaccionesGetParentTagName]
+ * Generated Method [TipoTransaccionGetParentTagName]
  */
-public String TipoTransaccionesGetParentTagName(WebAppAccess webAppAccess)
+public String TipoTransaccionGetParentTagName(WebAppAccess webAppAccess)
 {
   return "UserAddition";
 }
 
 /**
- * Generated Method [TipoTransaccionesToLabel]
+ * Generated Method [TipoTransaccionToLabel]
  */
-public String TipoTransaccionesToLabel(WebAppAccess webAppAccess, String value)
+public String TipoTransaccionToLabel(WebAppAccess webAppAccess, String value)
 {
   if (value == null) return null;
   String label = null;
@@ -546,8 +577,8 @@ public String TipoTransaccionesToLabel(WebAppAccess webAppAccess, String value)
   {
     // Get the tag names that identify the value and label elements
     // in the source data XML.
-    final String valueTagName = TipoTransaccionesGetValueTagName(webAppAccess);
-    final String labelTagName = TipoTransaccionesGetLabelTagName(webAppAccess);
+    final String valueTagName = TipoTransaccionGetValueTagName(webAppAccess);
+    final String labelTagName = TipoTransaccionGetLabelTagName(webAppAccess);
 
     // Setup the XPATH expresion that is used to find the label that
     // corresponds to the given value.
@@ -556,7 +587,7 @@ public String TipoTransaccionesToLabel(WebAppAccess webAppAccess, String value)
     // Get any additional data from the XML variable.  This variable
     // is either provided by the modeller directly or is created from
     // the additional data input of the lookup table builder.
-    final IXml additionalDataXml = DataConverter.toIXml(webAppAccess.getVariables().getObject("TipoTransaccionesAdditionalXmlData"));
+    final IXml additionalDataXml = DataConverter.toIXml(webAppAccess.getVariables().getObject("TipoTransaccionAdditionalXmlData"));
     String labelFromAdditionalData = null;
 
     if( additionalDataXml != null )
@@ -585,7 +616,7 @@ public String TipoTransaccionesToLabel(WebAppAccess webAppAccess, String value)
       // There was no override label in the additional data, so get
       // the main lookup table data and see if there is a match.
 
-      final IXml lookupTable = (IXml) webAppAccess.callMethod( "TipoTransaccionesGetXmlData" );
+      final IXml lookupTable = (IXml) webAppAccess.callMethod( "TipoTransaccionGetXmlData" );
 
       if( lookupTable != null )
       {
@@ -611,9 +642,9 @@ public String TipoTransaccionesToLabel(WebAppAccess webAppAccess, String value)
 
 
 /**
- * Generated Method [TipoTransaccionesToValue]
+ * Generated Method [TipoTransaccionToValue]
  */
-public String TipoTransaccionesToValue(WebAppAccess webAppAccess, String label)
+public String TipoTransaccionToValue(WebAppAccess webAppAccess, String label)
 {
   if (label == null) return null;
   String value = null;
@@ -622,8 +653,8 @@ public String TipoTransaccionesToValue(WebAppAccess webAppAccess, String label)
   {
     // Get the tag names that identify the value and label elements
     // in the source data XML.
-    final String valueTagName = TipoTransaccionesGetValueTagName(webAppAccess);
-    final String labelTagName = TipoTransaccionesGetLabelTagName(webAppAccess);
+    final String valueTagName = TipoTransaccionGetValueTagName(webAppAccess);
+    final String labelTagName = TipoTransaccionGetLabelTagName(webAppAccess);
 
     // Setup the XPATH expresion that is used to find the value that
     // corresponds to the given label.
@@ -632,7 +663,7 @@ public String TipoTransaccionesToValue(WebAppAccess webAppAccess, String label)
     // Get any additional data from the XML variable.  This variable
     // is either provided by the modeller directly or is created from
     // the additional data input of the lookup table builder.
-    final IXml additionalDataXml = DataConverter.toIXml(webAppAccess.getVariables().getObject("TipoTransaccionesAdditionalXmlData"));
+    final IXml additionalDataXml = DataConverter.toIXml(webAppAccess.getVariables().getObject("TipoTransaccionAdditionalXmlData"));
     String valueFromAdditionalData = null;
 
     if( additionalDataXml != null )
@@ -661,7 +692,7 @@ public String TipoTransaccionesToValue(WebAppAccess webAppAccess, String label)
       // There was no override value in the additional data, so get
       // the main lookup table data and see if there is a match.
 
-      final IXml lookupTable = (IXml) webAppAccess.callMethod( "TipoTransaccionesGetXmlData" );
+      final IXml lookupTable = (IXml) webAppAccess.callMethod( "TipoTransaccionGetXmlData" );
 
       if( lookupTable != null )
       {
@@ -687,12 +718,12 @@ public String TipoTransaccionesToValue(WebAppAccess webAppAccess, String label)
 
 
 /**
- * Generated Method [TipoTransaccionesFilterXml]
+ * Generated Method [TipoTransaccionFilterXml]
  */
-public IXml TipoTransaccionesFilterXml(WebAppAccess webAppAccess, IXml data)
+public IXml TipoTransaccionFilterXml(WebAppAccess webAppAccess, IXml data)
 {
-  String labelTag = TipoTransaccionesGetLabelTagName(webAppAccess);
-  String valueTag = TipoTransaccionesGetValueTagName(webAppAccess);
+  String labelTag = TipoTransaccionGetLabelTagName(webAppAccess);
+  String valueTag = TipoTransaccionGetValueTagName(webAppAccess);
   if (StringUtil.isEmpty(labelTag) || StringUtil.isEmpty(valueTag))
     return data;
   data = data.cloneElement();
@@ -706,27 +737,27 @@ public IXml TipoTransaccionesFilterXml(WebAppAccess webAppAccess, IXml data)
 }
 
 /**
- * Generated Method [TipoTransaccionesGetLookupTable]
+ * Generated Method [TipoTransaccionGetLookupTable]
  */
-public IXml TipoTransaccionesGetLookupTable(WebAppAccess webAppAccess)
+public IXml TipoTransaccionGetLookupTable(WebAppAccess webAppAccess)
 {
   // Fetch the content of the main lookup table.  If no main table
   // exists, then create an empty one as a default.
-  IXml lookupTable = (IXml) webAppAccess.callMethod( "TipoTransaccionesGetXmlData" );
+  IXml lookupTable = (IXml) webAppAccess.callMethod( "TipoTransaccionGetXmlData" );
   lookupTable = (lookupTable == null) ? XmlUtil.create( "LookupTable" ) : lookupTable.cloneElement();
 
   // Get any additional data from the XML variable.  This variable
   // is either provided by the modeller directly or is created from
   // the additional data input of the lookup table builder.
-  final IXml additionalDataXml = DataConverter.toIXml(webAppAccess.getVariables().getObject("TipoTransaccionesAdditionalXmlData"));
+  final IXml additionalDataXml = DataConverter.toIXml(webAppAccess.getVariables().getObject("TipoTransaccionAdditionalXmlData"));
 
   if( additionalDataXml != null )
   {
     // Get the tag names that identify the value and label elements
     // in the source data XML.
-    final String valueTagName = TipoTransaccionesGetValueTagName(webAppAccess);
-    final String labelTagName = TipoTransaccionesGetLabelTagName(webAppAccess);
-    final String parentTagName = TipoTransaccionesGetParentTagName(webAppAccess);
+    final String valueTagName = TipoTransaccionGetValueTagName(webAppAccess);
+    final String labelTagName = TipoTransaccionGetLabelTagName(webAppAccess);
+    final String parentTagName = TipoTransaccionGetParentTagName(webAppAccess);
 
     // Setup the XPATH prefix expresion that is used to find values in
     // the lookup table XML.
@@ -786,103 +817,100 @@ public IXml TipoTransaccionesGetLookupTable(WebAppAccess webAppAccess)
 
 
 /**
- * Generated Method [ObtenerUsuario]
+ * Generated Method [GetTransaccionesView_InputPage_SaveData]
  */
-public String ObtenerUsuario(WebAppAccess webAppAccess)
-{ 
-    return webAppAccess.getUserInfo().getUserID(); 
-/* Simple Code Samples - See help for further info 
-Get a string variable value, 
-String value = webAppAccess.getVariables().getString("MyVariable"); 
- 
-Set a string variable value, 
-webAppAccess.getVariables().setString("MyVariable", "Value"); 
- 
-Call a method, 
-webAppAccess.callMethod("MethodName", arg1, arg2); 
- 
-Execute service calls, 
-webAppAccess.callMethod("ServiceCallName.invoke"); 
- 
-Process page inputs, 
-webAppAccess.getRequestInputs().getInputValue("InputName"); 
- 
-Display a page, 
-webAppAccess.processPage("PageName"); 
-*/ 
-}
-
-/**
- * Generated Method [CreateTransaccionConsumerView_InputPage_SaveData]
- */
-public void CreateTransaccionConsumerView_InputPage_SaveData(WebAppAccess webAppAccess)
+public void GetTransaccionesView_InputPage_SaveData(WebAppAccess webAppAccess)
 {
   String str;
   boolean performValidation;
   Variables variables = webAppAccess.getVariables();
   IInputFieldFormatter formatter;
-    PageAutomationMessages errors = (PageAutomationMessages)webAppAccess.getVariables().getObject("CreateTransaccionConsumerView_InputPageError");
+    PageAutomationMessages errors = (PageAutomationMessages)webAppAccess.getVariables().getObject("GetTransaccionesView_InputPageError");
     errors.clear();
 
     {
-        IXml CreateTransaccionConsumerServiceCreateTransaccionOperationInputs = variables.getXml("CreateTransaccionConsumerServiceCreateTransaccionOperationInputs");
-        if (CreateTransaccionConsumerServiceCreateTransaccionOperationInputs == null) {
-            CreateTransaccionConsumerServiceCreateTransaccionOperationInputs = XmlUtil.create("operation1");
-            variables.setXml("CreateTransaccionConsumerServiceCreateTransaccionOperationInputs", CreateTransaccionConsumerServiceCreateTransaccionOperationInputs);
+        IXml GetTransaccionesGetTransaccionesOperationInputs = variables.getXml("GetTransaccionesGetTransaccionesOperationInputs");
+        if (GetTransaccionesGetTransaccionesOperationInputs == null) {
+            GetTransaccionesGetTransaccionesOperationInputs = XmlUtil.create("operation1");
+            variables.setXml("GetTransaccionesGetTransaccionesOperationInputs", GetTransaccionesGetTransaccionesOperationInputs);
         }
         
-            str = webAppAccess.getRequestInputs().getInputValue("id_cuenta_origen");
-            CreateTransaccionConsumerServiceCreateTransaccionOperationInputs.setText("id_cuenta_origen", str);
-        
-            str = webAppAccess.getRequestInputs().getInputValue("numero_cuenta_destino");
-            CreateTransaccionConsumerServiceCreateTransaccionOperationInputs.setText("numero_cuenta_destino", str);
+            str = webAppAccess.getRequestInputs().getInputValue("id_cuenta");
+            GetTransaccionesGetTransaccionesOperationInputs.setText("id_cuenta", str);
         
             str = webAppAccess.getRequestInputs().getInputValue("id_tipo_transaccion");
-            CreateTransaccionConsumerServiceCreateTransaccionOperationInputs.setText("id_tipo_transaccion", str);
+            GetTransaccionesGetTransaccionesOperationInputs.setText("id_tipo_transaccion", str);
         
-            str = webAppAccess.getRequestInputs().getInputValue("monto_transferido");
-            CreateTransaccionConsumerServiceCreateTransaccionOperationInputs.setText("monto_transferido", str);
+            str = webAppAccess.getRequestInputs().getInputValue("fecha_mov_mayor_a");
+            formatter = (IInputFieldFormatter)variables.getObject("StandardFormatter");
+            formatter.setWebAppAccess(webAppAccess);
+            if (!formatter.validate(str, "Optional Date(yyyy-MM-dd)"))
+              errors.addMessage("fecha_mov_mayor_a", formatter.getErrorMessage());
+            GetTransaccionesGetTransaccionesOperationInputs.setText("fecha_mov_mayor_a", str);
+        
+            str = webAppAccess.getRequestInputs().getInputValue("fecha_mov_menor_a");
+            formatter = (IInputFieldFormatter)variables.getObject("StandardFormatter");
+            formatter.setWebAppAccess(webAppAccess);
+            if (!formatter.validate(str, "Optional Date(yyyy-MM-dd)"))
+              errors.addMessage("fecha_mov_menor_a", formatter.getErrorMessage());
+            GetTransaccionesGetTransaccionesOperationInputs.setText("fecha_mov_menor_a", str);
+        
+            str = webAppAccess.getRequestInputs().getInputValue("mon_trans_mayor_a");
+            GetTransaccionesGetTransaccionesOperationInputs.setText("mon_trans_mayor_a", str);
+        
+            str = webAppAccess.getRequestInputs().getInputValue("mon_trans_menor_a");
+            GetTransaccionesGetTransaccionesOperationInputs.setText("mon_trans_menor_a", str);
+        
+            str = webAppAccess.getRequestInputs().getInputValue("n_trans_mayor_a");
+            GetTransaccionesGetTransaccionesOperationInputs.setText("n_trans_mayor_a", str);
+        
+            str = webAppAccess.getRequestInputs().getInputValue("n_trans_menor_a");
+            GetTransaccionesGetTransaccionesOperationInputs.setText("n_trans_menor_a", str);
     
-        variables.getVariable("CreateTransaccionConsumerServiceCreateTransaccionOperationInputs").notifyValueChanged();
+        variables.getVariable("GetTransaccionesGetTransaccionesOperationInputs").notifyValueChanged();
     }
 }
 
 /**
- * Generated Method [_init_CreateTransaccionConsumerView_InputPageError]
+ * Generated Method [_init_GetTransaccionesView_InputPageError]
  */
-public com.bowstreet.builderutilities.PageAutomationMessages _init_CreateTransaccionConsumerView_InputPageError(WebAppAccess webAppAccess)
+public com.bowstreet.builderutilities.PageAutomationMessages _init_GetTransaccionesView_InputPageError(WebAppAccess webAppAccess)
 {
     PageAutomationMessages result = new PageAutomationMessages();
 
-    result.setReadableName("id_cuenta_origen", "Id Cuenta Origen");
-    result.setReadableName("numero_cuenta_destino", "Numero Cuenta Destino");
+    result.setReadableName("id_cuenta", "Id Cuenta");
     result.setReadableName("id_tipo_transaccion", "Id Tipo Transaccion");
-    result.setReadableName("monto_transferido", "Monto Transferido");
+    result.setReadableName("fecha_mov_mayor_a", "Fecha Mov Mayor A");
+    result.setReadableName("fecha_mov_menor_a", "Fecha Mov Menor A");
+    result.setReadableName("mon_trans_mayor_a", "Mon Trans Mayor A");
+    result.setReadableName("mon_trans_menor_a", "Mon Trans Menor A");
+    result.setReadableName("n_trans_mayor_a", "N Trans Mayor A");
+    result.setReadableName("n_trans_menor_a", "N Trans Menor A");
 
     return result;
 }
 
 /**
- * Generated Method [clear_CreateTransaccionConsumerView_InputPage_Errors]
+ * Generated Method [clear_GetTransaccionesView_InputPage_Errors]
  */
-public void clear_CreateTransaccionConsumerView_InputPage_Errors(WebAppAccess webAppAccess)
+public void clear_GetTransaccionesView_InputPage_Errors(WebAppAccess webAppAccess)
 {
-  webAppAccess.callMethod("CreateTransaccionConsumerView_InputPageError.clear");
+  webAppAccess.callMethod("GetTransaccionesView_InputPageError.clear");
 }
 
 /**
- * Generated Method [CreateTransaccionConsumerView_InputPage_NextAction]
+ * Generated Method [GetTransaccionesView_InputPage_NextAction]
  */
-public void CreateTransaccionConsumerView_InputPage_NextAction(WebAppAccess webAppAccess)
+public void GetTransaccionesView_InputPage_NextAction(WebAppAccess webAppAccess)
 {
-    PageAutomationMessages errors = (PageAutomationMessages)webAppAccess.getVariables().getObject("CreateTransaccionConsumerView_InputPageError");
+    PageAutomationMessages errors = (PageAutomationMessages)webAppAccess.getVariables().getObject("GetTransaccionesView_InputPageError");
     String action = errors.getForceAction();
     if (action != null)
         webAppAccess.processAction(action);
     else    if (errors.hasMessages())
-        webAppAccess.processAction("CreateTransaccionConsumerView_InputPage");
+        webAppAccess.processAction("GetTransaccionesView_InputPage");
     else
-        webAppAccess.processAction("CreateTransaccionConsumerView_ShowResults");
+        webAppAccess.processAction("GetTransaccionesView_ShowResults");
 }
 
 /**
@@ -997,37 +1025,37 @@ public String getDefaultProgressIndicatorProgressIndicatorPageID(WebAppAccess we
 
 
 /**
- * Generated Method [CreateTransaccionConsumerView_PagingGoToPage]
+ * Generated Method [GetTransaccionesView_PagingGoToPage]
  */
-public void CreateTransaccionConsumerView_PagingGoToPage(WebAppAccess webAppAccess)
+public void GetTransaccionesView_PagingGoToPage(WebAppAccess webAppAccess)
 {
     String pageStr = webAppAccess.getRequestInputs().getInputValue("splitPagerExplicitPage");
     int pg = StringUtil.safeParseInt(pageStr, 1) - 1;
-    PagingAssistant asst = (PagingAssistant)webAppAccess.getVariables().getObject("CreateTransaccionConsumerView_Paging");
+    PagingAssistant asst = (PagingAssistant)webAppAccess.getVariables().getObject("GetTransaccionesView_Paging");
     asst.setCurrentPage(pg);
 }
 
 
 /**
- * Generated Method [CreateTransaccionConsumerView_PagingGoToSpecificPage]
+ * Generated Method [GetTransaccionesView_PagingGoToSpecificPage]
  */
-public void CreateTransaccionConsumerView_PagingGoToSpecificPage(WebAppAccess webAppAccess)
+public void GetTransaccionesView_PagingGoToSpecificPage(WebAppAccess webAppAccess)
 {
     String pageStr = webAppAccess.getRequestInputs().getInputValue("splitPagerTopExplicitPage");
     int pg = StringUtil.safeParseInt(pageStr, 1) - 1;
-    PagingAssistant asst = (PagingAssistant)webAppAccess.getVariables().getObject("CreateTransaccionConsumerView_Paging");
+    PagingAssistant asst = (PagingAssistant)webAppAccess.getVariables().getObject("GetTransaccionesView_Paging");
     asst.setCurrentPage(pg);
 }
 
 
 /**
- * Generated Method [CreateTransaccionConsumerView_PagingSetRowsPerPage]
+ * Generated Method [GetTransaccionesView_PagingSetRowsPerPage]
  */
-public void CreateTransaccionConsumerView_PagingSetRowsPerPage(WebAppAccess webAppAccess)
+public void GetTransaccionesView_PagingSetRowsPerPage(WebAppAccess webAppAccess)
 {
     String rppStr = webAppAccess.getRequestInputs().getInputValue("Arg1");
     int rpp = StringUtil.safeParseInt(rppStr, 1);
-    PagingAssistant asst = (PagingAssistant)webAppAccess.getVariables().getObject("CreateTransaccionConsumerView_Paging");
+    PagingAssistant asst = (PagingAssistant)webAppAccess.getVariables().getObject("GetTransaccionesView_Paging");
     asst.setRowsPerPage(rpp);
 }
 
@@ -1041,13 +1069,13 @@ public void _pageDispatcher(WebAppAccess webAppAccess)
 }
 
 /**
- * Generated Method [CreateTransaccionConsumerView_PagingHandlePageLoad]
+ * Generated Method [GetTransaccionesView_PagingHandlePageLoad]
  */
-public void CreateTransaccionConsumerView_PagingHandlePageLoad(WebAppAccess webAppAccess)
+public void GetTransaccionesView_PagingHandlePageLoad(WebAppAccess webAppAccess)
 {
-    PagingAssistant asst = (PagingAssistant)webAppAccess.getVariables().getObject("CreateTransaccionConsumerView_Paging");
+    PagingAssistant asst = (PagingAssistant)webAppAccess.getVariables().getObject("GetTransaccionesView_Paging");
     asst.setWebAppAccess(webAppAccess);
-    webAppAccess.getVariables().getObject("CreateTransaccionConsumerView_PagingData");}
+    webAppAccess.getVariables().getObject("GetTransaccionesView_PagingData");}
 
 /**
  * Generated ActionList [main]
@@ -1059,24 +1087,24 @@ public Object main(WebAppAccess webAppAccess)
     // Line 1: 
     // Show the input page.
 
-    // Line 2: CreateTransaccionConsumerView_InputPage
-    returnValue = webAppAccess.processAction("CreateTransaccionConsumerView_InputPage");
+    // Line 2: GetTransaccionesView_InputPage
+    returnValue = webAppAccess.processAction("GetTransaccionesView_InputPage");
     return (Object)returnValue;
 }
 
 
 /**
- * Generated ActionList [CreateTransaccionConsumerView_ShowResults]
+ * Generated ActionList [GetTransaccionesView_ShowResults]
  */
-public Object CreateTransaccionConsumerView_ShowResults(WebAppAccess webAppAccess)
+public Object GetTransaccionesView_ShowResults(WebAppAccess webAppAccess)
 {
     Object returnValue = null;
 
-    // Line 1: CreateTransaccionConsumerServiceCreateTransaccionOperation
-    returnValue = webAppAccess.callMethod("CreateTransaccionConsumerServiceCreateTransaccionOperation", new Object[] {  });
+    // Line 1: GetTransaccionesGetTransaccionesOperation
+    returnValue = webAppAccess.callMethod("GetTransaccionesGetTransaccionesOperation", new Object[] {  });
 
-    // Line 2: CreateTransaccionConsumerView_ViewPage
-    returnValue = webAppAccess.processAction("CreateTransaccionConsumerView_ViewPage");
+    // Line 2: GetTransaccionesView_ViewPage
+    returnValue = webAppAccess.processAction("GetTransaccionesView_ViewPage");
     return (Object)returnValue;
 }
 
