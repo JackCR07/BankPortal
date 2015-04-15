@@ -1,4 +1,4 @@
-<Model id="providers/CreateTransaccion/CreateTransaccionProvider"><BuilderCallList><BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Model id="providers/CreateTransaccion/CreateTransaccionModel"><BuilderCallList><BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
 <Messages />
 <Inputs><Input name="Name">Next Steps</Input>
 <Input name="BuilderCallEnabled">true</Input>
@@ -59,25 +59,8 @@ Here are some of the things you might want to do now that you have the model sta
 </FunctionDef>
 </Functions>
 </Input>
-<Input name="ServiceName">CreateTransacccionService</Input>
-<Input name="Name">CreateTransacccionService</Input>
-<Input name="TestServiceName">CreateTransacccionService</Input>
-<Input name="TestOperationInputs"><OverridenInputs><InputsForOperation><Operation>CreateTransaccion</Operation>
-<Inputs><top><Input><Name>operation1</Name>
-</Input>
-<Input><Name>operation1.id_cuenta_origen</Name>
-</Input>
-<Input><Name>operation1.numero_cuenta_destino</Name>
-</Input>
-<Input><Name>operation1.id_tipo_transaccion</Name>
-</Input>
-<Input><Name>operation1.monto_transferido</Name>
-</Input>
-</top>
-</Inputs>
-</InputsForOperation>
-</OverridenInputs>
-</Input>
+<Input name="ServiceName">CreateTransaccionService</Input>
+<Input name="Name">CreateTransaccionService</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc5"><BuilderDefID>com.bowstreet.builders.webapp.ServiceCallBuilder</BuilderDefID>
@@ -93,10 +76,11 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="FilterWSDLSchemas">false</Input>
 <Input name="hidden_ShowAllServiceCallTypes">false</Input>
 <Input name="ServiceCallType">WSDL</Input>
-<Input name="WSDL_Refresh">Refresh/fetch WSDL</Input>
+<Input name="WSDL_Refresh">Fetch WSDL</Input>
 <Input name="DoHTTP_RequestType">GET</Input>
 <Input name="hidden_UIState">8</Input>
-<Input name="Name">CreateTransaccionWSDLCall</Input>
+<Input name="Name">CreateTransaccionCall</Input>
+<Input name="WSDL_URL">/factory/schemasWSDL/createTransaccion.xml</Input>
 <Input name="ExamineWSDL_ServiceDoc">CreateTransaccionHttpService</Input>
 <Input name="ExamineWSDL_Bindings">operation1 - 1.1 SOAP-document</Input>
 <Input name="ExamineWSDL_URL">http://172.16.11.225:7800/createTransaccion/createTransaccion</Input>
@@ -105,6 +89,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="hidden_ExamineWSDL_isSOAP">true</Input>
 <Input name="ExamineWSDL_SOAPStyle">document</Input>
 <Input name="ExamineWSDL_SOAPEncoding">literal</Input>
+<Input name="ExamineWSDL_SOAPAction">http://CreateTransaccion/operation1</Input>
 <Input name="hidden_ExamineWSDL_OperationInfo">&lt;operationInfo&gt;&lt;inputs&gt;&lt;arg1&gt;&lt;name&gt;operation1Parameters&lt;/name&gt;
 &lt;type&gt;operation1&lt;/type&gt;
 &lt;namespace&gt;http://CreateTransaccion&lt;/namespace&gt;
@@ -170,55 +155,10 @@ Here are some of the things you might want to do now that you have the model sta
 &lt;/wsdl:definitions&gt;
 </Input>
 <Input name="ExamineWSDL_createInputVariables">true</Input>
-<Input name="ExamineWSDL_SOAPAction">http://CreateTransaccion/operation1</Input>
-<Input name="WSDL_URL">/factory/schemasWSDL/createTransaccion.xml</Input>
-<Input name="ExamineWSDLargval_1">${Variables/CreateTransaccionWSDLCall_arg1_operation1Parameters}</Input>
+<Input name="ExamineWSDLargval_1">${Variables/CreateTransaccionCall_arg1_operation1Parameters}</Input>
 </Inputs>
-<CacheMap><CacheEntry><CacheKey><![CDATA[[hidden_ExamineWSDL_wsdldoc][/factory/schemasWSDL/createTransaccion.xml]]]></CacheKey>
-<CacheValue><CachedWsdlDocument><![CDATA[<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://CreateTransaccion" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CreateTransaccion" targetNamespace="http://CreateTransaccion"><wsdl:documentation><wsdl:appinfo source="WMQI_APPINFO"><MRWSDLAppInfo imported="true"><generatedXSD location="CreateTransaccion_InlineSchema1.xsd" />
-<binding hasEncoding="false" imported="true" name="CreateTransaccionHttpBinding" originalBindingStyle="document" />
-</MRWSDLAppInfo>
-</wsdl:appinfo>
-</wsdl:documentation>
-<wsdl:types><xsd:schema targetNamespace="http://CreateTransaccion"><xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1"><xsd:complexType><xsd:sequence><xsd:element name="id_cuenta_origen" nillable="true" type="xsd:int" />
-<xsd:element name="id_cuenta_destino" nillable="true" type="xsd:int" />
-<xsd:element name="id_tipo_transaccion" nillable="true" type="xsd:int" />
-<xsd:element name="monto_transferido" nillable="true" type="xsd:double" />
-</xsd:sequence>
-</xsd:complexType>
-</xsd:element>
-<xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1Response"><xsd:complexType><xsd:sequence><xsd:element name="resultado" nillable="true" type="xsd:int" />
-</xsd:sequence>
-</xsd:complexType>
-</xsd:element>
-</xsd:schema>
-</wsdl:types>
-<wsdl:message name="operation1RequestMsg"><wsdl:part element="tns:operation1" name="operation1Parameters" />
-</wsdl:message>
-<wsdl:message name="operation1ResponseMsg"><wsdl:part element="tns:operation1Response" name="operation1Result" />
-</wsdl:message>
-<wsdl:portType name="CreateTransaccion"><wsdl:operation name="operation1"><wsdl:input message="tns:operation1RequestMsg" name="operation1Request" />
-<wsdl:output message="tns:operation1ResponseMsg" name="operation1Response" />
-</wsdl:operation>
-</wsdl:portType>
-<wsdl:binding name="CreateTransaccionHttpBinding" type="tns:CreateTransaccion"><soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
-<wsdl:operation name="operation1"><soap:operation soapAction="http://CreateTransaccion/operation1" />
-<wsdl:input name="operation1Request"><soap:body use="literal" />
-</wsdl:input>
-<wsdl:output name="operation1Response"><soap:body use="literal" />
-</wsdl:output>
-</wsdl:operation>
-</wsdl:binding>
-<wsdl:service name="CreateTransaccionHttpService"><wsdl:port binding="tns:CreateTransaccionHttpBinding" name="CreateTransaccionHttpPort"><soap:address location="http://172.16.11.225:7800/webServices/createTransaccion" />
-</wsdl:port>
-</wsdl:service>
-</wsdl:definitions>
-]]></CachedWsdlDocument>
-</CacheValue>
-</CacheEntry>
-</CacheMap>
 </BuilderCall>
-<BuilderCall id="bc9"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="InputStructureHandling">FromOperation</Input>
@@ -232,7 +172,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="PreExecuteEventEnabled">disabled</Input>
 <Input name="PostExecuteEventEnabled">disabled</Input>
 <Input name="PagedDataResource">Default</Input>
-<Input name="DataService">CreateTransacccionService</Input>
+<Input name="DataService">CreateTransaccionService</Input>
 <Input name="ResultMappingTable"><Fields><Field><Name>resultado</Name>
 <Type>int</Type>
 </Field>
@@ -252,9 +192,9 @@ Here are some of the things you might want to do now that you have the model sta
 </Field>
 </Fields>
 </Input>
-<Input name="TargetOperation">DataServices/CreateTransaccionWSDLCall/execute</Input>
-<Input name="OperationName">CreateTransaccion</Input>
-<Input name="Name">CreateTransaccion</Input>
+<Input name="OperationName">CreateTransaccionOperation</Input>
+<Input name="TargetOperation">DataServices/CreateTransaccionCall/execute</Input>
+<Input name="Name">CreateTransaccionOperation</Input>
 </Inputs>
 </BuilderCall>
 </BuilderCallList>
