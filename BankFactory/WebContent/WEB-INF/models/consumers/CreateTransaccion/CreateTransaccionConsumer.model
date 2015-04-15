@@ -1,4 +1,4 @@
-<Model id="consumers/CreateTransaccionConsumer"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Model id="consumers/CreateTransaccion/CreateTransaccionConsumer"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
 <Messages />
 <Inputs><Input name="Name">Next Steps</Input>
 <Input name="BuilderCallEnabled">true</Input>
@@ -51,7 +51,7 @@ You can also profile other builder inputs according to device type, and you can 
 <Input name="UseAllOperations">true</Input>
 <Input name="OverrideInputs">true</Input>
 <Input name="Name">CreateTransaccion</Input>
-<Input name="ProviderModel">providers/CreateTransaccionProvider</Input>
+<Input name="ProviderModel">providers/CreateTransaccion/CreateTransaccionProvider</Input>
 <Input name="OperationInputs"><OverridenInputs><InputsForOperation><Operation>CreateTransaccionSO</Operation>
 <Inputs><top><Input><Name>operation1</Name>
 </Input>
@@ -118,16 +118,16 @@ Parameters:
 <Input name="ViewPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_ViewPageHTMLTemplate}</Input>
 <Input name="InputPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_InputPageHTMLTemplate}</Input>
 <Input name="Name">CreateTransaccionView</Input>
-<Input name="ViewMethod">DataServices/CreateTransaccion/CreateTransaccionSO</Input>
+<Input name="ViewMethod">DataServices/CreateTransaccion/CreateTransaccion</Input>
 <Input name="RowsPerPage">5</Input>
 <Input name="ModelName">factory/portletbase/view_and_form_base</Input>
 <Input name="SetProfiledInputValues">true</Input>
 <Input name="UniquePattern">xyzzy7</Input>
-<Input name="LinkColumn" />
 <Input name="DetailsMethod" />
 <Input name="InputPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_InputPageStyleSheetOverrideHTMLTemplate}</Input>
 <Input name="ViewPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_ViewPageStyleSheetOverride}</Input>
 <Input name="DetailPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</Input>
+<Input name="EnablePagingButtons">true</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
@@ -211,7 +211,7 @@ Parameters:
 <Properties><Contained>false</Contained>
 </Properties>
 <Dependencies><Dependency type="Model">imports/factory/multichanneltheme85</Dependency>
-<Dependency type="Model">providers/CreateTransaccionProvider</Dependency>
+<Dependency type="Model">providers/CreateTransaccion/CreateTransaccionProvider</Dependency>
 <Dependency type="Model">factory/portletbase/view_and_form_base</Dependency>
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/input.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_label_above_themes.html</Dependency>
@@ -237,6 +237,6 @@ Parameters:
 <ExternalProperty id="PortletModeHelp">false</ExternalProperty>
 <ExternalProperty id="DojoEnabled">true</ExternalProperty>
 <ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
-<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.NumberTextBox,dijit.form.TextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
 </ExternalProperties>
 </Model>

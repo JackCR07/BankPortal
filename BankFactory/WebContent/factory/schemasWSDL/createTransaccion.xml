@@ -9,23 +9,7 @@
 </wsdl:documentation>
 <wsdl:types>
 <xsd:schema targetNamespace="http://CreateTransaccion">
-<xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1">
-<xsd:complexType>
-<xsd:sequence>
-<xsd:element name="id_cuenta_origen" nillable="true" type="xsd:int"/>
-<xsd:element name="id_cuenta_destino" nillable="true" type="xsd:int"/>
-<xsd:element name="id_tipo_transaccion" nillable="true" type="xsd:int"/>
-<xsd:element name="monto_transferido" nillable="true" type="xsd:double"/>
-</xsd:sequence>
-</xsd:complexType>
-</xsd:element>
-<xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1Response">
-<xsd:complexType>
-<xsd:sequence>
-<xsd:element name="resultado" nillable="true" type="xsd:int"/>
-</xsd:sequence>
-</xsd:complexType>
-</xsd:element>
+<xsd:import schemaLocation="http://172.16.11.225:7800/createTransaccion/createTransaccion?xsd=xsd0"/>
 </xsd:schema>
 </wsdl:types>
 <wsdl:message name="operation1RequestMsg">
@@ -54,7 +38,7 @@
 </wsdl:binding>
 <wsdl:service name="CreateTransaccionHttpService">
 <wsdl:port binding="tns:CreateTransaccionHttpBinding" name="CreateTransaccionHttpPort">
-<soap:address location="http://172.16.11.225:7800/webServices/createTransaccion"/>
+<soap:address location="http://172.16.11.225:7800/createTransaccion/createTransaccion"/>
 </wsdl:port>
 </wsdl:service>
 </wsdl:definitions>
