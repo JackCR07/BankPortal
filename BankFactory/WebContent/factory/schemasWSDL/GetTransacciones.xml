@@ -9,42 +9,7 @@
 </wsdl:documentation>
 <wsdl:types>
 <xsd:schema targetNamespace="http://getTransacciones">
-
-<xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1">
-<xsd:complexType>
-<xsd:sequence>
-<xsd:element name="id_cuenta" nillable="true" type="xsd:int"/>
-<xsd:element name="id_tipo_transaccion" nillable="true" type="xsd:int"/>
-<xsd:element name="fecha_mov_mayor_a" nillable="true" type="xsd:string"/>
-<xsd:element name="fecha_mov_menor_a" nillable="true" type="xsd:string"/>
-<xsd:element name="mon_trans_mayor_a" nillable="true" type="xsd:double"/>
-<xsd:element name="mon_trans_menor_a" nillable="true" type="xsd:double"/>
-<xsd:element name="n_trans_mayor_a" nillable="true" type="xsd:int"/>
-<xsd:element name="n_trans_menor_a" nillable="true" type="xsd:int"/>
-</xsd:sequence>
-</xsd:complexType>
-</xsd:element>
-<xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1Response">
-<xsd:complexType>
-<xsd:sequence>
-<xsd:element maxOccurs="unbounded" minOccurs="0" name="transaccion" nillable="true" type="tns:Transaccion"/>
-</xsd:sequence>
-</xsd:complexType>
-</xsd:element>
-<xsd:complexType name="Transaccion">
-<xsd:sequence>
-<xsd:element name="id_transaccion" type="xsd:int"></xsd:element>
-<xsd:element name="numero_transaccion" type="xsd:string"></xsd:element>
-<xsd:element name="monto" type="xsd:double"/>
-<xsd:element name="fecha_transaccion" type="xsd:string"></xsd:element>
-<xsd:element name="tipo_transaccion" type="xsd:string"></xsd:element>
-<xsd:element name="id_cuenta_origen" type="xsd:int"></xsd:element>
-<xsd:element name="num_cuenta_origen" type="xsd:int"></xsd:element>
-<xsd:element name="id_cuenta_destino" type="xsd:int"/>
-<xsd:element name="num_cuenta_destino" type="xsd:int"/>
-</xsd:sequence>
-</xsd:complexType>
-
+<xsd:import schemaLocation="http://172.16.11.225:7800/getTransacciones/getTransacciones?xsd=xsd0"/>
 </xsd:schema>
 </wsdl:types>
 <wsdl:message name="operation1RequestMsg">

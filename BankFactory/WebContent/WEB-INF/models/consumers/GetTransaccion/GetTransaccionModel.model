@@ -151,14 +151,14 @@ Parameters:
 </Input>
 <Input name="DisplayBehavior"><top><DispInfo><Name>id_transaccion</Name>
 <Label>[Id Transaccion]</Label>
-<Hide>[Do Not Change]</Hide>
+<Hide>HideAlways</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>numero_transaccion</Name>
-<Label>[Numero Transaccion]</Label>
+<Label>Numero de Transaccion</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
+<DataType>base_Integer</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>monto</Name>
@@ -168,85 +168,85 @@ Parameters:
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>fecha_transaccion</Name>
-<Label>[Fecha Transaccion]</Label>
+<Label>Fecha de Transaccion</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>tipo_transaccion</Name>
-<Label>[Tipo Transaccion]</Label>
+<Label>Tipo de Transaccion</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[String]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>id_cuenta_origen</Name>
 <Label>[Id Cuenta Origen]</Label>
-<Hide>[Do Not Change]</Hide>
+<Hide>HideAlways</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>num_cuenta_origen</Name>
-<Label>[Num Cuenta Origen]</Label>
+<Label>Numero Cuenta Origen</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>id_cuenta_destino</Name>
 <Label>[Id Cuenta Destino]</Label>
-<Hide>[Do Not Change]</Hide>
+<Hide>HideAlways</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>num_cuenta_destino</Name>
-<Label>[Num Cuenta Destino]</Label>
-<Hide>[Do Not Change]</Hide>
+<Label>Numero de Cuenta Destino</Label>
+<Hide>HideAlways</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>id_cuenta</Name>
-<Label>[Id Cuenta]</Label>
+<Label>Cuenta</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>id_tipo_transaccion</Name>
-<Label>[Id Tipo Transaccion]</Label>
+<Label>Tipo de Transaccion</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>fecha_mov_mayor_a</Name>
-<Label>[Fecha Mov Mayor A]</Label>
+<Label>Fecha Movimiento Desde</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>fecha_mov_menor_a</Name>
-<Label>[Fecha Mov Menor A]</Label>
+<Label>Fecha Movimiento Hasta</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>mon_trans_mayor_a</Name>
-<Label>[Mon Trans Mayor A]</Label>
+<Label>Monto Transferencia Inferior</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Floating Point]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>mon_trans_menor_a</Name>
-<Label>[Mon Trans Menor A]</Label>
+<Label>Monto Transferencia Superior</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Floating Point]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>n_trans_mayor_a</Name>
-<Label>[N Trans Mayor A]</Label>
+<Label>Numero Transferencia Inferior</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>n_trans_menor_a</Name>
-<Label>[N Trans Menor A]</Label>
+<Label>Numero Transferencia Superior</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
@@ -255,11 +255,13 @@ Parameters:
 </Input>
 <Input name="ValidationBehavior"><top><ValidationInfo><Name>id_cuenta</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
+<Required>Required</Required>
+<ErrorMessage>Campo Requerido</ErrorMessage>
 </ValidationInfo>
 <ValidationInfo><Name>id_tipo_transaccion</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
+<Required>Required</Required>
+<ErrorMessage>Campo Requerido</ErrorMessage>
 </ValidationInfo>
 <ValidationInfo><Name>fecha_mov_mayor_a</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
@@ -291,15 +293,16 @@ Parameters:
 <Input name="CurPageDisplayBehavior"><data><DispInfo><Name>id_cuenta</Name>
 <Label>[Id Cuenta]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>base_DojoSelect</DataType>
+<DataType>base_Select</DataType>
 <Sort>[Off]</Sort>
 <LookupTable>Cuentas</LookupTable>
 </DispInfo>
 <DispInfo><Name>id_tipo_transaccion</Name>
 <Label>[Id Tipo Transaccion]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
+<DataType>base_DojoSelect</DataType>
 <Sort>[Off]</Sort>
+<LookupTable>TipoTransaccion</LookupTable>
 </DispInfo>
 <DispInfo><Name>fecha_mov_mayor_a</Name>
 <Label>[Fecha Mov Mayor A]</Label>
@@ -419,7 +422,7 @@ Parameters:
 <Inputs><top><Input><Name>operation1</Name>
 </Input>
 <Input><Name>operation1.id_cliente</Name>
-<Value></Value>
+<Value />
 </Input>
 <Input><Name>operation1.id_tipo_cuenta</Name>
 <Value>-1</Value>
@@ -483,14 +486,14 @@ Parameters:
 <Input name="DisplayBehavior"><data><DispInfo><Name>id_cuenta</Name>
 <Label>[Id Cuenta]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>base_DojoSelect</DataType>
+<DataType>base_Select</DataType>
 <Sort>[Off]</Sort>
 <LookupTable>Cuentas</LookupTable>
 </DispInfo>
 <DispInfo><Name>id_tipo_transaccion</Name>
 <Label>[Id Tipo Transaccion]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>base_DojoSelect</DataType>
+<DataType>base_Select</DataType>
 <Sort>[Off]</Sort>
 <LookupTable>TipoTransaccion</LookupTable>
 </DispInfo>
@@ -575,6 +578,10 @@ Parameters:
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="DataType">NewXmlData</Input>
 <Input name="NewXmlData">&lt;top&gt;
+&lt;item&gt;
+      &lt;Value&gt;-1&lt;/Value&gt;
+      &lt;Label&gt;Todas&lt;/Label&gt;
+   &lt;/item&gt;
    &lt;item&gt;
       &lt;Value&gt;1&lt;/Value&gt;
       &lt;Label&gt;Credito&lt;/Label&gt;
@@ -666,6 +673,6 @@ webAppAccess.processPage("PageName");
 <ExternalProperty id="PortletModeHelp">false</ExternalProperty>
 <ExternalProperty id="DojoEnabled">true</ExternalProperty>
 <ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
-<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.Select,dijit.form.DateTextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.FilteringSelect,dijit.form.DateTextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
 </ExternalProperties>
 </Model>

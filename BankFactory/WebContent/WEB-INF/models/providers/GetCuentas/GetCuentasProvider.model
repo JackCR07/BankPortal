@@ -1,4 +1,4 @@
-<Model id="providers/GetCuentasProvider"><BuilderCallList><BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Model id="providers/GetCuentas/GetCuentasProvider"><BuilderCallList><BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
 <Messages />
 <Inputs><Input name="Name">Next Steps</Input>
 <Input name="BuilderCallEnabled">true</Input>
@@ -61,6 +61,31 @@ Here are some of the things you might want to do now that you have the model sta
 </Input>
 <Input name="ServiceName">GetCuentasService</Input>
 <Input name="Name">GetCuentasService</Input>
+<Input name="TestServiceName">GetCuentasService</Input>
+<Input name="TestOperationInputs"><OverridenInputs><InputsForOperation><Operation>GetCuentasSO</Operation>
+<Inputs><top><Input><Name>operation1</Name>
+</Input>
+<Input><Name>operation1.id_cuenta</Name>
+</Input>
+<Input><Name>operation1.id_tipo_transaccion</Name>
+</Input>
+<Input><Name>operation1.fecha_mov_mayor_a</Name>
+</Input>
+<Input><Name>operation1.fecha_mov_menor_a</Name>
+</Input>
+<Input><Name>operation1.mon_trans_mayor_a</Name>
+</Input>
+<Input><Name>operation1.mon_trans_menor_a</Name>
+</Input>
+<Input><Name>operation1.n_trans_mayor_a</Name>
+</Input>
+<Input><Name>operation1.n_trans_menor_a</Name>
+</Input>
+</top>
+</Inputs>
+</InputsForOperation>
+</OverridenInputs>
+</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc5"><BuilderDefID>com.bowstreet.builders.webapp.ServiceCallBuilder</BuilderDefID>
@@ -76,7 +101,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="FilterWSDLSchemas">false</Input>
 <Input name="hidden_ShowAllServiceCallTypes">false</Input>
 <Input name="ServiceCallType">WSDL</Input>
-<Input name="WSDL_Refresh">Fetch WSDL</Input>
+<Input name="WSDL_Refresh">Refresh/fetch WSDL</Input>
 <Input name="DoHTTP_RequestType">GET</Input>
 <Input name="hidden_UIState">8</Input>
 <Input name="Name">GetCuentasWSDLCall</Input>
@@ -120,7 +145,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="ExamineWSDL_replytype">operation1Response</Input>
 <Input name="hidden_ExamineWSDL_replyclass">com.bowstreet.util.IXml</Input>
 <Input name="hidden_WSDL_replycount">1</Input>
-<Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\lprado\git\BankPortal\BankFactory\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://GetCuentas" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://GetCuentas"&gt;&lt;xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1"&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element name="id_cliente" nillable="true" type="xsd:string" /&gt;
+<Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\jcervantes\git\BankPortal\BankFactory\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://GetCuentas" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://GetCuentas"&gt;&lt;xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1"&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element name="id_cliente" nillable="true" type="xsd:string" /&gt;
 &lt;xsd:element name="id_tipo_cuenta" nillable="true" type="xsd:integer" /&gt;
 &lt;xsd:element name="fecha_mayor_a" nillable="true" type="xsd:string" /&gt;
 &lt;xsd:element name="fecha_menor_a" nillable="true" type="xsd:string" /&gt;
@@ -198,6 +223,61 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="ExamineWSDL_createInputVariables">true</Input>
 <Input name="ExamineWSDLargval_1">${Variables/GetCuentasWSDLCall_arg1_operation1Parameters}</Input>
 </Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[[hidden_ExamineWSDL_wsdldoc][/factory/schemasWSDL/getCuentas.xml]]]></CacheKey>
+<CacheValue><CachedWsdlDocument><![CDATA[<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://GetCuentas" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GetCuentas" targetNamespace="http://GetCuentas"><wsdl:documentation><wsdl:appinfo source="WMQI_APPINFO"><MRWSDLAppInfo imported="true"><generatedXSD location="GetCuentas_InlineSchema1.xsd" />
+<binding hasEncoding="false" imported="true" name="GetCuentasHttpBinding" originalBindingStyle="document" />
+</MRWSDLAppInfo>
+</wsdl:appinfo>
+</wsdl:documentation>
+<wsdl:types><xsd:schema targetNamespace="http://GetCuentas"><xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1"><xsd:complexType><xsd:sequence><xsd:element name="id_cliente" nillable="true" type="xsd:string" />
+<xsd:element name="id_tipo_cuenta" nillable="true" type="xsd:integer" />
+<xsd:element name="fecha_mayor_a" nillable="true" type="xsd:string" />
+<xsd:element name="fecha_menor_a" nillable="true" type="xsd:string" />
+<xsd:element name="saldo_mayor_a" nillable="true" type="xsd:double" />
+<xsd:element name="saldo_menor_a" nillable="true" type="xsd:double" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1Response"><xsd:complexType><xsd:sequence><xsd:element maxOccurs="unbounded" name="cuenta" type="tns:Cuenta" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="Cuenta"><xsd:sequence><xsd:element name="id_cuenta" type="xsd:int" />
+<xsd:element name="tipo_cuenta" type="xsd:string" />
+<xsd:element name="saldo" type="xsd:double" />
+<xsd:element name="numero_cuenta" type="xsd:string" />
+<xsd:element name="fecha_creacion" type="xsd:string" />
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="operation1RequestMsg"><wsdl:part element="tns:operation1" name="operation1Parameters" />
+</wsdl:message>
+<wsdl:message name="operation1ResponseMsg"><wsdl:part element="tns:operation1Response" name="operation1Result" />
+</wsdl:message>
+<wsdl:portType name="GetCuentas"><wsdl:documentation />
+<wsdl:operation name="operation1"><wsdl:input message="tns:operation1RequestMsg" name="operation1Request" />
+<wsdl:output message="tns:operation1ResponseMsg" name="operation1Response" />
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="GetCuentasHttpBinding" type="tns:GetCuentas"><soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+<wsdl:operation name="operation1"><soap:operation soapAction="http://GetCuentas/operation1" />
+<wsdl:input name="operation1Request"><soap:body use="literal" />
+</wsdl:input>
+<wsdl:output name="operation1Response"><soap:body use="literal" />
+</wsdl:output>
+<wsdl:fault name="operation1Fault1"><soap:fault name="operation1Fault1" use="literal" />
+</wsdl:fault>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="GetCuentasHttpService"><wsdl:port binding="tns:GetCuentasHttpBinding" name="GetCuentasHttpPort"><soap:address location="http://172.16.11.225:7800/GetCuentas/GetCuentas" />
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
+]]></CachedWsdlDocument>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
 </BuilderCall>
 <BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
 <Messages />
@@ -214,22 +294,27 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="PostExecuteEventEnabled">disabled</Input>
 <Input name="PagedDataResource">Default</Input>
 <Input name="DataService">GetCuentasService</Input>
-<Input name="ResultMappingTable"><Fields><Field><Name>id_cuenta</Name>
+<Input name="ResultMappingTable"><top><Field><Name>id_cuenta</Name>
 <Type>int</Type>
+<Value>${Results/id_cuenta}</Value>
 </Field>
 <Field><Name>tipo_cuenta</Name>
 <Type>string</Type>
+<Value>${Results/tipo_cuenta}</Value>
 </Field>
 <Field><Name>saldo</Name>
 <Type>double</Type>
+<Value>${Results/saldo}</Value>
 </Field>
 <Field><Name>numero_cuenta</Name>
 <Type>string</Type>
+<Value>${Results/numero_cuenta}</Value>
 </Field>
 <Field><Name>fecha_creacion</Name>
 <Type>string</Type>
+<Value>${Results/fecha_creacion}</Value>
 </Field>
-</Fields>
+</top>
 </Input>
 <Input name="InputMappingTable"><top><Field><Name>id_cliente</Name>
 <Type>string</Type>

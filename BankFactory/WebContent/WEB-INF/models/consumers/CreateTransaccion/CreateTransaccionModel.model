@@ -138,20 +138,26 @@ Parameters:
 <Input name="AllPageRadio">current</Input>
 <Input name="Pages"><data />
 </Input>
-<Input name="DisplayBehavior"><top><DispInfo><Name>id_cuenta_origen</Name>
-<Label>[Id Cuenta Origen]</Label>
+<Input name="DisplayBehavior"><top><DispInfo><Name>resultado</Name>
+<Label>[Resultado]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>id_cuenta_origen</Name>
+<Label>Cuenta de Origen</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>numero_cuenta_destino</Name>
-<Label>[Numero Cuenta Destino]</Label>
+<Label>Numero de Cuenta Destino</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[String]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>id_tipo_transaccion</Name>
-<Label>[Id Tipo Transaccion]</Label>
+<Label>Tipo de Transaccion</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
@@ -162,29 +168,27 @@ Parameters:
 <DataType>[Floating Point]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
-<DispInfo><Name>resultado</Name>
-<Label>[Resultado]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
 </top>
 </Input>
 <Input name="ValidationBehavior"><top><ValidationInfo><Name>id_cuenta_origen</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
+<Required>Required</Required>
+<ErrorMessage>${Variables/Mensaje_Validacion}</ErrorMessage>
 </ValidationInfo>
 <ValidationInfo><Name>numero_cuenta_destino</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
+<Required>Required</Required>
+<ErrorMessage>${Variables/Mensaje_Validacion}</ErrorMessage>
 </ValidationInfo>
 <ValidationInfo><Name>id_tipo_transaccion</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
+<Required>Required</Required>
+<ErrorMessage>${Variables/Mensaje_Validacion}</ErrorMessage>
 </ValidationInfo>
 <ValidationInfo><Name>monto_transferido</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
+<Required>Required</Required>
+<ErrorMessage>${Variables/Mensaje_Validacion}</ErrorMessage>
 </ValidationInfo>
 </top>
 </Input>
@@ -203,10 +207,11 @@ Parameters:
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>id_tipo_transaccion</Name>
-<Label>[Id Tipo Transaccion]</Label>
+<Label>[Tipo Transaccion]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
+<DataType>base_Select</DataType>
 <Sort>[Off]</Sort>
+<LookupTable>TipoTransacciones</LookupTable>
 </DispInfo>
 <DispInfo><Name>monto_transferido</Name>
 <Label>[Monto Transferido]</Label>
@@ -277,7 +282,7 @@ Parameters:
 <DispInfo><Name>id_tipo_transaccion</Name>
 <Label>[Tipo Transaccion]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>base_DojoSelect</DataType>
+<DataType>base_Select</DataType>
 <Sort>[Off]</Sort>
 <LookupTable>TipoTransacciones</LookupTable>
 </DispInfo>
@@ -337,7 +342,7 @@ Parameters:
 <Inputs><top><Input><Name>operation1</Name>
 </Input>
 <Input><Name>operation1.id_cliente</Name>
-<Value></Value>
+<Value />
 </Input>
 <Input><Name>operation1.id_tipo_cuenta</Name>
 <Value>-1</Value>
@@ -416,6 +421,19 @@ Parameters:
 <Input name="Name">TipoTransacciones</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc24"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Mensaje_Validacion</Input>
+<Input name="Type">String</Input>
+<Input name="Value">Campo Requerido</Input>
+</Inputs>
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
@@ -447,6 +465,6 @@ Parameters:
 <ExternalProperty id="PortletModeHelp">false</ExternalProperty>
 <ExternalProperty id="DojoEnabled">true</ExternalProperty>
 <ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
-<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.FilteringSelect,dijit.form.TextBox,dijit.form.Select,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.FilteringSelect,dijit.form.TextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
 </ExternalProperties>
 </Model>
