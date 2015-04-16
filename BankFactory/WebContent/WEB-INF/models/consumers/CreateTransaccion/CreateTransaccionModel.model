@@ -322,7 +322,7 @@ Parameters:
 <Input name="UseDiscardableVariables">false</Input>
 <Input name="EnableCaching">true</Input>
 <Input name="InheritProfile">true</Input>
-<Input name="ProviderModel">providers/GetCuentasProvider</Input>
+<Input name="ProviderModel">providers/GetCuentas/GetCuentasProvider</Input>
 <Input name="SelectOperations"><top><OperationSelected><Operation>GetCuentasSO</Operation>
 <OperationEnabled>true</OperationEnabled>
 <Description>No description was provided.
@@ -337,7 +337,7 @@ Parameters:
 <Inputs><top><Input><Name>operation1</Name>
 </Input>
 <Input><Name>operation1.id_cliente</Name>
-<Value>${MethodCall/ObtenerUsuario}</Value>
+<Value></Value>
 </Input>
 <Input><Name>operation1.id_tipo_cuenta</Name>
 <Value>-1</Value>
@@ -416,37 +416,6 @@ Parameters:
 <Input name="Name">TipoTransacciones</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc20"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="ReturnType">String</Input>
-<Input name="Body">{
-    return webAppAccess.getUserInfo().getUserID();
-/* Simple Code Samples - See help for further info
-Get a string variable value,
-String value = webAppAccess.getVariables().getString("MyVariable");
-
-Set a string variable value,
-webAppAccess.getVariables().setString("MyVariable", "Value");
-
-Call a method,
-webAppAccess.callMethod("MethodName", arg1, arg2);
-
-Execute service calls,
-webAppAccess.callMethod("ServiceCallName.invoke");
-
-Process page inputs,
-webAppAccess.getRequestInputs().getInputValue("InputName");
-
-Display a page,
-webAppAccess.processPage("PageName");
-*/
-}</Input>
-<Input name="RenameExisting">false</Input>
-<Input name="TargetPhase">Construction</Input>
-<Input name="Name">ObtenerUsuario</Input>
-</Inputs>
-</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
@@ -458,7 +427,7 @@ webAppAccess.processPage("PageName");
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/view.html</Dependency>
 <Dependency type="File">/factory/pages/paging/data_paging_links.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_themes.html</Dependency>
-<Dependency type="Model">providers/GetCuentasProvider</Dependency>
+<Dependency type="Model">providers/GetCuentas/GetCuentasProvider</Dependency>
 <Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
 <Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
 <Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
