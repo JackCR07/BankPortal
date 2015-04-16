@@ -62,12 +62,16 @@ You can also profile other builder inputs according to device type, and you can 
 <Input><Name>operation1.id_tipo_cuenta</Name>
 </Input>
 <Input><Name>operation1.fecha_mayor_a</Name>
+<Value>${MethodCall/defaultString(${Inputs/fecha_mayor_a})}</Value>
 </Input>
 <Input><Name>operation1.fecha_menor_a</Name>
+<Value>${MethodCall/defaultString(${Inputs/fecha_menor_a})}</Value>
 </Input>
 <Input><Name>operation1.saldo_mayor_a</Name>
+<Value>${MethodCall/defaultDouble(${Inputs/saldo_mayor_a})}</Value>
 </Input>
 <Input><Name>operation1.saldo_menor_a</Name>
+<Value>${MethodCall/defaultDouble(${Inputs/saldo_menor_a})}</Value>
 </Input>
 </top>
 </Inputs>
@@ -166,13 +170,13 @@ Parameters:
 <DispInfo><Name>numero_cuenta</Name>
 <Label>[Numero Cuenta]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
+<DataType>base_String</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>fecha_creacion</Name>
 <Label>[Fecha Creacion]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
+<DataType>base_String</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>id_cliente</Name>
@@ -203,13 +207,13 @@ Parameters:
 <DispInfo><Name>saldo_mayor_a</Name>
 <Label>[Saldo Mayor A]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
+<DataType>base_FloatingPoint</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>saldo_menor_a</Name>
 <Label>[Saldo Menor A]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
+<DataType>base_FloatingPoint</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 </top>
@@ -220,7 +224,7 @@ Parameters:
 </ValidationInfo>
 <ValidationInfo><Name>id_tipo_cuenta</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
+<Required>Required</Required>
 </ValidationInfo>
 <ValidationInfo><Name>fecha_mayor_a</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
@@ -232,11 +236,11 @@ Parameters:
 </ValidationInfo>
 <ValidationInfo><Name>saldo_mayor_a</Name>
 <ValidationOp>Floating Point Number</ValidationOp>
-<Required>Required</Required>
+<Required>[NotRequired]</Required>
 </ValidationInfo>
 <ValidationInfo><Name>saldo_menor_a</Name>
 <ValidationOp>Floating Point Number</ValidationOp>
-<Required>Required</Required>
+<Required>[NotRequired]</Required>
 </ValidationInfo>
 </top>
 </Input>
@@ -265,6 +269,10 @@ Parameters:
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="DataType">NewXmlData</Input>
 <Input name="NewXmlData">&lt;top&gt;
+	&lt;item&gt;
+      &lt;Value&gt;-1&lt;/Value&gt;
+      &lt;Label&gt;Todas&lt;/Label&gt;
+   &lt;/item&gt;
    &lt;item&gt;
       &lt;Value&gt;1&lt;/Value&gt;
       &lt;Label&gt;Debito&lt;/Label&gt;
@@ -285,18 +293,45 @@ Parameters:
 <Input name="Name">tipoCuentas</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc20"><BuilderDefID>com.bowstreet.builders.webapp.HiddenInputBuilder</BuilderDefID>
+<BuilderCall id="bc31"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
 <Messages />
-<Inputs><Input name="BuilderCallEnabled">false</Input>
-<Input name="Name">HiddenInputIdCliente</Input>
-<Input name="PageLocation"><SimplePageLocation><Page>GetCuentasServiceView_InputPage</Page>
-<NameSearch>GetCuentasConsumerGetCuentasServiceView_InputPageid_cliente_field</NameSearch>
-<InsertionModifier>InsideBottom</InsertionModifier>
-<NewNodeName />
-</SimplePageLocation>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">String</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Arguments"><top><Argument><Name>value</Name>
+<Type>String</Type>
+</Argument>
+</top>
 </Input>
-<Input name="Value">${MethodCall/getUserId}</Input>
-<Input name="AlsoDisplayValue">false</Input>
+<Input name="Body">{
+    if(value.equals(""))
+    	return "null";
+    else
+    	return value;
+}</Input>
+<Input name="Name">defaultString</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc33"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">double</Input>
+<Input name="Body">{
+	if(value.equals(""))
+		return -1;
+	else 
+		return Double.parseDouble(value);
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">defaultDouble</Input>
+<Input name="Arguments"><top><Argument><Name>value</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="XMLType">Untyped XML</Input>
 </Inputs>
 </BuilderCall>
 </BuilderCallList>
