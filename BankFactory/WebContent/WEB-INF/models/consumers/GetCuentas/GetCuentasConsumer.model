@@ -109,10 +109,10 @@ Parameters:
 <Input name="CreateInputPage">true</Input>
 <Input name="InputPageURL">${Properties/bowstreet.Theme/ViewAndForm_InputPageBase}</Input>
 <Input name="EnableInputValidation">false</Input>
-<Input name="InputSubmitText">Submit</Input>
+<Input name="InputSubmitText">Buscar</Input>
 <Input name="ViewPageBackButtonText">Back</Input>
-<Input name="InsertInputPage">false</Input>
-<Input name="CreateColumnLink">true</Input>
+<Input name="InsertInputPage">true</Input>
+<Input name="CreateColumnLink">false</Input>
 <Input name="LinkActionChoice">rowdata</Input>
 <Input name="DetailPageURL">${Properties/bowstreet.Theme/ViewAndForm_DetailPageBase}</Input>
 <Input name="DetailPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_DetailPageHTMLTemplate}</Input>
@@ -139,6 +139,7 @@ Parameters:
 <Input name="ViewPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_ViewPageStyleSheetOverride}</Input>
 <Input name="DetailPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</Input>
 <Input name="EnablePagingButtons">true</Input>
+<Input name="InputValidationMethodBehavior">CallOnlyOnValidData</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
@@ -490,6 +491,185 @@ Parameters:
 </Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc38"><BuilderDefID>com.bowstreet.builders.webapp.DataLayoutBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseTheme">false</Input>
+<Input name="MoveLinkToListItem">false</Input>
+<Input name="AddLogging">false</Input>
+<Input name="AutomaticParentSelection">true</Input>
+<Input name="SingleField">[GetCuentasServiceView_InputPage]GetCuentasServiceView_InputPage/operation1</Input>
+<Input name="Name">GetCuentasServiceView_InputPageLayout</Input>
+<Input name="TemplateFile">/factory/data_layout_templates/multiline_show_hide_list.html</Input>
+<Input name="TemplateDescription">This template allows you to generate a list layout where a section can be hidden and shown using a link in each of the rows. There are two fixed fields named 'fixed_left_top' and 'fixed_left_bottom' that will always be shown. The show/hide text must be set using the 'fixed_show' and 'fixed_hide' target names. You can enter their text value directly in the "Value" column, or leave the value blank and apply a Text builder to the 'fixed_show' and 'fixed_hide' page locations. The remaining targets can be used to populate the section that will be hidden/shown. This section contains two columns with three rows.</Input>
+<Input name="StyleSheetFile">/factory/data_layout_templates/multiline_show_hide_list.css</Input>
+<Input name="LayoutFields"><top><FieldMapping><Name>fixed_left_top</Name>
+<Value>id_tipo_cuenta_LABEL</Value>
+<Style>wpfLabelText</Style>
+</FieldMapping>
+<FieldMapping><Name>fixed_show</Name>
+<Value>Búsqueda Avanzada</Value>
+</FieldMapping>
+<FieldMapping><Name>fixed_hide</Name>
+<Value>Ocultar</Value>
+</FieldMapping>
+<FieldMapping><Name>fixed_left_bottom</Name>
+<Value>id_tipo_cuenta</Value>
+</FieldMapping>
+<FieldMapping><Name>fixed_left_bottom</Name>
+<Value>id_tipo_cuenta_VALIDATION</Value>
+<Style>Campo Requerido</Style>
+</FieldMapping>
+<FieldMapping><Name>left_top</Name>
+<Value>fecha_mayor_a_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>left_top</Name>
+<Value>fecha_mayor_a</Value>
+</FieldMapping>
+<FieldMapping><Name>left_top</Name>
+<Value>fecha_menor_a_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>left_top</Name>
+<Value>fecha_menor_a</Value>
+</FieldMapping>
+<FieldMapping><Name>left_middle</Name>
+<Value>saldo_mayor_a_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>left_middle</Name>
+<Value>saldo_mayor_a</Value>
+</FieldMapping>
+<FieldMapping><Name>left_middle</Name>
+<Value>saldo_menor_a_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>left_middle</Name>
+<Value>saldo_menor_a</Value>
+</FieldMapping>
+</top>
+</Input>
+<Input name="LayoutContainers"><top />
+</Input>
+<Input name="DefaultName">Multi-Line Show/Hide List</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc40"><BuilderDefID>com.bowstreet.builders.webapp.DataLayoutBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseTheme">false</Input>
+<Input name="MoveLinkToListItem">false</Input>
+<Input name="AddLogging">false</Input>
+<Input name="AutomaticParentSelection">true</Input>
+<Input name="SingleField">[GetCuentasServiceView_ViewPage]GetCuentasServiceView_ViewPage/operation1Response/cuenta</Input>
+<Input name="Name">GetCuentasServiceView_ViewPageLayout</Input>
+<Input name="TemplateFile">/factory/data_layout_templates/responsive_table_layout.html</Input>
+<Input name="TemplateDescription">This template allows you to use styles to create a responsive table of up to 10 columns.  Use the different versions of the hide styles to hide columns in different ways.</Input>
+<Input name="StyleSheetFile">/factory/data_layout_templates/blank.css</Input>
+<Input name="LayoutFields"><top><FieldMapping><Name>column1_header</Name>
+<Value>tipo_cuenta_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>column2_header</Name>
+<Value>saldo_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>column3_header</Name>
+<Value>numero_cuenta_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>column4_header</Name>
+<Value>fecha_creacion_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>column5_header</Name>
+</FieldMapping>
+<FieldMapping><Name>column6_header</Name>
+</FieldMapping>
+<FieldMapping><Name>column7_header</Name>
+</FieldMapping>
+<FieldMapping><Name>column8_header</Name>
+</FieldMapping>
+<FieldMapping><Name>column9_header</Name>
+</FieldMapping>
+<FieldMapping><Name>column10_header</Name>
+</FieldMapping>
+<FieldMapping><Name>column1</Name>
+<Value>tipo_cuenta</Value>
+<Style></Style>
+</FieldMapping>
+<FieldMapping><Name>column2</Name>
+<Value>saldo</Value>
+<Style></Style>
+</FieldMapping>
+<FieldMapping><Name>column3</Name>
+<Value>numero_cuenta</Value>
+<Style></Style>
+</FieldMapping>
+<FieldMapping><Name>column4</Name>
+<Value>fecha_creacion</Value>
+<Style></Style>
+</FieldMapping>
+<FieldMapping><Name>column5</Name>
+</FieldMapping>
+<FieldMapping><Name>column6</Name>
+</FieldMapping>
+<FieldMapping><Name>column7</Name>
+</FieldMapping>
+<FieldMapping><Name>column8</Name>
+</FieldMapping>
+<FieldMapping><Name>column9</Name>
+</FieldMapping>
+<FieldMapping><Name>column10</Name>
+</FieldMapping>
+<FieldMapping><Name>column1_header_styles</Name>
+<Style>text-align: center</Style>
+</FieldMapping>
+<FieldMapping><Name>column2_header_styles</Name>
+<Style>text-align: center</Style>
+</FieldMapping>
+<FieldMapping><Name>column3_header_styles</Name>
+<Style>text-align: center</Style>
+</FieldMapping>
+<FieldMapping><Name>column4_header_styles</Name>
+<Style>text-align: center</Style>
+</FieldMapping>
+<FieldMapping><Name>column5_header_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column6_header_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column7_header_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column8_header_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column9_header_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column10_header_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column1_styles</Name>
+<Style>text-align: center</Style>
+</FieldMapping>
+<FieldMapping><Name>column2_styles</Name>
+<Style>text-align: center</Style>
+</FieldMapping>
+<FieldMapping><Name>column3_styles</Name>
+<Style>text-align: center</Style>
+</FieldMapping>
+<FieldMapping><Name>column4_styles</Name>
+<Style>text-align: center</Style>
+</FieldMapping>
+<FieldMapping><Name>column5_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column6_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column7_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column8_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column9_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column10_styles</Name>
+</FieldMapping>
+</top>
+</Input>
+<Input name="LayoutContainers"><top />
+</Input>
+<Input name="DefaultName">Responsive Table Layout</Input>
+</Inputs>
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
@@ -501,7 +681,9 @@ Parameters:
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/view.html</Dependency>
 <Dependency type="File">/factory/pages/paging/data_paging_links.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_themes.html</Dependency>
-<Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/details.html</Dependency>
+<Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.html</Dependency>
+<Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.css</Dependency>
+<Dependency type="File">/factory/data_layout_templates/responsive_table_layout.html</Dependency>
 <Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
 <Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
 <Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
@@ -522,6 +704,6 @@ Parameters:
 <ExternalProperty id="PortletModeHelp">false</ExternalProperty>
 <ExternalProperty id="DojoEnabled">true</ExternalProperty>
 <ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
-<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.FilteringSelect,dijit.form.DateTextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dojo.parser,dijit.form.FilteringSelect,dijit.form.DateTextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
 </ExternalProperties>
 </Model>
