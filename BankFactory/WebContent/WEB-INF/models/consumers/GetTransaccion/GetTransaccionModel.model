@@ -67,7 +67,7 @@ You can also profile other builder inputs according to device type, and you can 
 <Value>${MethodCall/SetData(${Inputs/mon_trans_mayor_a})}</Value>
 </Input>
 <Input><Name>operation1.mon_trans_menor_a</Name>
-<Value>${Inputs/mon_trans_menor_a}</Value>
+<Value>${MethodCall/SetData(${Inputs/mon_trans_menor_a})}</Value>
 </Input>
 <Input><Name>operation1.n_trans_mayor_a</Name>
 <Value>${MethodCall/SetData(${Inputs/n_trans_mayor_a})}</Value>
@@ -113,7 +113,7 @@ Parameters:
 <Input name="EnableInputValidation">false</Input>
 <Input name="InputSubmitText">Submit</Input>
 <Input name="ViewPageBackButtonText">Back</Input>
-<Input name="InsertInputPage">false</Input>
+<Input name="InsertInputPage">true</Input>
 <Input name="CreateColumnLink">false</Input>
 <Input name="LinkActionChoice">rowdata</Input>
 <Input name="DetailPageURL">${Properties/bowstreet.Theme/ViewAndForm_DetailPageBase}</Input>
@@ -140,6 +140,7 @@ Parameters:
 <Input name="InputPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_InputPageStyleSheetOverrideHTMLTemplate}</Input>
 <Input name="ViewPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_ViewPageStyleSheetOverride}</Input>
 <Input name="DetailPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</Input>
+<Input name="EnablePagingButtons">true</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
@@ -161,8 +162,14 @@ Parameters:
 <DataType>base_Integer</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
-<DispInfo><Name>monto</Name>
-<Label>[Monto]</Label>
+<DispInfo><Name>debito</Name>
+<Label>[Debito]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>credito</Name>
+<Label>[Credito]</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Floating Point]</DataType>
 <Sort>[Off]</Sort>
@@ -228,25 +235,25 @@ Parameters:
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>mon_trans_mayor_a</Name>
-<Label>Monto Transferencia Inferior</Label>
+<Label>Monto Transferencia Desde</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Floating Point]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>mon_trans_menor_a</Name>
-<Label>Monto Transferencia Superior</Label>
+<Label>Monto Transferencia Hasta</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Floating Point]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>n_trans_mayor_a</Name>
-<Label>Numero Transferencia Inferior</Label>
+<Label>Numero Transferencia Desde</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>n_trans_menor_a</Name>
-<Label>Numero Transferencia Superior</Label>
+<Label>Numero Transferencia Hasta</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
@@ -300,7 +307,7 @@ Parameters:
 <DispInfo><Name>id_tipo_transaccion</Name>
 <Label>[Id Tipo Transaccion]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>base_DojoSelect</DataType>
+<DataType>base_Select</DataType>
 <Sort>[Off]</Sort>
 <LookupTable>TipoTransaccion</LookupTable>
 </DispInfo>
@@ -641,6 +648,84 @@ webAppAccess.processPage("PageName");
 <Input name="Name">SetData</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc23"><BuilderDefID>com.bowstreet.builders.webapp.DataLayoutBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseTheme">false</Input>
+<Input name="MoveLinkToListItem">false</Input>
+<Input name="AddLogging">false</Input>
+<Input name="AutomaticParentSelection">true</Input>
+<Input name="SingleField">[GetTransaccionesView_InputPage]GetTransaccionesView_InputPage/operation1</Input>
+<Input name="Name">GetTransaccionesView_InputPageLayout</Input>
+<Input name="TemplateFile">/factory/data_layout_templates/multiline_show_hide_list.html</Input>
+<Input name="TemplateDescription">This template allows you to generate a list layout where a section can be hidden and shown using a link in each of the rows. There are two fixed fields named 'fixed_left_top' and 'fixed_left_bottom' that will always be shown. The show/hide text must be set using the 'fixed_show' and 'fixed_hide' target names. You can enter their text value directly in the "Value" column, or leave the value blank and apply a Text builder to the 'fixed_show' and 'fixed_hide' page locations. The remaining targets can be used to populate the section that will be hidden/shown. This section contains two columns with three rows.</Input>
+<Input name="StyleSheetFile">/factory/data_layout_templates/multiline_show_hide_list.css</Input>
+<Input name="LayoutFields"><top><FieldMapping><Name>fixed_left_top</Name>
+<Value>id_cuenta_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>fixed_show</Name>
+<Value>Búsqueda Avanzada</Value>
+</FieldMapping>
+<FieldMapping><Name>fixed_hide</Name>
+<Value>Búsqueda Normal</Value>
+</FieldMapping>
+<FieldMapping><Name>fixed_left_top</Name>
+<Value>id_cuenta</Value>
+</FieldMapping>
+<FieldMapping><Name>fixed_left_bottom</Name>
+<Value>fecha_mov_mayor_a_LABEL</Value>
+<Style></Style>
+</FieldMapping>
+<FieldMapping><Name>left_top</Name>
+<Value>id_tipo_transaccion_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>left_middle</Name>
+<Value>mon_trans_mayor_a_LABEL</Value>
+<Style></Style>
+</FieldMapping>
+<FieldMapping><Name>left_bottom</Name>
+<Value>n_trans_mayor_a_LABEL</Value>
+<Style></Style>
+</FieldMapping>
+<FieldMapping><Name>left_top</Name>
+<Value>id_tipo_transaccion</Value>
+</FieldMapping>
+<FieldMapping><Name>fixed_left_bottom</Name>
+<Value>fecha_mov_mayor_a</Value>
+<Style></Style>
+</FieldMapping>
+<FieldMapping><Name>left_middle</Name>
+<Value>mon_trans_mayor_a</Value>
+<Style></Style>
+</FieldMapping>
+<FieldMapping><Name>left_bottom</Name>
+<Value>n_trans_mayor_a</Value>
+</FieldMapping>
+<FieldMapping><Name>fixed_left_bottom</Name>
+<Value>fecha_mov_menor_a_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>left_middle</Name>
+<Value>mon_trans_menor_a_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>left_bottom</Name>
+<Value>n_trans_menor_a_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>fixed_left_bottom</Name>
+<Value>fecha_mov_menor_a</Value>
+</FieldMapping>
+<FieldMapping><Name>left_middle</Name>
+<Value>mon_trans_menor_a</Value>
+</FieldMapping>
+<FieldMapping><Name>left_bottom</Name>
+<Value>n_trans_menor_a</Value>
+</FieldMapping>
+</top>
+</Input>
+<Input name="LayoutContainers"><top />
+</Input>
+<Input name="DefaultName">Multi-Line Show/Hide List</Input>
+</Inputs>
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
@@ -653,6 +738,8 @@ webAppAccess.processPage("PageName");
 <Dependency type="File">/factory/pages/paging/data_paging_links.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_themes.html</Dependency>
 <Dependency type="Model">providers/GetCuentas/GetCuentasProvider</Dependency>
+<Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.html</Dependency>
+<Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.css</Dependency>
 <Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
 <Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
 <Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
@@ -673,6 +760,6 @@ webAppAccess.processPage("PageName");
 <ExternalProperty id="PortletModeHelp">false</ExternalProperty>
 <ExternalProperty id="DojoEnabled">true</ExternalProperty>
 <ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
-<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.FilteringSelect,dijit.form.DateTextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dojo.parser,dijit.form.FilteringSelect,dijit.form.DateTextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
 </ExternalProperties>
 </Model>

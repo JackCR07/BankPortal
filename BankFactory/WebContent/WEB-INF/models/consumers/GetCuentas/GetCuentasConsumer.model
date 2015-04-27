@@ -140,6 +140,7 @@ Parameters:
 <Input name="DetailPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</Input>
 <Input name="EnablePagingButtons">true</Input>
 <Input name="InputValidationMethodBehavior">CallOnlyOnValidData</Input>
+<Input name="UsePartialRefreshForPaging">true</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
@@ -589,19 +590,19 @@ Parameters:
 </FieldMapping>
 <FieldMapping><Name>column1</Name>
 <Value>tipo_cuenta</Value>
-<Style></Style>
+<Style />
 </FieldMapping>
 <FieldMapping><Name>column2</Name>
 <Value>saldo</Value>
-<Style></Style>
+<Style />
 </FieldMapping>
 <FieldMapping><Name>column3</Name>
 <Value>numero_cuenta</Value>
-<Style></Style>
+<Style />
 </FieldMapping>
 <FieldMapping><Name>column4</Name>
 <Value>fecha_creacion</Value>
-<Style></Style>
+<Style />
 </FieldMapping>
 <FieldMapping><Name>column5</Name>
 </FieldMapping>
