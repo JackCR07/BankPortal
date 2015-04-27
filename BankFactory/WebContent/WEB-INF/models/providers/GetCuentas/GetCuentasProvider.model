@@ -101,7 +101,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="FilterWSDLSchemas">false</Input>
 <Input name="hidden_ShowAllServiceCallTypes">false</Input>
 <Input name="ServiceCallType">WSDL</Input>
-<Input name="WSDL_Refresh">Refresh/fetch WSDL</Input>
+<Input name="WSDL_Refresh">Fetch WSDL</Input>
 <Input name="DoHTTP_RequestType">GET</Input>
 <Input name="hidden_UIState">8</Input>
 <Input name="Name">GetCuentasWSDLCall</Input>
@@ -145,7 +145,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="ExamineWSDL_replytype">operation1Response</Input>
 <Input name="hidden_ExamineWSDL_replyclass">com.bowstreet.util.IXml</Input>
 <Input name="hidden_WSDL_replycount">1</Input>
-<Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\jcervantes\git\BankPortal\BankFactory\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://GetCuentas" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://GetCuentas"&gt;&lt;xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1"&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element name="id_cliente" nillable="true" type="xsd:string" /&gt;
+<Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\Jeancarlo\git\BankPortal\BankFactory\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://GetCuentas" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://GetCuentas"&gt;&lt;xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operation1"&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element name="id_cliente" nillable="true" type="xsd:string" /&gt;
 &lt;xsd:element name="id_tipo_cuenta" nillable="true" type="xsd:integer" /&gt;
 &lt;xsd:element name="fecha_mayor_a" nillable="true" type="xsd:string" /&gt;
 &lt;xsd:element name="fecha_menor_a" nillable="true" type="xsd:string" /&gt;

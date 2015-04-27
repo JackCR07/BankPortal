@@ -62,16 +62,16 @@ You can also profile other builder inputs according to device type, and you can 
 <Input><Name>operation1.id_tipo_cuenta</Name>
 </Input>
 <Input><Name>operation1.fecha_mayor_a</Name>
-<Value>${MethodCall/defaultString(${Inputs/fecha_mayor_a})}</Value>
+<Value></Value>
 </Input>
 <Input><Name>operation1.fecha_menor_a</Name>
-<Value>${MethodCall/defaultString(${Inputs/fecha_menor_a})}</Value>
+<Value></Value>
 </Input>
 <Input><Name>operation1.saldo_mayor_a</Name>
-<Value>${MethodCall/defaultDouble(${Inputs/saldo_mayor_a})}</Value>
+<Value></Value>
 </Input>
 <Input><Name>operation1.saldo_menor_a</Name>
-<Value>${MethodCall/defaultDouble(${Inputs/saldo_menor_a})}</Value>
+<Value></Value>
 </Input>
 </top>
 </Inputs>
@@ -150,7 +150,38 @@ Parameters:
 <Input name="AllPageRadio">current</Input>
 <Input name="Pages"><data />
 </Input>
-<Input name="DisplayBehavior"><top><DispInfo><Name>id_cliente</Name>
+<Input name="DisplayBehavior"><top><DispInfo><Name>id_cuenta</Name>
+<Label>[Id Cuenta]</Label>
+<Hide>HideAlways</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>tipo_cuenta</Name>
+<Label>Tipo de Cuenta</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_String</DataType>
+<Sort>[Off]</Sort>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>saldo</Name>
+<Label>[Saldo]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>numero_cuenta</Name>
+<Label>Numero de Cuenta</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_String</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>fecha_creacion</Name>
+<Label>Fecha de Creacion</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_String</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>id_cliente</Name>
 <Label>[Id Cliente]</Label>
 <Hide>HideAlways</Hide>
 <DataType>[String]</DataType>
@@ -187,37 +218,6 @@ Parameters:
 <DataType>base_FloatingPoint</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
-<DispInfo><Name>id_cuenta</Name>
-<Label>[Id Cuenta]</Label>
-<Hide>HideAlways</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>tipo_cuenta</Name>
-<Label>Tipo de Cuenta</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_String</DataType>
-<Sort>[Off]</Sort>
-<LookupTable />
-</DispInfo>
-<DispInfo><Name>saldo</Name>
-<Label>[Saldo]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>numero_cuenta</Name>
-<Label>Numero de Cuenta</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_String</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>fecha_creacion</Name>
-<Label>Fecha de Creacion</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_String</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
 </top>
 </Input>
 <Input name="ValidationBehavior"><top><ValidationInfo><Name>id_cliente</Name>
@@ -237,11 +237,11 @@ Parameters:
 <Required>[NotRequired]</Required>
 </ValidationInfo>
 <ValidationInfo><Name>saldo_mayor_a</Name>
-<ValidationOp>Floating Point Number</ValidationOp>
+<ValidationOp>[Do Not Change]</ValidationOp>
 <Required>[NotRequired]</Required>
 </ValidationInfo>
 <ValidationInfo><Name>saldo_menor_a</Name>
-<ValidationOp>Floating Point Number</ValidationOp>
+<ValidationOp>[Do Not Change]</ValidationOp>
 <Required>[NotRequired]</Required>
 </ValidationInfo>
 </top>
@@ -359,47 +359,6 @@ Parameters:
 <Input name="TablePosition">InFront</Input>
 <Input name="LabelValueFilterMode">LabelValue</Input>
 <Input name="Name">tipoCuentas</Input>
-</Inputs>
-</BuilderCall>
-<BuilderCall id="bc31"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="ReturnType">String</Input>
-<Input name="RenameExisting">false</Input>
-<Input name="TargetPhase">Construction</Input>
-<Input name="Arguments"><top><Argument><Name>value</Name>
-<Type>String</Type>
-</Argument>
-</top>
-</Input>
-<Input name="Body">{
-    if(value.equals(""))
-    	return "null";
-    else
-    	return value;
-}</Input>
-<Input name="Name">defaultString</Input>
-</Inputs>
-</BuilderCall>
-<BuilderCall id="bc33"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="ReturnType">double</Input>
-<Input name="Body">{
-	if(value.equals(""))
-		return -1;
-	else 
-		return Double.parseDouble(value);
-}</Input>
-<Input name="RenameExisting">false</Input>
-<Input name="TargetPhase">Construction</Input>
-<Input name="Name">defaultDouble</Input>
-<Input name="Arguments"><top><Argument><Name>value</Name>
-<Type>String</Type>
-</Argument>
-</top>
-</Input>
-<Input name="XMLType">Untyped XML</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc34"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>

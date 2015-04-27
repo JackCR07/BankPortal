@@ -64,16 +64,16 @@ You can also profile other builder inputs according to device type, and you can 
 <Input><Name>operation1.fecha_mov_menor_a</Name>
 </Input>
 <Input><Name>operation1.mon_trans_mayor_a</Name>
-<Value>${MethodCall/SetData(${Inputs/mon_trans_mayor_a})}</Value>
+<Value></Value>
 </Input>
 <Input><Name>operation1.mon_trans_menor_a</Name>
-<Value>${MethodCall/SetData(${Inputs/mon_trans_menor_a})}</Value>
+<Value></Value>
 </Input>
 <Input><Name>operation1.n_trans_mayor_a</Name>
-<Value>${MethodCall/SetData(${Inputs/n_trans_mayor_a})}</Value>
+<Value></Value>
 </Input>
 <Input><Name>operation1.n_trans_menor_a</Name>
-<Value>${MethodCall/SetData(${Inputs/n_trans_menor_a})}</Value>
+<Value></Value>
 </Input>
 </top>
 </Inputs>
@@ -672,36 +672,36 @@ webAppAccess.processPage("PageName");
 <FieldMapping><Name>fixed_left_top</Name>
 <Value>id_cuenta</Value>
 </FieldMapping>
-<FieldMapping><Name>fixed_left_bottom</Name>
-<Value>fecha_mov_mayor_a_LABEL</Value>
-<Style></Style>
-</FieldMapping>
 <FieldMapping><Name>left_top</Name>
+<Value>fecha_mov_mayor_a_LABEL</Value>
+<Style />
+</FieldMapping>
+<FieldMapping><Name>fixed_left_top</Name>
 <Value>id_tipo_transaccion_LABEL</Value>
 </FieldMapping>
 <FieldMapping><Name>left_middle</Name>
 <Value>mon_trans_mayor_a_LABEL</Value>
-<Style></Style>
+<Style />
 </FieldMapping>
 <FieldMapping><Name>left_bottom</Name>
 <Value>n_trans_mayor_a_LABEL</Value>
-<Style></Style>
+<Style />
 </FieldMapping>
-<FieldMapping><Name>left_top</Name>
+<FieldMapping><Name>fixed_left_top</Name>
 <Value>id_tipo_transaccion</Value>
 </FieldMapping>
-<FieldMapping><Name>fixed_left_bottom</Name>
+<FieldMapping><Name>left_top</Name>
 <Value>fecha_mov_mayor_a</Value>
-<Style></Style>
+<Style />
 </FieldMapping>
 <FieldMapping><Name>left_middle</Name>
 <Value>mon_trans_mayor_a</Value>
-<Style></Style>
+<Style />
 </FieldMapping>
 <FieldMapping><Name>left_bottom</Name>
 <Value>n_trans_mayor_a</Value>
 </FieldMapping>
-<FieldMapping><Name>fixed_left_bottom</Name>
+<FieldMapping><Name>left_top</Name>
 <Value>fecha_mov_menor_a_LABEL</Value>
 </FieldMapping>
 <FieldMapping><Name>left_middle</Name>
@@ -710,7 +710,7 @@ webAppAccess.processPage("PageName");
 <FieldMapping><Name>left_bottom</Name>
 <Value>n_trans_menor_a_LABEL</Value>
 </FieldMapping>
-<FieldMapping><Name>fixed_left_bottom</Name>
+<FieldMapping><Name>left_top</Name>
 <Value>fecha_mov_menor_a</Value>
 </FieldMapping>
 <FieldMapping><Name>left_middle</Name>
@@ -724,6 +724,121 @@ webAppAccess.processPage("PageName");
 <Input name="LayoutContainers"><top />
 </Input>
 <Input name="DefaultName">Multi-Line Show/Hide List</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc25"><BuilderDefID>com.bowstreet.builders.webapp.DataLayoutBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseTheme">false</Input>
+<Input name="MoveLinkToListItem">false</Input>
+<Input name="AddLogging">false</Input>
+<Input name="AutomaticParentSelection">true</Input>
+<Input name="SingleField">[GetTransaccionesView_ViewPage]GetTransaccionesView_ViewPage/operation1Response/transaccion</Input>
+<Input name="Name">GetTransaccionesView_ViewPageLayout</Input>
+<Input name="TemplateFile">/factory/data_layout_templates/responsive_table_layout.html</Input>
+<Input name="TemplateDescription">This template allows you to use styles to create a responsive table of up to 10 columns.  Use the different versions of the hide styles to hide columns in different ways.</Input>
+<Input name="StyleSheetFile">/factory/data_layout_templates/blank.css</Input>
+<Input name="LayoutFields"><top><FieldMapping><Name>column1_header</Name>
+<Value>numero_transaccion_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>column2_header</Name>
+<Value>debito_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>column3_header</Name>
+<Value>credito_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>column4_header</Name>
+<Value>fecha_transaccion_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>column5_header</Name>
+</FieldMapping>
+<FieldMapping><Name>column6_header</Name>
+</FieldMapping>
+<FieldMapping><Name>column7_header</Name>
+</FieldMapping>
+<FieldMapping><Name>column8_header</Name>
+</FieldMapping>
+<FieldMapping><Name>column9_header</Name>
+</FieldMapping>
+<FieldMapping><Name>column10_header</Name>
+</FieldMapping>
+<FieldMapping><Name>column1</Name>
+<Value>numero_transaccion</Value>
+</FieldMapping>
+<FieldMapping><Name>column2</Name>
+<Value>debito</Value>
+</FieldMapping>
+<FieldMapping><Name>column3</Name>
+<Value>credito</Value>
+</FieldMapping>
+<FieldMapping><Name>column4</Name>
+<Value>fecha_transaccion</Value>
+</FieldMapping>
+<FieldMapping><Name>column5</Name>
+</FieldMapping>
+<FieldMapping><Name>column6</Name>
+</FieldMapping>
+<FieldMapping><Name>column7</Name>
+</FieldMapping>
+<FieldMapping><Name>column8</Name>
+</FieldMapping>
+<FieldMapping><Name>column9</Name>
+</FieldMapping>
+<FieldMapping><Name>column10</Name>
+</FieldMapping>
+<FieldMapping><Name>column1_header_styles</Name>
+<Style>text-align:center</Style>
+</FieldMapping>
+<FieldMapping><Name>column2_header_styles</Name>
+<Style>text-align:center</Style>
+</FieldMapping>
+<FieldMapping><Name>column3_header_styles</Name>
+<Style>text-align:center</Style>
+</FieldMapping>
+<FieldMapping><Name>column4_header_styles</Name>
+<Style>text-align:center</Style>
+</FieldMapping>
+<FieldMapping><Name>column5_header_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column6_header_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column7_header_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column8_header_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column9_header_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column10_header_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column1_styles</Name>
+<Style>text-align:center</Style>
+</FieldMapping>
+<FieldMapping><Name>column2_styles</Name>
+<Style>text-align:center</Style>
+</FieldMapping>
+<FieldMapping><Name>column3_styles</Name>
+<Style>text-align:center</Style>
+</FieldMapping>
+<FieldMapping><Name>column4_styles</Name>
+<Style>text-align:center</Style>
+</FieldMapping>
+<FieldMapping><Name>column5_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column6_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column7_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column8_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column9_styles</Name>
+</FieldMapping>
+<FieldMapping><Name>column10_styles</Name>
+</FieldMapping>
+</top>
+</Input>
+<Input name="LayoutContainers"><top />
+</Input>
+<Input name="DefaultName">Responsive Table Layout</Input>
 </Inputs>
 </BuilderCall>
 </BuilderCallList>
@@ -740,6 +855,7 @@ webAppAccess.processPage("PageName");
 <Dependency type="Model">providers/GetCuentas/GetCuentasProvider</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.css</Dependency>
+<Dependency type="File">/factory/data_layout_templates/responsive_table_layout.html</Dependency>
 <Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
 <Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
 <Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>

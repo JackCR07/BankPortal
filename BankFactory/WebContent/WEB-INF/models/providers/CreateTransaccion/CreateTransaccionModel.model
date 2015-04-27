@@ -120,7 +120,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="ExamineWSDL_replytype">operation1Response</Input>
 <Input name="hidden_ExamineWSDL_replyclass">com.bowstreet.util.IXml</Input>
 <Input name="hidden_WSDL_replycount">1</Input>
-<Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\jcervantes\git\BankPortal\BankFactory\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://CreateTransaccion" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://CreateTransaccion"&gt;&lt;xsd:import schemaLocation="http://172.16.11.225:7800/createTransaccion/createTransaccion?xsd=xsd0" /&gt;
+<Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\Jeancarlo\git\BankPortal\BankFactory\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://CreateTransaccion" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://CreateTransaccion"&gt;&lt;xsd:import schemaLocation="http://172.16.11.225:7800/createTransaccion/createTransaccion?xsd=xsd0" /&gt;
 &lt;/xsd:schema&gt;
 &lt;/schemas&gt;
 </Input>
@@ -157,40 +157,119 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="ExamineWSDL_createInputVariables">true</Input>
 <Input name="ExamineWSDLargval_1">${Variables/CreateTransaccionCall_arg1_operation1Parameters}</Input>
 </Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[[hidden_ExamineWSDL_wsdldoc][/factory/schemasWSDL/createTransaccion.xml]]]></CacheKey>
+<CacheValue><CachedWsdlDocument><![CDATA[<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://CreateTransaccion" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CreateTransaccion" targetNamespace="http://CreateTransaccion"><wsdl:documentation><wsdl:appinfo source="WMQI_APPINFO"><MRWSDLAppInfo imported="true"><generatedXSD location="CreateTransaccion_InlineSchema1.xsd" />
+<binding hasEncoding="false" imported="true" name="CreateTransaccionHttpBinding" originalBindingStyle="document" />
+</MRWSDLAppInfo>
+</wsdl:appinfo>
+</wsdl:documentation>
+<wsdl:types><xsd:schema targetNamespace="http://CreateTransaccion"><xsd:import schemaLocation="http://172.16.11.225:7800/createTransaccion/createTransaccion?xsd=xsd0" />
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="operation1RequestMsg"><wsdl:part element="tns:operation1" name="operation1Parameters" />
+</wsdl:message>
+<wsdl:message name="operation1ResponseMsg"><wsdl:part element="tns:operation1Response" name="operation1Result" />
+</wsdl:message>
+<wsdl:portType name="CreateTransaccion"><wsdl:operation name="operation1"><wsdl:input message="tns:operation1RequestMsg" name="operation1Request" />
+<wsdl:output message="tns:operation1ResponseMsg" name="operation1Response" />
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="CreateTransaccionHttpBinding" type="tns:CreateTransaccion"><soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+<wsdl:operation name="operation1"><soap:operation soapAction="http://CreateTransaccion/operation1" />
+<wsdl:input name="operation1Request"><soap:body use="literal" />
+</wsdl:input>
+<wsdl:output name="operation1Response"><soap:body use="literal" />
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="CreateTransaccionHttpService"><wsdl:port binding="tns:CreateTransaccionHttpBinding" name="CreateTransaccionHttpPort"><soap:address location="http://172.16.11.225:7800/createTransaccion/createTransaccion" />
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
+]]></CachedWsdlDocument>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    if(res==0)
+    return "La transferencia se realizó satisfactoriamente";
+    else if(res==-2)
+    return "La cuenta destino no existe, intentelo nuevamente";
+    else
+    return "La cuenta no tiene fondos suficientes";
+/* Simple Code Samples - See help for further info
+Get a string variable value,
+String value = webAppAccess.getVariables().getString("MyVariable");
+
+Set a string variable value,
+webAppAccess.getVariables().setString("MyVariable", "Value");
+
+Call a method,
+webAppAccess.callMethod("MethodName", arg1, arg2);
+
+Execute service calls,
+webAppAccess.callMethod("ServiceCallName.invoke");
+
+Process page inputs,
+webAppAccess.getRequestInputs().getInputValue("InputName");
+
+Display a page,
+webAppAccess.processPage("PageName");
+*/
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">MensajeTransferencia</Input>
+<Input name="Arguments"><top><Argument><Name>res</Name>
+<Type>int</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
 </BuilderCall>
 <BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="InputStructureHandling">FromOperation</Input>
 <Input name="InputAllowStructureEdit">false</Input>
-<Input name="InputAutomaticMapping">true</Input>
+<Input name="InputAutomaticMapping">false</Input>
 <Input name="ResultStructureHandling">FromOperation</Input>
 <Input name="ResultAllowStructureEdit">false</Input>
-<Input name="ResultAutomaticMapping">true</Input>
+<Input name="ResultAutomaticMapping">false</Input>
 <Input name="EnableCaching">false</Input>
 <Input name="CachingTimeout">3600</Input>
 <Input name="PreExecuteEventEnabled">disabled</Input>
 <Input name="PostExecuteEventEnabled">disabled</Input>
 <Input name="PagedDataResource">Default</Input>
 <Input name="DataService">CreateTransaccionService</Input>
-<Input name="ResultMappingTable"><Fields><Field><Name>resultado</Name>
+<Input name="ResultMappingTable"><top><Field><Name>resultado</Name>
 <Type>int</Type>
+<Value>${MethodCall/MensajeTransferencia(${Results/resultado})}</Value>
 </Field>
-</Fields>
+</top>
 </Input>
-<Input name="InputMappingTable"><Fields><Field><Name>id_cuenta_origen</Name>
+<Input name="InputMappingTable"><top><Field><Name>id_cuenta_origen</Name>
 <Type>int</Type>
+<Value>${Arguments/id_cuenta_origen}</Value>
 </Field>
 <Field><Name>numero_cuenta_destino</Name>
 <Type>string</Type>
+<Value>${Arguments/numero_cuenta_destino}</Value>
 </Field>
 <Field><Name>id_tipo_transaccion</Name>
 <Type>int</Type>
+<Value>1</Value>
 </Field>
 <Field><Name>monto_transferido</Name>
 <Type>double</Type>
+<Value>${Arguments/monto_transferido}</Value>
 </Field>
-</Fields>
+</top>
 </Input>
 <Input name="OperationName">CreateTransaccionOperation</Input>
 <Input name="TargetOperation">DataServices/CreateTransaccionCall/execute</Input>

@@ -53,7 +53,7 @@ You can also profile other builder inputs according to device type, and you can 
 <Input name="OverrideInputs">true</Input>
 <Input name="Name">CreateTransaccionConsumerService</Input>
 <Input name="ProviderModel">providers/CreateTransaccion/CreateTransaccionModel</Input>
-<Input name="OperationInputs"><OverridenInputs><InputsForOperation><Operation>CreateTransaccionOperation</Operation>
+<Input name="OperationInputs"><top><InputsForOperation><Operation>CreateTransaccionOperation</Operation>
 <Inputs><top><Input><Name>operation1</Name>
 </Input>
 <Input><Name>operation1.id_cuenta_origen</Name>
@@ -61,13 +61,14 @@ You can also profile other builder inputs according to device type, and you can 
 <Input><Name>operation1.numero_cuenta_destino</Name>
 </Input>
 <Input><Name>operation1.id_tipo_transaccion</Name>
+<Value></Value>
 </Input>
 <Input><Name>operation1.monto_transferido</Name>
 </Input>
 </top>
 </Inputs>
 </InputsForOperation>
-</OverridenInputs>
+</top>
 </Input>
 <Input name="OperationName">all</Input>
 <Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>CreateTransaccionOperation</Operation>
@@ -96,7 +97,7 @@ Parameters:
 <Input name="BuilderCallCategory">General</Input>
 <Input name="UseTheme">true</Input>
 <Input name="ViewPageURL">${Properties/bowstreet.Theme/ViewAndForm_ViewPageBase}</Input>
-<Input name="EnableDataPaging">true</Input>
+<Input name="EnableDataPaging">false</Input>
 <Input name="CreateInputPage">true</Input>
 <Input name="InputPageURL">${Properties/bowstreet.Theme/ViewAndForm_InputPageBase}</Input>
 <Input name="EnableInputValidation">false</Input>
@@ -138,13 +139,7 @@ Parameters:
 <Input name="AllPageRadio">current</Input>
 <Input name="Pages"><data />
 </Input>
-<Input name="DisplayBehavior"><top><DispInfo><Name>resultado</Name>
-<Label>[Resultado]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>id_cuenta_origen</Name>
+<Input name="DisplayBehavior"><top><DispInfo><Name>id_cuenta_origen</Name>
 <Label>Cuenta de Origen</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Integer]</DataType>
@@ -166,6 +161,12 @@ Parameters:
 <Label>[Monto Transferido]</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>resultado</Name>
+<Label>[Resultado]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 </top>
@@ -193,51 +194,15 @@ Parameters:
 </top>
 </Input>
 <Input name="DefaultName">All pages</Input>
-<Input name="CurPageDisplayBehavior"><data><DispInfo><Name>id_cuenta_origen</Name>
-<Label>[Id Cuenta Origen]</Label>
+<Input name="CurPageDisplayBehavior"><data><DispInfo><Name>resultado</Name>
+<Label>[Resultado]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>base_Select</DataType>
-<Sort>[Off]</Sort>
-<LookupTable>CuentasUsuario</LookupTable>
-</DispInfo>
-<DispInfo><Name>numero_cuenta_destino</Name>
-<Label>[Numero Cuenta Destino]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>id_tipo_transaccion</Name>
-<Label>[Tipo Transaccion]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_Select</DataType>
-<Sort>[Off]</Sort>
-<LookupTable>TipoTransacciones</LookupTable>
-</DispInfo>
-<DispInfo><Name>monto_transferido</Name>
-<Label>[Monto Transferido]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
+<DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 </data>
 </Input>
-<Input name="CurValidationBehavior"><data><ValidationInfo><Name>id_cuenta_origen</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>numero_cuenta_destino</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>id_tipo_transaccion</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>monto_transferido</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-</data>
+<Input name="CurValidationBehavior"><data />
 </Input>
 </Inputs>
 </BuilderCall>
@@ -281,7 +246,7 @@ Parameters:
 </DispInfo>
 <DispInfo><Name>id_tipo_transaccion</Name>
 <Label>[Tipo Transaccion]</Label>
-<Hide>[Do Not Change]</Hide>
+<Hide>HideAlways</Hide>
 <DataType>base_Select</DataType>
 <Sort>[Off]</Sort>
 <LookupTable>TipoTransacciones</LookupTable>
@@ -434,6 +399,29 @@ Parameters:
 <Input name="Value">Campo Requerido</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc25"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="AllPages">false</Input>
+<Input name="AllPageRadio">All</Input>
+<Input name="Pages"><data><CreateTransaccionConsumerView_ViewPage>true</CreateTransaccionConsumerView_ViewPage>
+</data>
+</Input>
+<Input name="DisplayBehavior"><data><DispInfo><Name>resultado</Name>
+<Label>Estado de la Transferencia</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_String</DataType>
+<Sort>[Off]</Sort>
+<LookupTable />
+</DispInfo>
+</data>
+</Input>
+<Input name="ValidationBehavior"><data />
+</Input>
+<Input name="Name">CreateTransaccionConsumerView_ViewPagemenu</Input>
+<Input name="DefaultName">CreateTransaccionConsumerView_ViewPage </Input>
+</Inputs>
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
@@ -443,16 +431,11 @@ Parameters:
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/input.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_label_above_themes.html</Dependency>
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/view.html</Dependency>
-<Dependency type="File">/factory/pages/paging/data_paging_links.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_themes.html</Dependency>
 <Dependency type="Model">providers/GetCuentas/GetCuentasProvider</Dependency>
 <Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
 <Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
 <Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
-<Dependency type="File">/factory/pages/multichannel/paging/split_pager_default_top_base.html</Dependency>
-<Dependency type="File">/factory/pages/multichannel/paging/split_pager_drop_down_bottom_base.html</Dependency>
-<Dependency type="File">/factory/pages/split_pager_default.css</Dependency>
-<Dependency type="File">/factory/pages/paging/data_paging_links_blue.css</Dependency>
 </Dependencies>
 <ExternalProperties><ExternalProperty id="PortletModel">true</ExternalProperty>
 <ExternalProperty id="PortletName">CreateTransaccionPortlet</ExternalProperty>
@@ -465,6 +448,6 @@ Parameters:
 <ExternalProperty id="PortletModeHelp">false</ExternalProperty>
 <ExternalProperty id="DojoEnabled">true</ExternalProperty>
 <ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
-<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.FilteringSelect,dijit.form.TextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.FilteringSelect,dijit.form.TextBox,dijit.form.NumberTextBox</ExternalProperty>
 </ExternalProperties>
 </Model>
