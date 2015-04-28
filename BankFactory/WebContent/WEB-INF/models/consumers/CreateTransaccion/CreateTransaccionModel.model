@@ -61,7 +61,7 @@ You can also profile other builder inputs according to device type, and you can 
 <Input><Name>operation1.numero_cuenta_destino</Name>
 </Input>
 <Input><Name>operation1.id_tipo_transaccion</Name>
-<Value></Value>
+<Value />
 </Input>
 <Input><Name>operation1.monto_transferido</Name>
 </Input>
@@ -422,6 +422,16 @@ Parameters:
 <Input name="DefaultName">CreateTransaccionConsumerView_ViewPage </Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc27"><BuilderDefID>com.bowstreet.builders.webapp.StyleSheetBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageLocationType">Implicit</Input>
+<Input name="SourceType">Import</Input>
+<Input name="Name">estilos</Input>
+<Input name="PageName">AllPages</Input>
+<Input name="ExternalLocation">/factory/style.css</Input>
+</Inputs>
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
@@ -436,6 +446,7 @@ Parameters:
 <Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
 <Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
 <Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
+<Dependency type="File">/factory/style.css</Dependency>
 </Dependencies>
 <ExternalProperties><ExternalProperty id="PortletModel">true</ExternalProperty>
 <ExternalProperty id="PortletName">CreateTransaccionPortlet</ExternalProperty>

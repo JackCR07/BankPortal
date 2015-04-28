@@ -62,16 +62,16 @@ You can also profile other builder inputs according to device type, and you can 
 <Input><Name>operation1.id_tipo_cuenta</Name>
 </Input>
 <Input><Name>operation1.fecha_mayor_a</Name>
-<Value></Value>
+<Value />
 </Input>
 <Input><Name>operation1.fecha_menor_a</Name>
-<Value></Value>
+<Value />
 </Input>
 <Input><Name>operation1.saldo_mayor_a</Name>
-<Value></Value>
+<Value />
 </Input>
 <Input><Name>operation1.saldo_menor_a</Name>
-<Value></Value>
+<Value />
 </Input>
 </top>
 </Inputs>
@@ -150,7 +150,44 @@ Parameters:
 <Input name="AllPageRadio">current</Input>
 <Input name="Pages"><data />
 </Input>
-<Input name="DisplayBehavior"><top><DispInfo><Name>id_cuenta</Name>
+<Input name="DisplayBehavior"><top><DispInfo><Name>id_cliente</Name>
+<Label>[Id Cliente]</Label>
+<Hide>HideAlways</Hide>
+<DataType>[String]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>id_tipo_cuenta</Name>
+<Label>Tipo de Cuenta</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_Select</DataType>
+<Sort>[Off]</Sort>
+<LookupTable>tipoCuentas</LookupTable>
+</DispInfo>
+<DispInfo><Name>fecha_mayor_a</Name>
+<Label>Fecha Desde</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_Date</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>fecha_menor_a</Name>
+<Label>Fecha Hasta  </Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_Date</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>saldo_mayor_a</Name>
+<Label>Saldo Inferior</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_FloatingPoint</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>saldo_menor_a</Name>
+<Label>Saldo Superior</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_FloatingPoint</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>id_cuenta</Name>
 <Label>[Id Cuenta]</Label>
 <Hide>HideAlways</Hide>
 <DataType>[Integer]</DataType>
@@ -179,43 +216,6 @@ Parameters:
 <Label>Fecha de Creacion</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_String</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>id_cliente</Name>
-<Label>[Id Cliente]</Label>
-<Hide>HideAlways</Hide>
-<DataType>[String]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>id_tipo_cuenta</Name>
-<Label>Tipo de Cuenta</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_Select</DataType>
-<Sort>[Off]</Sort>
-<LookupTable>tipoCuentas</LookupTable>
-</DispInfo>
-<DispInfo><Name>fecha_mayor_a</Name>
-<Label>Fecha Desde</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_Date</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>fecha_menor_a</Name>
-<Label>Fecha Hasta</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_Date</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>saldo_mayor_a</Name>
-<Label>Saldo Inferior</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_FloatingPoint</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>saldo_menor_a</Name>
-<Label>Saldo Superior</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_FloatingPoint</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 </top>
@@ -630,6 +630,15 @@ Parameters:
 <Input name="DefaultName">Responsive Table Layout</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc42"><BuilderDefID>com.bowstreet.builders.webapp.StyleSheetBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageLocationType">Implicit</Input>
+<Input name="SourceType">Import</Input>
+<Input name="Name">Style</Input>
+<Input name="ExternalLocation">/factory/style.css</Input>
+</Inputs>
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
@@ -652,6 +661,7 @@ Parameters:
 <Dependency type="File">/factory/pages/split_pager_default.css</Dependency>
 <Dependency type="File">/factory/pages/paging/data_paging_links_blue.css</Dependency>
 <Dependency type="Class">com.bowstreet.builderutilities.NameSequencer</Dependency>
+<Dependency type="File">/factory/style.css</Dependency>
 </Dependencies>
 <ExternalProperties><ExternalProperty id="PortletModel">true</ExternalProperty>
 <ExternalProperty id="PortletName">GetCuentasService</ExternalProperty>
