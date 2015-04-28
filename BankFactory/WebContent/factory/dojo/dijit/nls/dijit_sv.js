@@ -1,0 +1,2 @@
+//>>built
+define("dijit/nls/dijit_sv",{"dijit/form/nls/ComboBox":{"previousMessage":"Tidigare val","_localized":{},"nextMessage":"Fler val"},"dijit/form/nls/validate":{"invalidMessage":"Angivet värde är inte giltigt.","rangeMessage":"Värdet ligger utanför intervallet.","_localized":{},"missingMessage":"Värdet krävs."}});

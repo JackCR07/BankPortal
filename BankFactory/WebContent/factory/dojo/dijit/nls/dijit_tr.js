@@ -1,0 +1,2 @@
+//>>built
+define("dijit/nls/dijit_tr",{"dijit/form/nls/ComboBox":{"previousMessage":"Önceki seçenekler","_localized":{},"nextMessage":"Diğer seçenekler"},"dijit/form/nls/validate":{"invalidMessage":"Girilen değer geçersiz.","rangeMessage":"Bu değer aralık dışında.","_localized":{},"missingMessage":"Bu değer gerekli."}});

@@ -1,0 +1,2 @@
+//>>built
+define("dijit/nls/dijit_he-il",{"dijit/form/nls/ComboBox":{"previousMessage":"האפשרויות הקודמות","_localized":{},"nextMessage":"אפשרויות נוספות"},"dijit/form/nls/validate":{"invalidMessage":"הערך שצוין אינו חוקי.","rangeMessage":"הערך מחוץ לטווח.","_localized":{},"missingMessage":"זהו ערך דרוש."}});

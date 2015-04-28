@@ -1,4 +1,4 @@
-input[type="text"]{ 
+/*input[type="text"]{ 
 	-webkit-border-radius: 5px; 
     -moz-border-radius: 5px; 
     border-radius: 5px; 
@@ -6,6 +6,16 @@ input[type="text"]{
 	text-align: center;
     height:25px; 
     width: 275px;
+}*/
+
+.consumerLabels{
+	display:inline-block;
+	width:15%;
+}
+
+.consumerInputs{
+	height:20px;
+	border-radius:5px;
 }
 
 

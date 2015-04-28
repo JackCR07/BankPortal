@@ -170,7 +170,7 @@ Parameters:
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>fecha_menor_a</Name>
-<Label>Fecha Hasta  </Label>
+<Label>Fecha Hasta</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
@@ -444,8 +444,42 @@ Parameters:
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="Name">GetCuentasServiceView_InputPageStyles</Input>
 <Input name="PageName">GetCuentasServiceView_InputPage</Input>
-<Input name="Styles"><top><Attribute><Value>;</Value>
+<Input name="Styles"><top><Attribute><Value></Value>
 <Tag>id_tipo_cuenta</Tag>
+<Overwrite>PrependNew</Overwrite>
+<Class>consumerInputs</Class>
+</Attribute>
+<Attribute><Tag>fecha_mayor_a</Tag>
+<Overwrite>PrependNew</Overwrite>
+<Class>consumerInputs</Class>
+</Attribute>
+<Attribute><Tag>fecha_menor_a</Tag>
+<Overwrite>PrependNew</Overwrite>
+<Class>consumerInputs</Class>
+</Attribute>
+<Attribute><Tag>saldo_mayor_a</Tag>
+<Overwrite>PrependNew</Overwrite>
+<Class>consumerInputs</Class>
+</Attribute>
+<Attribute><Tag>saldo_menor_a</Tag>
+<Overwrite>PrependNew</Overwrite>
+<Class>consumerInputs</Class>
+</Attribute>
+<Attribute><Tag>fecha_mayor_alabel</Tag>
+<Overwrite>PrependNew</Overwrite>
+<Class>consumerLabels</Class>
+</Attribute>
+<Attribute><Tag>fecha_menor_alabel</Tag>
+<Overwrite>PrependNew</Overwrite>
+<Class>consumerLabels</Class>
+</Attribute>
+<Attribute><Tag>saldo_mayor_alabel</Tag>
+<Overwrite>PrependNew</Overwrite>
+<Class>consumerLabels</Class>
+</Attribute>
+<Attribute><Tag>saldo_menor_alabel</Tag>
+<Overwrite>PrependNew</Overwrite>
+<Class>consumerLabels</Class>
 </Attribute>
 </top>
 </Input>
@@ -465,7 +499,7 @@ Parameters:
 <Input name="StyleSheetFile">/factory/data_layout_templates/multiline_show_hide_list.css</Input>
 <Input name="LayoutFields"><top><FieldMapping><Name>fixed_left_top</Name>
 <Value>id_tipo_cuenta_LABEL</Value>
-<Style>wpfLabelText</Style>
+<Style></Style>
 </FieldMapping>
 <FieldMapping><Name>fixed_show</Name>
 <Value>Búsqueda Avanzada</Value>
@@ -575,54 +609,6 @@ Parameters:
 </FieldMapping>
 <FieldMapping><Name>column10</Name>
 </FieldMapping>
-<FieldMapping><Name>column1_header_styles</Name>
-<Style>text-align: center</Style>
-</FieldMapping>
-<FieldMapping><Name>column2_header_styles</Name>
-<Style>text-align: center</Style>
-</FieldMapping>
-<FieldMapping><Name>column3_header_styles</Name>
-<Style>text-align: center</Style>
-</FieldMapping>
-<FieldMapping><Name>column4_header_styles</Name>
-<Style>text-align: center</Style>
-</FieldMapping>
-<FieldMapping><Name>column5_header_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column6_header_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column7_header_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column8_header_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column9_header_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column10_header_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column1_styles</Name>
-<Style>text-align: center</Style>
-</FieldMapping>
-<FieldMapping><Name>column2_styles</Name>
-<Style>text-align: center</Style>
-</FieldMapping>
-<FieldMapping><Name>column3_styles</Name>
-<Style>text-align: center</Style>
-</FieldMapping>
-<FieldMapping><Name>column4_styles</Name>
-<Style>text-align: center</Style>
-</FieldMapping>
-<FieldMapping><Name>column5_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column6_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column7_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column8_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column9_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column10_styles</Name>
-</FieldMapping>
 </top>
 </Input>
 <Input name="LayoutContainers"><top />
@@ -639,6 +625,13 @@ Parameters:
 <Input name="ExternalLocation">/factory/style.css</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc43"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Inputs><Input name="Name">GetCuentasServiceView_InputPage</Input>
+<Input name="ReplaceExisting">true</Input>
+<Input name="URL">factory/GetCuentasServiceView_InputPage.html</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
@@ -650,6 +643,7 @@ Parameters:
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/view.html</Dependency>
 <Dependency type="File">/factory/pages/paging/data_paging_links.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_themes.html</Dependency>
+<Dependency type="File">factory/GetCuentasServiceView_InputPage.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.css</Dependency>
 <Dependency type="File">/factory/data_layout_templates/responsive_table_layout.html</Dependency>

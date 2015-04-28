@@ -1,0 +1,2 @@
+//>>built
+define("dijit/nls/dijit_ru",{"dijit/form/nls/ComboBox":{"previousMessage":"Предыдущие варианты","_localized":{},"nextMessage":"Следующие варианты"},"dijit/form/nls/validate":{"invalidMessage":"Указано недопустимое значение.","rangeMessage":"Это значение вне диапазона.","_localized":{},"missingMessage":"Это обязательное значение."}});

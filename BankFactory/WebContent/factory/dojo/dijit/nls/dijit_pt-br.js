@@ -1,0 +1,2 @@
+//>>built
+define("dijit/nls/dijit_pt-br",{"dijit/form/nls/ComboBox":{"previousMessage":"Opções anteriores","_localized":{},"nextMessage":"Mais opções"},"dijit/form/nls/validate":{"invalidMessage":"O valor inserido não é válido.","rangeMessage":"Este valor está fora do intervalo. ","_localized":{},"missingMessage":"Este valor é necessário."}});

@@ -2,13 +2,13 @@
 <!-- AUTOMATICALLY GENERATED DEPLOYMENT DESCRIPTOR - DO NOT EDIT -->
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" id="com.bowstreet.portlet.WebAppRunner2_BankFactory">
    <portlet>
-      <description xml:lang="en">Web Experience Factory Placeholder - No portlets defined in project - BankFactory</description>
-      <portlet-name>Web Experience Factory Placeholder</portlet-name>
-      <display-name xml:lang="en">Web Experience Factory Placeholder - No portlets defined in project - BankFactory</display-name>
+      <description xml:lang="en" />
+      <portlet-name>GetTransacciones</portlet-name>
+      <display-name xml:lang="en">GetTransaccionesPortlet</display-name>
       <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
       <init-param>
          <name>model</name>
-         <value>none</value>
+         <value>consumers/GetTransaccion/GetTransaccionModel</value>
       </init-param>
       <expiration-cache>0</expiration-cache>
       <supports>
@@ -16,13 +16,107 @@
          <portlet-mode>view</portlet-mode>
       </supports>
       <supported-locale>en</supported-locale>
-      <resource-bundle />
+      <resource-bundle>nls.consumers.gettransaccion.gettransaccionmodel</resource-bundle>
       <portlet-info>
-         <title>Web Experience Factory Placeholder - No portlets defined in project - BankFactory</title>
-         <short-title>Web Experience Factory Placeholder - No portlets defined in project - BankFactory</short-title>
-         <keywords>Web Experience Factory Placeholder - No portlets defined in project - BankFactory</keywords>
+         <title>GetTransaccionesPortlet</title>
+         <short-title>GetTransaccionesPortlet</short-title>
+         <keywords>GetTransaccionesPortlet</keywords>
       </portlet-info>
-      <portlet-preferences />
+      <portlet-preferences>
+         <preference>
+            <name>capability.1.id</name>
+            <value>dojo</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capability.1.minValue</name>
+            <value>1.4.3</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capabilities.selfManaged</name>
+            <value>false</value>
+            <read-only>true</read-only>
+         </preference>
+      </portlet-preferences>
+   </portlet>
+   <portlet>
+      <description xml:lang="en" />
+      <portlet-name>GetCuentasService</portlet-name>
+      <display-name xml:lang="en">Get Cuentas</display-name>
+      <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
+      <init-param>
+         <name>model</name>
+         <value>consumers/GetCuentas/GetCuentasConsumer</value>
+      </init-param>
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+      <supported-locale>en</supported-locale>
+      <resource-bundle>nls.consumers.getcuentas.getcuentasconsumer</resource-bundle>
+      <portlet-info>
+         <title>Get Cuentas</title>
+         <short-title>Get Cuentas</short-title>
+         <keywords>Get Cuentas</keywords>
+      </portlet-info>
+      <portlet-preferences>
+         <preference>
+            <name>capability.1.id</name>
+            <value>dojo</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capability.1.minValue</name>
+            <value>1.4.3</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capabilities.selfManaged</name>
+            <value>false</value>
+            <read-only>true</read-only>
+         </preference>
+      </portlet-preferences>
+   </portlet>
+   <portlet>
+      <description xml:lang="en" />
+      <portlet-name>CreateTransaccionPortlet</portlet-name>
+      <display-name xml:lang="en">Realizar Transaccion</display-name>
+      <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
+      <init-param>
+         <name>model</name>
+         <value>consumers/CreateTransaccion/CreateTransaccionModel</value>
+      </init-param>
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+      <supported-locale>en</supported-locale>
+      <resource-bundle>nls.consumers.createtransaccion.createtransaccionmodel</resource-bundle>
+      <portlet-info>
+         <title>Realizar Transaccion</title>
+         <short-title>Realizar Transaccion</short-title>
+         <keywords>Realizar Transaccion</keywords>
+      </portlet-info>
+      <portlet-preferences>
+         <preference>
+            <name>capability.1.id</name>
+            <value>dojo</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capability.1.minValue</name>
+            <value>1.4.3</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capabilities.selfManaged</name>
+            <value>false</value>
+            <read-only>true</read-only>
+         </preference>
+      </portlet-preferences>
    </portlet>
    <custom-portlet-mode>
       <portlet-mode>config</portlet-mode>

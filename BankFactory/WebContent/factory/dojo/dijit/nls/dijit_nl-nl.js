@@ -1,0 +1,2 @@
+//>>built
+define("dijit/nls/dijit_nl-nl",{"dijit/form/nls/ComboBox":{"previousMessage":"Eerdere opties","_localized":{},"nextMessage":"Meer opties"},"dijit/form/nls/validate":{"invalidMessage":"De opgegeven waarde is ongeldig.","rangeMessage":"Deze waarde is niet toegestaan.","_localized":{},"missingMessage":"Deze waarde is verplicht."}});

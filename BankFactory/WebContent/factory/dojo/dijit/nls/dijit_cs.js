@@ -1,0 +1,2 @@
+//>>built
+define("dijit/nls/dijit_cs",{"dijit/form/nls/ComboBox":{"previousMessage":"Předchozí volby","_localized":{},"nextMessage":"Další volby"},"dijit/form/nls/validate":{"invalidMessage":"Zadaná hodnota není platná.","rangeMessage":"Tato hodnota je mimo rozsah.","_localized":{},"missingMessage":"Tato hodnota je vyžadována."}});

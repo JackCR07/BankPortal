@@ -1,0 +1,2 @@
+//>>built
+define("dijit/nls/dijit_ja-jp",{"dijit/form/nls/ComboBox":{"previousMessage":"以前の選択項目","_localized":{},"nextMessage":"追加の選択項目"},"dijit/form/nls/validate":{"invalidMessage":"入力した値は無効です。","rangeMessage":"この値は範囲外です。","_localized":{},"missingMessage":"この値は必須です。"}});
