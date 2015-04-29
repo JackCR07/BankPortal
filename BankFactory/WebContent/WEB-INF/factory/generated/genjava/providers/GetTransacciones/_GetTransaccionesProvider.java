@@ -9,7 +9,7 @@
  *
  * Description:  Generated methods class for IBM Web Experience Factory application.
  *
- * This code was automatically generated at 02:25:43 PM on Apr 15, 2015
+ * This code was automatically generated at 04:12:08 PM on Apr 29, 2015
  * by the IBM Web Experience Factory -- do not edit manually.
  * Generated using the following Profiles - Not Profiled.
  *
@@ -67,9 +67,9 @@ public Object newInstance()
 
 /*begin*/
 /**
- * Generated Method [GetTransaccionesWSDLOnLoadHandler]
+ * Generated Method [GetTransaccionesWDSLOnLoadHandler]
  */
-public void GetTransaccionesWSDLOnLoadHandler(WebAppAccess webAppAccess)
+public void GetTransaccionesWDSLOnLoadHandler(WebAppAccess webAppAccess)
 {
   // This method is an OnModelLoad event handler, and it's how we make sure 
   // that every user (every session thread) gets their own unique 
@@ -79,8 +79,8 @@ public void GetTransaccionesWSDLOnLoadHandler(WebAppAccess webAppAccess)
   // that it would have to be stateless since there would be one instance 
   // shared by all users of that profile. 
   com.bowstreet.builders.webapp.methods.ServiceCallMethods helper = new com.bowstreet.builders.webapp.methods.ServiceCallMethods();
-  helper.init( webAppAccess, "GetTransaccionesWSDL_data", "GetTransaccionesWSDL_reply", "GetTransaccionesWSDL_replyHeaders");
-  com.bowstreet.webapp.Variable ljo = webAppAccess.getVariables().getVariable("GetTransaccionesWSDL");
+  helper.init( webAppAccess, "GetTransaccionesWDSL_data", "GetTransaccionesWDSL_reply", "GetTransaccionesWDSL_replyHeaders");
+  com.bowstreet.webapp.Variable ljo = webAppAccess.getVariables().getVariable("GetTransaccionesWDSL");
   ljo.setValue(helper);
 }
 
@@ -146,7 +146,7 @@ public Object _IRResolver_7(WebAppAccess webAppAccess)
  */
 public Object _IRResolver_8(WebAppAccess webAppAccess)
 {
-    return webAppAccess.getVariables().getObject("GetTransaccionesWSDL_arg1_operation1Parameters");
+    return webAppAccess.getVariables().getObject("GetTransaccionesWDSL_arg1_operation1Parameters");
 }
 
 /**
@@ -172,7 +172,7 @@ public void GetTransaccionesOperationInitInputs(WebAppAccess webAppAccess)
 {
     IXml data = webAppAccess.getVariables().getXml("GetTransaccionesOperationInputs");
     IXml inputs = webAppAccess.getVariables().getXml("GetTransaccionesOperationTargetInputStructure");
-    webAppAccess.getVariables().setXml("GetTransaccionesWSDL_arg1_operation1Parameters", data);
+    webAppAccess.getVariables().setXml("GetTransaccionesWDSL_arg1_operation1Parameters", data);
     if (data!=null) {
         	XmlUtil.copyElementContents(data,inputs);
     }
@@ -185,8 +185,8 @@ public void GetTransaccionesOperationInitInputs(WebAppAccess webAppAccess)
 public void GetTransaccionesOperationExecute(WebAppAccess webAppAccess)
 {
     GetTransaccionesOperationInitInputs(webAppAccess);
-    webAppAccess.callMethod("GetTransaccionesWSDL.invoke");
-    IXml results =  webAppAccess.getVariables().getXml("GetTransaccionesWSDL_reply");
+    webAppAccess.callMethod("GetTransaccionesWDSL.invoke");
+    IXml results =  webAppAccess.getVariables().getXml("GetTransaccionesWDSL_reply");
     GetTransaccionesOperationSetResults(webAppAccess, results);
 }
 

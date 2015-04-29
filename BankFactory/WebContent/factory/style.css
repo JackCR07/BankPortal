@@ -149,6 +149,17 @@ h2.titulo{
 	width:102px;
 }
 
+.subtitulosAltDos{
+	font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	font-style: normal;
+	color: #D4D4D4;
+	display:inline-block;
+	width:100px;
+	  margin-left: 10px;
+}
+
 .subtitulos{
 	font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
 	font-size: 13px;

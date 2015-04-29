@@ -9,7 +9,7 @@
  *
  * Description:  Generated methods class for IBM Web Experience Factory application.
  *
- * This code was automatically generated at 12:22:14 PM on Apr 15, 2015
+ * This code was automatically generated at 04:08:57 PM on Apr 29, 2015
  * by the IBM Web Experience Factory -- do not edit manually.
  * Generated using the following Profiles - Not Profiled.
  *
@@ -166,16 +166,52 @@ public Object _IRResolver_10(WebAppAccess webAppAccess)
 }
 
 /**
+ * Generated Method [MensajeTransferencia]
+ */
+public String MensajeTransferencia(WebAppAccess webAppAccess, int res)
+{ 
+    if(res==0) 
+    return "La transferencia se realiz\u00F3 satisfactoriamente"; 
+    else if(res==-2) 
+    return "La cuenta destino no existe, intentelo nuevamente"; 
+    else 
+    return "La cuenta no tiene fondos suficientes"; 
+/* Simple Code Samples - See help for further info 
+Get a string variable value, 
+String value = webAppAccess.getVariables().getString("MyVariable"); 
+ 
+Set a string variable value, 
+webAppAccess.getVariables().setString("MyVariable", "Value"); 
+ 
+Call a method, 
+webAppAccess.callMethod("MethodName", arg1, arg2); 
+ 
+Execute service calls, 
+webAppAccess.callMethod("ServiceCallName.invoke"); 
+ 
+Process page inputs, 
+webAppAccess.getRequestInputs().getInputValue("InputName"); 
+ 
+Display a page, 
+webAppAccess.processPage("PageName"); 
+*/ 
+}
+
+/**
  * Generated Method [CreateTransaccionOperationInitInputs]
  */
 public void CreateTransaccionOperationInitInputs(WebAppAccess webAppAccess)
 {
+    IXml inputs = webAppAccess.getVariables().getXml("CreateTransaccionOperationTargetInputStructure").cloneElement();
     IXml data = webAppAccess.getVariables().getXml("CreateTransaccionOperationInputs");
-    IXml inputs = webAppAccess.getVariables().getXml("CreateTransaccionOperationTargetInputStructure");
-    webAppAccess.getVariables().setXml("CreateTransaccionCall_arg1_operation1Parameters", data);
-    if (data!=null) {
-        	XmlUtil.copyElementContents(data,inputs);
+    if (data == null) {
+        data = XmlUtil.create("operation1");
     }
+    inputs.setText("id_cuenta_origen", DataConverter.toString(data.getText("id_cuenta_origen")));
+    inputs.setText("numero_cuenta_destino", DataConverter.toString(data.getText("numero_cuenta_destino")));
+    inputs.setText("id_tipo_transaccion", "1");
+    inputs.setText("monto_transferido", DataConverter.toString(data.getText("monto_transferido")));
+    webAppAccess.getVariables().setXml("CreateTransaccionCall_arg1_operation1Parameters", inputs);
 }
 
 
@@ -196,7 +232,14 @@ public void CreateTransaccionOperationExecute(WebAppAccess webAppAccess)
  */
 public void CreateTransaccionOperationSetResults(WebAppAccess webAppAccess, IXml operationResults)
 {
-    IXml results = operationResults;
+    IXml results = XmlUtil.create("operation1Response");
+    if (operationResults == null) {
+        operationResults = XmlUtil.create("data");
+    }
+    XmlUtil.copyAttributes(operationResults,results,false);
+    IXml data = operationResults;
+    IXml tempData = null;
+    results.setText("resultado", DataConverter.toString(webAppAccess.callMethod("MensajeTransferencia", new Object[] { DataConverter.toInteger(data.getText("resultado")) })));
     webAppAccess.getVariables().setXml("CreateTransaccionOperationResults", results);
 }
 

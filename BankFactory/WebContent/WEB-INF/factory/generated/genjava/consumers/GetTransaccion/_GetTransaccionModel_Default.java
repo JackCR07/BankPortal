@@ -9,7 +9,7 @@
  *
  * Description:  Generated methods class for IBM Web Experience Factory application.
  *
- * This code was automatically generated at 03:44:07 PM on Apr 15, 2015
+ * This code was automatically generated at 04:12:10 PM on Apr 29, 2015
  * by the IBM Web Experience Factory -- do not edit manually.
  * Generated using the following Profiles - 
  {
@@ -163,33 +163,6 @@ public com.bowstreet.builders.webapp.methods.PagingLinks GetTransaccionesView_Pa
 }
 
 /**
- * Generated Method [ObtenerUsuario]
- */
-public String ObtenerUsuario(WebAppAccess webAppAccess)
-{ 
-    return webAppAccess.getUserInfo().getUserID(); 
-/* Simple Code Samples - See help for further info 
-Get a string variable value, 
-String value = webAppAccess.getVariables().getString("MyVariable"); 
- 
-Set a string variable value, 
-webAppAccess.getVariables().setString("MyVariable", "Value"); 
- 
-Call a method, 
-webAppAccess.callMethod("MethodName", arg1, arg2); 
- 
-Execute service calls, 
-webAppAccess.callMethod("ServiceCallName.invoke"); 
- 
-Process page inputs, 
-webAppAccess.getRequestInputs().getInputValue("InputName"); 
- 
-Display a page, 
-webAppAccess.processPage("PageName"); 
-*/ 
-}
-
-/**
  * Generated Method [ObtenerCuentasGetCuentasSO]
  */
 public IXml ObtenerCuentasGetCuentasSO(WebAppAccess webAppAccess)
@@ -232,14 +205,6 @@ public Object ObtenerCuentas_createHelper(WebAppAccess webAppAccess)
     com.bowstreet.builders.webapp.ServiceConsumer2DataHelper helper = new com.bowstreet.builders.webapp.ServiceConsumer2DataHelper();
     helper.setName("ObtenerCuentas");
     return helper;
-}
-
-/**
- * Generated Method [_IRResolver_1]
- */
-public Object _IRResolver_1(WebAppAccess webAppAccess)
-{
-    return webAppAccess.callMethod("ObtenerUsuario");
 }
 
 /**
@@ -817,6 +782,36 @@ public IXml TipoTransaccionGetLookupTable(WebAppAccess webAppAccess)
 
 
 /**
+ * Generated Method [SetData]
+ */
+public String SetData(WebAppAccess webAppAccess, String Dato)
+{ 
+    if(Dato=="") 
+    return "-1"; 
+    else 
+    return Dato; 
+/* Simple Code Samples - See help for further info 
+Get a string variable value, 
+String value = webAppAccess.getVariables().getString("MyVariable"); 
+ 
+Set a string variable value, 
+webAppAccess.getVariables().setString("MyVariable", "Value"); 
+ 
+Call a method, 
+webAppAccess.callMethod("MethodName", arg1, arg2); 
+ 
+Execute service calls, 
+webAppAccess.callMethod("ServiceCallName.invoke"); 
+ 
+Process page inputs, 
+webAppAccess.getRequestInputs().getInputValue("InputName"); 
+ 
+Display a page, 
+webAppAccess.processPage("PageName"); 
+*/ 
+}
+
+/**
  * Generated Method [GetTransaccionesView_InputPage_SaveData]
  */
 public void GetTransaccionesView_InputPage_SaveData(WebAppAccess webAppAccess)
@@ -836,9 +831,17 @@ public void GetTransaccionesView_InputPage_SaveData(WebAppAccess webAppAccess)
         }
         
             str = webAppAccess.getRequestInputs().getInputValue("id_cuenta");
+            formatter = (IInputFieldFormatter)variables.getObject("StandardFormatter");
+            formatter.setWebAppAccess(webAppAccess);
+            if (!formatter.validate(str, "Required String"))
+              errors.addMessage("id_cuenta","Campo Requerido");
             GetTransaccionesGetTransaccionesOperationInputs.setText("id_cuenta", str);
         
             str = webAppAccess.getRequestInputs().getInputValue("id_tipo_transaccion");
+            formatter = (IInputFieldFormatter)variables.getObject("StandardFormatter");
+            formatter.setWebAppAccess(webAppAccess);
+            if (!formatter.validate(str, "Required String"))
+              errors.addMessage("id_tipo_transaccion","Campo Requerido");
             GetTransaccionesGetTransaccionesOperationInputs.setText("id_tipo_transaccion", str);
         
             str = webAppAccess.getRequestInputs().getInputValue("fecha_mov_mayor_a");
@@ -878,14 +881,14 @@ public com.bowstreet.builderutilities.PageAutomationMessages _init_GetTransaccio
 {
     PageAutomationMessages result = new PageAutomationMessages();
 
-    result.setReadableName("id_cuenta", "Id Cuenta");
-    result.setReadableName("id_tipo_transaccion", "Id Tipo Transaccion");
-    result.setReadableName("fecha_mov_mayor_a", "Fecha Mov Mayor A");
-    result.setReadableName("fecha_mov_menor_a", "Fecha Mov Menor A");
-    result.setReadableName("mon_trans_mayor_a", "Mon Trans Mayor A");
-    result.setReadableName("mon_trans_menor_a", "Mon Trans Menor A");
-    result.setReadableName("n_trans_mayor_a", "N Trans Mayor A");
-    result.setReadableName("n_trans_menor_a", "N Trans Menor A");
+    result.setReadableName("id_cuenta", "Cuenta");
+    result.setReadableName("id_tipo_transaccion", "Tipo de Transaccion");
+    result.setReadableName("fecha_mov_mayor_a", "Fecha Movimiento Desde");
+    result.setReadableName("fecha_mov_menor_a", "Fecha Movimiento Hasta");
+    result.setReadableName("mon_trans_mayor_a", "Monto Transferencia Desde");
+    result.setReadableName("mon_trans_menor_a", "Monto Transferencia Hasta");
+    result.setReadableName("n_trans_mayor_a", "Numero Transferencia Desde");
+    result.setReadableName("n_trans_menor_a", "Numero Transferencia Hasta");
 
     return result;
 }

@@ -9,7 +9,7 @@
  *
  * Description:  Generated methods class for IBM Web Experience Factory application.
  *
- * This code was automatically generated at 03:04:52 PM on Apr 15, 2015
+ * This code was automatically generated at 04:09:00 PM on Apr 29, 2015
  * by the IBM Web Experience Factory -- do not edit manually.
  * Generated using the following Profiles - 
  {
@@ -21,9 +21,6 @@ package genjava.consumers.CreateTransaccion;
 
 
 /* begin method imports */
-import com.bowstreet.builders.webapp.methods.*;
-import com.bowstreet.builders.webapp.methods.DataRetriever;
-import com.bowstreet.builders.webapp.methods.PagingAssistant;
 import com.bowstreet.builders.webapp.methods.WebAppAccessConsumer;
 import com.bowstreet.builders.webapp.pageautomation.StandardFormatter;
 import com.bowstreet.builders.webapp.ServiceConsumer2DataHelper;
@@ -119,46 +116,6 @@ public Object CreateTransaccionConsumerService_createHelper(WebAppAccess webAppA
 }
 
 /**
- * Generated Method [CreateTransaccionConsumerView_Paging_createHelper]
- */
-public com.bowstreet.builders.webapp.methods.PagingAssistant CreateTransaccionConsumerView_Paging_createHelper(WebAppAccess webAppAccess)
-{
-    com.bowstreet.builders.webapp.methods.PagingAssistant asst;
-    asst = new com.bowstreet.builders.webapp.methods.PagingAssistant();
-    asst.preserveLocation(false);
-    asst.setName("CreateTransaccionConsumerView_Paging");
-    asst.setTopLevelTagName("operation1Response");
-    asst.reset(webAppAccess);
-    int rowsPerPage;
-    try { rowsPerPage = DataConverter.toInteger("5").intValue(); }
-    catch (Exception badValue) { rowsPerPage = 1; }
-    asst.setRowsPerPage(rowsPerPage);
-    return asst;
-}
-
-/**
- * Generated Method [CreateTransaccionConsumerView_Paging_createRetriever]
- */
-public DataRetriever CreateTransaccionConsumerView_Paging_createRetriever(WebAppAccess webAppAccess)
-{
-    DataRetriever dr = (DataRetriever)PagingAssistant.findDataRetriever(webAppAccess, webAppAccess.getVariables().getObject("CreateTransaccionConsumerServiceCreateTransaccionOperationResults"), true, true);
-
-    return dr;
-}
-
-/**
- * Generated Method [CreateTransaccionConsumerView_Paging_CreateHelper]
- */
-public com.bowstreet.builders.webapp.methods.PagingLinks CreateTransaccionConsumerView_Paging_CreateHelper(WebAppAccess webAppAccess)
-{
-    PagingAssistant asst;
-    asst = (PagingAssistant)webAppAccess.getVariables().getObject("CreateTransaccionConsumerView_Paging");
-    PagingLinks lnks = new PagingLinks(asst);
-    lnks.setMaxLinks(DataConverter.toInteger("5").intValue());
-    return lnks;
-}
-
-/**
  * Generated Method [ObtenerCuentasGetCuentasSO]
  */
 public IXml ObtenerCuentasGetCuentasSO(WebAppAccess webAppAccess)
@@ -201,14 +158,6 @@ public Object ObtenerCuentas_createHelper(WebAppAccess webAppAccess)
     com.bowstreet.builders.webapp.ServiceConsumer2DataHelper helper = new com.bowstreet.builders.webapp.ServiceConsumer2DataHelper();
     helper.setName("ObtenerCuentas");
     return helper;
-}
-
-/**
- * Generated Method [_IRResolver_1]
- */
-public Object _IRResolver_1(WebAppAccess webAppAccess)
-{
-    return webAppAccess.callMethod("ObtenerUsuario");
 }
 
 /**
@@ -786,33 +735,6 @@ public IXml TipoTransaccionesGetLookupTable(WebAppAccess webAppAccess)
 
 
 /**
- * Generated Method [ObtenerUsuario]
- */
-public String ObtenerUsuario(WebAppAccess webAppAccess)
-{ 
-    return webAppAccess.getUserInfo().getUserID(); 
-/* Simple Code Samples - See help for further info 
-Get a string variable value, 
-String value = webAppAccess.getVariables().getString("MyVariable"); 
- 
-Set a string variable value, 
-webAppAccess.getVariables().setString("MyVariable", "Value"); 
- 
-Call a method, 
-webAppAccess.callMethod("MethodName", arg1, arg2); 
- 
-Execute service calls, 
-webAppAccess.callMethod("ServiceCallName.invoke"); 
- 
-Process page inputs, 
-webAppAccess.getRequestInputs().getInputValue("InputName"); 
- 
-Display a page, 
-webAppAccess.processPage("PageName"); 
-*/ 
-}
-
-/**
  * Generated Method [CreateTransaccionConsumerView_InputPage_SaveData]
  */
 public void CreateTransaccionConsumerView_InputPage_SaveData(WebAppAccess webAppAccess)
@@ -832,15 +754,24 @@ public void CreateTransaccionConsumerView_InputPage_SaveData(WebAppAccess webApp
         }
         
             str = webAppAccess.getRequestInputs().getInputValue("id_cuenta_origen");
+            formatter = (IInputFieldFormatter)variables.getObject("StandardFormatter");
+            formatter.setWebAppAccess(webAppAccess);
+            if (!formatter.validate(str, "Required String"))
+              errors.addMessage("id_cuenta_origen",DataConverter.toString(webAppAccess.getVariables().getObject("Mensaje_Validacion")));
             CreateTransaccionConsumerServiceCreateTransaccionOperationInputs.setText("id_cuenta_origen", str);
         
             str = webAppAccess.getRequestInputs().getInputValue("numero_cuenta_destino");
+            formatter = (IInputFieldFormatter)variables.getObject("StandardFormatter");
+            formatter.setWebAppAccess(webAppAccess);
+            if (!formatter.validate(str, "Required String"))
+              errors.addMessage("numero_cuenta_destino",DataConverter.toString(webAppAccess.getVariables().getObject("Mensaje_Validacion")));
             CreateTransaccionConsumerServiceCreateTransaccionOperationInputs.setText("numero_cuenta_destino", str);
         
-            str = webAppAccess.getRequestInputs().getInputValue("id_tipo_transaccion");
-            CreateTransaccionConsumerServiceCreateTransaccionOperationInputs.setText("id_tipo_transaccion", str);
-        
             str = webAppAccess.getRequestInputs().getInputValue("monto_transferido");
+            formatter = (IInputFieldFormatter)variables.getObject("StandardFormatter");
+            formatter.setWebAppAccess(webAppAccess);
+            if (!formatter.validate(str, "Required String"))
+              errors.addMessage("monto_transferido",DataConverter.toString(webAppAccess.getVariables().getObject("Mensaje_Validacion")));
             CreateTransaccionConsumerServiceCreateTransaccionOperationInputs.setText("monto_transferido", str);
     
         variables.getVariable("CreateTransaccionConsumerServiceCreateTransaccionOperationInputs").notifyValueChanged();
@@ -854,9 +785,9 @@ public com.bowstreet.builderutilities.PageAutomationMessages _init_CreateTransac
 {
     PageAutomationMessages result = new PageAutomationMessages();
 
-    result.setReadableName("id_cuenta_origen", "Id Cuenta Origen");
-    result.setReadableName("numero_cuenta_destino", "Numero Cuenta Destino");
-    result.setReadableName("id_tipo_transaccion", "Id Tipo Transaccion");
+    result.setReadableName("id_cuenta_origen", "Cuenta de Origen");
+    result.setReadableName("numero_cuenta_destino", "Numero de Cuenta Destino");
+    result.setReadableName("id_tipo_transaccion", "Tipo de Transaccion");
     result.setReadableName("monto_transferido", "Monto Transferido");
 
     return result;
@@ -995,59 +926,6 @@ public String getDefaultProgressIndicatorProgressIndicatorPageID(WebAppAccess we
     return id.toString();
 }
 
-
-/**
- * Generated Method [CreateTransaccionConsumerView_PagingGoToPage]
- */
-public void CreateTransaccionConsumerView_PagingGoToPage(WebAppAccess webAppAccess)
-{
-    String pageStr = webAppAccess.getRequestInputs().getInputValue("splitPagerExplicitPage");
-    int pg = StringUtil.safeParseInt(pageStr, 1) - 1;
-    PagingAssistant asst = (PagingAssistant)webAppAccess.getVariables().getObject("CreateTransaccionConsumerView_Paging");
-    asst.setCurrentPage(pg);
-}
-
-
-/**
- * Generated Method [CreateTransaccionConsumerView_PagingGoToSpecificPage]
- */
-public void CreateTransaccionConsumerView_PagingGoToSpecificPage(WebAppAccess webAppAccess)
-{
-    String pageStr = webAppAccess.getRequestInputs().getInputValue("splitPagerTopExplicitPage");
-    int pg = StringUtil.safeParseInt(pageStr, 1) - 1;
-    PagingAssistant asst = (PagingAssistant)webAppAccess.getVariables().getObject("CreateTransaccionConsumerView_Paging");
-    asst.setCurrentPage(pg);
-}
-
-
-/**
- * Generated Method [CreateTransaccionConsumerView_PagingSetRowsPerPage]
- */
-public void CreateTransaccionConsumerView_PagingSetRowsPerPage(WebAppAccess webAppAccess)
-{
-    String rppStr = webAppAccess.getRequestInputs().getInputValue("Arg1");
-    int rpp = StringUtil.safeParseInt(rppStr, 1);
-    PagingAssistant asst = (PagingAssistant)webAppAccess.getVariables().getObject("CreateTransaccionConsumerView_Paging");
-    asst.setRowsPerPage(rpp);
-}
-
-
-/**
- * Generated Method [_pageDispatcher]
- */
-public void _pageDispatcher(WebAppAccess webAppAccess)
-{
-    com.bowstreet.webapp.JSPSupport.dispatch(webAppAccess);
-}
-
-/**
- * Generated Method [CreateTransaccionConsumerView_PagingHandlePageLoad]
- */
-public void CreateTransaccionConsumerView_PagingHandlePageLoad(WebAppAccess webAppAccess)
-{
-    PagingAssistant asst = (PagingAssistant)webAppAccess.getVariables().getObject("CreateTransaccionConsumerView_Paging");
-    asst.setWebAppAccess(webAppAccess);
-    webAppAccess.getVariables().getObject("CreateTransaccionConsumerView_PagingData");}
 
 /**
  * Generated ActionList [main]
