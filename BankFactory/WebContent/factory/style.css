@@ -128,9 +128,11 @@ subtitulos{
 	font-weight: normal;
 	font-style: normal;
 	color: #D4D4D4;
+	display:inline-block;
+	width:87px;
 }
 
-/*Button
+/*Button*/
 
 .art-button
 {
@@ -264,4 +266,12 @@ input.art-button
 .art-button.hover, .art-button:hover {
    color: #FFFFFF !important;
 }
+
+
+a a:link{
+font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+text-decoration: none;
+color: #FF3029;
+}
+
 
