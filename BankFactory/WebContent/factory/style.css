@@ -130,6 +130,33 @@ subtitulos{
 	color: #D4D4D4;
 }
 
+/*Button
+
+.art-button
+{
+   border: 0;
+   border-collapse: separate;
+   -webkit-background-origin: border !important;
+   -moz-background-origin: border !important;
+   background-origin: border-box !important;
+   background: #FFFFFF;
+   background: linear-gradient(top, #FFFFFF 0, #D1D1D1 100%) no-repeat;
+   background: -webkit-linear-gradient(top, #FFFFFF 0, #D1D1D1 100%) no-repeat;
+   background: -moz-linear-gradient(top, #FFFFFF 0, #D1D1D1 100%) no-repeat;
+   background: -o-linear-gradient(top, #FFFFFF 0, #D1D1D1 100%) no-repeat;
+   background: -ms-linear-gradient(top, #FFFFFF 0, #D1D1D1 100%) no-repeat;
+   background: linear-gradient(top, #FFFFFF 0, #D1D1D1 100%) no-repeat;
+   -svg-background: linear-gradient(top, #FFFFFF 0, #D1D1D1 100%) no-repeat;
+   -webkit-border-radius:4px;
+   -moz-border-radius:4px;
+   border-radius:4px;
+   -webkit-box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.2);
+   -moz-box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.2);
+   box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.2);
+   padding:0 20px;
+   margin:0 auto;
+   height:31px;
+}
 
 a.art-button,
 a.art-button:link,
