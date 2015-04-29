@@ -315,23 +315,6 @@ Parameters:
 </Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="QuoteText">true</Input>
-<Input name="ReplaceContents">true</Input>
-<Input name="ReplaceTargetElement">false</Input>
-<Input name="Control">page_header_text</Input>
-<Input name="PageLocation"><SimplePageLocation><Page>AllPages</Page>
-<NameSearch>page_header_text</NameSearch>
-</SimplePageLocation>
-</Input>
-<Input name="LookupTable">None</Input>
-<Input name="HTMLAttributes"><HTMLAttributes />
-</Input>
-<Input name="Text">Cuentas</Input>
-</Inputs>
-</BuilderCall>
 <BuilderCall id="bc14"><BuilderDefID>com.bowstreet.builders.webapp.LookupTableBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
@@ -439,52 +422,6 @@ Parameters:
 <Input name="DefaultName">GetCuentasServiceView_InputPage </Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc36"><BuilderDefID>com.bowstreet.builders.webapp.Style</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="Name">GetCuentasServiceView_InputPageStyles</Input>
-<Input name="PageName">GetCuentasServiceView_InputPage</Input>
-<Input name="Styles"><top><Attribute><Value></Value>
-<Tag>id_tipo_cuenta</Tag>
-<Overwrite>PrependNew</Overwrite>
-<Class>consumerInputs</Class>
-</Attribute>
-<Attribute><Tag>fecha_mayor_a</Tag>
-<Overwrite>PrependNew</Overwrite>
-<Class>consumerInputs</Class>
-</Attribute>
-<Attribute><Tag>fecha_menor_a</Tag>
-<Overwrite>PrependNew</Overwrite>
-<Class>consumerInputs</Class>
-</Attribute>
-<Attribute><Tag>saldo_mayor_a</Tag>
-<Overwrite>PrependNew</Overwrite>
-<Class>consumerInputs</Class>
-</Attribute>
-<Attribute><Tag>saldo_menor_a</Tag>
-<Overwrite>PrependNew</Overwrite>
-<Class>consumerInputs</Class>
-</Attribute>
-<Attribute><Tag>fecha_mayor_alabel</Tag>
-<Overwrite>PrependNew</Overwrite>
-<Class>consumerLabels</Class>
-</Attribute>
-<Attribute><Tag>fecha_menor_alabel</Tag>
-<Overwrite>PrependNew</Overwrite>
-<Class>consumerLabels</Class>
-</Attribute>
-<Attribute><Tag>saldo_mayor_alabel</Tag>
-<Overwrite>PrependNew</Overwrite>
-<Class>consumerLabels</Class>
-</Attribute>
-<Attribute><Tag>saldo_menor_alabel</Tag>
-<Overwrite>PrependNew</Overwrite>
-<Class>consumerLabels</Class>
-</Attribute>
-</top>
-</Input>
-</Inputs>
-</BuilderCall>
 <BuilderCall id="bc38"><BuilderDefID>com.bowstreet.builders.webapp.DataLayoutBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
@@ -499,7 +436,7 @@ Parameters:
 <Input name="StyleSheetFile">/factory/data_layout_templates/multiline_show_hide_list.css</Input>
 <Input name="LayoutFields"><top><FieldMapping><Name>fixed_left_top</Name>
 <Value>id_tipo_cuenta_LABEL</Value>
-<Style></Style>
+<Style />
 </FieldMapping>
 <FieldMapping><Name>fixed_show</Name>
 <Value>Búsqueda Avanzada</Value>
@@ -616,21 +553,29 @@ Parameters:
 <Input name="DefaultName">Responsive Table Layout</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc42"><BuilderDefID>com.bowstreet.builders.webapp.StyleSheetBuilder</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="PageLocationType">Implicit</Input>
-<Input name="SourceType">Import</Input>
-<Input name="Name">Style</Input>
-<Input name="ExternalLocation">/factory/style.css</Input>
-</Inputs>
-</BuilderCall>
-<BuilderCall id="bc43"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<BuilderCall id="bc44"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
 <Inputs><Input name="Name">GetCuentasServiceView_InputPage</Input>
 <Input name="ReplaceExisting">true</Input>
 <Input name="URL">factory/GetCuentasServiceView_InputPage.html</Input>
 </Inputs>
 <Messages />
+</BuilderCall>
+<BuilderCall id="bc55"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Inputs><Input name="Name">GetCuentasServiceView_ViewPage</Input>
+<Input name="ReplaceExisting">true</Input>
+<Input name="URL">factory/GetCuentasServiceView_ViewPage.html</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc62"><BuilderDefID>com.bowstreet.builders.webapp.StyleSheetBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageLocationType">Implicit</Input>
+<Input name="SourceType">Import</Input>
+<Input name="Name">estilos</Input>
+<Input name="PageName">AllPages</Input>
+<Input name="ExternalLocation">/factory/style.css</Input>
+</Inputs>
 </BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
@@ -644,6 +589,7 @@ Parameters:
 <Dependency type="File">/factory/pages/paging/data_paging_links.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_themes.html</Dependency>
 <Dependency type="File">factory/GetCuentasServiceView_InputPage.html</Dependency>
+<Dependency type="File">factory/GetCuentasServiceView_ViewPage.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.css</Dependency>
 <Dependency type="File">/factory/data_layout_templates/responsive_table_layout.html</Dependency>
