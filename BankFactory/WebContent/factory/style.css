@@ -110,3 +110,60 @@ label{
 spam{
 	font: Arial,Helvetica,sans-serif;
 }
+
+
+/*Clases para la plantilla*/
+
+.titulo{
+	color: #FFF;
+	margin: 10px 0px 5px;
+	font-size: 26px;
+	font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+	text-transform: uppercase;
+}
+
+subtitulos{
+	font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	font-style: normal;
+	color: #D4D4D4;
+}
+
+
+a.art-button,
+a.art-button:link,
+a:link.art-button:link,
+body a.art-button:link,
+a.art-button:visited,
+body a.art-button:visited,
+input.art-button,
+button.art-button
+{
+   text-decoration: none;
+   font-size: 13px;
+   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-weight: normal;
+   font-style: normal;
+   position:relative;
+   display: inline-block;
+   vertical-align: middle;
+   white-space: nowrap;
+   text-align: center;
+   color: #000000;
+   margin: 0 !important;
+   overflow: visible;
+   cursor: pointer;
+   text-indent: 0;
+   line-height: 31px;
+   -webkit-box-sizing: content-box;
+   -moz-box-sizing: content-box;
+   box-sizing: content-box;
+}
+
+.art-button img
+{
+   margin: 0;
+   vertical-align: middle;
+}
+
