@@ -6,7 +6,7 @@ publish:
      [echo] Deployment action requested for configuration 'IBM_WebSphere_Application_Server_and_Portal_Server_8.5'.
 
 configDetails:
-     [echo] Deploy Time: 04/28/2015 04:49:26 PM
+     [echo] Deploy Time: 04/29/2015 03:43:25 PM
      [echo] Config Name: IBM_WebSphere_Application_Server_and_Portal_Server_8.5
      [echo] Project Location: C:\Users\jcervantes\git\BankPortal\BankFactory
      [echo] ServerPort: 10039

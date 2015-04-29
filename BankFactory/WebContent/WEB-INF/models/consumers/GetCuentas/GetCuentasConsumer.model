@@ -553,13 +553,6 @@ Parameters:
 <Input name="DefaultName">Responsive Table Layout</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc44"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
-<Inputs><Input name="Name">GetCuentasServiceView_InputPage</Input>
-<Input name="ReplaceExisting">true</Input>
-<Input name="URL">factory/GetCuentasServiceView_InputPage.html</Input>
-</Inputs>
-<Messages />
-</BuilderCall>
 <BuilderCall id="bc55"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
 <Inputs><Input name="Name">GetCuentasServiceView_ViewPage</Input>
 <Input name="ReplaceExisting">true</Input>
@@ -577,6 +570,13 @@ Parameters:
 <Input name="ExternalLocation">/factory/style.css</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc63"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Inputs><Input name="Name">GetCuentasServiceView_InputPage</Input>
+<Input name="ReplaceExisting">true</Input>
+<Input name="URL">factory/GetCuentasServiceView_InputPage.html</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
@@ -588,8 +588,8 @@ Parameters:
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/view.html</Dependency>
 <Dependency type="File">/factory/pages/paging/data_paging_links.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_themes.html</Dependency>
-<Dependency type="File">factory/GetCuentasServiceView_InputPage.html</Dependency>
 <Dependency type="File">factory/GetCuentasServiceView_ViewPage.html</Dependency>
+<Dependency type="File">factory/GetCuentasServiceView_InputPage.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.css</Dependency>
 <Dependency type="File">/factory/data_layout_templates/responsive_table_layout.html</Dependency>

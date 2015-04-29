@@ -1,5 +1,5 @@
 #Designer project properties for BankFactory
-#Tue Apr 28 16:55:53 CST 2015
+#Wed Apr 29 15:49:35 CST 2015
 bowstreet.designer.project.outputLocation=
 bowstreet.designer.project.targetfolder=WebContent
 build.deployment.war.builddir=C\:\\Users\\jcervantes\\Documents\\GBM\\Workspaces\\WEF\\BankFactoryNew
@@ -22,12 +22,12 @@ defaultNonServableContentFolder_SCHEMAS=WEB-INF/schemas
 bowstreet.rootDirectory=${bowstreet.designer.project.root}\\WebContent\\WEB-INF
 bowstreet.webapp.version=8.5.0 Release WEF8.5.0.1_20140818-1253
 defaultServableContentFolder_STYLE_SHEETS=style_sheets
-bowstreet.designer.serverHostName=172.16.11.225
 defaultServableContentFolder_CLIENT_JAVASCRIPT=client_javascript
+bowstreet.designer.serverHostName=172.16.11.225
 state.area=C\:\\Users\\jcervantes\\Documents\\GBM\\Workspaces\\WEF\\BankFactoryNew\\.metadata\\.plugins\\com.bowstreet.designer.webapp
 tools.location=C\:/IBM/Web Experience Factory/Designer/FeatureSets/Web-App_8.5.0/Deployment/antscripts
 link.factory=true
-deployment.version=2
-defaultNonServableContentFolder_LOOKUP_DEFINITIONS=WEB-INF/lookup_definitions
 bowstreet.designer.projectDomain=com.bowstreet.feature.webapp
+defaultNonServableContentFolder_LOOKUP_DEFINITIONS=WEB-INF/lookup_definitions
+deployment.version=2
 defaultServableContentFolder_HTML_TEMPLATES=html_templates

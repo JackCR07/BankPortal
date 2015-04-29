@@ -6,7 +6,7 @@ publish:
      [echo] Deployment action requested for configuration 'Liberty'.
 
 configDetails:
-     [echo] Deploy Time: 04/28/2015 04:44:15 PM
+     [echo] Deploy Time: 04/29/2015 02:49:58 PM
      [echo] Config Name: Liberty
      [echo] Project Location: C:\Users\jcervantes\git\BankPortal\BankFactory
      [echo] ServerPort: 9080

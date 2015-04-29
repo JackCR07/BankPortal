@@ -7,9 +7,26 @@
     height:25px; 
     width: 275px;
 }*/
-
+.vf_view_container .lotusPaging{
+	border:none;
+}
+.lotusui30 .lotusPaging, .lotusui30 .lotusPaging ul li, .lotusui30 .lotusPaging div, .lotusui30 .lotusPaging input
+{
+	color:#FF3029;
+}
 .centrado{
 	text-align:center;
+	background-color:transparent;
+	color:white;
+}
+.centradoHeader{
+	text-align:center;
+	background-color: transparent;
+     border: 0;
+	color: #FFF;
+	font-size: 18px;
+	font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+	text-transform: uppercase;
 }
 .main{
 	width: 70%;
@@ -70,7 +87,7 @@
 	transition-property: background-color, border;
 }
 */
-
+/*
 input[type="button"]{
   background: #b1b2b3;
   background-image: -webkit-linear-gradient(top, #b1b2b3, #050505);
@@ -100,7 +117,7 @@ input[type="button"]:hover {
   background-image: linear-gradient(to bottom, #6d7275, #303233);
   text-decoration: none;
 }
-
+*/
 
 
 label{
@@ -114,7 +131,7 @@ spam{
 
 /*Clases para la plantilla*/
 
-.titulo{
+h2.titulo{
 	color: #FFF;
 	margin: 10px 0px 5px;
 	font-size: 26px;
@@ -122,14 +139,24 @@ spam{
 	text-transform: uppercase;
 }
 
-subtitulos{
+.subtitulosAlt{
 	font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
 	font-size: 13px;
 	font-weight: normal;
 	font-style: normal;
 	color: #D4D4D4;
 	display:inline-block;
-	width:87px;
+	width:102px;
+}
+
+.subtitulos{
+	font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	font-style: normal;
+	color: #D4D4D4;
+	display:inline-block;
+	width:100px;
 }
 
 /*Button*/
@@ -160,12 +187,12 @@ subtitulos{
    height:31px;
 }
 
-a.art-button,
-a.art-button:link,
-a:link.art-button:link,
-body a.art-button:link,
-a.art-button:visited,
-body a.art-button:visited,
+span.art-button,
+span.art-button:link,
+span:link.art-button:link,
+body span.art-button:link,
+span.art-button:visited,
+body span.art-button:visited,
 input.art-button,
 button.art-button
 {
@@ -218,7 +245,7 @@ input, select, textarea
 
 input.art-button
 {
-   float: none !important;
+   float: right !important;
 }
 
 .art-button.active, .art-button.active:hover
@@ -267,8 +294,10 @@ input.art-button
    color: #FFFFFF !important;
 }
 
-
-a a:link{
+.wpfMultiLineShowHideList .wpfListShowHideText{
+	text-decoration:none;
+}
+.linkFire{
 font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
 text-decoration: none;
 color: #FF3029;
