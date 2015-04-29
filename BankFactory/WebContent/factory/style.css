@@ -167,3 +167,74 @@ button.art-button
    vertical-align: middle;
 }
 
+.firefox2 .art-button
+{
+   display: block;
+   float: left;
+}
+
+input, select, textarea
+{
+   vertical-align: middle;
+   font-size: 13px;
+   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-weight: normal;
+   font-style: normal;
+}
+
+.art-block select 
+{
+   width:96%;
+}
+
+input.art-button
+{
+   float: none !important;
+}
+
+.art-button.active, .art-button.active:hover
+{
+   background: #A6A6A6;
+   background: linear-gradient(top, #BABABA 0, #949494 100%) no-repeat;
+   background: -webkit-linear-gradient(top, #BABABA 0, #949494 100%) no-repeat;
+   background: -moz-linear-gradient(top, #BABABA 0, #949494 100%) no-repeat;
+   background: -o-linear-gradient(top, #BABABA 0, #949494 100%) no-repeat;
+   background: -ms-linear-gradient(top, #BABABA 0, #949494 100%) no-repeat;
+   background: linear-gradient(top, #BABABA 0, #949494 100%) no-repeat;
+   -svg-background: linear-gradient(top, #BABABA 0, #949494 100%) no-repeat;
+   -webkit-border-radius:4px;
+   -moz-border-radius:4px;
+   border-radius:4px;
+   -webkit-box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.2);
+   -moz-box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.2);
+   box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.2);
+   padding:0 20px;
+   margin:0 auto;
+}
+.art-button.active, .art-button.active:hover {
+   color: #404040 !important;
+}
+
+.art-button.hover, .art-button:hover
+{
+   background: #DB0700;
+   background: linear-gradient(top, #FF0800 0, #B80600 100%) no-repeat;
+   background: -webkit-linear-gradient(top, #FF0800 0, #B80600 100%) no-repeat;
+   background: -moz-linear-gradient(top, #FF0800 0, #B80600 100%) no-repeat;
+   background: -o-linear-gradient(top, #FF0800 0, #B80600 100%) no-repeat;
+   background: -ms-linear-gradient(top, #FF0800 0, #B80600 100%) no-repeat;
+   background: linear-gradient(top, #FF0800 0, #B80600 100%) no-repeat;
+   -svg-background: linear-gradient(top, #FF0800 0, #B80600 100%) no-repeat;
+   -webkit-border-radius:4px;
+   -moz-border-radius:4px;
+   border-radius:4px;
+   -webkit-box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.2);
+   -moz-box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.2);
+   box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.2);
+   padding:0 20px;
+   margin:0 auto;
+}
+.art-button.hover, .art-button:hover {
+   color: #FFFFFF !important;
+}
+
