@@ -16,6 +16,12 @@ input[type="text"]{
 	background-color:transparent;
 	color:white;
 }
+
+.labelFont{
+	color: #FFF;
+	font-size: 13px;
+	font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
 .centradoHeader{
 	text-align:center;
 	background-color: transparent;

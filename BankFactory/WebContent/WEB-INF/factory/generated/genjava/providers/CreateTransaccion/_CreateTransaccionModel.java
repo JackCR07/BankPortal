@@ -9,7 +9,7 @@
  *
  * Description:  Generated methods class for IBM Web Experience Factory application.
  *
- * This code was automatically generated at 04:08:57 PM on Apr 29, 2015
+ * This code was automatically generated at 10:48:56 PM on Apr 29, 2015
  * by the IBM Web Experience Factory -- do not edit manually.
  * Generated using the following Profiles - Not Profiled.
  *

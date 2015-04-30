@@ -1,4 +1,4 @@
-*-- TIME: [2015-04-20 08:48:25,017] --* 
+*-- TIME: [2015-04-29 22:21:36,017] --* 
 Category: bowstreet.system.server.logging.event.criterion.abnormal
 Priority: ERROR
 Thread:   Web Experience Factory (event logging)
@@ -10,7 +10,7 @@ Error removing existing Web Experience Factory model markers
 	at org.eclipse.core.internal.resources.Resource.deleteMarkers(Resource.java:844)
 	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.deleteAllMarkers(ResourceMarkers.java:44)
 	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.clearAllMarkers(ResourceMarkers.java:54)
-	at com.bowstreet.designer.model.ConfigurationProperties.realizePropertiesForProject(ConfigurationProperties.java:485)
+	at com.bowstreet.designer.model.ConfigurationProperties.realizePropertiesForProject(ConfigurationProperties.java:476)
 	at com.bowstreet.designer.model.ConfigurationProperties$Visitor.visit(ConfigurationProperties.java:1555)
 	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
 	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
@@ -26,14 +26,16 @@ Error removing existing Web Experience Factory model markers
 	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
 	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:395)
 	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1530)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:45)
+	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1712)
+	at org.eclipse.core.internal.refresh.RefreshJob.runInWorkspace(RefreshJob.java:167)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
 
 
 
 
-*-- TIME: [2015-04-20 08:48:25,017] --* 
+*-- TIME: [2015-04-29 22:21:36,017] --* 
 Category: bowstreet.system.server.logging.event.criterion.abnormal
 Priority: ERROR
 Thread:   Web Experience Factory (event logging)
@@ -45,7 +47,7 @@ Error removing existing Web Experience Factory model markers
 	at org.eclipse.core.internal.resources.Resource.deleteMarkers(Resource.java:844)
 	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.deleteAllMarkers(ResourceMarkers.java:44)
 	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.clearAllMarkers(ResourceMarkers.java:54)
-	at com.bowstreet.designer.model.ConfigurationProperties.realizePropertiesForProject(ConfigurationProperties.java:485)
+	at com.bowstreet.designer.model.ConfigurationProperties.realizePropertiesForProject(ConfigurationProperties.java:476)
 	at com.bowstreet.designer.model.ConfigurationProperties$Visitor.visit(ConfigurationProperties.java:1555)
 	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
 	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
@@ -61,7 +63,9 @@ Error removing existing Web Experience Factory model markers
 	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
 	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:395)
 	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1530)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:45)
+	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1712)
+	at org.eclipse.core.internal.refresh.RefreshJob.runInWorkspace(RefreshJob.java:167)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
 

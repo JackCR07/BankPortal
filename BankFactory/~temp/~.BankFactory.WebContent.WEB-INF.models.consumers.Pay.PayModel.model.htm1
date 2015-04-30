@@ -1,0 +1,90 @@
+<div id="wefBody" style="background-color: transparent;">
+	<SPAN id='<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "CreateTransaccionConsumerView_InputPageDojoWrapper_0") %>' data-wef-dojo-wrapper="true"><SPAN _sampledataaddedattr="_genElement"><SPAN _sampledataaddedattr="_sampleDataAddedNode"></SPAN></SPAN><INPUT type="hidden" id='<%= IDGenerator.getCurrentID(webAppAccess, "wpf_client_event_handler_3") %>' onchange="wpf_dojo_progress_indicator.hide({ppr:'wpf_ppr85201404141110',ids:this.ids,source:'<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>', overRegion:true})"><SPAN _sampledataaddedattr="_genElement"></SPAN><INPUT type="hidden" id='<%= IDGenerator.getCurrentID(webAppAccess, "wpf_client_event_handler_0") %>' onchange="wpf_dojo_progress_indicator.show({ppr:'wpf_ppr85201404141110',ids:this.ids,source:'<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>', overRegion:true})"><SPAN style="display:none" id='<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>' _sampledataaddedattr="_genElement"><DIV _sampledataaddedattr="_sampleDataAddedNode" style="border-style:dotted;border-width:thin;border-color:rgb(128,0,0);"><CONTENTS><HTML><SPAN id='<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "DefaultProgressIndicatorIndicatorHTMLDojoWrapper_0") %>' data-wef-dojo-wrapper="true">
+<DIV>
+ <STYLE type="text/css">
+ .wpf_progress_indicator_box {
+  width: auto;
+  box-shadow: 5px 5px 5px #ccc;
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  border-radius:8px;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  background-color:#fff;
+ }
+ </STYLE>
+ <IMG alt="" src="${WebContent}/factory/images/progressindicator/spinning_spokes.gif" _sampledataaddedattr="_sampleDataSavedAttrName" _sampledatasavedattrname="src" _sampledatasavedattrvalue='<%= com.bowstreet.builders.webapp.methods.ContentHelper.getContentURL(webAppAccess, "/factory/images/progressindicator/spinning_spokes.gif") %>'>&nbsp;<I _sampledataaddedattr="_sampleDataSavedText" _sampledatasavedtext="">{text}</I>
+</DIV>
+</SPAN></HTML></CONTENTS></DIV></SPAN><H2 class="titulo">Transferencia</H2>
+	<DIV style="width: 90%; margin: 0 auto">
+		<A id='<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "wpf_action_ref_0") %>' href='<%= JSPSupport.getActionURL(webAppAccess, webAppAccess.getPartialPageRefreshURLMapper(false), false, "CreateTransaccionConsumerView_InputPage_NextAction") %>' style="display:none"></A><FORM method="post" novalidate="true" role="form" data-wef-link-id='<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "wpf_action_ref_0") %>' onsubmit="var _f=((function _ff(el){ return el.form || (el.tagName == &quot;FORM&quot; && el) || (el.focusNode && _ff(el.focusNode)) || (el.parentNode && _ff(el.parentNode)) || (el.valueNode && _ff(el.valueNode)) || { submit: function() { location.href = this.action; } };} )(this));_f.action = document.getElementById(&quot;<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "wpf_action_ref_0") %>&quot;).href;_f.target = &quot;_self&quot;;if (!_f._notcalled || !(_f._notcalled() === false)) wpf_ppr85201404141110.submit(_f, [&quot;<%= request.getAttribute("bowstreet.smartRefreshID") %>&quot;], wpf_ppr85201404141110.smartRefreshHandler, {execScripts:false, eventPfx: &quot;<%= webAppAccess.getInstanceID() %>Ajax&quot;});return false" action="ignored" _sampledataaddedattr="_genElement">
+			<INPUT type="hidden" value='<%= ((com.bowstreet.webapp.engine.WebAppAccessImpl)webAppAccess).getLinkedModelPath() +  "fireEvent:" + "Form:CreateTransaccionConsumerView_InputPage_SaveDataSubmitEvent" %>'><DIV>
+				<SPAN role="application">
+					<DIV>
+						<DIV class="vf_fields">
+
+							<TABLE class="displayPageTable" role="presentation">
+								
+								<HTMLWRAPPER>
+								<TR class="DataEntryFieldRow">
+									<TD class="DataEntryFieldCell">
+										<DIV class="DataEntryFieldDiv">
+											<LABEL for="CreateTransaccionModelCreateTransaccionConsumerView_InputPageid_cuenta_origen_field">
+												<SPAN class="requiredPromptAbove">*</SPAN> <SPAN class="subtitulos inputLabelAbove" _sampledataaddedattr="_genElement">Cuenta de Origen</SPAN>&nbsp;
+											</LABEL>
+											
+											<DIV class="DataEntryFieldDataDiv">
+												<SELECT class="DataEntryFieldElement" id="CreateTransaccionModelCreateTransaccionConsumerView_InputPageid_cuenta_origen_field" required="true" type="text" dojotype="dijit.form.FilteringSelect" value='<%= JSPSupport.stringValue(webAppAccess.getVariables().getXmlText("CreateTransaccionConsumerServiceCreateTransaccionOperationInputs", "id_cuenta_origen"), true) %>' aria-invalid='<%= JSPSupport.stringValue(DataConverter.toString(webAppAccess.callMethod("CreateTransaccionConsumerView_InputPageError.getIsInvalidString", new Object[] { "id_cuenta_origen" })),false) %>' _sampledataaddedattr="_genElement">
+</SELECT>
+											</DIV>
+											<SPAN class="ValidationErrorText" _sampledataaddedattr="_genElement"><SPAN _sampledataaddedattr="_sampleDataAddedNode">{Error text}</SPAN></SPAN>
+										</DIV>
+									</TD>
+								</TR>
+
+								<TR class="DataEntryFieldRow">
+									<TD class="DataEntryFieldCell">
+										<DIV class="DataEntryFieldDiv">
+											<LABEL for="CreateTransaccionModelCreateTransaccionConsumerView_InputPagenumero_cuenta_destino_field">
+												<SPAN class="requiredPromptAbove">*</SPAN> <SPAN class="subtitulos inputLabelAbove" _sampledataaddedattr="_genElement">Numero de Cuenta Destino</SPAN>&nbsp;
+											</LABEL>
+											
+											<DIV class="DataEntryFieldDataDiv">
+												<INPUT class="DataEntryFieldElement" id="CreateTransaccionModelCreateTransaccionConsumerView_InputPagenumero_cuenta_destino_field" required="true" dojotype="dijit.form.TextBox" value='<%= JSPSupport.stringValue(webAppAccess.getVariables().getXmlText("CreateTransaccionConsumerServiceCreateTransaccionOperationInputs", "numero_cuenta_destino"), true) %>' aria-invalid='<%= JSPSupport.stringValue(DataConverter.toString(webAppAccess.callMethod("CreateTransaccionConsumerView_InputPageError.getIsInvalidString", new Object[] { "numero_cuenta_destino" })),false) %>' _sampledataaddedattr="_genElement">
+											</DIV>
+											<SPAN class="ValidationErrorText" _sampledataaddedattr="_genElement"><SPAN _sampledataaddedattr="_sampleDataAddedNode">{Error text}</SPAN></SPAN>
+										</DIV>
+									</TD>
+								</TR>
+
+								<TR class="DataEntryFieldRow">
+									<TD class="DataEntryFieldCell">
+										<DIV class="DataEntryFieldDiv">
+											<LABEL for="CreateTransaccionModelCreateTransaccionConsumerView_InputPagemonto_transferido_field">
+												<SPAN class="requiredPromptAbove">*</SPAN> <SPAN class="subtitulos inputLabelAbove" _sampledataaddedattr="_genElement">Monto Transferido</SPAN>&nbsp;
+											</LABEL>
+											
+											<DIV class="DataEntryFieldDataDiv">
+												<INPUT class="DataEntryFieldElement" id="CreateTransaccionModelCreateTransaccionConsumerView_InputPagemonto_transferido_field" required="true" dojotype="dijit.form.NumberTextBox" value='<%= JSPSupport.stringValue(webAppAccess.getVariables().getXmlText("CreateTransaccionConsumerServiceCreateTransaccionOperationInputs", "monto_transferido"), true) %>' aria-invalid='<%= JSPSupport.stringValue(DataConverter.toString(webAppAccess.callMethod("CreateTransaccionConsumerView_InputPageError.getIsInvalidString", new Object[] { "monto_transferido" })),false) %>' _sampledataaddedattr="_genElement">
+											</DIV>
+											<SPAN class="ValidationErrorText" _sampledataaddedattr="_genElement"><SPAN _sampledataaddedattr="_sampleDataAddedNode">{Error text}</SPAN></SPAN>
+										</DIV>
+									</TD>
+								</TR>
+								</HTMLWRAPPER>
+								
+
+							</TABLE>
+						</DIV>
+
+					</DIV>
+				</SPAN>
+			</DIV>
+			<DIV class="vf_buttons">
+				<INPUT class="art-button wefDesktopButton" value="Realizar Transferencia" onclick="var _f=this.form;_f.target = &quot;_self&quot;;if (!_f.onsubmit || !(_f.onsubmit() === false)) wpf_ppr85201404141110.submit(_f, [&quot;<%= request.getAttribute("bowstreet.smartRefreshID") %>&quot;], wpf_ppr85201404141110.smartRefreshHandler, {execScripts:false, eventPfx: &quot;<%= webAppAccess.getInstanceID() %>&quot;});return false" type="button" _sampledataaddedattr="_genElement"> <SPAN _sampledataaddedattr="_genElement"><SPAN _sampledataaddedattr="_sampleDataAddedNode"></SPAN></SPAN>
+				<SPAN _sampledataaddedattr="_genElement"><SPAN _sampledataaddedattr="_sampleDataAddedNode"></SPAN></SPAN> <SPAN _sampledataaddedattr="_genElement"><SPAN _sampledataaddedattr="_sampleDataAddedNode"></SPAN></SPAN>
+			</DIV>
+		</FORM>
+		<DIV class="vf_footer" _sampledataaddedattr="_genElement"><DIV _sampledataaddedattr="_sampleDataAddedNode"></DIV></DIV>
+	</DIV>
+</SPAN></div>

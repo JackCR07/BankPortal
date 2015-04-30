@@ -1,14 +1,14 @@
 
 properties:
-     [echo] C:\Users\jcervantes\Documents\GBM\Workspaces\WEF\BankFactoryNew\.metadata\.plugins\com.bowstreet.designer.webapp\deploymentconfigs/Liberty.pfConfig
+     [echo] C:\Users\Jeancarlo\GBM\WorkSpaces\WEF\BankFactoryNew\.metadata\.plugins\com.bowstreet.designer.webapp\deploymentconfigs/Liberty.pfConfig
 
 publish:
      [echo] Deployment action requested for configuration 'Liberty'.
 
 configDetails:
-     [echo] Deploy Time: 04/29/2015 02:49:58 PM
+     [echo] Deploy Time: 04/29/2015 10:49:45 PM
      [echo] Config Name: Liberty
-     [echo] Project Location: C:\Users\jcervantes\git\BankPortal\BankFactory
+     [echo] Project Location: C:\Users\Jeancarlo\git\BankPortalNew\BankFactory
      [echo] ServerPort: 9080
      [echo] Config ant file: Liberty.xml
      [echo] PublishTarget: publishLiberty
@@ -16,17 +16,17 @@ configDetails:
      [echo] Tools Location: C:/IBM/Web Experience Factory/Designer/FeatureSets/Web-App_8.5.0/Deployment/antscripts
 
 setDisplayName:
-   [delete] Deleting: C:\Users\jcervantes\git\BankPortal\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\portlet.web\displayname.xml
-     [copy] Copying 1 file to C:\Users\jcervantes\git\BankPortal\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\portlet.web
-   [delete] Deleting: C:\Users\jcervantes\git\BankPortal\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\standalone.web\displayname.xml
-     [copy] Copying 1 file to C:\Users\jcervantes\git\BankPortal\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\standalone.web
+   [delete] Deleting: C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\portlet.web\displayname.xml
+     [copy] Copying 1 file to C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\portlet.web
+   [delete] Deleting: C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\standalone.web\displayname.xml
+     [copy] Copying 1 file to C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\standalone.web
 
 configProject:
      [echo] Configuring project for deployment action.
-   [delete] Deleting: C:\Users\jcervantes\git\BankPortal\BankFactory\WebContent\WEB-INF\config\server.properties
-     [copy] Copying 1 file to C:\Users\jcervantes\git\BankPortal\BankFactory\WebContent\WEB-INF\config
-   [delete] Deleting: C:\Users\jcervantes\git\BankPortal\BankFactory\WebContent\WEB-INF\config\wpf.signature
-     [copy] Copying 1 file to C:\Users\jcervantes\git\BankPortal\BankFactory\WebContent\WEB-INF\config
+   [delete] Deleting: C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\config\server.properties
+     [copy] Copying 1 file to C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\config
+   [delete] Deleting: C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\config\wpf.signature
+     [copy] Copying 1 file to C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\config
 
 properties:
 
@@ -39,8 +39,8 @@ publishLiberty:
 
 buildWar:
      [echo] Building War
-   [delete] Deleting: C:\Users\jcervantes\git\BankPortal\BankFactory\WebContent\WEB-INF\portlet.xml.tmp
-      [war] Building war: C:\Users\jcervantes\git\BankPortal\BankFactory\.deployment\BankFactory.war
+   [delete] Deleting: C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\portlet.xml.tmp
+      [war] Building war: C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\.deployment\BankFactory.war
 
 properties:
 

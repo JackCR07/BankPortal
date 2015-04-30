@@ -101,8 +101,8 @@ Parameters:
 <Input name="CreateInputPage">true</Input>
 <Input name="InputPageURL">${Properties/bowstreet.Theme/ViewAndForm_InputPageBase}</Input>
 <Input name="EnableInputValidation">false</Input>
-<Input name="InputSubmitText">Submit</Input>
-<Input name="ViewPageBackButtonText">Back</Input>
+<Input name="InputSubmitText">Realizar Transferencia</Input>
+<Input name="ViewPageBackButtonText">Volver</Input>
 <Input name="InsertInputPage">false</Input>
 <Input name="CreateColumnLink">false</Input>
 <Input name="LinkActionChoice">rowdata</Input>
@@ -432,6 +432,20 @@ Parameters:
 <Input name="ExternalLocation">/factory/style.css</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc28"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Inputs><Input name="Name">CreateTransaccionConsumerView_InputPage</Input>
+<Input name="ReplaceExisting">true</Input>
+<Input name="URL">factory/CreateTransaccionConsumerView_InputPage.html</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc29"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Inputs><Input name="Name">CreateTransaccionConsumerView_ViewPage</Input>
+<Input name="ReplaceExisting">true</Input>
+<Input name="URL">factory/CreateTransaccionConsumerView_ViewPage.html</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
@@ -443,6 +457,8 @@ Parameters:
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/view.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_themes.html</Dependency>
 <Dependency type="Model">providers/GetCuentas/GetCuentasProvider</Dependency>
+<Dependency type="File">factory/CreateTransaccionConsumerView_InputPage.html</Dependency>
+<Dependency type="File">factory/CreateTransaccionConsumerView_ViewPage.html</Dependency>
 <Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
 <Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
 <Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
