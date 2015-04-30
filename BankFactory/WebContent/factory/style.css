@@ -1,12 +1,9 @@
-/*input[type="text"]{ 
-	-webkit-border-radius: 5px; 
-    -moz-border-radius: 5px; 
-    border-radius: 5px; 
-	border: solid white 1px;
-	text-align: center;
-    height:25px; 
-    width: 275px;
-}*/
+input[type="text"]{ 
+	  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ededed), color-stop(100%, #e1e1e1));
+	
+}
+
+
 .vf_view_container .lotusPaging{
 	border:none;
 }
@@ -37,11 +34,22 @@
 	width:15%;
 }
 
+.containerConsumerInputs{
+	margin: 10px 0 10px 0;
+	display:inline;
+}
 .consumerInputs{
 	height:20px;
 	border-radius:5px;
 }
 
+/**********************Sobreescribir estilos**********************/
+.tableHead{
+	background-color:transparent;
+}
+.lotusui30dojo .lotusPaging a{
+	 color: #FF3029;
+}
 
 /*   Quitar subrayado del titulo*/
 .blockHeading{
@@ -118,7 +126,7 @@ input[type="button"]:hover {
   text-decoration: none;
 }
 */
-
+/**************************fin de sobreescribir estilos**************************/
 
 label{
 	font: Arial,Helvetica,sans-serif;
@@ -133,7 +141,7 @@ spam{
 
 h2.titulo{
 	color: #FFF;
-	margin: 10px 0px 5px;
+	margin: 10px 0px 50px;
 	font-size: 26px;
 	font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
 	text-transform: uppercase;
@@ -168,6 +176,7 @@ h2.titulo{
 	color: #D4D4D4;
 	display:inline-block;
 	width:100px;
+	height:30px;
 }
 
 /*Button*/
@@ -256,7 +265,6 @@ input, select, textarea
 
 input.art-button
 {
-   float: right !important;
 }
 
 .art-button.active, .art-button.active:hover
