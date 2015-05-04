@@ -34,4 +34,7 @@ SPAN.dataPagingButton{
   color: #3E79B6;
   padding: 3px 6px;
   text-decoration: none;
+  /*Agregado Quitar borders*/
+  border:none
+  /*FIN*/
 }

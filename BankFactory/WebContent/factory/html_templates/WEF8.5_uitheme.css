@@ -50,7 +50,7 @@
  font-style:normal;
  font-size:1em;
  color:black; 
- border-bottom:1px dotted #D5CDB5;
+ /*border-bottom:1px dotted #D5CDB5;*//*Quitar bordes*/
 }
 .tableHead{font-weight:normal}
 .tableHead[align="center"]{font-weight:normal;text-align:center;}
@@ -58,7 +58,7 @@
 .tableHeadAsc{font-weight:bold}
 .tableHeadDesc{font-weight:lighter}
 .tableCell{
- border-bottom:1px dotted #D5CDB5;
+ /*border-bottom:1px dotted #D5CDB5;  */ /*Quitar bordes*/
  overflow:hidden;
  padding:3px 3px 10px 3px;
  empty-cells:show;

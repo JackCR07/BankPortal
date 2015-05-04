@@ -15,6 +15,7 @@ input[type="text"]{
 	text-align:center;
 	background-color:transparent;
 	color:white;
+	border:none;
 }
 
 .labelFont{
@@ -324,9 +325,9 @@ input.art-button
 	text-decoration:none;
 }
 .linkFire{
-font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
-text-decoration: none;
-color: #FF3029;
+	font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+	text-decoration: none;
+	color: #FF3029;
 }
 
 
