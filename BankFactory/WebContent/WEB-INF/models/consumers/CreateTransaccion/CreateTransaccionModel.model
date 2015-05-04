@@ -206,23 +206,6 @@ Parameters:
 </Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="QuoteText">true</Input>
-<Input name="ReplaceContents">true</Input>
-<Input name="ReplaceTargetElement">false</Input>
-<Input name="Control">page_header_text</Input>
-<Input name="PageLocation"><SimplePageLocation><Page>AllPages</Page>
-<NameSearch>page_header_text</NameSearch>
-</SimplePageLocation>
-</Input>
-<Input name="LookupTable">None</Input>
-<Input name="HTMLAttributes"><HTMLAttributes />
-</Input>
-<Input name="Text">Transaccion</Input>
-</Inputs>
-</BuilderCall>
 <BuilderCall id="bc11"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>

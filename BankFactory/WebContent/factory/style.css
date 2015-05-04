@@ -161,6 +161,7 @@ h2.titulo{
 	color: #D4D4D4;
 	display:inline-block;
 	width:102px;
+	height:30px;
 }
 
 .subtitulosAltDos{
@@ -182,7 +183,7 @@ h2.titulo{
 	color: #D4D4D4;
 	display:inline-block;
 	width:100px;
-	height:30px;
+	height:35px;
 }
 
 /*Button*/
