@@ -1,0 +1,181 @@
+<Model id="consumers/GetCuentas/GetCuentasChart"><BuilderCallList><BuilderCall id="bc14"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PortletDefaultLocale">en</Input>
+<Input name="PortletAdditionalLocales">en</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomEditDefaultsPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="Name">Grafico</Input>
+<Input name="PortletTitle">Grafico</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.adapters.websphere.builders.C2AEventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="C2AInputType">string</Input>
+<Input name="C2ANamespace">http://www.ibm.com/pb/models</Input>
+<Input name="C2AInputName">numero_cuenta</Input>
+<Input name="C2AInputCaption">numero cuenta</Input>
+<Input name="EventName">Target</Input>
+<Input name="C2AInputTypeName">numero_cuenta</Input>
+<Input name="Arguments"><top><Argument><Name>numero_cuenta</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Name">Target</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageData">&lt;html&gt;
+&lt;head&gt;
+    &lt;script type="text/javascript" src="https://www.google.com/jsapi"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+            &lt;div id="piechart"&gt;&lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">vista</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.ClientJavaScriptBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageLocationType">Implicit</Input>
+<Input name="ScriptSourceType">Explicit</Input>
+<Input name="PageName">vista</Input>
+<Input name="Name">grafico</Input>
+<Input name="Script"> google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Total', 'Percentage'],
+          ['Ingreso',     parseInt('${Variables/Ingreso}')],
+          ['Egreso',      parseInt('${Variables/Egreso}')]
+        ]);
+
+        var options = {
+          title: 'Saldo Cuenta'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Ingreso</Input>
+<Input name="Type">Integer</Input>
+<Input name="Value">10000</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Egreso</Input>
+<Input name="Type">Integer</Input>
+<Input name="Value">5670</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc12"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseInlineHandler">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="EventName">Target</Input>
+<Input name="Name">EventHandler</Input>
+<Input name="Arguments"><Arguments><Argument><Name>numero_cuenta</Name>
+<Type>String</Type>
+</Argument>
+</Arguments>
+</Input>
+<Input name="Actions"><Actions><Action><ActionType></ActionType>
+<ActionName>vista</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc16"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">main</Input>
+<Input name="Actions"><Actions><Action><ActionType></ActionType>
+<ActionName>vista</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies />
+<ExternalProperties><ExternalProperty id="PortletModel">true</ExternalProperty>
+<ExternalProperty id="PortletName">Grafico</ExternalProperty>
+<ExternalProperty id="PortletTitle">Grafico</ExternalProperty>
+<ExternalProperty id="PortletDefaultLocale">en</ExternalProperty>
+<ExternalProperty id="PortletAdditionalLocales">en</ExternalProperty>
+<ExternalProperty id="TestPortalPage"></ExternalProperty>
+<ExternalProperty id="PortletModeEdit">false</ExternalProperty>
+<ExternalProperty id="PortletModeEditDefaults">false</ExternalProperty>
+<ExternalProperty id="PortletModeConfig">false</ExternalProperty>
+<ExternalProperty id="PortletModeHelp">false</ExternalProperty>
+<ExternalProperty id="C2AWSDLDocProperty">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:portlet="http://www.ibm.com/wps/c2a" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.ibm.com/pb/models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Target_Service" targetNamespace="http://www.ibm.com/pb/models"&gt;&lt;types&gt;&lt;xsd:schema targetNamespace="http://www.ibm.com/pb/models"&gt;&lt;xsd:simpleType name="numero_cuenta"&gt;&lt;xsd:restriction base="xsd:string" /&gt;
+&lt;/xsd:simpleType&gt;
+&lt;/xsd:schema&gt;
+&lt;/types&gt;
+&lt;message name="TargetRequest"&gt;&lt;part name="numero_cuenta" type="tns:numero_cuenta" /&gt;
+&lt;/message&gt;
+&lt;portType name="Target_Service"&gt;&lt;operation name="Target"&gt;&lt;input message="tns:TargetRequest" /&gt;
+&lt;/operation&gt;
+&lt;/portType&gt;
+&lt;binding name="TargetBinding" type="tns:Target_Service"&gt;&lt;portlet:binding /&gt;
+&lt;operation name="Target"&gt;&lt;portlet:action name="Target" type="standard" actionNameParameter="ACTION_NAME" /&gt;
+&lt;input&gt;&lt;portlet:param name="numero_cuenta" partname="numero_cuenta" boundTo="request-attribute" caption="numero.cuenta.key" /&gt;
+&lt;/input&gt;
+&lt;/operation&gt;
+&lt;/binding&gt;
+&lt;/definitions&gt;
+</ExternalProperty>
+<ExternalProperty id="WSDLResourceProperty">&lt;Properties&gt;&lt;Property&gt;&lt;Key&gt;numero.cuenta.key&lt;/Key&gt;
+&lt;Value&gt;numero cuenta&lt;/Value&gt;
+&lt;/Property&gt;
+&lt;/Properties&gt;
+</ExternalProperty>
+<ExternalProperty id="EventDataProperty">&lt;EventData&gt;&lt;ProcessingEvents&gt;&lt;Event&gt;&lt;Name&gt;numero_cuenta&lt;/Name&gt;
+&lt;Type&gt;java.lang.String&lt;/Type&gt;
+&lt;Namespace&gt;http://www.ibm.com/pb/models&lt;/Namespace&gt;
+&lt;DisplayName&gt;numero.cuenta.key&lt;/DisplayName&gt;
+&lt;/Event&gt;
+&lt;/ProcessingEvents&gt;
+&lt;PublishingEvents /&gt;
+&lt;/EventData&gt;
+</ExternalProperty>
+</ExternalProperties>
+</Model>

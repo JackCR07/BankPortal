@@ -586,6 +586,37 @@ Parameters:
 </Inputs>
 <Messages />
 </BuilderCall>
+<BuilderCall id="bc68"><BuilderDefID>com.bowstreet.adapters.websphere.builders.C2ATagBuilder</BuilderDefID>
+<Messages><Warning><Message>This BuilderCall overwrites the effect of another BuilderCall.  (This may be intentional, in which case this warning can be ignored.)</Message>
+</Warning>
+</Messages>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="C2ANamespace">http://www.ibm.com/pb/models</Input>
+<Input name="TagType">PBLink</Input>
+<Input name="Name">Source</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>GetCuentasServiceView_ViewPage</Page>
+<NameSearch>numero_cuenta</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="OutputDefinitions"><top><OutputDefinition><C2AOutputTypeName>numero_cuenta</C2AOutputTypeName>
+<C2AOutputType>string</C2AOutputType>
+<Value>${DataServices/GetCuentasService/GetCuentasSO/results/operation1Response/cuenta/numero_cuenta}</Value>
+<C2AOutputCaption>numero cuenta</C2AOutputCaption>
+<C2AOutputNamespace></C2AOutputNamespace>
+<AliasList></AliasList>
+<C2AOutputName>numero_cuenta</C2AOutputName>
+</OutputDefinition>
+<OutputDefinition><C2AOutputTypeName></C2AOutputTypeName>
+<C2AOutputType>string</C2AOutputType>
+<Value></Value>
+<C2AOutputCaption></C2AOutputCaption>
+<C2AOutputNamespace></C2AOutputNamespace>
+<AliasList></AliasList>
+</OutputDefinition>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
@@ -625,5 +656,37 @@ Parameters:
 <ExternalProperty id="DojoEnabled">true</ExternalProperty>
 <ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
 <ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dojo.parser,dijit.form.FilteringSelect,dijit.form.DateTextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
+<ExternalProperty id="C2AWSDLDocProperty">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:portlet="http://www.ibm.com/wps/c2a" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.ibm.com/pb/models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="pbAction_Source_Service" targetNamespace="http://www.ibm.com/pb/models"&gt;&lt;types&gt;&lt;xsd:schema targetNamespace="http://www.ibm.com/pb/models"&gt;&lt;xsd:simpleType name="numero_cuenta"&gt;&lt;xsd:restriction base="xsd:string" /&gt;
+&lt;/xsd:simpleType&gt;
+&lt;/xsd:schema&gt;
+&lt;/types&gt;
+&lt;message name="pbAction_SourceResponse"&gt;&lt;part name="numero_cuenta" type="tns:numero_cuenta" /&gt;
+&lt;/message&gt;
+&lt;portType name="pbAction_Source_Service"&gt;&lt;operation name="pbAction_Source"&gt;&lt;output message="tns:pbAction_SourceResponse" /&gt;
+&lt;/operation&gt;
+&lt;/portType&gt;
+&lt;binding name="pbAction_SourceBinding" type="tns:pbAction_Source_Service"&gt;&lt;portlet:binding /&gt;
+&lt;operation name="pbAction_Source"&gt;&lt;portlet:action name="pbAction_Source" type="standard" actionNameParameter="ACTION_NAME" /&gt;
+&lt;output&gt;&lt;portlet:param name="numero_cuenta" partname="numero_cuenta" boundTo="request-attribute" caption="numero.cuenta.key" /&gt;
+&lt;/output&gt;
+&lt;/operation&gt;
+&lt;/binding&gt;
+&lt;/definitions&gt;
+</ExternalProperty>
+<ExternalProperty id="WSDLResourceProperty">&lt;Properties&gt;&lt;Property&gt;&lt;Key&gt;numero.cuenta.key&lt;/Key&gt;
+&lt;Value&gt;numero cuenta&lt;/Value&gt;
+&lt;/Property&gt;
+&lt;/Properties&gt;
+</ExternalProperty>
+<ExternalProperty id="EventDataProperty">&lt;EventData&gt;&lt;ProcessingEvents /&gt;
+&lt;PublishingEvents&gt;&lt;Event&gt;&lt;Name&gt;numero_cuenta&lt;/Name&gt;
+&lt;Type&gt;java.lang.String&lt;/Type&gt;
+&lt;Namespace&gt;http://www.ibm.com/pb/models&lt;/Namespace&gt;
+&lt;DisplayName&gt;numero.cuenta.key&lt;/DisplayName&gt;
+&lt;/Event&gt;
+&lt;/PublishingEvents&gt;
+&lt;/EventData&gt;
+</ExternalProperty>
 </ExternalProperties>
 </Model>
