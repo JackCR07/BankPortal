@@ -600,18 +600,18 @@ Parameters:
 </Input>
 <Input name="OutputDefinitions"><top><OutputDefinition><C2AOutputTypeName>numero_cuenta</C2AOutputTypeName>
 <C2AOutputType>string</C2AOutputType>
-<Value>${DataServices/GetCuentasService/GetCuentasSO/results/operation1Response/cuenta/numero_cuenta}</Value>
+<Value>${DataServices/GetCuentasService/GetCuentasSO/results/operation1Response/cuenta/id_cuenta}</Value>
 <C2AOutputCaption>numero cuenta</C2AOutputCaption>
-<C2AOutputNamespace></C2AOutputNamespace>
-<AliasList></AliasList>
+<C2AOutputNamespace />
+<AliasList />
 <C2AOutputName>numero_cuenta</C2AOutputName>
 </OutputDefinition>
-<OutputDefinition><C2AOutputTypeName></C2AOutputTypeName>
+<OutputDefinition><C2AOutputTypeName />
 <C2AOutputType>string</C2AOutputType>
-<Value></Value>
-<C2AOutputCaption></C2AOutputCaption>
-<C2AOutputNamespace></C2AOutputNamespace>
-<AliasList></AliasList>
+<Value />
+<C2AOutputCaption />
+<C2AOutputNamespace />
+<AliasList />
 </OutputDefinition>
 </top>
 </Input>

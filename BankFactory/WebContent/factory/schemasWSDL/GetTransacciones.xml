@@ -2,8 +2,8 @@
 <wsdl:documentation>
 <wsdl:appinfo source="WMQI_APPINFO">
 <MRWSDLAppInfo imported="true">
-<generatedXSD location="getTransacciones_InlineSchema1.xsd"/>
 <binding hasEncoding="false" imported="true" name="getTransaccionesHttpBinding" originalBindingStyle="document"/>
+<generatedXSD location="getTransacciones_InlineSchema1.xsd"/>
 </MRWSDLAppInfo>
 </wsdl:appinfo>
 </wsdl:documentation>
@@ -18,10 +18,20 @@
 <wsdl:message name="operation1ResponseMsg">
 <wsdl:part element="tns:operation1Response" name="operation1Result"/>
 </wsdl:message>
+<wsdl:message name="operation2RequestMsg">
+<wsdl:part element="tns:operation2InputParameter1" name="operation2InputParameter1"/>
+</wsdl:message>
+<wsdl:message name="operation2ResponseMsg">
+<wsdl:part element="tns:operation2OutputParameter1" name="operation2OutputParameter1"/>
+</wsdl:message>
 <wsdl:portType name="getTransacciones">
 <wsdl:operation name="operation1">
 <wsdl:input message="tns:operation1RequestMsg" name="operation1Request"/>
 <wsdl:output message="tns:operation1ResponseMsg" name="operation1Response"/>
+</wsdl:operation>
+<wsdl:operation name="operation2">
+<wsdl:input message="tns:operation2RequestMsg" name="operation2Request"/>
+<wsdl:output message="tns:operation2ResponseMsg" name="operation2Response"/>
 </wsdl:operation>
 </wsdl:portType>
 <wsdl:binding name="getTransaccionesHttpBinding" type="tns:getTransacciones">
@@ -33,6 +43,15 @@
 </wsdl:input>
 <wsdl:output name="operation1Response">
 <soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="operation2">
+<soap:operation soapAction=""/>
+<wsdl:input name="operation2Request">
+<soap:body parts="operation2InputParameter1" use="literal"/>
+</wsdl:input>
+<wsdl:output name="operation2Response">
+<soap:body parts="operation2OutputParameter1" use="literal"/>
 </wsdl:output>
 </wsdl:operation>
 </wsdl:binding>

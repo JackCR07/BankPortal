@@ -10,6 +10,60 @@
 <Input name="PortletTitle">Grafico</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc22"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseAllOperations">false</Input>
+<Input name="OverrideInputs">true</Input>
+<Input name="CreateLookupTables">true</Input>
+<Input name="AssociateLookupTables">true</Input>
+<Input name="UseDiscardableInputVariables">false</Input>
+<Input name="UseDiscardableVariables">false</Input>
+<Input name="EnableCaching">true</Input>
+<Input name="InheritProfile">true</Input>
+<Input name="Name">SumarTransaccionesConsumer</Input>
+<Input name="ProviderModel">providers/GetTransacciones/GetTransaccionesProvider</Input>
+<Input name="SelectOperations"><top><OperationSelected><Operation>GetTransaccionesOperation</Operation>
+<OperationEnabled>false</OperationEnabled>
+<Description>No description was provided.
+Parameters:
+	Name:			inputs
+
+	Name:			results</Description>
+</OperationSelected>
+<OperationSelected><Operation>SumarTransaccionesOp</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>No description was provided.
+Parameters:
+	Name:			inputs
+
+	Name:			results</Description>
+</OperationSelected>
+</top>
+</Input>
+<Input name="OperationInputs"><top><InputsForOperation><Operation>SumarTransaccionesOp</Operation>
+<Inputs><top><Input><Name>operation2InputParameter1</Name>
+</Input>
+<Input><Name>operation2InputParameter1.idCliente</Name>
+<Value>${Variables/id_cuenta}</Value>
+</Input>
+<Input><Name>operation2InputParameter1.idTipoTransaccion</Name>
+<Value>-1</Value>
+</Input>
+</top>
+</Inputs>
+</InputsForOperation>
+<InputsForOperation><Inputs></Inputs>
+</InputsForOperation>
+</top>
+</Input>
+<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>SumarTransaccionesOp</Operation>
+<Mappings />
+</ValuesForOperation>
+</ContextVariables>
+</Input>
+</Inputs>
+</BuilderCall>
 <BuilderCall id="bc2"><BuilderDefID>com.bowstreet.adapters.websphere.builders.C2AEventDeclarationBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
@@ -64,7 +118,8 @@
         ]);
 
         var options = {
-          title: 'Saldo Cuenta'
+          title: 'Saldo Cuenta',
+          backgroundColor: { fill:'transparent' }
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -83,7 +138,7 @@
 <Input name="CreateSampleData">Create sample data</Input>
 <Input name="Name">Ingreso</Input>
 <Input name="Type">Integer</Input>
-<Input name="Value">10000</Input>
+<Input name="Value">1</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
@@ -96,26 +151,7 @@
 <Input name="CreateSampleData">Create sample data</Input>
 <Input name="Name">Egreso</Input>
 <Input name="Type">Integer</Input>
-<Input name="Value">5670</Input>
-</Inputs>
-</BuilderCall>
-<BuilderCall id="bc12"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="UseInlineHandler">true</Input>
-<Input name="ReturnType">Object</Input>
-<Input name="EventName">Target</Input>
-<Input name="Name">EventHandler</Input>
-<Input name="Arguments"><Arguments><Argument><Name>numero_cuenta</Name>
-<Type>String</Type>
-</Argument>
-</Arguments>
-</Input>
-<Input name="Actions"><Actions><Action><ActionType></ActionType>
-<ActionName>vista</ActionName>
-</Action>
-</Actions>
-</Input>
+<Input name="Value">1</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc16"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
@@ -131,10 +167,55 @@
 </Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc19"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseInlineHandler">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="EventName">Target</Input>
+<Input name="Name">EventHandler</Input>
+<Input name="Arguments"><Arguments><Argument><Name>numero_cuenta</Name>
+<Type>String</Type>
+</Argument>
+</Arguments>
+</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/id_cuenta=${Arguments/numero_cuenta}</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/Ingreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/Debito}</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/Egreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/Credito}</ActionName>
+</Action>
+<Action><ActionType></ActionType>
+<ActionName>vista</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc24"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">id_cuenta</Input>
+<Input name="Type">String</Input>
+<Input name="Value">0</Input>
+</Inputs>
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
-<Dependencies />
+<Dependencies><Dependency type="Model">providers/GetTransacciones/GetTransaccionesProvider</Dependency>
+</Dependencies>
 <ExternalProperties><ExternalProperty id="PortletModel">true</ExternalProperty>
 <ExternalProperty id="PortletName">Grafico</ExternalProperty>
 <ExternalProperty id="PortletTitle">Grafico</ExternalProperty>
