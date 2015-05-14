@@ -1,0 +1,187 @@
+<Model id="providers/GetCuentasMq/GetCuentasModel"><BuilderCallList><BuilderCall id="bc5"><BuilderDefID>com.bowstreet.builders.webapp.LinkedJavaObjectBuilder</BuilderDefID>
+<Messages><Warning><Message>The specified class com.gbm.mq.MqConnection is not serializable, which may cause a loss of data during session failover.</Message>
+</Warning>
+</Messages>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="Extend">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">mqConnectLJO</Input>
+<Input name="ClassName">com.gbm.mq.MqConnection</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc9"><BuilderDefID>com.bowstreet.builders.webapp.SchemaBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="SchemaSourceType">Existing</Input>
+<Input name="DesignTimeImportCheckBox">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">getCuentas</Input>
+<Input name="URIOnly">http://172.16.11.225:7800/GetCuentas/GetCuentas?xsd=xsd0</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.ServiceDefinitionBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PublicService">true</Input>
+<Input name="ExportAsWSDL">false</Input>
+<Input name="WrappedDocLiteral">false</Input>
+<Input name="MaintainState">false</Input>
+<Input name="AddTestingSupport">true</Input>
+<Input name="TestCreateMain">true</Input>
+<Input name="TestIncludeDocumentation">false</Input>
+<Input name="TestOverrideInputs">false</Input>
+<Input name="LogicalOperations"><Functions><FunctionDef><LogicalName>Create</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>RetrieveList</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>Search</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>Update</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>Delete</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>RetrieveOne</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+</Functions>
+</Input>
+<Input name="ServiceName">getCuentasMqService</Input>
+<Input name="Name">getCuentasMqService</Input>
+<Input name="TestServiceName">getCuentasMqService</Input>
+<Input name="TestOperationInputs"><OverridenInputs><InputsForOperation><Operation>getCuentasO</Operation>
+<Inputs><top><Input><Name>arguments</Name>
+</Input>
+<Input><Name>arguments.arg1</Name>
+</Input>
+<Input><Name>arguments.arg2</Name>
+</Input>
+<Input><Name>arguments.arg3</Name>
+</Input>
+<Input><Name>arguments.arg4</Name>
+</Input>
+<Input><Name>arguments.arg5</Name>
+</Input>
+<Input><Name>arguments.arg6</Name>
+</Input>
+</top>
+</Inputs>
+</InputsForOperation>
+</OverridenInputs>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="InputStructureHandling">FromOperation</Input>
+<Input name="InputAllowStructureEdit">false</Input>
+<Input name="InputAutomaticMapping">true</Input>
+<Input name="ResultStructureHandling">Specify</Input>
+<Input name="ResultAllowStructureEdit">false</Input>
+<Input name="ResultAutomaticMapping">true</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="CachingTimeout">3600</Input>
+<Input name="PreExecuteEventEnabled">disabled</Input>
+<Input name="PostExecuteEventEnabled">disabled</Input>
+<Input name="PagedDataResource">Default</Input>
+<Input name="DataService">getCuentasMqService</Input>
+<Input name="ResultMappingTable"><top><Field><Name>id_cuenta</Name>
+<Type>int</Type>
+</Field>
+<Field><Name>tipo_cuenta</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>saldo</Name>
+<Type>double</Type>
+</Field>
+<Field><Name>numero_cuenta</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>fecha_creacion</Name>
+<Type>string</Type>
+</Field>
+</top>
+</Input>
+<Input name="InputMappingTable"><top><Field><Name>arg1</Name>
+<Type>string</Type>
+<Value></Value>
+</Field>
+<Field><Name>arg2</Name>
+<Type>int</Type>
+<Value></Value>
+</Field>
+<Field><Name>arg3</Name>
+<Type>string</Type>
+<Value></Value>
+</Field>
+<Field><Name>arg4</Name>
+<Type>string</Type>
+<Value></Value>
+</Field>
+<Field><Name>arg5</Name>
+<Type>double</Type>
+<Value></Value>
+</Field>
+<Field><Name>arg6</Name>
+<Type>double</Type>
+<Value></Value>
+</Field>
+</top>
+</Input>
+<Input name="OperationName">getCuentasO</Input>
+<Input name="TargetOperation">mqConnectLJO.getMessageQueue</Input>
+<Input name="Name">getCuentasO</Input>
+<Input name="ResultSchema">getCuentas/operation1Response</Input>
+<Input name="InputSchema">getCuentas/operation1</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc11"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">String</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">getUserId</Input>
+<Input name="Body">{
+	//return webAppAccess.getUserInfo().getUserID();
+	return "lprado";
+}</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies><Dependency type="Class">com.gbm.mq.MqConnection</Dependency>
+<Dependency type="File">/factory/pages/service_test_index_page.html</Dependency>
+<Dependency type="Model">factory/portletbase/view_and_form_base</Dependency>
+<Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/input.html</Dependency>
+<Dependency type="File">/factory/html_templates/clean_label_above_themes.html</Dependency>
+<Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/view.html</Dependency>
+<Dependency type="File">/factory/html_templates/clean_themes.html</Dependency>
+<Dependency type="Class">com.bowstreet.builderutilities.NameSequencer</Dependency>
+</Dependencies>
+<ExternalProperties><ExternalProperty id="Service2Enabled">true</ExternalProperty>
+<ExternalProperty id="DojoEnabled">true</ExternalProperty>
+<ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.TextBox,dijit.form.NumberTextBox</ExternalProperty>
+</ExternalProperties>
+</Model>
