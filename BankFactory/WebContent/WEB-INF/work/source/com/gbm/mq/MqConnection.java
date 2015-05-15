@@ -192,13 +192,21 @@ public class MqConnection {
 			return null;
 		}
 	}
-
+	
 	// ********************************************************************************
 
 	public IXml getMessageQueue(String idCliente, int idTipoCuenta,
-			String fechaMayorA, String fechaMenorA, double saldoMayorA,
-			double saldoMenorA){
-		String messageQueue = putAndGetMessage(idCliente,idTipoCuenta,fechaMayorA,fechaMenorA,saldoMayorA,saldoMenorA);
+			String fechaMayorA, String fechaMenorA, String saldoMayorA,
+			String saldoMenorA){
+		//************************validar campos***************************
+		fechaMayorA = (fechaMayorA.equals("") ? null : fechaMayorA);
+		fechaMenorA = (fechaMenorA.equals("") ? null : fechaMenorA);
+		saldoMayorA = (saldoMayorA.equals("") ? "-1" : saldoMayorA);
+		saldoMenorA = (saldoMenorA.equals("") ? "-1" : saldoMenorA);
+		double saldoMayorADouble= Double.parseDouble(saldoMayorA);
+		double saldoMenorADouble= Double.parseDouble(saldoMenorA);
+		//*************************************************************
+		String messageQueue = putAndGetMessage(idCliente,idTipoCuenta,fechaMayorA,fechaMenorA,saldoMayorADouble,saldoMenorADouble);
 		IXml queueMessageXML = xmlParser(messageQueue);
 		return queueMessageXML;
 	}

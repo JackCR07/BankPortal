@@ -471,9 +471,9 @@ Parameters:
 <NameSearch>numero_cuenta</NameSearch>
 </SimplePageLocation>
 </Input>
-<Input name="OutputDefinitions"><top><OutputDefinition><C2AOutputTypeName>numero_cuenta</C2AOutputTypeName>
+<Input name="OutputDefinitions"><top><OutputDefinition><C2AOutputTypeName>id_cuenta</C2AOutputTypeName>
 <C2AOutputType>string</C2AOutputType>
-<Value>${DataServices/GetCuentasService/GetCuentasSO/results/operation1Response/cuenta/numero_cuenta}</Value>
+<Value>${Variables/cuentaLoopVar/cuenta/id_cuenta}</Value>
 <C2AOutputCaption>numero cuenta</C2AOutputCaption>
 <C2AOutputNamespace />
 <AliasList />
@@ -528,11 +528,11 @@ Parameters:
 <ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
 <ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dojo.parser,dijit.form.FilteringSelect,dijit.form.DateTextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
 <ExternalProperty id="C2AWSDLDocProperty">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:portlet="http://www.ibm.com/wps/c2a" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.ibm.com/pb/models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="pbAction_Source_Service" targetNamespace="http://www.ibm.com/pb/models"&gt;&lt;types&gt;&lt;xsd:schema targetNamespace="http://www.ibm.com/pb/models"&gt;&lt;xsd:simpleType name="numero_cuenta"&gt;&lt;xsd:restriction base="xsd:string" /&gt;
+&lt;definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:portlet="http://www.ibm.com/wps/c2a" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.ibm.com/pb/models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="pbAction_Source_Service" targetNamespace="http://www.ibm.com/pb/models"&gt;&lt;types&gt;&lt;xsd:schema targetNamespace="http://www.ibm.com/pb/models"&gt;&lt;xsd:simpleType name="id_cuenta"&gt;&lt;xsd:restriction base="xsd:string" /&gt;
 &lt;/xsd:simpleType&gt;
 &lt;/xsd:schema&gt;
 &lt;/types&gt;
-&lt;message name="pbAction_SourceResponse"&gt;&lt;part name="numero_cuenta" type="tns:numero_cuenta" /&gt;
+&lt;message name="pbAction_SourceResponse"&gt;&lt;part name="numero_cuenta" type="tns:id_cuenta" /&gt;
 &lt;/message&gt;
 &lt;portType name="pbAction_Source_Service"&gt;&lt;operation name="pbAction_Source"&gt;&lt;output message="tns:pbAction_SourceResponse" /&gt;
 &lt;/operation&gt;
