@@ -94,7 +94,7 @@
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="InputStructureHandling">FromOperation</Input>
 <Input name="InputAllowStructureEdit">false</Input>
-<Input name="InputAutomaticMapping">true</Input>
+<Input name="InputAutomaticMapping">false</Input>
 <Input name="ResultStructureHandling">Specify</Input>
 <Input name="ResultAllowStructureEdit">false</Input>
 <Input name="ResultAutomaticMapping">true</Input>
@@ -123,27 +123,27 @@
 </Input>
 <Input name="InputMappingTable"><top><Field><Name>arg1</Name>
 <Type>string</Type>
-<Value></Value>
+<Value>${MethodCall/getUserId}</Value>
 </Field>
 <Field><Name>arg2</Name>
 <Type>int</Type>
-<Value></Value>
+<Value>${Arguments/arg2}</Value>
 </Field>
 <Field><Name>arg3</Name>
 <Type>string</Type>
-<Value></Value>
+<Value>${Arguments/arg3}</Value>
 </Field>
 <Field><Name>arg4</Name>
 <Type>string</Type>
-<Value></Value>
+<Value>${Arguments/arg4}</Value>
 </Field>
 <Field><Name>arg5</Name>
 <Type>double</Type>
-<Value></Value>
+<Value>${Arguments/arg5}</Value>
 </Field>
 <Field><Name>arg6</Name>
 <Type>double</Type>
-<Value></Value>
+<Value>${Arguments/arg6}</Value>
 </Field>
 </top>
 </Input>
