@@ -53,7 +53,7 @@ Parameters:
 </top>
 </Inputs>
 </InputsForOperation>
-<InputsForOperation><Inputs></Inputs>
+<InputsForOperation><Inputs />
 </InputsForOperation>
 </top>
 </Input>
@@ -191,7 +191,7 @@ Parameters:
 <Action><ActionType>Assignment</ActionType>
 <ActionName>Variables/Egreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/Credito}</ActionName>
 </Action>
-<Action><ActionType></ActionType>
+<Action><ActionType />
 <ActionName>vista</ActionName>
 </Action>
 </Actions>

@@ -600,7 +600,7 @@ Parameters:
 </Input>
 <Input name="OutputDefinitions"><top><OutputDefinition><C2AOutputTypeName>numero_cuenta</C2AOutputTypeName>
 <C2AOutputType>string</C2AOutputType>
-<Value>${DataServices/GetCuentasService/GetCuentasSO/results/operation1Response/cuenta/id_cuenta}</Value>
+<Value>${Variables/cuentaLoopVar/cuenta/id_cuenta}</Value>
 <C2AOutputCaption>numero cuenta</C2AOutputCaption>
 <C2AOutputNamespace />
 <AliasList />
