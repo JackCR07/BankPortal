@@ -141,7 +141,9 @@ Parameters:
 
         var options = {
           title: 'Saldo Cuenta',
-          backgroundColor: { fill:'transparent' }
+          backgroundColor: { fill:'transparent' },
+          titleTextStyle: {color: 'white'},
+          legend: {textStyle:{color:'white'}}
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
