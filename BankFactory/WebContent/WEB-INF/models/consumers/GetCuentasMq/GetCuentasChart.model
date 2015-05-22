@@ -48,7 +48,25 @@ Parameters:
 <Value>${Variables/id_cuenta}</Value>
 </Input>
 <Input><Name>operation2InputParameter1.idTipoTransaccion</Name>
-<Value>-1</Value>
+<Value>null</Value>
+</Input>
+<Input><Name>operation2InputParameter1.fecha_mov_mayor_a</Name>
+<Value>null</Value>
+</Input>
+<Input><Name>operation2InputParameter1.fecha_mov_menor_a</Name>
+<Value>null</Value>
+</Input>
+<Input><Name>operation2InputParameter1.mon_trans_mayor_a</Name>
+<Value>null</Value>
+</Input>
+<Input><Name>operation2InputParameter1.mon_trans_menor_a</Name>
+<Value>null</Value>
+</Input>
+<Input><Name>operation2InputParameter1.n_trans_mayor_a</Name>
+<Value>null</Value>
+</Input>
+<Input><Name>operation2InputParameter1.n_trans_menor_a</Name>
+<Value>null</Value>
 </Input>
 </top>
 </Inputs>
@@ -129,7 +147,8 @@ Parameters:
 <Input name="ScriptSourceType">Explicit</Input>
 <Input name="PageName">vista</Input>
 <Input name="Name">grafico</Input>
-<Input name="Script"> google.load("visualization", "1", {packages:["corechart"]});
+<Input name="Script">
+ google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
 

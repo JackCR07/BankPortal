@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<BuilderDef id="com.bowstreet.builders.webapp.client.ClientEventDeclarationBuilder" xmlns="http://www.bowstreet.com/2001/Schemas">
+    <ReadableName>Client Event Declaration</ReadableName>
+    <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName>
+    <HelpFile>factory/product_documentation/designer/event_declaration.htm</HelpFile>
+    <RequiredFactoryVersion>8.0.0</RequiredFactoryVersion>
+    <Description>Defines a client side event and creates a method named &quot;fire&lt;event name&gt;&quot; for firing it.</Description>
+    <Domains>
+        <Domain>Consumer</Domain>
+        <Domain>Client</Domain>
+    </Domains>
+    <CreateModifyList>
+      <CanCreate type="Event">Declares a named event for either throwing or handling.</CanCreate>
+    </CreateModifyList>
+    <Category>Actions and Events,Client-Side Application</Category>
+    <Keywords>Flow Control</Keywords>
+    <BuilderData>
+        <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.client.ClientEventDeclarationBuilder</BuilderDataEntry>
+    </BuilderData>
+    <CoordinatorClassName></CoordinatorClassName>    
+    <InputDefinitions>
+        <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName">
+            <Visible>false</Visible>
+        </InputDefinition>
+        
+        <InputDefinition name="EventName" base="com.bowstreet.core.Base.StringData">
+            <Required>true</Required>
+            <Prompt>Event Name</Prompt>
+            <HelpText>Enter a name for this event.</HelpText>
+            <Visible>true</Visible>
+            <Property>true</Property>
+        </InputDefinition>
+        
+        <InputDefinition name="Arguments" base="com.bowstreet.core.Base.ClientSideArguments">
+          <Type>Xml</Type>
+        </InputDefinition>
+        
+        <InputDefinition name="CreateFireMethods" base="com.bowstreet.core.Base.BooleanData">
+            <Visible>false</Visible>
+            <Property>true</Property>
+        </InputDefinition>
+        
+        <InputDefinition name="ClientSideDelivery" base="com.bowstreet.core.Base.BooleanData">
+            <Group></Group>
+            <Prompt>Use Client-Side Delivery</Prompt>
+            <InitialValue>true</InitialValue>
+            <HelpText>If true, events will be delivered on the client without a full page refresh.</HelpText>
+            <Visible>false</Visible>
+            <Property>true</Property>
+        </InputDefinition>
+        
+        <InputDefinition name="ServerDelivery" base="com.bowstreet.core.Base.BooleanData">
+            <Group></Group>
+            <Prompt>Fire Event On Server</Prompt>
+            <InitialValue>false</InitialValue>
+            <HelpText>If true, events will be fired on the server.</HelpText>
+            <Visible>false</Visible>
+            <Property>true</Property>
+        </InputDefinition>    
+                   
+        <InputDefinition name="ClientSideEventPrefix" base="com.bowstreet.core.Base.IndirectValue">
+            <Group></Group>        
+            <Required>false</Required>
+            <Prompt>Event Prefix</Prompt>
+            <HelpText>Optional prefix added to the event to make a unique name.</HelpText>
+            <Property>true</Property>
+        </InputDefinition>
+        
+    </InputDefinitions>
+    <GroupDefinitions>
+        <GroupDefinition id="Arguments" base="com.bowstreet.core.Base.Arguments">
+            <Description>Specify any arguments this event will pass to its event handler when fired.</Description>
+        </GroupDefinition>
+    </GroupDefinitions>
+</BuilderDef>

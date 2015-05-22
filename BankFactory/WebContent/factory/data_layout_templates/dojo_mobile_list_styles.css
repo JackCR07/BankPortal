@@ -1,0 +1,11 @@
+@IMPORT url("base_template_styles.css");  
+.mblVariableHeight{}
+.mblListItemIcon,.mblListItemIcon img{width:34px; height:34px; border-radius:6px;}
+.mblIconArea img{width:64px;height:64px;}
+.mblIconArea{padding:8px}
+.vf_view_container {width:100%;}
+.vf_view_list {width:100%;}
+.wefDojoMobileMultiLineListItem .wpfLeft {float: left; padding: 2px;}
+.wefDojoMobileMultiLineListItem .wpfCenterContainer {float: left; width: 60%;}   
+.wefDojoMobileMultiLineListItem .wpfCenter {padding-left: 3px;padding-right: 3px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.wefDojoMobileMultiLineListItem .wpfRight {float: right; margin-right: 20px; line-height: 58px; white-space: nowrap; overflow: hidden; width: 15%;}

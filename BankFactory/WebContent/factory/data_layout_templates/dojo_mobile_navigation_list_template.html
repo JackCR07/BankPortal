@@ -1,0 +1,14 @@
+<meta data-template-id="MobileRoundRectNavigationList" data-template-type="navigation" data-template-bundle-name="com.bowstreet.builders.webapp.client.messages" data-template-name-id="DataLayoutDojoMobileRoundRectNavigationListName" data-template-description-id="DataLayoutDojoMobileRoundRectNavigationListDescription" data-template-name="Dojo Mobile Round Navigation List" data-template-description="This template is suitable for rendering a Dojo Mobile rounded navigation list on a mobile device." data-style-picker-file-names="/factory/data_layout_templates/base_template_styles.css" data-stylesheets="/factory/data_layout_templates/mobile_navigation_border_list.css,/factory/data_layout_templates/blank.css" data-template-link-mapping-type="HTMLEvent" data-dojo-requires="dojox.mobile"/>
+<div class="wpfMobileNavBD">
+	<div data-repeat-wrapper="default">
+	   <div data-target="group_title" dojoType="dojox.mobile.RoundRectCategory"></div>
+	   <ul dojoType="dojox.mobile.RoundRectList">
+	      <li data-repeat="Item" dojoType="dojox.mobile.ListItem" class="mblVariableHeight" data-target-attribute="icon:left_image" moveTo="#">
+	         <div>
+	            <div data-target="name" class="wpfLargeTitleText"></div>
+	            <div data-target="description" class="wpfSmallText"></div>
+	         </div>
+	      </li>
+	   </ul>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+/*! Licensed Materials - Property of IBM.
+    (c) Copyright IBM Corporation 2001, 2009.  All Rights Reserved.
+    U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+This CSS was built on August 21 2009. (version: OneUI-2.0.1_20090821-0327)
+these are the styles for the title bar (layout)
+companion file is titlebarTheme.css*/
+/*** T I T L E   B A R 	***/
+/*the blue bar under the banner, that contains tabs and search UI*/
+.lotusTitleBar{height:3em;position:relative;border-bottom-width:1px;border-bottom-style:solid;background-position:top left;background-repeat:repeat-x;clear:both/*fix for IE6*/}
+.lotusTitleBar .lotusRightCorner{background-position:top right;background-repeat:no-repeat;height:3em;padding-right:6px}
+.lotusTitleBar .lotusInner{background-position:top left;background-repeat:no-repeat;height:3em;}
+.lotusTitleBar h2{padding:3px 0 0 10px;float:left;font-size:1.5em;line-height:2em;letter-spacing:0;width:200px;font-weight:normal} /*this is used in place of tabs, if desired*/
+.lotusTitleBar .lotusTabs, .lotusTitleBar .portlet-tab{left:10px}
+.lotusTitleBar .lotusTabs li{padding-left:5px;}
+.lotusTitleBar .lotusSearch{position:absolute;top:.7em;right:10px}  
+.lotusTitleBar .lotusTabs a, .lotusTitleBar .lotusTabs a:visited{display:block;padding:7px 10px 7px 7px;text-decoration:none;line-height:1em;background-position:top right;background-repeat:no-repeat;line-height:1em}/*line-height is for IE, to keep the selected tab sitting on top of the border when there is a drop-down image in the tab*/
+/***********************************************************/
+

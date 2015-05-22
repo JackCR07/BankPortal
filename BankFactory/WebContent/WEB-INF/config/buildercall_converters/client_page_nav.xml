@@ -1,0 +1,3 @@
+<mappings>
+    <mapping from="com.bowstreet.builders.webapp.client.ClientPageNavigationBuilder" to="com.bowstreet.builders.webapp.PageNavigationBuilder" />
+</mappings>

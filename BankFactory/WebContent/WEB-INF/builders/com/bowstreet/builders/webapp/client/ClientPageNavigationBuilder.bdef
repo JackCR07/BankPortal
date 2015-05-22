@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.client.ClientPageNavigationBuilder">
+    <ReadableName>Client Page Navigation</ReadableName>
+    <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppControlGenHandler</GenHandlerClassName>
+    <HelpFile>factory/product_documentation/designer/page_navigation.htm</HelpFile>
+    <RequiredFactoryVersion>8.0.0</RequiredFactoryVersion>
+    <Deprecated>This builder has been deprecated, please use the Page Navigation builder instead.</Deprecated>
+    <Description>Adds multiple navigation links between pages.</Description>
+    <Domains>
+    </Domains>
+    <CreateModifyList>
+        <CanModify type="Page" category="Navigation and Page Actions">Adds multiple navigation links between pages.</CanModify>
+        <CanModify type="[Unassigned Elements]" category="Navigation and Page Actions">Adds multiple navigation links between pages.</CanModify>
+    </CreateModifyList>
+    <Category>Navigation and Page Actions,Page Elements,Rich UI,Mobile,Client-Side Application</Category>
+    <Keywords>Navigation</Keywords>
+    <AddFromPaletteListenerClassName>default</AddFromPaletteListenerClassName>
+    <BuilderData>
+        <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.client.ClientPageNavigationBuilder</BuilderDataEntry>
+        <BuilderDataEntry name="IconName">layoutGeneral</BuilderDataEntry>
+    </BuilderData>
+    <CoordinatorClassName>com.bowstreet.builders.webapp.ui.PageNavigationCoordinator</CoordinatorClassName>
+    <InputDefinitions>
+        <InputDefinition name="Name" base="com.bowstreet.core.Base.BuilderName" />
+
+        <InputDefinition name="PageLocation" base="com.bowstreet.core.WebAppBase.PageLocation" />
+
+        <InputDefinition name="TemplateFile" base="com.bowstreet.builders.webapp.DataLayoutBuilder.TemplateFile" />
+        <InputDefinition name="TemplateDescription" base="com.bowstreet.builders.webapp.DataLayoutBuilder.TemplateDescription" />
+        <InputDefinition name="StyleSheetFile" base="com.bowstreet.builders.webapp.DataLayoutBuilder.StyleSheetFile" />
+
+        <InputDefinition name="Navigation" base="com.bowstreet.core.Base.XMLData">
+            <Prompt>Navigation</Prompt>
+            <HelpText>Provide the navigation elements.</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <Editor JavaClass="com.bowstreet.widget.List">
+                <Argument name="columns">5</Argument>
+                <Argument name="rowTag">Item</Argument>
+                <Argument name="headings">Action,Name,Description,Icon,Group</Argument>
+                <Argument name="columnTags">TargetAction,Name,Description,Icon,GroupName</Argument>
+                <Argument name="allowDynamicUpdate">true</Argument>
+                <Argument name="cellEditors">
+                    <Editors>
+                        <Editor JavaClass="com.bowstreet.widget.ActionChooser">
+                            <Argument name="showSpecialActions" inheritable="true">false</Argument>
+                            <Argument name="showMethodsWithArguments" inheritable="true">true</Argument>
+                            <Argument name="useMethodArgumentsDialog" inheritable="true">true</Argument>
+                            <Argument name="showTypePrefix" inheritable="true">true</Argument>
+                            <Argument name="showPages" inheritable="true">true</Argument>
+                            <Argument name="showDataServices" inheritable="true">false</Argument>
+                        </Editor>
+                        <Editor JavaClass="com.bowstreet.widget.IndirectValue"/>
+                        <Editor JavaClass="com.bowstreet.widget.IndirectValue"/>
+                        <Editor JavaClass="com.bowstreet.widget.Reference">
+                            <Argument name="editor">
+                                <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+                                    <Argument name="filterExtensions">*.emf,*.wmf,*.jpg,*.jpeg,*.jfif,*.jpe,*.png,*.bmp,*.dib,*.rle,*.bmz,*.gif,*.gfa,*.emz,*.wmz</Argument>
+                                    <Argument name="noShowWebInf">true</Argument>
+                                </Editor>
+                            </Argument>
+                        </Editor>
+                        <Editor JavaClass="com.bowstreet.widget.ComboBox">
+                            <Argument name="isEditable">true</Argument>
+                        </Editor>
+                    </Editors>
+                </Argument>
+            </Editor>
+            <InitialValue><top/></InitialValue>
+        </InputDefinition>
+
+        <InputDefinition name="Groups" base="com.bowstreet.core.Base.XMLData">
+            <Prompt>Groups</Prompt>
+            <HelpText>Provide the navigation group elements.</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <Editor JavaClass="com.bowstreet.widget.List">
+                <Argument name="columns">2</Argument>
+                <Argument name="rowTag">Group</Argument>
+                <Argument name="headings">Group,Description</Argument>
+                <Argument name="columnTags">GroupName,Description</Argument>
+                <Argument name="allowDynamicUpdate">true</Argument>
+                <Argument name="cellEditors">
+                    <Editors>
+                        <Editor JavaClass="com.bowstreet.widget.ComboBox">
+                            <Argument name="isEditable">true</Argument>
+                        </Editor>
+                        <Editor JavaClass="com.bowstreet.widget.IndirectValue"/>
+                    </Editors>
+                </Argument>
+            </Editor>
+            <InitialValue><top/></InitialValue>
+        </InputDefinition>
+
+        <InputDefinition name="ActionType" base="com.bowstreet.core.Base.StringData">
+            <Prompt>Action Type</Prompt>
+            <HelpText>The basic operation type for this action: "form" or "link"</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <Editor JavaClass="com.bowstreet.widget.ComboBox">
+                <Argument name="isEditable">false</Argument>
+                <Argument name="ListData" inheritable="true">link,form</Argument>
+                <Argument name="ListLabels" inheritable="true">Link to an action,Submit form and invoke action</Argument>
+            </Editor>
+            <InitialValue>link</InitialValue>
+        </InputDefinition>
+
+        <InputDefinition name="FormName" base="com.bowstreet.core.Base.StringData">
+            <Prompt>Form Name</Prompt>
+            <HelpText>Name of form to submit. Defaults to form containing the control (only valid if Action Type "Form" is selected)</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <InitialValue/>
+        </InputDefinition>
+
+        <InputDefinition name="TargetPages" base="com.bowstreet.core.Base.XMLData">
+            <Group>TargetPages</Group>
+            <Prompt>Target Pages</Prompt>
+            <HelpText>Provide a list of pages on which to place the page title and back button.</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <Editor JavaClass="com.bowstreet.widget.List">
+                <Argument name="columns">1</Argument>
+                <Argument name="rowTag">TargetPage</Argument>
+                <Argument name="headings">Page</Argument>
+                <Argument name="columnTags">Page</Argument>
+                <Argument name="allowDynamicUpdate">true</Argument>
+                <Argument name="cellEditors">
+                    <Editors>
+                        <Editor JavaClass="com.bowstreet.widget.WebAppPage"/>
+                    </Editors>
+                </Argument>
+            </Editor>
+            <InitialValue><top/></InitialValue>
+        </InputDefinition>
+
+        <InputDefinition name="PageTitleTag" base="com.bowstreet.core.Base.StringData" >
+            <Group>TargetPages</Group>
+            <Prompt>Page Title Tag</Prompt>
+            <HelpText>Location on the page where the page title should be located.</HelpText>
+            <Visible>true</Visible>
+            <Required>false</Required>
+            <Editor JavaClass="control.picker">
+                <Argument name="setInitialValue">false</Argument>
+                <Argument name="width">400</Argument>
+                <Argument name="page">AllPages</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="BackButtonTag" base="com.bowstreet.core.Base.StringData" >
+            <Group>TargetPages</Group>
+            <Prompt>Back Button Tag</Prompt>
+            <HelpText>Location on the page where the back button should be located.</HelpText>
+            <Visible>true</Visible>
+            <Required>false</Required>
+            <Editor JavaClass="control.picker">
+                <Argument name="setInitialValue">false</Argument>
+                <Argument name="width">400</Argument>
+                <Argument name="page">AllPages</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="BackButtonText" base="com.bowstreet.core.Base.IndirectValue" >
+            <Group>TargetPages</Group>
+            <Prompt>Back Button Text</Prompt>
+            <HelpText>Specify the text for the back button.</HelpText>
+            <Visible>true</Visible>
+            <Required>false</Required>
+        </InputDefinition>
+
+        <InputDefinition name="BackButtonClass" base="com.bowstreet.core.Base.IndirectValue" >
+            <Group>TargetPages</Group>
+            <Prompt>Back Button Class</Prompt>
+            <HelpText>Specify a style class to use for the back button.</HelpText>
+            <Visible>true</Visible>
+            <Required>false</Required>
+        </InputDefinition>
+
+        <InputDefinition name="MakeUniqueElementNames" base="com.bowstreet.core.Base.BooleanData" >
+            <Group>Advanced</Group>
+            <Prompt>Make Unique Element Names</Prompt>
+            <HelpText>Make unique element names when creating the NavigationData Variable to reduce potential conflicts with other named elements that may exist on the page.</HelpText>
+            <Visible>true</Visible>
+            <Required>false</Required>
+            <InitialValue>true</InitialValue>
+        </InputDefinition>
+
+    </InputDefinitions>
+    <GroupDefinitions>
+        <GroupDefinition id="TargetPages">
+            <Name>Target Page Options</Name>
+            <BorderStyle>Etched</BorderStyle>
+            <IsCollapsible>true</IsCollapsible>
+            <Description>Use these inputs to optionally place a page title and back button on the target pages.</Description>
+        </GroupDefinition>
+        <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" />
+    </GroupDefinitions>
+    <PageDefinitions />
+</BuilderDef>

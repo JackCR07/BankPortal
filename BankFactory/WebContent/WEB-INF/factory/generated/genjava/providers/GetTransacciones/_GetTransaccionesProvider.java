@@ -9,7 +9,7 @@
  *
  * Description:  Generated methods class for IBM Web Experience Factory application.
  *
- * This code was automatically generated at 04:12:08 PM on Apr 29, 2015
+ * This code was automatically generated at 10:26:11 PM on May 19, 2015
  * by the IBM Web Experience Factory -- do not edit manually.
  * Generated using the following Profiles - Not Profiled.
  *
@@ -202,12 +202,159 @@ public void GetTransaccionesOperationSetResults(WebAppAccess webAppAccess, IXml 
 
 
 /**
+ * Generated Method [SumarTransaccionesOnLoadHandler]
+ */
+public void SumarTransaccionesOnLoadHandler(WebAppAccess webAppAccess)
+{
+  // This method is an OnModelLoad event handler, and it's how we make sure 
+  // that every user (every session thread) gets their own unique 
+  // service call LJO so it can be stateful - so runtime code can call 
+  // setTimeout etc and the object can hold the value safely until 
+  // the invoke is called. Instantiating the LJO in the regen would mean 
+  // that it would have to be stateless since there would be one instance 
+  // shared by all users of that profile. 
+  com.bowstreet.builders.webapp.methods.ServiceCallMethods helper = new com.bowstreet.builders.webapp.methods.ServiceCallMethods();
+  helper.init( webAppAccess, "SumarTransacciones_data", "SumarTransacciones_reply", "SumarTransacciones_replyHeaders");
+  com.bowstreet.webapp.Variable ljo = webAppAccess.getVariables().getVariable("SumarTransacciones");
+  ljo.setValue(helper);
+}
+
+
+/**
+ * Generated Method [_IRResolver_11]
+ */
+public Object _IRResolver_11(WebAppAccess webAppAccess)
+{
+    return "http://172.16.11.225:7800/getTransacciones/getTransacciones";
+}
+
+/**
+ * Generated Method [_IRResolver_12]
+ */
+public Object _IRResolver_12(WebAppAccess webAppAccess)
+{
+    return "30";
+}
+
+/**
+ * Generated Method [_IRResolver_13]
+ */
+public Object _IRResolver_13(WebAppAccess webAppAccess)
+{
+    return "operation2";
+}
+
+/**
+ * Generated Method [_IRResolver_14]
+ */
+public Object _IRResolver_14(WebAppAccess webAppAccess)
+{
+    return "http://getTransacciones";
+}
+
+/**
+ * Generated Method [_IRResolver_15]
+ */
+public Object _IRResolver_15(WebAppAccess webAppAccess)
+{
+    return "";
+}
+
+/**
+ * Generated Method [_IRResolver_16]
+ */
+public Object _IRResolver_16(WebAppAccess webAppAccess)
+{
+    return "literal";
+}
+
+/**
+ * Generated Method [_IRResolver_17]
+ */
+public Object _IRResolver_17(WebAppAccess webAppAccess)
+{
+    return "http://www.w3.org/2001/XMLSchema";
+}
+
+/**
+ * Generated Method [_IRResolver_18]
+ */
+public Object _IRResolver_18(WebAppAccess webAppAccess)
+{
+    return webAppAccess.getVariables().getObject("SumarTransacciones_arg1_operation2InputParameter1");
+}
+
+/**
+ * Generated Method [_IRResolver_19]
+ */
+public Object _IRResolver_19(WebAppAccess webAppAccess)
+{
+    return null;
+}
+
+/**
+ * Generated Method [_IRResolver_20]
+ */
+public Object _IRResolver_20(WebAppAccess webAppAccess)
+{
+    return null;
+}
+
+/**
+ * Generated Method [SumarTransaccionesOpInitInputs]
+ */
+public void SumarTransaccionesOpInitInputs(WebAppAccess webAppAccess)
+{
+    IXml data = webAppAccess.getVariables().getXml("SumarTransaccionesOpInputs");
+    IXml inputs = webAppAccess.getVariables().getXml("SumarTransaccionesOpTargetInputStructure");
+    webAppAccess.getVariables().setXml("SumarTransacciones_arg1_operation2InputParameter1", data);
+    if (data!=null) {
+        	XmlUtil.copyElementContents(data,inputs);
+    }
+}
+
+
+/**
+ * Generated Method [SumarTransaccionesOpExecute]
+ */
+public void SumarTransaccionesOpExecute(WebAppAccess webAppAccess)
+{
+    SumarTransaccionesOpInitInputs(webAppAccess);
+    webAppAccess.callMethod("SumarTransacciones.invoke");
+    IXml results =  webAppAccess.getVariables().getXml("SumarTransacciones_reply");
+    SumarTransaccionesOpSetResults(webAppAccess, results);
+}
+
+
+/**
+ * Generated Method [SumarTransaccionesOpSetResults]
+ */
+public void SumarTransaccionesOpSetResults(WebAppAccess webAppAccess, IXml operationResults)
+{
+    IXml results = operationResults;
+    webAppAccess.getVariables().setXml("SumarTransaccionesOpResults", results);
+}
+
+
+/**
  * Generated Method [getTransaccionesServiceGetTransaccionesOperationTestMethod]
  */
 public IXml getTransaccionesServiceGetTransaccionesOperationTestMethod(WebAppAccess webAppAccess)
 {
     webAppAccess.callMethod("GetTransaccionesOperationExecute");
     IXml data = webAppAccess.getVariables().getXml("GetTransaccionesOperationResults");
+    data = ServiceTestHelper.getData(data);
+    ServiceTestHelper.cleanSampleData(data);
+    return data;
+}
+
+/**
+ * Generated Method [getTransaccionesServiceSumarTransaccionesOpTestMethod]
+ */
+public IXml getTransaccionesServiceSumarTransaccionesOpTestMethod(WebAppAccess webAppAccess)
+{
+    webAppAccess.callMethod("SumarTransaccionesOpExecute");
+    IXml data = webAppAccess.getVariables().getXml("SumarTransaccionesOpResults");
     data = ServiceTestHelper.getData(data);
     ServiceTestHelper.cleanSampleData(data);
     return data;
@@ -327,6 +474,99 @@ public void getTransaccionesServiceGetTransaccionesOperation_InputPage_NextActio
 }
 
 /**
+ * Generated Method [getTransaccionesServiceSumarTransaccionesOp_InputPage_SaveData]
+ */
+public void getTransaccionesServiceSumarTransaccionesOp_InputPage_SaveData(WebAppAccess webAppAccess)
+{
+  String str;
+  boolean performValidation;
+  Variables variables = webAppAccess.getVariables();
+  IInputFieldFormatter formatter;
+    PageAutomationMessages errors = (PageAutomationMessages)webAppAccess.getVariables().getObject("getTransaccionesServiceSumarTransaccionesOp_InputPageError");
+    errors.clear();
+
+    {
+        IXml SumarTransaccionesOpInputs = variables.getXml("SumarTransaccionesOpInputs");
+        if (SumarTransaccionesOpInputs == null) {
+            SumarTransaccionesOpInputs = XmlUtil.create("operation2InputParameter1");
+            variables.setXml("SumarTransaccionesOpInputs", SumarTransaccionesOpInputs);
+        }
+        
+            str = webAppAccess.getRequestInputs().getInputValue("idCliente");
+            formatter = (IInputFieldFormatter)variables.getObject("StandardFormatter");
+            formatter.setWebAppAccess(webAppAccess);
+            if (!formatter.validate(str, "Required String"))
+              errors.addMessage("idCliente", formatter.getErrorMessage());
+            SumarTransaccionesOpInputs.setText("idCliente", str);
+        
+            str = webAppAccess.getRequestInputs().getInputValue("idTipoTransaccion");
+            SumarTransaccionesOpInputs.setText("idTipoTransaccion", str);
+        
+            str = webAppAccess.getRequestInputs().getInputValue("fecha_mov_mayor_a");
+            SumarTransaccionesOpInputs.setText("fecha_mov_mayor_a", str);
+        
+            str = webAppAccess.getRequestInputs().getInputValue("fecha_mov_menor_a");
+            SumarTransaccionesOpInputs.setText("fecha_mov_menor_a", str);
+        
+            str = webAppAccess.getRequestInputs().getInputValue("mon_trans_mayor_a");
+            SumarTransaccionesOpInputs.setText("mon_trans_mayor_a", str);
+        
+            str = webAppAccess.getRequestInputs().getInputValue("mon_trans_menor_a");
+            SumarTransaccionesOpInputs.setText("mon_trans_menor_a", str);
+        
+            str = webAppAccess.getRequestInputs().getInputValue("n_trans_mayor_a");
+            SumarTransaccionesOpInputs.setText("n_trans_mayor_a", str);
+        
+            str = webAppAccess.getRequestInputs().getInputValue("n_trans_menor_a");
+            SumarTransaccionesOpInputs.setText("n_trans_menor_a", str);
+    
+        variables.getVariable("SumarTransaccionesOpInputs").notifyValueChanged();
+    }
+}
+
+/**
+ * Generated Method [_init_getTransaccionesServiceSumarTransaccionesOp_InputPageError]
+ */
+public com.bowstreet.builderutilities.PageAutomationMessages _init_getTransaccionesServiceSumarTransaccionesOp_InputPageError(WebAppAccess webAppAccess)
+{
+    PageAutomationMessages result = new PageAutomationMessages();
+
+    result.setReadableName("idCliente", "Id Cliente");
+    result.setReadableName("idTipoTransaccion", "Id Tipo Transaccion");
+    result.setReadableName("fecha_mov_mayor_a", "Fecha Mov Mayor A");
+    result.setReadableName("fecha_mov_menor_a", "Fecha Mov Menor A");
+    result.setReadableName("mon_trans_mayor_a", "Mon Trans Mayor A");
+    result.setReadableName("mon_trans_menor_a", "Mon Trans Menor A");
+    result.setReadableName("n_trans_mayor_a", "N Trans Mayor A");
+    result.setReadableName("n_trans_menor_a", "N Trans Menor A");
+
+    return result;
+}
+
+/**
+ * Generated Method [clear_getTransaccionesServiceSumarTransaccionesOp_InputPage_Errors]
+ */
+public void clear_getTransaccionesServiceSumarTransaccionesOp_InputPage_Errors(WebAppAccess webAppAccess)
+{
+  webAppAccess.callMethod("getTransaccionesServiceSumarTransaccionesOp_InputPageError.clear");
+}
+
+/**
+ * Generated Method [getTransaccionesServiceSumarTransaccionesOp_InputPage_NextAction]
+ */
+public void getTransaccionesServiceSumarTransaccionesOp_InputPage_NextAction(WebAppAccess webAppAccess)
+{
+    PageAutomationMessages errors = (PageAutomationMessages)webAppAccess.getVariables().getObject("getTransaccionesServiceSumarTransaccionesOp_InputPageError");
+    String action = errors.getForceAction();
+    if (action != null)
+        webAppAccess.processAction(action);
+    else    if (errors.hasMessages())
+        webAppAccess.processAction("getTransaccionesServiceSumarTransaccionesOp_InputPage");
+    else
+        webAppAccess.processAction("getTransaccionesServiceSumarTransaccionesOp_ShowResults");
+}
+
+/**
  * Generated ActionList [getTransaccionesServiceGetTransaccionesOperation_ShowResults]
  */
 public Object getTransaccionesServiceGetTransaccionesOperation_ShowResults(WebAppAccess webAppAccess)
@@ -351,6 +591,35 @@ public Object getTransaccionesServiceGetTransaccionesOperationGotoOperation(WebA
 
     // Line 1: 
     returnValue = webAppAccess.processAction("getTransaccionesServiceGetTransaccionesOperation_InputPage");
+    return (Object)returnValue;
+}
+
+
+/**
+ * Generated ActionList [getTransaccionesServiceSumarTransaccionesOp_ShowResults]
+ */
+public Object getTransaccionesServiceSumarTransaccionesOp_ShowResults(WebAppAccess webAppAccess)
+{
+    Object returnValue = null;
+
+    // Line 1: SumarTransaccionesOpExecute
+    returnValue = webAppAccess.callMethod("SumarTransaccionesOpExecute", new Object[] {  });
+
+    // Line 2: getTransaccionesServiceSumarTransaccionesOp_ViewPage
+    returnValue = webAppAccess.processAction("getTransaccionesServiceSumarTransaccionesOp_ViewPage");
+    return (Object)returnValue;
+}
+
+
+/**
+ * Generated ActionList [getTransaccionesServiceSumarTransaccionesOpGotoOperation]
+ */
+public Object getTransaccionesServiceSumarTransaccionesOpGotoOperation(WebAppAccess webAppAccess)
+{
+    Object returnValue = null;
+
+    // Line 1: 
+    returnValue = webAppAccess.processAction("getTransaccionesServiceSumarTransaccionesOp_InputPage");
     return (Object)returnValue;
 }
 

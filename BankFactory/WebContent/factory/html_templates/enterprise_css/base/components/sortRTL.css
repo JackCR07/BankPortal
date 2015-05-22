@@ -1,0 +1,18 @@
+/*! Licensed Materials - Property of IBM.
+    (c) Copyright IBM Corporation 2001, 2009.  All Rights Reserved.
+    U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+This CSS was built on August 21 2009. (version: OneUI-2.0.1_20090821-0327)
+these are the styles for sort
+companion file is sortTheme.css*/
+/*** S O R T ***/
+/*these are for the sort controls found at the top of a table/list of entries*/
+.lotusSort{margin:3px 5px;font-size:.9em}
+.lotusSort .lotusInlinelist li{padding:2px 5px}
+.lotusSort .lotusInlinelist li.lotusFirst{padding-right:0}
+.lotusSort a{padding:0;background-position:left center;background-repeat:no-repeat;text-decoration:underline;display:-moz-inline-box/*for FF2*/;display:inline-block;vertical-align:middle}
+a.lotusMoreSorts{padding:0 5px 0 8px;}
+a.lotusActiveSort{text-decoration:none}
+.lotusSort .lotusAscending, .lotusSort .lotusDescending{padding-left:10px;}
+.lotusImagesOff .lotusSort .lotusAscending, .lotusImagesOff .lotusSort .lotusDescending{padding-left:0}
+/****************************************************************/
+

@@ -1,0 +1,299 @@
+<html>
+
+<body>
+	<styleSheet name="DesignViewStyleSheet">${WebContent}/factory/html_templates/enterprise.css</styleSheet>
+	<styleSheet name="StyleSheetHint">/factory/html_templates/enterprise.css</styleSheet>
+
+
+  <div name="DisplayPageWrapper"  class="ONEUI lotusui">
+
+    <table name="PageContentsContainer">
+
+      <tr name="DisplayGroupWrapper"><td>
+       <div>
+        <HTMLWRAPPER name="LabelContainer">
+          <div  name="DisplayGroupLabel"  class="DisplayGroupLabelDiv">
+            <span name="LabelText"  class="DisplayGroupLabelText" />
+          </div>
+        </HTMLWRAPPER>
+        <table name="GroupContainer" class="lotusVertTable">
+
+        <HTMLWRAPPER name="DisplayGroup">
+            <!-- Begin: Data display fields -->
+            <HTMLWRAPPER name="DataContainer">
+
+                        <tr name="DisplayField" class="lotusFormFieldRow">
+                           <td width="10px">&nbsp;</td>
+                           <td class="lotusFormLabel" valign="top" height="27" nowrap>
+                               <label for="_field"><span name="FieldLabel">Field Label</span></label>
+                           </td>
+                           <td width="100%" class="outputDataCell" valign="top" nowrap>
+                             <input name="FieldElement" class="outputData" value="Field Value" id="_field"/>
+                           </td>
+                       </tr>
+
+            </HTMLWRAPPER>
+            <!-- End: Data display fields -->
+        </HTMLWRAPPER>
+
+        </table>
+       </div>
+      </td></tr>   <!-- end DisplayGroupWrapper -->
+
+    </HTMLWRAPPER>
+  </div>  <!-- end DisplayPageWrapper -->
+
+
+
+  <div name="DataEntryPageWrapper" class="ONEUI lotusui">
+
+    <p name="FullErrorLocation" class="lotusFormErrorField lotusForm"></p>
+    <HTMLWRAPPER name="PageContentsContainer">
+
+       <HTMLWRAPPER name="DataEntryGroupWrapper">
+		  <HTMLWRAPPER name="LabelContainer">
+		    <div  name="DataEntryGroupLabel"  class="lotusFormTitle lotusForm">
+		      <h2><span name="LabelText" /></h2>
+		    </div>
+		  </HTMLWRAPPER>
+		  <div >
+           <table name="GroupContainer" >
+
+               <HTMLWRAPPER name="DataEntryGroup">
+                   <tr><td colspan="4">&nbsp;</td></tr>
+
+                   <!-- Begin: Data entry fields -->
+                   <HTMLWRAPPER name="DataContainer">
+
+                       <tr name="DataEntryField" class="lotusFormFieldRow">
+                           <td width="10px">&nbsp;</td>
+                           <td class="lotusFormLabel" valign="top" nowrap>
+                               <span name="FieldRequired" class="lotusFormRequired"></span>
+                               <label for="_field"><span name="FieldLabel">Field Label</span></label>
+                           </td>
+                           <td width="100%" class="outputDataCell" valign="top" nowrap>
+                             <input name="FieldElement" class="lotusText" value="Field Value" id="_field"/>
+                             <br/>
+                             <span name="FieldValidationError" class="lotusFormError"></span>
+                           </td>
+                       </tr>
+
+
+                       <tr name="DataEntryField_checkbox" class="lotusFormFieldRow">
+                           <td width="10px">&nbsp;</td>
+                           <td class="lotusFormLabel" valign="top" height="27" nowrap>
+                               <span name="FieldRequired" class="lotusFormRequired"></span>
+                               <label for="_field"><span name="FieldLabel">Field Label</span></label>
+                           </td>
+                           <td width="100%" class="outputDataCell" valign="top" nowrap>
+                             <input name="FieldElement" class="lotusCheckbox" value="Field Value" id="_field"/>
+                             <span name="FieldValidationError" class="lotusFormError"></span>
+                           </td>
+                           <td width="10px">&nbsp;</td>
+                           <td width="10px">&nbsp;</td>
+                           <td width="10px">&nbsp;</td>
+                           <td width="10px">&nbsp;</td>
+                       </tr>
+
+                   </HTMLWRAPPER>
+                   <!-- End: Data entry fields -->
+
+               </HTMLWRAPPER>
+           </table>
+          </div>
+
+        </HTMLWRAPPER>
+
+    </HTMLWRAPPER>
+  </div>  <!-- end DataEntryPageWrapper -->
+
+
+
+      <HTMLWRAPPER name="TableWrapper">
+        <HTMLWRAPPER name="LabelContainer">
+
+          <tr name="TableLabel">
+            <td  colspan="4" class="TableLabelCell">
+              <span name="LabelText" class="TableLabelText" />
+            </td>
+          </tr>
+
+        </HTMLWRAPPER>
+
+        <tr><td  colspan="3" class="TableContainerCell">
+          <div name="GroupContainer" class="TableContainerDiv" >
+
+           <table name="Table" id="_table" class="lotusTable lotusClear"  border="0" cellspacing="0" cellpadding="3">
+
+             <tr name="TableHeaderContainer" class="lotusTags lotusFirst">
+
+               <!-- Note seven different column header types defined.  The PageAutomation
+                    code will choose the most specific one defined for each column. -->
+               <th name="ColumnHeader"  class="">
+                 <span name="HeaderElement"></span>
+               </th>
+               <th name="ColumnHeaderSorted"  class="">
+                 <a name="HeaderElement" class="lotusActiveSort labelSortLink"></a>
+               </th>
+               <th name="ColumnHeader_int"  class=" lotusAlignRight">
+                 <span name="HeaderElement"></span>
+               </th>
+               <th name="ColumnHeaderSorted_int" class=" lotusAlignRight">
+                 <a name="HeaderElement" class="lotusActiveSort labelSortLink"></a>
+               </th>
+               <th name="ColumnHeader_float" class=" lotusAlignRight">
+                 <span name="HeaderElement"></span>
+               </th>
+               <th name="ColumnHeaderSorted_float" class=" lotusAlignRight">
+                 <a name="HeaderElement" class="lotusActiveSort labelSortLink"></a>
+               </th>
+               <th name="ColumnHeader_double" class=" lotusAlignRight">
+                 <span name="HeaderElement"></span>
+               </th>
+               <th name="ColumnHeaderSorted_double" class=" lotusAlignRight">
+                 <a name="HeaderElement" class="lotusActiveSort labelSortLink"></a>
+               </th>
+             </tr>
+
+             <!-- spacer row after the header, perhaps add an <hr /> here? -->
+             <tr><td colspan="100" class="SpacerRowAfterTableHeader" height="0"></td></tr>
+
+             <HTMLWRAPPER name="RepeatElement">
+               <tr name="DataContainer" sequence_class="lotusFirst,lotusAltRow">
+
+                 <!-- As with headers, we define four column data types.  Code will choose best one. -->
+                 <td name="ColumnData" class="">
+                   <span name="FieldElement"  class="lotusTags"/>&nbsp;<span name="FieldValidationError" class="ValidationErrorText" />
+                 </td>
+                 <td name="ColumnData_int" class="lotusAlignRight">
+                   <span name="FieldElement" class="lotusTags"/>&nbsp;<span name="FieldValidationError" class="ValidationErrorText" />
+                 </td>
+                 <td name="ColumnData_float" class="lotusAlignRight">
+                   <span name="FieldElement" class="lotusTags"/>&nbsp;<span name="FieldValidationError" class="ValidationErrorText" />
+                 </td>
+                 <td name="ColumnData_double" class="lotusAlignRight">
+                   <span name="FieldElement" class="lotusTags"/>&nbsp;<span name="FieldValidationError" class="ValidationErrorText" />
+                 </td>
+                 <td name="ColumnData_autodelete" class="">
+                   <span name="FieldElement" class="lotusTags"/>&nbsp;<span name="FieldValidationError" class="ValidationErrorText" />
+                 </td>
+
+               </tr>
+             </HTMLWRAPPER>
+           </table>
+        </div>
+        <span name="_buttonSpace" />
+
+            <!-- Place for "Empty Data" message -->
+            <HTMLWRAPPER name="EmptyDataContainer">
+                <table cellpadding="0" cellspacing="0" width="100%" name="TableEmptyData" ><tr class="EmptyDataMessageRow"><td align="center" class="EmptyDataMessageCell">
+                    <span  name="EmptyDataMessage" class="emptyDataMessage" />
+                </td></tr></table>
+            </HTMLWRAPPER>
+
+      </td></tr>
+    </HTMLWRAPPER> <!-- end TableWrapper -->
+
+    <tr name="DisplayGroup_NewsColumnBase"><td style="spacing:0; padding:0">
+        <table width="100%"  cellpadding="0" cellspacing="0">
+            <tr name="DataContainer" class="NewsColumnWrapper" />
+        </table>
+    </td></tr>
+
+    <td name="DisplayGroupWrapper_NewsColumnCell" class="NewsColumnCell" valign="top">
+        <table class="displayPageTable" cellpadding="3" cellspacing="1" width="100%">
+            <span name="LabelContainer"></span>
+            <span name="GroupContainer"></span>
+        </table>
+    </td>
+
+    <tr name="DataEntryGroup_NewsColumnBase"><td style="spacing:0; padding:0">
+        <table width="100%"  cellpadding="0" cellspacing="0">
+            <tr name="DataContainer" class="NewsColumnWrapper" />
+        </table>
+    </td></tr>
+
+    <td name="DataEntryGroupWrapper_NewsColumnCell" class="NewsColumnCell"  valign="top">
+        <table class="dataEntryPageTable" cellpadding="3" cellspacing="1" width="100%">
+            <span name="LabelContainer"></span>
+            <span name="GroupContainer"></span>
+        </table>
+    </td>
+
+
+
+    <tr name="DisplayGroupWrapper_LayoutGrid">
+      <td name="GroupContainer" colspan="2">
+
+        <table name="DisplayGroup_LayoutGrid" class="WPF_LayoutGrid">
+          <HTMLWRAPPER name="DataContainer" >
+
+           <HTMLWRAPPER name="DisplayGroupWrapper_LayoutRow">
+             <HTMLWRAPPER name="GroupContainer" >
+               <tr name="DisplayGroup_LayoutRow" class="WPF_LayoutRow">
+                 <HTMLWRAPPER name="DataContainer" >
+
+                   <td name="DisplayGroupWrapper_LayoutColumn">
+                     <HTMLWRAPPER name="GroupContainer">
+
+                      <span name="DisplayGroup_LayoutColumn" class="WPF_LayoutColumn">
+                        <table name="DataContainer">
+
+                            <tr name="EmptyLayoutColumn">
+                                <td style="width:50px; height:40px;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </tr>
+
+                        </table>
+                      </span>
+
+                     </HTMLWRAPPER>
+                   </td>
+
+                 </HTMLWRAPPER>
+               </tr>
+             </HTMLWRAPPER>
+           </HTMLWRAPPER>
+
+          </HTMLWRAPPER>
+        </table>
+      </td>
+    </tr>
+
+
+    <tr name="DataEntryGroupWrapper_LayoutGrid">
+      <td name="GroupContainer" colspan="2">
+        <table name="DataEntryGroup_LayoutGrid" class="WPF_LayoutGrid">
+          <HTMLWRAPPER name="DataContainer" >
+
+             <HTMLWRAPPER name="DataEntryGroupWrapper_LayoutRow">
+               <HTMLWRAPPER name="GroupContainer" >
+                 <tr name="DataEntryGroup_LayoutRow" class="WPF_LayoutRow">
+                   <HTMLWRAPPER name="DataContainer" >
+
+                      <td name="DataEntryGroupWrapper_LayoutColumn">
+                        <HTMLWRAPPER name="GroupContainer">
+
+                          <span name="DataEntryGroup_LayoutColumn" class="WPF_LayoutColumn">
+                            <table  name="DataContainer" />
+                          </span>
+
+                        </HTMLWRAPPER>
+                      </td>
+
+                   </HTMLWRAPPER>
+                 </tr>
+               </HTMLWRAPPER>
+             </HTMLWRAPPER>
+
+          </HTMLWRAPPER>
+        </table>
+      </td>
+    </tr>
+
+
+
+</body>
+
+
+</HTML>
+

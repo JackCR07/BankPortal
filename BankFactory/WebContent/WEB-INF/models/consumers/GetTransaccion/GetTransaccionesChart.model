@@ -1,0 +1,391 @@
+<Model id="consumers/GetTransaccion/GetTransaccionesChart"><BuilderCallList><BuilderCall id="bc46"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientApplication</BuilderDefID>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ParseDojo">true</Input>
+<Input name="DojoMobile">true</Input>
+<Input name="ExecuteScripts">true</Input>
+<Input name="ImportedPageName">/factory/pages/client/client_app_chart.html</Input>
+<Input name="Name">client</Input>
+<Input name="GenerateMain">true</Input>
+<Input name="DefaultErrorPage">/factory/pages/client/dojo_mobile_default_error.html</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageData">&lt;span name="script_chart"&gt; &lt;/span&gt;
+&lt;span name="boton"&gt; &lt;/span&gt;
+&lt;span name="clientEventHandler"&gt; &lt;/span&gt;
+&lt;div id="canvas-holder"&gt;
+			&lt;canvas id="chart-area" width="500" height="500"/&gt;
+		&lt;/div&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">page1</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc25"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseParentProfile">false</Input>
+<Input name="ImportOnce">false</Input>
+<Input name="ProfileHandling">None</Input>
+<Input name="Name">SharedVariablesModel</Input>
+<Input name="ModelName">providers/GetTransacciones/transaccionesSharedVariables</Input>
+<Input name="SetProfiledInputValues">false</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[$Child$Input$<operation1 xmlns="http://getTransacciones">
+   <id_cuenta xmlns="">123</id_cuenta>
+   <id_tipo_transaccion xmlns="">123</id_tipo_transaccion>
+   <fecha_mov_mayor_a xmlns="">null</fecha_mov_mayor_a>
+   <fecha_mov_menor_a xmlns="">null</fecha_mov_menor_a>
+   <mon_trans_mayor_a xmlns="">-1.0E0</mon_trans_mayor_a>
+   <mon_trans_menor_a xmlns="">-1.0E0</mon_trans_menor_a>
+   <n_trans_mayor_a xmlns="">-1</n_trans_mayor_a>
+   <n_trans_menor_a xmlns="">-1</n_trans_menor_a>
+</operation1>
+]]></CacheKey>
+<CacheValue><operation1 xmlns="http://getTransacciones"><id_cuenta xmlns="">123</id_cuenta>
+<id_tipo_transaccion xmlns="">123</id_tipo_transaccion>
+<fecha_mov_mayor_a xmlns="">null</fecha_mov_mayor_a>
+<fecha_mov_menor_a xmlns="">null</fecha_mov_menor_a>
+<mon_trans_mayor_a xmlns="">-1.0E0</mon_trans_mayor_a>
+<mon_trans_menor_a xmlns="">-1.0E0</mon_trans_menor_a>
+<n_trans_mayor_a xmlns="">-1</n_trans_mayor_a>
+<n_trans_menor_a xmlns="">-1</n_trans_menor_a>
+</operation1>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$InputTransaccion$<operation1>
+   <id_cuenta>5</id_cuenta>
+   <id_tipo_transaccion></id_tipo_transaccion>
+   <fecha_mov_mayor_a></fecha_mov_mayor_a>
+   <fecha_mov_menor_a></fecha_mov_menor_a>
+   <mon_trans_mayor_a ></mon_trans_mayor_a>
+   <mon_trans_menor_a></mon_trans_menor_a>
+   <n_trans_mayor_a></n_trans_mayor_a>
+   <n_trans_menor_a></n_trans_menor_a>
+</operation1>]]></CacheKey>
+<CacheValue><operation1><id_cuenta>5</id_cuenta>
+<id_tipo_transaccion />
+<fecha_mov_mayor_a />
+<fecha_mov_menor_a />
+<mon_trans_mayor_a />
+<mon_trans_menor_a />
+<n_trans_mayor_a />
+<n_trans_menor_a />
+</operation1>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc14"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PortletDefaultLocale">en</Input>
+<Input name="PortletAdditionalLocales">en</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomEditDefaultsPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="Name">GetTransaccionesGrafico</Input>
+<Input name="PortletTitle">Get Transacciones Grafico</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc22"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseAllOperations">false</Input>
+<Input name="OverrideInputs">true</Input>
+<Input name="CreateLookupTables">true</Input>
+<Input name="AssociateLookupTables">true</Input>
+<Input name="UseDiscardableInputVariables">false</Input>
+<Input name="UseDiscardableVariables">false</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="InheritProfile">true</Input>
+<Input name="Name">SumarTransaccionesConsumer</Input>
+<Input name="ProviderModel">providers/GetTransacciones/GetTransaccionesProvider</Input>
+<Input name="SelectOperations"><top><OperationSelected><Operation>GetTransaccionesOperation</Operation>
+<OperationEnabled>false</OperationEnabled>
+<Description>No description was provided.
+Parameters:
+	Name:			inputs
+
+	Name:			results</Description>
+</OperationSelected>
+<OperationSelected><Operation>SumarTransaccionesOp</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>No description was provided.
+Parameters:
+	Name:			inputs
+
+	Name:			results</Description>
+</OperationSelected>
+</top>
+</Input>
+<Input name="OperationInputs"><top><InputsForOperation><Operation>SumarTransaccionesOp</Operation>
+<Inputs><top><Input><Name>operation2InputParameter1</Name>
+<Value />
+</Input>
+<Input><Name>operation2InputParameter1.idCliente</Name>
+<Value>${Variables/InputTransaccion/operation1/id_cuenta}</Value>
+</Input>
+<Input><Name>operation2InputParameter1.idTipoTransaccion</Name>
+<Value>${Variables/InputTransaccion/operation1/id_tipo_transaccion}</Value>
+</Input>
+<Input><Name>operation2InputParameter1.fecha_mov_mayor_a</Name>
+<Value>${Variables/InputTransaccion/operation1/fecha_mov_mayor_a}</Value>
+</Input>
+<Input><Name>operation2InputParameter1.fecha_mov_menor_a</Name>
+<Value>${Variables/InputTransaccion/operation1/fecha_mov_menor_a}</Value>
+</Input>
+<Input><Name>operation2InputParameter1.mon_trans_mayor_a</Name>
+<Value>${Variables/InputTransaccion/operation1/mon_trans_mayor_a}</Value>
+</Input>
+<Input><Name>operation2InputParameter1.mon_trans_menor_a</Name>
+<Value>${Variables/InputTransaccion/operation1/mon_trans_menor_a}</Value>
+</Input>
+<Input><Name>operation2InputParameter1.n_trans_mayor_a</Name>
+<Value>${Variables/InputTransaccion/operation1/n_trans_mayor_a}</Value>
+</Input>
+<Input><Name>operation2InputParameter1.n_trans_menor_a</Name>
+<Value>${Variables/InputTransaccion/operation1/n_trans_menor_a}</Value>
+</Input>
+</top>
+</Inputs>
+</InputsForOperation>
+<InputsForOperation><Inputs />
+</InputsForOperation>
+<InputsForOperation><Operation>GetTransaccionesOperation</Operation>
+<Inputs><top><Input><Name>operation1</Name>
+</Input>
+<Input><Name>operation1.id_cuenta</Name>
+</Input>
+<Input><Name>operation1.id_tipo_transaccion</Name>
+</Input>
+<Input><Name>operation1.fecha_mov_mayor_a</Name>
+</Input>
+<Input><Name>operation1.fecha_mov_menor_a</Name>
+</Input>
+<Input><Name>operation1.mon_trans_mayor_a</Name>
+</Input>
+<Input><Name>operation1.mon_trans_menor_a</Name>
+</Input>
+<Input><Name>operation1.n_trans_mayor_a</Name>
+</Input>
+<Input><Name>operation1.n_trans_menor_a</Name>
+</Input>
+</top>
+</Inputs>
+</InputsForOperation>
+</top>
+</Input>
+<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>SumarTransaccionesOp</Operation>
+<Mappings />
+</ValuesForOperation>
+</ContextVariables>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc48"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="CreationOption">Automatic</Input>
+<Input name="Name">UpdateChartClientActionList</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/Egreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/Credito}</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/Ingreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/Debito}</ActionName>
+</Action>
+<Action><ActionType></ActionType>
+<ActionName>metodo</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Ingreso</Input>
+<Input name="Type">Integer</Input>
+<Input name="Value">1</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Egreso</Input>
+<Input name="Type">String</Input>
+<Input name="Value">1</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc24"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">id_cuenta</Input>
+<Input name="Type">String</Input>
+<Input name="Value">0</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc29"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Resultado</Input>
+<Input name="Type">String</Input>
+<Input name="Value">No estoy inicializado</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc62"><BuilderDefID>com.bowstreet.builders.webapp.ClientJavaScriptBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageLocationType">Explicit</Input>
+<Input name="ScriptSourceType">Link</Input>
+<Input name="Name">chartJs</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>script_chart</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="ScriptExternalLocation">/factory/Chart.js</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc63"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientMethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+
+    var doughnutData = [
+				{
+					value: parseInt(this.getVariable('Ingreso')),
+					color:"#F7464A",
+					highlight: "#FF5A5E",
+					label: "Red"
+				},
+				{
+					value: parseInt(this.getVariable('Egreso')),
+					color: "#46BFBD",
+					highlight: "#5AD3D1",
+					label: "Green"
+				}
+
+			];
+
+				var ctx = document.getElementById("chart-area").getContext("2d");
+				window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
+			
+}</Input>
+<Input name="CreationOption">Automatic</Input>
+<Input name="Name">metodo</Input>
+<Input name="Arguments"><top />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc64"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>clientEventHandler</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">ClientEventHandler</Input>
+<Input name="Event">changeInVariables</Input>
+<Input name="Action">UpdateChartClientActionList</Input>
+<Input name="ActionURL">metodo</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc66"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Ingreso</Input>
+<Input name="Type">String</Input>
+<Input name="Value">1</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc68"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Egreso</Input>
+<Input name="Type">String</Input>
+<Input name="Value">1</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies><Dependency type="File">/factory/pages/client/client_app_chart.html</Dependency>
+<Dependency type="File">/factory/pages/client/dojo_mobile_default_error.html</Dependency>
+<Dependency type="Model">providers/GetTransacciones/transaccionesSharedVariables</Dependency>
+<Dependency type="Model">providers/GetTransacciones/GetTransaccionesProvider</Dependency>
+<Dependency type="File">/factory/Chart.js</Dependency>
+<Dependency type="File">/factory/clientjavascript/application/client85201404141110.js</Dependency>
+<Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
+<Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
+<Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
+</Dependencies>
+<ExternalProperties><ExternalProperty id="Client.Model">true</ExternalProperty>
+<ExternalProperty id="PortletModel">true</ExternalProperty>
+<ExternalProperty id="PortletName">GetTransaccionesGrafico</ExternalProperty>
+<ExternalProperty id="PortletTitle">Get Transacciones Grafico</ExternalProperty>
+<ExternalProperty id="PortletDefaultLocale">en</ExternalProperty>
+<ExternalProperty id="PortletAdditionalLocales">en</ExternalProperty>
+<ExternalProperty id="TestPortalPage"></ExternalProperty>
+<ExternalProperty id="PortletModeEdit">false</ExternalProperty>
+<ExternalProperty id="PortletModeEditDefaults">false</ExternalProperty>
+<ExternalProperty id="PortletModeConfig">false</ExternalProperty>
+<ExternalProperty id="PortletModeHelp">false</ExternalProperty>
+<ExternalProperty id="DojoEnabled">true</ExternalProperty>
+<ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
+<ExternalProperty id="DojoRequires">dojo.DeferredList,dojox.html,dojo.number,dojo.date.locale</ExternalProperty>
+</ExternalProperties>
+</Model>

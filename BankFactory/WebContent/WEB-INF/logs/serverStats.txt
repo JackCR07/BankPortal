@@ -1,4 +1,4 @@
-*-- TIME: [2015-04-17 13:05:07,948] --* 
+*-- TIME: [2015-04-29 10:14:40,051] --* 
 Category: bowstreet.system.server.logging.serverStats.default
 Priority: INFO
 Thread:   Web Experience Factory (server stats logging)
@@ -8,7 +8,7 @@ Websphere Portlet Factory version: 8.5.0 Release WEF8.5_20140414-1110
 
 
 
-*-- TIME: [2015-04-25 12:29:47,331] --* 
+*-- TIME: [2015-04-29 19:23:02,595] --* 
 Category: bowstreet.system.server.logging.serverStats.default
 Priority: INFO
 Thread:   Web Experience Factory (server stats logging)
@@ -18,7 +18,7 @@ Websphere Portlet Factory version: 8.5.0 Release WEF8.5_20140414-1110
 
 
 
-*-- TIME: [2015-04-27 12:06:06,768] --* 
+*-- TIME: [2015-04-30 15:54:58,704] --* 
 Category: bowstreet.system.server.logging.serverStats.default
 Priority: INFO
 Thread:   Web Experience Factory (server stats logging)
@@ -28,7 +28,7 @@ Websphere Portlet Factory version: 8.5.0 Release WEF8.5_20140414-1110
 
 
 
-*-- TIME: [2015-04-28 19:51:14,234] --* 
+*-- TIME: [2015-05-04 09:21:27,920] --* 
 Category: bowstreet.system.server.logging.serverStats.default
 Priority: INFO
 Thread:   Web Experience Factory (server stats logging)
@@ -38,7 +38,7 @@ Websphere Portlet Factory version: 8.5.0 Release WEF8.5_20140414-1110
 
 
 
-*-- TIME: [2015-04-29 22:21:36,017] --* 
+*-- TIME: [2015-05-15 09:07:05,433] --* 
 Category: bowstreet.system.server.logging.serverStats.default
 Priority: INFO
 Thread:   Web Experience Factory (server stats logging)

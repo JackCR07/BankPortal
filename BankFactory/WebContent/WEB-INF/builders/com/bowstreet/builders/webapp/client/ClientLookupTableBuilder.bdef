@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<BuilderDef id="com.bowstreet.builders.webapp.client.ClientLookupTableBuilder">
+  <ReadableName>Client Lookup Table</ReadableName>
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName>
+  <HelpFile>factory/product_documentation/designer/lookup_table.htm</HelpFile>
+  <RequiredFactoryVersion>8.0.0</RequiredFactoryVersion>
+  <Description>High-level builder for accessing lookup table data (tables with name/value pairs)</Description>
+
+  <Domains>
+    <Domain>Consumer</Domain>
+    <Domain>Client</Domain>
+  </Domains>
+
+  <BuilderData>
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.client.ClientLookupTableBuilder</BuilderDataEntry>
+  </BuilderData>
+
+  <Category>Schemas and Variables,Tables and Forms,Client-Side Application</Category>
+  <Keywords>XML, Table, Column, Display,Labels</Keywords>
+  <CoordinatorClassName>com.bowstreet.builders.webapp.client.ui.ClientLookupTableCoordinator</CoordinatorClassName>
+
+  <InputDefinitions>
+
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.RestrictedBuilderName"/>
+
+    <InputDefinition name="DataType" base="com.bowstreet.core.Base.StringData">
+      <Prompt>Data Source</Prompt>
+      <HelpText>What type of lookup table to use for this builder</HelpText>
+      <InitialValue>NewXmlData</InitialValue>
+      <Property>true</Property>
+      <Editor JavaClass="com.bowstreet.widget.RadioBox">
+        <Argument name="listLabels">XML Data,New XML Data</Argument>
+        <Argument name="listData">XmlData,NewXmlData</Argument>
+      </Editor>
+      <ProfileType>None</ProfileType>
+      <Visible>true</Visible>
+      <Required>true</Required>
+    </InputDefinition>
+
+     <InputDefinition name="XmlData" base="com.bowstreet.core.Base.VariableName">
+      <Prompt>XML Data</Prompt>
+      <HelpText>The indirect reference that provides the XML data for the lookup table content</HelpText>
+      <Visible>true</Visible>
+      <Required>false</Required>
+      <Property>true</Property>
+      <Editor>
+          <Argument name="variableTypes">IXml,XMLData</Argument>
+      </Editor>
+      
+    </InputDefinition>
+
+    <InputDefinition name="NewXmlData" base="com.bowstreet.core.Base.VariableValue">
+      <Prompt>New XML Data</Prompt>
+      <HelpText>The XML data to be used for the lookup table</HelpText>
+      <Visible>true</Visible>
+      <Required>false</Required>
+      <InitialValue><top><item><Value>value1</Value><Label>label1</Label></item><item><Value>value2</Value><Label>label2</Label></item></top></InitialValue>
+      <Property>true</Property>
+      <Editor>
+          <Argument name="returnTypes">IXml,Object,XMLData</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="VariableType" base="com.bowstreet.core.Base.StringData" >
+      <Visible>false</Visible>
+      <Required>false</Required>
+      <InitialValue>ValueTagLabelTag</InitialValue>
+      <Property>true</Property>
+      <Editor JavaClass="com.bowstreet.widget.RadioBox">
+         <Argument name="ListData" inheritable="true">ValueTagLabelTag,ResourceBundle</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="ValueElementName" base="com.bowstreet.core.Base.StringData">
+      <Prompt>Value Tag</Prompt>
+      <HelpText>The name of the XML element that contains values for the lookup table</HelpText>
+      <Visible>true</Visible>
+       <InitialValue>Value</InitialValue>
+      <Required>true</Required>
+      <Property>true</Property>
+    </InputDefinition>
+
+    <InputDefinition name="LabelElementName" base="com.bowstreet.core.Base.StringData">
+      <Prompt>Label Tag</Prompt>
+      <HelpText>The name of the XML element that contains labels for the lookup table</HelpText>
+      <Visible>true</Visible>
+        <InitialValue>Label</InitialValue>
+      <Required>true</Required>
+      <Property>true</Property>
+    </InputDefinition>
+
+
+  </InputDefinitions>
+
+  <GroupDefinitions>
+
+
+  </GroupDefinitions>
+
+</BuilderDef>

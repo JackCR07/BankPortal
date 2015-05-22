@@ -1,0 +1,29 @@
+<% if (!JSPSupport.inTag(request,"BODY")) { %><!DOCTYPE html>
+<% } %>
+<html>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <style>html,body{height:100%;overflow:hidden;position:relative;}</style>
+  </head>
+  <body style="visibility:hidden">
+    <script type="text/javascript">
+      dojo.require("dojox.mobile.FixedSplitter");
+      dojo.require("dojox.mobile.Pane");
+      //document.write('<'+'link rel="stylesheet" href="'+dojo.moduleUrl('dojox.mobile.themes.common','FixedSplitter.css')+'">');
+    </script>
+
+    <div dojoType="dojox.mobile.FixedSplitter" orientation="H">
+
+        <div dojoType="dojox.mobile.Pane" style="width:300px;border-right:1px solid black;" name="leftPane"> 
+            <!-- put pages/views here that should be used in the first  (left, due to horizontal orientation)  pane -->
+        </div>
+
+        <div dojoType="dojox.mobile.Pane"  name="rightPane"  class="wpfMobilePage">
+            <!-- put pages/views here that should be used in the second  (right)  pane -->
+        </div>
+
+    </div>
+
+  </body>
+</html>

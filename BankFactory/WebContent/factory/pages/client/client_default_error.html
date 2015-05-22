@@ -1,0 +1,132 @@
+<%@ page import="java.util.Locale"%>
+<%@ page import="java.util.ResourceBundle"%>
+<%@ page import="java.util.MissingResourceException"%>
+<%@ page import="com.bowstreet.BSConfig" %>
+<%!
+    final static String BUNDLE_NAME="com.bowstreet.content.factory.webapp.messages";
+
+    final static boolean devMode = isDevMode();
+    private static boolean isDevMode() {
+        boolean retval = false;
+        try {
+            retval = "development".equals(BSConfig.getProperty("bowstreet.server.type"));
+        } catch (Exception e) {
+            e.printStackTrace(); // Dump it to the log - can't rely on logging if BSConfig isn't working
+        }
+        return retval;
+    }
+
+	private static String ncrEncode( final String s )
+	{
+		final StringBuffer buffer = new StringBuffer();
+		final int length = (s != null) ? s.length() : 0;
+		
+		for( int i = 0; i < length; i++ )
+		{
+			final char c = s.charAt( i );
+			    
+			if( c <= 127 )
+				buffer.append( c );
+			else
+				buffer.append( "&#" ).append( (int) c ).append( ";" );
+		}
+
+		return buffer.toString();
+	}
+
+    private Locale preferredLocale = null;
+    private ResourceBundle RES_BUNDLE = null;
+
+    private String fmtMessage( final String key )
+    {
+        try
+        {
+            return RES_BUNDLE.getString( key );
+        }
+        catch( MissingResourceException mre )
+        {
+            return '!' + key + '!';
+        }
+    }
+%>
+<%
+    preferredLocale = request.getLocale();
+    RES_BUNDLE = ResourceBundle.getBundle( BUNDLE_NAME, preferredLocale );
+%>
+
+<div>
+
+<p>
+<font color="red">
+<b>
+<%=ncrEncode(fmtMessage("defaulterror.UnhandledError"))%>
+
+<br>
+<span name="errorMessage">[@= this.getText('defaultErrorPageData.errorMessage') @]</span>
+<br/>
+</b>
+</font>
+<br/>
+<%=ncrEncode(fmtMessage("defaulterror.ErrorLogInfo"))%>
+</p>
+
+<%
+if (devMode) {
+%>
+
+  <!-- These 2 simple styles provided for showing and hiding groups -->
+  <%-- This styles define the show and hide states --%>
+  <STYLE>
+    .showControl { visibility: visible; }
+    .hideControl { visibility: hidden; display: none; }
+  </STYLE>
+
+<%-- This function shows and hides the error section when the link is clicked --%>
+<script type="text/javascript">
+
+	function toggleVis(groupId)
+	{
+		// the element that contains the area to hide/show
+		toToggle = document.getElementById(groupId);
+				
+		// toggle the class attribute to change visibility
+		currentClass = toToggle.className;
+		if(currentClass == '' || currentClass == 'showControl')
+			toToggle.className = 'hideControl';
+		
+		else
+			toToggle.className = 'showControl';
+		
+	}
+
+</script>
+
+<p>
+<a onclick="javascript:toggleVis('exceptionDiv');toggleVis('showMessageDiv');toggleVis('hideMessageDiv');" href="javascript:void(0);">
+<span id="showMessageDiv" class="showControl"><%=ncrEncode(fmtMessage("defaulterror.ShowDetails"))%></span>
+<span id="hideMessageDiv" class="hideControl"><%=ncrEncode(fmtMessage("defaulterror.HideDetails"))%></span>
+</a>
+</p>
+
+<%-- This whole div tag is shown or hidden when the user clicks on the link above --%>
+<div id="exceptionDiv" class="hideControl">
+<p>
+<b><%=ncrEncode(fmtMessage("defaulterror.Exception"))%></b>
+[@= this.getText('defaultErrorPageData.exceptionMessage') @]
+</p>
+
+<pre>
+<b><%=ncrEncode(fmtMessage("defaulterror.StackTrace"))%></b>
+[@= this.getText('defaultErrorPageData.stackTrace') @]
+</pre>
+<pre>
+<b><%=ncrEncode(fmtMessage("defaulterror.ActionStatus"))%></b>
+[@= this.getText('defaultErrorPageData.actionStatus') @]
+</pre>
+</div>
+
+<%
+}
+%>
+
+</div>

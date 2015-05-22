@@ -1,0 +1,744 @@
+/*! Licensed Materials - Property of IBM.
+    (c) Copyright IBM Corporation 2001, 2009.  All Rights Reserved.
+    U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+This CSS was built on August 21 2009. (version: OneUI-2.0.1_20090821-0327)
+*****************************************************************************
+This file contains styles for components
+
+components.css is created by including content from css files located in the
+components directory.
+
+companion file is componentsTheme.css
+******************************************************************************/
+
+/****************************************/
+/*** C O M P O N E N T   S T Y L E S ****/
+/****************************************/
+
+
+/*** A C T I O N   B A R ***/
+/*this is the area above entry tables, containing action button, view controls, drop-down find-in-table, etc.*/
+.lotusActionBar{margin-bottom:4px !important;/*this number works with the margin-top of the paging control to simulate 8px*/position:relative;float:left;width:100%;height:2.3em/*this height accommodates the searchTab, if it is the only element in the action bar*/}
+.lotusActionBar2{margin-top:-25px;margin-bottom:4px !important;position:relative;float:left;width:100%;height:2.3em} /*use this in place of lotusActionBar when you want to compress the vertical space between the actionbar and the element(s) above it*/
+/***********************************************************/
+
+
+/*****************************/
+/*** A C T I O N   M E N U ***/
+/*****************************/
+ul.lotusActionMenu{margin:0;padding:0;list-style-type:none;display:table;position:absolute;top:-9999px;z-index:900px;border-width:1px;border-style:solid;background-position:top left;background-repeat:repeat-y}
+.lotusui_ie6 .lotusActionMenu{width:15em}
+.lotusActionMenu li{white-space:nowrap;zoom:1}
+.lotusActionMenu li.lotusSelected a{background-position:4px center; background-repeat:no-repeat;}
+.lotusActionMenu li.lotusMenuSeparator{border-top-width:1px;border-top-style:solid !important}
+.lotusActionMenu a{padding:3px 40px 5px 25px;text-decoration:none;display:block;zoom:1}
+.lotusActionMenu .lotusIcon a{padding-left:2px;}
+.lotusActionMenu .lotusIcon img{width:16px;height:16px;margin-right:6px}
+.lotusActionMenu a:visited, .lotusActionMenu a:hover, .lotusActionMenu a:focus, .lotusActionMenu a:active{text-decoration:none}
+.lotusActionMenu.lotusPlain a{padding-left:10px}
+.lotusImagesOff .lotusActionMenu li.lotusSelected a{padding-left:15px}
+.lotusImagesOff .lotusActionMenu a:hover, .lotusImagesOff .lotusActionMenu a:focus{text-decoration:underline}
+/***********************************************************/
+
+
+/*** B R E A D C R U M B S ***/
+/*these sit above the page header (lotusHeader)*/
+/*use lotus divider for an image in between breadcrumbs that when clicked shows a drop-down menu, otherwise, just use &gt; between breadcrumbs*/
+.lotusBreadcrumbs{margin:0 0 5px 0}
+.lotusBreadcrumbs .lotusDivider{padding:0 5px;background-position:left center;background-repeat:no-repeat;text-decoration:none}
+.lotusBreadcrumbs .lotusDivider:hover, .lotusBreadcrumbs .lotusDivider:focus, .lotusBreadcrumbs .lotusDivider:active{text-decoration:none}
+/***********************************************************/
+
+
+
+/*** B U T T O N S ***/
+/*common button styles*/
+/*all buttons*/
+.lotusButton, .lotusBtn, .lotusFormButton, .lotusBtnImg{border-width:1px;border-style:solid;text-align:center !important;}
+.lotusButton a, .lotusBtn a, .lotusFormButton, input.lotusBtn, button.lotusBtn, .lotusBtnImg{background-position:left top;background-repeat:repeat-x;font-weight:bold;}
+/*all buttons except lotusButton*/
+.lotusBtn a, input.lotusBtn, button.lotusBtn, .lotusFormButton{font-size:.9em;line-height:1.7em;}
+/*all buttons created using an input or button tag*/
+input.lotusBtn, button.lotusBtn, input.lotusFormButton, button.lotusFormButton{padding:2px 7px 3px 7px;cursor:pointer}
+.lotusui_ie button.lotusBtn, .lotusui_ie input.lotusBtn, .lotusui_ie .lotusFormButton{padding:0 1px 1px 1px}
+/*all buttons created from a link*/
+.lotusButton a, .lotusBtn a{border-width:0 1px 1px 1px;border-style:solid;display:block;text-decoration:none;}
+.lotusButton a:hover, .lotusButton a:focus, .lotusButton a:active, span.lotusBtn a:hover, span.lotusBtn a:focus, span.lotusBtn a:active{text-decoration:none;}/*gets rid of underline on button hover*/
+/*image buttons - an imput type=image wrapped with a span or an img wrapped with a link*/
+.lotusBtnImg{display:-moz-inline-box;display:inline-block;padding:0;vertical-align:middle;line-height:1em}/*default padding, which makes a 16 pixel icon if the image uses the default image size*/
+.lotusBtnImg img, .lotusBtnImg input{margin:0;padding:0;width:16px;height:16px;background-position:left top;background-repeat:no-repeat;}/*default margin, padding and size*/
+.lotusImagesOff .lotusBtnImg img, .lotusImagesOff .lotusBtnImg input{display:none}
+/*specific button styles*/
+/*button in left column, set width*/
+.lotusButton{margin-bottom:10px;width:174px;}
+.lotusButton a{padding:7px 0;font-size:1.3em;}
+/*default buttons*/
+/*put the lotusBtn class on either a span around a link or on an input button*/
+span.lotusBtn{margin-right:5px;;display:-moz-inline-box/*for FF2*/;display:inline-block;}
+span.lotusBtn a{padding:1px 10px 1px 10px;white-space:nowrap;}
+input.lotusBtn, button.lotusBtn{margin-right:3px;}
+.lotusui_ie6 span.lotusBtn img{margin: .6em 0 .6em 0} /*need this for button with drop-down arrow to look okay in IE6*/
+/*form buttons*/
+input.lotusFormButton, button.lotusFormButton{margin-right:15px;}
+.lotusDashboardSearch input.lotusFormButton {margin-top:20px;}
+/*disabled buttons*/
+.lotusBtnDisabled, .lotusBtnDisabled a{cursor:default}
+/*miscellaneous*/
+.lotusBtnContainer{margin-bottom:0;padding-bottom:0;white-space:nowrap;}/*put this around a bunch of "link" buttons*/
+.lotusBtnDivider{border-bottom-width:1px;border-bottom-style:solid;padding-bottom:5px}/*add this as an additional class when you need a bottom divider for the buttons*/
+/*generic/common buttons*/
+/*put the style on the wrapper a or span along with the lotusBtnImg class*/
+.lotusAdd{font-size:1.5em;}
+/***********************************************************/
+
+
+/*** C A P T I O N ***/
+/*provides a gray background for a caption above another component*/
+.lotusCaption{margin-top:.2em;padding:2px 5px;height:2em;line-height:2em;clear:both;text-align:center;border-width:1px;border-style:solid}
+.lotusCaption .lotusMeta{font-size:.9em}
+/***********************************************************/
+
+
+
+/*** C O M M E N T ***/
+.lotusPost{padding:7px 7px 7px 0;overflow:hidden;zoom:1}
+.lotusPost .lotusMeta{margin-bottom:-5px;margin-right:15px;font-size:0.9em;}
+.lotusPostContent{padding:0 0 7px 0;min-height:26px;position:relative;overflow:hidden;zoom:1;}
+.lotusPostAuthorInfo{display:block;float:left;font-size:0.9em;position:relative;width:50px;}/*the background styles are to allow a comment point on variants of the base comment, but the default comment type has no point*/
+.lotusPostAuthorInfo .lotusPostAvatar{background-position:right 10px;background-repeat:no-repeat;}
+.lotusPost .lotusPostAuthorInfo .lotusMeta{margin:0;font-size:1em}
+.lotusui_ie6 .lotusPostContent{left:-3px}/*to counteract the IE6 3px margin bug*/
+.lotusPostName{padding-top:5px;font-weight:bold;line-height:1.1em;}
+.lotusPostAvatar{padding-top:5px}
+.lotusPost .lotusDelete{display:block;position:absolute;top:7px;right:15px}
+.lotusAddComment{padding:4px;zoom:1;margin-bottom:10px;margin-right:4px;}
+.lotusAddComment a.lotusCommentInput{padding:2px 2px 10px 4px;border-width:1px;border-style:solid;display:block;}
+.lotusui .lotusAddComment a.lotusCommentInput:hover{border-bottom:1px solid !important;}
+/*important is to keep this from clashing with lotusActions classes, if applied*/
+/*update status "comment"*/
+.lotusUpdateStatus{padding:3px 7px}
+.lotusImagesOff .lotusUpdateStatus{border-width:1px;border-style:solid}
+.lotusUpdateStatus .lotusPostDetails{margin:0 0 3px 10px;} 
+.lotusUpdateStatus .lotusPostStatusControl{margin-left:10px;}
+.lotusUpdateStatus .lotusPostStatusControl .lotusStatusInput{padding:4px;display:block;} 
+.lotusImagesOff .lotusUpdateStatus .lotusPostStatusControl .lotusStatusInput{border-width:1px;border-style:solid}
+/*comment containers*/
+ul.lotusCommentList{margin:0;padding:0;list-style-type:none}/*assigned to the ul tag containing a list of comments*/
+ul.lotusCommentList li.lotusCommentItem{border-top-width:1px;border-top-style:solid}
+ul.lotusCommentList li.lotusFirst{border-top-width:0}
+.lotusCommentList li.lotusAddComment{margin:0;/*border-top-width:0;*/font-size:.9em;}
+.lotusCommentList li.lotusAddComment a{padding-bottom:2px}
+/*style adjustments for comments on the board/wall*/
+.lotusBoard .lotusPost{border-top-width:1px;border-top-style:solid}
+.lotusBoard .lotusPostContent{padding:0 15px 7px 0;}
+.lotusBoard .lotusCommentList{margin:-6px 0 5px 0;padding:0;width:500px;}
+.lotusBoard ul.lotusCommentList li.lotusCommentItem{margin:1px 7px 0 50px;border-top-width:0;}
+.lotusBoard ul.lotusCommentList li.lotusFirst{background-position:15px 0;background-repeat:no-repeat;padding-top:10px;}
+.lotusBoard .lotusCommentList .lotusPost{margin-bottom:1px;}
+.lotusBoard .lotusCommentList .lotusPostAuthorInfo{padding-left:6px; padding-right:4px; width:45px; }
+.lotusBoard .lotusPost .lotusPostAvatar{padding:2px 0 0 2px;}
+.lotusBoard .lotusPost .lotusCommentList .lotusPostAvatar{padding:2px 6px 0 2px;}
+.lotusBoard .lotusStatus .lotusDelete{top:0}
+.lotusBoard .lotusCommentList .lotusDelete{top:0;right:10px}
+.lotusBoard .lotusPost .lotusPerson { font-weight:bold; padding-right:2px; }
+.lotusBoard .lotusCommentPaging { font-style:italic; }
+.lotusBoard .lotusPostDetails { padding-top:2px; }
+
+/*styles for comments in a discussion forum*/
+.lotusForum .lotusPost{margin:7px 0;}
+.lotusImagesOff .lotusForum .lotusPost{border-width:1px;border-style:solid}
+.lotusForum .lotusPostAuthorInfo{width:100px;text-align:center}
+.lotusForum .lotusPostAvatar{padding-top:0}
+.lotusForum .lotusPostContent{padding:7px 15px;}
+.lotusForum ul.lotusCommentList li.lotusCommentItem{border-width:0}
+.lotusForum ul.lotusCommentList .lotusChild{margin-left:0;padding-left:20px;list-style-type:none;background-position:left top;background-repeat:no-repeat;}
+.lotusForum .lotusPostDetails{padding:5px 0}
+.lotusForum .lotusPostDetails blockquote{margin:4px 0;padding:4px 8px;width:75%;border-style:solid;border-width:1px 1px 1px 3px;}
+/*simple comment bubble*/
+.lotusCommentBubble{padding-top:10px;background-position:15px 0;background-repeat:no-repeat;zoom:1}
+.lotusCommentBubbleBody{padding:5px 10px 5px 15px}
+.lotusImagesOff .lotusCommentBubbleBody{border-width:1px;border-style:solid}
+.lotusCommentBubble .lotusMeta{font-size:.9em}
+/***********************************************************/
+
+
+
+/*** D I A L O G ***/
+/*this can be wrapped in a dojo dialog, if desired, which gives you the lightbox behavior for free, else, wrap it in a div assigned the class lotusDialogWrapper*/
+.lotusDialogWrapper{position:absolute;left:0;top:-9999px;}
+.lotusDialogBorder{border-width:4px;border-style:solid;min-width:400px;max-width:600px;}
+.lotusui_ie6 .lotusDialogBorder{width:expression(this.offsetWidth > 600 ? "600px" : "auto" );}
+.lotusDialog{opacity:1;height:auto;}
+.lotusDialog h1{font-weight:bold;padding:12px 12px 12px 20px;border-bottom-width:1px;border-bottom-style:solid;background-position:left top;background-repeat:repeat-x;}
+.lotusDialog h2{font-weight:bold;padding:12px 12px 12px 20px;margin:0 !important/*so it doesn't pick up the margins from lotusForm*/}
+.lotusDialog h1 .lotusClose, .lotusDialog h2 .lotusClose{float:right;font-size:.7em}
+.lotusImagesOff .lotusClose{font-size:1em}
+.lotusDialog .lotusText{width:97%}
+.lotusDialog .lotusDialogContent{padding:20px 12px 20px 20px;border-bottom-width:1px;border-bottom-style:solid;max-height:300px;overflow:auto;}
+.lotusui_ie .lotusDialog .lotusDialogContent{position:relative}/*this is needed to make sure relatively positioned elements within a scrolled div scroll properly - otherwise they act like fixed-position elements*/
+.lotusui_ie6 .lotusDialog .lotusDialogContent {height:expression(this.scrollHeight > 399 ? "400px" : "auto")}
+.lotusDialog .lotusDialogFooter{padding:12px 12px 12px 20px;}
+.lotusDialog td.lotusFormLabel{vertical-align:top;}
+.lotusDialog ul li{margin-bottom:3px;list-style:none;}
+.lotusui_ie .lotusDialogFooter .lotusAction{vertical-align:super}/*fixes alignment of cancel link*/
+
+/*for lightbox*/
+.lotusOverlay{display:none;position:absolute;top:0;left:0;width:100%;background-color:black;-moz-opacity:0.3;opacity:.30;filter: alpha(opacity=30);}
+/***********************************************************/
+
+
+
+/***************************************/
+/*** D I S P L A Y   C O N T R O L S ***/
+/***************************************/
+.lotusViewControl{display:table;}
+.lotusViewControl span{margin:5px 10px 0 0;float:left}/*styles for the text preceeding the control*/
+.lotusViewControl div{padding:1px;border-width:1px;border-style:solid;display:table;background-position:left top;background-repeat:repeat-x;zoom:1}
+.lotusImagesOff .lotusViewControl div{border-width:0}
+.lotusViewControl td{vertical-align:middle;padding:0}
+.lotusViewControl td div{display:-moz-inline-box;display:inline-block;overflow:hidden}
+.lotusImagesOff .lotusViewControl td div{overflow:visible}
+.lotusViewControl .lotusView{margin:0;padding:0;width:20px;height:20px;display:block;float:left;background-position:left top;background-repeat:no-repeat}
+.lotusImagesOff .lotusViewControl .lotusView{width:auto;height:auto}
+.lotusImagesOff .lotusViewControl .lotusView span{margin:0 5px}
+.lotusImagesOff .lotusViewControl .lotusSelected:hover, .lotusImagesOff .lotusViewControl .lotusSelected:focus{cursor:default;text-decoration:none}
+.lotusImagesOff .lotusViewControl .lotusSelected .lotusAltText{font-weight:bold;}
+/***********************************************************/
+
+
+/*** F E E D S **/
+/*the feed links under the content*/
+.lotusFeeds{margin:5px 10px;}
+.lotusFeeds a.lotusFeed{padding-left:20px;margin-right:7px;background-position:left center;background-repeat:no-repeat;display:-moz-inline-box;display:inline-block;zoom:1;min-height:16px/*ff2 fix*/}
+.lotusImagesOff .lotusFeeds a.lotusFeed{padding-left:0}
+/***********************************************************/
+
+
+
+/*** F O R M S ***/
+/*these styles are for inline and popup forms*/
+.lotusForm h2 {margin:25px 15px 15px 25px;font-size:1.3em;}
+.lotusForm h2 .lotusMeta{font-size:.8em;font-weight:normal}
+.lotusForm tr.lotusFormFieldRow td, .lotusForm td.lotusFormFieldRow{padding-bottom:10px}
+.lotusTable .lotusForm td, .lotusFormTable td {border-width:0 !important;padding-right:3px;vertical-align:top}
+.lotusForm td.lotusFormLabel {vertical-align:top;text-align:right;padding-right:10px;padding-top:1px}
+.lotusui_ie .lotusForm td.lotusFormLabel{padding-top:2px}
+.lotusForm td label{font-weight:bold;}
+.lotusForm td.lotusNudge{width:22px}/*this goes on the first empty table cell if putting labels on top*/
+.lotusForm label.lotusCheckbox{font-weight:normal}/*use for radio buttons, too*/
+.lotusForm .lotusText {width:99%;}
+.lotusForm textarea {margin-bottom:7px;}
+.lotusFieldBorder{margin-bottom:7px;padding:4px}
+.lotusFieldBorder .lotusText{margin:0;padding:2px;width:98.5%;}
+.lotusFormErrorSummary div {margin:10px 15px 3px 25px;}
+.lotusFormErrorSummary ul {margin:0 15px 10px 40px;list-style-type:disc;/*list-style-position:inside;*/}
+.lotusFormError, .lotusFormRequired {font-weight:bold;}
+td.lotusFormRequired {padding-bottom: 0 !important;}
+.lotusFormTable {width:100%;}
+.lotusFormSection {padding:5px 0 0 0;}
+.lotusFormTable .lotusFormFooter{padding:10px 25px !important;}
+/* form button element styles can be found in the button component */
+.lotusui_ie .lotusFormFooter .lotusAction{vertical-align:super}/*fixes alignment of cancel link*/
+/***********************************************************/
+
+
+
+
+/*** G R I D ***/
+/*for a group of same-sized elements with a div as the outer wrapper*/
+/*for example, a group of people photos*/
+.lotusGrid{zoom:1;margin:5px 10px 0 10px;overflow:hidden;zoom:1}
+.lotusui_ie .lotusGrid{margin-bottom:5px;}
+.lotusGrid div{margin:0 5px 5px 0;float:left}
+/***********************************************************/
+
+
+
+/*** H E A D E R ***/
+/*found at the top of the page, center column*/
+.lotusHeader{margin-bottom:5px;margin-top:-5px;overflow:hidden;position:relative;zoom:1}
+div.lotusHeader{margin-bottom:15px}/*this is for a simple header, not in a table layout, to adjust the bottom margin*/
+.lotusHeader img{margin-right:10px;}
+.lotusHeader .lotusDetails img, .lotusHeader .lotusBtnContainer img{margin-right:0;} /*to set image behavior back to normal, details row*/
+.lotusHeader .lotusDetails{margin-top:5px;position:relative;white-space:break-word;clear:both}
+.lotusHeader .lotusBtnContainer{margin-top:10px;}
+/*filters sit under the header and are interactive (you can remove them)*/
+.lotusFilters{margin-top:5px;line-height:1.8em;font-size:.9em}
+.lotusFilters .lotusAction{font-size:1em !important}/*reset action links, they are already .9em*/
+.lotusFilters a.lotusFilter{padding:1px 3px;border-width:1px;border-style:solid;-moz-border-radius:4px;-webkit-border-radius:4px;text-decoration:none}
+.lotusFilters a.lotusFilter:hover, .lotusFilters a.lotusFilter:focus{text-decoration:none}
+/*to keep them from getting too tall in IE6*/
+.lotusui_ie6 .lotusFilters a{display:inline-block;}
+.lotusui_ie6 .lotusFilters a.lotusFilter{padding:0 5px;line-height:1.6em}
+.lotusFilters .lotusClose{padding:0 4px}
+.lotusFilters .lotusDivider{padding:0 5px}
+.lotusFilters .lotusIcon:hover, .lotusFilters .lotusIcon:focus{text-decoration:none}
+/***********************************************************/
+
+
+
+/*** I N F O   B O X ***/ 
+/*this is used for help and tips*/
+.lotusInfoBox, .portlet-msg{margin:15px 0 5px 0;padding:5px;border-width:1px;border-style:solid;-moz-border-radius:2px;-webkit-border-radius:2px;overflow:hidden;zoom:1}
+.lotusInfoBox.lotusFirst{margin-top:0}/*this style definition (with no spaces) applies to any div with class="lotusInfoBox lotusFirst"*/
+.lotusInfoBox h3, .portlet-msg h3{margin:5px 0 10px 0;padding:0 0 0 5px;overflow:hidden;zoom:1}
+.lotusInfoBox h3 img, .portlet-msg h3 img{margin:3px 5px 0 0;border-width:1px;border-style:solid}
+.lotusSection .lotusInfoBox h3 span.lotusLeft{width:auto}/*h3 tags in a section are set to 90% width - need to reset*/
+.lotusInfoBox h4, .portlet-msg h4{margin:2px 5px;font-weight:bold}
+.lotusInfoBox p, .portlet-msg p{margin:0;padding:5px;}
+.lotusInfoBox ul, .portlet-msg ul{list-style-type:disc;margin-left:20px;margin-top:5px;padding-left:0}
+.lotusInfoBox .lotusInlinelist, .portlet-msg .lotusInlinelist{padding-bottom:5px;padding-left:0;}
+.lotusInfoBox .lotusInlinelist li, .portlet-msg .lotusInlinelist li{padding-bottom:5px;border-left-width:0;}
+/*put lotusHelp as an additional style to lotusInfoBox for help popups*/
+.lotusHelp{position:absolute;width:200px;left:0;top:-9999px;padding:4px;}
+.lotusHelp .lotusInfoBox{margin:0;border-width:1px;border-style:solid;-moz-border-radius:0;-webkit-border-radius:0;background-position:left top;background-repeat:repeat-x;}
+.lotusHelp h3{margin:4px 3px 0 0;float:left}
+.lotusMedium{width:300px}/*you can put this as an additional class to set the width to 300 pixels*/
+/***********************************************************/
+
+
+
+/*** L E G A L   S T A T E M E N T ***/
+/*IBM logo and legal statement*/
+/*3 different versions - regular pages, login page, and about page*/
+/*the new format uses a table.  The div styles are legacy styles*/
+div.lotusLegal{margin:15px 25px 10px 25px;min-height:37px}
+div.lotusLegal .lotusLicense{background-position:left center;background-repeat:no-repeat;margin-bottom:10px;min-height:37px}
+div.lotusLegal, table.lotusLegal td{font-size:0.8em;line-height:1.2em}
+div.lotusLegal p{margin:0;padding:0 0 0 110px;}
+table.lotusLegal{margin:5px 25px 10px 25px;}
+table.lotusLegal td{vertical-align:middle;padding:5px;}
+.lotusLogin div.lotusLegal .lotusLicense{background-position:left top}
+.lotusLogin .lotusLegal{margin-left:10px}
+.lotusLogin table.lotusLegal, .lotusAbout table.lotusLegal{margin-top:15px}
+.lotusui_ie6 div.lotusLegal .lotusLicense{height:50px;overflow:visible} /*this is the legacy way of doing the legal stuff, sans table.  Remove at some point*/
+/***********************************************************/
+
+
+
+/*** L I S T S ***/ 
+/*use in conjuction with sections if you want a more complex list*/
+ul.lotusList{clear:both;overflow:hidden;margin:0;padding:0;list-style-type:none}
+ul.lotusList *{list-style-type:none} /*makes sure all nested lists don't have bullets, even though we don't typically nest these straight lists*/
+ul.lotusList li {margin:1px 0;padding:3px 2px;clear:both;zoom:1}
+ul.lotusEditable li{text-align:right;overflow:hidden} /*use this class in combination with list class - allows you to put a delete button on a list item*/
+.lotusList a, ul.lotusList li.lotusSelected a{border-bottom-width:1px;border-bottom-style:dotted}/*to keep links for jumping on hover*/
+ul.lotusList li.lotusSelected a{text-decoration:none;}
+ul.lotusList img.lotusLeft{margin-right:3px}
+ul.lotusList div p{margin-top:3px;margin-bottom:0}/*second line of data*/
+.lotusImagesOff .lotusEditable .lotusDelete img{display:none}
+/***********************************************************/
+
+
+
+/*** M E N U ***/
+/*this is the green menu found at the top of the left column*/
+/*this menu is set up to allow for rounded corners in all browsers and is a set width*/
+.lotusMenu, .portlet-menu{margin:0 0 15px 0;padding:5px 0;width:178px;border-width:1px;border-style:solid;-moz-border-radius:4px;-webkit-border-radius:4px}
+.lotusMenu .lotusInner, .portlet-menu .lotusInner{overflow:hidden}
+.lotusMenu .lotusMenuSection{overflow:hidden;margin:0 0 3px 0;padding-bottom:5px;border-bottom-width:1px;border-bottom-style:solid;zoom:1}/*creates a section in the menu, with a divider at the bottom*/
+.lotusMenu .lotusMenuSubsection{margin:10px 0 0 20px;}/*allows you to indent a section of the menu*/
+.lotusMenu h2, .portlet-menu h2{margin:0 0 7px 10px;padding:0;font-size:1em}
+.lotusMenu h3, .portlet-menu h3{margin:0 5px 0 5px;padding:2px 0 2px 10px;}/*not sure we are still using this*/
+.lotusMenu .lotusMenuSubsection h3{margin-left:-15px}
+.lotusMenu h3.selected, .portlet-menu h3.selected{border-width:1px;border-style:solid;}
+.lotusMenu h3 a{margin-right:5px}
+/*Use a ul element for menu items. Put an additional lotusIcons class on it if your menu items have icons*/
+.lotusMenu ul, .portlet-menu ul{margin:0;padding:0;list-style-type:none;}
+.lotusMenu li{zoom:1}/*sets hasLayout in IE*/
+.lotusMenu li img, .portlet-menu .lotusMenu li img{margin:0 3px 0 0}
+.lotusMenu li a, .lotusMenu li a:visited, .portlet-menu li a, .portlet-menu li a:visited{padding:5px 0 5px 10px;display:block;text-decoration:none;font-weight:normal;line-height:1.0em}
+.lotusMenu ul.lotusIcons img{vertical-align:text-bottom}
+.lotusMenu ul.lotusIcons a{padding:3px 0 3px 10px}
+.lotusMenu li a:hover, .lotusMenu li a:focus, .portlet-menu li a:hover, .portlet-menu li a:focus{text-decoration:underline}
+.lotusMenu li.lotusSelected a, .lotusMenu li.lotusSelected a:visited, .portlet-menu li.lotusSelected a, .portlet-menu li.lotusSelected a:visited{margin:0 5px;padding-left:6px;border-width:1px;border-style:solid;text-decoration:none;cursor:default;font-weight:bold;}
+.lotusMenu div.lotusChunk, .portlet-menu .lotusMenu div.lotusChunk {margin:5px 5px 0 0;}/*lotusChunk allows you to apply vertical spacing within sections - wrap a div with this class around "chunks" of data*/
+.lotusTwistyOpenMenu, .lotusTwistyClosedMenu{width:11px;height:16px}
+/***********************************************************/
+
+
+
+/*** M E S S A G E S ***/
+/*these are the yellow warning/error messages that show up at the top of the content area*/
+.lotusMessage{padding:5px;margin-bottom:12px;border-width:1px;border-style:solid;-moz-border-radius:4px;-webkit-border-radius:4px;overflow:hidden;zoom:1}
+.lotusMessage img {margin:2px 5px 0 0;float:left}
+.lotusMessage span{display:block;margin-left:20px}
+/***********************************************************/
+
+
+
+/*** P A G I N G***/
+/*these are the page bars at the top and bottom of a table/list of entries*/
+.lotusPaging{margin-top:2px;padding:2px 5px;height:2em;line-height:2em;clear:both;text-align:center;font-size:.9em;}
+.lotusPaging a, .lotusPaging a:visited{font-weight:bold !important;}
+.lotusPaging input{width:20px;text-align:center;font:inherit;line-height:1em}
+.lotusui_ie .lotusPaging input{line-height:1.4em}
+.lotusPaging div, .lotusPaging .lotusInlinelist li.lotusFirst{padding-left:5px}
+.lotusPaging .lotusInlinelist li{padding:0 6px;}
+.lotusPaging .lotusInlinelist li.lotusLast{padding-left:0}
+/***********************************************************/
+
+
+
+/*** P A L E T T E ***/
+/*this is the palette that opens under the place bar to allow users to customize the UI */
+.lotusPalette{overflow:hidden;zoom:1;border-bottom-width:6px;border-bottom-style:solid}
+.lotusPaletteHeader{padding:7px 10px 5px 20px;overflow:hidden;zoom:1;position:relative;line-height:1.9em;border-width:1px 0;border-style:solid}
+.lotusPaletteHeader h2{float:left;}
+.lotusPaletteHeader a{text-decoration:none}
+.lotusPaletteHeader ul.lotusTabs{left:10px;width:75%}
+.lotusPaletteHeader .lotusTabs li{border-width:0}
+.lotusPaletteHeader .lotusTabs a, .lotusPaletteHeader .lotusTabs a:visited{margin:2px 0 8px 0;padding:3px 8px;}
+.lotusPaletteHeader .lotusTabs li.lotusSelected a{font-weight:bold}
+.lotusPaletteHeader .lotusTabs li a:hover, .lotusPaletteHeader .lotusTabs li a:focus{text-decoration:underline}
+.lotusPaletteHeader .lotusTabs li.lotusSelected a:hover, .lotusPaletteHeader .lotusTabs li.lotusSelected a:focus{text-decoration:none}
+.lotusPalette .lotusClose{margin-left:20px;padding:2px;float:right}/*there is also a lotusBtnImg class on this element*/
+.lotusPaletteBody{margin-bottom:1px;border-width:2px 0;border-style:solid;overflow:hidden;zoom:1}
+.lotusPaletteNav{width:200px;float:left;height:20.2em;padding:10px 15px 10px 0;background-position:right top;background-repeat:repeat-y;}
+.lotusImagesOff .lotusPaletteNav{height:22em}/*to allow for expanded UI with image alt text*/
+.lotusPalette .lotusChunk{margin:0 0 10px 10px;overflow:hidden}
+.lotusPalette .lotusSearch input.lotusText{width:143px}
+.lotusPaletteNav h3{margin-left:10px;margin-bottom:3px}
+.lotusPaletteNav h3 .lotusBtnImg{vertical-align:bottom;padding:0 2px;}
+.lotusPalette .lotusMenu{margin-left:10px;border-width:0;-moz-border-radius:0;-webkit-border-radius:0;height:15em;overflow:auto}
+.lotusui_ie .lotusPalette .lotusMenu{height:12.8em}/*we want 6 items to show. Adjustment for IE*/
+.lotusPalette .lotusMenu li a, .lotusPalette .lotusMenu li a:visited, .lotusPalette .lotusMenu li a:active{margin-right:2px;}/*to keep horizontal scrollbar from showing on click*/
+.lotusPalette .lotusMenu li.lotusSelected a, .lotusPalette .lotusMenu li.lotusSelected a:visited{border-width:0;}
+.lotusPalette .lotusMenu li.lotusMore a{margin-right:5px;background-position:96% center;background-repeat:no-repeat}
+.lotusPaletteContent{padding:10px 0 10px 10px;overflow:auto;zoom:1;height:20.2em;}
+.lotusui_ie6 .lotusPaletteContent{position:relative;left:-3px}
+.lotusPaletteContent.lotusPlain div.lotusIcon, .lotusui_ie6 .lotusPlain div.lotusIcon{width:1em} /*when there are no icons, add this additional class to lotusPaletteContent and write out the lotusIcon div with an &nbsp;*/
+ .lotusPaletteWidgets{min-height:18.2em}
+.lotusPaletteWidget{margin:0 10px 6px 0;padding:6px 0;width:19em;height:2.6em;float:left;overflow:hidden;line-height:1.4em;border-width:1px;border-style:solid;display:table;}
+.lotusPaletteWidget:hover, .lotusPaletteWidget:focus{cursor:pointer}
+.lotusImagesOff .lotusPaletteWidgets .lotusSelected, .lotusImagesOff .lotusPaletteWidget:hover, .lotusImagesOff .lotusPaletteWidget:focus{border-style:dotted}
+.lotusPaletteWidget .lotusInner{display:table-row;height:2.6em/*height fixes safari skinny widgets*/}
+.lotusPaletteWidget div{font-weight:bold;display:table-cell;vertical-align:middle;}
+.lotusPaletteWidget div.lotusIcon{width:34px;text-align:center}
+.lotusPaletteWidget div.lotusIcon span{display:block;height:16px;width:16px;padding:3px;margin:.5em 5px;}
+.lotusPaletteWidget div.lotusIcon img{width:16px;height:16px;}/*need to force this size to preserve layout - so widgets will float properly*/
+.lotusPaletteWidget a.lotusIcon{display:table-cell;width:25px;vertical-align:middle;background-position:left center;background-repeat:no-repeat;font-size:2em/*to make alt text larger*/}
+.lotusPaletteWidget a.lotusIcon:hover, .lotusPaletteWidget a.lotusIcon:focus{text-decoration:none}
+.lotusui_ie .lotusPaletteWidget div{float:left;padding-top:.25em;}
+.lotusui_ie .lotusPaletteWidget div.lotusIcon span, .lotusui_ie .lotusPaletteWidget img{margin-top:-1px}
+.lotusui_ie .lotusPaletteWidget a.lotusIcon{float:right;display:block;margin-top:-2px}
+.lotusPaletteWidget .lotusTitle h4{display:block;height:1.2em;font-weight:bold}
+.lotusPaletteWidget .lotusTitle h4 span{font-size:.8em}/*alt text for ratings, or any other text under the title*/
+.lotusui_ie .lotusPaletteWidget .lotusTitle h4{width:10em;}
+.lotusPaletteWidget .lotusRating0, .lotusPaletteWidget .lotusRating1, .lotusPaletteWidget .lotusRating2, .lotusPaletteWidget .lotusRating3, .lotusPaletteWidget .lotusRating4, .lotusPaletteWidget .lotusRating5{background-position:left bottom;background-repeat:no-repeat;padding:0 0 12px 2px} 
+.lotusui_ie .lotusPaletteWidget .lotusRating0, .lotusui_ie .lotusPaletteWidget .lotusRating1, .lotusui_ie .lotusPaletteWidget .lotusRating2, .lotusui_ie .lotusPaletteWidget .lotusRating3, .lotusui_ie .lotusPaletteWidget .lotusRating4, .lotusui_ie .lotusPaletteWidget .lotusRating5{margin-top:-.5em}
+.lotusLargeWidgets .lotusPaletteWidget{height:5.3em}
+.lotusLargeWidgets .lotusPaletteWidget div.lotusIcon{width:50px}
+.lotusLargeWidgets .lotusPaletteWidget div.lotusIcon span{height:50px;width:50px;margin:0;padding:0 5px;border-width:0}
+.lotusLargeWidgets .lotusPaletteWidget div.lotusIcon img{width:48px;height:48px;border-width:1px;border-style:solid}
+.lotusPaletteContent .lotusPaging{padding:2px 0;}
+.lotusPaletteContent .lotusPaging div{padding-left:0;margin-left:0}
+.lotusPaletteContent .lotusPaging .lotusInlinelist{margin-right:5px;}
+.lotusPalette .lotusPaging input.lotusText{border-width:1px;border-style:solid}
+.lotusPalette .lotusPaging a, .lotusPalette .lotusPaging a:visited{text-decoration:none}
+.lotusPalette .lotusPaging a:hover, .lotusPalette .lotusPaging a:focus{text-decoration:underline}
+/*some additional options for widgets*/
+.lotusPalette h4.lotusAdded,  .lotusPalette h4.lotusAdded a{padding:0 0 12px 2px}
+.lotusPalette .lotusShowHide{display:table-cell;vertical-align:middle;text-align:right;padding-right:10px}/*replaces the plus sign with show hide text, for an add features cumstomize UI*/
+.lotusui_ie .lotusPaletteWidget .lotusShowHide{float:right;display:block;margin-top:.35em}
+.lotusui_ie .lotusPaletteWidget h4.lotusAdded{margin-top:-.5em;}
+.lotusImagesOff a.lotusIcon img{display:none}
+/***********************************************************/
+
+
+
+/*** S E A R C H ***/
+/*these styles support the search UI in the title bar*/
+.lotusSearch input, .lotusSearch select{vertical-align:top;}
+.lotusSearch .lotusBtnImg{padding:2px;display:-moz-inline-box;display:inline-block;vertical-align:middle}
+.lotusSearch .lotusText, .lotusSearch .lotusScope{margin:0 1px;border-width:1px;border-style:solid;}
+.lotusSearch .lotusText{padding:2px 5px;height:1.33em;line-height:1.33em;width:11em;zoom:1;}
+.lotusSearch .lotusScope{padding:2px 25px 2px 4px;position: relative;display:block/*Force FF2 into block mode*/;display:inline-block;min-width:11em;height:1.33em;white-space: nowrap;line-height:1.33em;background-position:right 8px;background-repeat:no-repeat;text-decoration:none;cursor:pointer}
+.lotusSearch .lotusScope:visited, .lotusSearch .lotusScope:hover, .lotusSearch .lotusScope:focus, .lotusSearch .lotusScope:active{text-decoration:none}
+.lotusSearch .lotusScope .lotusIcon{margin-right:3px;vertical-align:top}
+.lotusui_ie .lotusSearch .lotusScope{margin-top:1px}
+/*min-width not working in these cases*/
+.lotusui_ie6 .lotusSearch .lotusScope{width:11em;}
+
+.lotusui_ie7 .lotusSearch .lotusScope{min-width:0}
+.lotusui_ie7 .lotusSearch .lotusScope span{min-width:0}
+/*high contrast mode*/
+.lotusSearch .lotusScope .lotusAltText{position:absolute;top:0;right:0;width:16px;height:16px;min-width:0;background-image:none;display:none}
+.lotusImagesOff .lotusSearch .lotusScope .lotusAltText{display:block}
+/*.lotusImagesOff .lotusSearch .lotusScope span{padding:2px 0 2px 5px}*/
+/***********************************************************/
+
+
+
+/*** S E A R C H   T A B ***/
+/*this is the UI for a search/find control that hides the input fields until the user opens them*/
+/*this must be inside a relatively positioned div - override default positioning in the code, if necessary*/
+div.lotusSearchTab{position:absolute;right:0;bottom:0;padding:.3em 5px;z-index:1;border-width:1px;border-style:solid;-moz-border-radius:4px;-webkit-border-radius:4px;}
+.lotusTabExpanded{-moz-border-radius:4px 4px 0 0;-webkit-border-top-left-radius:4px;-webkit-border-top-right-radius:4px}
+.lotusSearchTab a, .lotusSearchTab a:visited{padding-right:18px;display:block;background-position:center right;background-repeat:no-repeat;text-decoration:none;font-weight:bold}
+.lotusSearchTab a:hover, .lotusSearchTab a:focus{text-decoration:none}
+form.lotusSearchForm{margin:0;padding:12px 10px;position:absolute;top:2.1em;right:0;display:none;z-index:0;border-width:1px;border-style:solid;-moz-border-radius:4px 0 4px 4px;-webkit-border-top-left-radius:4px;-webkit-border-bottom-left-radius:4px;-webkit-border-bottom-right-radius:4px;white-space:nowrap}
+.lotusSearchForm input.lotusText{width:15em;height:1.33em;vertical-align:top}
+.lotusSearchForm lotusBtn, .lotusSearchForm select{vertical-align:middle;margin-left:3px;}
+.lotusSearchForm .lotusBtnImg{padding:2px;display:-moz-inline-box;display:inline-block;vertical-align:middle}
+/***********************************************************/
+
+
+
+/*S E C T I O N */
+/*this is used to space out different elements in all three columns*/
+/*a section contains a header*/
+.lotusSection, .portlet-section{margin:0 0 15px -3px;padding:0 0 5px 0;clear:both;zoom:1;position:relative}
+.lotusSectionBody{margin:0 0 0 15px}
+.lotusSection div.lotusChunk, .lotusSection div.lotusSubsection{margin-top:5px;clear:both;zoom:1}
+.lotusSection h2, .lotusSection h3{zoom:1}/*sets hasLayout in IE*/
+.lotusSection h2{overflow:hidden;padding:4px 3px 4px 0;cursor:pointer !important}/*use important to override move cursor when the lotusDraggable class is assigned to the header*/
+.lotusSection .lotusArrow:visited, .lotusSection .lotusArrow:hover, .lotusSection .lotusArrow:focus, .lotusSection .lotusArrow:active{text-decoration:none}
+.lotusSection h2 span.lotusLeft, .lotusSection h3 span.lotusLeft{width:80%}/*header text*/
+.lotusSection h3{padding-right:4px}/*for when there is a help icon*/
+.lotusImagesOff .lotusSection h2 span.lotusLeft, .lotusImagesOff .lotusSection h3 span.lotusLeft{width:auto;margin-right:10px}/*we need more room for text in place of the action icon*/
+.lotusSection h2 a.lotusIcon{float:right;width:16px;height:18px;background-position:center center;background-repeat:no-repeat}/*this is the action menu icon*/
+.lotusImagesOff .lotusSection h2 a.lotusIcon{font-size:.78em;font-weight:normal;width:auto;height:auto}/*settings for alternate text*/
+.lotusSection h2.lotusIcons img, .lotusSection h3.lotusIcons img, .portlet-section h2.lotusIcons img, .portlet-section h3.lotusIcons img{margin-left:3px}
+.lotusSection .lotusDragHandle{width:9px;height:17px;position:absolute;left:-7px;top:5px;background-position:center center;background-repeat:no-repeat;zoom:1;cursor:move;visibility:hidden}/*we may want to move this outside of a section and make it a more general class.  It must be positioned within a relative div*/
+.lotusSection div.lotusLast, .portlet-section div.lotusLast{margin-bottom:0}/*gets rid of extra bottom margin on the last "subsection"*/
+.lotusSection .lotusList{margin:0 0 0 -8px} /*allows selection to extend to the left and right of the list items*/
+.lotusSection .lotusList li{padding-left:8px;padding-right:5px}
+.lotusSection .lotusTagCloud{width:100%; overflow:hidden;}
+/*for left alignment in a section*/
+.lotusSection .lotusVertTable, .lotusSection div.lotusChunk .lotusVertTable{margin-left:-2px}/*to offset the 2px padding on the first table cell*/
+.lotusSection ul.lotusTree{margin-left:-10px}
+.lotusImagesOff .lotusSection ul.lotusTree{margin-left:15px}
+/****************************************************************/
+
+
+
+/*** S O R T ***/
+/*these are for the sort controls found at the top of a table/list of entries*/
+.lotusSort{margin:3px 10px;font-size:.9em}
+.lotusSort .lotusInlinelist li{padding:2px 5px}
+.lotusSort .lotusInlinelist li.lotusFirst{padding-left:0}
+.lotusSort a{padding:0;background-position:right center;background-repeat:no-repeat;text-decoration:underline;display:-moz-inline-box/*for FF2*/;display:inline-block;vertical-align:middle}
+a.lotusMoreSorts{padding:0 8px 0 5px;}
+a.lotusActiveSort{text-decoration:none}
+.lotusSort .lotusAscending, .lotusSort .lotusDescending{padding-right:10px;}
+.lotusImagesOff .lotusSort .lotusAscending, .lotusImagesOff .lotusSort .lotusDescending{padding-right:0}
+/****************************************************************/
+
+
+
+/*** T A B L E S ***/
+/*layout table*/
+/*note, if you need to use the structure of a relative div containing an absolute div within a layout table, be aware that Safari will only show the portion of your absolute div that is within the table area.  This is by design.*/
+/*there is no cellpadding built into these tables. Used judiciously for complex layouts.*/
+table.lotusLayout td{padding:0;vertical-align:top;text-align:left;} /*default alignment*/
+table.lotusLayout td.lotusvAlignMid{vertical-align:middle}/*allows you to override default alignment*/
+/*used for presenting information in a vertical format*/
+.lotusVertTable th, .lotusVertTable td{padding:2px}
+.lotusVertTable th{padding-right:50px;text-align:left;}
+.lotusVertTable p{margin-top:0}
+/*entry/data table*/
+.lotusTable{width:100%;}
+.lotusTable th, .lotusTable td{padding:5px 2px;vertical-align:top;}
+.lotusTable th.lotusSubHeader{padding-top:15px}/*wrap an h4 tag in a th tag that spans the table columns for a subheader*/
+.lotusTable .lotusFirst th.lotusSubHeader{padding-top:5px}
+.lotusTable .lotusSummary td{padding:5px 2px 0 2px}
+.lotusTable .lotusDetails td, .lotusTable .lotusMore td{padding:0 2px 5px 2px}
+.lotusTable td p:first-child, p.lotusFirst{margin-top:0}/*for IE6, you have to assign the class lotusFirst to the first paragraph*/
+.lotusTable td, .lotusTable th.lotusRowHeader, .lotusTable th.lotusSubHeader{border-top-width:1px;border-top-style:solid}/*use lotusRowHeader as a class on a th tag for a header that is the first cell of a row*/
+.lotusTable .lotusLast td, .lotusTable .lotusLast th.lotusRowHeader{border-bottom-width:1px;border-bottom-style:solid}/*this give the option of a border under the last table row*/
+.lotusTable .lotusDetails td, .lotusTable .lotusFirst td, .lotusTable .lotusMore td, .lotusTable .lotusFirst th.lotusRowHeader, .lotusTable .lotusFirst th.lotusSubHeader{border-top-width:0}
+.lotusTable th.lotusFirstCell, .lotusTable td.lotusFirstCell{padding-left:10px}
+.lotusTable th.lotusLastCell, .lotusTable td.lotusLastCell{padding-right:10px }
+.lotusTable th.lotusAltCell, .lotusTable td.lotusAltCell{border-right-width:1px;border-right-style:solid;border-bottom-width:1px;border-bottom-style:solid}
+.lotusTable div.lotusChunk{margin:7px 0;clear:none}
+.lotusTable .lotusSS{font-size:.9em;white-space:nowrap;width:30px}
+.lotusTable .lotusType{margin-left:5px;padding:0 0 6px 20px;font-weight:normal;font-size:.75em;background-position:left top;background-repeat:no-repeat;}/*allows you to add an image and text inside a header to indicate the type of entry - requires an additional class to define the type (in defaultThemes.css)*/
+/*h4 tags are used for entry titles*/
+.lotusTable h4.lotusComplete, .lotusTable h4.lotusComplete a{text-decoration:line-through} /*for to do items*/
+/*h5 tags are used for subsections in entry details*/
+.lotusTable h5{margin:12px 0 2px 0;}
+/*when the h4 tag occurs in the details row (like in notifications), we need some bottom margin*/
+.lotusTable .lotusDetails h4{margin-bottom:2px}
+.lotusTable .lotusDivider{padding:0 5px}
+.lotusTable .lotusFirstCell input{margin:3px 0 0 0}
+/*this table also shows up at the top of the UI, for announcements.*/
+.lotusInfoTable{margin:0 0 12px 0;border-width:1px;border-style:solid;-moz-border-radius:2px;-webkit-border-radius:2px;overflow:hidden;background-position:top left;background-repeat:repeat-x;}
+.lotusInfoTable h2{position:relative;zoom:1}
+.lotusInfoTable th, .lotusInfoTable td{padding:5px 10px}
+.lotusInfoTable .lotusClose{position:absolute;right:-5px;top:0;border-width:1px;border-style:solid;display:block;width:15px;height:15px;}
+.lotusui_ie6 .lotusInfoTable .lotusClose{font-size:12px}/*preserves the height of the close button when the font size is made larger*/
+.lotusTable .lotusMeta{font-size:.9em}
+.lotusTable .lotusActions{white-space:nowrap}/*fix for Safari*/
+/****************************************************************/
+
+
+
+/*** T A B S ***/
+/*tabs are used in content area and titlebar.  The style adjustments needed for the titlebar are grouped with the titleBar styles*/
+.lotusTabContainer{height:3em;position:relative;border-bottom-width:1px;border-bottom-style:solid;z-index:1;margin-bottom:10px;}
+ul.lotusTabs, .portlet-tab{margin:0;padding:0;position:absolute;left:10px;bottom:-1px;overflow:hidden;list-style:none;}
+.lotusTabs li, .portlet-tab li{margin:0 2px 0 0 !important;padding-left:3px;float:left;border-width:1px;border-style:solid;;}/*set margins to important so they are preserved within other components*/
+.lotusTabs a, .lotusTabs a:visited, .portlet-tab a, .portlet-tab a:visited{padding:6px 8px 6px 5px;display:block;text-decoration:none;line-height:1em;}/*line-height is for IE, to keep the selected tab sitting on top of the border when there is a drop-down image in the tab*/
+.lotusTabs li.lotusSelected a, .lotusTabs li.lotusSelected a:visited, .portlet-tab li.lotusSelected a, .portlet-tab li.lotusSelected a:visited{font-weight:bold}
+.lotusTabs a:hover, .lotusTabs a:focus, .portlet-tab a:hover, .portlet-tab a:focus{text-decoration:none}
+/*a style that can be applied to a div that allows you to surround a tab content area with a border*/
+.lotusTabContent{margin:-10px 0 12px 0;padding:10px;border-width:0 1px 1px 1px;border-style:solid;}
+/****************************************************************/
+
+
+/*** T A G   C L O U D ***/
+/*a tag cloud is a visual way of displaying the relative importance of tags, with lotusF1 being of least importance and lotusF5 being most important*/
+.lotusTagCloud ul{margin:0;padding:0}
+.lotusTagCloud li{display:inline;zoom:1}
+.lotusui_ie .lotusTagCloud li{margin-right:3px}
+.lotusTagCloud a{text-decoration:none;font-weight:bold}
+.lotusTagCloud a:hover, .lotusTagCloud a:focus{text-decoration:underline;}
+a.lotusF5, a.lotusF5:visited{font-size:115%;}
+a.lotusF4, a.lotusF4:visited{font-size:108%;}
+a.lotusF3, a.lotusF3:visited{font-size:100%;}
+a.lotusF2, a.lotusF2:visited{font-size:95%;}
+a.lotusF1, a.lotusF1:visited{font-size:90%;}
+/***********************************************************/
+
+
+
+/*** T R E E ***/ /*needs review - need additional tree visuals from Jason*/
+ul.lotusTree, ul.portlet-tree{margin:0;padding:0;list-style-type:none;line-height:1.5em;}
+.lotusTree ul, .portlet-tree ul{margin:0 0 0 14px;padding:0;list-style-type:none;}
+.lotusTree ul *, .portlet-tree ul *{list-style-type:none} /*makes sure all nested lists don't have bullets*/
+.lotusTree li, .portlet-tree li{margin:0;padding:0;}
+.lotusTree a, .portlet-tree a{text-decoration:none;}
+.lotusTree a:hover, .lotusTree a:focus, .portlet-tree a:hover, .portlet-tree a:focus{text-decoration:underline}
+.lotusTree .lotusIcon{margin-right:3px}
+.lotusTree input{margin:0 4px 0 2px;padding:0}
+/*this is a specific type of tree*/
+.lotusOrgChart ul{margin-left:11px}
+.lotusOrgChart li{padding:2px 0}
+.lotusOrgChart li a{margin:0;padding:0 0 5px 20px;background-position:left top;background-repeat:no-repeat;}
+.lotusOrgChart .lotusBottom{padding:2px 0 5px 20px;background-position:left 5px;background-repeat:no-repeat;}
+.lotusOrgChartTop, .lotusOrgChartMiddle, .lotusOrgChartBottom{padding-left:20px;background-position:left center;background-repeat:no-repeat;}
+/*images off adjustments*/
+.lotusImagesOff ul.lotusTree, .lotusImagesOff .lotusTree ul * {list-style-type:square;}
+.lotusImagesOff .lotusOrgChart li a, .lotusImagesOff .lotusBottom{padding-left:0 !important;}
+/***********************************************************/
+
+
+
+
+/*** V C A R D (P E R S O N   C A R D)***/
+/*this is the popup person card that shows up when you click on a person link (via a hover link)*/
+.lotusVCard{display:table;position:absolute;left:0;top:-9999px;width:400px;margin:4px 0 0 4px;-moz-border-radius:4px;-webkit-border-radius:4px;}
+.lotusVCard .lotusContainer{display:table;width:400px;position:relative;top:-4px;left:-4px;border-width:1px;border-style:solid;}
+/*lotusAppLinks are the application links at the top of the card*/
+.lotusVCard .lotusAppLinks td{background-position:left top;background-repeat:repeat-x;border-width:0 0 1px 1px;border-style:solid;text-align:center}
+.lotusVCard .lotusAppLinks td.lotusFirst{border-left-width:0}
+.lotusVCard .lotusAppLinks a{display:block;padding:3px 9px;}
+/*the more arrow, for when there is a second row of application links*/
+.lotusVCard .lotusMore{width:16px;margin-right:10px;background-position:right center;background-repeat:no-repeat;}
+.lotusVCard .lotusMore:visited, .lotusVCard .lotusMore:hover, .lotusVCard .lotusMore:focus, .lotusVCard .lotusMore:active{text-decoration:none}
+/*lotusPersonDetails is the detail area of the card that contains all info for the person*/
+.lotusVCard .lotusDetails{padding:10px;border-top-width:1px;border-top-style:solid;}
+.lotusVCard .lotusPhoto{padding:3px;border-width:1px;border-style:solid;float:left;position:relative/*IE fix for floated elements within a relative container not showing*/}
+.lotusVCard .lotusPersonInfo{margin-left:86px}
+/*lotusPersonActions are actions you can perform on this person, from the person card*/
+.lotusVCard .lotusPersonActions{padding:5px;border-top-width:1px;border-top-style:solid}
+/*action menu within person card*/
+.lotusVCard .lotusActionMenu{position:static;left:auto;top:auto;border-width:0;display:none;width:auto;margin-top:-10px}
+/*lotusComments in the person card contains status information for the person*/
+.lotusImagesOff .lotusCommentHeader{display:none}
+.lotusVCard .lotusComment{clear:both}
+.lotusVCard .lotusDetails .lotusComment{position:relative;margin:-10px 0 2px -10px;padding:0 0 0 10px;zoom:1}
+.lotusVCard .lotusDetails .lotusCommentHeader{padding-left:15px;padding-bottom:3px;position:absolute;top:0;left:16px;z-index:1;height:1.6em;background-position:left bottom;background-repeat:no-repeat;}
+.lotusVCard .lotusDetails .lotusCommentBody{position:relative;top:1.7em;margin:-1px 0 2.2em 0;padding:5px 10px;border-width:1px;border-style:solid;z-index:0;-moz-border-radius:4px 4px 6px 6px;-webkit-border-top-left-radius:4px;-webkit-border-top-right-radius:4px;-webkit-border-bottom-left-radius:6px;-webkit-border-bottom-right-radius:6px;zoom:1}
+/*adjustments for an inline version of the card*/
+.lotusInlineVCard{position:static;left:auto;margin:0 0 10px 0}
+.lotusInlineVCard, .lotusInlineVCard .lotusContainer{width:175px;position:static;top:auto;left:auto}
+.lotusInlineVCard .lotusPhoto{padding:0;border-width:0;margin-top:5px}
+.lotusInlineVCard .lotusPersonInfo{margin-left:60px;margin-top:4px}
+.lotusInlineVCard .lotusEmail{clear:both;border-width:1px 0;border-style:solid;padding:5px 10px}
+.lotusInlineVCard .lotusAppLinks{list-style-type:none;margin:0;padding:0}
+.lotusInlineVCard .lotusPivotNav{padding:2px 5px 1px 2px;overflow:hidden;zoom:1;}
+.lotusInlineVCard .lotusPivotNavToggle{margin:0 5px 0 0;padding:0;float:left;height:45px;width:10px;}
+.lotusPivotNavToggle a{display:block;height:45px;background-position:3px center;background-repeat:no-repeat;text-decoration:none;}
+.lotusPivotNavToggle a:visited, .lotusPivotNavToggle a:hover, .lotusPivotNavToggle a:focus, .lotusPivotNavToggle a:active{text-decoration:none;}
+.lotusPivotNavOpen .lotusPivotNavToggle a{background-position:left center}
+.lotusInlineVCard .lotusInlineVCardDetails{display:none}
+/***********************************************************/
+
+/*** V C A R D   H O V E R ***/
+/*this is the hover link that shows when you hover over a person's name and allows you to open their profile card*/
+.lotusVCardHover{padding:5px 5px 5px 25px;position:absolute;left:0;top:-9999px;border-width:1px;border-style:solid;-moz-border-radius:2px;-webkit-border-radius:2px;background-position:5px center;background-repeat:no-repeat;white-space:nowrap}
+.lotusVCardHover:hover, .lotusVCardHover:focus{text-decoration:none}
+.lotusImagesOff .lotusVCardHover{padding-left:5px}
+/***********************************************************/
+
+
+/*** W I D G E T ***/
+.lotusWidget{border-width:0 1px 1px 1px;border-style:solid;margin:0 10px 10px 5px;}
+.lotusWidgetPlain{border-width:0}/*the title bar shows up on hover*/
+.lotusWidgetPlain:hover h2, .lotusWidgetPlain:focus h2{display:block}
+.lotusWidget h2, .lotusWidget h3{zoom:1}/*sets hasLayout in IE*/
+.lotusWidget h2{background-position:left top;background-repeat:repeat-x;padding:4px 3px 4px 10px;overflow:hidden;cursor:move;border-width:1px 0;border-style:solid}
+.lotusWidgetPlain h2{display:none;border-width:1px 1px 0 1px;border-style:solid}
+.lotusWidget .lotusWidgetBody h2{border-width:0;}
+.lotusWidget h2 img{margin-left:3px}
+.lotusWidget h2 a.lotusIcon{float:right;width:18px;height:18px;background-position:center center;background-repeat:no-repeat}/*this is the action menu icon*/
+.lotusImagesOff .lotusWidget h2 a.lotusIcon{font-size:.8em;font-weight:normal;width:auto;height:auto}/*settings for alternate text*/
+.lotusWidget h2 .lotusDivider{float:right}
+.lotusWidget h3{padding:4px 10px;overflow:hidden;border-bottom:1px solid;line-height:1em;height:1.3em;font-size:1em;font-weight:normal}
+/*.lotusWidget h3 a{padding:4px 0 5px 0}*/
+.lotusWidget h3 a.lotusAction{font-size:.9em;padding:4px 0 5px 0}
+.lotusWidgetBody{clear:both;padding:3px 0}
+.lotusWidgetBody .lotusSection {margin-top:0px;}
+.lotusWidgetBody div.lotusChunk{margin-top:5px;clear:both;zoom:1}
+.lotusWidget .lotusWidgetFooter{padding:4px 10px;border-top-width:1px;border-top-style:solid;height:1.3em;clear:both}
+.lotusWidgetFooter ul.lotusVCard {margin-left:95px;margin-top:5px}
+.lotusWidgetFooter img{vertical-align:top}
+.lotusWidget .lotusWidgetSearch{padding:5px 10px 0 10px}
+.lotusWidgetSearch img {padding-right:10px}
+/*paging controls within a widget*/
+.lotusWidget .lotusPaging{padding:2px 0;font-size:1em;line-height:1em;}
+.lotusWidget .lotusPaging div{padding-left:0}
+/*scrolling*/
+.lotusWidget .lotusWidgetScroll{overflow:hidden;clear:both;}
+.lotusWidget .lotusWidgetScroll a{margin:3px auto}
+.lotusImagesOff .lotusWidget .lotusWidgetScroll{overflow:visible;padding-bottom:3px}
+/***********************************************************/
+
+
+
+/*** W I D G E T ***/
+.lotusWidget2{border-width:0 1px 1px 1px;border-style:solid;margin:0 0 10px 0;}
+.lotusWidgetPlain{border-width:0}/*the title bar shows up on hover*/
+.lotusWidgetPlain:hover h2, .lotusWidgetPlain:focus h2{display:block}
+.lotusWidget2 h2, .lotusWidget h3{zoom:1}/*sets hasLayout in IE*/
+.lotusWidget2 h2{background-position:left top;background-repeat:repeat-x;padding:4px 3px 4px 10px;overflow:hidden;cursor:move;border-width:1px 0;border-style:solid}
+.lotusWidgetPlain h2{display:none;border-width:1px 1px 0 1px;border-style:solid}
+.lotusWidget2 .lotusWidgetBody h2{border-width:0;}
+.lotusWidget2 h2 img{margin-left:3px}
+.lotusWidget2 h2 a.lotusIcon{float:right;width:18px;height:18px;background-position:center center;background-repeat:no-repeat}/*this is the action menu icon*/
+.lotusImagesOff .lotusWidget2 h2 a.lotusIcon{font-size:.8em;font-weight:normal;width:auto;height:auto}/*settings for alternate text*/
+.lotusWidget2 h2 .lotusDivider{float:right}
+.lotusWidget2 h3{padding:4px 0;overflow:hidden;border-bottom:1px solid;line-height:1em;height:1.3em;font-size:1em;font-weight:normal}
+/*.lotusWidget h3 a{padding:4px 0 5px 0}*/
+.lotusWidget2 h3 a.lotusAction{font-size:.9em;padding:4px 0 5px 0}
+.lotusWidget2 .lotusWidgetBody{clear:both;padding:3px 10px}
+.lotusWidget2 .lotusWidgetBody .lotusSection {margin-top:0px;}
+.lotusWidget2 .lotusWidgetBody div.lotusChunk{margin-top:5px;clear:both;zoom:1}
+.lotusWidget2 .lotusWidgetFooter{padding:4px 10px 7px 10px;border-top-width:1px;border-top-style:solid;height:1.3em;clear:both}
+.lotusWidget2 .lotusWidgetFooter ul.lotusVCard {margin-left:95px;margin-top:5px}
+.lotusWidget2 .lotusWidgetFooter img{vertical-align:top}
+.lotusWidget2 .lotusWidget .lotusWidgetSearch{padding:5px 10px 0 10px}
+.lotusWidgetSearch img {padding-right:10px}
+/*paging controls within a widget*/
+.lotusWidget2 .lotusPaging{padding:2px 0;font-size:1em;line-height:1em;height:1em}
+.lotusWidget2 .lotusPaging div{padding-left:0}
+/*scrolling*/
+.lotusWidget2 .lotusWidgetScroll{overflow:hidden;clear:both;}
+.lotusWidget2 .lotusWidgetScroll a{margin:3px auto}
+.lotusImagesOff .lotusWidget2 .lotusWidgetScroll{overflow:visible;padding-bottom:3px}
+/***********************************************************/
+
+
+

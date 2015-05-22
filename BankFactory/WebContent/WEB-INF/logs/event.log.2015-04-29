@@ -1,0 +1,928 @@
+*-- TIME: [2015-04-29 10:14:40,053] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Error removing existing Web Experience Factory model markers
+	The associated exception is: org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:116)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Resource.deleteMarkers(Resource.java:844)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.deleteAllMarkers(ResourceMarkers.java:44)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.clearAllMarkers(ResourceMarkers.java:54)
+	at com.bowstreet.designer.model.ConfigurationProperties.realizePropertiesForProject(ConfigurationProperties.java:476)
+	at com.bowstreet.designer.model.ConfigurationProperties$Visitor.visit(ConfigurationProperties.java:1555)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at com.bowstreet.designer.model.ConfigurationProperties.resourceChanged(ConfigurationProperties.java:1471)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:395)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1530)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+
+
+
+
+*-- TIME: [2015-04-29 10:14:40,053] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Error removing existing Web Experience Factory model markers
+	The associated exception is: org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:116)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Resource.deleteMarkers(Resource.java:844)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.deleteAllMarkers(ResourceMarkers.java:44)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.clearAllMarkers(ResourceMarkers.java:54)
+	at com.bowstreet.designer.model.ConfigurationProperties.realizePropertiesForProject(ConfigurationProperties.java:476)
+	at com.bowstreet.designer.model.ConfigurationProperties$Visitor.visit(ConfigurationProperties.java:1555)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at com.bowstreet.designer.model.ConfigurationProperties.resourceChanged(ConfigurationProperties.java:1471)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:395)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1530)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+
+
+
+
+*-- TIME: [2015-04-29 10:14:40,059] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Error creating Web Experience Factory Warning Marker
+	The associated exception is: org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:116)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Resource.createMarker(Resource.java:733)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.createMessage(ResourceMarkers.java:108)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.createError(ResourceMarkers.java:66)
+	at com.bowstreet.designer.model.ConfigurationProperties.realizePropertiesForProject(ConfigurationProperties.java:477)
+	at com.bowstreet.designer.model.ConfigurationProperties$Visitor.visit(ConfigurationProperties.java:1555)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at com.bowstreet.designer.model.ConfigurationProperties.resourceChanged(ConfigurationProperties.java:1471)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:395)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1530)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+
+
+
+
+*-- TIME: [2015-04-29 10:14:40,059] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Error creating Web Experience Factory Warning Marker
+	The associated exception is: org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:116)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Resource.createMarker(Resource.java:733)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.createMessage(ResourceMarkers.java:108)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.createError(ResourceMarkers.java:66)
+	at com.bowstreet.designer.model.ConfigurationProperties.realizePropertiesForProject(ConfigurationProperties.java:477)
+	at com.bowstreet.designer.model.ConfigurationProperties$Visitor.visit(ConfigurationProperties.java:1555)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at com.bowstreet.designer.model.ConfigurationProperties.resourceChanged(ConfigurationProperties.java:1471)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:395)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1530)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+
+
+
+
+*-- TIME: [2015-04-29 10:33:49,521] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 10:33:49,521] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 10:44:19,809] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 10:44:19,809] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 10:58:33,283] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 10:58:33,283] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 11:23:57,466] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+An error occurred while trying to synchronize the project BankFactory using URL http://172.16.11.225:10039/BankFactory/webengine/factory/core/deployment_utils/Action!updateProject with the published application: Connection timed out: connect
+	The associated exception is: java.net.ConnectException: Connection timed out: connect
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:412)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:271)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:258)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:376)
+	at java.net.Socket.connect(Socket.java:546)
+	at java.net.Socket.connect(Socket.java:495)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:437)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:551)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:227)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:313)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:332)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:935)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:853)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1043)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.invoke(RemoteSyncService.java:205)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.run(RemoteSyncService.java:143)
+	at java.lang.Thread.run(Thread.java:761)
+
+
+
+
+
+*-- TIME: [2015-04-29 11:23:57,466] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+An error occurred while trying to synchronize the project BankFactory using URL http://172.16.11.225:10039/BankFactory/webengine/factory/core/deployment_utils/Action!updateProject with the published application: Connection timed out: connect
+	The associated exception is: java.net.ConnectException: Connection timed out: connect
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:412)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:271)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:258)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:376)
+	at java.net.Socket.connect(Socket.java:546)
+	at java.net.Socket.connect(Socket.java:495)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:437)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:551)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:227)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:313)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:332)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:935)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:853)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1043)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.invoke(RemoteSyncService.java:205)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.run(RemoteSyncService.java:143)
+	at java.lang.Thread.run(Thread.java:761)
+
+
+
+
+
+*-- TIME: [2015-04-29 11:24:27,326] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+An error occurred while trying to synchronize the project BankFactory using URL http://172.16.11.225:10039/BankFactory/webengine/factory/core/deployment_utils/Action!updateProject with the published application: Connection timed out: connect
+	The associated exception is: java.net.ConnectException: Connection timed out: connect
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:412)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:271)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:258)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:376)
+	at java.net.Socket.connect(Socket.java:546)
+	at java.net.Socket.connect(Socket.java:495)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:437)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:551)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:227)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:313)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:332)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:935)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:853)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1043)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.invoke(RemoteSyncService.java:205)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.run(RemoteSyncService.java:143)
+	at java.lang.Thread.run(Thread.java:761)
+
+
+
+
+
+*-- TIME: [2015-04-29 11:24:27,326] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+An error occurred while trying to synchronize the project BankFactory using URL http://172.16.11.225:10039/BankFactory/webengine/factory/core/deployment_utils/Action!updateProject with the published application: Connection timed out: connect
+	The associated exception is: java.net.ConnectException: Connection timed out: connect
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:412)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:271)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:258)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:376)
+	at java.net.Socket.connect(Socket.java:546)
+	at java.net.Socket.connect(Socket.java:495)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:437)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:551)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:227)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:313)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:332)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:935)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:853)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1043)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.invoke(RemoteSyncService.java:205)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.run(RemoteSyncService.java:143)
+	at java.lang.Thread.run(Thread.java:761)
+
+
+
+
+
+*-- TIME: [2015-04-29 11:25:14,594] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+An error occurred while trying to synchronize the project BankFactory using URL http://172.16.11.225:10039/BankFactory/webengine/factory/core/deployment_utils/Action!updateProject with the published application: Connection timed out: connect
+	The associated exception is: java.net.ConnectException: Connection timed out: connect
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:412)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:271)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:258)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:376)
+	at java.net.Socket.connect(Socket.java:546)
+	at java.net.Socket.connect(Socket.java:495)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:437)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:551)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:227)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:313)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:332)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:935)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:853)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1043)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.invoke(RemoteSyncService.java:205)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.run(RemoteSyncService.java:143)
+	at java.lang.Thread.run(Thread.java:761)
+
+
+
+
+
+*-- TIME: [2015-04-29 11:25:14,594] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+An error occurred while trying to synchronize the project BankFactory using URL http://172.16.11.225:10039/BankFactory/webengine/factory/core/deployment_utils/Action!updateProject with the published application: Connection timed out: connect
+	The associated exception is: java.net.ConnectException: Connection timed out: connect
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:412)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:271)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:258)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:376)
+	at java.net.Socket.connect(Socket.java:546)
+	at java.net.Socket.connect(Socket.java:495)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:437)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:551)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:227)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:313)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:332)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:935)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:853)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1043)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.invoke(RemoteSyncService.java:205)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.run(RemoteSyncService.java:143)
+	at java.lang.Thread.run(Thread.java:761)
+
+
+
+
+
+*-- TIME: [2015-04-29 11:25:54,668] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+An error occurred while trying to synchronize the project BankFactory using URL http://172.16.11.225:10039/BankFactory/webengine/factory/core/deployment_utils/Action!updateProject with the published application: No route to host: connect
+	The associated exception is: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:412)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:271)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:258)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:376)
+	at java.net.Socket.connect(Socket.java:546)
+	at java.net.Socket.connect(Socket.java:495)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:437)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:551)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:227)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:313)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:332)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:935)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:853)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1043)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.invoke(RemoteSyncService.java:205)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.run(RemoteSyncService.java:143)
+	at java.lang.Thread.run(Thread.java:761)
+
+
+
+
+
+*-- TIME: [2015-04-29 11:25:54,668] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+An error occurred while trying to synchronize the project BankFactory using URL http://172.16.11.225:10039/BankFactory/webengine/factory/core/deployment_utils/Action!updateProject with the published application: No route to host: connect
+	The associated exception is: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:412)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:271)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:258)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:376)
+	at java.net.Socket.connect(Socket.java:546)
+	at java.net.Socket.connect(Socket.java:495)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:437)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:551)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:227)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:313)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:332)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:935)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:853)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1043)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.invoke(RemoteSyncService.java:205)
+	at com.bowstreet.designer.webapp.resources.RemoteSyncService.run(RemoteSyncService.java:143)
+	at java.lang.Thread.run(Thread.java:761)
+
+
+
+
+
+*-- TIME: [2015-04-29 19:23:02,597] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Error removing existing Web Experience Factory model markers
+	The associated exception is: org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:116)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Resource.deleteMarkers(Resource.java:844)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.deleteAllMarkers(ResourceMarkers.java:44)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.clearAllMarkers(ResourceMarkers.java:54)
+	at com.bowstreet.designer.model.ConfigurationProperties.realizePropertiesForProject(ConfigurationProperties.java:476)
+	at com.bowstreet.designer.model.ConfigurationProperties$Visitor.visit(ConfigurationProperties.java:1555)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at com.bowstreet.designer.model.ConfigurationProperties.resourceChanged(ConfigurationProperties.java:1471)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:395)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1530)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+
+
+
+
+*-- TIME: [2015-04-29 19:23:02,597] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Error removing existing Web Experience Factory model markers
+	The associated exception is: org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:116)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Resource.deleteMarkers(Resource.java:844)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.deleteAllMarkers(ResourceMarkers.java:44)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.clearAllMarkers(ResourceMarkers.java:54)
+	at com.bowstreet.designer.model.ConfigurationProperties.realizePropertiesForProject(ConfigurationProperties.java:476)
+	at com.bowstreet.designer.model.ConfigurationProperties$Visitor.visit(ConfigurationProperties.java:1555)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at com.bowstreet.designer.model.ConfigurationProperties.resourceChanged(ConfigurationProperties.java:1471)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:395)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1530)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+
+
+
+
+*-- TIME: [2015-04-29 20:06:58,219] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Error creating Web Experience Factory Warning Marker
+	The associated exception is: org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:116)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Resource.createMarker(Resource.java:733)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.createMessage(ResourceMarkers.java:108)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.createError(ResourceMarkers.java:66)
+	at com.bowstreet.designer.model.ConfigurationProperties.realizePropertiesForProject(ConfigurationProperties.java:477)
+	at com.bowstreet.designer.model.ConfigurationProperties$Visitor.visit(ConfigurationProperties.java:1555)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at com.bowstreet.designer.model.ConfigurationProperties.resourceChanged(ConfigurationProperties.java:1471)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:395)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1530)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+
+
+
+
+*-- TIME: [2015-04-29 20:06:58,219] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Error creating Web Experience Factory Warning Marker
+	The associated exception is: org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:116)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Resource.createMarker(Resource.java:733)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.createMessage(ResourceMarkers.java:108)
+	at com.bowstreet.designer.eclipse.extensions.ResourceMarkers.createError(ResourceMarkers.java:66)
+	at com.bowstreet.designer.model.ConfigurationProperties.realizePropertiesForProject(ConfigurationProperties.java:477)
+	at com.bowstreet.designer.model.ConfigurationProperties$Visitor.visit(ConfigurationProperties.java:1555)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at com.bowstreet.designer.model.ConfigurationProperties.resourceChanged(ConfigurationProperties.java:1471)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:395)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1530)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+
+
+
+
+*-- TIME: [2015-04-29 20:06:58,220] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 20:06:58,220] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 20:14:56,600] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 20:14:56,600] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 20:19:53,782] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 20:19:53,782] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 20:28:45,949] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 20:28:45,949] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 20:29:36,114] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 20:29:36,114] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:00:02,414] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:00:02,414] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:01:19,055] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:01:19,055] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:08:36,520] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:08:36,520] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:12:34,324] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:12:34,324] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:15:19,168] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:15:19,168] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:20:38,136] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:20:38,136] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:35:53,615] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:35:53,615] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:39:37,533] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:39:37,533] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:41:18,821] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:41:18,821] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:47:44,464] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:47:44,464] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:49:30,322] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:49:30,322] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:57:18,671] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+
+*-- TIME: [2015-04-29 21:57:18,671] --* 
+Category: bowstreet.system.server.logging.event.criterion.abnormal
+Priority: ERROR
+Thread:   Web Experience Factory (event logging)
+Msg:      Component: 	DESIGNER
+Cannot run model from the current active Model Editor. There is no active Model Editor. Please open a model.
+
+
+
+

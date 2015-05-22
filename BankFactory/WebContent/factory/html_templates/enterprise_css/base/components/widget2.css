@@ -1,0 +1,38 @@
+/*! Licensed Materials - Property of IBM.
+    (c) Copyright IBM Corporation 2001, 2009.  All Rights Reserved.
+    U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+This CSS was built on August 21 2009. (version: OneUI-2.0.1_20090821-0327)
+these are the styles for widget
+companion file is widgetTheme.css*/
+/*** W I D G E T ***/
+.lotusWidget2{border-width:0 1px 1px 1px;border-style:solid;margin:0 0 10px 0;}
+.lotusWidgetPlain{border-width:0}/*the title bar shows up on hover*/
+.lotusWidgetPlain:hover h2, .lotusWidgetPlain:focus h2{display:block}
+.lotusWidget2 h2, .lotusWidget h3{zoom:1}/*sets hasLayout in IE*/
+.lotusWidget2 h2{background-position:left top;background-repeat:repeat-x;padding:4px 3px 4px 10px;overflow:hidden;cursor:move;border-width:1px 0;border-style:solid}
+.lotusWidgetPlain h2{display:none;border-width:1px 1px 0 1px;border-style:solid}
+.lotusWidget2 .lotusWidgetBody h2{border-width:0;}
+.lotusWidget2 h2 img{margin-left:3px}
+.lotusWidget2 h2 a.lotusIcon{float:right;width:18px;height:18px;background-position:center center;background-repeat:no-repeat}/*this is the action menu icon*/
+.lotusImagesOff .lotusWidget2 h2 a.lotusIcon{font-size:.8em;font-weight:normal;width:auto;height:auto}/*settings for alternate text*/
+.lotusWidget2 h2 .lotusDivider{float:right}
+.lotusWidget2 h3{padding:4px 0;overflow:hidden;border-bottom:1px solid;line-height:1em;height:1.3em;font-size:1em;font-weight:normal}
+/*.lotusWidget h3 a{padding:4px 0 5px 0}*/
+.lotusWidget2 h3 a.lotusAction{font-size:.9em;padding:4px 0 5px 0}
+.lotusWidget2 .lotusWidgetBody{clear:both;padding:3px 10px}
+.lotusWidget2 .lotusWidgetBody .lotusSection {margin-top:0px;}
+.lotusWidget2 .lotusWidgetBody div.lotusChunk{margin-top:5px;clear:both;zoom:1}
+.lotusWidget2 .lotusWidgetFooter{padding:4px 10px 7px 10px;border-top-width:1px;border-top-style:solid;height:1.3em;clear:both}
+.lotusWidget2 .lotusWidgetFooter ul.lotusVCard {margin-left:95px;margin-top:5px}
+.lotusWidget2 .lotusWidgetFooter img{vertical-align:top}
+.lotusWidget2 .lotusWidget .lotusWidgetSearch{padding:5px 10px 0 10px}
+.lotusWidgetSearch img {padding-right:10px}
+/*paging controls within a widget*/
+.lotusWidget2 .lotusPaging{padding:2px 0;font-size:1em;line-height:1em;height:1em}
+.lotusWidget2 .lotusPaging div{padding-left:0}
+/*scrolling*/
+.lotusWidget2 .lotusWidgetScroll{overflow:hidden;clear:both;}
+.lotusWidget2 .lotusWidgetScroll a{margin:3px auto}
+.lotusImagesOff .lotusWidget2 .lotusWidgetScroll{overflow:visible;padding-bottom:3px}
+/***********************************************************/
+

@@ -1,8 +1,8 @@
 #Designer project properties for BankFactory
-#Thu Apr 30 00:32:57 CST 2015
+#Thu May 21 14:16:50 CST 2015
 bowstreet.designer.project.outputLocation=
 bowstreet.designer.project.targetfolder=WebContent
-build.deployment.war.builddir=C\:\\Users\\Jeancarlo\\GBM\\WorkSpaces\\WEF\\BankFactoryNew
+build.deployment.war.builddir=C\:\\Users\\lprado\\Documents\\GIT\\cleanWorkSpace2
 bowstreet.designer.serverPort=10039
 defaultServableContentFolder_DATA_LAYOUT_TEMPLATES=data_layout_templates
 defaultNonServableContentFolder_THEMES=WEB-INF/themes
@@ -14,8 +14,8 @@ standAlone.config=IBM_WebSphere_Application_Server_and_Portal_Server_8.5
 link.factory.mode=http
 bowstreet.designer.nmw.expandedCategories=[Service Consumers][Service Providers][Basic Models][Rapid Prototyping]
 defaultNonServableContentFolder_SPREADSHEET=WEB-INF/spreadsheet
-webcontent.location=C\:\\Users\\Jeancarlo\\git\\BankPortalNew\\BankFactory\\WebContent
-project.location=C\:\\Users\\Jeancarlo\\git\\BankPortalNew\\BankFactory
+webcontent.location=C\:\\Users\\lprado\\git\\BankPortal3\\BankFactory\\WebContent
+project.location=C\:\\Users\\lprado\\git\\BankPortal3\\BankFactory
 bowstreet.designer.serverInstance=WebSphere_Portal
 project.name=BankFactory
 defaultNonServableContentFolder_RICH_DATA_DEFINITION=WEB-INF/rich_data_definition
@@ -25,9 +25,9 @@ bowstreet.webapp.version=8.5.0 Release WEF8.5_20140414-1110
 defaultServableContentFolder_STYLE_SHEETS=style_sheets
 defaultServableContentFolder_CLIENT_JAVASCRIPT=client_javascript
 bowstreet.designer.serverHostName=172.16.11.225
-state.area=C\:\\Users\\Jeancarlo\\GBM\\WorkSpaces\\WEF\\BankFactoryNew\\.metadata\\.plugins\\com.bowstreet.designer.webapp
+state.area=C\:\\Users\\lprado\\Documents\\GIT\\cleanWorkSpace2\\.metadata\\.plugins\\com.bowstreet.designer.webapp
 tools.location=C\:/IBM/Web Experience Factory/Designer/FeatureSets/Web-App_8.5.0/Deployment/antscripts
-bowstreet.designer.nmw.lastSelected=Empty Service Provider
+bowstreet.designer.nmw.lastSelected=Empty
 link.factory=true
 bowstreet.designer.projectDomain=com.bowstreet.feature.webapp
 defaultNonServableContentFolder_LOOKUP_DEFINITIONS=WEB-INF/lookup_definitions

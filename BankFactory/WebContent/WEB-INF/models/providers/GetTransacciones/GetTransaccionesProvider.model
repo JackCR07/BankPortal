@@ -84,8 +84,24 @@ Here are some of the things you might want to do now that you have the model sta
 </top>
 </Inputs>
 </InputsForOperation>
-<InputsForOperation><Operation>SumaTransacciones</Operation>
-<Inputs><top><Input><Name>Cliente</Name>
+<InputsForOperation><Operation>SumarTransaccionesOp</Operation>
+<Inputs><top><Input><Name>operation2InputParameter1</Name>
+</Input>
+<Input><Name>operation2InputParameter1.idCliente</Name>
+</Input>
+<Input><Name>operation2InputParameter1.idTipoTransaccion</Name>
+</Input>
+<Input><Name>operation2InputParameter1.fecha_mov_mayor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.fecha_mov_menor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.mon_trans_mayor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.mon_trans_menor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.n_trans_mayor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.n_trans_menor_a</Name>
 </Input>
 </top>
 </Inputs>
@@ -107,7 +123,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="FilterWSDLSchemas">false</Input>
 <Input name="hidden_ShowAllServiceCallTypes">false</Input>
 <Input name="ServiceCallType">WSDL</Input>
-<Input name="WSDL_Refresh">Fetch WSDL</Input>
+<Input name="WSDL_Refresh">Refresh/fetch WSDL</Input>
 <Input name="DoHTTP_RequestType">GET</Input>
 <Input name="hidden_UIState">8</Input>
 <Input name="Name">GetTransaccionesWDSL</Input>
@@ -151,7 +167,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="ExamineWSDL_replytype">operation1Response</Input>
 <Input name="hidden_ExamineWSDL_replyclass">com.bowstreet.util.IXml</Input>
 <Input name="hidden_WSDL_replycount">1</Input>
-<Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://getTransacciones" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://getTransacciones"&gt;&lt;xsd:import schemaLocation="http://172.16.11.225:7800/getTransacciones/getTransacciones?xsd=xsd0" /&gt;
+<Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\lprado\git\BankPortal3\BankFactory\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://getTransacciones" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://getTransacciones"&gt;&lt;xsd:import schemaLocation="http://172.16.11.225:7800/getTransacciones/getTransacciones?xsd=xsd0" /&gt;
 &lt;/xsd:schema&gt;
 &lt;/schemas&gt;
 </Input>
@@ -196,8 +212,7 @@ Here are some of the things you might want to do now that you have the model sta
 &lt;wsdl:service name="getTransaccionesHttpService"&gt;&lt;wsdl:port binding="tns:getTransaccionesHttpBinding" name="getTransaccionesHttpPort"&gt;&lt;soap:address location="http://172.16.11.225:7800/getTransacciones/getTransacciones" /&gt;
 &lt;/wsdl:port&gt;
 &lt;/wsdl:service&gt;
-&lt;/wsdl:definitions&gt;
-</Input>
+&lt;/wsdl:definitions&gt;</Input>
 <Input name="ExamineWSDL_createInputVariables">true</Input>
 <Input name="ExamineWSDLargval_1">${Variables/GetTransaccionesWDSL_arg1_operation1Parameters}</Input>
 </Inputs>
@@ -382,7 +397,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="ExamineWSDL_replytype">operation2OutputParameter1</Input>
 <Input name="hidden_ExamineWSDL_replyclass">com.bowstreet.util.IXml</Input>
 <Input name="hidden_WSDL_replycount">1</Input>
-<Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://getTransacciones" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://getTransacciones"&gt;&lt;xsd:import schemaLocation="http://172.16.11.225:7800/getTransacciones/getTransacciones?xsd=xsd0" /&gt;
+<Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\lprado\git\BankPortal3\BankFactory\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://getTransacciones" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://getTransacciones"&gt;&lt;xsd:import schemaLocation="http://172.16.11.225:7800/getTransacciones/getTransacciones?xsd=xsd0" /&gt;
 &lt;/xsd:schema&gt;
 &lt;/schemas&gt;
 </Input>
@@ -427,11 +442,56 @@ Here are some of the things you might want to do now that you have the model sta
 &lt;wsdl:service name="getTransaccionesHttpService"&gt;&lt;wsdl:port binding="tns:getTransaccionesHttpBinding" name="getTransaccionesHttpPort"&gt;&lt;soap:address location="http://172.16.11.225:7800/getTransacciones/getTransacciones" /&gt;
 &lt;/wsdl:port&gt;
 &lt;/wsdl:service&gt;
-&lt;/wsdl:definitions&gt;
-</Input>
+&lt;/wsdl:definitions&gt;</Input>
 <Input name="ExamineWSDL_createInputVariables">true</Input>
 <Input name="ExamineWSDLargval_1">${Variables/SumarTransacciones_arg1_operation2InputParameter1}</Input>
 </Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[[hidden_ExamineWSDL_wsdldoc][/factory/schemasWSDL/GetTransacciones.xml]]]></CacheKey>
+<CacheValue><CachedWsdlDocument><![CDATA[<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://getTransacciones" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="getTransacciones" targetNamespace="http://getTransacciones"><wsdl:documentation><wsdl:appinfo source="WMQI_APPINFO"><MRWSDLAppInfo imported="true"><binding hasEncoding="false" imported="true" name="getTransaccionesHttpBinding" originalBindingStyle="document" />
+<generatedXSD location="getTransacciones_InlineSchema1.xsd" />
+</MRWSDLAppInfo>
+</wsdl:appinfo>
+</wsdl:documentation>
+<wsdl:types><xsd:schema targetNamespace="http://getTransacciones"><xsd:import schemaLocation="http://172.16.11.225:7800/getTransacciones/getTransacciones?xsd=xsd0" />
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="operation1RequestMsg"><wsdl:part element="tns:operation1" name="operation1Parameters" />
+</wsdl:message>
+<wsdl:message name="operation1ResponseMsg"><wsdl:part element="tns:operation1Response" name="operation1Result" />
+</wsdl:message>
+<wsdl:message name="operation2RequestMsg"><wsdl:part element="tns:operation2InputParameter1" name="operation2InputParameter1" />
+</wsdl:message>
+<wsdl:message name="operation2ResponseMsg"><wsdl:part element="tns:operation2OutputParameter1" name="operation2OutputParameter1" />
+</wsdl:message>
+<wsdl:portType name="getTransacciones"><wsdl:operation name="operation1"><wsdl:input message="tns:operation1RequestMsg" name="operation1Request" />
+<wsdl:output message="tns:operation1ResponseMsg" name="operation1Response" />
+</wsdl:operation>
+<wsdl:operation name="operation2"><wsdl:input message="tns:operation2RequestMsg" name="operation2Request" />
+<wsdl:output message="tns:operation2ResponseMsg" name="operation2Response" />
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="getTransaccionesHttpBinding" type="tns:getTransacciones"><soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+<wsdl:operation name="operation1"><soap:operation soapAction="http://getTransacciones/operation1" />
+<wsdl:input name="operation1Request"><soap:body use="literal" />
+</wsdl:input>
+<wsdl:output name="operation1Response"><soap:body use="literal" />
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="operation2"><soap:operation soapAction="" />
+<wsdl:input name="operation2Request"><soap:body parts="operation2InputParameter1" use="literal" />
+</wsdl:input>
+<wsdl:output name="operation2Response"><soap:body parts="operation2OutputParameter1" use="literal" />
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="getTransaccionesHttpService"><wsdl:port binding="tns:getTransaccionesHttpBinding" name="getTransaccionesHttpPort"><soap:address location="http://172.16.11.225:7800/getTransacciones/getTransacciones" />
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
+]]></CachedWsdlDocument>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
 </BuilderCall>
 <BuilderCall id="bc20"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
 <Messages />
@@ -461,9 +521,35 @@ Here are some of the things you might want to do now that you have the model sta
 </Input>
 <Input name="InputMappingTable"><Fields><Field><Name>idCliente</Name>
 <Type>int</Type>
+<Value>${Arguments/idCliente}</Value>
 </Field>
 <Field><Name>idTipoTransaccion</Name>
 <Type>int</Type>
+<Value>${Arguments/idTipoTransaccion}</Value>
+</Field>
+<Field><Name>fecha_mov_mayor_a</Name>
+<Type>string</Type>
+<Value>${Arguments/fecha_mov_mayor_a}</Value>
+</Field>
+<Field><Name>fecha_mov_menor_a</Name>
+<Type>string</Type>
+<Value>${Arguments/fecha_mov_menor_a}</Value>
+</Field>
+<Field><Name>mon_trans_mayor_a</Name>
+<Type>double</Type>
+<Value>${Arguments/mon_trans_mayor_a}</Value>
+</Field>
+<Field><Name>mon_trans_menor_a</Name>
+<Type>string</Type>
+<Value>${Arguments/mon_trans_menor_a}</Value>
+</Field>
+<Field><Name>n_trans_mayor_a</Name>
+<Type>int</Type>
+<Value>${Arguments/n_trans_mayor_a}</Value>
+</Field>
+<Field><Name>n_trans_menor_a</Name>
+<Type>int</Type>
+<Value>${Arguments/n_trans_menor_a}</Value>
 </Field>
 </Fields>
 </Input>

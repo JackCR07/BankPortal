@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+
+<BuilderDef id="com.bowstreet.builders.webapp.client.ClientVariableBuilder" xmlns="http://www.bowstreet.com/2001/Schemas">
+    <ReadableName>Client Variable</ReadableName>
+    <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName>
+    <HelpFile>factory/product_documentation/designer/variable.htm</HelpFile>
+    <RequiredFactoryVersion>8.0.0</RequiredFactoryVersion>
+    <Description>Creates a variable that is stored on the client.</Description>
+    <Domains>
+            <Domain>Client</Domain>
+    </Domains>
+    <CreateModifyList>
+      <CanCreate type="Variable">Creates a simple or schema typed variable.</CanCreate>
+      <CanModify type="Schema">Creates a variable with the schema type.</CanModify>
+    </CreateModifyList>
+    <Category>Java,Schemas and Variables,Client-Side Application</Category>
+    <Keywords>XML, Data</Keywords>
+    <BuilderData>
+        <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.client.ClientVariableBuilder</BuilderDataEntry>
+    </BuilderData>
+
+    <CoordinatorClassName>com.bowstreet.builders.webapp.ui.VariableCoordinator</CoordinatorClassName>
+
+    <InputDefinitions>
+        <InputDefinition name="Name"  base="com.bowstreet.core.Base.RestrictedBuilderName" />
+
+        <InputDefinition name="Type" base="com.bowstreet.core.Base.StringData" >
+            <Prompt>Type</Prompt>
+            <HelpText>Select a data type for this variable</HelpText>
+            <Required>true</Required>
+            <Editor JavaClass="com.bowstreet.widget.WebAppVariableType">
+                <Argument name="builtIns" inheritable="true">String,XML</Argument>
+                <Argument name="isEditable" inheritable="true">true</Argument>
+            </Editor>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="GenerateSchema"  base="com.bowstreet.core.Base.BooleanData">
+             <Visible>false</Visible>
+            <InitialValue>false</InitialValue>
+            <Prompt>Generate Schema</Prompt>
+            <HelpText>If true, a simple XML schema will be generated for the XML variable</HelpText>
+        </InputDefinition>
+ 
+        <InputDefinition name="Namespace" base="com.bowstreet.core.Base.StringData">
+            <Prompt>Namespace</Prompt>
+            <HelpText>(Optional) Specify namespace to be added to the sample data</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <Callable>true</Callable>
+            <ProfileType>None</ProfileType>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="NamespacePrefix" base="com.bowstreet.core.Base.StringData">
+            <Prompt>Namespace Prefix</Prompt>
+            <HelpText>(Optional) Specify a prefix for the namespace specified (will be set on all element and attribute names in the sample data)</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <Callable>true</Callable>
+            <ProfileType>None</ProfileType>
+            <Property>true</Property>
+            <Editor>
+                <Argument name="width">250</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="CreateSampleData" base="com.bowstreet.core.Base.Button">
+            <Visible>false</Visible>
+            <ProfileType>None</ProfileType>
+            <Editor>
+              <Argument name="width">250</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="Value"  base="com.bowstreet.core.Base.VariableValue" >
+            <Property>true</Property>
+        </InputDefinition>        
+
+       <InputDefinition name="InstantiateMethod"   base="com.bowstreet.core.WebAppBase.Action" >
+            <Group>Advanced</Group>
+            <Prompt>Instantiation Method</Prompt>
+            <Required>false</Required>
+            <HelpText>Select the action that will create an instance of this variable</HelpText>
+            <Editor>
+               <Argument name="showPages">false</Argument>
+               <Argument name="serverOrClientActions" inheritable="true">server</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="PersistChoice"   base="com.bowstreet.core.Base.StringData" >
+            <Group>Advanced</Group>
+            <Prompt>State and Failover</Prompt>
+            <HelpText>Use this input to determine how you want your variable to be persisted, during single or multiple webapp sessions.</HelpText>
+            <Required>false</Required>
+            <InitialValue>0</InitialValue>
+            <Editor JavaClass="com.bowstreet.widget.ComboBox">
+                <Argument name="ListData">0,1,2,3</Argument>
+                <Argument name="ListLabels">Read-write,Read-write but not persisted for failover,Read-only: shared across all users,Request scoped</Argument>
+            </Editor>
+        </InputDefinition>
+
+       <InputDefinition name="InitializeEveryFetch"   base="com.bowstreet.core.Base.BooleanData" >
+            <Group>Advanced</Group>
+            <Prompt>Initialize every fetch</Prompt>
+            <Required>false</Required>
+            <HelpText>If true, the instantiate Via action will be called each time the data is accessed - otherwise, the action will only be called when the value is null</HelpText>
+        </InputDefinition>
+
+        <InputDefinition name="GenerateSampleData"  base="com.bowstreet.core.Base.BooleanData">
+            <Group>Advanced</Group>
+            <InitialValue>false</InitialValue>
+            <Prompt>Regen sample data</Prompt>
+            <HelpText>If true, sample data will be re-created during each regen from the associated schema, if any</HelpText>
+        </InputDefinition>
+
+        <InputDefinition name="RenameExisting"  base="com.bowstreet.builders.webapp.ActionListBuilder.RenameExisting" />
+
+    </InputDefinitions>
+
+    <GroupDefinitions>
+        <GroupDefinition id="NameConflictHandling" base="com.bowstreet.builders.webapp.ActionListBuilder.NameConflictHandling" />
+
+        <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" />
+    </GroupDefinitions>
+</BuilderDef>

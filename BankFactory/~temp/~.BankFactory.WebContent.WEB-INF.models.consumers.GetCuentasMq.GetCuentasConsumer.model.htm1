@@ -1,0 +1,75 @@
+<div id="wefBody" style="background-color:transparent;">
+	<span id='<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "GetCuentasServiceView_InputPageDojoWrapper_0") %>' data-wef-dojo-wrapper="true"><span _sampledataaddedattr="_genElement"><span _sampledataaddedattr="_sampleDataAddedNode"></span></span><input type="hidden" id='<%= IDGenerator.getCurrentID(webAppAccess, "wpf_client_event_handler_2") %>' onchange="wpf_dojo_progress_indicator.hide({ppr:'wpf_ppr85201404141110',ids:this.ids,source:'<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>', overRegion:true})"><span _sampledataaddedattr="_genElement"></span><input type="hidden" id='<%= IDGenerator.getCurrentID(webAppAccess, "wpf_client_event_handler_0") %>' onchange="wpf_dojo_progress_indicator.show({ppr:'wpf_ppr85201404141110',ids:this.ids,source:'<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>', overRegion:true})"><span style="display:none" id='<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>' _sampledataaddedattr="_genElement"><div _sampledataaddedattr="_sampleDataAddedNode" style="border-style:dotted;border-width:thin;border-color:rgb(128,0,0);"><contents><html><span id='<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "DefaultProgressIndicatorIndicatorHTMLDojoWrapper_0") %>' data-wef-dojo-wrapper="true">
+<div>
+ <style type="text/css">
+ .wpf_progress_indicator_box {
+  width: auto;
+  box-shadow: 5px 5px 5px #ccc;
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  border-radius:8px;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  background-color:#fff;
+ }
+ </style>
+ <img alt="" src="${WebContent}/factory/images/progressindicator/spinning_spokes.gif" _sampledataaddedattr="_sampleDataSavedAttrName" _sampledatasavedattrname="src" _sampledatasavedattrvalue='<%= com.bowstreet.builders.webapp.methods.ContentHelper.getContentURL(webAppAccess, "/factory/images/progressindicator/spinning_spokes.gif") %>'>&nbsp;<i _sampledataaddedattr="_sampleDataSavedText" _sampledatasavedtext="">{text}</i>
+</div>
+</span></html></contents></div></span>
+		<h2 class="titulo"> Cuentas</h2>
+		<div style="width:90%; margin: 0 auto">
+		<a id='<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "wpf_action_ref_0") %>' href='<%= JSPSupport.getActionURL(webAppAccess, webAppAccess.getPartialPageRefreshURLMapper(false), false, "GetCuentasServiceView_InputPage_NextAction") %>' style="display:none"></a><form method="post" novalidate="true" role="form" data-wef-link-id='<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "wpf_action_ref_0") %>' onsubmit="var _f=((function _ff(el){ return el.form || (el.tagName == &quot;FORM&quot; && el) || (el.focusNode && _ff(el.focusNode)) || (el.parentNode && _ff(el.parentNode)) || (el.valueNode && _ff(el.valueNode)) || { submit: function() { location.href = this.action; } };} )(this));_f.action = document.getElementById(&quot;<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "wpf_action_ref_0") %>&quot;).href;_f.target = &quot;_self&quot;;if (!_f._notcalled || !(_f._notcalled() === false)) wpf_ppr85201404141110.submit(_f, [&quot;<%= request.getAttribute("bowstreet.smartRefreshID") %>&quot;], wpf_ppr85201404141110.smartRefreshHandler, {execScripts:false, eventPfx: &quot;<%= webAppAccess.getInstanceID() %>Ajax&quot;});return false" action="ignored" _sampledataaddedattr="_genElement">
+			<input type="hidden" value='<%= ((com.bowstreet.webapp.engine.WebAppAccessImpl)webAppAccess).getLinkedModelPath() +  "fireEvent:" + "Form:GetCuentasServiceView_InputPage_SaveDataSubmitEvent" %>'><span role="application"><div class="wpfMultiLineShowHideList">
+
+				<span class="subtitulosAlt" _sampledataaddedattr="_genElement">Tipo de Cuenta</span>
+				
+				<div class="wpfListShowHideText" onclick="wpf_dojo_utils85201404141110.toggleClass(this, 'wpfHideSection', 'wpfHide');wpf_dojo_utils85201404141110.toggleClass(this, 'wpfListShowHideText', 'wpfHide');dojo.stopEvent(event);">
+					<span class="linkFire">B&#250;squeda Avanzada</span>
+				</div>
+				<div class="wpfListShowHideText wpfHide" onclick="wpf_dojo_utils85201404141110.toggleClass(this, 'wpfHideSection', 'wpfHide');wpf_dojo_utils85201404141110.toggleClass(this, 'wpfListShowHideText', 'wpfHide');dojo.stopEvent(event);">
+					<span class="linkFire">Ocultar</span>
+				</div>
+				<select required="true" type="text" dojotype="dijit.form.FilteringSelect" value='<%= JSPSupport.stringValue(webAppAccess.getVariables().getXmlText("GetCuentasServiceGetCuentasOInputs", "arg2"), true) %>' _sampledataaddedattr="_genElement">
+</select> <span class="Campo Requerido" _sampledataaddedattr="_genElement"><span _sampledataaddedattr="_sampleDataAddedNode"></span></span>
+				<div class="wpfHideSection wpfHide">
+				   <table>
+				   		<tr>
+				   			<td>
+				   				 
+								<span class="subtitulos" _sampledataaddedattr="_genElement">Fecha Desde</span> 
+							
+								<input dojotype="dijit.form.DateTextBox" value='<%= JSPSupport.stringValue(webAppAccess.getVariables().getXmlText("GetCuentasServiceGetCuentasOInputs", "arg3"), true) %>' _sampledataaddedattr="_genElement">
+							</td> 
+							<td>
+								<span class="subtitulos" _sampledataaddedattr="_genElement">Fecha Hasta</span> 
+							
+								<input dojotype="dijit.form.DateTextBox" value='<%= JSPSupport.stringValue(webAppAccess.getVariables().getXmlText("GetCuentasServiceGetCuentasOInputs", "arg4"), true) %>' _sampledataaddedattr="_genElement"> 
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="subtitulos" _sampledataaddedattr="_genElement">Saldo Inferior</span>
+							
+								<input dojotype="dijit.form.NumberTextBox" value='<%= JSPSupport.stringValue(webAppAccess.getVariables().getXmlText("GetCuentasServiceGetCuentasOInputs", "arg5"), true) %>' _sampledataaddedattr="_genElement">
+							</td>
+							<td> 
+								<span class="subtitulos" _sampledataaddedattr="_genElement">Saldo Superior</span>
+						
+								<input dojotype="dijit.form.NumberTextBox" value='<%= JSPSupport.stringValue(webAppAccess.getVariables().getXmlText("GetCuentasServiceGetCuentasOInputs", "arg6"), true) %>' _sampledataaddedattr="_genElement">
+							</td>
+							
+						</tr>
+					</table>
+
+				</div>
+				</div>
+			<br>
+			<br>
+			</span><input class="art-button wefDesktopButton" value="Buscar" onclick="var _f=this.form;_f.target = &quot;_self&quot;;if (!_f.onsubmit || !(_f.onsubmit() === false)) wpf_ppr85201404141110.submit(_f, [&quot;<%= request.getAttribute("bowstreet.smartRefreshID") %>&quot;], wpf_ppr85201404141110.smartRefreshHandler, {execScripts:false, eventPfx: &quot;<%= webAppAccess.getInstanceID() %>&quot;});return false" type="button" _sampledataaddedattr="_genElement"><br><br> <span _sampledataaddedattr="_genElement"><span _sampledataaddedattr="_sampleDataAddedNode"></span></span>
+			<span _sampledataaddedattr="_genElement"><span _sampledataaddedattr="_sampleDataAddedNode"></span></span> <span _sampledataaddedattr="_genElement"><span _sampledataaddedattr="_sampleDataAddedNode"></span></span>
+			
+		</form>
+		</div>
+		<br>
+		<br>
+</span></div>

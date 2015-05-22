@@ -1,0 +1,25 @@
+/*! Licensed Materials - Property of IBM.
+    (c) Copyright IBM Corporation 2001, 2009.  All Rights Reserved.
+    U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+This CSS was built on August 21 2009. (version: OneUI-2.0.1_20090821-0327)
+these are the styles for search
+companion file is searchTheme.css*/
+/*** S E A R C H ***/
+/*these styles support the search UI in the title bar*/
+.lotusSearch input, .lotusSearch select{vertical-align:top;}
+.lotusSearch .lotusBtnImg{padding:2px;display:-moz-inline-box;display:inline-block;vertical-align:middle}
+.lotusSearch .lotusText, .lotusSearch .lotusScope{margin:0 1px;border-width:1px;border-style:solid;}
+.lotusSearch .lotusText{padding:2px 5px;height:1.33em;line-height:1.33em;width:11em;zoom:1;}
+.lotusSearch .lotusScope{padding:2px 4px 2px 25px;position: relative;display:block/*Force FF2 into block mode*/;display:inline-block;min-width:11em;height:1.33em;white-space: nowrap;line-height:1.33em;background-position:left 8px;background-repeat:no-repeat;text-decoration:none;cursor:pointer}
+.lotusSearch .lotusScope:visited, .lotusSearch .lotusScope:hover, .lotusSearch .lotusScope:focus, .lotusSearch .lotusScope:active{text-decoration:none}
+.lotusSearch .lotusScope .lotusIcon{margin-left:3px;vertical-align:top}
+.lotusui_ie .lotusSearch .lotusScope{margin-top:1px}
+/*min-width not working in these cases*/
+.lotusui_ie6 .lotusSearch .lotusScope{width:11em;}
+
+/*high contrast mode*/
+.lotusSearch .lotusScope .lotusAltText{position:absolute;top:0;left:0;width:16px;height:16px;min-width:0;background-image:none;display:none}
+.lotusImagesOff .lotusSearch .lotusScope .lotusAltText{display:block}
+/*.lotusImagesOff .lotusSearch .lotusScope span{padding:2px 5px 2px 0}*/
+/***********************************************************/
+

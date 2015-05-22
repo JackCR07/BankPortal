@@ -1,0 +1,28 @@
+<!--
+  Licensed Materials - Property of IBM
+  5724-O03
+  Copyright 2013. IBM Corp. All rights reserved.
+  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<div name="take_picture_section">
+  <table role="presentation">
+    <tbody>
+      <tr>
+        <td name="thumbnail_div" style="width:105px;height:140px;text-align:center;border-style:solid;background:#f8f8f8;border-width:2px;border-radius:5px">
+          <a name="takePictureButton" disabled style="opacity:0.5">
+            <img name="thumbnailPlaceholder" style="max-width:100px;max-height:100px;margin:auto;" src="/factory/images/worklight/camera.png">  
+            <img name="thumbnail" id="smallImage" src="" style="display:none;max-width:100%;max-height:100%" />
+          </a>
+        </td>
+        <td style="vertical-align:middle;text-align:left;padding-left:15px">
+          <div name="photoLibrary_div" style="padding-top:5px">
+            <label>
+              <input name="photoLibrary" type="checkbox" />
+              <span name="photoLibraryLabel"><%= com.bowstreet.builders.webapp.worklight.usertext.Messages.getString("WorklightCameraBuilder.PhotoLibraryLabel") %></span>
+            </label>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

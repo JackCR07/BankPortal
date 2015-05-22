@@ -1,0 +1,45 @@
+/*! Licensed Materials - Property of IBM.
+    (c) Copyright IBM Corporation 2001, 2009.  All Rights Reserved.
+    U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+This CSS was built on August 21 2009. (version: OneUI-2.0.1_20090821-0327)
+these are the styles for buttons
+companion file is buttonsTheme.css*/
+/*** B U T T O N S ***/
+/*common button styles*/
+/*all buttons*/
+.lotusButton, .lotusBtn, .lotusFormButton, .lotusBtnImg{border-width:1px;border-style:solid;text-align:center !important;}
+.lotusButton a, .lotusBtn a, .lotusFormButton, input.lotusBtn, button.lotusBtn, .lotusBtnImg{background-position:right top;background-repeat:repeat-x;font-weight:bold;}
+/*all buttons except lotusButton*/
+.lotusBtn a, input.lotusBtn, button.lotusBtn, .lotusFormButton{font-size:.9em;line-height:1.7em;}
+/*all buttons created using an input or button tag*/
+input.lotusBtn, button.lotusBtn, input.lotusFormButton, button.lotusFormButton{padding:2px 7px 3px 7px;cursor:pointer}
+.lotusui_ie button.lotusBtn, .lotusui_ie input.lotusBtn, .lotusui_ie .lotusFormButton{padding:0 1px 1px 1px}
+/*all buttons created from a link*/
+.lotusButton a, .lotusBtn a{border-width:0 1px 1px 1px;border-style:solid;display:block;text-decoration:none;}
+.lotusButton a:hover, .lotusButton a:focus, .lotusButton a:active, span.lotusBtn a:hover, span.lotusBtn a:focus, span.lotusBtn a:active{text-decoration:none;}/*gets rid of underline on button hover*/
+/*image buttons - an imput type=image wrapped with a span or an img wrapped with a link*/
+.lotusBtnImg{display:-moz-inline-box;display:inline-block;padding:0;vertical-align:middle;line-height:1em}/*default padding, which makes a 16 pixel icon if the image uses the default image size*/
+.lotusBtnImg img, .lotusBtnImg input{margin:0;padding:0;width:16px;height:16px;background-position:right top;background-repeat:no-repeat;}/*default margin, padding and size*/
+.lotusImagesOff .lotusBtnImg img, .lotusImagesOff .lotusBtnImg input{display:none}
+/*specific button styles*/
+/*button in left column, set width*/
+.lotusButton{margin-bottom:10px;width:174px;}
+.lotusButton a{padding:7px 0;font-size:1.3em;}
+/*default buttons*/
+/*put the lotusBtn class on either a span around a link or on an input button*/
+span.lotusBtn{margin-left:5px;;display:-moz-inline-box/*for FF2*/;display:inline-block;}
+span.lotusBtn a{padding:1px 10px 1px 10px;white-space:nowrap;}
+input.lotusBtn, button.lotusBtn{margin-left:3px;}
+.lotusui_ie6 span.lotusBtn img{margin: .6em 0 .6em 0} /*need this for button with drop-down arrow to look okay in IE6*/
+/*form buttons*/
+input.lotusFormButton, button.lotusFormButton{margin-left:15px;}
+.lotusDashboardSearch input.lotusFormButton {margin-top:20px;}
+/*disabled buttons*/
+.lotusBtnDisabled, .lotusBtnDisabled a{cursor:default}
+/*miscellaneous*/
+.lotusBtnContainer{margin-bottom:0;padding-bottom:0;white-space:nowrap;}/*put this around a bunch of "link" buttons*/
+.lotusBtnDivider{border-bottom-width:1px;border-bottom-style:solid;padding-bottom:5px}/*add this as an additional class when you need a bottom divider for the buttons*/
+/*generic/common buttons*/
+/*put the style on the wrapper a or span along with the lotusBtnImg class*/
+.lotusAdd{font-size:1.5em;}
+/***********************************************************/

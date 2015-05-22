@@ -1,0 +1,51 @@
+<div>
+        <span id='<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "InputPageDojoWrapper_0") %>' data-wef-dojo-wrapper="true"><span _sampledataaddedattr="_genElement"><span _sampledataaddedattr="_sampleDataAddedNode"></span></span><input type="hidden" id='<%= IDGenerator.getCurrentID(webAppAccess, "wpf_client_event_handler_1") %>' onchange="wpf_dojo_progress_indicator.hide({ppr:'wpf_ppr85201404141110',ids:this.ids,source:'<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>', overRegion:true})"><span _sampledataaddedattr="_genElement"></span><input type="hidden" id='<%= IDGenerator.getCurrentID(webAppAccess, "wpf_client_event_handler_0") %>' onchange="wpf_dojo_progress_indicator.show({ppr:'wpf_ppr85201404141110',ids:this.ids,source:'<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>', overRegion:true})"><span style="display:none" id='<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>' _sampledataaddedattr="_genElement"><div _sampledataaddedattr="_sampleDataAddedNode" style="border-style:dotted;border-width:thin;border-color:rgb(128,0,0);"><contents><html><span id='<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "DefaultProgressIndicatorIndicatorHTMLDojoWrapper_0") %>' data-wef-dojo-wrapper="true">
+<div>
+ <style type="text/css">
+ .wpf_progress_indicator_box {
+  width: auto;
+  box-shadow: 5px 5px 5px #ccc;
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  border-radius:8px;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  background-color:#fff;
+ }
+ </style>
+ <img alt="" src="${WebContent}/factory/images/progressindicator/spinning_spokes.gif" _sampledataaddedattr="_sampleDataSavedAttrName" _sampledatasavedattrname="src" _sampledatasavedattrvalue='<%= com.bowstreet.builders.webapp.methods.ContentHelper.getContentURL(webAppAccess, "/factory/images/progressindicator/spinning_spokes.gif") %>'>&nbsp;<i _sampledataaddedattr="_sampleDataSavedText" _sampledatasavedtext="">{text}</i>
+</div>
+</span></html></contents></div></span><form method="post" novalidate="true" role="form">
+            <input type="hidden" value='<%= ((com.bowstreet.webapp.engine.WebAppAccessImpl)webAppAccess).getLinkedModelPath() +  "fireEvent:" + "Form:InputPage_SaveDataSubmitEvent" %>'><div role="application">
+<div>
+    <htmlwrapper>
+<div class="vf_fields" _genelement_start="/WebApp:WebApp/Page:InputPage/:Group: InputParms">
+    <htmlwrapper _sampledataaddedattr="_sampleDataAddedNode"></htmlwrapper><htmlwrapper></htmlwrapper>
+    <table class="displayPageTable" role="presentation">
+<htmlwrapper>
+    <htmlwrapper>
+<tr role="presentation" class="DataEntryFieldRow" _sampledataaddedattr="_genElement">
+        <td role="presentation" class="labelCell" align="left" valign="top" nowrap="">
+          <label for="StringSourceInputPageFullname_field">
+          <span class="label" _sampledataaddedattr="_genElement">Fullname</span>&nbsp;
+          <span class="requiredPrompt">*</span>&nbsp;
+          </label>
+        </td>
+        <td role="presentation" width="100%" class="outputDataCell" valign="top" nowrap="">
+          <input class="outputData" value='<%= JSPSupport.stringValue(webAppAccess.getVariables().getXmlText("FullnameData", "Fullname"), true) %>' id="StringSourceInputPageFullname_field" required="true" dojotype="dijit.form.TextBox" aria-invalid='<%= JSPSupport.stringValue(DataConverter.toString(webAppAccess.callMethod("InputPageError.getIsInvalidString", new Object[] { "Fullname" })),false) %>' _sampledataaddedattr="_genElement">
+          <span class="errorMessage" nowrap="" _sampledataaddedattr="_genElement"><span _sampledataaddedattr="_sampleDataAddedNode">{Error text}</span></span>
+        </td>
+      </tr>
+</htmlwrapper>
+  </htmlwrapper>
+</table>
+  </div>
+</htmlwrapper>
+  </div>
+</div>
+            <div>
+            	<a id='<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "wpf_action_ref_0") %>' href='<%= JSPSupport.getActionURL(webAppAccess, webAppAccess.getPartialPageRefreshURLMapper(false), false, "InputPage_NextAction") %>' style="display:none"></a><input value="Submit" onclick="var _f=this.form;_f.action = document.getElementById(&quot;<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "wpf_action_ref_0") %>&quot;).href;if(_f.nodeName != undefined){var _refID = _f.getAttribute(&quot;data-wef-link-id&quot;);if(_refID != null && _refID.length > 0) document.getElementById(_refID).href = _f.action;}_f.target = &quot;_self&quot;;if (!_f.onsubmit || !(_f.onsubmit() === false)) wpf_ppr85201404141110.submit(_f, [&quot;<%= request.getAttribute("bowstreet.smartRefreshID") %>&quot;], wpf_ppr85201404141110.smartRefreshHandler, {execScripts:false, eventPfx: &quot;<%= webAppAccess.getInstanceID() %>Ajax&quot;});return false" type="button" class="wefDesktopButton" _sampledataaddedattr="_genElement">
+            	<span _sampledataaddedattr="_genElement"><span _sampledataaddedattr="_sampleDataAddedNode"></span></span>
+            </div>
+        </form>
+    </span></div>

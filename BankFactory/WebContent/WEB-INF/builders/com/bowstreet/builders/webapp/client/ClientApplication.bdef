@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.client.ClientApplication"> 
+  <ReadableName>Client Application</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName> 
+  <HelpFile /> 
+  <RequiredFactoryVersion>8.0.0</RequiredFactoryVersion> 
+  <Description>Expose Model as Client Application</Description> 
+  <Domains> 
+    <Domain>Client</Domain>    
+  </Domains> 
+  <CreateModifyList /> 
+  <Category>Client-Side Application</Category> 
+  <Keywords /> 
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.client.ClientApplicationBuilder</BuilderDataEntry> 
+  </BuilderData> 
+  <CoordinatorClassName>com.bowstreet.builders.webapp.client.ui.ClientApplicationCoordinator</CoordinatorClassName> 
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.RestrictedBuilderName"> 
+      <Prompt>Name</Prompt> 
+      <InitialValue /> 
+      <HelpText /> 
+      <Page /> 
+      <Required></Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+    </InputDefinition> 
+
+    <InputDefinition name="UseTheme" base="com.bowstreet.builders.webapp.pageautomation.DataPage.UseTheme">
+        <InitialValue>true</InitialValue>
+        <HelpText>Use the aggregator page HTML source specified in the user interface theme, instead of specifying it directly as a builder input.</HelpText>
+    </InputDefinition>
+
+    <InputDefinition name="ImportedPageName" base="com.bowstreet.core.WebAppBase.PageToImport">
+     <Prompt>Aggregator Page</Prompt>
+     <HelpText>Specify the main page for this application.  Individual child pages will be automatically inserted into this page.</HelpText>
+     <Required>false</Required>
+     <Visible>true</Visible>
+     <Callable>true</Callable>
+     <Property>true</Property>
+     <InitialValue>/factory/pages/client/client_app.html</InitialValue>
+    </InputDefinition>
+  
+   <InputDefinition name="InitialAction" base="com.bowstreet.core.WebAppBase.Action">
+     <Prompt>Initial Client Action</Prompt>
+     <HelpText>Optionally choose an initial client action to be run when the aggregator page first loads in the browser.</HelpText>
+     <Required>false</Required>
+     <Visible>true</Visible>
+     <ProfileType>None</ProfileType>
+     <Callable>true</Callable>
+     <Property>true</Property>
+     <Editor JavaClass="com.bowstreet.widget.ActionChooser">
+       <Argument name="showSpecialActions" inheritable="true">false</Argument>
+       <Argument name="showMethodsWithArguments" inheritable="true">true</Argument>
+       <Argument name="showTypePrefix" inheritable="true">false</Argument>
+       <Argument name="serverOrClientActions" inheritable="true">client</Argument>
+     </Editor>
+   </InputDefinition>
+  
+    <InputDefinition name="PageInfo" base="com.bowstreet.core.Base.XMLData">
+      <Group>PageInputs</Group>
+      <Prompt>Client Page Info</Prompt>
+      <Type>Xml</Type>
+      <HelpText>Optional settings for the child pages that will be inserted into the aggregator page.</HelpText>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <Callable>true</Callable>
+      <Property>true</Property>
+      <Editor JavaClass="com.bowstreet.editor.uitools.widgets.ListWidget">
+        <Argument name="columns">4</Argument>
+        <Argument name="headings">Page Name,Page Location,Remote,Client Enable</Argument>
+        <Argument name="columnTags">PageName,PageLocation,Remote,ClientEnable</Argument>
+        <Argument name="rowtag">Info</Argument>
+        <Argument name="cellEditors">
+          <Editors>
+            <Editor JavaClass="com.bowstreet.widget.ComboBox">
+                <Argument name="ListData"></Argument>
+                <Argument name="IsEditable">false</Argument>
+            </Editor>
+            <Editor JavaClass="com.bowstreet.widget.ComboBox">
+                <Argument name="ListData"></Argument>
+                <Argument name="IsEditable">true</Argument>
+            </Editor>
+            <Editor JavaClass="com.bowstreet.widget.ComboBox">
+                <Argument name="ListData">true,false</Argument>
+            </Editor>
+            <Editor JavaClass="com.bowstreet.widget.ComboBox">
+                <Argument name="ListData">true,false</Argument>
+            </Editor>
+          </Editors>
+        </Argument>
+      </Editor>
+    </InputDefinition>
+  
+    <InputDefinition name="GenerateMain" base="com.bowstreet.core.Base.BooleanData">
+      <Group>Advanced</Group>
+      <Prompt>Generate Main</Prompt>
+      <HelpText>Specify whether a "main" server action should be generated, which will process the aggregator page.</HelpText>
+      <InitialValue>true</InitialValue>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+  
+    <InputDefinition name="InstanceID"  base="com.bowstreet.core.Base.IndirectValue">
+      <Group>Advanced</Group>
+      <Prompt>Instance ID</Prompt>
+      <ProfileType>Value</ProfileType>
+      <HelpText>Optionally specify the name of the global script object used to provide application access ("webAppAccess").</HelpText>
+      <Callable>true</Callable>
+      <Visible>true</Visible>
+      <Editor JavaClass="com.bowstreet.widget.IndirectValue">
+        <Argument name="serverOrClientActions">server</Argument>
+      </Editor>
+    </InputDefinition>
+
+   <InputDefinition name="ParseDojo" base="com.bowstreet.core.Base.BooleanData">
+      <Group>Advanced</Group>
+      <Prompt>Parse Dojo</Prompt>
+      <HelpText>Check this box to have dojo parse each page as it's viewed.</HelpText>
+      <InitialValue>true</InitialValue>
+      <Required>false</Required>
+      <Visible>false</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+  
+   <InputDefinition name="ExecuteScripts" base="com.bowstreet.core.Base.BooleanData">
+      <Group>Advanced</Group>
+      <Prompt>Execute Scripts</Prompt>
+      <HelpText>Check this box to execute scripts on each page as it's viewed.</HelpText>
+      <InitialValue>true</InitialValue>
+      <Required>false</Required>
+      <Visible>false</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+    
+    <InputDefinition name="DefaultErrorPage" base="com.bowstreet.core.WebAppBase.PageToImport">
+     <Group>Advanced</Group>
+     <Prompt>Default Error Page</Prompt>
+     <HelpText>Specify the error page for this application to be used when an error occurs executing server-side actions.</HelpText>
+     <Required>false</Required>
+     <Visible>true</Visible>
+     <Callable>true</Callable>
+     <Property>true</Property>
+     <InitialValue>/factory/pages/client/client_default_error.html</InitialValue>
+    </InputDefinition>
+  
+  </InputDefinitions>
+
+  <GroupDefinitions> 
+
+    <GroupDefinition id="PageInputs">
+      <Name>Optional Client Page Inputs</Name>
+      <Description>Optional inputs to override default settings for the child pages that will be inserted into the main aggregator page specified above.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>true</InitiallyCollapsed>
+    </GroupDefinition>
+
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" />
+
+  </GroupDefinitions>
+ 
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

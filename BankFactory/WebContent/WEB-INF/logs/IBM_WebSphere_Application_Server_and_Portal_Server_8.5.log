@@ -1,14 +1,14 @@
 
 properties:
-     [echo] C:\Users\Jeancarlo\GBM\WorkSpaces\WEF\BankFactoryNew\.metadata\.plugins\com.bowstreet.designer.webapp\deploymentconfigs/IBM_WebSphere_Application_Server_and_Portal_Server_8.5.pfConfig
+     [echo] C:\Users\lprado\Documents\GIT\cleanWorkSpace2\.metadata\.plugins\com.bowstreet.designer.webapp\deploymentconfigs/IBM_WebSphere_Application_Server_and_Portal_Server_8.5.pfConfig
 
 publish:
      [echo] Deployment action requested for configuration 'IBM_WebSphere_Application_Server_and_Portal_Server_8.5'.
 
 configDetails:
-     [echo] Deploy Time: 04/30/2015 12:28:47 AM
+     [echo] Deploy Time: 05/21/2015 02:05:29 PM
      [echo] Config Name: IBM_WebSphere_Application_Server_and_Portal_Server_8.5
-     [echo] Project Location: C:\Users\Jeancarlo\git\BankPortalNew\BankFactory
+     [echo] Project Location: C:\Users\lprado\git\BankPortal3\BankFactory
      [echo] ServerPort: 10039
      [echo] Config ant file: WebSphere.xml
      [echo] PublishTarget: buildPortletEar
@@ -16,17 +16,17 @@ configDetails:
      [echo] Tools Location: C:/IBM/Web Experience Factory/Designer/FeatureSets/Web-App_8.5.0/Deployment/antscripts
 
 setDisplayName:
-   [delete] Deleting: C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\portlet.web\displayname.xml
-     [copy] Copying 1 file to C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\portlet.web
-   [delete] Deleting: C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\standalone.web\displayname.xml
-     [copy] Copying 1 file to C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\standalone.web
+   [delete] Deleting: C:\Users\lprado\git\BankPortal3\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\portlet.web\displayname.xml
+     [copy] Copying 1 file to C:\Users\lprado\git\BankPortal3\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\portlet.web
+   [delete] Deleting: C:\Users\lprado\git\BankPortal3\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\standalone.web\displayname.xml
+     [copy] Copying 1 file to C:\Users\lprado\git\BankPortal3\BankFactory\WebContent\WEB-INF\bin\deployment\extensions\standalone.web
 
 configProject:
      [echo] Configuring project for deployment action.
-   [delete] Deleting: C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\config\server.properties
-     [copy] Copying 1 file to C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\config
-   [delete] Deleting: C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\config\wpf.signature
-     [copy] Copying 1 file to C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\config
+   [delete] Deleting: C:\Users\lprado\git\BankPortal3\BankFactory\WebContent\WEB-INF\config\server.properties
+     [copy] Copying 1 file to C:\Users\lprado\git\BankPortal3\BankFactory\WebContent\WEB-INF\config
+   [delete] Deleting: C:\Users\lprado\git\BankPortal3\BankFactory\WebContent\WEB-INF\config\wpf.signature
+     [copy] Copying 1 file to C:\Users\lprado\git\BankPortal3\BankFactory\WebContent\WEB-INF\config
 
 properties:
 
@@ -38,16 +38,16 @@ buildPortletEar:
 makePortletWarLocation:
 
 properties:
-     [echo] taskClassPath=C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/../.deployment/lib/wpfDeployment.jar;    C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/WEB-INF/lib/factory.jar;    C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/WEB-INF/lib/bstres.jar;    C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/WEB-INF/lib/bstres_n11.jar;    C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/WEB-INF/lib/jdom.jar;    C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/WEB-INF/lib/log4j.jar;    C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/WEB-INF/lib/commons-pool.jar;    C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/WEB-INF/clientLibs/j2ee.jar
+     [echo] taskClassPath=C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/../.deployment/lib/wpfDeployment.jar;    C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/WEB-INF/lib/factory.jar;    C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/WEB-INF/lib/bstres.jar;    C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/WEB-INF/lib/bstres_n11.jar;    C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/WEB-INF/lib/jdom.jar;    C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/WEB-INF/lib/log4j.jar;    C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/WEB-INF/lib/commons-pool.jar;    C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/WEB-INF/clientLibs/j2ee.jar
 
 isJSR286:
      [echo] Generating Java Standard 2.0 (JSR 286) portlet descriptor.
-   [delete] Deleting: C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent\WEB-INF\portlet.xml.tmp
+   [delete] Deleting: C:\Users\lprado\git\BankPortal3\BankFactory\WebContent\WEB-INF\portlet.xml.tmp
 
 makePortletWarLocation:
 
 properties:
-     [echo] taskClassPath=C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/../.deployment/lib/wpfDeployment.jar;    C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/WEB-INF/lib/factory.jar;    C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/WEB-INF/lib/bstres.jar;    C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/WEB-INF/lib/bstres_n11.jar;    C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/WEB-INF/lib/jdom.jar;    C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/WEB-INF/lib/log4j.jar;    C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/WEB-INF/lib/commons-pool.jar;    C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\WebContent/WEB-INF/clientLibs/j2ee.jar
+     [echo] taskClassPath=C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/../.deployment/lib/wpfDeployment.jar;    C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/WEB-INF/lib/factory.jar;    C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/WEB-INF/lib/bstres.jar;    C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/WEB-INF/lib/bstres_n11.jar;    C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/WEB-INF/lib/jdom.jar;    C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/WEB-INF/lib/log4j.jar;    C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/WEB-INF/lib/commons-pool.jar;    C:\Users\lprado\git\BankPortal3\BankFactory\WebContent/WEB-INF/clientLibs/j2ee.jar
 
 buildPortletEAR:
      [echo] Building BankFactory Portlet EAR.
@@ -55,7 +55,7 @@ buildPortletEAR:
     [mkdir] Created dir: C:\IBM\Web Experience Factory\Designer\FeatureSets\Web-App_8.5.0\Deployment\antscripts\publish\temp\META-INF
       [war] Building war: C:\IBM\Web Experience Factory\Designer\FeatureSets\Web-App_8.5.0\Deployment\antscripts\publish\temp\BankFactory.war
      [copy] Copying 3 files to C:\IBM\Web Experience Factory\Designer\FeatureSets\Web-App_8.5.0\Deployment\antscripts\publish\temp\META-INF
-      [ear] Building ear: C:\Users\Jeancarlo\git\BankPortalNew\BankFactory\.deployment\BankFactory.ear
+      [ear] Building ear: C:\Users\lprado\git\BankPortal3\BankFactory\.deployment\BankFactory.ear
    [delete] Deleting directory C:\IBM\Web Experience Factory\Designer\FeatureSets\Web-App_8.5.0\Deployment\antscripts\publish\temp
 
 properties:

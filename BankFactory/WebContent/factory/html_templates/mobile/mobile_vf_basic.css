@@ -1,0 +1,10 @@
+/* Licensed Materials Property of IBM 5724-O03 
+Copyright IBM Corp. 2012
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.*/
+body{margin: 0px;width: 100%;}
+.wpfMobilePage .vf_view_container{width: 100%;padding: 0px 0px 0px 0px;margin: 0px;}
+.wpfMobilePage .vf_create_button input{width: 100px;display:block;margin:0px auto;}
+.wpfMobilePage .displayPageTable{float:none;margin:0px;width:97%;margin-left:4px;margin-right:0px;}
+.wpfMobilePage .vf_view_list{float: none;margin: 0px;}
+.wpfMobilePage .DisplayFieldLabelText,label{font-weight:bold;font-size:.65em}
+.wpfMobilePage .tableCell{border-bottom: none;border-right: none;}

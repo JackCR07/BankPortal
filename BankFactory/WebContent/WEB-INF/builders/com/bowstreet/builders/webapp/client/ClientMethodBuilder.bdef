@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.client.ClientMethodBuilder"> 
+  <ReadableName>Client Method</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName> 
+  <HelpFile /> 
+  <RequiredFactoryVersion>8.0.0</RequiredFactoryVersion> 
+  <Description>Adds a JavaScript method to the application</Description> 
+  <Domains> 
+    <Domain>Client</Domain>
+  </Domains> 
+  <CreateModifyList> 
+    <CanCreate xmlns="" type="Method" category="Navigation and Page Actions" /> 
+  </CreateModifyList> 
+  <Category>Navigation and Page Actions,Client-Side Application</Category> 
+  <Keywords /> 
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.client.ClientMethodBuilder</BuilderDataEntry> 
+  </BuilderData> 
+   <CoordinatorClassName>com.bowstreet.builders.webapp.client.ui.ClientMethodCoordinator</CoordinatorClassName>
+  <InputDefinitions> 
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.StringData">
+        <Prompt>Name</Prompt>
+        <Required>true</Required>
+        <HelpText>The name of the client action</HelpText> 
+    </InputDefinition> 
+    <InputDefinition name="Arguments" base="com.bowstreet.core.Base.ClientSideArguments">
+        <Type>Xml</Type>
+    </InputDefinition>
+    <InputDefinition name="ReturnType" base="com.bowstreet.builders.webapp.MethodBuilder.ReturnType">
+        <Editor JavaClass="com.bowstreet.widget.ComboBox">
+            <Argument name="listData">void,String,IXml</Argument>
+            <Argument name="isEditable">true</Argument>
+        </Editor>
+    </InputDefinition>
+    <InputDefinition name="XMLType" base="com.bowstreet.builders.webapp.MethodBuilder.XMLType" />
+
+    <InputDefinition name="Body" base="com.bowstreet.core.Base.MethodBody">> 
+      <Prompt>Body</Prompt> 
+      <Property>true</Property> 
+      <HelpText>The JavaScript method body</HelpText> 
+      <Required>true</Required> 
+      <Visible>true</Visible> 
+      <ProfileType>Value</ProfileType> 
+      <Callable>true</Callable> 
+        <Editor JavaClass="com.bowstreet.widget.JavascriptEditor">
+          <Argument name="height">200</Argument>
+          <Argument name="linewrap">true</Argument>
+        </Editor>
+      <InitialValue>{
+    // The JavaScript function created by this builder can be accessed as a method of the WebAppAccess client-side object.
+    // When referencing WebAppAccess client-side functions from a method use "this" as its reference. For example this.getVariable("Data");
+    // Simple Code Samples - See help for further info.
+ 
+    // gets the value of the specified variable and path
+    // var id = this.getVariable('orders_SelectedRowData.Row.ORDER_ID');
+ 
+    // Sets the value of the specified variable and path ()
+    // this.setVariable("ordersGetOneOrderInputs.RowToSelectOne.ORDER_ID", "009532");
+  
+    // Call a client-side method/action list function
+    // this.getDetails();
+    
+    // log ORDER_ID to JavaScript debug console.
+    // console.log("ORDER_ID = " + id);
+}</InitialValue>
+    </InputDefinition> 
+
+    <InputDefinition name="CreationOption" base="com.bowstreet.core.Base.StringData">
+       <Group>Advanced</Group>
+       <Prompt>Creation Option</Prompt>
+       <HelpText>Select the Create New option if this method needs to be available to other builders during model generation.</HelpText>
+       <InitialValue>Automatic</InitialValue>
+       <Editor JavaClass="com.bowstreet.widget.RadioBox">
+         <Argument name="listLabels">Automatic,Create New</Argument>
+         <Argument name="listData">Automatic,CreateNew</Argument>
+       </Editor>
+    </InputDefinition> 
+    
+    
+  </InputDefinitions> 
+  <GroupDefinitions>  
+	  <GroupDefinition id="Arguments" base="com.bowstreet.builders.webapp.MethodBuilder.Arguments" />
+       <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" />
+  </GroupDefinitions>  
+</BuilderDef> 
+ 

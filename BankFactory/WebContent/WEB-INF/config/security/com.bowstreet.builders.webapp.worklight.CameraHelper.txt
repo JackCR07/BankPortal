@@ -1,0 +1,5 @@
+# CameraHelper is only allowed to read files under WEB-INF/upload and to create File instances pointing to the
+# root of the WAR file.  WEB-INF/upload is where thumbnails will be uploaded by mobile clients before validation.
+${war.root.directory}/WEB-INF/upload/*
+${war.root.directory}
+

@@ -1,4 +1,17 @@
-<Model id="consumers/GetTransaccion/GetTransaccionModel"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Model id="consumers/GetTransaccion/GetTransaccionModel"><BuilderCallList><BuilderCall id="bc48"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
+<Messages><Warning><Message>Duplicate portlet name found in model consumers/GetTransaccion/CopyofGetTransaccionModelBackUp.</Message>
+</Warning>
+</Messages>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="Name">GetTransacciones</Input>
+<Input name="PortletTitle">GetTransaccionesPortlet</Input>
+<Input name="CustomEditDefaultsPageType">None</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
 <Messages />
 <Inputs><Input name="Name">Next Steps</Input>
 <Input name="BuilderCallEnabled">true</Input>
@@ -18,33 +31,19 @@ You can view and test both the Desktop, Tablet and Smartphone profiles from Desi
 You can also profile other builder inputs according to device type, and you can apply different profiling for specific device types if you want.   For example, you could have different CSS style sheets applied for different types of smartphones if you want to have a different appearance for each device.</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
-<Messages />
-<Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
-<Input name="UseParentProfile">true</Input>
-<Input name="ImportOnce">true</Input>
-<Input name="ProfileHandling">UseParentProfiling</Input>
-<Input name="Name">Theme</Input>
-<Input name="ModelName">imports/factory/multichanneltheme85</Input>
-<Input name="SetProfiledInputValues">false</Input>
-<Input name="_ProfiledInputs"><ProfiledInputs profile_contributor="imports/factory/multichanneltheme85"><Input profile="mobile_devicetype_base:DesktopDevice">true</Input>
-<Input profile="mobile_devicetype_base:SmartPhoneDevice">false</Input>
-<Input profile="mobile_devicetype_base:TabletDevice">false</Input>
-</ProfiledInputs>
-</Input>
+<BuilderCall id="bc44"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientApplication</BuilderDefID>
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="ParseDojo">true</Input>
+<Input name="DojoMobile">true</Input>
+<Input name="ExecuteScripts">true</Input>
+<Input name="ImportedPageName">/factory/pages/client/client_app_chart.html</Input>
+<Input name="Name">client</Input>
+<Input name="GenerateMain">true</Input>
+<Input name="DefaultErrorPage">/factory/pages/client/dojo_mobile_default_error.html</Input>
 </Inputs>
-</BuilderCall>
-<BuilderCall id="bc5"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
 <Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="BuilderCallCategory">General</Input>
-<Input name="CustomEditPageType">None</Input>
-<Input name="CustomConfigurePageType">None</Input>
-<Input name="Name">GetTransacciones</Input>
-<Input name="PortletTitle">GetTransaccionesPortlet</Input>
-</Inputs>
 </BuilderCall>
-<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<BuilderCall id="bc93"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="BuilderCallCategory">General</Input>
@@ -78,10 +77,35 @@ You can also profile other builder inputs according to device type, and you can 
 </top>
 </Inputs>
 </InputsForOperation>
+<InputsForOperation><Operation>SumarTransaccionesOp</Operation>
+<Inputs><top><Input><Name>operation2InputParameter1</Name>
+</Input>
+<Input><Name>operation2InputParameter1.idCliente</Name>
+</Input>
+<Input><Name>operation2InputParameter1.idTipoTransaccion</Name>
+</Input>
+<Input><Name>operation2InputParameter1.fecha_mov_mayor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.fecha_mov_menor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.mon_trans_mayor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.mon_trans_menor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.n_trans_mayor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.n_trans_menor_a</Name>
+</Input>
+</top>
+</Inputs>
+</InputsForOperation>
 </top>
 </Input>
 <Input name="OperationName">all</Input>
 <Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>GetTransaccionesOperation</Operation>
+<Mappings />
+</ValuesForOperation>
+<ValuesForOperation><Operation>SumarTransaccionesOp</Operation>
 <Mappings />
 </ValuesForOperation>
 </ContextVariables>
@@ -97,11 +121,20 @@ Parameters:
 
 	Name:			results</Description>
 </OperationSelected>
+<OperationSelected><Operation>SumarTransaccionesOp</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>No description was provided.
+Parameters:
+	Name:			inputs
+
+	Name:			results</Description>
+</OperationSelected>
 </top>
 </Input>
+<Input name="InheritProfile">false</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ViewAndFormBuilder</BuilderDefID>
+<BuilderCall id="bc94"><BuilderDefID>com.bowstreet.builders.webapp.ViewAndFormBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="BuilderCallCategory">General</Input>
@@ -141,162 +174,24 @@ Parameters:
 <Input name="ViewPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_ViewPageStyleSheetOverride}</Input>
 <Input name="DetailPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</Input>
 <Input name="EnablePagingButtons">true</Input>
+<Input name="InputValidationMethodBehavior">CallOnlyOnValidData</Input>
+<Input name="InputValidationMethod">SaveVariables</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
+<BuilderCall id="bc95"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
 <Messages />
-<Inputs><Input name="BuilderCallEnabled" />
-<Input name="AllPages">true</Input>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="AllPages">false</Input>
 <Input name="AllPageRadio">current</Input>
-<Input name="Pages"><data />
+<Input name="Pages"><data><GetTransaccionesView_InputPage>true</GetTransaccionesView_InputPage>
+<GetTransaccionesView_ViewPage>false</GetTransaccionesView_ViewPage>
+</data>
 </Input>
-<Input name="DisplayBehavior"><top><DispInfo><Name>id_transaccion</Name>
-<Label>[Id Transaccion]</Label>
-<Hide>HideAlways</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>numero_transaccion</Name>
-<Label>Numero de Transaccion</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_Integer</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>debito</Name>
-<Label>[Debito]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>credito</Name>
-<Label>[Credito]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>fecha_transaccion</Name>
-<Label>Fecha de Transaccion</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_Date</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>tipo_transaccion</Name>
-<Label>Tipo de Transaccion</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>id_cuenta_origen</Name>
-<Label>[Id Cuenta Origen]</Label>
-<Hide>HideAlways</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>num_cuenta_origen</Name>
-<Label>Numero Cuenta Origen</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>id_cuenta_destino</Name>
-<Label>[Id Cuenta Destino]</Label>
-<Hide>HideAlways</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>num_cuenta_destino</Name>
-<Label>Numero de Cuenta Destino</Label>
-<Hide>HideAlways</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>id_cuenta</Name>
-<Label>Cuenta</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>id_tipo_transaccion</Name>
-<Label>Tipo de Transaccion</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>fecha_mov_mayor_a</Name>
-<Label>Fecha Movimiento Desde</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_Date</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>fecha_mov_menor_a</Name>
-<Label>Fecha Movimiento Hasta</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_Date</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>mon_trans_mayor_a</Name>
-<Label>Monto Transferencia Desde</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>mon_trans_menor_a</Name>
-<Label>Monto Transferencia Hasta</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>n_trans_mayor_a</Name>
-<Label>Numero Transferencia Desde</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>n_trans_menor_a</Name>
-<Label>Numero Transferencia Hasta</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-</top>
+<Input name="DisplayBehavior"><top />
 </Input>
-<Input name="ValidationBehavior"><top><ValidationInfo><Name>id_cuenta</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>Required</Required>
-<ErrorMessage>Campo Requerido</ErrorMessage>
-</ValidationInfo>
-<ValidationInfo><Name>id_tipo_transaccion</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>Required</Required>
-<ErrorMessage>Campo Requerido</ErrorMessage>
-</ValidationInfo>
-<ValidationInfo><Name>fecha_mov_mayor_a</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>fecha_mov_menor_a</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>mon_trans_mayor_a</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>mon_trans_menor_a</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>n_trans_mayor_a</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>n_trans_menor_a</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-</top>
+<Input name="ValidationBehavior"><top />
 </Input>
-<Input name="DefaultName">All pages</Input>
+<Input name="DefaultName">GetTransaccionesView_InputPage </Input>
 <Input name="CurPageDisplayBehavior"><data><DispInfo><Name>id_cuenta</Name>
 <Label>[Id Cuenta]</Label>
 <Hide>[Do Not Change]</Hide>
@@ -385,8 +280,8 @@ Parameters:
 </Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
-<Messages><Warning><Message>PageLocation expression "AllPages #(GetTransaccionesView_PagingPage, GetTransaccionesView_InputPage, GetTransaccionesView_PagingBottomPage, GetTransaccionesView_ViewPage, GetTransaccionesView_PagingTopPage, DefaultProgressIndicatorIndicatorHTML}# NameSearch page_header_text" does not evaluate to any locations.</Message>
+<BuilderCall id="bc96"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages><Warning><Message>PageLocation expression "AllPages #(GetTransaccionesView_PagingBottomPage, DefaultProgressIndicatorIndicatorHTML, page1, GetTransaccionesView_ViewPage, GetTransaccionesView_InputPage, GetTransaccionesView_PagingPage, GetTransaccionesView_PagingTopPage}# NameSearch page_header_text" does not evaluate to any locations.</Message>
 </Warning>
 </Messages>
 <Inputs><Input name="BuilderCallEnabled">true</Input>
@@ -404,7 +299,7 @@ Parameters:
 <Input name="Text" />
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc14"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<BuilderCall id="bc97"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="UseAllOperations">true</Input>
@@ -460,7 +355,7 @@ Parameters:
 </Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc16"><BuilderDefID>com.bowstreet.builders.webapp.LookupTableBuilder</BuilderDefID>
+<BuilderCall id="bc98"><BuilderDefID>com.bowstreet.builders.webapp.LookupTableBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="DataType">DataServiceData</Input>
@@ -484,15 +379,92 @@ Parameters:
 <Input name="DataServiceData">DataServices/ObtenerCuentas/GetCuentasSO</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc17"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
+<BuilderCall id="bc99"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="UseInlineHandler">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="EventName">ChangeInVariables</Input>
+<Input name="Name">changeInVariablesHandler</Input>
+<Input name="Arguments"><Arguments />
+</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>fireChangeInVariables</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc100"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="AllPages">false</Input>
 <Input name="AllPageRadio">All</Input>
 <Input name="Pages"><data><GetTransaccionesView_InputPage>true</GetTransaccionesView_InputPage>
+<GetTransaccionesView_ViewPage>true</GetTransaccionesView_ViewPage>
 </data>
 </Input>
-<Input name="DisplayBehavior"><data><DispInfo><Name>id_cuenta</Name>
+<Input name="DisplayBehavior"><top><DispInfo><Name>id_transaccion</Name>
+<Label>[Id Transaccion]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>numero_transaccion</Name>
+<Label>[Numero Transaccion]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[String]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>debito</Name>
+<Label>[Debito]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>credito</Name>
+<Label>[Credito]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>fecha_transaccion</Name>
+<Label>[Fecha Transaccion]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[String]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>tipo_transaccion</Name>
+<Label>[Tipo Transaccion]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[String]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>id_cuenta_origen</Name>
+<Label>[Id Cuenta Origen]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>num_cuenta_origen</Name>
+<Label>[Num Cuenta Origen]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>id_cuenta_destino</Name>
+<Label>[Id Cuenta Destino]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>num_cuenta_destino</Name>
+<Label>[Num Cuenta Destino]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>id_cuenta</Name>
 <Label>[Id Cuenta]</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_Select</DataType>
@@ -509,13 +481,13 @@ Parameters:
 <DispInfo><Name>fecha_mov_mayor_a</Name>
 <Label>[Fecha Mov Mayor A]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>[Date: yyyy-MM-dd]</DataType>
+<DataType>[String]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>fecha_mov_menor_a</Name>
 <Label>[Fecha Mov Menor A]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>[Date: yyyy-MM-dd]</DataType>
+<DataType>[String]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>mon_trans_mayor_a</Name>
@@ -542,7 +514,7 @@ Parameters:
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
-</data>
+</top>
 </Input>
 <Input name="ValidationBehavior"><data><ValidationInfo><Name>id_cuenta</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
@@ -579,39 +551,10 @@ Parameters:
 </data>
 </Input>
 <Input name="Name">GetTransaccionesView_InputPagemenu</Input>
-<Input name="DefaultName">GetTransaccionesView_InputPage </Input>
+<Input name="DefaultName">GetTransaccionesView_ViewPage GetTransaccionesView_InputPage </Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc19"><BuilderDefID>com.bowstreet.builders.webapp.LookupTableBuilder</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="DataType">NewXmlData</Input>
-<Input name="NewXmlData">&lt;top&gt;
-&lt;item&gt;
-      &lt;Value&gt;-1&lt;/Value&gt;
-      &lt;Label&gt;Todas&lt;/Label&gt;
-   &lt;/item&gt;
-   &lt;item&gt;
-      &lt;Value&gt;1&lt;/Value&gt;
-      &lt;Label&gt;Credito&lt;/Label&gt;
-   &lt;/item&gt;
-   &lt;item&gt;
-      &lt;Value&gt;2&lt;/Value&gt;
-      &lt;Label&gt;Debito&lt;/Label&gt;
-   &lt;/item&gt;
-&lt;/top&gt;</Input>
-<Input name="VariableType">ValueTagLabelTag</Input>
-<Input name="ValueElementName">Value</Input>
-<Input name="LabelElementName">Label</Input>
-<Input name="DataServiceValueElementName">Value</Input>
-<Input name="DataServiceLabelElementName">Label</Input>
-<Input name="GetDataFrom">BuilderInput</Input>
-<Input name="TablePosition">InFront</Input>
-<Input name="LabelValueFilterMode">LabelValue</Input>
-<Input name="Name">TipoTransaccion</Input>
-</Inputs>
-</BuilderCall>
-<BuilderCall id="bc21"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<BuilderCall id="bc101"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="ReturnType">String</Input>
@@ -650,7 +593,7 @@ webAppAccess.processPage("PageName");
 <Input name="Name">SetData</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc23"><BuilderDefID>com.bowstreet.builders.webapp.DataLayoutBuilder</BuilderDefID>
+<BuilderCall id="bc102"><BuilderDefID>com.bowstreet.builders.webapp.DataLayoutBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="UseTheme">false</Input>
@@ -728,7 +671,7 @@ webAppAccess.processPage("PageName");
 <Input name="DefaultName">Multi-Line Show/Hide List</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc25"><BuilderDefID>com.bowstreet.builders.webapp.DataLayoutBuilder</BuilderDefID>
+<BuilderCall id="bc103"><BuilderDefID>com.bowstreet.builders.webapp.DataLayoutBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="UseTheme">false</Input>
@@ -843,7 +786,36 @@ webAppAccess.processPage("PageName");
 <Input name="DefaultName">Responsive Table Layout</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc27"><BuilderDefID>com.bowstreet.builders.webapp.StyleSheetBuilder</BuilderDefID>
+<BuilderCall id="bc104"><BuilderDefID>com.bowstreet.builders.webapp.LookupTableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="DataType">NewXmlData</Input>
+<Input name="NewXmlData">&lt;top&gt;
+&lt;item&gt;
+      &lt;Value&gt;-1&lt;/Value&gt;
+      &lt;Label&gt;Todas&lt;/Label&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;Value&gt;1&lt;/Value&gt;
+      &lt;Label&gt;Credito&lt;/Label&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;Value&gt;2&lt;/Value&gt;
+      &lt;Label&gt;Debito&lt;/Label&gt;
+   &lt;/item&gt;
+&lt;/top&gt;</Input>
+<Input name="VariableType">ValueTagLabelTag</Input>
+<Input name="ValueElementName">Value</Input>
+<Input name="LabelElementName">Label</Input>
+<Input name="DataServiceValueElementName">Value</Input>
+<Input name="DataServiceLabelElementName">Label</Input>
+<Input name="GetDataFrom">BuilderInput</Input>
+<Input name="TablePosition">InFront</Input>
+<Input name="LabelValueFilterMode">LabelValue</Input>
+<Input name="Name">TipoTransaccion</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc105"><BuilderDefID>com.bowstreet.builders.webapp.StyleSheetBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="PageLocationType">Implicit</Input>
@@ -853,27 +825,226 @@ webAppAccess.processPage("PageName");
 <Input name="ExternalLocation">/factory/style.css</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc30"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<BuilderCall id="bc106"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
 <Inputs><Input name="Name">GetTransaccionesView_InputPage</Input>
 <Input name="ReplaceExisting">true</Input>
 <Input name="URL">/factory/GetTransaccionesView_InputPage.html</Input>
 <Input name="URLModification">None</Input>
+<Input name="BuilderCallEnabled">true</Input>
 </Inputs>
 <Messages />
 </BuilderCall>
-<BuilderCall id="bc31"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<BuilderCall id="bc107"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="UseInlineHandler">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="EventName">System:Form:GetTransaccionesView_InputPage_SaveDataSubmitEvent</Input>
+<Input name="Name">eventHandler</Input>
+<Input name="Arguments"><Arguments />
+</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/InputTransaccion=${DataServices/GetTransacciones/GetTransaccionesOperation/inputs}</ActionName>
+</Action>
+<Action><ActionType>Method</ActionType>
+<ActionName>//pb286Action_ShareVariablesCooperative("as")</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>fireChangeInVariables</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc108"><BuilderDefID>com.bowstreet.adapters.websphere.builders.C2ATagBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="C2ANamespace">http://www.ibm.com/pb/models</Input>
+<Input name="TagType">PBAction</Input>
+<Input name="Name">ShareVariablesCooperative</Input>
+<Input name="OutputDefinitions"><top><OutputDefinition><C2AOutputTypeName />
+<C2AOutputType>string</C2AOutputType>
+<Value />
+<C2AOutputCaption>Datos</C2AOutputCaption>
+<C2AOutputNamespace />
+<AliasList />
+<C2AOutputName>datos</C2AOutputName>
+</OutputDefinition>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc109"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
 <Inputs><Input name="Name">GetTransaccionesView_ViewPage</Input>
 <Input name="ReplaceExisting">true</Input>
 <Input name="URL">/factory/GetTransaccionesView_ViewPage.html</Input>
 <Input name="URLModification">None</Input>
+<Input name="BuilderCallEnabled">true</Input>
 </Inputs>
 <Messages />
+</BuilderCall>
+<BuilderCall id="bc113"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">SaveVariables</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/InputTransaccion=${DataServices/GetTransacciones/GetTransaccionesOperation/inputs}</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc45"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">page1</Input>
+<Input name="PageData">&lt;span name="script_chart"&gt; &lt;/span&gt;
+&lt;span name="boton"&gt; &lt;/span&gt;
+&lt;span name="clientEventHandler"&gt; &lt;/span&gt;
+jkljk
+
+
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc43"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="CreationOption">Automatic</Input>
+<Input name="Name">ClientSaveVariables</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>//Assignment!Variables/InputTransaccion=${DataServices/GetTransacciones/GetTransaccionesOperation/inputs}</ActionName>
+</Action>
+<Action><ActionType></ActionType>
+<ActionName>//firechangeInVariables</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc47"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">boton</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>boton</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">Boton</Input>
+<Input name="ActionURL">ClientSaveVariables</Input>
+<Input name="Action">firechangeInVariables</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc32"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages><Warning><Message>schema targetnamespace matches another schema in this model: http://getTransacciones (GetTransaccionesGetTransaccionesWDSL_WSDLSchema_import_1)</Message>
+</Warning>
+</Messages>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseParentProfile">false</Input>
+<Input name="ImportOnce">false</Input>
+<Input name="ProfileHandling">None</Input>
+<Input name="Name">SharedVariablesModel</Input>
+<Input name="ModelName">providers/GetTransacciones/transaccionesSharedVariables</Input>
+<Input name="SetProfiledInputValues">false</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[$Child$Input$<operation1 xmlns="http://getTransacciones">
+   <id_cuenta xmlns="">123</id_cuenta>
+   <id_tipo_transaccion xmlns="">123</id_tipo_transaccion>
+   <fecha_mov_mayor_a xmlns="">null</fecha_mov_mayor_a>
+   <fecha_mov_menor_a xmlns="">null</fecha_mov_menor_a>
+   <mon_trans_mayor_a xmlns="">-1.0E0</mon_trans_mayor_a>
+   <mon_trans_menor_a xmlns="">-1.0E0</mon_trans_menor_a>
+   <n_trans_mayor_a xmlns="">-1</n_trans_mayor_a>
+   <n_trans_menor_a xmlns="">-1</n_trans_menor_a>
+</operation1>
+]]></CacheKey>
+<CacheValue><operation1 xmlns="http://getTransacciones"><id_cuenta xmlns="">123</id_cuenta>
+<id_tipo_transaccion xmlns="">123</id_tipo_transaccion>
+<fecha_mov_mayor_a xmlns="">null</fecha_mov_mayor_a>
+<fecha_mov_menor_a xmlns="">null</fecha_mov_menor_a>
+<mon_trans_mayor_a xmlns="">-1.0E0</mon_trans_mayor_a>
+<mon_trans_menor_a xmlns="">-1.0E0</mon_trans_menor_a>
+<n_trans_mayor_a xmlns="">-1</n_trans_mayor_a>
+<n_trans_menor_a xmlns="">-1</n_trans_menor_a>
+</operation1>
+</CacheValue>
+</CacheEntry>
+<CacheEntry><CacheKey><![CDATA[$Child$InputTransaccion$<operation1>
+   <id_cuenta>5</id_cuenta>
+   <id_tipo_transaccion></id_tipo_transaccion>
+   <fecha_mov_mayor_a></fecha_mov_mayor_a>
+   <fecha_mov_menor_a></fecha_mov_menor_a>
+   <mon_trans_mayor_a ></mon_trans_mayor_a>
+   <mon_trans_menor_a></mon_trans_menor_a>
+   <n_trans_mayor_a></n_trans_mayor_a>
+   <n_trans_menor_a></n_trans_menor_a>
+</operation1>]]></CacheKey>
+<CacheValue><operation1><id_cuenta>5</id_cuenta>
+<id_tipo_transaccion />
+<fecha_mov_mayor_a />
+<fecha_mov_menor_a />
+<mon_trans_mayor_a />
+<mon_trans_menor_a />
+<n_trans_mayor_a />
+<n_trans_menor_a />
+</operation1>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc112"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>GetTransaccionesView_InputPage</Page>
+<NameSearch>cancel_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Event">AjaxPreUpdate</Input>
+<Input name="Action">firechangeInVariables</Input>
+<Input name="Name">cambioEnvar</Input>
+</Inputs>
 </BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
-<Dependencies><Dependency type="Model">imports/factory/multichanneltheme85</Dependency>
-<Dependency type="Model">providers/GetTransacciones/GetTransaccionesProvider</Dependency>
+<Dependencies><Dependency type="Model">providers/GetTransacciones/GetTransaccionesProvider</Dependency>
 <Dependency type="Model">factory/portletbase/view_and_form_base</Dependency>
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/input.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_label_above_themes.html</Dependency>
@@ -883,6 +1054,7 @@ webAppAccess.processPage("PageName");
 <Dependency type="Model">providers/GetCuentas/GetCuentasProvider</Dependency>
 <Dependency type="File">/factory/GetTransaccionesView_InputPage.html</Dependency>
 <Dependency type="File">/factory/GetTransaccionesView_ViewPage.html</Dependency>
+<Dependency type="Model">providers/GetTransacciones/transaccionesSharedVariables</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.css</Dependency>
 <Dependency type="File">/factory/data_layout_templates/responsive_table_layout.html</Dependency>
@@ -907,6 +1079,35 @@ webAppAccess.processPage("PageName");
 <ExternalProperty id="PortletModeHelp">false</ExternalProperty>
 <ExternalProperty id="DojoEnabled">true</ExternalProperty>
 <ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
-<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dojo.parser,dijit.form.FilteringSelect,dijit.form.DateTextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dojo.parser,dijit.form.FilteringSelect,dijit.form.TextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
+<ExternalProperty id="C2AWSDLDocProperty">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:portlet="http://www.ibm.com/wps/c2a" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.ibm.com/pb/models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="pbAction_ShareVariablesCooperative_Service" targetNamespace="http://www.ibm.com/pb/models"&gt;&lt;types /&gt;
+&lt;message name="pbAction_ShareVariablesCooperativeResponse"&gt;&lt;part name="datos" type="xsd:string" /&gt;
+&lt;/message&gt;
+&lt;portType name="pbAction_ShareVariablesCooperative_Service"&gt;&lt;operation name="pbAction_ShareVariablesCooperative"&gt;&lt;output message="tns:pbAction_ShareVariablesCooperativeResponse" /&gt;
+&lt;/operation&gt;
+&lt;/portType&gt;
+&lt;binding name="pbAction_ShareVariablesCooperativeBinding" type="tns:pbAction_ShareVariablesCooperative_Service"&gt;&lt;portlet:binding /&gt;
+&lt;operation name="pbAction_ShareVariablesCooperative"&gt;&lt;portlet:action name="pbAction_ShareVariablesCooperative" type="standard" actionNameParameter="ACTION_NAME" /&gt;
+&lt;output&gt;&lt;portlet:param name="datos" partname="datos" boundTo="request-attribute" caption="datos.key" /&gt;
+&lt;/output&gt;
+&lt;/operation&gt;
+&lt;/binding&gt;
+&lt;/definitions&gt;
+</ExternalProperty>
+<ExternalProperty id="WSDLResourceProperty">&lt;Properties&gt;&lt;Property&gt;&lt;Key&gt;datos.key&lt;/Key&gt;
+&lt;Value&gt;Datos&lt;/Value&gt;
+&lt;/Property&gt;
+&lt;/Properties&gt;
+</ExternalProperty>
+<ExternalProperty id="EventDataProperty">&lt;EventData&gt;&lt;ProcessingEvents /&gt;
+&lt;PublishingEvents&gt;&lt;Event&gt;&lt;Name&gt;datos&lt;/Name&gt;
+&lt;Type&gt;java.lang.String&lt;/Type&gt;
+&lt;Namespace&gt;http://www.ibm.com/pb/models&lt;/Namespace&gt;
+&lt;DisplayName&gt;datos.key&lt;/DisplayName&gt;
+&lt;/Event&gt;
+&lt;/PublishingEvents&gt;
+&lt;/EventData&gt;
+</ExternalProperty>
 </ExternalProperties>
 </Model>

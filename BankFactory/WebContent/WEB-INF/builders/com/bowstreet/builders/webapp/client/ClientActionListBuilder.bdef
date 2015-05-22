@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.client.ClientActionListBuilder"> 
+  <ReadableName>Client Action List</ReadableName> 
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName> 
+  <HelpFile /> 
+  <RequiredFactoryVersion>8.0.0</RequiredFactoryVersion> 
+  <Description>Builds a sequence of actions to be executed on the client</Description> 
+  <Domains> 
+    <Domain>Client</Domain> 
+  </Domains> 
+    <CreateModifyList>
+      <CanCreate type="Method">Constructs a client-side method using an easy point-and-click interface.</CanCreate>
+    </CreateModifyList>
+    <Category>Actions and Events,Client-Side Application</Category>
+    <Keywords>Flow Control,Client</Keywords> 
+  <BuilderData> 
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.client.ClientActionListBuilder</BuilderDataEntry> 
+  </BuilderData> 
+  <CoordinatorClassName>com.bowstreet.builders.webapp.ui.ActionListCoordinator</CoordinatorClassName> 
+  
+  <InputDefinitions> 
+    <InputDefinition name="Name"  base="com.bowstreet.core.Base.RestrictedBuilderName">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+    </InputDefinition>     
+    <InputDefinition name="Arguments" base="com.bowstreet.core.Base.ClientSideArguments">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+    </InputDefinition>     
+    <InputDefinition name="_Warnings" base="com.bowstreet.builders.webapp.ActionListBuilder._Warnings">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+    </InputDefinition>  
+    <InputDefinition name="Actions" base="com.bowstreet.builders.webapp.ActionListBuilder.Actions">
+        <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+        <Editor JavaClass="com.bowstreet.widget.ActionList">
+            <Argument name="columns">1</Argument>
+            <Argument name="headings">ActionList</Argument>
+            <Argument name="useColumnTags">false</Argument>
+            <Argument name="rowTag">Action</Argument>
+            <Argument name="topNodeTag">Actions</Argument>
+            <Argument name="height">350</Argument>
+            <Argument name="args">none</Argument>
+            <Argument name="cellEditors">
+                <Editors>
+                    <Editor JavaClass="com.bowstreet.widget.ActionChooser">
+                        <Argument name="showSpecialActions" inheritable="true">client</Argument>
+                        <Argument name="hideReturn" inheritable="true">true</Argument>
+                        <Argument name="showConditionalActions" inheritable="true">client</Argument>
+                        <Argument name="showMethodsWithArguments" inheritable="true">client</Argument>
+                        <Argument name="showTypePrefix" inheritable="true">true</Argument>
+                        <Argument name="showDataServices" inheritable="true">true</Argument>
+                    </Editor>
+                </Editors>
+            </Argument>
+        </Editor>
+    </InputDefinition> 
+    
+    <InputDefinition name="CreationOption" base="com.bowstreet.builders.webapp.client.ClientMethodBuilder.CreationOption">
+    </InputDefinition> 
+    
+  </InputDefinitions> 
+  <GroupDefinitions> 
+	  <GroupDefinition id="Arguments" base="com.bowstreet.builders.webapp.ActionListBuilder.Arguments" />
+       <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" />
+  </GroupDefinitions> 
+  <PageDefinitions /> 
+</BuilderDef> 
+ 

@@ -2,6 +2,126 @@
 <!-- AUTOMATICALLY GENERATED DEPLOYMENT DESCRIPTOR - DO NOT EDIT -->
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" id="com.bowstreet.portlet.WebAppRunner2_BankFactory">
    <portlet>
+      <description xml:lang="en">XML Target A</description>
+      <portlet-name>XMLTarget_A</portlet-name>
+      <display-name xml:lang="en">XML Target A</display-name>
+      <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
+      <init-param>
+         <name>model</name>
+         <value>portlets/XMLTarget</value>
+      </init-param>
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+      <supported-locale>en</supported-locale>
+      <resource-bundle>nls.portlets.xmltarget</resource-bundle>
+      <portlet-info>
+         <title>XML Target A</title>
+         <short-title>XML Target A</short-title>
+         <keywords>XML Target A</keywords>
+      </portlet-info>
+      <portlet-preferences />
+      <supported-processing-event>
+         <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:XMLSourceA</qname>
+      </supported-processing-event>
+   </portlet>
+   <portlet>
+      <description xml:lang="en">XML Source A</description>
+      <portlet-name>XMLSource_A</portlet-name>
+      <display-name xml:lang="en">XML Source A</display-name>
+      <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
+      <init-param>
+         <name>model</name>
+         <value>portlets/XMLSource</value>
+      </init-param>
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+      <supported-locale>en</supported-locale>
+      <resource-bundle>nls.portlets.xmlsource</resource-bundle>
+      <portlet-info>
+         <title>XML Source A</title>
+         <short-title>XML Source A</short-title>
+         <keywords>XML Source A</keywords>
+      </portlet-info>
+      <portlet-preferences>
+         <preference>
+            <name>capability.1.id</name>
+            <value>dojo</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capability.1.minValue</name>
+            <value>1.4.3</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capabilities.selfManaged</name>
+            <value>false</value>
+            <read-only>true</read-only>
+         </preference>
+      </portlet-preferences>
+      <supported-publishing-event>
+         <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:XMLSourceA</qname>
+      </supported-publishing-event>
+   </portlet>
+   <portlet>
+      <description xml:lang="en">String Target A</description>
+      <portlet-name>StringTarget_A</portlet-name>
+      <display-name xml:lang="en">String Target A</display-name>
+      <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
+      <init-param>
+         <name>model</name>
+         <value>portlets/StringTarget</value>
+      </init-param>
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+      <supported-locale>en</supported-locale>
+      <resource-bundle>nls.portlets.stringtarget</resource-bundle>
+      <portlet-info>
+         <title>String Target A</title>
+         <short-title>String Target A</short-title>
+         <keywords>String Target A</keywords>
+      </portlet-info>
+      <portlet-preferences />
+      <supported-processing-event>
+         <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:StringSourceA</qname>
+      </supported-processing-event>
+   </portlet>
+   <portlet>
+      <description xml:lang="en">String Source A</description>
+      <portlet-name>StringSource_A</portlet-name>
+      <display-name xml:lang="en">String Source A</display-name>
+      <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
+      <init-param>
+         <name>model</name>
+         <value>portlets/StringSource</value>
+      </init-param>
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+      <supported-locale>en</supported-locale>
+      <resource-bundle>nls.portlets.stringsource</resource-bundle>
+      <portlet-info>
+         <title>String Source A</title>
+         <short-title>String Source A</short-title>
+         <keywords>String Source A</keywords>
+      </portlet-info>
+      <portlet-preferences />
+      <supported-publishing-event>
+         <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:StringSourceA</qname>
+      </supported-publishing-event>
+   </portlet>
+   <portlet>
       <description xml:lang="en" />
       <portlet-name>PayPortlet</portlet-name>
       <display-name xml:lang="en">Realizar Pago</display-name>
@@ -21,6 +141,84 @@
          <title>Realizar Pago</title>
          <short-title>Realizar Pago</short-title>
          <keywords>Realizar Pago</keywords>
+      </portlet-info>
+      <portlet-preferences>
+         <preference>
+            <name>capability.1.id</name>
+            <value>dojo</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capability.1.minValue</name>
+            <value>1.4.3</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capabilities.selfManaged</name>
+            <value>false</value>
+            <read-only>true</read-only>
+         </preference>
+      </portlet-preferences>
+   </portlet>
+   <portlet>
+      <description xml:lang="en" />
+      <portlet-name>porletTestClientApplication22</portlet-name>
+      <display-name xml:lang="en">Client Application22</display-name>
+      <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
+      <init-param>
+         <name>model</name>
+         <value>consumers/GetTransaccion/test2</value>
+      </init-param>
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+      <supported-locale>en</supported-locale>
+      <resource-bundle>nls.consumers.gettransaccion.test2</resource-bundle>
+      <portlet-info>
+         <title>Client Application22</title>
+         <short-title>Client Application22</short-title>
+         <keywords>Client Application22</keywords>
+      </portlet-info>
+      <portlet-preferences>
+         <preference>
+            <name>capability.1.id</name>
+            <value>dojo</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capability.1.minValue</name>
+            <value>1.4.3</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capabilities.selfManaged</name>
+            <value>false</value>
+            <read-only>true</read-only>
+         </preference>
+      </portlet-preferences>
+   </portlet>
+   <portlet>
+      <description xml:lang="en" />
+      <portlet-name>GetTransaccionesGrafico</portlet-name>
+      <display-name xml:lang="en">Get Transacciones Grafico</display-name>
+      <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
+      <init-param>
+         <name>model</name>
+         <value>consumers/GetTransaccion/GetTransaccionesChart</value>
+      </init-param>
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+      <supported-locale>en</supported-locale>
+      <resource-bundle>nls.consumers.gettransaccion.gettransaccioneschart</resource-bundle>
+      <portlet-info>
+         <title>Get Transacciones Grafico</title>
+         <short-title>Get Transacciones Grafico</short-title>
+         <keywords>Get Transacciones Grafico</keywords>
       </portlet-info>
       <portlet-preferences>
          <preference>
@@ -78,6 +276,9 @@
             <read-only>true</read-only>
          </preference>
       </portlet-preferences>
+      <supported-publishing-event>
+         <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:datos</qname>
+      </supported-publishing-event>
    </portlet>
    <portlet>
       <description xml:lang="en" />
@@ -117,6 +318,103 @@
             <read-only>true</read-only>
          </preference>
       </portlet-preferences>
+      <supported-publishing-event>
+         <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:numero_cuenta</qname>
+      </supported-publishing-event>
+   </portlet>
+   <portlet>
+      <description xml:lang="en" />
+      <portlet-name>Grafico</portlet-name>
+      <display-name xml:lang="en">Grafico</display-name>
+      <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
+      <init-param>
+         <name>model</name>
+         <value>consumers/GetCuentas/GetCuentasChart</value>
+      </init-param>
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+      <supported-locale>en</supported-locale>
+      <resource-bundle>nls.consumers.getcuentas.getcuentaschart</resource-bundle>
+      <portlet-info>
+         <title>Grafico</title>
+         <short-title>Grafico</short-title>
+         <keywords>Grafico</keywords>
+      </portlet-info>
+      <portlet-preferences />
+      <supported-processing-event>
+         <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:numero_cuenta</qname>
+      </supported-processing-event>
+   </portlet>
+   <portlet>
+      <description xml:lang="en" />
+      <portlet-name>GetCuentasServiceMq</portlet-name>
+      <display-name xml:lang="en">Get Cuentas MQ</display-name>
+      <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
+      <init-param>
+         <name>model</name>
+         <value>consumers/GetCuentasMq/GetCuentasConsumer</value>
+      </init-param>
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+      <supported-locale>en</supported-locale>
+      <resource-bundle>nls.consumers.getcuentasmq.getcuentasconsumer</resource-bundle>
+      <portlet-info>
+         <title>Get Cuentas MQ</title>
+         <short-title>Get Cuentas MQ</short-title>
+         <keywords>Get Cuentas MQ</keywords>
+      </portlet-info>
+      <portlet-preferences>
+         <preference>
+            <name>capability.1.id</name>
+            <value>dojo</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capability.1.minValue</name>
+            <value>1.4.3</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capabilities.selfManaged</name>
+            <value>false</value>
+            <read-only>true</read-only>
+         </preference>
+      </portlet-preferences>
+      <supported-publishing-event>
+         <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:numero_cuenta</qname>
+      </supported-publishing-event>
+   </portlet>
+   <portlet>
+      <description xml:lang="en" />
+      <portlet-name>GetCuentasMq Grafico</portlet-name>
+      <display-name xml:lang="en">GetCuentas Grafico</display-name>
+      <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
+      <init-param>
+         <name>model</name>
+         <value>consumers/GetCuentasMq/GetCuentasChart</value>
+      </init-param>
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+      <supported-locale>en</supported-locale>
+      <resource-bundle>nls.consumers.getcuentasmq.getcuentaschart</resource-bundle>
+      <portlet-info>
+         <title>GetCuentas Grafico</title>
+         <short-title>GetCuentas Grafico</short-title>
+         <keywords>GetCuentas Grafico</keywords>
+      </portlet-info>
+      <portlet-preferences />
+      <supported-processing-event>
+         <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:numero_cuenta</qname>
+      </supported-processing-event>
    </portlet>
    <portlet>
       <description xml:lang="en" />
@@ -171,4 +469,25 @@
       <description xml:lang="en">User Last Name</description>
       <name>user.name.family</name>
    </user-attribute>
+   <resource-bundle>nls.applicationresources</resource-bundle>
+   <event-definition>
+      <description />
+      <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:datos</qname>
+      <value-type>java.lang.String</value-type>
+   </event-definition>
+   <event-definition>
+      <description />
+      <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:XMLSourceA</qname>
+      <value-type>java.lang.Object</value-type>
+   </event-definition>
+   <event-definition>
+      <description />
+      <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:StringSourceA</qname>
+      <value-type>java.lang.String</value-type>
+   </event-definition>
+   <event-definition>
+      <description />
+      <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:numero_cuenta</qname>
+      <value-type>java.lang.String</value-type>
+   </event-definition>
 </portlet-app>

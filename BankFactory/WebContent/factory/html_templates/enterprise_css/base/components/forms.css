@@ -1,0 +1,32 @@
+/*! Licensed Materials - Property of IBM.
+    (c) Copyright IBM Corporation 2001, 2009.  All Rights Reserved.
+    U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+This CSS was built on August 21 2009. (version: OneUI-2.0.1_20090821-0327)
+these are the styles for forms
+companion file is formsTheme.css*/
+/*** F O R M S ***/
+/*these styles are for inline and popup forms*/
+.lotusForm h2 {margin:25px 15px 15px 25px;font-size:1.3em;}
+.lotusForm h2 .lotusMeta{font-size:.8em;font-weight:normal}
+.lotusForm tr.lotusFormFieldRow td, .lotusForm td.lotusFormFieldRow{padding-bottom:10px}
+.lotusTable .lotusForm td, .lotusFormTable td {border-width:0 !important;padding-right:3px;vertical-align:top}
+.lotusForm td.lotusFormLabel {vertical-align:top;text-align:right;padding-right:10px;padding-top:1px}
+.lotusui_ie .lotusForm td.lotusFormLabel{padding-top:2px}
+.lotusForm td label{font-weight:bold;}
+.lotusForm td.lotusNudge{width:22px}/*this goes on the first empty table cell if putting labels on top*/
+.lotusForm label.lotusCheckbox{font-weight:normal}/*use for radio buttons, too*/
+.lotusForm .lotusText {width:99%;}
+.lotusForm textarea {margin-bottom:7px;}
+.lotusFieldBorder{margin-bottom:7px;padding:4px}
+.lotusFieldBorder .lotusText{margin:0;padding:2px;width:98.5%;}
+.lotusFormErrorSummary div {margin:10px 15px 3px 25px;}
+.lotusFormErrorSummary ul {margin:0 15px 10px 40px;list-style-type:disc;/*list-style-position:inside;*/}
+.lotusFormError, .lotusFormRequired {font-weight:bold;}
+td.lotusFormRequired {padding-bottom: 0 !important;}
+.lotusFormTable {width:100%;}
+.lotusFormSection {padding:5px 0 0 0;}
+.lotusFormTable .lotusFormFooter{padding:10px 25px !important;}
+/* form button element styles can be found in the button component */
+.lotusui_ie .lotusFormFooter .lotusAction{vertical-align:super}/*fixes alignment of cancel link*/
+/***********************************************************/
+

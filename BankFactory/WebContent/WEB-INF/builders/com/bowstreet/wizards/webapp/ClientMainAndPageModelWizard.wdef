@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.wizards.webapp.ClientMainAndPageModelWizard">
+
+  <ReadableName>Dojo Mobile Main and Page (Client-side)</ReadableName>
+
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName>
+
+  <HelpFile />
+
+  <RequiredFactoryVersion>7.0.0</RequiredFactoryVersion>
+
+  <Description>A Client Main and Page model supplies a page and a main action that presents that page when the application is run.  You may specify your own page or use the default that is provided for you.  This is a very basic starting point from which you may then begin your development effort.</Description>
+
+  <Domains>
+    <Domain>WebApp_Wizard</Domain>
+  </Domains>
+
+  <Category>Basic Models</Category>
+
+  <BuilderData>
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.wizards.webapp.MainAndPageModelWizard</BuilderDataEntry>
+    <BuilderDataEntry name="BaseModel">factory/wizardbase/client_main_and_page_base</BuilderDataEntry>
+    <BuilderDataEntry name="Priority">5</BuilderDataEntry>    
+    <BuilderDataEntry name="CatPriority">3</BuilderDataEntry>
+  </BuilderData>
+
+  <CoordinatorClassName>com.bowstreet.wizards.webapp.MainAndPageWizardCoordinator</CoordinatorClassName>
+
+  <InputDefinitions>
+
+    <InputDefinition name="PageType" base="com.bowstreet.core.Base.StringData">
+      <Prompt>Page Type</Prompt>
+      <Group>PageSettings</Group>
+      <HelpText>What type of page should the wizard create?</HelpText>
+      <InitialValue>ImportedPage</InitialValue>
+      <Editor JavaClass="com.bowstreet.widget.RadioBox">
+        <Argument name="listLabels">Imported Page,Simple Page</Argument>
+        <Argument name="listData">ImportedPage,SimplePage</Argument>
+      </Editor>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <Page>PageSettings</Page>
+    </InputDefinition>
+
+    <InputDefinition name="ImportedPage_URL" base="com.bowstreet.builders.webapp.ImportedPageBuilder.URL">
+      <Group>PageSettings</Group>
+      <InitialValue>/factory/pages/client/base/dojo_mobile_view.html</InitialValue>
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <Page>PageSettings</Page>
+      <UseAssociatedCoordinator>true</UseAssociatedCoordinator>
+    </InputDefinition>
+
+	<!-- Hidden / synthesized inputs. -->
+
+	<InputDefinition name="ImportedPage_BuilderCallEnabled" base="com.bowstreet.core.Base.BooleanData">
+      <InitialValue>true</InitialValue>
+      <Prompt>Enabled Imported Page in Starter Model</Prompt>
+      <Required>false</Required>
+      <Visible>false</Visible>
+    </InputDefinition>
+
+	<InputDefinition name="Page_BuilderCallEnabled" base="com.bowstreet.core.Base.BooleanData">
+      <InitialValue>false</InitialValue>
+      <Prompt>Enabled Simple Page in Starter Model</Prompt>
+      <Required>false</Required>
+      <Visible>false</Visible>
+    </InputDefinition>
+
+  </InputDefinitions>
+
+  <GroupDefinitions>
+
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" />
+
+    <GroupDefinition id="PageSettings">
+      <Name>Page Settings</Name>
+      <Description>Specify whether or not to use imported HTML or JSP as a basis for building the model.  Using imported pages is recommended coding practice, but developers may choose not to do so for rapid prototyping.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>false</IsCollapsible>
+      <InitiallyCollapsed>false</InitiallyCollapsed>
+    </GroupDefinition>
+
+  </GroupDefinitions>
+
+  <PageDefinitions>
+
+    <PageDefinition id="PageSettings">
+      <Name>Page Settings</Name>
+      <Description>Specify the type of main and page starter model you want to create.</Description>
+    </PageDefinition>
+
+  </PageDefinitions>
+
+</BuilderDef>

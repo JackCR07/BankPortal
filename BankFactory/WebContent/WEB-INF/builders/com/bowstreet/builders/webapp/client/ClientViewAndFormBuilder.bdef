@@ -1,0 +1,641 @@
+<?xml version="1.0"?>
+<BuilderDef id="com.bowstreet.builders.webapp.client.ClientViewAndFormBuilder" xmlns="http://www.bowstreet.com/2001/Schemas">
+
+    <ReadableName>Client View and Form</ReadableName>
+    <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName>
+    <HelpFile>factory/product_documentation/designer/client_view_and_form.htm</HelpFile>
+    <RequiredFactoryVersion>8.0.0</RequiredFactoryVersion>
+    <Description>Provides client support for calling a method and displaying its results on a page. Optionally creates an input page for variable-based method inputs and a Detail page.</Description>
+
+    <Domains>
+    	<Domain>Client</Domain>
+    </Domains>
+    <CreateModifyList>
+      <CanCreate type="Page">Creates a View Page, a Details Page, and optionally a Query Page and an Edit Page.</CanCreate>
+      <CanCreate type="Method">Optionally creates the main method for the model. Creates several methods to support user navigation through the pages.</CanCreate>
+    </CreateModifyList>
+
+    <Category>Pages, Tables and Forms,Client-Side Application</Category>
+    <Keywords> Form, Flow Control, Layout, Page Construction, JSP, High level Builder</Keywords>
+
+    <BuilderData>
+        <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.client.ClientViewAndFormBuilder</BuilderDataEntry>
+    </BuilderData>
+
+    <CoordinatorClassName>com.bowstreet.builders.webapp.client.ui.ClientViewAndFormCoordinator</CoordinatorClassName>
+
+    <InputDefinitions>
+
+        <InputDefinition name="Name" base="com.bowstreet.core.Base.RestrictedBuilderName" >
+            <Prompt>Name</Prompt>
+            <Visible>true</Visible>
+        </InputDefinition>
+
+        <InputDefinition name="ViewMethod" base="com.bowstreet.core.Base.StringData" >
+            <Prompt>View Data Operation</Prompt>
+            <InitialValue></InitialValue>
+            <HelpText>Method that populates the "View Variable" with data.</HelpText>
+            <Required>true</Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+            <Editor JavaClass="com.bowstreet.widget.ActionChooser">
+                <Argument name="isEditable">true</Argument>
+                <Argument name="showSpecialActions">false</Argument>
+                <Argument name="showMethodsWithArguments">true</Argument>
+                <Argument name="useMethodArgumentsDialog">true</Argument>
+                <Argument name="showTypePrefix">true</Argument>
+                <Argument name="showDataServices">true</Argument>
+                <Argument name="showPages">false</Argument>
+                <Argument name="defaultData">DataServices</Argument>
+                <Argument name="serverOrClientActions" inheritable="true">server</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="ViewMethodInputs" base="com.bowstreet.core.Base.Arguments">
+            <Prompt>Input Values</Prompt>
+            <InitialValue></InitialValue>
+            <HelpText>Inputs to the View Data Operation.</HelpText>
+            <Required>false</Required>
+            <Visible>false</Visible>
+            <Editor JavaClass="com.bowstreet.editor.uitools.widgets.ListWidget">
+                <Argument name="height">80</Argument>
+                <Argument name="columns">2</Argument>
+                <Argument name="headings">Name,Value</Argument>
+                <Argument name="columnTags">Name,Value</Argument>
+                <Argument name="rowtag">Input</Argument>
+                <Argument name="cellEditors">
+                    <Editors>
+                        <Editor JavaClass="com.bowstreet.widget.Label" />
+                        <Editor JavaClass="com.bowstreet.widget.Reference">
+                            <Argument name="Java">false</Argument>
+                            <Argument name="Methods">false</Argument>
+                            <Argument name="showOnlyClientVariables">true</Argument>
+                        </Editor>
+                    </Editors>
+                </Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="ViewVariable" base="com.bowstreet.builders.webapp.pageautomation.DataPage.TypedVariable" >
+            <Prompt>View Variable</Prompt>
+            <InitialValue></InitialValue>
+            <HelpText>Variable that will contain view data after the View Data Operation has been executed.</HelpText>
+            <Required>false</Required>
+            <Visible>false</Visible>
+            <Property>true</Property>
+            <Editor>
+            	<Argument name="showSchemas">false</Argument>
+            	<Argument name="showSpecialChoices">false</Argument>
+                <Argument name="isEditable">true</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="UseTheme" base="com.bowstreet.builders.webapp.pageautomation.DataPage.UseTheme" >
+           <Group></Group>
+        </InputDefinition>
+
+        <InputDefinition name="CreateInitialClientAction" base="com.bowstreet.core.Base.BooleanData" >
+            <Prompt>Generate Initial Client Action</Prompt>
+            <InitialValue>true</InitialValue>
+            <HelpText>Check if an initial client action should be created.</HelpText>
+            <Required></Required>
+            <Visible>true</Visible>
+        </InputDefinition>
+
+        <InputDefinition name="RefetchData" base="com.bowstreet.core.Base.ComboBox" >
+            <Prompt>Refetch Data</Prompt>
+            <Group>ViewOptions</Group>
+            <InitialValue>onupdate</InitialValue>
+            <Required></Required>
+            <Visible>true</Visible>
+            <HelpText>Choose when to refetch the data displayed in the View Page.</HelpText>
+            <Property>true</Property>
+            <Editor JavaClass="com.bowstreet.editor.uitools.widgets.BComboBox">
+                <Argument name="width">270</Argument>
+                <Argument name="isEditable">false</Argument>
+                <Argument name="listLabels">Refetch data only when it is updated,Refetch data when displaying the View Page</Argument>
+                <Argument name="listData">onupdate,ondisplay</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="ViewPageURL" base="com.bowstreet.core.Base.ServableContent" >
+            <Group>ViewOptions</Group>
+            <Prompt>View Page HTML</Prompt>
+             <InitialValue>${Properties/bowstreet.Theme/ViewAndForm_ViewPageBase}</InitialValue>
+            <HelpText>Specify an HTML page to be used as the basis for the view page.</HelpText>
+            <Required>true</Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+		<Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+		  <Argument name="noShowWebInf">true</Argument>
+                  <Argument name="filterExtensions">*.html,*.htm</Argument>
+                  <Argument name="copytoDirectory">${bowstreet.servable.pages}</Argument>
+       		</Editor>
+        </InputDefinition>
+
+        <InputDefinition name="ViewPageHTMLTemplate" base="com.bowstreet.builders.webapp.pageautomation.DataPage.TemplateFile" >
+            <Group>ViewOptions</Group>
+            <Prompt>HTML Template File</Prompt>
+            <HelpText>HTML Template for view page.</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <InitialValue>${Properties/bowstreet.Theme/ViewAndForm_ViewPageHTMLTemplate}</InitialValue>
+        </InputDefinition>
+
+        <InputDefinition name="ViewPageStyleSheetOverride" base="com.bowstreet.builders.webapp.pageautomation.DataPage.StyleSheetOverride" >
+            <Group>ViewOptions</Group>
+             <InitialValue>${Properties/bowstreet.Theme/ViewAndForm_ViewPageStyleSheetOverride}</InitialValue>
+        </InputDefinition>
+
+        <InputDefinition name="EnableDataPaging" base="com.bowstreet.core.Base.BooleanData" >
+         <Group>ViewOptions</Group>
+            <Prompt>Paged Data Display</Prompt>
+            <InitialValue>false</InitialValue>
+            <HelpText>If checked, the view data will be displayed in fixed size pages; otherwise all data will be displayed at once.</HelpText>
+            <Required></Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="RowsPerPage" base="com.bowstreet.builders.webapp.PagingAssistantBuilder.PageSize" >
+            <Group>ViewOptions</Group>
+            <Prompt>Rows Per Page</Prompt>
+            <InitialValue></InitialValue>
+            <Required></Required>
+            <HelpText>Data will be presented in chunks this big.</HelpText>
+            <Visible>true</Visible>
+            <Property>true</Property>
+            <Editor>
+                <Argument name="isEditable">true</Argument>
+                <Argument name="width">150</Argument>
+                <Argument name="serverOrClientActions">server</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="CreateInputPage" base="com.bowstreet.core.Base.BooleanData" >
+            <Group>InputOptions</Group>
+            <Prompt>Create Input Page</Prompt>
+            <InitialValue>false</InitialValue>
+            <HelpText>Check to create an input form page for the method inputs.</HelpText>
+            <Required></Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="InputPageVariable" base="com.bowstreet.builders.webapp.pageautomation.DataPage.TypedVariable" >
+            <Group>InputOptions</Group>
+            <Prompt>Input Variable</Prompt>
+            <InitialValue></InitialValue>
+            <HelpText>Variable that contains input values for method.</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+            <Editor>
+            	<Argument name="showSchemas">false</Argument>
+            	<Argument name="showSpecialChoices">false</Argument>
+                <Argument name="isEditable">true</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="InputPageURL" base="com.bowstreet.core.Base.ServableContent" >
+            <Group>InputOptions</Group>
+            <Prompt>Input Page HTML</Prompt>
+            <InitialValue>${Properties/bowstreet.Theme/ViewAndForm_InputPageBase}</InitialValue>
+            <HelpText>Specify an HTML page to be used as the basis for the input page.</HelpText>
+            <Required></Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+	    <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+	      <Argument name="noShowWebInf">true</Argument>
+	      <Argument name="filterExtensions">*.html,*.htm</Argument>
+       	    </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="InputPageHTMLTemplate" base="com.bowstreet.builders.webapp.pageautomation.DataPage.TemplateFile" >
+            <Group>InputOptions</Group>
+            <Prompt>HTML Template File</Prompt>
+            <HelpText>HTML template for input page.</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <InitialValue>${Properties/bowstreet.Theme/ViewAndForm_InputPageHTMLTemplate}</InitialValue>
+        </InputDefinition>
+
+        <InputDefinition name="InputPageStyleSheetOverride" base="com.bowstreet.builders.webapp.pageautomation.DataPage.StyleSheetOverride" >
+            <Group>InputOptions</Group>
+            <InitialValue>${Properties/bowstreet.Theme/ViewAndForm_InputPageStyleSheetOverrideHTMLTemplate}</InitialValue>
+        </InputDefinition>
+
+        <InputDefinition name="EnableInputValidation" base="com.bowstreet.core.Base.BooleanData" >
+            <Group>InputOptions</Group>
+            <Prompt>Enable Input Validation</Prompt>
+            <InitialValue>false</InitialValue>
+            <HelpText>Check this to enable validation of the required inputs based on the Schema.</HelpText>
+            <Required></Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="InputValidationMethod" base="com.bowstreet.builders.webapp.pageautomation.DataPage.ValidationMethod" >
+           <Group>InputOptions</Group>
+        </InputDefinition>
+
+        <InputDefinition name="InputValidationMethodBehavior" base="com.bowstreet.builders.webapp.pageautomation.DataPage.ValidationMethodBehavior" >
+           <Group>InputOptions</Group>
+        </InputDefinition>
+
+        <InputDefinition name="InputSubmitText"  base="com.bowstreet.core.Base.IndirectValue">
+            <Prompt>Input Submit Text</Prompt>
+            <Group>InputOptions</Group>
+            <InitialValue>Submit</InitialValue>
+            <HelpText>Enter the text for button that submits Input page.</HelpText>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="ViewPageBackButtonText" base="com.bowstreet.core.Base.IndirectValue">
+            <Group>InputOptions</Group>
+            <Prompt>Back Button Text</Prompt>
+            <HelpText>Specify text for the back button</HelpText>
+            <InitialValue>Back</InitialValue>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="InsertInputPage" base="com.bowstreet.core.Base.BooleanData" >
+            <Group>InputOptions</Group>
+            <Prompt>Insert Input Form In View Page</Prompt>
+            <InitialValue>false</InitialValue>
+            <HelpText>Check to have the input page inserted at the top of the view page.</HelpText>
+            <Required></Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="CreateColumnLink" base="com.bowstreet.core.Base.BooleanData" >
+            <Group>DetailOptions</Group>
+            <Prompt>Create Link To Details</Prompt>
+            <InitialValue>false</InitialValue>
+            <HelpText>Create a link to details from a specified table column.</HelpText>
+            <Required></Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="LinkColumn" base="com.bowstreet.core.Base.ComboBox" >
+            <Group>DetailOptions</Group>
+            <Prompt>Details Link Column</Prompt>
+            <InitialValue></InitialValue>
+            <HelpText></HelpText>
+            <Required></Required>
+            <Property>true</Property>
+            <Editor>
+                <Argument name="width">270</Argument>
+                <Argument name="isEditable">true</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="LinkText" base="com.bowstreet.core.Base.IndirectValue" >
+            <Prompt>Details Link Text</Prompt>
+            <Group>DetailOptions</Group>
+            <InitialValue></InitialValue>
+            <HelpText>Text for selecting a details row.</HelpText>
+            <Required></Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="LinkActionChoice" base="com.bowstreet.core.Base.ComboBox" >
+            <Prompt>Details Action Type</Prompt>
+            <Group>DetailOptions</Group>
+            <InitialValue>dataservice</InitialValue>
+            <Required></Required>
+            <Visible>true</Visible>
+            <HelpText>Choose to show details page from selected row data or other details action.</HelpText>
+            <Property>true</Property>
+            <Editor JavaClass="com.bowstreet.editor.uitools.widgets.BComboBox">
+                <Argument name="width">270</Argument>
+                <Argument name="isEditable">false</Argument>
+                <Argument name="listLabels">Display data from another Data Service or method,Specify an action to call for showing details,Get details data directly from the selected row</Argument>
+                <Argument name="listData">dataservice,action,rowdata</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="LinkAction" base="com.bowstreet.core.WebAppBase.Action" >
+            <Group>DetailOptions</Group>
+            <Prompt>Link Action</Prompt>
+            <InitialValue></InitialValue>
+            <HelpText></HelpText>
+            <Required></Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+            <Editor JavaClass="com.bowstreet.editor.uitools.widgets.BActionChooser">
+                <Argument name="showSpecialActions" inheritable="true">false</Argument>
+                <Argument name="showMethodsWithArguments" inheritable="true">false</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="DetailsMethod" base="com.bowstreet.core.Base.StringData" >
+            <Group>DetailOptions</Group>
+            <Prompt>Details Method</Prompt>
+            <InitialValue></InitialValue>
+            <HelpText>Method that populates the "Detail Variable" with data.</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+            <Editor JavaClass="com.bowstreet.widget.ActionChooser">
+                <Argument name="isEditable">true</Argument>
+                <Argument name="showSpecialActions">false</Argument>
+                <Argument name="showMethodsWithArguments">false</Argument>
+                <Argument name="showTypePrefix">true</Argument>
+                <Argument name="showDataServices">true</Argument>
+                <Argument name="showPages">false</Argument>
+                <Argument name="defaultData">DataServices</Argument>
+                <Argument name="serverOrClientActions">server</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="DetailsMethodInputs" base="com.bowstreet.core.Base.Arguments">
+            <Group>DetailOptions</Group>
+            <Prompt>Input Values</Prompt> 
+            <InitialValue /> 
+            <HelpText>Inputs to the Details Method.</HelpText>
+            <Required>false</Required> 
+            <Visible>false</Visible>  
+            <Editor JavaClass="com.bowstreet.editor.uitools.widgets.ListWidget">  
+                <Argument name="columns">2</Argument> 
+                <Argument name="headings">Name,Value</Argument> 
+                <Argument name="offerRightClickMenu">false</Argument>
+                <Argument name="allowAdd">false</Argument>
+                <Argument name="allowReorder">false</Argument>
+                <Argument name="columnTags">Name,Value</Argument> 
+                <Argument name="rowtag">Input</Argument> 
+                <Argument name="cellEditors"> 
+                    <Editors> 
+                        <Editor JavaClass="com.bowstreet.widget.Label" /> 
+                        <Editor JavaClass="com.bowstreet.widget.Reference">
+                            <Argument name="Java">false</Argument>
+                            <Argument name="Methods">false</Argument>
+                        </Editor>
+                    </Editors> 
+                </Argument> 
+            </Editor>
+        </InputDefinition> 
+    
+        <InputDefinition name="DetailsVariable" base="com.bowstreet.builders.webapp.pageautomation.DataPage.TypedVariable" >
+            <Group>DetailOptions</Group>
+            <Prompt>Details Variable</Prompt>
+            <InitialValue></InitialValue>
+            <HelpText>Variable that will contain details data after the "Details Method" has been executed.</HelpText>
+            <Required>false</Required>
+            <Visible>false</Visible>
+            <Property>true</Property>
+            <Editor>
+            	<Argument name="showSchemas">false</Argument>
+            	<Argument name="showSpecialChoices">false</Argument>
+                <Argument name="isEditable">true</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="DetailPageURL" base="com.bowstreet.core.Base.ServableContent" >
+            <Group>DetailOptions</Group>
+            <Prompt>Details Page HTML</Prompt>
+            <InitialValue>${Properties/bowstreet.Theme/ViewAndForm_DetailPageBase}</InitialValue>
+            <HelpText>Specify an HTML page to be used as the basis for the details page.</HelpText>
+            <Required></Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+		<Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+		  <Argument name="noShowWebInf">true</Argument>
+                  <Argument name="filterExtensions">*.html,*.htm</Argument>
+       		</Editor>
+        </InputDefinition>
+
+        <InputDefinition name="DetailPageHTMLTemplate" base="com.bowstreet.core.Base.ServableContent" >
+            <Group>DetailOptions</Group>
+            <Prompt>HTML Template File</Prompt>
+            <InitialValue>${Properties/bowstreet.Theme/ViewAndForm_DetailPageHTMLTemplate}</InitialValue>
+            <HelpText>HTML Template for details page.</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+		<Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+		  <Argument name="noShowWebInf">true</Argument>
+                  <Argument name="filterExtensions">*.html,*.htm</Argument>
+       		</Editor>
+        </InputDefinition>
+
+        <InputDefinition name="DetailPageStyleSheetOverride" base="com.bowstreet.builders.webapp.pageautomation.DataPage.StyleSheetOverride" >
+            <Group>DetailOptions</Group>
+            <InitialValue>${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</InitialValue>
+        </InputDefinition>
+
+        <InputDefinition name="DetailPageBackButtonText" base="com.bowstreet.core.Base.IndirectValue">
+            <Group>DetailOptions</Group>
+            <Prompt>Back Button Text</Prompt>
+            <HelpText>Specify text for the back button</HelpText>
+            <InitialValue>Back</InitialValue>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="CreateUpdatePage" base="com.bowstreet.core.Base.BooleanData" >
+            <Group>UpdateOptions</Group>
+            <Prompt>Create Update Page</Prompt>
+            <InitialValue>false</InitialValue>
+            <HelpText>Check to create an update form page for updating retrieved data.</HelpText>
+            <Required></Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="UpdateMethod" base="com.bowstreet.core.Base.StringData" >
+            <Group>UpdateOptions</Group>
+            <Prompt>Update Method</Prompt>
+            <InitialValue></InitialValue>
+            <HelpText>Method that updates data after editing.</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+            <Editor JavaClass="com.bowstreet.widget.ActionChooser">
+                <Argument name="isEditable">true</Argument>
+                <Argument name="showSpecialActions">false</Argument>
+                <Argument name="showMethodsWithArguments">true</Argument>
+                <Argument name="useMethodArgumentsDialog">true</Argument>
+                <Argument name="showTypePrefix">true</Argument>
+                <Argument name="showDataServices">true</Argument>
+                <Argument name="showPages">false</Argument>
+                <Argument name="defaultData">DataServices</Argument>
+                <Argument name="serverOrClientActions">server</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="UpdatePageVariable" base="com.bowstreet.builders.webapp.pageautomation.DataPage.TypedVariable" >
+            <Group>UpdateOptions</Group>
+            <Prompt>Update Variable</Prompt>
+            <InitialValue></InitialValue>
+            <HelpText>Variable that contains input values for update method.</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+            <Editor>
+            	<Argument name="showSchemas">false</Argument>
+            	<Argument name="showSpecialChoices">false</Argument>
+                <Argument name="isEditable">true</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="UpdateSuccessAction"  base="com.bowstreet.core.WebAppBase.Action">
+            <Group>UpdateOptions</Group>
+            <Prompt>Update Next Action</Prompt>
+            <HelpText>Optional action or page to do after calling Update operation.  Defaults to returning to detail page.</HelpText>
+            <Property>true</Property>
+            <Editor JavaClass="com.bowstreet.widget.ActionChooser">
+                <Argument name="showSpecialActions" inheritable="true">false</Argument>
+                <Argument name="showMethodsWithArguments" inheritable="true">true</Argument>
+                <Argument name="showTypePrefix" inheritable="true">false</Argument>
+                <Argument name="serverOrClientActions">client</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="UpdateAutoInitializeData" base="com.bowstreet.core.Base.StringData">
+            <Group>UpdateOptions</Group>
+            <Prompt>Data Initialization</Prompt>
+            <HelpText>Choose how to get the data for pre-populating the Update form.</HelpText>
+            <Property>true</Property>
+            <Editor JavaClass="com.bowstreet.editor.uitools.widgets.BRadioBox">
+                <Argument name="listLabels">Use result data to populate form fields,Specify data to populate form fields</Argument>
+                <Argument name="listData">true,false</Argument>
+            </Editor>
+            <InitialValue>true</InitialValue>
+            <Visible>true</Visible>
+        </InputDefinition>
+
+        <InputDefinition name="UpdateInitialData" base="com.bowstreet.core.Base.IndirectValue">
+            <Group>UpdateOptions</Group>
+            <Prompt>Initial Data For Update Form</Prompt>
+            <HelpText>Specify the data to display in Update form.</HelpText>
+            <Property>true</Property>
+            <Editor JavaClass="com.bowstreet.widget.IndirectValue">
+                <Argument name="Java">false</Argument>
+                <Argument name="serverOrClientActions">server</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="UpdatePageURL" base="com.bowstreet.core.Base.ServableContent" >
+            <Group>UpdateOptions</Group>
+            <Prompt>Update Page HTML</Prompt>
+            <InitialValue>${Properties/bowstreet.Theme/ViewAndForm_UpdatePageBase}</InitialValue>
+            <HelpText>HTML for update page.</HelpText>
+            <Required></Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+        	<Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+		  <Argument name="noShowWebInf">true</Argument>
+	          <Argument name="filterExtensions">*.html,*.htm</Argument>
+       		</Editor>
+        </InputDefinition>
+
+        <InputDefinition name="EnableUpdateValidation" base="com.bowstreet.core.Base.BooleanData" >
+            <Group>UpdateOptions</Group>
+            <Prompt>Enable Update Validation</Prompt>
+            <InitialValue>false</InitialValue>
+            <HelpText>Check this to enable validation of update values based on the Schema.</HelpText>
+            <Required></Required>
+            <Visible>true</Visible>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="UpdateValidationMethod" base="com.bowstreet.builders.webapp.pageautomation.DataPage.ValidationMethod" >
+           <Group>UpdateOptions</Group>
+        </InputDefinition>
+
+        <InputDefinition name="UpdateValidationMethodBehavior" base="com.bowstreet.builders.webapp.pageautomation.DataPage.ValidationMethodBehavior" >
+           <Group>UpdateOptions</Group>
+        </InputDefinition>
+
+        <InputDefinition name="UpdateLinkText"  base="com.bowstreet.core.Base.IndirectValue">
+            <Prompt>Update Navigation Text</Prompt>
+            <Group>UpdateOptions</Group>
+            <InitialValue>Edit</InitialValue>
+            <HelpText>Enter the text for button that navigates to Update page.</HelpText>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="UpdateSubmitText"  base="com.bowstreet.core.Base.IndirectValue">
+            <Prompt>Update Submit Text</Prompt>
+            <Group>UpdateOptions</Group>
+            <InitialValue>Submit</InitialValue>
+            <HelpText>Enter the text for button that submits Update page.</HelpText>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="UpdateCancelText"  base="com.bowstreet.core.Base.IndirectValue">
+            <Prompt>Update Cancel Text</Prompt>
+            <Group>UpdateOptions</Group>
+            <InitialValue>Cancel</InitialValue>
+            <HelpText>Enter the text that you want displayed on the cancel button of Update page.</HelpText>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="ResourceBundleName"  base="com.bowstreet.builders.webapp.LocalizedResourceBuilder.ResourceBundleName">
+            <Group>LabelTranslationSettings</Group>
+            <HelpText>Java resource bundle used for column heading and field labels</HelpText>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="EnablePagingButtons" base="com.bowstreet.core.Base.BooleanData" >
+         <Group>Advanced</Group>
+            <Prompt>Add Paging Buttons</Prompt>
+            <HelpText>If checked, paging buttons will be automatically added to the view; otherwise an external paging builder will be required.</HelpText>
+            <Required></Required>
+            <Visible>true</Visible>
+        </InputDefinition>
+
+    </InputDefinitions>
+
+    <GroupDefinitions>
+
+        <GroupDefinition id="ViewOptions">
+            <Name>View Page Options</Name>
+            <Description>The View page will show the results of the specified View Data Operation.  These results can be repeating data or single-record.</Description>
+            <BorderStyle>Etched</BorderStyle>
+            <IsCollapsible>true</IsCollapsible>
+        </GroupDefinition>
+
+        <GroupDefinition id="InputOptions">
+            <Name>Input Page Options</Name>
+            <BorderStyle>Etched</BorderStyle>
+            <IsCollapsible>true</IsCollapsible>
+            <Description>Use this to create an input page for the specified View Data Operation.</Description>
+        </GroupDefinition>
+
+        <GroupDefinition id="DetailOptions">
+            <Name>Row Details Support</Name>
+            <BorderStyle>Etched</BorderStyle>
+            <IsCollapsible>true</IsCollapsible>
+            <Description>Use this to create details support for clicking a row.  A "SelectedRowData" variable will be created that holds the contents of the selected row.</Description>
+        </GroupDefinition>
+
+        <GroupDefinition id="UpdateOptions">
+            <Name>Update Page Support</Name>
+            <BorderStyle>Etched</BorderStyle>
+            <IsCollapsible>true</IsCollapsible>
+            <Description>Use this to create an update page for editing details or results data.</Description>
+        </GroupDefinition>
+
+        <GroupDefinition id="Advanced">
+            <Name>Advanced</Name>
+            <Description/>
+            <BorderStyle>Etched</BorderStyle>
+            <IsCollapsible>true</IsCollapsible>
+            <InitiallyCollapsed>true</InitiallyCollapsed>
+        </GroupDefinition>
+
+        <GroupDefinition id="LabelTranslationSettings">
+            <Name>Label Translation Settings</Name>
+            <Description>Settings for managing the translation of labels in a way that can be easily internationalized.</Description>
+            <BorderStyle>Etched</BorderStyle>
+            <IsCollapsible>true</IsCollapsible>
+            <InitiallyCollapsed>true</InitiallyCollapsed>
+        </GroupDefinition>
+
+   </GroupDefinitions>
+
+</BuilderDef>

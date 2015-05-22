@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed Materials - Property of IBM
+  5724-O03
+  Copyright 2014. IBM Corp. All rights reserved.
+  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.worklight.WLEnableBuilder">
+  <ReadableName>Worklight Enable</ReadableName>
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName>
+  <HelpFile></HelpFile> 
+  <RequiredFactoryVersion>8.5</RequiredFactoryVersion>
+  <Description>Adds IBM Worklight support to the page</Description>
+  <Domains>
+    <Domain>WebApp</Domain>
+    <Domain>Client</Domain>
+  </Domains>
+  <CreateModifyList />
+  <Category>Worklight</Category>
+  <Keywords />
+  <BuilderData>
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.worklight.WLEnableBuilder</BuilderDataEntry>
+  </BuilderData>
+  <CoordinatorClassName>com.bowstreet.builders.webapp.worklight.WLEnableCoordinator</CoordinatorClassName>
+
+  <InputDefinitions>
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.RestrictedBuilderName">
+      <Prompt>Name</Prompt>
+      <InitialValue />
+      <HelpText />
+      <Page />
+      <Required>true</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+      <Editor>
+        <Argument name="width">500</Argument>
+      </Editor>
+    </InputDefinition>
+
+	<InputDefinition name="PageName">
+      <Prompt>Page</Prompt>
+      <HelpText>Page where IBM Worklight support is needed</HelpText>
+      <Required>true</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+      <Editor JavaClass="com.bowstreet.widget.ComboBox">
+        <Argument name="width">500</Argument>
+      </Editor>
+    </InputDefinition>
+  
+    <InputDefinition name="IncludeWorklightJS" base="com.bowstreet.core.Base.Select">
+      <Prompt>Include Worklight JavaScript</Prompt>
+      <HelpText>Specify when to include the JavaScript files for Worklight.</HelpText>
+      <InitialValue>IncludeAlways</InitialValue>
+      <Property>true</Property>
+      <Editor>
+        <Argument name="ListLabels">Always Include,Include when Running Standalone</Argument>
+        <Argument name="ListData">IncludeAlways,IncludeWhenStandalone</Argument>
+        <Argument name="isEditable">false</Argument>
+        <Argument name="width">500</Argument>
+      </Editor>
+    </InputDefinition>
+    
+    <InputDefinition name="WorklightSupportHtml" base="com.bowstreet.core.WebAppBase.PageToImport">
+      <Prompt>Imported Page For Worklight JavaScript</Prompt>
+      <Required>false</Required>
+      <HelpText>File name of HTML page that makes Worklight JavaScript files available.</HelpText>
+      <InitialValue>/factory/pages/worklight/worklight_js.jsp</InitialValue>
+      <Editor>
+        <Argument name="width">545</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="HybridAppName" base="com.bowstreet.core.Base.StringData">
+      <Prompt>Hybrid Application Name</Prompt>
+      <HelpText>Enter the name of the Worklight hybrid application that includes this model.</HelpText>
+      <ProfileType>None</ProfileType>
+      <Visible>false</Visible>
+    </InputDefinition>
+
+    <InputDefinition name="HybridAppId" base="com.bowstreet.core.Base.StringData">
+      <Prompt>Hybrid Application ID</Prompt>
+      <HelpText>Enter the ID of the Worklight hybrid application that includes this model.</HelpText>
+      <ProfileType>None</ProfileType>
+      <Visible>false</Visible>
+    </InputDefinition>
+  </InputDefinitions>
+</BuilderDef>
+ 

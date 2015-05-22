@@ -1,0 +1,391 @@
+/*! Licensed Materials - Property of IBM.
+    (c) Copyright IBM Corporation 2001, 2009.  All Rights Reserved.
+    U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+This CSS was built on August 21 2009. (version: OneUI-2.0.1_20090821-0327)*/
+/******************************************************************************
+standaloneVcard.css is created from the following files, which must be in the order specified:
+base.css
+baseTheme.css
+components/actionMenu.css
+components/actionMenuTheme.css
+components/vcard.css
+components/vcardTheme.css
+framework/spriteTheme.css
+******************************************************************************/
+
+/******************************/
+/*** B A S E   S T Y L E S ****/
+/******************************/
+
+/*** R E S E T ***/
+/*reset styles, to get rid of browser-specific styling of elements and to set our own defaults - to pick up these styles, put "lotusui" on a container - either the body tag or a div that contains content (you can have more than one lotusui container on a page).  Note, the font size will inherit the page font size.*/
+.lotusui *{margin:0;padding:0;font-weight:inherit;font-style:inherit;font-size:100%;vertical-align:baseline;}
+.lotusui_ie6 .lotusImagesOff *{font-size:16px}/*fix for HUGE font sizes in IE6 high contrast mode*/
+/*redefinitions*/
+.lotusui :focus{outline:1px dotted;}
+body.lotusui{margin:0;padding:0;font:normal .75em/1.5em Arial, Helvetica, sans-serif;background-position:top left;background-repeat:repeat-x;}
+.lotusui_ie7 body.lotusui{position:relative}/*fix for IE7, to keep relatively positioned children looking okay.*/
+body.lotusJapanese, .lotusui .lotusJapanese *{font-family:"MS UI Gothic","MS PGothic", "Apple Gothic", Arial, Helvetica, sans-serif}
+/*internal link (default link style)*/
+.lotusui a, .lotusui a:visited{text-decoration:none;}/*takes care of normal and visited links*/
+.lotusui a:hover, .lotusui a:focus, .lotusui a:active{text-decoration:underline;}
+.lotusui blockquote{margin:5px 20px}
+.lotusui blockquote:before, .lotusui blockquote:after, .lotusui q:before, .lotusui q:after{content:"";}
+.lotusui blockquote, q{quotes:"" "";}
+.lotusui caption, .lotusui th, .lotusui td{text-align:left;font-weight:normal;}
+.lotusui dt{padding:3px 10px;margin:10px 0 0 0;font-size:1.1em}
+.lotusui dd{padding:5px 10px}
+.lotusui em, .lotusui i{font-style:italic}
+/*the following headers are used to give heirarchy to the page*/
+/*the sizes of the headers are set to support our visual styles*/
+/*some header styles are also reset within certain components or sections of the page*/
+.lotusui h1{font-size:1.7em;font-weight:normal;line-height:1.2em}/*page header*/
+.lotusui h2{font-size:1.2em;font-weight:bold}/*section headers*/
+.lotusui h3{font-size:1.1em;font-weight:bold}/*subsection headers*/
+.lotusui h4{font-size:1.2em;font-weight:bold}/*entry titles*/	
+.lotusui h5{font-size:1.1em;font-weight:bold}/*entry details sections*/
+.lotusui h6{font-size:1em}
+.lotusui_ie6 .lotusImagesOff h2 *, .lotusui_ie6 .lotusImagesOff h4 *{font-size:24px}
+.lotusui_ie6 .lotusImagesOff h3 *, .lotusui_ie6 .lotusImagesOff h5 *{font-size:20px}
+.lotusui img{border:0;vertical-align:middle}
+.lotusui fieldset, .lotusui th, .lotusui td{border:0}
+.lotusui input, .lotusui select{padding:1px 0;} 
+.lotusui input.lotusCheckbox{margin-right:3px}/*for checkboxes and radio buttons*/
+.lotusui button, .lotusui input, .lotusui select{font-family:Arial, Helvetica, sans-serif}
+.lotusui textarea {font:normal 1em/1.2em Arial, Helvetica, sans-serif;}
+.lotusJapanese button, .lotusJapanese input, .lotusJapanese select{font-family:"MS UI Gothic","MS PGothic", "Apple Gothic", Arial, Helvetica, sans-serif}
+.lotusui textarea{padding:1px 0;margin:1px 0}
+.lotusui select > option {-moz-padding-start:3px;-moz-padding-end:5px;}/*styles pulled from FF's forms.css*/
+.lotusui p{margin:5px 0 0 0}
+.lotusui pre{font-family:"Courier New", Courier, monospace;} /*this helps eliminate discrepencies for how this displays cross-browser*/
+.lotusui strong, .lotusui b{font-weight:bold}
+.lotusui ul{list-style-type:disc;margin-left:20px;margin-top:5px;padding-left:0}
+.lotusui ol{list-style-type:decimal;margin-left:20px;margin-top:5px;padding-left:.2em;/*padding keeps the numbers from being cut off*/}
+.lotusui ul li, .lotusui ol li{overflow:visible}
+.lotusui ul ul, .lotusui ol ul{list-style-type:circle;margin-top:0;margin-bottom:0;}
+.lotusui ul ul ul, .lotusui ol ul ul, .lotusui ol ol ul{list-style-type:square;margin-top:0;margin-bottom:0;}
+/***********************************************************/
+
+/*** S P E C I A L   L I N K S ***/
+/*tag*/
+.lotusRelatedTags a{background-position:left center;background-repeat:no-repeat;padding-left:10px;display:inline-block;/*fix for IE*/border-width:1px;border-style:dotted/*to keep related tags from jumping on hover*/}
+/*link hover and active styles*/
+.lotusTags a:hover, .lotusTags a:focus, .lotusTags a:active, a.lotusTag:hover, a.lotusTag:focus, a.lotusTag:active, a.lotusPerson:hover, a.lotusPerson:focus, a.lotusPerson:active, a.lotusMyLink:hover, a.lotusMyLink:focus, a.lotusMyLink:active, .lotusMyLinks a:hover, .lotusMyLinks a:focus, .lotusMyLinks a:active{text-decoration:none;border-bottom-width:1px;border-bottom-style:dotted}
+.lotusTagBin {margin-top:10px;}
+
+/*single and group action links*/
+/*this is to provide a class for overriding link colors in groups of links to indicate that the link is an action link (like the "Tag this" link in a tag group*/
+a.lotusAction, a.lotusAction:visited{text-decoration:underline !important;border-bottom:0 !important;font-size:.9em}
+.lotusActions{font-size:.9em}/*used on an outer container containing multiple action links (and possibly plain text mixed in, like View: tags | list | all)*/
+.lotusActions .lotusAction, .lotusui .lotusTiny a.lotusAction, .lotusui .lotusTiny .lotusAction, .lotusui .lotusAction .lotusTiny{font-size:1em}/*only want to reduce the size once*/
+a.lotusAction:hover, a.lotusAction:focus, .lotusActions a:hover, .lotusActions a:focus, .lotusTags a.lotusAction:hover, .lotusTags a.lotusAction:focus {text-decoration:underline !important;border-bottom:0 !important;}
+/*to assign an icon to an action link, you need to assign a unique id to the link and give it a background image.  The rest of the code is in this css declaration*/
+.lotusActions a, .lotusActions a:visited{text-decoration:underline;border-bottom:0}
+a.lotusDropDown, a.lotusDropDown:visited, a.lotusDropDown:active{padding-right:14px;background-position:right center ;background-repeat:no-repeat;}
+.lotusIcon a{padding-left:18px;background-position:left center;background-repeat:no-repeat}
+.lotusDelete{background-position:top left;background-repeat:no-repeat;} /*delete icon with rollover state*/
+/*general class for 16 pixel icons created as background images, where a link surrounds blank.gif*/
+/*NOTES: 
+- the image tag of blank.gif contains alt text that will show when images are turned off.  It also needs to set the width and the height
+- any hover text is put on the title text of the link
+- an additional class is used to assign the icon image.  These are defined in baseTheme.css and are named to match the icon graphic name with a lotus prefix
+in the future this can be modified to use an icon sprite graphic*/
+.lotusIcon16{width:16px;height:16px:background-position:center center;background-repeat:no-repeat}
+/***********************************************************/
+
+/*** G E N E R A L   S T Y L E S ***/
+.lotusui .lotusAccess{position:absolute;top:-3000px;width:500px;}
+.lotusui .lotusAlignRight{text-align:right;}
+.lotusui .lotusAlignLeft{text-align:left;}
+.lotusui .lotusBig{font-size:1.1em}/*bumps up the font size*/
+.lotusui .lotusBold{font-weight:bold}
+.lotusui .lotusBorderTop{border-top-width:1px;border-top-style:solid}
+.lotusui .lotusBorderBottom{border-bottom-width:1px;border-bottom-style:solid}
+.lotusui .lotusCenter{text-align:center;}
+.lotusui .lotusClear{clear:both}
+.lotusui .lotusClearLeft{clear:left}
+.lotusui .lotusClearRight{clear:right}
+.lotusui .lotusDraggable{cursor:move}
+.lotusui .lotusFixedTable{table-layout:fixed;}/* Fix for forms issues with typeahead. For IE6 and IE7 */
+.lotusui .lotusHidden{display:none} /*hides from visual UI but not from screen readers*/
+.lotusui .lotusHideOverflow{overflow:hidden}/*use in conjunction with a width on your element*/
+.lotusui .lotusIndent10{padding-left:10px;}
+.lotusui .lotusIndent15{padding-left:15px;}
+.lotusui .lotusIndent20{padding-left:20px}
+.lotusui .lotusIndent40{padding-left:40px;}
+.lotusui .lotusIndent60{padding-left:60px;}
+.lotusui .lotusItalic{font-style:italic}
+.lotusui .lotusLeft{float:left;text-align:left;}
+.lotusui .lotusLoading{background-repeat:no-repeat;width:16px;height:16px}/*loading animated gif*/
+.lotusImagesOff .lotusLogo, .lotusImagesOff .lotusLoginLogo{width:auto !important;white-space:nowrap}
+.lotusui .lotusLTR{direction:ltr}/*allows you to assign an element to always read LTR*/
+.lotusui .lotusNowrap{white-space:nowrap}
+.lotusui .lotusNudge{} /*use this general class name with specific qualifiers when you need to adjust the position of a specific item (see entry class in this stylesheet for an example)*/
+.lotusui .lotusRight{float:right;text-align:right;}
+.lotusui .lotusRTL{direction:rtl}/*allows you to assign an element to always read RTL*/
+.lotusui .lotusTiny{font-size:.9em}
+
+/*the next two lines are for providing alternate text for background images when images are turned off - requires javascript to test for this and assign the lotusImagesOff class to the html tag*/
+.lotusui .lotusAltText{display:none}
+.lotusImagesOff .lotusAltText{display:inline}
+/***********************************************************/
+
+/*** I N L I N E   L I S T S ***/ 
+/*to make a list display horizontally*/
+.lotusui .lotusInlinelist{margin:0;padding:0;list-style-type:none}
+.lotusui .lotusInlinelist li{display:inline;margin:0;padding:0 7px;border-left-width:1px;border-left-style:solid;}
+.lotusui .lotusInlinelist li.lotusFirst, .lotusui .lotusInlinelist li.lotusLast{padding-left:0;border-left-width:0;}
+.lotusui .lotusNoDivider li{border-left-width:0}
+/*the next two lines are needed to fix text zoom for inline lists in IE7 (also fixes RTL display issues)*/
+.lotusui_ie7 .lotusInlinelist li{display:inline-block}
+.lotusui_ie7 .lotusInlinelist li, .lotusui_ie6 .lotusInlinelist li{display:inline}
+/***********************************************************/
+
+/*** A R R O W S ***/
+/*.lotusSprite{float:left;display:block;background-repeat:no-repeat;}*/
+.lotusArrow{margin-right:2px;width:13px;height:18px;float:left;display:block;background-position:left top;background-repeat:no-repeat}
+/*twisty arrow definitions are found in section and menu components*/
+/*drop-down arrows (assign as an additional class along with lotusSprite and lotusArrow)*/
+.lotusDropDownSprite, .lotusDropDownActionSprite{margin-right:0;padding:1px;width:5px;height:3px;display:-moz-inline-box;display:inline-block;float:none;text-decoration:none}
+/*scroll arrows (assign as an additional class along with lotusSprite and lotusArrow)*/
+.lotusScrollUp, .lotusScrollDown{float:none;line-height:1em;width:9px;height:5px;margin:0;text-decoration:none !important}
+
+
+/******************************/
+/*** B A S E   S T Y L E S ****/
+/******************************/
+
+/*** R E S E T ***/
+
+/*redefinitions*/
+.lotusui a{color:#105cb6}
+.lotusui a:hover, .lotusui a:focus, .lotusui a:active{color:#05386b}
+.lotusui dt{background-color:#eee;font-weight:bold}/*used in metrics screen*/
+.lotusui h1, .lotusui h2{color:#444}
+/***********************************************************/
+
+/*** S P E C I A L   L I N K S ***/
+a.lotusPerson, a.lotusPerson:visited{color:#578cca;}/*person links pop up a related menu*/
+.lotusTags a:link, .lotusTags a:visited, a.lotusTag:link, a.lotusTag:visited{color:#578cca;}/*tag*/
+.lotusRelatedTags a{background-image:url(../images/iconRelatedTag.png);border-color:transparent/*to keep related tags from jumping*/}
+.lotusui_ie6 .lotusRelatedTags a{border-color:#fff}/*ie6 doesn't support transparent border color*/
+/*[sprite]*/
+.lotusSpritesOn .lotusRelatedTags a{background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png);background-position:0 -2987px}
+/*[/sprite]*/
+/*my links indicate bookmarks you have created - add this onto people and tag class links*/
+a.lotusMyLink, a.lotusMyLink:visited, .lotusMyLinks a, .lotusMyLinks a:visited{color:#44a244 !important}
+a.lotusDelete{background-image:url(../images/iconDelete.png);}
+/*[sprite]*/.lotusSpritesOn a.lotusDelete{background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png);background-position:0 -2331px}/*[/sprite]*/
+/*link hover styles*/
+.lotusTags a:hover, .lotusTags a:focus, .lotusTags a:active, a.lotusTag:hover, a.lotusTag:focus, a.lotusTag:active, a.lotusPerson:hover, a.lotusPerson:focus, a.lotusPerson:active{border-bottom-color:#05386b;color:#05386b;}
+a.lotusMyLink:hover, a.lotusMyLink:focus, .lotusMyLinks a:hover, .lotusMyLinks a:focus {color:#05386b !important;border-bottom-color:#05386b;}
+/*single and group action links*/
+/*this is to provide a class for overriding link colors in groups of links to indicate that the link is an action link (like the "Tag this" link in a tag group*/
+a.lotusAction, a.lotusAction:visited{color:#105cb6 !important;}
+a.lotusAction:hover, a.lotusAction:focus, a.lotusAction:active, .lotusActions a:hover, .lotusActions a:focus, .lotusActions a:active, .lotusTags a.lotusAction:hover, .lotusTags a.lotusAction:focus, .lotusTags a.lotusAction:active{color:#05386b !important;}
+/*to assign an icon to an action link, you need to assign a unique id to the link and give it a background image.  The rest of the code is in this css declaration*/
+.lotusActions a, .lotusActions a:visited{color:#105cb6;}
+a.lotusDropDown, a.lotusDropDown:visited, a.lotusDropDown:active{background-color:transparent;background-image: url(../images/btnDropDown.png)}
+/*[sprite]*/
+a.lotusDropDown, a.lotusDropDown:visited, a.lotusDropDown:active{background-color:transparent;background-image: url(../defaultTheme/themeImages/lotusSprite-8bit.png);background-position:0 -728px}
+/*[/sprite]*/
+a.lotusDelete:hover, a.lotusDelete:active{background-image:url(../images/iconDeleteHover.png);}
+/*[sprite]*/.lotusSpritesOn a.lotusDelete:hover, a.lotusDelete:active{background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png);background-position:0 -2383px}/*[/sprite]*/
+/*general class for 16 pixel icons created as background images, where a link surrounds blank.gif*/
+/*NOTES: 
+assign the lotusIcon16 class along with one of the following classes to your link tag
+classes match the icon graphic name with a lotus prefix*/
+.lotusIconShow{background-image:url(../images/iconShow.png)}
+.lotusIconHide{background-image:url(../images/iconHide.png)}
+/*[sprite]*/
+.lotusSpritesOn .lotusIcon16{background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png);}
+.lotusSpritesOn .lotusIconShow{background-position:0 -3257px}
+.lotusSpritesOn .lotusIconHide{background-position:0 -2547px}
+/*[/sprite]*/
+/***********************************************************/
+
+/*** G E N E R A L   S T Y L E S ***/
+.lotusui .lotusBorderTop, .lotusui .lotusBorderBottom{border-color:#e5e5e5}
+.lotusui .lotusLoading{background-image:url(../images/loading.gif)}
+.lotusui .lotusRequired{color:#efa229}
+.lotusui .lotusMeta{color:#666}
+.lotusui .lotusHighlighted{color:#f00}/*red*/
+.lotusui .lotusInactive{color:#999}
+.lotusui .lotusLogo, .lotusLoginLogo{height:18px;width:126px;background-image:url(../images/logo.png);background-repeat:no-repeat;}/*height, width values are in this file to aid in retheming*/
+.lotusui .lotusIBMLogo {width:94px;height:37px;background-image:url(../images/ibmLogo.png);background-repeat:no-repeat;}/*height, width values are in this file to aid in retheming*/
+.lotusImagesOff .lotusIBMLogo {display:none}
+.lotusui .lotusIBMLogoFooter {width:66px;height:28px;background-image:url(../images/ibmLogoFooter.png);background-repeat:no-repeat;}/*height, width values are in this file to aid in retheming*/
+.lotusImagesOff .lotusIBMLogoFooter {display:none}
+/*[sprite]*/
+.lotusSpritesOn .lotusIBMLogo {background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png);background-position:0 -1782px}
+.lotusSpritesOn .lotusIBMLogoFooter {background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png);background-position:0 -1859px}
+/*[/sprite]*/
+/***********************************************************/
+
+/*** I N L I N E   L I S T S ***/ 
+.lotusui .lotusInlinelist li{border-color:#ccc;}
+/***********************************************************/
+
+/*** A R R O W S ***/
+/*drop-down arrows*/
+.lotusDropDownSprite{background-image:url(../images/btnDropDown.png)}
+.lotusDropDownActionSprite{background-image:url(../images/btnDropDownAction.png)}
+/*scrolling arrows*/
+.lotusScrollUp{background-image:url(../images/arrowScrollUp.png)}
+.lotusScrollDown{background-image:url(../images/arrowScrollDown.png)}
+/*[sprite]*/
+.lotusSpritesOn .lotusDropDownSprite{background-position:0 -728px}
+.lotusSpritesOn .lotusDropDownActionSprite{background-position:0 -814px}
+.lotusSpritesOn .lotusScrollUp{background-position:0 -683px}
+.lotusSpritesOn .lotusScrollDown{background-position:0 -638px}
+/*[/sprite]*/
+
+/***********************************************************/
+
+
+/*****************************/
+/*** A C T I O N   M E N U ***/
+/*****************************/
+ul.lotusActionMenu{margin:0;padding:0;list-style-type:none;display:table;position:absolute;top:-9999px;z-index:900px;border-width:1px;border-style:solid;background-position:top left;background-repeat:repeat-y}
+.lotusui_ie6 .lotusActionMenu{width:15em}
+.lotusActionMenu li{white-space:nowrap;zoom:1}
+.lotusActionMenu li.lotusSelected a{background-position:4px center; background-repeat:no-repeat;}
+.lotusActionMenu li.lotusMenuSeparator{border-top-width:1px;border-top-style:solid !important}
+.lotusActionMenu a{padding:3px 40px 5px 25px;text-decoration:none;display:block;zoom:1}
+.lotusActionMenu .lotusIcon a{padding-left:2px;}
+.lotusActionMenu .lotusIcon img{width:16px;height:16px;margin-right:6px}
+.lotusActionMenu a:visited, .lotusActionMenu a:hover, .lotusActionMenu a:focus, .lotusActionMenu a:active{text-decoration:none}
+.lotusActionMenu.lotusPlain a{padding-left:10px}
+.lotusImagesOff .lotusActionMenu li.lotusSelected a{padding-left:15px}
+.lotusImagesOff .lotusActionMenu a:hover, .lotusImagesOff .lotusActionMenu a:focus{text-decoration:underline}
+/***********************************************************/
+
+
+/*****************************/
+/*** A C T I O N   M E N U ***/
+/*****************************/
+ul.lotusActionMenu{background-color:#fff;border-color:#919090;background-image:url(../images/actionMenuBkgd.png)}
+ul.lotusActionMenu.lotusPlain{background-image:none}
+.lotusActionMenu li{background-color:transparent}
+.lotusActionMenu li.lotusSelected a{background-image:url(../images/checkmark.png);}
+.lotusActionMenu li.lotusMenuSeparator{border-top-color:#C0C1C1 !important}
+.lotusActionMenu a{color:#000;}
+.lotusActionMenu a:hover, .lotusActionMenu a:focus, .lotusActionMenu a:active{color:#fff !important;background-color:#2e5a90;}
+
+/*[sprite]*/
+.lotusSpritesOn .lotusActionMenu li.lotusSelected a,
+.lotusSpritesOn .lotusActionMenu li.lotusSelected a:visited,
+.lotusSpritesOn .lotusActionMenu li.lotusSelected a:hover,
+.lotusSpritesOn .lotusActionMenu li.lotusSelected a:active,
+.lotusSpritesOn .lotusActionMenu li.lotusSelected a:focus
+{background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png);background-position:4px -1026px}
+/*[/sprite]*/
+
+/***********************************************************/
+
+
+
+/*** V C A R D (P E R S O N   C A R D)***/
+/*this is the popup person card that shows up when you click on a person link (via a hover link)*/
+.lotusVCard{display:table;position:absolute;left:0;top:-9999px;width:400px;margin:4px 0 0 4px;-moz-border-radius:4px;-webkit-border-radius:4px;}
+.lotusVCard .lotusContainer{display:table;width:400px;position:relative;top:-4px;left:-4px;border-width:1px;border-style:solid;}
+/*lotusAppLinks are the application links at the top of the card*/
+.lotusVCard .lotusAppLinks td{background-position:left top;background-repeat:repeat-x;border-width:0 0 1px 1px;border-style:solid;text-align:center}
+.lotusVCard .lotusAppLinks td.lotusFirst{border-left-width:0}
+.lotusVCard .lotusAppLinks a{display:block;padding:3px 9px;}
+/*the more arrow, for when there is a second row of application links*/
+.lotusVCard .lotusMore{width:16px;margin-right:10px;background-position:right center;background-repeat:no-repeat;}
+.lotusVCard .lotusMore:visited, .lotusVCard .lotusMore:hover, .lotusVCard .lotusMore:focus, .lotusVCard .lotusMore:active{text-decoration:none}
+/*lotusPersonDetails is the detail area of the card that contains all info for the person*/
+.lotusVCard .lotusDetails{padding:10px;border-top-width:1px;border-top-style:solid;}
+.lotusVCard .lotusPhoto{padding:3px;border-width:1px;border-style:solid;float:left;position:relative/*IE fix for floated elements within a relative container not showing*/}
+.lotusVCard .lotusPersonInfo{margin-left:86px}
+/*lotusPersonActions are actions you can perform on this person, from the person card*/
+.lotusVCard .lotusPersonActions{padding:5px;border-top-width:1px;border-top-style:solid}
+/*action menu within person card*/
+.lotusVCard .lotusActionMenu{position:static;left:auto;top:auto;border-width:0;display:none;width:auto;margin-top:-10px}
+/*lotusComments in the person card contains status information for the person*/
+.lotusImagesOff .lotusCommentHeader{display:none}
+.lotusVCard .lotusComment{clear:both}
+.lotusVCard .lotusDetails .lotusComment{position:relative;margin:-10px 0 2px -10px;padding:0 0 0 10px;zoom:1}
+.lotusVCard .lotusDetails .lotusCommentHeader{padding-left:15px;padding-bottom:3px;position:absolute;top:0;left:16px;z-index:1;height:1.6em;background-position:left bottom;background-repeat:no-repeat;}
+.lotusVCard .lotusDetails .lotusCommentBody{position:relative;top:1.7em;margin:-1px 0 2.2em 0;padding:5px 10px;border-width:1px;border-style:solid;z-index:0;-moz-border-radius:4px 4px 6px 6px;-webkit-border-top-left-radius:4px;-webkit-border-top-right-radius:4px;-webkit-border-bottom-left-radius:6px;-webkit-border-bottom-right-radius:6px;zoom:1}
+/*adjustments for an inline version of the card*/
+.lotusInlineVCard{position:static;left:auto;margin:0 0 10px 0}
+.lotusInlineVCard, .lotusInlineVCard .lotusContainer{width:175px;position:static;top:auto;left:auto}
+.lotusInlineVCard .lotusPhoto{padding:0;border-width:0;margin-top:5px}
+.lotusInlineVCard .lotusPersonInfo{margin-left:60px;margin-top:4px}
+.lotusInlineVCard .lotusEmail{clear:both;border-width:1px 0;border-style:solid;padding:5px 10px}
+.lotusInlineVCard .lotusAppLinks{list-style-type:none;margin:0;padding:0}
+.lotusInlineVCard .lotusPivotNav{padding:2px 5px 1px 2px;overflow:hidden;zoom:1;}
+.lotusInlineVCard .lotusPivotNavToggle{margin:0 5px 0 0;padding:0;float:left;height:45px;width:10px;}
+.lotusPivotNavToggle a{display:block;height:45px;background-position:3px center;background-repeat:no-repeat;text-decoration:none;}
+.lotusPivotNavToggle a:visited, .lotusPivotNavToggle a:hover, .lotusPivotNavToggle a:focus, .lotusPivotNavToggle a:active{text-decoration:none;}
+.lotusPivotNavOpen .lotusPivotNavToggle a{background-position:left center}
+.lotusInlineVCard .lotusInlineVCardDetails{display:none}
+/***********************************************************/
+
+/*** V C A R D   H O V E R ***/
+/*this is the hover link that shows when you hover over a person's name and allows you to open their profile card*/
+.lotusVCardHover{padding:5px 5px 5px 25px;position:absolute;left:0;top:-9999px;border-width:1px;border-style:solid;-moz-border-radius:2px;-webkit-border-radius:2px;background-position:5px center;background-repeat:no-repeat;white-space:nowrap}
+.lotusVCardHover:hover, .lotusVCardHover:focus{text-decoration:none}
+.lotusImagesOff .lotusVCardHover{padding-left:5px}
+/***********************************************************/
+
+
+/****************************************/
+/*** V C A R D (P E R S O N   C A R D)***/
+.lotusVCard{background-color:#e0e0e0}
+.lotusVCard .lotusContainer{border-color:#c5c5c5;background-color:#f2f2f2}
+.lotusVCard a:link, .lotusVCard a:visited, .lotusVCard a:hover, .lotusVCard a:focus, a:active{color:#105cb6}
+.lotusVCard .lotusAppLinks td{background-color:#fff;background-image:url(../images/titleBkgd.png);border-color:#c5c5c5;}
+/*the more arrow, for when there is a second row of application links*/
+.lotusVCard .lotusMore{background-image:url(../images/iconMoreAppsClosed.png);}
+.lotusVCard .lotusMoreExpanded{background-image:url(../images/iconMoreAppsOpen.png)}
+/*lotusDetails is the detail area of the card that contains all info for the person*/
+.lotusVCard .lotusDetails{border-top-color:#fff;background-color:#f2f2f2}
+.lotusVCard .lotusPhoto{border-color:#bdc4ca;}
+/*lotusVCardActions are actions you can perform on this person, from the person card*/
+.lotusVCard .lotusPersonActions{background-color:#fff;border-top-color:#c5c5c5}
+.lotusVCard .lotusPersonActions .lotusInlinelist li{border-left-color:#105cb6}
+.lotusVCard .lotusActionMenu a, .lotusActionMenu a:visited{color:#000}
+.lotusVCard .lotusActionMenu a:hover, .lotusVCard .lotusActionMenu a:focus, .lotusVCard .lotusActionMenu a:active{color:#fff !important;background-color:#2e5a90;}
+/*lotusComments in the person card contains status information for the person*/
+.lotusVCard .lotusDetails .lotusCommentHeader{background-image:url(../images/commentPointPersonCard.png);}
+.lotusVCard .lotusDetails .lotusCommentBody{color:#666;background-color:#fff;border-color:#a0acba;}
+/*adjustments for an inline version of the card*/
+.lotusInlineVCard .lotusEmail{border-color:#c5c5c5;}
+.lotusPivotNavToggle a{background-color:#d8d8e0;background-image:url(../images/vCardClosed.png)}
+.lotusPivotNavOpen .lotusPivotNavToggle a{background-image:url(../images/vCardOpen.png)}
+/***********************************************************/
+
+/*[sprite]*/
+.lotusSpritesOn .lotusVCard .lotusAppLinks td{background-image:url(../defaultTheme/themeImages/lotusHorzBgSprite-8bit.png);background-position:0 -900px}
+
+.lotusSpritesOn .lotusVCard .lotusMore{background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png);background-position:18px -2595px}
+.lotusSpritesOn .lotusVCard .lotusMoreExpanded{background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png);background-position:18px -2707px}
+
+.lotusSpritesOn .lotusVCard .lotusDetails .lotusCommentHeader{background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png);background-position:0 -1510px}
+.lotusSpritesOn .lotusPivotNavToggle a{background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png);background-position: 3px -6276px}
+.lotusSpritesOn .lotusPivotNavOpen .lotusPivotNavToggle a{background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png);background-position: 0 -6373px}
+/*[/sprite]*/
+
+/*** V C A R D   H O V E R ***/
+.lotusVCardHover{border-color:#aeaeae;background-color:#fff79a;background-image:url(../images/iconProfiles.png)}
+.lotusVCardHover:hover, .lotusVCardHover:focus{text-decoration:none}
+/*[sprite]*/
+.lotusSpritesOn .lotusVCardHover{background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png);background-position: 5px -2873px}
+/*[/sprite]*/
+
+/***********************************************************/
+
+
+
+/**********************************/
+/*** S P R I T E   S T Y L E S ****/
+/**********************************/
+.lotusSpritesOn .lotusHorzBgSprite{background-image:url(../defaultTheme/themeImages/lotusHorzBgSprite-8bit.png)}
+.lotusSpritesOn .lotusSprite{background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png)}
+.lotusSpritesOn .lotusArrow{background-image:url(../defaultTheme/themeImages/lotusSprite-8bit.png);}
+
+

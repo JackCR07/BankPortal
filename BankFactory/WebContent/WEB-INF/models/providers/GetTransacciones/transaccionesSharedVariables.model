@@ -1,0 +1,80 @@
+<Model id="providers/GetTransacciones/transaccionesSharedVariables"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.SchemaBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="SchemaSourceType">Existing</Input>
+<Input name="DesignTimeImportCheckBox">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">SchemaTransacciones</Input>
+<Input name="URIOnly">http://172.16.11.225:7800/getTransacciones/getTransacciones?xsd=xsd0</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">InputTransaccion</Input>
+<Input name="Type">SchemaTransacciones/operation1</Input>
+<Input name="Value">&lt;operation1&gt;
+   &lt;id_cuenta&gt;5&lt;/id_cuenta&gt;
+   &lt;id_tipo_transaccion&gt;&lt;/id_tipo_transaccion&gt;
+   &lt;fecha_mov_mayor_a&gt;&lt;/fecha_mov_mayor_a&gt;
+   &lt;fecha_mov_menor_a&gt;&lt;/fecha_mov_menor_a&gt;
+   &lt;mon_trans_mayor_a &gt;&lt;/mon_trans_mayor_a&gt;
+   &lt;mon_trans_menor_a&gt;&lt;/mon_trans_menor_a&gt;
+   &lt;n_trans_mayor_a&gt;&lt;/n_trans_mayor_a&gt;
+   &lt;n_trans_menor_a&gt;&lt;/n_trans_menor_a&gt;
+&lt;/operation1&gt;</Input>
+<Input name="Namespace">http://getTransacciones</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[<operation1>
+   <id_cuenta>5</id_cuenta>
+   <id_tipo_transaccion></id_tipo_transaccion>
+   <fecha_mov_mayor_a></fecha_mov_mayor_a>
+   <fecha_mov_menor_a></fecha_mov_menor_a>
+   <mon_trans_mayor_a ></mon_trans_mayor_a>
+   <mon_trans_menor_a></mon_trans_menor_a>
+   <n_trans_mayor_a></n_trans_mayor_a>
+   <n_trans_menor_a></n_trans_menor_a>
+</operation1>]]></CacheKey>
+<CacheValue><operation1><id_cuenta>5</id_cuenta>
+<id_tipo_transaccion />
+<fecha_mov_mayor_a />
+<fecha_mov_menor_a />
+<mon_trans_mayor_a />
+<mon_trans_menor_a />
+<n_trans_mayor_a />
+<n_trans_menor_a />
+</operation1>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.SharedVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Scope">Session</Input>
+<Input name="Page">(None)</Input>
+<Input name="UseOuterSession">true</Input>
+<Input name="Name">SharedInputTransaccion</Input>
+<Input name="Variable">InputTransaccion</Input>
+<Input name="UniqueID">9999</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientEventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ClientSideDelivery">true</Input>
+<Input name="ServerDelivery">false</Input>
+<Input name="EventName">changeInVariables</Input>
+<Input name="Name">changeInVariables</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Dependencies />
+<ExternalProperties />
+<Properties />
+</Model>

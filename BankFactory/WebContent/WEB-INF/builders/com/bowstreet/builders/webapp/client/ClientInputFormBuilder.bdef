@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<BuilderDef id="com.bowstreet.builders.webapp.client.ClientInputFormBuilder" xmlns="http://www.bowstreet.com/2001/Schemas">
+    <ReadableName>Client Input Form</ReadableName>
+    <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName>
+    <HelpFile>factory/product_documentation/designer/client_input_form.htm</HelpFile>
+    <RequiredFactoryVersion>8.0.0</RequiredFactoryVersion>
+    <Description>Provides support for creating a client input form for a Data Service operation or a method.  Note that if the service operation returns a result that you want to display, you can use Client View and Form builder instead of this builder.</Description>
+
+    <Domains><Domain>Client</Domain>
+    </Domains>
+
+    <Category>Pages,Tables and Forms,Client-Side Application</Category>
+    <Keywords>Tables and Forms</Keywords>
+
+    <BuilderData>
+        <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.client.ClientInputFormBuilder</BuilderDataEntry>
+    </BuilderData>
+
+    <CoordinatorClassName>com.bowstreet.builders.webapp.client.ui.ClientInputFormCoordinator</CoordinatorClassName>
+
+    <InputDefinitions>
+
+        <InputDefinition name="Name" base="com.bowstreet.core.Base.RestrictedBuilderName" >
+            <Prompt>Name</Prompt>
+            <Visible>true</Visible>
+        </InputDefinition>
+
+        <InputDefinition name="InputMethod" base="com.bowstreet.builders.webapp.client.ClientViewAndFormBuilder.ViewMethod" >
+        	<Prompt>Input Submit Operation</Prompt>
+        	<HelpText>Data Service operation or method that you want to create an input page for.</HelpText>
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="InputSuccessAction"  base="com.bowstreet.core.WebAppBase.Action">
+            <Prompt>Input Next Action</Prompt>
+            <Required>true</Required>
+            <HelpText>Action or page to do after submitting input form and calling operation.</HelpText>
+            <Property>true</Property>
+            <Editor JavaClass="com.bowstreet.widget.ActionChooser">
+                <Argument name="showSpecialActions" inheritable="true">false</Argument>
+                <Argument name="showMethodsWithArguments" inheritable="true">true</Argument>
+                <Argument name="showTypePrefix" inheritable="true">false</Argument>
+                <Argument name="serverOrClientActions" inheritable="true">client</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="UseTheme" base="com.bowstreet.builders.webapp.pageautomation.DataPage.UseTheme" >
+           <Group></Group>
+        </InputDefinition>
+
+        <InputDefinition name="CreateInitialClientAction" base="com.bowstreet.builders.webapp.client.ClientViewAndFormBuilder.CreateInitialClientAction" >
+        </InputDefinition>
+
+        <InputDefinition name="InputPageVariable" base="com.bowstreet.builders.webapp.client.ClientViewAndFormBuilder.InputPageVariable" >
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="InputPageURL" base="com.bowstreet.builders.webapp.client.ClientViewAndFormBuilder.InputPageURL" >
+            <Property>true</Property>
+        </InputDefinition>
+
+        <InputDefinition name="InputPageHTMLTemplate" base="com.bowstreet.builders.webapp.pageautomation.DataPage.TemplateFile" >
+            <Group>InputOptions</Group>
+            <Prompt>Page Automation Template</Prompt>
+            <HelpText>HTML template for input page.</HelpText>
+            <Required>false</Required>
+            <Visible>true</Visible>
+        </InputDefinition>
+
+        <InputDefinition name="InputPageStyleSheetOverride" base="com.bowstreet.builders.webapp.pageautomation.DataPage.StyleSheetOverride" >
+            <Group>InputOptions</Group>
+        </InputDefinition>
+
+        <InputDefinition name="EnableInputValidation" base="com.bowstreet.builders.webapp.client.ClientViewAndFormBuilder.EnableInputValidation" >
+        </InputDefinition>
+
+        <InputDefinition name="InputValidationMethod" base="com.bowstreet.builders.webapp.client.ClientViewAndFormBuilder.InputValidationMethod" >
+        </InputDefinition>
+
+        <InputDefinition name="InputValidationMethodBehavior" base="com.bowstreet.builders.webapp.client.ClientViewAndFormBuilder.InputValidationMethodBehavior" >
+        </InputDefinition>
+
+        <InputDefinition name="InputSubmitText" base="com.bowstreet.builders.webapp.client.ClientViewAndFormBuilder.InputSubmitText" >
+        </InputDefinition>
+
+        <InputDefinition name="InputInitialData" base="com.bowstreet.core.Base.IndirectValue">
+            <Group>InputOptions</Group>
+            <Prompt>Initial Data For Input Form</Prompt>
+            <HelpText>Specify the data to display in input form.</HelpText>
+            <Editor JavaClass="com.bowstreet.widget.IndirectValue">
+                <Argument name="Java">false</Argument>
+                <Argument name="showOnlyClientVariables">true</Argument>
+                <Argument name="serverOrClientActions" inheritable="true">client</Argument>
+            </Editor>
+        </InputDefinition>
+
+        <InputDefinition name="InputCancelText" base="com.bowstreet.core.Base.IndirectValue" >
+            <Prompt>Input Cancel Text</Prompt>
+            <Group>InputOptions</Group>
+            <InitialValue></InitialValue>
+            <HelpText>Enter the text that you want displayed on a cancel button of Input page, or leave blank for no cancel button.</HelpText>
+        </InputDefinition>
+
+        <InputDefinition name="InputCancelAction"  base="com.bowstreet.core.WebAppBase.Action">
+            <Prompt>Input Cancel Action</Prompt>
+            <Group>InputOptions</Group>
+            <Required>false</Required>
+            <HelpText>Action or page to do when form is cancelled.</HelpText>
+        </InputDefinition>
+
+        <InputDefinition name="ResourceBundleName"  base="com.bowstreet.builders.webapp.LocalizedResourceBuilder.ResourceBundleName">
+            <Group>LabelTranslationSettings</Group>
+            <HelpText>Java resource bundle used for field labels</HelpText>
+        </InputDefinition>
+
+    </InputDefinitions>
+
+    <GroupDefinitions>
+
+        <GroupDefinition id="InputOptions">
+            <Name>Input Page Options</Name>
+            <BorderStyle>Etched</BorderStyle>
+            <IsCollapsible>true</IsCollapsible>
+            <Description>Specify the properties of the input page for the specified operation.</Description>
+        </GroupDefinition>
+
+        <GroupDefinition id="Advanced">
+            <Name>Advanced</Name>
+            <Description/>
+            <BorderStyle>Etched</BorderStyle>
+            <IsCollapsible>true</IsCollapsible>
+            <InitiallyCollapsed>true</InitiallyCollapsed>
+        </GroupDefinition>
+
+        <GroupDefinition id="LabelTranslationSettings">
+            <Name>Label Translation</Name>
+            <Description>Support for translation of labels.</Description>
+            <BorderStyle>Etched</BorderStyle>
+            <IsCollapsible>true</IsCollapsible>
+            <InitiallyCollapsed>true</InitiallyCollapsed>
+        </GroupDefinition>
+
+   </GroupDefinitions>
+
+</BuilderDef>

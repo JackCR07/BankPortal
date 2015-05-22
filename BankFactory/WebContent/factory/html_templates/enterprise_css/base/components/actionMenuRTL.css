@@ -1,0 +1,22 @@
+/*! Licensed Materials - Property of IBM.
+    (c) Copyright IBM Corporation 2001, 2009.  All Rights Reserved.
+    U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+This CSS was built on August 21 2009. (version: OneUI-2.0.1_20090821-0327)
+these are the styles for drop-down menus
+companion file is actionMenuTheme.css*/
+/*****************************/
+/*** A C T I O N   M E N U ***/
+/*****************************/
+ul.lotusActionMenu{margin:0;padding:0;list-style-type:none;display:table;position:absolute;top:-9999px;z-index:900px;border-width:1px;border-style:solid;background-position:top right;background-repeat:repeat-y}
+.lotusui_ie6 .lotusActionMenu{width:15em}
+.lotusActionMenu li{white-space:nowrap;zoom:1}
+.lotusActionMenu li.lotusSelected a{background-position:98% center; background-repeat:no-repeat;}
+.lotusActionMenu li.lotusMenuSeparator{border-top-width:1px;border-top-style:solid !important}
+.lotusActionMenu a{padding:3px 25px 5px 40px;text-decoration:none;display:block;zoom:1}
+.lotusActionMenu .lotusIcon a{padding-right:2px;}
+.lotusActionMenu .lotusIcon img{width:16px;height:16px;margin-left:6px}
+.lotusActionMenu a:visited, .lotusActionMenu a:hover, .lotusActionMenu a:focus, .lotusActionMenu a:active{text-decoration:none}
+.lotusActionMenu.lotusPlain a{padding-right:10px}
+.lotusImagesOff .lotusActionMenu li.lotusSelected a{padding-right:15px}
+.lotusImagesOff .lotusActionMenu a:hover, .lotusImagesOff .lotusActionMenu a:focus{text-decoration:underline}
+/***********************************************************/

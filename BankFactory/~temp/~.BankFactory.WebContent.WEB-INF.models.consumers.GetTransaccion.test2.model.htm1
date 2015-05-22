@@ -1,0 +1,18 @@
+<div id="wefBody">
+  <span id='<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "clientPageDojoWrapper_0") %>' data-wef-dojo-wrapper="true"><span _sampledataaddedattr="_genElement"><span _sampledataaddedattr="_sampleDataAddedNode"></span></span><input type="hidden" id='<%= IDGenerator.getCurrentID(webAppAccess, "wpf_client_event_handler_1") %>' onchange="var webAppAccess = <%= webAppAccess.getInstanceID() %>; wpf_dojo_progress_indicator.hide({ppr:'wpf_ppr85201404141110',ids:this.ids,source:'<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>', overRegion:true})"><span _sampledataaddedattr="_genElement"></span><input type="hidden" id='<%= IDGenerator.getCurrentID(webAppAccess, "wpf_client_event_handler_0") %>' onchange="var webAppAccess = <%= webAppAccess.getInstanceID() %>; wpf_dojo_progress_indicator.show({ppr:'wpf_ppr85201404141110',ids:this.ids,source:'<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>', overRegion:true})"><span style="display:none" id='<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>' _sampledataaddedattr="_genElement"><div _sampledataaddedattr="_sampleDataAddedNode" style="border-style:dotted;border-width:thin;border-color:rgb(128,0,0);"><contents><html><span id='<%= com.bowstreet.webapp.IDGenerator.getCurrentID(webAppAccess, "DefaultProgressIndicatorIndicatorHTMLDojoWrapper_0") %>' data-wef-dojo-wrapper="true">
+<div>
+ <style type="text/css">
+ .wpf_progress_indicator_box {
+  width: auto;
+  box-shadow: 5px 5px 5px #ccc;
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  border-radius:8px;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  background-color:#fff;
+ }
+ </style>
+ <img alt="" src="${WebContent}/factory/images/progressindicator/spinning_spokes.gif" _sampledataaddedattr="_sampleDataSavedAttrName" _sampledatasavedattrname="src" _sampledatasavedattrvalue='<%= com.bowstreet.builders.webapp.methods.ContentHelper.getContentURL(webAppAccess, "/factory/images/progressindicator/spinning_spokes.gif") %>'>&nbsp;<i _sampledataaddedattr="_sampleDataSavedText" _sampledatasavedtext="">{text}</i>
+</div>
+</span></html></contents></div></span><span><div id='<%= webAppAccess.getInstanceID() %>defaultErrorPage_wrapper' style="display: none;"><span _sampledataaddedattr="_genElement"></span></div><div id='<%= webAppAccess.getInstanceID() %>page1_wrapper' style="display: none;"><span _sampledataaddedattr="_genElement"></span></div><div id='<%= webAppAccess.getInstanceID() %>pagina_2_wrapper' style="display: none;"><span _sampledataaddedattr="_genElement"></span></div><div _sampledataaddedattr="_sampleDataAddedNode">This is the main aggregator page used for client-side applications. This page often contains no UI of its own, but all the other client pages will be inserted into this page for processing and display in the client browser. This page was imported from the following location, specified in the Client Application builder:/factory/pages/client/client_app.html.</div></span><span id="client_side_support"></span></span></div>

@@ -1,0 +1,166 @@
+
+/** Copyright 2005,2010 IBM. */ /** General Style Classes */
+/* Non-OneUI classes for the Enterprise theme */
+
+/** This is the layout table which wraps an entire Display Page **/
+.displayPageTable {
+}
+
+/** This is the layout table which wraps an entire Display Page **/
+.dataEntryPageTable {
+}
+
+/** for table background-color/border- can be used with cellspacing="1" to provide inner table borders **/
+.gridTable {
+    border: 1px solid #000000;
+}
+
+.columnGroupHeadRow {
+}
+
+.ColumnGroupLabel {
+}
+
+.ColumnGroupLabelEmpty {
+    border-bottom: thin solid #DDDDDD;
+}
+
+.spacerColumn {
+    border-left: thin solid #808080;
+}
+
+.spacerColumnGroupHeader {
+    border-bottom: thin solid #808080;
+    border-left: thin solid #808080;
+}
+
+/** for table head row **/
+.tableHeadRow {
+}
+
+/** for table head cells**/
+.tableHead {
+    background: #FFFFFF url(../images/table/header_green.png) repeat-x scroll center top;
+    border-color: #FFFFFF #ACA899 #919191 #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    padding-bottom: 2px;
+    overflow: hidden;
+    padding: 3px;
+    text-align: left;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.tableCell {
+    border-bottom: 1px dotted #D5CDB5;
+    border-right: 1px dotted #D5CDB5;
+    overflow: hidden;
+    padding: 3px;
+    text-align: left;
+    font-size: 10px;
+}
+
+/** for text in table header cells **/
+.tableHeadText {
+    padding: 3px;
+}
+
+
+/** for odd repeated rows **/
+.tableRowOdd {
+
+}
+
+/** for even repeated rows **/
+.tableRowEven {
+
+}
+
+/** for field inputs or display elements **/
+.outputData {
+}
+
+/** for links in data (inside tables)   No idea why it refuses to pick these up from ONEUI **/
+a.lotusTags:link,a.lotusTags:active,a.lotusTags:visited,a.labelSortLink:link,a.labelSortLink:active,a.labelSortLink:visited
+{
+	color: #105cb6;
+    text-decoration: none;
+}
+
+a.labelSortLink:hover,a.lotusTags:hover {
+    color: #05386b;
+    text-decoration: underline;
+}
+
+.outputDataRight {
+    text-align: right;
+}
+
+/** for the labels between sections of inputs or fields **/
+.sectionLabel {
+    color: #333333;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 15px;
+}
+
+/** for the table cells containing the sectionLabels **/
+.sectionLabelCell {
+    background-color: #DDDDDD;
+    text-indent: 3px;
+}
+
+/** for the text prompts for field inputs or fields **/
+.label {
+    color: #000000;
+    font-weight: bold;
+}
+
+/** for the table cells containing labels **/
+.labelCell {
+}
+
+/** for the cell containing any field input or display elements **/
+.outputDataCell {
+}
+
+/** for indicating required fields, as with an asterisk */
+.requiredPrompt {
+    font-size: 12px;
+    font-weight: bold;
+    color: #FF0000;
+    padding: 1px;
+}
+
+/** to hightlight error message text */
+.errorMessage {
+    font-size: 11px;
+    color: #FF0000;
+}
+
+.lotusTable { background-color: #FFFFFF; }
+
+
+.paging {
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 2px;
+}
+
+
+
+
+/*** PAGING I N L I N E   L I S T S ***/ 
+.pagingLeftAlign{float:left;text-align:left}
+.pagingRightAlign{float:right;text-align:right;}
+.pagingLotusInlinelist{margin:0;padding:0;list-style-type:none}
+.pagingLotusInlinelist span{display:inline;margin:0;padding:0 7px;border-right-width:1px;border-right-style:solid;}
+.pagingLotusInlinelist a.lotusFirst{padding-right:7px;border-right-width:1px;border-right-style:solid;}
+.pagingLotusInlinelist a.lotusLast{padding-left:7px;border-left-width:1px;}
+
+.DisplayGroupLabelDiv {width:100%; border-style:none}
+
+/* We override this because we don't have the help button for each field, and Calendar Picker needs space. */
+.lotusForm .lotusText {width:93%;}

@@ -1,0 +1,9 @@
+/** Copyright 2005,2010 IBM. */ /** General Style Classes */
+@import url(enterprise_css/base/core.css);
+@import url(enterprise_css/defaultTheme/defaultTheme.css);
+@import url(enterprise_css/wpf.css);
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}

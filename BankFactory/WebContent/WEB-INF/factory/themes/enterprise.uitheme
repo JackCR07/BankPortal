@@ -1,0 +1,63 @@
+<!--  **************************  Enterprise Theme **********************************
+
+A theme is a collection of style information that can be used to drive builder inputs that provide the application UI in your model.
+This information can include but is not limited to HTML templates, style sheets (CSS), base pages, highlighting style, and paging style. 
+
+This theme file extents the wpfbase.uitheme theme and changes the styling to use the Lotus UI classes.
+
+For more Theme information please see the "Themes and user interface control" section of the product documentation.
+
+-->
+<theme extends="/WEB-INF/factory/themes/wpfbase.uitheme">
+   <DataPage_HTMLTemplate>/factory/html_templates/enterprise.html</DataPage_HTMLTemplate>
+   <DataPage_StyleSheetOverride>/factory/clientjavascript/styles/loadCSS.jsp?css=/factory/html_templates/enterprise.css&rule=.lotus&xcss=/factory/html_templates/enterprise_css/wpf.css&as=.js</DataPage_StyleSheetOverride>
+
+
+   <ViewAndForm_ViewPageBase>/factory/pages/view_and_form/enterprise_view.html</ViewAndForm_ViewPageBase>
+   <ViewAndForm_ViewPageHTMLTemplate>/factory/html_templates/enterprise.html</ViewAndForm_ViewPageHTMLTemplate>
+   <ViewAndForm_ViewPageStyleSheetOverride>/factory/clientjavascript/styles/loadCSS.jsp?css=/factory/html_templates/enterprise.css&rule=.lotus&xcss=/factory/html_templates/enterprise_css/wpf.css&as=.js</ViewAndForm_ViewPageStyleSheetOverride>
+   <ViewAndForm_EnablePagingLinks>true</ViewAndForm_EnablePagingLinks>
+   <ViewAndForm_PagingLinksFirstLinkText>First</ViewAndForm_PagingLinksFirstLinkText>
+   <ViewAndForm_PagingLinksPrevLinkText>< Previous</ViewAndForm_PagingLinksPrevLinkText>
+   <ViewAndForm_PagingLinksNextLinkText>Next ></ViewAndForm_PagingLinksNextLinkText>
+   <ViewAndForm_PagingLinksLastLinkText>Last</ViewAndForm_PagingLinksLastLinkText>
+   <ViewAndForm_PagingLinksPageBase>/factory/pages/paging/enterprise_paging_links.html</ViewAndForm_PagingLinksPageBase>
+
+   <ViewAndForm_HighlighterEnabled>false</ViewAndForm_HighlighterEnabled>
+    <ViewAndForm_HighlighterBackground>#ffffd0</ViewAndForm_HighlighterBackground>
+    <ViewAndForm_HighlighterForeground>#000000</ViewAndForm_HighlighterForeground>
+
+   <ViewAndForm_InputPageBase>/factory/pages/view_and_form/enterprise_input.html</ViewAndForm_InputPageBase>
+   <ViewAndForm_InputPageHTMLTemplate>/factory/html_templates/enterprise.html</ViewAndForm_InputPageHTMLTemplate>
+   <ViewAndForm_InputPageStyleSheetOverride>/factory/clientjavascript/styles/loadCSS.jsp?css=/factory/html_templates/enterprise.css&rule=.lotus&xcss=/factory/html_templates/enterprise_css/wpf.css&as=.js</ViewAndForm_InputPageStyleSheetOverride>
+
+   <ViewAndForm_DetailPageBase>/factory/pages/view_and_form/enterprise_details.html</ViewAndForm_DetailPageBase>
+   <ViewAndForm_DetailPageHTMLTemplate>/factory/html_templates/enterprise.html</ViewAndForm_DetailPageHTMLTemplate>
+   <ViewAndForm_DetailPageStyleSheetOverride>/factory/clientjavascript/styles/loadCSS.jsp?css=/factory/html_templates/enterprise.css&rule=.lotus&xcss=/factory/html_templates/enterprise_css/wpf.css&as=.js</ViewAndForm_DetailPageStyleSheetOverride>
+
+   <ViewAndForm_UpdatePageBase>/factory/pages/view_and_form/enterprise_input.html</ViewAndForm_UpdatePageBase>
+   <ViewAndForm_UpdatePageHTMLTemplate>/factory/html_templates/enterprise.html</ViewAndForm_UpdatePageHTMLTemplate>
+   <ViewAndForm_UpdatePageStyleSheetOverride>/factory/clientjavascript/styles/loadCSS.jsp?css=/factory/html_templates/enterprise.css&rule=.lotus&xcss=/factory/html_templates/enterprise_css/wpf.css&as=.js</ViewAndForm_UpdatePageStyleSheetOverride>
+
+   <InputForm_PageBase>/factory/pages/view_and_form/enterprise_input.html</InputForm_PageBase>
+   <InputForm_HTMLTemplate>/factory/html_templates/enterprise.html</InputForm_HTMLTemplate>
+   <InputForm_StyleSheetOverride>/factory/clientjavascript/styles/loadCSS.jsp?css=/factory/html_templates/enterprise.css&rule=.lotus&xcss=/factory/html_templates/enterprise_css/wpf.css&as=.js</InputForm_StyleSheetOverride>
+
+   <Button_ActionRole_Default>lotusBtn lotusBtnAction</Button_ActionRole_Default>
+
+   <DSUI_HTMLTemplate>/factory/html_templates/enterprise.html</DSUI_HTMLTemplate>
+   <DSUI_StyleSheetOverride>/factory/clientjavascript/styles/loadCSS.jsp?css=/factory/html_templates/enterprise.css&rule=.lotus&xcss=/factory/html_templates/enterprise_css/wpf.css&as=.js</DSUI_StyleSheetOverride>
+   <DSUI_PagingControls>com.bowstreet.builders.webapp.SplitPagerBuilder</DSUI_PagingControls>
+   <DSUI_RowHightlightColor>#000000</DSUI_RowHightlightColor>
+   <DSUI_RowHightlightBackgroundColor>#ffffd0</DSUI_RowHightlightBackgroundColor>
+
+    <DSUI_CreatePageHTML>/factory/pages/enterprise/dsui_input.html</DSUI_CreatePageHTML>
+    <DSUI_UpdatePageHTML>/factory/pages/enterprise/dsui_input.html</DSUI_UpdatePageHTML>
+    <DSUI_DetailsPageHTML>/factory/pages/enterprise/dsui_details.html</DSUI_DetailsPageHTML>
+    <DSUI_NoDetailsYetPageHTML>/factory/pages/dsui/no_details_yet.html</DSUI_NoDetailsYetPageHTML>
+    <DSUI_QueryPageHTML>/factory/pages/enterprise/dsui_input.html</DSUI_QueryPageHTML>
+    <DSUI_SearchResultsPageHTML>/factory/pages/enterprise/dsui_table.html</DSUI_SearchResultsPageHTML>
+    <DSUI_FilterPageHTML>/factory/pages/enterprise/dsui_input.html</DSUI_FilterPageHTML>
+    <DSUI_ListPageHTML>/factory/pages/enterprise/dsui_table.html</DSUI_ListPageHTML>
+
+</theme>

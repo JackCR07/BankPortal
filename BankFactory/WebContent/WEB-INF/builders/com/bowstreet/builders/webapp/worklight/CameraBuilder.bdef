@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed Materials - Property of IBM
+  5724-O03
+  Copyright IBM Corp. 2013,2014
+  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<BuilderDef xmlns="http://www.bowstreet.com/2001/Schemas" id="com.bowstreet.builders.webapp.worklight.CameraBuilder">
+  <ReadableName>Camera</ReadableName>
+  <GenHandlerClassName>com.bowstreet.builders.webapp.foundation.WebAppGenHandler</GenHandlerClassName>
+  <HelpFile></HelpFile> 
+  <RequiredFactoryVersion>8.5</RequiredFactoryVersion>
+  <Description>Adds support for invoking device camera and uploading picture to server</Description>
+  <Domains>
+    <Domain>WebApp</Domain>
+    <Domain>Client</Domain>
+  </Domains>
+  <CreateModifyList />
+  <Category>Worklight</Category>
+  <Keywords />
+  <BuilderData>
+    <BuilderDataEntry name="BuilderClassName">com.bowstreet.builders.webapp.worklight.CameraBuilder</BuilderDataEntry>
+  </BuilderData>
+  <CoordinatorClassName>com.bowstreet.builders.webapp.worklight.CameraCoordinator</CoordinatorClassName>
+
+  <InputDefinitions>
+    <InputDefinition name="Name" base="com.bowstreet.core.Base.RestrictedBuilderName">
+      <Prompt>Name</Prompt>
+      <InitialValue />
+      <HelpText />
+      <Page />
+      <Required>true</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+      <Editor>
+        <Argument name="width">500</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="PageName" >
+      <Prompt>Page</Prompt>
+      <HelpText>Page where the camera layout will be located</HelpText>
+      <Required>true</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+      <Editor JavaClass="com.bowstreet.widget.ComboBox">
+        <Argument name="width">500</Argument>
+      </Editor>
+    </InputDefinition>
+    
+    <InputDefinition name="LayoutHtml" base="com.bowstreet.core.Base.ServableContent">
+      <Prompt>Camera Layout HTML</Prompt>
+      <InitialValue>factory/pages/worklight/camera_layouts/camera_icon_with_button.html</InitialValue>
+      <HelpText>File with HTML for camera button, thumbnail, and other elements</HelpText>
+      <Page />
+      <Required>true</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+      <Editor>
+        <Argument name="width">545</Argument>
+      </Editor>
+    </InputDefinition>
+ 
+    <InputDefinition name="CameraTemplateLocation" >
+      <Prompt>Location For Camera Layout</Prompt>
+      <HelpText>Page element where camera layout should be added</HelpText>
+      <Required>true</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+      <Property>true</Property>
+      <Editor JavaClass="control.picker">
+        <Argument name="setInitialValue">false</Argument>
+        <Argument name="width">500</Argument>
+      </Editor>
+    </InputDefinition>
+    
+    <InputDefinition name="PictureSourceType" base="com.bowstreet.core.Base.Select">
+      <Prompt>Picture Source</Prompt>
+      <HelpText>Specify whether the picture should come from the camera, the photo library, or whether the user should choose.</HelpText>
+      <InitialValue>Camera</InitialValue>
+      <Property>true</Property>
+      <Editor>
+        <Argument name="ListLabels">Camera,Photo Library,User Choice</Argument>
+        <Argument name="ListData">Camera,PhotoLibrary,UserChoice</Argument>
+        <Argument name="isEditable">false</Argument>
+        <Argument name="width">500</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="ThumbnailDisplayType" base="com.bowstreet.core.Base.Select">
+      <Prompt>Thumbnail Display</Prompt>
+      <HelpText>Specify how the thumbnail should be displayed.</HelpText>
+      <InitialValue>ServerURI</InitialValue>
+      <Property>true</Property>
+      <Editor>
+        <Argument name="ListLabels">Use the Server File URI, Use the Device File Base64 Data,Do Not Display</Argument>
+        <Argument name="ListData">ServerURI,Base64Data,NoDisplay</Argument>
+        <Argument name="isEditable">false</Argument>
+        <Argument name="width">500</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="UploadButtonLocation">
+      <Prompt>Location Of Button For Upload</Prompt>
+      <InitialValue />
+      <HelpText>Select button or other page action element to use for upload action. A call to the JavaScript upload method will be prepended to the "onclick" attribute.</HelpText>
+      <Page />
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+      <Editor JavaClass="control.picker">
+        <Argument name="setInitialValue">false</Argument>
+        <Argument name="width">500</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="EnableGeolocation" base="com.bowstreet.core.Base.BooleanData">
+      <Prompt>Capture Geolocation Data</Prompt>
+      <InitialValue>false</InitialValue>
+      <HelpText>Select this option to make geolocation information available in PictureInformation variable</HelpText>
+      <Page />
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="TargetFields" base="com.bowstreet.core.Base.Arguments">
+      <Group>PictureInformation</Group>
+      <Prompt>Target Fields</Prompt>
+      <InitialValue>
+        <top>
+          <TargetMapping>
+            <SourceField>ImageFilename</SourceField>
+          </TargetMapping>
+          <TargetMapping>
+            <SourceField>GeneratedId</SourceField>
+          </TargetMapping>
+          <TargetMapping>
+            <SourceField>DateCreated</SourceField>
+          </TargetMapping>
+          <TargetMapping>
+            <SourceField>Latitude</SourceField>
+          </TargetMapping>
+          <TargetMapping>
+            <SourceField>Longitude</SourceField>
+          </TargetMapping>
+        </top>
+      </InitialValue>
+      <HelpText>Select fields where you want to store information about the captured image.</HelpText>
+      <Page />
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>XmlElements</ProfileType>
+      <Callable>true</Callable>
+      <Editor JavaClass="com.bowstreet.editor.uitools.widgets.ListWidget">
+        <Argument name="height">200</Argument>
+        <Argument name="allowReorder">false</Argument>
+        <Argument name="columns">2</Argument>
+        <Argument name="headings">Picture Information Field,Target Field</Argument>
+        <Argument name="columnTags">SourceField,TargetVariable</Argument>
+        <Argument name="rowtag">TargetMapping</Argument>
+        <Argument name="columnWidths">250,250</Argument>
+        <Argument name="cellEditors">
+          <Editors>
+            <Editor JavaClass="com.bowstreet.editor.uitools.widgets.BComboBox">
+              <Argument name="ListData">ImageFilename,GeneratedId,DateCreated,Latitude,Longitude</Argument>
+              <Argument name="IsEditable">false</Argument>
+            </Editor>
+            <Editor JavaClass="com.bowstreet.editor.uitools.widgets.BComboBox">
+              <Argument name="ListData"></Argument>
+              <Argument name="IsEditable">false</Argument>
+            </Editor>
+          </Editors>
+        </Argument>
+      </Editor>
+    </InputDefinition>
+
+<!--
+    <InputDefinition name="PictureInformationTargets" base="com.bowstreet.core.Base.Arguments">
+      <Group>PictureInformation</Group>
+      <Prompt>Captured Picture Information</Prompt>
+      <InitialValue>
+        <top>
+          <TargetMapping>
+            <SourceField>ImageFilename</SourceField>
+          </TargetMapping>
+          <TargetMapping>
+            <SourceField>GeneratedId</SourceField>
+          </TargetMapping>
+          <TargetMapping>
+            <SourceField>DateCreated</SourceField>
+          </TargetMapping>
+          <TargetMapping>
+            <SourceField>Latitude</SourceField>
+          </TargetMapping>
+          <TargetMapping>
+            <SourceField>Longitude</SourceField>
+          </TargetMapping>
+        </top>
+      </InitialValue>
+      <HelpText>Select Variable locations where you want to store information about the captured image.</HelpText>
+      <Page />
+      <Required>false</Required>
+      <Visible>false</Visible>
+      <ProfileType>XmlElements</ProfileType>
+      <Callable>true</Callable>
+      <Editor JavaClass="com.bowstreet.editor.uitools.widgets.ListWidget">
+        <Argument name="height">200</Argument>
+        <Argument name="allowReorder">false</Argument>
+        <Argument name="columns">2</Argument>
+        <Argument name="headings">Picture Information Field,Target Variable</Argument>
+        <Argument name="columnTags">SourceField,TargetVariable</Argument>
+        <Argument name="rowtag">TargetMapping</Argument>
+        <Argument name="columnWidths">250,500</Argument>
+        <Argument name="cellEditors">
+          <Editors>
+            <Editor JavaClass="com.bowstreet.editor.uitools.widgets.BComboBox">
+              <Argument name="ListData">ImageFilename,GeneratedId,DateCreated,Latitude,Longitude</Argument>
+              <Argument name="IsEditable">false</Argument>
+            </Editor>
+            <Editor JavaClass="com.bowstreet.widget.Reference">
+              <Argument name="Variables">true</Argument>
+              <Argument name="Methods">false</Argument>
+              <Argument name="Inputs">false</Argument>
+              <Argument name="Java">false</Argument>
+              <Argument name="useCurlyBrace">false</Argument>
+              <Argument name="title">Select Target Variable</Argument>
+            XXX Following line was commented out in original InputDefinition, but nested comments aren't allowed in XML.
+            <Editor JavaClass="com.bowstreet.widget.IndirectValue">
+            </Editor>
+          </Editors>
+        </Argument>
+      </Editor>
+    </InputDefinition>
+-->
+
+    <InputDefinition name="CameraOptions" base="com.bowstreet.core.Base.Arguments">
+      <Group>CameraOptions</Group>
+      <Prompt>Camera Options</Prompt>
+      <InitialValue>
+        <top>
+          <NameValuePair>
+            <Name>quality</Name>
+            <Value>50</Value>
+          </NameValuePair>
+          <NameValuePair>
+            <Name>targetHeight</Name>
+            <Value>600</Value>
+          </NameValuePair>
+          <NameValuePair>
+            <Name>targetWidth</Name>
+            <Value>600</Value>
+          </NameValuePair>
+        </top>
+      </InitialValue>
+      <HelpText />
+      <Page />
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>XmlElements</ProfileType>
+      <Callable>true</Callable>
+      <Editor JavaClass="com.bowstreet.editor.uitools.widgets.ListWidget">
+        <Argument name="height">150</Argument>
+        <Argument name="allowReorder">false</Argument>
+        <Argument name="columns">2</Argument>
+        <Argument name="headings">Name,Value</Argument>
+        <Argument name="columnTags">Name,Value</Argument>
+        <Argument name="rowtag">NameValuePair</Argument>
+        <Argument name="columnWidths">200,300</Argument>
+        <Argument name="cellEditors">
+          <Editors>
+            <Editor JavaClass="com.bowstreet.editor.uitools.widgets.BComboBox">
+              <Argument name="ListData">quality,targetWidth,targetHeight,saveToPhotoAlbum</Argument>
+              <Argument name="IsEditable">true</Argument>
+            </Editor>
+            <Editor JavaClass="com.bowstreet.editor.uitools.widgets.BTextField">
+            </Editor>
+          </Editors>
+        </Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="HideIfNotHybrid" base="com.bowstreet.core.Base.BooleanData">
+      <Group>Advanced</Group>
+      <Prompt>Hide If Not Hybrid Application</Prompt>
+      <InitialValue>true</InitialValue>
+      <HelpText>Select this option to hide "take picture" UI when page is not displayed in the context of an installed hybrid application.</HelpText>
+      <Page />
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="SubFolder">
+      <Group>Advanced</Group>
+      <Prompt>Subfolder For Uploaded Picture</Prompt>
+      <HelpText>Specify an optional subfolder of the upload directory to save the file into.  This folder is appended to the value of the override.properties setting for bowstreet.upload.destinationPath.</HelpText>
+      <Editor>
+        <Argument name="width">500</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="AddFolderPrefix" base="com.bowstreet.core.Base.BooleanData">
+      <Group>Advanced</Group>
+      <Prompt>ImageFilename Includes Path</Prompt>
+      <InitialValue>true</InitialValue>
+      <HelpText>Select this option to include the upload path in the ImageFilename field of the picture information variable.</HelpText>
+      <Page />
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>Value</ProfileType>
+      <Callable>true</Callable>
+    </InputDefinition>
+
+    <InputDefinition name="IncludeWorklightJS" base="com.bowstreet.core.Base.Select">
+      <Group>Advanced</Group>
+      <Prompt>Include Worklight JavaScript</Prompt>
+      <HelpText>Specify when to include the JavaScript files for Worklight.</HelpText>
+      <InitialValue>IncludeAlways</InitialValue>
+      <Property>true</Property>
+      <Editor>
+        <Argument name="ListLabels">Always Include,Include when Running Standalone,Never Include</Argument>
+        <Argument name="ListData">IncludeAlways,IncludeWhenStandalone,IncludeNever</Argument>
+        <Argument name="isEditable">false</Argument>
+        <Argument name="width">500</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="WorklightSupportHtml" base="com.bowstreet.core.WebAppBase.PageToImport">
+      <Group>Advanced</Group>
+      <Prompt>Imported Page For Worklight JavaScript</Prompt>
+      <Required>false</Required>
+      <HelpText>File name of HTML page that makes Worklight JavaScript available</HelpText>
+      <InitialValue>/factory/pages/worklight/worklight_js.jsp</InitialValue>
+      <Editor>
+        <Argument name="width">545</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="HybridAppName" base="com.bowstreet.core.Base.StringData">
+      <Group>Advanced</Group>
+      <Prompt>Hybrid Application Name</Prompt>
+      <HelpText>Enter the name of the Worklight hybrid application that includes this model.</HelpText>
+      <ProfileType>None</ProfileType>
+      <Visible>false</Visible>
+    </InputDefinition>
+
+    <InputDefinition name="HybridAppId" base="com.bowstreet.core.Base.StringData">
+      <Group>Advanced</Group>
+      <Prompt>Hybrid Application ID</Prompt>
+      <HelpText>Enter the ID of the Worklight hybrid application that includes this model.</HelpText>
+      <ProfileType>None</ProfileType>
+      <Visible>false</Visible>
+    </InputDefinition>
+
+    <InputDefinition name="OverrideCameraJsFile"  base="com.bowstreet.core.Base.ServableContent">
+      <Group>Advanced</Group>
+      <Prompt>Override Script File For Camera Support</Prompt>
+      <Required>false</Required>
+      <HelpText>Optionally override the Javascript file for camera support. Must support the functions and parameters needed by this builder, on a Javascript object named wef_camera_support.</HelpText>
+      <Editor JavaClass="com.bowstreet.widget.ServableContentChooser">
+        <Argument name="noShowWebInf">true</Argument>
+        <Argument name="width">545</Argument>
+      </Editor>
+    </InputDefinition>
+
+    <InputDefinition name="JsParameters" base="com.bowstreet.core.Base.Arguments">
+      <Group>Advanced</Group>
+      <Prompt>Javascript Parameters</Prompt>
+      <InitialValue />
+      <HelpText />
+      <Page />
+      <Required>false</Required>
+      <Visible>true</Visible>
+      <ProfileType>XmlElements</ProfileType>
+      <Callable>true</Callable>
+      <Editor JavaClass="com.bowstreet.editor.uitools.widgets.ListWidget">
+        <Argument name="height">150</Argument>
+        <Argument name="allowReorder">false</Argument>
+        <Argument name="columns">2</Argument>
+        <Argument name="headings">Name,Value</Argument>
+        <Argument name="columnTags">Name,Value</Argument>
+        <Argument name="rowtag">NameValuePair</Argument>
+        <Argument name="columnWidths">200,300</Argument>
+        <Argument name="cellEditors">
+          <Editors>
+            <Editor JavaClass="com.bowstreet.editor.uitools.widgets.BTextField">
+            </Editor>
+            <Editor JavaClass="com.bowstreet.editor.uitools.widgets.BTextField">
+            </Editor>
+          </Editors>
+        </Argument>
+      </Editor>
+    </InputDefinition>
+  </InputDefinitions>
+
+  <GroupDefinitions>
+    <GroupDefinition id="CameraOptions">
+      <Name>Camera Options</Name>
+      <Description>Optionally set options that control picture size and quality.</Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>false</InitiallyCollapsed>
+    </GroupDefinition>
+    <GroupDefinition id="PictureInformation">
+      <Name>Captured Picture Information</Name>
+      <Description>Use this section to save data about captured pictures in your application page data. For values you want to save, use the "Target Field" column to specify the data field. Typically this is used to populate values such as the image filename in a Service Operation input variable. </Description>
+      <BorderStyle>Etched</BorderStyle>
+      <IsCollapsible>true</IsCollapsible>
+      <InitiallyCollapsed>false</InitiallyCollapsed>
+    </GroupDefinition>
+    <GroupDefinition id="Advanced" base="com.bowstreet.core.Base.Advanced" />
+  </GroupDefinitions>
+  <PageDefinitions />
+</BuilderDef>
+ 
