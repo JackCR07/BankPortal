@@ -1,0 +1,80 @@
+<Model id="factory/wizardbase/client_main_and_page_base"><BuilderCallList><BuilderCall id="bc22"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Copyright</Input>
+<Input name="BuilderCallEnabled">true</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2012. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-O03
+(C) Copyright 2012. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc24"><BuilderDefID>com.bowstreet.builders.webapp.Theme</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="OverrideThemeProperties">false</Input>
+<Input name="ExportThemeFile">Export Theme File</Input>
+<Input name="ThemeFile">/WEB-INF/factory/themes/mobile/client_dojo_mobile.uitheme</Input>
+<Input name="DefaultName">client_dojo_mobile</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc20"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientApplication</BuilderDefID>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ParseDojo">true</Input>
+<Input name="DojoMobile">true</Input>
+<Input name="ExecuteScripts">true</Input>
+<Input name="ImportedPageName">/factory/pages/client/client_app.html</Input>
+<Input name="Name">client</Input>
+<Input name="GenerateMain">true</Input>
+<Input name="DefaultErrorPage">/factory/pages/client/dojo_mobile_default_error.html</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc17"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="client_main_and_page:ImportedPage_BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="LocalizationVariable">LocaleInfo</Input>
+<Input name="Name">page1</Input>
+<Input name="URL" profile="client_main_and_page:ImportedPage_URL">/factory/pages/client/base/dojo_mobile_view.html</Input>
+<Input name="FullyParse">true</Input>
+<Input name="URLModification">Absolute</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc19"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="client_main_and_page:Page_BuilderCallEnabled">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageData">&lt;div  dojoType="dojox.mobile.View" data-client-page-element="true"&gt;
+  &lt;div name="page_header" dojoType="dojox.mobile.Heading" fixed="top"&gt;Mobile View&lt;/div&gt;
+
+    &lt;span name="namedTag"&gt;Use a named tag to place the results of a builder call on a page.&lt;/span&gt;
+    
+&lt;/div&gt;</Input>
+<Input name="Name">page1</Input>
+<Input name="FullyParse">true</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies><Dependency type="File">/factory/pages/client/client_app.html</Dependency>
+<Dependency type="File">/factory/pages/client/dojo_mobile_default_error.html</Dependency>
+<Dependency type="File">/factory/pages/client/base/dojo_mobile_view.html</Dependency>
+<Dependency type="File">/factory/clientjavascript/application/client.js</Dependency>
+</Dependencies>
+<ExternalProperties><ExternalProperty id="Client.Model">true</ExternalProperty>
+<ExternalProperty id="DojoEnabled">true</ExternalProperty>
+<ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.dijit,dijit.layout.ContentPane,wpf.widget.RefreshContainer,dojo.DeferredList,dojox.html,dojo.number,dojo.date.locale,dojox.mobile,dojox.mobile.Button,dojox.mobile.parser,dojox.mobile.ScrollableView,dojox.mobile.deviceTheme</ExternalProperty>
+</ExternalProperties>
+</Model>

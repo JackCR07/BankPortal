@@ -19,7 +19,7 @@
 <Input name="Name">InputTransaccion</Input>
 <Input name="Type">SchemaTransacciones/operation1</Input>
 <Input name="Value">&lt;operation1&gt;
-   &lt;id_cuenta&gt;5&lt;/id_cuenta&gt;
+   &lt;id_cuenta&gt;&lt;/id_cuenta&gt;
    &lt;id_tipo_transaccion&gt;&lt;/id_tipo_transaccion&gt;
    &lt;fecha_mov_mayor_a&gt;&lt;/fecha_mov_mayor_a&gt;
    &lt;fecha_mov_menor_a&gt;&lt;/fecha_mov_menor_a&gt;
@@ -31,7 +31,7 @@
 <Input name="Namespace">http://getTransacciones</Input>
 </Inputs>
 <CacheMap><CacheEntry><CacheKey><![CDATA[<operation1>
-   <id_cuenta>5</id_cuenta>
+   <id_cuenta></id_cuenta>
    <id_tipo_transaccion></id_tipo_transaccion>
    <fecha_mov_mayor_a></fecha_mov_mayor_a>
    <fecha_mov_menor_a></fecha_mov_menor_a>
@@ -40,7 +40,7 @@
    <n_trans_mayor_a></n_trans_mayor_a>
    <n_trans_menor_a></n_trans_menor_a>
 </operation1>]]></CacheKey>
-<CacheValue><operation1><id_cuenta>5</id_cuenta>
+<CacheValue><operation1><id_cuenta />
 <id_tipo_transaccion />
 <fecha_mov_mayor_a />
 <fecha_mov_menor_a />
@@ -64,13 +64,22 @@
 <Input name="UniqueID">9999</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc11"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientEventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ClientSideDelivery">true</Input>
+<Input name="ServerDelivery">false</Input>
+<Input name="EventName">showChart</Input>
+<Input name="Name">showChart</Input>
+</Inputs>
+</BuilderCall>
 <BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientEventDeclarationBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="ClientSideDelivery">true</Input>
 <Input name="ServerDelivery">false</Input>
-<Input name="EventName">changeInVariables</Input>
-<Input name="Name">changeInVariables</Input>
+<Input name="EventName">showInfo</Input>
+<Input name="Name">showInfo</Input>
 </Inputs>
 </BuilderCall>
 </BuilderCallList>

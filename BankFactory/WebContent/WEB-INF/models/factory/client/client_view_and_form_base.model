@@ -1,0 +1,547 @@
+<Model id="factory/client/client_view_and_form_base"><BuilderCallList><BuilderCall id="bc212"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">copyright</Input>
+<Input name="BuilderCallEnabled">false</Input>
+<Input name="Comment">Licensed Materials - Property of IBM 
+5724-Od03
+© Copyright 2004, 2011. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+<Input name="BuilderCallComment">Licensed Materials - Property of IBM 
+5724-Od03
+© Copyright 2004, 2011. IBM Corp. All rights reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+The Program may contain sample source code or programs, which illustrate programming techniques. You may only copy, modify, and distribute these samples internally. These samples have not been tested under all conditions and are provided to you by IBM without obligation of support of any kind.
+
+IBM PROVIDES THESE SAMPLES "AS IS" SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED. IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc24"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:CreateInputPage">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="Name">tjdtd0_InputPage</Input>
+<Input name="URL" profile="portletbase_view_and_form:InputPageURL">/factory/pages/view_and_form/input.html</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc49"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:CreateInputPage">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageType">DataEntry</Input>
+<Input name="CreateTags">true</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="AddElementNames">LeaveNameless</Input>
+<Input name="InferControl">true</Input>
+<Input name="TypedVariable" profile="portletbase_view_and_form:InputPageVariable">Variables/tjdtd0_Imports</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="ValidateFromSchema" profile="portletbase_view_and_form:InputPageValidateFromSchema">None</Input>
+<Input name="ValidationErrorPlacement">None</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="RequiredPromptPlacement">None</Input>
+<Input name="PageName">tjdtd0_InputPage</Input>
+<Input name="CreateTagsLocation">input_data</Input>
+<Input name="DefaultName">tjdtd0_InputPage</Input>
+<Input name="ResourceBundleName" profile="portletbase_view_and_form:ResourceBundleName"></Input>
+<Input name="ValidationSuccessAction">tjdtd0_DoInput</Input>
+<Input name="ValidationFailureAction">tjdtd0_InputPage</Input>
+<Input name="inputObjectType">String</Input>
+<Input name="CreateSampleHTML">false</Input>
+<Input name="TemplateFile" profile="portletbase_view_and_form:InputPageHTMLTemplate">/factory/html_templates/gridtable.html</Input>
+<Input name="LocalizedResource">AddNew</Input>
+<Input name="InitializeInputsWhen">OnPageLoad</Input>
+<Input name="UseTheme">false</Input>
+<Input name="StyleSheetOverride" profile="portletbase_view_and_form:InputPageStyleSheetOverride"></Input>
+<Input name="ValidationMethod" profile="portletbase_view_and_form:InputValidationMethod"></Input>
+<Input name="ValidationMethodBehavior" profile="portletbase_view_and_form:InputValidationMethodBehavior"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc22"><BuilderDefID>com.bowstreet.builders.webapp.FormSubmitActionBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:CreateInputPage">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">false</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>tjdtd0_InputPage</Page>
+<NameSearch>input_form</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Action">tjdtd0_InputPage_NextAction</Input>
+<Input name="ActionURL">tjdtd0_show_results</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc37"><BuilderDefID>com.bowstreet.builders.webapp.PagingAssistantBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:EnableDataPaging">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageSize" profile="portletbase_view_and_form:RowsPerPage">5</Input>
+<Input name="AutomaticInitialization">true</Input>
+<Input name="SourceData_Type">Reference</Input>
+<Input name="SourceData_Variable">bapi_Exports/Exports/E_SCARR_TAB</Input>
+<Input name="DataSource" profile="portletbase_view_and_form:PagingAssistantViewVariable">${Variables/tjdtd0_Tables/Tables/OBJTYPES}</Input>
+<Input name="AutomaticReset">true</Input>
+<Input name="SourceData_Custom">bapi_Table</Input>
+<Input name="SourceData_Reference">${Variables/tjdtd0_Tables/Tables/OBJTYPES}</Input>
+<Input name="Name">tjdtd0_Paging</Input>
+<Input name="RefreshLocation"><SimplePageLocation><Page>tjdtd0_ViewPage</Page>
+<NameSearch>data</NameSearch>
+</SimplePageLocation>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc25"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="Name">tjdtd0_ViewPage</Input>
+<Input name="URL" profile="portletbase_view_and_form:ViewPageURL">/factory/pages/view_and_form/view.html</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc30"><BuilderDefID>com.bowstreet.builders.webapp.PagingButtonsBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:EnablePagingButtons">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="FirstNormalButtonImage">/factory/images/paging/firstpg.jpg</Input>
+<Input name="FirstHoverButtonImage">/factory/images/paging/firstpg.jpg</Input>
+<Input name="FirstPressedButtonImage">/factory/images/paging/firstpg_dn.jpg</Input>
+<Input name="FirstDisabledButtonImage">/factory/images/paging/firstpg_disabled.jpg</Input>
+<Input name="FirstImageWidth">17</Input>
+<Input name="FirstImageHeight">19</Input>
+<Input name="PrevNormalButtonImage">/factory/images/paging/prevpg.jpg</Input>
+<Input name="PrevHoverButtonImage">/factory/images/paging/prevpg.jpg</Input>
+<Input name="PrevPressedButtonImage">/factory/images/paging/prevpg_dn.jpg</Input>
+<Input name="PrevDisabledButtonImage">/factory/images/paging/prevpg_disabled.jpg</Input>
+<Input name="PrevImageWidth">17</Input>
+<Input name="PrevImageHeight">19</Input>
+<Input name="NextNormalButtonImage">/factory/images/paging/nextpg.jpg</Input>
+<Input name="NextHoverButtonImage">/factory/images/paging/nextpg.jpg</Input>
+<Input name="NextPressedButtonImage">/factory/images/paging/nextpg_dn.jpg</Input>
+<Input name="NextDisabledButtonImage">/factory/images/paging/nextpg_disabled.jpg</Input>
+<Input name="NextImageWidth">17</Input>
+<Input name="NextImageHeight">19</Input>
+<Input name="LastNormalButtonImage">/factory/images/paging/lastpg.jpg</Input>
+<Input name="LastHoverButtonImage">/factory/images/paging/lastpg.jpg</Input>
+<Input name="LastPressedButtonImage">/factory/images/paging/lastpg_dn.jpg</Input>
+<Input name="LastDisabledButtonImage">/factory/images/paging/lastpg_disabled.jpg</Input>
+<Input name="LastImageWidth">17</Input>
+<Input name="LastImageHeight">19</Input>
+<Input name="HTMLPage" profile="portletbase_view_and_form:PagingButtonsHTMLPage">/factory/pages/data_paging_buttons.html</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>tjdtd0_ViewPage</Page>
+<NameSearch>paging_buttons</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="AssistantName">tjdtd0_Paging</Input>
+<Input name="UsePagingLinks">false</Input>
+<Input name="Name">tjdtd0_Paging</Input>
+<Input name="UseTheme" profile="portletbase_view_and_form:PagingButtonsUseTheme"></Input>
+<Input name="UsePartialPageRefresh">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc218"><BuilderDefID>com.bowstreet.builders.webapp.PagingLinksBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:EnablePagingLinks">false</Input>
+<Input name="OverrideLinkText">true</Input>
+<Input name="FirstLinkText" profile="portletbase_view_and_form:PagingLinksFirstLinkText">First</Input>
+<Input name="PrevLinkText" profile="portletbase_view_and_form:PagingLinksPrevLinkText">Prev</Input>
+<Input name="NextLinkText" profile="portletbase_view_and_form:PagingLinksNextLinkText">Next</Input>
+<Input name="LastLinkText" profile="portletbase_view_and_form:PagingLinksLastLinkText">Last</Input>
+<Input name="QuoteText">true</Input>
+<Input name="HTMLPage" profile="portletbase_view_and_form:PagingLinksHTMLPage">/factory/pages/data_paging_links.html</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="Name">tjdtd0_Paging</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>tjdtd0_ViewPage</Page>
+<NameSearch>paging_buttons</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="AssistantName">tjdtd0_Paging</Input>
+<Input name="MaxLinks" profile="portletbase_view_and_form:PagingLinksMaxLinks">5</Input>
+<Input name="StyleSheet" profile="portletbase_view_and_form:PagingLinksStyleSheet"></Input>
+<Input name="UsePartialPageRefresh">false</Input>
+<Input name="UseTheme" profile="portletbase_view_and_form:PagingButtonsUseTheme"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc26"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:ViewResultsAvailable">Enabled</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageType">ViewOnly</Input>
+<Input name="CreateTags">true</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">LeaveNameless</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="ValidateFromSchema">Both</Input>
+<Input name="ValidationErrorPlacement">ColumnRight</Input>
+<Input name="RequiredPromptPlacement">ColumnLeft</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="TypedVariable" profile="portletbase_view_and_form:DataPageViewVariable">Variables/tjdtd0_PagingData</Input>
+<Input name="CreateTagsLocation">data</Input>
+<Input name="ResourceBundleName" profile="portletbase_view_and_form:ResourceBundleName"></Input>
+<Input name="inputObjectType">String</Input>
+<Input name="CreateSampleHTML">false</Input>
+<Input name="TemplateFile" profile="portletbase_view_and_form:ViewPageHTMLTemplate">/factory/html_templates/gridtable.html</Input>
+<Input name="LocalizedResource">AddNew</Input>
+<Input name="PageName">tjdtd0_ViewPage</Input>
+<Input name="DefaultName">tjdtd0_ViewPage</Input>
+<Input name="UseTheme">false</Input>
+<Input name="StyleSheetOverride" profile="portletbase_view_and_form:ViewPageStyleSheetOverride"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc45"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:ViewBackButtonBuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>tjdtd0_ViewPage</Page>
+<NameSearch>back_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">tjdtd0_ViewBackButton</Input>
+<Input name="Action">tjdtd0_InputPage</Input>
+<Input name="ActionURL">tjdtd0_InputPage</Input>
+<Input name="Label" profile="portletbase_view_and_form:ViewBackButtonLabel"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc38"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:CreateDetailPage">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="Name">tjdtd0_DetailsPage</Input>
+<Input name="URL" profile="portletbase_view_and_form:DetailPageURL">/factory/pages/view_and_form/details.html</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc39"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:CreateDetailPage">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageType">ViewOnly</Input>
+<Input name="CreateTags">true</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="AddElementNames">LeaveNameless</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="InferControl">true</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="ValidateFromSchema">None</Input>
+<Input name="ValidationErrorPlacement">None</Input>
+<Input name="RequiredPromptPlacement">None</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="TypedVariable" profile="portletbase_view_and_form:SelectedRowVariable">Variables/tjdtd0_Paging</Input>
+<Input name="CreateTagsLocation">data</Input>
+<Input name="DefaultName">tjdtd0_DetailsPage</Input>
+<Input name="ResourceBundleName" profile="portletbase_view_and_form:ResourceBundleName"></Input>
+<Input name="inputObjectType">Bean</Input>
+<Input name="CreateSampleHTML">false</Input>
+<Input name="beanCollectionClassname">com.bowstreet.builders.webapp.methods.PagingAssistant</Input>
+<Input name="TemplateFile" profile="portletbase_view_and_form:DetailPageHTMLTemplate">/factory/html_templates/gridtable.html</Input>
+<Input name="PageName">tjdtd0_DetailsPage</Input>
+<Input name="LocalizedResource">AddNew</Input>
+<Input name="UseTheme">false</Input>
+<Input name="StyleSheetOverride" profile="portletbase_view_and_form:DetailPageStyleSheetOverride"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc46"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:DetailBackButtonBuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>tjdtd0_DetailsPage</Page>
+<NameSearch>back_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">tjdtd0_DetailBackButton</Input>
+<Input name="Action" profile="portletbase_view_and_form:DetailBackAction">tjdtd0_show_results</Input>
+<Input name="ActionURL">tjdtd0_InputPage</Input>
+<Input name="Label" profile="portletbase_view_and_form:DetailBackButtonLabel"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc48"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:CreateUpdatePage">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="URLModification">Relative</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="UseJSPCode">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="LocalizationVariable">LocaleInfo</Input>
+<Input name="Name">tjdtd0_UpdatePage</Input>
+<Input name="URL" profile="portletbase_view_and_form:UpdatePageURL">/factory/pages/view_and_form/input.html</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc16"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataPage</BuilderDefID>
+<Cache />
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:CreateUpdatePage">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="PageType">DataEntry</Input>
+<Input name="CreateTags">true</Input>
+<Input name="GenerateLabels">true</Input>
+<Input name="ClearDataBeforeSaving">false</Input>
+<Input name="AddElementNames">LeaveNameless</Input>
+<Input name="InferControl">true</Input>
+<Input name="TypedVariable" profile="portletbase_view_and_form:UpdatePageVariable">Variables/tjdtd0_Imports</Input>
+<Input name="EnumeratedControlType">Select</Input>
+<Input name="EnumeratedControlOptions">Merge</Input>
+<Input name="ValidateFromSchema" profile="portletbase_view_and_form:UpdatePageValidateFromSchema">None</Input>
+<Input name="ValidationErrorPlacement">None</Input>
+<Input name="RequiredPromptText">*</Input>
+<Input name="RequiredPromptPlacement">None</Input>
+<Input name="PageName">tjdtd0_UpdatePage</Input>
+<Input name="CreateTagsLocation">input_data</Input>
+<Input name="DefaultName">tjdtd0_UpdatePage</Input>
+<Input name="ResourceBundleName" profile="portletbase_view_and_form:ResourceBundleName"></Input>
+<Input name="ValidationSuccessAction">tjdtd0_DoUpdate</Input>
+<Input name="inputObjectType">String</Input>
+<Input name="CreateSampleHTML">false</Input>
+<Input name="TemplateFile" profile="portletbase_view_and_form:DetailPageHTMLTemplate">/factory/html_templates/gridtable.html</Input>
+<Input name="LocalizedResource">AddNew</Input>
+<Input name="InitializeInputsWhen">OnPageLoad</Input>
+<Input name="UseTheme">false</Input>
+<Input name="StyleSheetOverride" profile="portletbase_view_and_form:DetailPageStyleSheetOverride"></Input>
+<Input name="ValidationMethod" profile="portletbase_view_and_form:UpdateValidationMethod"></Input>
+<Input name="ValidationMethodBehavior" profile="portletbase_view_and_form:UpdateValidationMethodBehavior"></Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc50"><BuilderDefID>com.bowstreet.builders.webapp.FormSubmitActionBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:CreateUpdatePage">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">false</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>tjdtd0_UpdatePage</Page>
+<NameSearch>input_form</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Action">tjdtd0_UpdatePage_NextAction</Input>
+<Input name="ActionURL">editPage_NextAction</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc51"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:UpdateLinkEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page profile="portletbase_view_and_form:UpdateLinkPage">tjdtd0_DetailsPage</Page>
+<NameSearch>update_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label" profile="portletbase_view_and_form:UpdateLinkText">Edit</Input>
+<Input name="Action">tjdtd0_show_update_page</Input>
+<Input name="ActionURL">editPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc52"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:UpdateCancelEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>tjdtd0_UpdatePage</Page>
+<NameSearch>cancel_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label" profile="portletbase_view_and_form:UpdateCancelText">Cancel</Input>
+<Input name="Action" profile="portletbase_view_and_form:UpdateCancelAction">tjdtd0_DetailsPage</Input>
+<Input name="ActionURL">films_ViewPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc54"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:CreateUpdatePage">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>tjdtd0_UpdatePage</Page>
+<NameSearch>submit_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Action">tjdtd0_UpdatePage_NextAction</Input>
+<Input name="Label" profile="portletbase_view_and_form:UpdateSubmitText">Edit Details</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc53"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:CreateInputPage">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>tjdtd0_InputPage</Page>
+<NameSearch>submit_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Action">tjdtd0_InputPage_NextAction</Input>
+<Input name="Label" profile="portletbase_view_and_form:InputSubmitText">Edit Details</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc55"><BuilderDefID>com.bowstreet.builders.webapp.InsertedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:InsertInputPage">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>tjdtd0_ViewPage</Page>
+<NameSearch>search_section</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Page">tjdtd0_InputPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc216"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.Highlighter</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled" profile="portletbase_view_and_form:HighlighterEnabled">true</Input>
+<Input name="FieldSelector">Name</Input>
+<Input name="Method">Style</Input>
+<Input name="Color">LightBlue</Input>
+<Input name="Fields"><Fields><Field profile="portletbase_view_and_form:HighlightRow">[tjdtd0_ViewPage]tjdtd0_ViewPage</Field>
+</Fields>
+</Input>
+<Input name="DefaultName">tjdtd0_ViewPage</Input>
+<Input name="Style"><top><Property><Name>background-color</Name>
+<Value profile="portletbase_view_and_form:HighlighterBackground">#60A1EA</Value>
+</Property>
+<Property><Name>color</Name>
+<Value profile="portletbase_view_and_form:HighlighterForeground">#ffffff</Value>
+</Property>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><RequiredFactoryVersion>8.0.0</RequiredFactoryVersion>
+<Version>0.0.0</Version>
+<Description>Empty model (contains no builder calls).</Description>
+<Contained>false</Contained>
+<EnableGenerationCaching>true</EnableGenerationCaching>
+<Roles />
+<EnableFailover>false</EnableFailover>
+</Properties>
+<Dependencies><Dependency type="File">/factory/pages/view_and_form/input.html</Dependency>
+<Dependency type="File">/factory/html_templates/gridtable.html</Dependency>
+<Dependency type="File">/factory/pages/view_and_form/view.html</Dependency>
+<Dependency type="File">/factory/pages/view_and_form/details.html</Dependency>
+<Dependency type="File">/factory/pages/data_paging_buttons.html</Dependency>
+<Dependency type="File">/factory/pages/data_paging.css</Dependency>
+<Dependency type="File">/factory/images/paging/firstpg.jpg</Dependency>
+<Dependency type="File">/factory/images/paging/prevpg.jpg</Dependency>
+<Dependency type="File">/factory/images/paging/nextpg.jpg</Dependency>
+<Dependency type="File">/factory/images/paging/lastpg.jpg</Dependency>
+</Dependencies>
+<ExternalProperties />
+</Model>

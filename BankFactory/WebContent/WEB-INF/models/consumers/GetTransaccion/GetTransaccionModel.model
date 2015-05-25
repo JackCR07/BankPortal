@@ -1,7 +1,5 @@
 <Model id="consumers/GetTransaccion/GetTransaccionModel"><BuilderCallList><BuilderCall id="bc48"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
-<Messages><Warning><Message>Duplicate portlet name found in model consumers/GetTransaccion/CopyofGetTransaccionModelBackUp.</Message>
-</Warning>
-</Messages>
+<Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="BuilderCallCategory">General</Input>
 <Input name="CustomEditPageType">None</Input>
@@ -164,7 +162,7 @@ Parameters:
 <Input name="InputPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_InputPageHTMLTemplate}</Input>
 <Input name="Name">GetTransaccionesView</Input>
 <Input name="ViewMethod">DataServices/GetTransacciones/GetTransaccionesOperation</Input>
-<Input name="RowsPerPage">5</Input>
+<Input name="RowsPerPage">8</Input>
 <Input name="ModelName">factory/portletbase/view_and_form_base</Input>
 <Input name="SetProfiledInputValues">true</Input>
 <Input name="UniquePattern">xyzzy7</Input>
@@ -176,6 +174,7 @@ Parameters:
 <Input name="EnablePagingButtons">true</Input>
 <Input name="InputValidationMethodBehavior">CallOnlyOnValidData</Input>
 <Input name="InputValidationMethod">SaveVariables</Input>
+<Input name="UsePartialRefreshForPaging">true</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc95"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
@@ -187,9 +186,91 @@ Parameters:
 <GetTransaccionesView_ViewPage>false</GetTransaccionesView_ViewPage>
 </data>
 </Input>
-<Input name="DisplayBehavior"><top />
+<Input name="DisplayBehavior"><top><DispInfo><Name>id_cuenta</Name>
+<Label>Numero de Cuenta</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_Select</DataType>
+<Sort>[Off]</Sort>
+<LookupTable>Cuentas</LookupTable>
+</DispInfo>
+<DispInfo><Name>id_tipo_transaccion</Name>
+<Label>Tipo de Transacción</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_Select</DataType>
+<Sort>[Off]</Sort>
+<LookupTable>TipoTransaccion</LookupTable>
+</DispInfo>
+<DispInfo><Name>fecha_mov_mayor_a</Name>
+<Label>Fecha de Transacción Desde</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_Date</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>fecha_mov_menor_a</Name>
+<Label>Fecha de Transacción Hasta</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_Date</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>mon_trans_mayor_a</Name>
+<Label>Monto Transferido Desde</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>mon_trans_menor_a</Name>
+<Label>Monto Transferido Hasta</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>n_trans_mayor_a</Name>
+<Label>Número de Transacción Desde</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>n_trans_menor_a</Name>
+<Label>Número de Transacción Hasta</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+</top>
 </Input>
-<Input name="ValidationBehavior"><top />
+<Input name="ValidationBehavior"><top><ValidationInfo><Name>id_cuenta</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>id_tipo_transaccion</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>fecha_mov_mayor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>fecha_mov_menor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>mon_trans_mayor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>mon_trans_menor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>n_trans_mayor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>n_trans_menor_a</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+</top>
 </Input>
 <Input name="DefaultName">GetTransaccionesView_InputPage </Input>
 <Input name="CurPageDisplayBehavior"><data><DispInfo><Name>id_cuenta</Name>
@@ -281,7 +362,7 @@ Parameters:
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc96"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
-<Messages><Warning><Message>PageLocation expression "AllPages #(GetTransaccionesView_PagingBottomPage, DefaultProgressIndicatorIndicatorHTML, page1, GetTransaccionesView_ViewPage, GetTransaccionesView_InputPage, GetTransaccionesView_PagingPage, GetTransaccionesView_PagingTopPage}# NameSearch page_header_text" does not evaluate to any locations.</Message>
+<Messages><Warning><Message>PageLocation expression "AllPages #(DefaultProgressIndicatorIndicatorHTML, GetTransaccionesView_ViewPage, GetTransaccionesView_PagingPage, GetTransaccionesView_PagingTopPage, page1, GetTransaccionesView_PagingBottomPage, GetTransaccionesView_InputPage}# NameSearch page_header_text" does not evaluate to any locations.</Message>
 </Warning>
 </Messages>
 <Inputs><Input name="BuilderCallEnabled">true</Input>
@@ -393,165 +474,6 @@ Parameters:
 </Action>
 </Actions>
 </Input>
-</Inputs>
-</BuilderCall>
-<BuilderCall id="bc100"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="AllPages">false</Input>
-<Input name="AllPageRadio">All</Input>
-<Input name="Pages"><data><GetTransaccionesView_InputPage>true</GetTransaccionesView_InputPage>
-<GetTransaccionesView_ViewPage>true</GetTransaccionesView_ViewPage>
-</data>
-</Input>
-<Input name="DisplayBehavior"><top><DispInfo><Name>id_transaccion</Name>
-<Label>[Id Transaccion]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>numero_transaccion</Name>
-<Label>[Numero Transaccion]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>debito</Name>
-<Label>[Debito]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>credito</Name>
-<Label>[Credito]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>fecha_transaccion</Name>
-<Label>[Fecha Transaccion]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>tipo_transaccion</Name>
-<Label>[Tipo Transaccion]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>id_cuenta_origen</Name>
-<Label>[Id Cuenta Origen]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>num_cuenta_origen</Name>
-<Label>[Num Cuenta Origen]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>id_cuenta_destino</Name>
-<Label>[Id Cuenta Destino]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>num_cuenta_destino</Name>
-<Label>[Num Cuenta Destino]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>id_cuenta</Name>
-<Label>[Id Cuenta]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_Select</DataType>
-<Sort>[Off]</Sort>
-<LookupTable>Cuentas</LookupTable>
-</DispInfo>
-<DispInfo><Name>id_tipo_transaccion</Name>
-<Label>[Id Tipo Transaccion]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_Select</DataType>
-<Sort>[Off]</Sort>
-<LookupTable>TipoTransaccion</LookupTable>
-</DispInfo>
-<DispInfo><Name>fecha_mov_mayor_a</Name>
-<Label>[Fecha Mov Mayor A]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>fecha_mov_menor_a</Name>
-<Label>[Fecha Mov Menor A]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>mon_trans_mayor_a</Name>
-<Label>[Mon Trans Mayor A]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>mon_trans_menor_a</Name>
-<Label>[Mon Trans Menor A]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>n_trans_mayor_a</Name>
-<Label>[N Trans Mayor A]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>n_trans_menor_a</Name>
-<Label>[N Trans Menor A]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-</top>
-</Input>
-<Input name="ValidationBehavior"><data><ValidationInfo><Name>id_cuenta</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>id_tipo_transaccion</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>fecha_mov_mayor_a</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>fecha_mov_menor_a</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>mon_trans_mayor_a</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>mon_trans_menor_a</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>n_trans_mayor_a</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>n_trans_menor_a</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-</data>
-</Input>
-<Input name="Name">GetTransaccionesView_InputPagemenu</Input>
-<Input name="DefaultName">GetTransaccionesView_ViewPage GetTransaccionesView_InputPage </Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc101"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
@@ -858,7 +780,7 @@ webAppAccess.processPage("PageName");
 </BuilderCall>
 <BuilderCall id="bc108"><BuilderDefID>com.bowstreet.adapters.websphere.builders.C2ATagBuilder</BuilderDefID>
 <Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Inputs><Input name="BuilderCallEnabled">false</Input>
 <Input name="C2ANamespace">http://www.ibm.com/pb/models</Input>
 <Input name="TagType">PBAction</Input>
 <Input name="Name">ShareVariablesCooperative</Input>
@@ -907,10 +829,7 @@ webAppAccess.processPage("PageName");
 <Input name="PageData">&lt;span name="script_chart"&gt; &lt;/span&gt;
 &lt;span name="boton"&gt; &lt;/span&gt;
 &lt;span name="clientEventHandler"&gt; &lt;/span&gt;
-jkljk
-
-
-</Input>
+jkljk</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc43"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientActionListBuilder</BuilderDefID>
@@ -921,7 +840,7 @@ jkljk
 <Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
 <ActionName>//Assignment!Variables/InputTransaccion=${DataServices/GetTransacciones/GetTransaccionesOperation/inputs}</ActionName>
 </Action>
-<Action><ActionType></ActionType>
+<Action><ActionType />
 <ActionName>//firechangeInVariables</ActionName>
 </Action>
 </Actions>
@@ -930,7 +849,7 @@ jkljk
 </BuilderCall>
 <BuilderCall id="bc47"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
 <Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Inputs><Input name="BuilderCallEnabled">false</Input>
 <Input name="ShowAdvancedPostActionBehaviors">false</Input>
 <Input name="PostActionBehavior">Default</Input>
 <Input name="DefaultRefreshPageLocation">false</Input>
@@ -948,13 +867,13 @@ jkljk
 <Input name="IsModelAction">true</Input>
 <Input name="EarlyArgumentEvaluation">true</Input>
 <Input name="Name">boton</Input>
-<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
-<NameSearch>boton</NameSearch>
+<Input name="PageLocation"><SimplePageLocation><Page>GetTransaccionesView_InputPage</Page>
+<NameSearch>cancel_button</NameSearch>
 </SimplePageLocation>
 </Input>
-<Input name="Label">Boton</Input>
+<Input name="Label">Grafico</Input>
 <Input name="ActionURL">ClientSaveVariables</Input>
-<Input name="Action">firechangeInVariables</Input>
+<Input name="Action">fireshowChart</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc32"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
@@ -992,7 +911,7 @@ jkljk
 </CacheValue>
 </CacheEntry>
 <CacheEntry><CacheKey><![CDATA[$Child$InputTransaccion$<operation1>
-   <id_cuenta>5</id_cuenta>
+   <id_cuenta></id_cuenta>
    <id_tipo_transaccion></id_tipo_transaccion>
    <fecha_mov_mayor_a></fecha_mov_mayor_a>
    <fecha_mov_menor_a></fecha_mov_menor_a>
@@ -1001,7 +920,7 @@ jkljk
    <n_trans_mayor_a></n_trans_mayor_a>
    <n_trans_menor_a></n_trans_menor_a>
 </operation1>]]></CacheKey>
-<CacheValue><operation1><id_cuenta>5</id_cuenta>
+<CacheValue><operation1><id_cuenta />
 <id_tipo_transaccion />
 <fecha_mov_mayor_a />
 <fecha_mov_menor_a />
@@ -1016,7 +935,7 @@ jkljk
 </BuilderCall>
 <BuilderCall id="bc112"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
 <Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Inputs><Input name="BuilderCallEnabled">false</Input>
 <Input name="ShowAdvancedPostActionBehaviors">false</Input>
 <Input name="PostActionBehavior">Default</Input>
 <Input name="DefaultRefreshPageLocation">false</Input>
@@ -1039,6 +958,70 @@ jkljk
 <Input name="Event">AjaxPreUpdate</Input>
 <Input name="Action">firechangeInVariables</Input>
 <Input name="Name">cambioEnvar</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc117"><BuilderDefID>com.bowstreet.builders.webapp.ImageButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><alt />
+<width />
+<height />
+<border />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>GetTransaccionesView_InputPage</Page>
+<NameSearch>show_pie_chart</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Image">/factory/images/icons/pie-chart-icon.png</Input>
+<Input name="Action">fireshowChart</Input>
+<Input name="ActionURL">fireshowChart</Input>
+<Input name="Name">ShowGraphButton</Input>
+<Input name="HoverImage">/factory/images/icons/pie-chart-icon2.png</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc119"><BuilderDefID>com.bowstreet.builders.webapp.ImageButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><alt />
+<width />
+<height />
+<border />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">ShowInfoButton</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>GetTransaccionesView_InputPage</Page>
+<NameSearch>show_info</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Image">/factory/images/icons/info-icon.png</Input>
+<Input name="Action">fireshowInfo</Input>
+<Input name="ActionURL">fireshowInfo</Input>
+<Input name="HoverImage">/factory/images/icons/info-icon2.png</Input>
 </Inputs>
 </BuilderCall>
 </BuilderCallList>
@@ -1067,6 +1050,10 @@ jkljk
 <Dependency type="File">/factory/pages/paging/data_paging_links_blue.css</Dependency>
 <Dependency type="Class">com.bowstreet.builderutilities.NameSequencer</Dependency>
 <Dependency type="File">/factory/style.css</Dependency>
+<Dependency type="File">/factory/images/icons/pie-chart-icon.png</Dependency>
+<Dependency type="File">/factory/images/icons/pie-chart-icon2.png</Dependency>
+<Dependency type="File">/factory/images/icons/info-icon.png</Dependency>
+<Dependency type="File">/factory/images/icons/info-icon2.png</Dependency>
 </Dependencies>
 <ExternalProperties><ExternalProperty id="PortletModel">true</ExternalProperty>
 <ExternalProperty id="PortletName">GetTransacciones</ExternalProperty>
@@ -1079,35 +1066,6 @@ jkljk
 <ExternalProperty id="PortletModeHelp">false</ExternalProperty>
 <ExternalProperty id="DojoEnabled">true</ExternalProperty>
 <ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
-<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dojo.parser,dijit.form.FilteringSelect,dijit.form.TextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
-<ExternalProperty id="C2AWSDLDocProperty">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:portlet="http://www.ibm.com/wps/c2a" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.ibm.com/pb/models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="pbAction_ShareVariablesCooperative_Service" targetNamespace="http://www.ibm.com/pb/models"&gt;&lt;types /&gt;
-&lt;message name="pbAction_ShareVariablesCooperativeResponse"&gt;&lt;part name="datos" type="xsd:string" /&gt;
-&lt;/message&gt;
-&lt;portType name="pbAction_ShareVariablesCooperative_Service"&gt;&lt;operation name="pbAction_ShareVariablesCooperative"&gt;&lt;output message="tns:pbAction_ShareVariablesCooperativeResponse" /&gt;
-&lt;/operation&gt;
-&lt;/portType&gt;
-&lt;binding name="pbAction_ShareVariablesCooperativeBinding" type="tns:pbAction_ShareVariablesCooperative_Service"&gt;&lt;portlet:binding /&gt;
-&lt;operation name="pbAction_ShareVariablesCooperative"&gt;&lt;portlet:action name="pbAction_ShareVariablesCooperative" type="standard" actionNameParameter="ACTION_NAME" /&gt;
-&lt;output&gt;&lt;portlet:param name="datos" partname="datos" boundTo="request-attribute" caption="datos.key" /&gt;
-&lt;/output&gt;
-&lt;/operation&gt;
-&lt;/binding&gt;
-&lt;/definitions&gt;
-</ExternalProperty>
-<ExternalProperty id="WSDLResourceProperty">&lt;Properties&gt;&lt;Property&gt;&lt;Key&gt;datos.key&lt;/Key&gt;
-&lt;Value&gt;Datos&lt;/Value&gt;
-&lt;/Property&gt;
-&lt;/Properties&gt;
-</ExternalProperty>
-<ExternalProperty id="EventDataProperty">&lt;EventData&gt;&lt;ProcessingEvents /&gt;
-&lt;PublishingEvents&gt;&lt;Event&gt;&lt;Name&gt;datos&lt;/Name&gt;
-&lt;Type&gt;java.lang.String&lt;/Type&gt;
-&lt;Namespace&gt;http://www.ibm.com/pb/models&lt;/Namespace&gt;
-&lt;DisplayName&gt;datos.key&lt;/DisplayName&gt;
-&lt;/Event&gt;
-&lt;/PublishingEvents&gt;
-&lt;/EventData&gt;
-</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dojo.parser,dijit.form.FilteringSelect,dijit.form.DateTextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
 </ExternalProperties>
 </Model>

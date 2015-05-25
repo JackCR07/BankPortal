@@ -1,19 +1,38 @@
 
 <html>
 <head>
- <title>Doughnut Chart</title>
-		<style>
-			body{
-				padding: 0;
-				margin: 0;
-			}
-			#canvas-holder{
-				width:30%;
-			}
-		</style>
+<title>Doughnut Chart</title>
+<style>
+#canvas-holder {
+	width: 100%;
+	margin-top: 10%;
+}
+</style>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+	google.load("visualization", "1", {
+		packages : [ "corechart" ]
+	});
+</script>
+<script>
+	function drawChart(array) {
+		var data = google.visualization.arrayToDataTable(array);
+
+		var options = {
+			is3D : true,
+			backgroundColor:'transparent',
+			colors:['#938D8D','#FF0606'],
+			legend:{textStyle: {color: 'white',}},
+		};
+
+		var chart = new google.visualization.PieChart(document
+				.getElementById('piechart_3d'));
+		chart.draw(data, options);
+	}
+</script>
 </head>
 
 <body id="wefBody">
-	
+
 </body>
 </html>

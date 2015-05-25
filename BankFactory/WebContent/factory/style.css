@@ -1,7 +1,4 @@
-input[type="text"]{ 
-	  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ededed), color-stop(100%, #e1e1e1));
-	
-}
+
 
 
 .vf_view_container .lotusPaging{
@@ -154,6 +151,8 @@ h2.titulo{
 	text-transform: uppercase;
 }
 
+
+
 .subtitulosAlt{
 	font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
 	font-size: 13px;
@@ -187,7 +186,20 @@ h2.titulo{
 	height:35px;
 }
 
+label.resultado{
+	color: #FFF;
+	margin: 10px 0px 50px;
+	font-size: 26px;
+	font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+	text-transform: uppercase;
+}
+
+
 /*Button*/
+.image-button
+{
+	float:right;
+}
 
 .art-button
 {
@@ -264,6 +276,7 @@ input, select, textarea
    font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: normal;
+   background-color:#D4D4D4;
 }
 
 .art-block select 
@@ -324,10 +337,24 @@ input.art-button
 .wpfMultiLineShowHideList .wpfListShowHideText{
 	text-decoration:none;
 }
+
 .linkFire{
+	color: #FF3029;
+	
+}
+.linkFire:visited, .linkFire:link .linkFire:active{
 	font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
 	text-decoration: none;
 	color: #FF3029;
+	
+}
+
+.linkFire:hover{
+	font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+	text-decoration: none;
+	color: #FF3029;
+	font-weight: bold;
+	
 }
 
 

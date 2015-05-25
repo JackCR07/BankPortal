@@ -121,54 +121,75 @@ Parameters:
 <Input name="Name">Target</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="PageData">&lt;html&gt;
-&lt;head&gt;
-    &lt;script type="text/javascript" src="https://www.google.com/jsapi"&gt;&lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-            &lt;div id="piechart"&gt;&lt;/div&gt;
-        &lt;/form&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</Input>
-<Input name="AbsoluteURLs">false</Input>
-<Input name="RenameExisting">false</Input>
-<Input name="ReplaceExisting">false</Input>
-<Input name="FullyParse">true</Input>
-<Input name="Name">vista</Input>
-</Inputs>
-</BuilderCall>
-<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.ClientJavaScriptBuilder</BuilderDefID>
+<BuilderCall id="bc26"><BuilderDefID>com.bowstreet.builders.webapp.ClientJavaScriptBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="PageLocationType">Implicit</Input>
 <Input name="ScriptSourceType">Explicit</Input>
 <Input name="PageName">vista</Input>
 <Input name="Name">grafico</Input>
-<Input name="Script">
- google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
+<Input name="Script">{
+	var ingreso = parseInt('${Variables/Ingreso}');
+	var egreso = parseInt('${Variables/Egreso}');
+	if (ingreso != -1 &amp;&amp; egreso != -1) {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Total', 'Percentage'],
-          ['Ingreso',     parseInt('${Variables/Ingreso}')],
-          ['Egreso',      parseInt('${Variables/Egreso}')]
-        ]);
+		google.load("visualization", "1", {
+			packages : [ "corechart" ]
+		});
+		google.setOnLoadCallback(drawChart);
+		function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+					[ 'Task', 'Saldos' ], [ 'Ingreso', ingreso ],
+					[ 'Egreso', egreso ] ]);
 
-        var options = {
-          title: 'Saldo Cuenta',
-          backgroundColor: { fill:'transparent' },
-          titleTextStyle: {color: 'white'},
-          legend: {textStyle:{color:'white'}}
-        };
+			var options = {
+				is3D : true,
+				backgroundColor : 'transparent',
+				colors : [ '#938D8D', '#FF0606' ],
+				legend : {
+					textStyle : {
+						color : 'white',
+					}
+				},
+			};
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+			var chart = new google.visualization.PieChart(document
+					.getElementById('piechart'));
 
-        chart.draw(data, options);
-      }</Input>
+			chart.draw(data, options);
+		}
+	}
+}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc27"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageData">
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Doughnut Chart&lt;/title&gt;
+&lt;style&gt;
+#canvas-holder {
+	width: 100%;
+	margin-top: 10%;
+}
+&lt;/style&gt;
+&lt;script type="text/javascript" src="https://www.google.com/jsapi"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body &gt;
+&lt;h2 class="titulo"&gt; Información Grafica 
+&lt;div id="piechart" style="width: 500px; height:400px;"&gt;&lt;/div&gt;
+&lt;/h2&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">vista</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
@@ -181,7 +202,7 @@ Parameters:
 <Input name="CreateSampleData">Create sample data</Input>
 <Input name="Name">Ingreso</Input>
 <Input name="Type">Integer</Input>
-<Input name="Value">1</Input>
+<Input name="Value">0</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
@@ -194,7 +215,7 @@ Parameters:
 <Input name="CreateSampleData">Create sample data</Input>
 <Input name="Name">Egreso</Input>
 <Input name="Type">Integer</Input>
-<Input name="Value">1</Input>
+<Input name="Value">0</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc16"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>

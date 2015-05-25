@@ -144,38 +144,7 @@ Parameters:
 <Input name="AllPageRadio">current</Input>
 <Input name="Pages"><data />
 </Input>
-<Input name="DisplayBehavior"><top><DispInfo><Name>id_cuenta</Name>
-<Label>[Id Cuenta]</Label>
-<Hide>HideAlways</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>tipo_cuenta</Name>
-<Label>Tipo de Cuenta</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_String</DataType>
-<Sort>[Off]</Sort>
-<LookupTable />
-</DispInfo>
-<DispInfo><Name>saldo</Name>
-<Label>[Saldo]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>numero_cuenta</Name>
-<Label>Numero de Cuenta</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_String</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>fecha_creacion</Name>
-<Label>Fecha de Creacion</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_String</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>arg1</Name>
+<Input name="DisplayBehavior"><top><DispInfo><Name>arg1</Name>
 <Label>Id Cliente</Label>
 <Hide>HideAlways</Hide>
 <DataType>[String]</DataType>
@@ -210,6 +179,37 @@ Parameters:
 <Label>Saldo Superior</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_FloatingPoint</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>id_cuenta</Name>
+<Label>[Id Cuenta]</Label>
+<Hide>HideAlways</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>tipo_cuenta</Name>
+<Label>Tipo de Cuenta</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_String</DataType>
+<Sort>[Off]</Sort>
+<LookupTable />
+</DispInfo>
+<DispInfo><Name>saldo</Name>
+<Label>[Saldo]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>numero_cuenta</Name>
+<Label>Numero de Cuenta</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_String</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>fecha_creacion</Name>
+<Label>Fecha de Creacion</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>base_String</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 </top>
@@ -346,7 +346,7 @@ Parameters:
 <Input name="Pages"><data><GetCuentasServiceView_InputPage>true</GetCuentasServiceView_InputPage>
 </data>
 </Input>
-<Input name="DisplayBehavior"><data><DispInfo><Name>arg1</Name>
+<Input name="DisplayBehavior"><top><DispInfo><Name>arg1</Name>
 <Label>[Id Cliente]</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[String]</DataType>
@@ -361,13 +361,13 @@ Parameters:
 <DispInfo><Name>arg3</Name>
 <Label>[Fecha Desde]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
+<DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>arg4</Name>
 <Label>[Fecha Hasta]</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
+<DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>arg5</Name>
@@ -382,7 +382,7 @@ Parameters:
 <DataType>[Floating Point]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
-</data>
+</top>
 </Input>
 <Input name="ValidationBehavior"><data><ValidationInfo><Name>arg1</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
