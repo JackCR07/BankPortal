@@ -362,7 +362,7 @@ Parameters:
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc96"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
-<Messages><Warning><Message>PageLocation expression "AllPages #(DefaultProgressIndicatorIndicatorHTML, GetTransaccionesView_ViewPage, GetTransaccionesView_PagingPage, GetTransaccionesView_PagingTopPage, page1, GetTransaccionesView_PagingBottomPage, GetTransaccionesView_InputPage}# NameSearch page_header_text" does not evaluate to any locations.</Message>
+<Messages><Warning><Message>PageLocation expression "AllPages #(GetTransaccionesView_PagingTopPage, GetTransaccionesView_InputPage, GetTransaccionesView_ViewPage, page1, DefaultProgressIndicatorIndicatorHTML, GetTransaccionesView_PagingPage, GetTransaccionesView_PagingBottomPage}# NameSearch page_header_text" does not evaluate to any locations.</Message>
 </Warning>
 </Messages>
 <Inputs><Input name="BuilderCallEnabled">true</Input>
@@ -812,7 +812,13 @@ webAppAccess.processPage("PageName");
 <Input name="RenameExisting">false</Input>
 <Input name="Name">SaveVariables</Input>
 <Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
-<ActionName>Variables/InputTransaccion=${DataServices/GetTransacciones/GetTransaccionesOperation/inputs}</ActionName>
+<ActionName>//Assignment!Variables/InputTransaccion=${DataServices/GetTransacciones/GetTransaccionesOperation/inputs}</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>GetTransaccionesGetTransaccionesOperation</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>GetTotals</ActionName>
 </Action>
 </Actions>
 </Input>
@@ -838,7 +844,7 @@ jkljk</Input>
 <Input name="CreationOption">Automatic</Input>
 <Input name="Name">ClientSaveVariables</Input>
 <Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
-<ActionName>//Assignment!Variables/InputTransaccion=${DataServices/GetTransacciones/GetTransaccionesOperation/inputs}</ActionName>
+<ActionName>Variables/InputTransaccion=${DataServices/GetTransacciones/GetTransaccionesOperation/inputs}</ActionName>
 </Action>
 <Action><ActionType />
 <ActionName>//firechangeInVariables</ActionName>
@@ -990,6 +996,71 @@ jkljk</Input>
 <Input name="ActionURL">fireshowChart</Input>
 <Input name="Name">ShowGraphButton</Input>
 <Input name="HoverImage">/factory/images/icons/pie-chart-icon2.png</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc120"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+ //Obtener resultados del dataservice
+ IXml results = webAppAccess.getDataServiceParameterXml("GetTransacciones","GetTransaccionesOperation","results","operation1Response");
+ //Obtener inputs del data service
+ IXml operation1IXml = webAppAccess.getDataServiceParameterXml("GetTransacciones","GetTransaccionesOperation","inputs","operation1");
+ 
+ //Variables 
+ double sumaDebito=0;
+ double sumaCredito =0;
+ int cantidadDebito=0;
+ int cantidadCredito=0;
+ 
+ //Obtener datos de los inputs
+  int idCuenta =Integer.parseInt(operation1IXml.getText("id_cuenta"));
+  String numeroCuenta =( idCuenta+10000)+"";
+  String idTipoTransaccion =  operation1IXml.getText("id_tipo_transaccion");
+  String tipoTransaccion = idTipoTransaccion.equals("-1") ? "Todas" : (idTipoTransaccion.equals("1") ? "Credito" : "Debito");
+  //Obtener datos de los results
+  IXml child = results.getFirstChildElement();
+ while(child!=null){
+       String debito =child.getText("debito");
+       String credito =child.getText("credito"); 
+       if((debito ==null )|| (credito ==null)){
+       		break;
+       }
+       if(!debito.equals("")){
+        	sumaDebito +=Double.parseDouble(debito);
+        	cantidadDebito++;
+       }
+        if(!credito.equals("")){
+        	sumaCredito +=Double.parseDouble(credito);
+        	cantidadCredito++;
+       }
+      //Siguiente transaccion 
+ 	  child = child.getNextSiblingElement();
+ }
+
+//Setear variables
+webAppAccess.getVariables().setString("CantidadEgreso", cantidadCredito+"");
+webAppAccess.getVariables().setString("CantidadIngreso", cantidadDebito+"");
+webAppAccess.getVariables().setString("Egreso", sumaCredito+"");
+webAppAccess.getVariables().setString("Ingreso", sumaDebito+"");
+webAppAccess.getVariables().setString("NumeroCuenta",numeroCuenta);
+webAppAccess.getVariables().setString("IdTipoTransaccion",tipoTransaccion);
+
+//Imprimir variables
+System.out.println(webAppAccess.getVariables().getString("CantidadEgreso"));
+System.out.println(webAppAccess.getVariables().getString("CantidadIngreso"));
+System.out.println(webAppAccess.getVariables().getString("Egreso"));
+System.out.println(webAppAccess.getVariables().getString("Ingreso"));
+System.out.println(webAppAccess.getVariables().getString("NumeroCuenta"));
+System.out.println(webAppAccess.getVariables().getString("IdTipoTransaccion"));
+
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">GetTotals</Input>
+<Input name="Imports"><Imports />
+</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc119"><BuilderDefID>com.bowstreet.builders.webapp.ImageButtonBuilder</BuilderDefID>

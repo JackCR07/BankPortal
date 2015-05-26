@@ -1,4 +1,148 @@
-<Model id="providers/GetTransacciones/transaccionesSharedVariables"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.SchemaBuilder</BuilderDefID>
+<Model id="providers/GetTransacciones/transaccionesSharedVariables"><BuilderCallList><BuilderCall id="bc13"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Ingreso</Input>
+<Input name="Type">Double</Input>
+<Input name="Value">-1</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc14"><BuilderDefID>com.bowstreet.builders.webapp.SharedVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Scope">Session</Input>
+<Input name="Page">(None)</Input>
+<Input name="UseOuterSession">true</Input>
+<Input name="Name">SharedIngreso</Input>
+<Input name="Variable">Ingreso</Input>
+<Input name="UniqueID">10002</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc15"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Egreso</Input>
+<Input name="Type">Double</Input>
+<Input name="Value">-1</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc16"><BuilderDefID>com.bowstreet.builders.webapp.SharedVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Scope">Session</Input>
+<Input name="Page">(None)</Input>
+<Input name="UseOuterSession">true</Input>
+<Input name="Name">SharedEgreso</Input>
+<Input name="Variable">Egreso</Input>
+<Input name="UniqueID">10025</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc17"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">NumeroCuenta</Input>
+<Input name="Type">String</Input>
+<Input name="Value">"no"</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc18"><BuilderDefID>com.bowstreet.builders.webapp.SharedVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Scope">Session</Input>
+<Input name="Page">(None)</Input>
+<Input name="UseOuterSession">true</Input>
+<Input name="Name">SharedNumeroCuenta</Input>
+<Input name="Variable">NumeroCuenta</Input>
+<Input name="UniqueID">100003</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc19"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">CantidadIngreso</Input>
+<Input name="Type">Integer</Input>
+<Input name="Value">-1</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc20"><BuilderDefID>com.bowstreet.builders.webapp.SharedVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Scope">Session</Input>
+<Input name="Page">(None)</Input>
+<Input name="UseOuterSession">true</Input>
+<Input name="Name">SharedCantidadIngreso</Input>
+<Input name="Variable">CantidadIngreso</Input>
+<Input name="UniqueID">100004</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc21"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">CantidadEgreso</Input>
+<Input name="Type">Integer</Input>
+<Input name="Value">-1</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc22"><BuilderDefID>com.bowstreet.builders.webapp.SharedVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Scope">Session</Input>
+<Input name="Page">(None)</Input>
+<Input name="UseOuterSession">true</Input>
+<Input name="Name">SharedCantidadEgreso</Input>
+<Input name="Variable">CantidadEgreso</Input>
+<Input name="UniqueID">100005</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc24"><BuilderDefID>com.bowstreet.builders.webapp.SharedVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Scope">Session</Input>
+<Input name="Page">(None)</Input>
+<Input name="UseOuterSession">true</Input>
+<Input name="Name">SharedIdInputTransaccion</Input>
+<Input name="Variable">IdTipoTransaccion</Input>
+<Input name="UniqueID">9997</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc23"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">IdTipoTransaccion</Input>
+<Input name="Type">String</Input>
+<Input name="Value">"No seleccionado"</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.SchemaBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="SchemaSourceType">Existing</Input>
@@ -6,6 +150,17 @@
 <Input name="RenameExisting">false</Input>
 <Input name="Name">SchemaTransacciones</Input>
 <Input name="URIOnly">http://172.16.11.225:7800/getTransacciones/getTransacciones?xsd=xsd0</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.SharedVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Scope">Session</Input>
+<Input name="Page">(None)</Input>
+<Input name="UseOuterSession">true</Input>
+<Input name="Name">SharedInputTransaccion</Input>
+<Input name="Variable">InputTransaccion</Input>
+<Input name="UniqueID">9999</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
@@ -52,17 +207,6 @@
 </CacheValue>
 </CacheEntry>
 </CacheMap>
-</BuilderCall>
-<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.SharedVariableBuilder</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="Scope">Session</Input>
-<Input name="Page">(None)</Input>
-<Input name="UseOuterSession">true</Input>
-<Input name="Name">SharedInputTransaccion</Input>
-<Input name="Variable">InputTransaccion</Input>
-<Input name="UniqueID">9999</Input>
-</Inputs>
 </BuilderCall>
 <BuilderCall id="bc11"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientEventDeclarationBuilder</BuilderDefID>
 <Messages />

@@ -114,7 +114,7 @@
 </BuilderCall>
 <BuilderCall id="bc22"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
 <Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Inputs><Input name="BuilderCallEnabled">false</Input>
 <Input name="UseAllOperations">false</Input>
 <Input name="OverrideInputs">true</Input>
 <Input name="CreateLookupTables">true</Input>
@@ -212,20 +212,26 @@ Parameters:
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="CreationOption">Automatic</Input>
 <Input name="Name">UpdateChartClientActionList</Input>
-<Input name="Actions"><Actions><Action><ActionType />
-<ActionName>DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp</ActionName>
+<Input name="Actions"><Actions><Action><ActionName>setClientVariables</ActionName>
+<ActionType></ActionType>
 </Action>
-<Action><ActionType>Assignment</ActionType>
-<ActionName>Variables/Egreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/Credito}</ActionName>
+<Action><ActionName>IF (${Variables/ClientIngreso} != -1) NUMBERS THEN</ActionName>
+<ActionType>Conditional</ActionType>
 </Action>
-<Action><ActionType>Assignment</ActionType>
-<ActionName>Variables/Ingreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/Debito}</ActionName>
-</Action>
-<Action><ActionName>chart_page</ActionName>
+<Action><ActionName>    chart_page</ActionName>
 <ActionType />
 </Action>
 <Action><ActionType />
-<ActionName>showChartClientMethod</ActionName>
+<ActionName>    showChartClientMethod</ActionName>
+</Action>
+<Action><ActionType>Conditional</ActionType>
+<ActionName>ELSE</ActionName>
+</Action>
+<Action><ActionType></ActionType>
+<ActionName>    showAlert</ActionName>
+</Action>
+<Action><ActionType>Conditional</ActionType>
+<ActionName>ENDIF</ActionName>
 </Action>
 </Actions>
 </Input>
@@ -249,32 +255,26 @@ Parameters:
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="CreationOption">Automatic</Input>
 <Input name="Name">UpdateInfoClientActionList</Input>
-<Input name="Actions"><Actions><Action><ActionType />
-<ActionName>DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp</ActionName>
+<Input name="Actions"><Actions><Action><ActionName>setClientVariables</ActionName>
+<ActionType></ActionType>
 </Action>
-<Action><ActionType>Assignment</ActionType>
-<ActionName>Variables/Egreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/Credito}</ActionName>
+<Action><ActionName>IF (${Variables/ClientIngreso} != -1) NUMBERS THEN</ActionName>
+<ActionType>Conditional</ActionType>
 </Action>
-<Action><ActionType>Assignment</ActionType>
-<ActionName>Variables/Ingreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/Debito}</ActionName>
-</Action>
-<Action><ActionName>Variables/CantidadEgreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/NumeroCredito}</ActionName>
-<ActionType>Assignment</ActionType>
-</Action>
-<Action><ActionName>Variables/Ingreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/NumeroDebito}</ActionName>
-<ActionType>Assignment</ActionType>
-</Action>
-<Action><ActionName>Variables/NumeroCuenta=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/NumeroCuenta}</ActionName>
-<ActionType>Assignment</ActionType>
-</Action>
-<Action><ActionName>Variables/IdTipoTransaccion=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/IDTipoTransaccion}</ActionName>
-<ActionType>Assignment</ActionType>
-</Action>
-<Action><ActionName>info_page</ActionName>
+<Action><ActionName>    info_page</ActionName>
 <ActionType />
 </Action>
 <Action><ActionType />
-<ActionName>showInfoClientMethod</ActionName>
+<ActionName>    showInfoClientMethod</ActionName>
+</Action>
+<Action><ActionType>Conditional</ActionType>
+<ActionName>ELSE</ActionName>
+</Action>
+<Action><ActionType></ActionType>
+<ActionName>    showAlert</ActionName>
+</Action>
+<Action><ActionType>Conditional</ActionType>
+<ActionName>ENDIF</ActionName>
 </Action>
 </Actions>
 </Input>
@@ -285,16 +285,15 @@ Parameters:
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="ReturnType">void</Input>
 <Input name="Body">{
-	var ingreso = parseInt(this.getVariable('Ingreso'));
-	var egreso = parseInt(this.getVariable('Egreso'));
-	if(ingreso!=-1 &amp;&amp; egreso!=-1){
-		drawChart( 
-		[ 
-			['Task', 'Saldos'],
-			['Ingreso',  ingreso],
-			['Egreso',   egreso]
-		]);
-	}
+	var ingreso = parseInt(this.getVariable('ClientIngreso'));
+	var egreso = parseInt(this.getVariable('ClientEgreso'));
+	
+	drawChart( 
+	[ 
+		['Task', 'Saldos'],
+		['Ingreso',  ingreso],
+		['Egreso',   egreso]
+	]);
 }</Input>
 <Input name="CreationOption">Automatic</Input>
 <Input name="Name">showChartClientMethod</Input>
@@ -307,17 +306,11 @@ Parameters:
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="ReturnType">void</Input>
 <Input name="Body">{
-var ingreso = parseInt(this.getVariable('Ingreso'));
-var egreso = parseInt(this.getVariable('Egreso'));
-if(ingreso!=-1 &amp;&amp; egreso!=-1){
-
-	document.getElementById("numero_cuenta").innerHTML = this.getVariable('NumeroCuenta');
-	document.getElementById("numero_debitos").innerHTML = this.getVariable('CantidadIngreso');
-	document.getElementById("numero_retiros").innerHTML = this.getVariable('CantidadEgreso');
-	document.getElementById("saldo_retiros").innerHTML = this.getVariable('Egreso');
-	document.getElementById("saldo_debitos").innerHTML = this.getVariable('Ingreso');
-				
-}
+	document.getElementById("numero_cuenta").innerHTML = this.getVariable('ClientNumeroCuenta');
+	document.getElementById("numero_debitos").innerHTML = this.getVariable('ClientCantidadIngreso');
+	document.getElementById("numero_retiros").innerHTML = this.getVariable('ClientCantidadEgreso');
+	document.getElementById("saldo_retiros").innerHTML = this.getVariable('ClientEgreso');
+	document.getElementById("saldo_debitos").innerHTML = this.getVariable('ClientIngreso');
 }</Input>
 <Input name="CreationOption">Automatic</Input>
 <Input name="Name">showInfoClientMethod</Input>
@@ -361,12 +354,12 @@ if(ingreso!=-1 &amp;&amp; egreso!=-1){
 <Input name="GenerateSampleData">false</Input>
 <Input name="RenameExisting">false</Input>
 <Input name="CreateSampleData">Create sample data</Input>
-<Input name="Name">Ingreso</Input>
+<Input name="Name">ClientIngreso</Input>
 <Input name="Type">String</Input>
-<Input name="Value">1</Input>
+<Input name="Value">-1</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc91"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientVariableBuilder</BuilderDefID>
+<BuilderCall id="bc105"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientVariableBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="GenerateSchema">false</Input>
@@ -374,9 +367,9 @@ if(ingreso!=-1 &amp;&amp; egreso!=-1){
 <Input name="GenerateSampleData">false</Input>
 <Input name="RenameExisting">false</Input>
 <Input name="CreateSampleData">Create sample data</Input>
-<Input name="Name">Egreso</Input>
+<Input name="Name">ClientEgreso</Input>
 <Input name="Type">String</Input>
-<Input name="Value">1</Input>
+<Input name="Value">-1</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc92"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientVariableBuilder</BuilderDefID>
@@ -387,7 +380,7 @@ if(ingreso!=-1 &amp;&amp; egreso!=-1){
 <Input name="GenerateSampleData">false</Input>
 <Input name="RenameExisting">false</Input>
 <Input name="CreateSampleData">Create sample data</Input>
-<Input name="Name">NumeroCuenta</Input>
+<Input name="Name">ClientNumeroCuenta</Input>
 <Input name="Type">String</Input>
 <Input name="Value">"No iniciado"</Input>
 </Inputs>
@@ -402,7 +395,7 @@ if(ingreso!=-1 &amp;&amp; egreso!=-1){
 <Input name="CreateSampleData">Create sample data</Input>
 <Input name="Type">String</Input>
 <Input name="Value">0</Input>
-<Input name="Name">CantidadEgreso</Input>
+<Input name="Name">ClientCantidadEgreso</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc89"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientVariableBuilder</BuilderDefID>
@@ -413,7 +406,7 @@ if(ingreso!=-1 &amp;&amp; egreso!=-1){
 <Input name="GenerateSampleData">false</Input>
 <Input name="RenameExisting">false</Input>
 <Input name="CreateSampleData">Create sample data</Input>
-<Input name="Name">CantidadIngreso</Input>
+<Input name="Name">ClientCantidadIngreso</Input>
 <Input name="Type">String</Input>
 <Input name="Value">0</Input>
 </Inputs>
@@ -426,7 +419,7 @@ if(ingreso!=-1 &amp;&amp; egreso!=-1){
 <Input name="GenerateSampleData">false</Input>
 <Input name="RenameExisting">false</Input>
 <Input name="CreateSampleData">Create sample data</Input>
-<Input name="Name">IdTipoTransaccion</Input>
+<Input name="Name">ClientTipoTransaccion</Input>
 <Input name="Type">String</Input>
 <Input name="Value">-2</Input>
 </Inputs>
@@ -440,17 +433,17 @@ if(ingreso!=-1 &amp;&amp; egreso!=-1){
         	&lt;br&gt;
         	&lt;label id="numero_cuenta_label" class="subtitulos"&gt; Numero Cuenta&lt;/label&gt;
         	&lt;label id="numero_cuenta" class="resultado"&gt; &lt;/label&gt;
-			 &lt;br&gt;
-       		&lt;label id="numero_debitos_label"  class="subtitulos"&gt; Numero Debitos&lt;/label&gt;
-        	&lt;label id="numero_debitos"  class="resultado"&gt; &lt;/label&gt;
-        	 &lt;br&gt;
-        	&lt;label id="numero_retiros_label" class="subtitulos"&gt; Numero Retiros&lt;/label&gt;
+			&lt;br&gt;
+        	&lt;label id="numero_retiros_label" class="subtitulos"&gt; Número de Egresos&lt;/label&gt;
         	&lt;label id="numero_retiros"  class="resultado"&gt; &lt;/label&gt;
+			 &lt;br&gt;
+       		&lt;label id="numero_debitos_label"  class="subtitulos"&gt; Número de Ingresos&lt;/label&gt;
+        	&lt;label id="numero_debitos"  class="resultado"&gt; &lt;/label&gt; 
         	 &lt;br&gt;
-        	&lt;label id="saldo_retiros_label" class="subtitulos"&gt; Saldo Retiros&lt;/label&gt;
+        	&lt;label id="saldo_retiros_label" class="subtitulos"&gt; Saldo de Egreso&lt;/label&gt;
         	&lt;label id="saldo_retiros"  class="resultado"&gt; &lt;/label&gt;
         	 &lt;br&gt;
-        	&lt;label id="saldo_debitos_label" class="subtitulos"&gt; Saldo Debitos &lt;/label&gt;
+        	&lt;label id="saldo_debitos_label" class="subtitulos"&gt; Saldo de Ingreso &lt;/label&gt;
 			&lt;label id="saldo_debitos"  class="resultado"&gt; &lt;/label&gt;
 			 &lt;br&gt;
          &lt;/div&gt;</Input>
@@ -499,13 +492,46 @@ if(ingreso!=-1 &amp;&amp; egreso!=-1){
 <Input name="ActionURL">ShowInfoActionList</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc99"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+    String ingreso = webAppAccess.getVariables().getString("Ingreso");
+    webAppAccess.getVariables().setString("ClientIngreso", ingreso);
+    String egreso = webAppAccess.getVariables().getString("Egreso");
+    webAppAccess.getVariables().setString("ClientEgreso", egreso);
+    String cantidadIngreso = webAppAccess.getVariables().getString("CantidadIngreso");
+    webAppAccess.getVariables().setString("ClientCantidadIngreso", cantidadIngreso);
+    String cantidadEgreso = webAppAccess.getVariables().getString("CantidadEgreso");
+    webAppAccess.getVariables().setString("ClientCantidadEgreso", cantidadEgreso);
+    String numeroCuenta = webAppAccess.getVariables().getString("NumeroCuenta");
+    webAppAccess.getVariables().setString("ClientNumeroCuenta", numeroCuenta);
+    String tipoTransaccion = webAppAccess.getVariables().getString("IdTipoTransaccion");
+    webAppAccess.getVariables().setString("TipoTransaccion", tipoTransaccion);
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">setClientVariables</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc109"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientMethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+  alert("Primero debe realizar una busqueda");
+}</Input>
+<Input name="CreationOption">Automatic</Input>
+<Input name="Name">showAlert</Input>
+</Inputs>
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
 <Dependencies><Dependency type="File">/factory/pages/client/client_app_chart.html</Dependency>
 <Dependency type="File">/factory/pages/client/dojo_mobile_default_error.html</Dependency>
 <Dependency type="Model">providers/GetTransacciones/transaccionesSharedVariables</Dependency>
-<Dependency type="Model">providers/GetTransacciones/GetTransaccionesProvider</Dependency>
 <Dependency type="File">/factory/clientjavascript/application/client85201404141110.js</Dependency>
 <Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
 <Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>

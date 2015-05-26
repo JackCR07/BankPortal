@@ -1,5 +1,13 @@
 
+.lotusPaging a{
+	border-color:#FF3029;
+	
+}
 
+.lotusPaging a:hover{
+	background-color:#F68383;
+	
+}
 
 .vf_view_container .lotusPaging{
 	border:none;
@@ -309,6 +317,7 @@ input.art-button
 }
 .art-button.active, .art-button.active:hover {
    color: #404040 !important;
+   border-color:#F68383;
 }
 
 .art-button.hover, .art-button:hover
