@@ -173,8 +173,8 @@ Parameters:
 <Input name="DetailPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</Input>
 <Input name="EnablePagingButtons">true</Input>
 <Input name="InputValidationMethodBehavior">CallOnlyOnValidData</Input>
-<Input name="InputValidationMethod">SaveVariables</Input>
 <Input name="UsePartialRefreshForPaging">true</Input>
+<Input name="InputValidationMethod">SaveVariables</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc95"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
@@ -362,7 +362,7 @@ Parameters:
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc96"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
-<Messages><Warning><Message>PageLocation expression "AllPages #(GetTransaccionesView_PagingTopPage, GetTransaccionesView_InputPage, GetTransaccionesView_ViewPage, page1, DefaultProgressIndicatorIndicatorHTML, GetTransaccionesView_PagingPage, GetTransaccionesView_PagingBottomPage}# NameSearch page_header_text" does not evaluate to any locations.</Message>
+<Messages><Warning><Message>PageLocation expression "AllPages #(GetTransaccionesView_InputPage, GetTransaccionesView_ViewPage, GetTransaccionesView_PagingTopPage, DefaultProgressIndicatorIndicatorHTML, GetTransaccionesView_PagingBottomPage, page1, GetTransaccionesView_PagingPage}# NameSearch page_header_text" does not evaluate to any locations.</Message>
 </Warning>
 </Messages>
 <Inputs><Input name="BuilderCallEnabled">true</Input>
@@ -811,11 +811,8 @@ webAppAccess.processPage("PageName");
 <Input name="ReturnType">Object</Input>
 <Input name="RenameExisting">false</Input>
 <Input name="Name">SaveVariables</Input>
-<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
-<ActionName>//Assignment!Variables/InputTransaccion=${DataServices/GetTransacciones/GetTransaccionesOperation/inputs}</ActionName>
-</Action>
-<Action><ActionType />
-<ActionName>GetTransaccionesGetTransaccionesOperation</ActionName>
+<Input name="Actions"><Actions><Action><ActionName>GetTransaccionesView_ShowResults</ActionName>
+<ActionType></ActionType>
 </Action>
 <Action><ActionType />
 <ActionName>GetTotals</ActionName>
@@ -964,6 +961,7 @@ jkljk</Input>
 <Input name="Event">AjaxPreUpdate</Input>
 <Input name="Action">firechangeInVariables</Input>
 <Input name="Name">cambioEnvar</Input>
+<Input name="ActionURL">firechangeInVariables</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc117"><BuilderDefID>com.bowstreet.builders.webapp.ImageButtonBuilder</BuilderDefID>
