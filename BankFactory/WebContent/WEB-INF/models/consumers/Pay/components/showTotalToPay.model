@@ -1,0 +1,37 @@
+<Model id="consumers/Pay/components/showTotalToPay"><BuilderCallList><BuilderCall id="bc1"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>page1</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Name">main</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageData">&lt;html&gt;
+    &lt;body&gt;
+            &lt;div name="randomdiv"&gt;
+            	&lt;div name="random"&gt;
+            		&lt;span name="randomvalue"&gt;prueba&lt;/span&gt;
+            	&lt;/div&gt;
+            &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">page1</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Dependencies />
+<ExternalProperties />
+<Properties />
+</Model>

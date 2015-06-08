@@ -34,7 +34,7 @@
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="PageData">&lt;span name="script_chart"&gt; &lt;/span&gt;
 &lt;h2 class="titulo"&gt; Información Grafica &lt;/label&gt; 
-	&lt;div id="piechart_3d" style="width: 500px; height:400px;"&gt;&lt;/div&gt;
+	&lt;div id="piechart_3d" style="width: 400px; height:400px;"&gt;&lt;/div&gt;
 	&lt;div id="canvas-holder"&gt;
 			&lt;canvas id="chart-area"/&gt;
 	&lt;/div&gt;</Input>
@@ -213,7 +213,7 @@ Parameters:
 <Input name="CreationOption">Automatic</Input>
 <Input name="Name">UpdateChartClientActionList</Input>
 <Input name="Actions"><Actions><Action><ActionName>setClientVariables</ActionName>
-<ActionType></ActionType>
+<ActionType />
 </Action>
 <Action><ActionName>IF (${Variables/ClientIngreso} != -1) NUMBERS THEN</ActionName>
 <ActionType>Conditional</ActionType>
@@ -227,7 +227,7 @@ Parameters:
 <Action><ActionType>Conditional</ActionType>
 <ActionName>ELSE</ActionName>
 </Action>
-<Action><ActionType></ActionType>
+<Action><ActionType />
 <ActionName>    showAlert</ActionName>
 </Action>
 <Action><ActionType>Conditional</ActionType>
@@ -256,7 +256,7 @@ Parameters:
 <Input name="CreationOption">Automatic</Input>
 <Input name="Name">UpdateInfoClientActionList</Input>
 <Input name="Actions"><Actions><Action><ActionName>setClientVariables</ActionName>
-<ActionType></ActionType>
+<ActionType />
 </Action>
 <Action><ActionName>IF (${Variables/ClientIngreso} != -1) NUMBERS THEN</ActionName>
 <ActionType>Conditional</ActionType>
@@ -270,7 +270,7 @@ Parameters:
 <Action><ActionType>Conditional</ActionType>
 <ActionName>ELSE</ActionName>
 </Action>
-<Action><ActionType></ActionType>
+<Action><ActionType />
 <ActionName>    showAlert</ActionName>
 </Action>
 <Action><ActionType>Conditional</ActionType>
@@ -430,7 +430,8 @@ Parameters:
 <Input name="PageData">
         &lt;div id="informacion" name="informacion"&gt;
         	&lt;h2 class="titulo"&gt; Información Adicional &lt;/label&gt; 
-        	&lt;br&gt;
+        	 &lt;div style="margin:0 auto; width:90%"&gt;
+        	 &lt;br&gt;
         	&lt;label id="numero_cuenta_label" class="subtitulos"&gt; Numero Cuenta&lt;/label&gt;
         	&lt;label id="numero_cuenta" class="resultado"&gt; &lt;/label&gt;
 			&lt;br&gt;
@@ -446,6 +447,7 @@ Parameters:
         	&lt;label id="saldo_debitos_label" class="subtitulos"&gt; Saldo de Ingreso &lt;/label&gt;
 			&lt;label id="saldo_debitos"  class="resultado"&gt; &lt;/label&gt;
 			 &lt;br&gt;
+			 &lt;/div&gt;
          &lt;/div&gt;</Input>
 <Input name="AbsoluteURLs">false</Input>
 <Input name="RenameExisting">false</Input>

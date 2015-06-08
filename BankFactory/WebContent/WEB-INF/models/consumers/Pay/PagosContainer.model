@@ -1,0 +1,73 @@
+<Model id="consumers/Pay/PagosContainer"><BuilderCallList><BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">main</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>mainPage</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageData">&lt;html&gt;
+    &lt;body&gt;
+            &lt;div&gt;
+            &lt;span name="selectProvider"&gt;&lt;/span&gt;
+            &lt;span name="selectService"&gt;&lt;/span&gt;
+            &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">mainPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ModelContainerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="LoadWhenVisible">false</Input>
+<Input name="InheritProfile">true</Input>
+<Input name="ForwardPropertyBrokerEvents">true</Input>
+<Input name="MultiInstance">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>mainPage</Page>
+<NameSearch>selectService</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="ModelName">consumers/Pay/SelectServiceModel</Input>
+<Input name="Name">SelectServiceContainer</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.ModelContainerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="LoadWhenVisible">false</Input>
+<Input name="InheritProfile">true</Input>
+<Input name="ForwardPropertyBrokerEvents">true</Input>
+<Input name="MultiInstance">true</Input>
+<Input name="Name">selectProviderContainer</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>mainPage</Page>
+<NameSearch>selectProvider</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="ModelName">consumers/Pay/SelectProviderModel</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies><Dependency type="Model">consumers/Pay/SelectServiceModel</Dependency>
+<Dependency type="Model">consumers/Pay/SelectProviderModel</Dependency>
+</Dependencies>
+<ExternalProperties><ExternalProperty id="DojoEnabled">true</ExternalProperty>
+<ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer</ExternalProperty>
+<ExternalProperty id="ContainedModels">consumers/Pay/SelectServiceModel:consumers/Pay/SelectProviderModel</ExternalProperty>
+</ExternalProperties>
+</Model>

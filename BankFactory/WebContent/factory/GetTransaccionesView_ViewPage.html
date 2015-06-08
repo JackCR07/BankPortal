@@ -1,81 +1,122 @@
 <html>
-<head></head>
-<body id="wefBody">
-	<div class="vf_view_container" name="vf_view_container">
-		<div class="vf_header" name="vf_header"></div>
-		<div class="vf_search_section">
-			<span name="search_section"></span>
-		</div>
-			<div class="vf_view_list" name="vf_view_list">
-				<form name="view_form" method="post">
-					<div name="data">
-						<div name="GetTransaccionesView_ViewPage_DisplayPageWrapper">
-							<table name="responsive_table_layout" width="100%"
-								class="gridTable TableBlank" cellspacing="0" cellpadding="3">
+  <head></head>
+  <body id="wefBody">
+  <div class="vf_view_container" name="vf_view_container">
+    <h2 name="page_header_text" class="blockHeading"></h2>
+    <div class="vf_header" name="vf_header"></div>
+    <div class="vf_search_section">
+      <span name="search_section"></span>
+    </div>
+    <div class="vf_view_list" name="vf_view_list">
+      <form name="view_form" method="post">
+        <div name="data">
+<div name="GetTransaccionesView_ViewPage_DisplayPageWrapper">
+    <div name="operation1Response_TOCDisplayGroupWrapper">
+        
+    <table name="GroupContainer" class="displayPageTable" role="presentation">
+<HTMLWRAPPER name="operation1Response_Repeat">
+<tr role="presentation"><td role="presentation" colspan="2">
+      
+    </td></tr>
+    <tr role="presentation"><td role="presentation" colspan="2">
+      <div name="transaccionGroupContainer">
+<table name="transaccion_Table" id="GetTransaccionModelGetTransaccionesView_ViewPagetransaccion_table" width="100%" class="gridTable" cellspacing="0" cellpadding="3">
+    <!-- Begin: table header row -->
+    <tr name="TableHeaderContainer" class="tableHeadRow">
+<th name="numero_transaccion_ColumnHeader" class="centradoHeader tableHead" nowrap="" scope="col"><span name="numero_transaccionHeader" class="tableHeadText">Transacci&#243;n</span></th>
 
-								<tr name="TableHeaderContainer" class="tableHeadRow">
+<th name="moneda_ColumnHeader" class="centradoHeader tableHead" nowrap="" scope="col"><span name="monedaHeader" class="tableHeadText">Moneda</span></th>
 
-									<th class="tableHead centradoHeader" nowrap="" scope="col"
-										name="column1_header_styles"><span
-										name="column1_header_label" class="tableHeadText"> <span
-											name="numero_transaccionlabel">Numero de Transaccion</span>
-									</span></th>
-									<th class="tableHead centradoHeader" nowrap="" scope="col"
-										name="column2_header_styles"><span
-										name="column2_header_label" class="tableHeadText"> <span
-											name="debitolabel">Debito</span>
-									</span></th>
-									<th class="tableHead centradoHeader" scope="col"
-										name="column3_header_styles"><span
-										name="column3_header_label" class="tableHeadText"> <span
-											name="creditolabel">Credito</span>
-									</span></th>
-									<th class="tableHead centradoHeader" nowrap="" scope="col"
-										name="column4_header_styles"><span
-										name="column4_header_label" class="tableHeadText"> <span
-											name="fecha_transaccionlabel">Fecha de Transaccion</span>
-									</span></th>
-								</tr>
-								<HTMLWRAPPER name="transaccion_Repeat">
-								<tr class="sampleTableRow" name="table_row"
-									sequence_class="tableRowOdd,tableRowEven">
+<th name="debito_ColumnHeader_float" class="centradoHeader tableHead" align="center" nowrap="" scope="col"><span name="debitoHeader" class="tableHeadText">Debito</span></th>
 
-									<td valign="top" class="tableCell centrado"
-										name="column1_styles"><span class="outputData"> <span
-											name="numero_transaccion"></span>
-									</span></td>
-									<td valign="top" class="tableCell centrado"
-										name="column2_styles"><span class="outputData"> <span
-											name="debito"></span>
-									</span></td>
-									<td valign="top" class="tableCell centrado"
-										name="column3_styles"><span class="outputData"> <span
-											name="credito"></span>
-									</span></td>
-									<td valign="top" class="tableCell centrado"
-										name="column4_styles"><span class="outputData"> <span
-											name="fecha_transaccion"></span>
-									</span></td>
-								</tr>
-								</HTMLWRAPPER>
+<th name="credito_ColumnHeader_float" class="centradoHeader tableHead" align="center" nowrap="" scope="col"><span name="creditoHeader" class="tableHeadText">Credito</span></th>
 
-							</table>
-						</div>
-					</div>
-					<div class="paging">
-						<span name="paging_buttons"></span>
-					</div>
-					<div class="vf_buttons" name="vf_buttons">
-						<span name="back_button"></span> <span name="update_button"></span>
-						<span name="extra_button1"></span> <span name="extra_button2"></span>
-					</div>
-					<div class="vf_create_button">
-						<span name="create_button"></span>
-					</div>
-				</form>
-				<div class="vf_footer" name="vf_footer"></div>
-			</div>
+<th name="fecha_transaccion_ColumnHeader" class="centradoHeader tableHead" nowrap="" scope="col"><span name="fecha_transaccionHeader" class="tableHeadText">Fecha</span></th>
 
-	</div>
-</body>
+<th name="num_cuenta_origen_ColumnHeader_integer" class="centradoHeader tableHead" align="center" nowrap="" scope="col"><span name="num_cuenta_origenHeader" class="tableHeadText">Origen</span></th>
+
+<th name="num_cuenta_destino_ColumnHeader_integer" class="centradoHeader tableHead" align="center" nowrap="" scope="col"><span name="num_cuenta_destinoHeader" class="tableHeadText">Destino</span></th>
+<!--  
+<th name="id_transaccion_ColumnHeader_integer" class="centradoHeader tableHead" align="center" nowrap="" scope="col"><span name="id_transaccionHeader" class="tableHeadText">Id Transaccion</span></th>
+
+<th name="tipo_transaccion_ColumnHeader" class="centradoHeader tableHead" nowrap="" scope="col"><span name="tipo_transaccionHeader" class="tableHeadText">Tipo Transaccion</span></th>
+
+<th name="id_cuenta_origen_ColumnHeader_integer" class="centradoHeader tableHead" align="center" nowrap="" scope="col"><span name="id_cuenta_origenHeader" class="tableHeadText">Id Origen</span></th>
+
+<th name="id_cuenta_destino_ColumnHeader_integer" style="display:none;" class="centradoHeader tableHead" align="center" nowrap="" scope="col"><span name="id_cuenta_destinoHeader" class="tableHeadText">Id Cuenta Destino</span></th>
+-->
+</tr><!-- End: table header row -->
+    <!-- Begin: repeated data rows -->
+    <HTMLWRAPPER name="transaccion_Repeat">
+    <tr name="DataContainer" sequence_class="tableRowOdd,tableRowEven">
+<td name="numero_transaccion_ColumnData" valign="top" class="subtitulosCentrado tableCell"><span name="numero_transaccion" class="outputData"></span></td>
+
+<td name="moneda_ColumnData" valign="top" class="subtitulosCentrado tableCell"><span name="moneda" class="outputData"></span></td>
+
+<td name="debito_ColumnData_float" valign="top" class="subtitulosCentrado tableCell" align="right"><span name="debito" class="outputDataRight" nowrap="">Integer</span></td>
+
+<td name="credito_ColumnData_float" valign="top" class="subtitulosCentrado tableCell" align="right"><span name="credito" class="outputDataRight" nowrap="">Integer</span></td>
+
+<td name="fecha_transaccion_ColumnData" valign="top" class="subtitulosCentrado tableCell"><span name="fecha_transaccion" class="outputData"></span></td>
+
+
+<td name="num_cuenta_origen_ColumnData_integer" valign="top" class="subtitulosCentrado tableCell" align="right"><span name="num_cuenta_origen" class="outputDataRight" nowrap="">Integer</span></td>
+
+<td name="num_cuenta_destino_ColumnData_integer" valign="top" class="subtitulosCentrado tableCell" align="right"><span name="num_cuenta_destino" class="outputDataRight" nowrap="">Integer</span></td>
+<!--
+<td name="id_transaccion_ColumnData_integer" valign="top" class="subtitulosCentrado tableCell" align="right"><span name="id_transaccion" class="outputDataRight" nowrap="">Integer</span></td>
+
+<td name="tipo_transaccion_ColumnData" valign="top" class="subtitulosCentrado tableCell"><span name="tipo_transaccion" class="outputData"></span></td>
+
+<td name="id_cuenta_origen_ColumnData_integer" valign="top" class="subtitulosCentrado tableCell" align="right"><span name="id_cuenta_origen" class="outputDataRight" nowrap="">Integer</span></td>
+
+<td name="id_cuenta_destino_ColumnData_integer" valign="top" class="subtitulosCentrado tableCell" align="right"><span name="id_cuenta_destino" class="outputDataRight" nowrap="">Integer</span></td>
+-->
+</tr>
+    </HTMLWRAPPER><!-- End: repeated data rows -->
+    
+  
+    <!-- Begin: table header row -->
+    <tr name="TableHeaderContainer" class="tableHeadRow"></tr><!-- End: table header row -->
+    <!-- Begin: repeated data rows -->
+    <HTMLWRAPPER name="transaccion_Repeat">
+    <tr name="DataContainer" sequence_class="tableRowOdd,tableRowEven"></tr>
+    </HTMLWRAPPER><!-- End: repeated data rows -->
+    
+  </table>
+</div>
+        <span name="transaccion_buttonSpace"></span>
+        <!-- Place for "Empty Data" message -->
+        
+      
+    </td></tr>
+  
+</HTMLWRAPPER><!-- End: Data display fields -->
+  
+</table>
+  </div>
+
+  </div>
+</div>
+        <div class="paging"><span name="paging_buttons"></span></div>
+        <div class="vf_buttons" name="vf_buttons">
+          <span name="back_button"></span>
+          <span name="update_button"></span>
+          <span name="extra_button1"></span>
+          <span name="extra_button2"></span>
+        </div>
+        <div class="vf_create_button">
+          <span name="create_button"></span>
+        </div>
+        
+<span name="id_transaccion" style="display:none"></span>
+<span name="tipo_transaccion" style="display:none"></span>
+<span name="id_cuenta_origen" style="display:none"></span>
+<span name="id_cuenta_destino" style="display:none"></span>
+
+      </form>
+      <div class="vf_footer" name="vf_footer"></div>
+    </div>
+  </div>
+  </body>
 </html>

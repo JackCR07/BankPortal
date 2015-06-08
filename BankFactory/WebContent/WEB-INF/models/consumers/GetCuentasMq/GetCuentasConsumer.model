@@ -18,6 +18,17 @@ You can view and test both the Desktop, Tablet and Smartphone profiles from Desi
 You can also profile other builder inputs according to device type, and you can apply different profiling for specific device types if you want.   For example, you could have different CSS style sheets applied for different types of smartphones if you want to have a different appearance for each device.</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc69"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseParentProfile">false</Input>
+<Input name="ImportOnce">false</Input>
+<Input name="ProfileHandling">None</Input>
+<Input name="ModelName">baseModels/GetCuentasBaseModel</Input>
+<Input name="SetProfiledInputValues">false</Input>
+<Input name="Name">BaseModel</Input>
+</Inputs>
+</BuilderCall>
 <BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
 <Messages />
 <Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
@@ -57,6 +68,7 @@ You can also profile other builder inputs according to device type, and you can 
 <Inputs><top><Input><Name>arguments</Name>
 </Input>
 <Input><Name>arguments.arg1</Name>
+<Value />
 </Input>
 <Input><Name>arguments.arg2</Name>
 </Input>
@@ -67,6 +79,8 @@ You can also profile other builder inputs according to device type, and you can 
 <Input><Name>arguments.arg5</Name>
 </Input>
 <Input><Name>arguments.arg6</Name>
+</Input>
+<Input><Name>arguments.arg7</Name>
 </Input>
 </top>
 </Inputs>
@@ -94,59 +108,92 @@ Parameters:
 </Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ViewAndFormBuilder</BuilderDefID>
+<BuilderCall id="bc83"><BuilderDefID>com.bowstreet.builders.webapp.ViewAndFormBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="BuilderCallCategory">General</Input>
 <Input name="UseTheme">true</Input>
+<Input name="CreateMain">true</Input>
 <Input name="ViewPageURL">${Properties/bowstreet.Theme/ViewAndForm_ViewPageBase}</Input>
-<Input name="EnableDataPaging">true</Input>
+<Input name="ViewPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_ViewPageHTMLTemplate}</Input>
+<Input name="ViewPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_ViewPageStyleSheetOverride}</Input>
+<Input name="EnableDataPaging">false</Input>
 <Input name="CreateInputPage">true</Input>
 <Input name="InputPageURL">${Properties/bowstreet.Theme/ViewAndForm_InputPageBase}</Input>
+<Input name="InputPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_InputPageHTMLTemplate}</Input>
+<Input name="InputPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_InputPageStyleSheetOverrideHTMLTemplate}</Input>
 <Input name="EnableInputValidation">false</Input>
-<Input name="InputSubmitText">Buscar</Input>
+<Input name="InputValidationMethodBehavior">CallAlways</Input>
+<Input name="InputSubmitText">Submit</Input>
 <Input name="ViewPageBackButtonText">Back</Input>
 <Input name="InsertInputPage">true</Input>
 <Input name="CreateColumnLink">false</Input>
-<Input name="LinkActionChoice">rowdata</Input>
+<Input name="LinkActionChoice">dataservice</Input>
 <Input name="DetailPageURL">${Properties/bowstreet.Theme/ViewAndForm_DetailPageBase}</Input>
 <Input name="DetailPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_DetailPageHTMLTemplate}</Input>
+<Input name="DetailPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</Input>
 <Input name="DetailPageBackButtonText">Back</Input>
 <Input name="CreateUpdatePage">false</Input>
 <Input name="UpdateAutoInitializeData">true</Input>
 <Input name="UpdatePageURL">${Properties/bowstreet.Theme/ViewAndForm_UpdatePageBase}</Input>
 <Input name="EnableUpdateValidation">false</Input>
+<Input name="UpdateValidationMethodBehavior">CallAlways</Input>
 <Input name="UpdateLinkText">Edit</Input>
 <Input name="UpdateSubmitText">Submit</Input>
 <Input name="UpdateCancelText">Cancel</Input>
-<Input name="CreateMain">true</Input>
-<Input name="ViewPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_ViewPageHTMLTemplate}</Input>
-<Input name="InputPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_InputPageHTMLTemplate}</Input>
-<Input name="Name">GetCuentasServiceView</Input>
+<Input name="EnablePagingButtons">true</Input>
+<Input name="Name">ViewAndForm</Input>
 <Input name="ViewMethod">DataServices/GetCuentasService/getCuentasO</Input>
-<Input name="RowsPerPage">5</Input>
 <Input name="ModelName">factory/portletbase/view_and_form_base</Input>
 <Input name="SetProfiledInputValues">true</Input>
 <Input name="UniquePattern">xyzzy7</Input>
-<Input name="DetailsMethod" />
-<Input name="InputPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_InputPageStyleSheetOverrideHTMLTemplate}</Input>
-<Input name="ViewPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_ViewPageStyleSheetOverride}</Input>
-<Input name="DetailPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</Input>
-<Input name="EnablePagingButtons">true</Input>
-<Input name="InputValidationMethodBehavior">CallOnlyOnValidData</Input>
-<Input name="UsePartialRefreshForPaging">true</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
 <Messages />
-<Inputs><Input name="BuilderCallEnabled" />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="AllPages">true</Input>
 <Input name="AllPageRadio">current</Input>
 <Input name="Pages"><data />
 </Input>
-<Input name="DisplayBehavior"><top><DispInfo><Name>arg1</Name>
-<Label>Id Cliente</Label>
-<Hide>HideAlways</Hide>
+<Input name="DisplayBehavior"><top><DispInfo><Name>id_cuenta</Name>
+<Label>[Id Cuenta]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>tipo_cuenta</Name>
+<Label>Tipo de Cuenta</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[String]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>moneda</Name>
+<Label>Moneda</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[String]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>saldo</Name>
+<Label>Saldo</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>numero_cuenta</Name>
+<Label>[Numero Cuenta]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[String]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>fecha_creacion</Name>
+<Label>Fecha de Creación</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[String]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>arg1</Name>
+<Label>[Arg1]</Label>
+<Hide>[Do Not Change]</Hide>
 <DataType>[String]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
@@ -158,58 +205,34 @@ Parameters:
 <LookupTable>tipoCuentas</LookupTable>
 </DispInfo>
 <DispInfo><Name>arg3</Name>
-<Label>Fecha Desde</Label>
+<Label>Moneda</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>base_Date</DataType>
+<DataType>base_Select</DataType>
 <Sort>[Off]</Sort>
+<LookupTable>MonedasLookupTable</LookupTable>
 </DispInfo>
 <DispInfo><Name>arg4</Name>
-<Label>Fecha Hasta</Label>
+<Label>Fecha de Transacción Desde</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>arg5</Name>
-<Label>Saldo Inferior</Label>
+<Label>Fecha de Transacción Hasta</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>base_FloatingPoint</DataType>
+<DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>arg6</Name>
-<Label>Saldo Superior</Label>
+<Label>Monto de Transacción Desde</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_FloatingPoint</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
-<DispInfo><Name>id_cuenta</Name>
-<Label>[Id Cuenta]</Label>
-<Hide>HideAlways</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>tipo_cuenta</Name>
-<Label>Tipo de Cuenta</Label>
+<DispInfo><Name>arg7</Name>
+<Label>Monto de Transacción Desde</Label>
 <Hide>[Do Not Change]</Hide>
-<DataType>base_String</DataType>
-<Sort>[Off]</Sort>
-<LookupTable />
-</DispInfo>
-<DispInfo><Name>saldo</Name>
-<Label>[Saldo]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>numero_cuenta</Name>
-<Label>Numero de Cuenta</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_String</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>fecha_creacion</Name>
-<Label>Fecha de Creacion</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_String</DataType>
+<DataType>base_FloatingPoint</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 </top>
@@ -220,7 +243,7 @@ Parameters:
 </ValidationInfo>
 <ValidationInfo><Name>arg2</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
-<Required>Required</Required>
+<Required>[NotRequired]</Required>
 </ValidationInfo>
 <ValidationInfo><Name>arg3</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
@@ -235,6 +258,10 @@ Parameters:
 <Required>[NotRequired]</Required>
 </ValidationInfo>
 <ValidationInfo><Name>arg6</Name>
+<ValidationOp>[Do Not Change]</ValidationOp>
+<Required>[NotRequired]</Required>
+</ValidationInfo>
+<ValidationInfo><Name>arg7</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
 <Required>[NotRequired]</Required>
 </ValidationInfo>
@@ -320,11 +347,15 @@ Parameters:
    &lt;/item&gt;
    &lt;item&gt;
       &lt;Value&gt;1&lt;/Value&gt;
-      &lt;Label&gt;Debito&lt;/Label&gt;
+      &lt;Label&gt;Ahorro&lt;/Label&gt;
    &lt;/item&gt;
    &lt;item&gt;
       &lt;Value&gt;2&lt;/Value&gt;
-      &lt;Label&gt;Credito&lt;/Label&gt;
+      &lt;Label&gt;Cheques&lt;/Label&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;Value&gt;21&lt;/Value&gt;
+      &lt;Label&gt;Jubilación Individual&lt;/Label&gt;
    &lt;/item&gt;
 &lt;/top&gt;</Input>
 <Input name="VariableType">ValueTagLabelTag</Input>
@@ -338,101 +369,6 @@ Parameters:
 <Input name="Name">tipoCuentas</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc34"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="AllPages">false</Input>
-<Input name="AllPageRadio">All</Input>
-<Input name="Pages"><data><GetCuentasServiceView_InputPage>true</GetCuentasServiceView_InputPage>
-</data>
-</Input>
-<Input name="DisplayBehavior"><top><DispInfo><Name>arg1</Name>
-<Label>[Id Cliente]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[String]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>arg2</Name>
-<Label>[Tipo de Cuenta]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Integer]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>arg3</Name>
-<Label>[Fecha Desde]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_Date</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>arg4</Name>
-<Label>[Fecha Hasta]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>base_Date</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>arg5</Name>
-<Label>[Saldo Inferior]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-<DispInfo><Name>arg6</Name>
-<Label>[Saldo Superior]</Label>
-<Hide>[Do Not Change]</Hide>
-<DataType>[Floating Point]</DataType>
-<Sort>[Off]</Sort>
-</DispInfo>
-</top>
-</Input>
-<Input name="ValidationBehavior"><data><ValidationInfo><Name>arg1</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>arg2</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[Required]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>arg3</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>arg4</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>arg5</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-<ValidationInfo><Name>arg6</Name>
-<ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
-</ValidationInfo>
-</data>
-</Input>
-<Input name="Name">GetCuentasServiceView_InputPagemenu</Input>
-<Input name="DefaultName">GetCuentasServiceView_InputPage </Input>
-</Inputs>
-</BuilderCall>
-<BuilderCall id="bc38"><BuilderDefID>com.bowstreet.builders.webapp.DataLayoutBuilder</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="UseTheme">false</Input>
-<Input name="MoveLinkToListItem">false</Input>
-<Input name="AddLogging">false</Input>
-<Input name="AutomaticParentSelection">true</Input>
-<Input name="SingleField">[GetCuentasServiceView_InputPage]GetCuentasServiceView_InputPage</Input>
-<Input name="Name">GetCuentasServiceView_InputPageLayout</Input>
-<Input name="TemplateFile">/factory/data_layout_templates/multiline_show_hide_list.html</Input>
-<Input name="TemplateDescription">This template allows you to generate a list layout where a section can be hidden and shown using a link in each of the rows. There are two fixed fields named 'fixed_left_top' and 'fixed_left_bottom' that will always be shown. The show/hide text must be set using the 'fixed_show' and 'fixed_hide' target names. You can enter their text value directly in the "Value" column, or leave the value blank and apply a Text builder to the 'fixed_show' and 'fixed_hide' page locations. The remaining targets can be used to populate the section that will be hidden/shown. This section contains two columns with three rows.</Input>
-<Input name="StyleSheetFile">/factory/data_layout_templates/multiline_show_hide_list.css</Input>
-<Input name="LayoutFields"><top />
-</Input>
-<Input name="LayoutContainers"><top />
-</Input>
-<Input name="DefaultName">Multi-Line Show/Hide List</Input>
-</Inputs>
-</BuilderCall>
 <BuilderCall id="bc62"><BuilderDefID>com.bowstreet.builders.webapp.StyleSheetBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
@@ -443,11 +379,73 @@ Parameters:
 <Input name="ExternalLocation">/factory/style.css</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc38"><BuilderDefID>com.bowstreet.builders.webapp.DataLayoutBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseTheme">false</Input>
+<Input name="MoveLinkToListItem">false</Input>
+<Input name="AddLogging">false</Input>
+<Input name="AutomaticParentSelection">true</Input>
+<Input name="SingleField">[ViewAndForm_InputPage]ViewAndForm_InputPage/arguments</Input>
+<Input name="Name">GetCuentasServiceView_InputPageLayout</Input>
+<Input name="TemplateFile">/factory/data_layout_templates/multiline_show_hide_list.html</Input>
+<Input name="TemplateDescription">This template allows you to generate a list layout where a section can be hidden and shown using a link in each of the rows. There are two fixed fields named 'fixed_left_top' and 'fixed_left_bottom' that will always be shown. The show/hide text must be set using the 'fixed_show' and 'fixed_hide' target names. You can enter their text value directly in the "Value" column, or leave the value blank and apply a Text builder to the 'fixed_show' and 'fixed_hide' page locations. The remaining targets can be used to populate the section that will be hidden/shown. This section contains two columns with three rows.</Input>
+<Input name="StyleSheetFile">/factory/data_layout_templates/multiline_show_hide_list.css</Input>
+<Input name="LayoutFields"><top><FieldMapping><Name>fixed_show</Name>
+<Value>arg2_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>fixed_show</Name>
+<Value>arg2</Value>
+</FieldMapping>
+<FieldMapping><Name></Name>
+<Value></Value>
+</FieldMapping>
+<FieldMapping><Name></Name>
+<Value></Value>
+</FieldMapping>
+<FieldMapping><Name>left_top</Name>
+<Value>arg3_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>left_top</Name>
+<Value>arg3</Value>
+</FieldMapping>
+<FieldMapping><Name>left_top</Name>
+<Value>arg4_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Name>left_top</Name>
+<Value>arg4</Value>
+</FieldMapping>
+<FieldMapping><Name>left_top</Name>
+<Value>arg5_LABEL</Value>
+</FieldMapping>
+<FieldMapping><Value>arg5</Value>
+<Name>left_top</Name>
+</FieldMapping>
+<FieldMapping><Value>arg6_LABEL</Value>
+<Name>left_top</Name>
+</FieldMapping>
+<FieldMapping><Value>arg6</Value>
+<Name>left_top</Name>
+</FieldMapping>
+<FieldMapping><Value>arg7_LABEL</Value>
+<Name>left_top</Name>
+</FieldMapping>
+<FieldMapping><Value>arg7</Value>
+<Name>left_top</Name>
+</FieldMapping>
+</top>
+</Input>
+<Input name="LayoutContainers"><top />
+</Input>
+<Input name="DefaultName">Multi-Line Show/Hide List</Input>
+</Inputs>
+</BuilderCall>
 <BuilderCall id="bc65"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
 <Inputs><Input name="Name">GetCuentasServiceView_InputPage</Input>
 <Input name="ReplaceExisting">true</Input>
 <Input name="URL">/factory/GetCuentasMqServiceView_InputPage.html</Input>
 <Input name="URLModification">None</Input>
+<Input name="BuilderCallEnabled">false</Input>
 </Inputs>
 <Messages />
 </BuilderCall>
@@ -456,14 +454,13 @@ Parameters:
 <Input name="ReplaceExisting">true</Input>
 <Input name="URL">/factory/GetCuentasServiceView_ViewPage.html</Input>
 <Input name="URLModification">None</Input>
+<Input name="BuilderCallEnabled">false</Input>
 </Inputs>
 <Messages />
 </BuilderCall>
 <BuilderCall id="bc68"><BuilderDefID>com.bowstreet.adapters.websphere.builders.C2ATagBuilder</BuilderDefID>
-<Messages><Warning><Message>This BuilderCall overwrites the effect of another BuilderCall.  (This may be intentional, in which case this warning can be ignored.)</Message>
-</Warning>
-</Messages>
-<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
 <Input name="C2ANamespace">http://www.ibm.com/pb/models</Input>
 <Input name="TagType">PBLink</Input>
 <Input name="Name">Source</Input>
@@ -473,7 +470,7 @@ Parameters:
 </Input>
 <Input name="OutputDefinitions"><top><OutputDefinition><C2AOutputTypeName>id_cuenta</C2AOutputTypeName>
 <C2AOutputType>string</C2AOutputType>
-<Value>${Variables/cuentaLoopVar/cuenta/id_cuenta}</Value>
+<Value>${Variables/cuentaLoopVar/cuenta}</Value>
 <C2AOutputCaption>numero cuenta</C2AOutputCaption>
 <C2AOutputNamespace />
 <AliasList />
@@ -490,28 +487,188 @@ Parameters:
 </Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc71"><BuilderDefID>com.bowstreet.builders.webapp.HTMLEventActionBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">true</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>ViewAndForm_ViewPage</Page>
+<NameSearch>numero_cuenta</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="EventName">onClick</Input>
+<Input name="Action">fireShowInfo</Input>
+<Input name="InputMappings"><top><InputMapping><Name>fireShowInfo_Arg1</Name>
+<Value>${Variables/cuentaLoopVar/cuenta/numero_cuenta}</Value>
+</InputMapping>
+<InputMapping><Name>fireShowInfo_Arg2</Name>
+<Value>${Variables/cuentaLoopVar/cuenta/saldo}</Value>
+</InputMapping>
+<InputMapping><Name>fireShowInfo_Arg3</Name>
+<Value>${Variables/cuentaLoopVar/cuenta/fecha_creacion}</Value>
+</InputMapping>
+<InputMapping><Name>fireShowInfo_Arg4</Name>
+<Value>${Variables/cuentaLoopVar/cuenta/tipo_cuenta}</Value>
+</InputMapping>
+<InputMapping><Name>fireShowInfo_Arg5</Name>
+<Value>${Variables/cuentaLoopVar/cuenta/moneda}</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">fireShowInfo</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc75"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    DecimalFormat formateador = new DecimalFormat("###,###,###.##");
+    String numeroStr =  formateador.format (numero);
+	if(moneda.equals("Dolares")){
+		numeroStr="$"+numeroStr;
+	}
+	else if(moneda.equals("Colones")){
+	    numeroStr="¢"+numeroStr;
+	}
+	return numeroStr;
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Imports"><Imports><Import>java.text.DecimalFormat</Import>
+</Imports>
+</Input>
+<Input name="Arguments"><top><Argument><Name>numero</Name>
+<Type>double</Type>
+</Argument>
+<Argument><Name>moneda</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="XMLType">Untyped XML</Input>
+<Input name="Name">formatNumber</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc73"><BuilderDefID>com.bowstreet.builders.webapp.LookupTableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="DataType">NewXmlData</Input>
+<Input name="NewXmlData">&lt;top&gt;
+   &lt;item&gt;
+      &lt;Value&gt;null&lt;/Value&gt;
+      &lt;Label&gt;Todas&lt;/Label&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;Value&gt;Dolares&lt;/Value&gt;
+      &lt;Label&gt;Dolares&lt;/Label&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;Value&gt;Colones&lt;/Value&gt;
+      &lt;Label&gt;Colones&lt;/Label&gt;
+   &lt;/item&gt;
+&lt;/top&gt;</Input>
+<Input name="VariableType">ValueTagLabelTag</Input>
+<Input name="ValueElementName">Value</Input>
+<Input name="LabelElementName">Label</Input>
+<Input name="DataServiceValueElementName">Value</Input>
+<Input name="DataServiceLabelElementName">Label</Input>
+<Input name="GetDataFrom">BuilderInput</Input>
+<Input name="TablePosition">InFront</Input>
+<Input name="LabelValueFilterMode">LabelValue</Input>
+<Input name="Name">MonedasLookupTable</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc76"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages><Warning><Message>This BuilderCall overwrites the effect of another BuilderCall.  (This may be intentional, in which case this warning can be ignored.)</Message>
+</Warning>
+</Messages>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>ViewAndForm_ViewPage</Page>
+<NameSearch>saldo</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${MethodCall/formatNumber(${Variables/cuentaLoopVar/cuenta/saldo},${Variables/cuentaLoopVar/cuenta/moneda})}</Input>
+<Input name="Name">saldoText</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc77"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Inputs><Input name="Name">GetCuentasServiceView_InputPage</Input>
+<Input name="ReplaceExisting">true</Input>
+<Input name="URL">factory/GetCuentasServiceView_InputPage.html</Input>
+<Input name="URLModification">None</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc81"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Inputs><Input name="Name">View_And_Form_InputPage</Input>
+<Input name="ReplaceExisting">true</Input>
+<Input name="URL">factory/View_And_Form_InputPage.html</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc84"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Inputs><Input name="Name">ViewAndForm_InputPage</Input>
+<Input name="ReplaceExisting">true</Input>
+<Input name="URL">factory/ViewAndForm_InputPage.html</Input>
+<Input name="BuilderCallEnabled">false</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc85"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Inputs><Input name="Name">ViewAndForm_InputPage</Input>
+<Input name="ReplaceExisting">true</Input>
+<Input name="URL">factory/ViewAndForm_InputPage.html</Input>
+<Input name="URLModification">None</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc86"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Inputs><Input name="Name">ViewAndForm_ViewPage</Input>
+<Input name="ReplaceExisting">true</Input>
+<Input name="URL">factory/ViewAndForm_ViewPage.html</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
-<Dependencies><Dependency type="Model">imports/factory/multichanneltheme85</Dependency>
+<Dependencies><Dependency type="Model">baseModels/GetCuentasBaseModel</Dependency>
+<Dependency type="Model">imports/factory/multichanneltheme85</Dependency>
 <Dependency type="Model">providers/GetCuentasMq/GetCuentasModel</Dependency>
 <Dependency type="Model">factory/portletbase/view_and_form_base</Dependency>
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/input.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_label_above_themes.html</Dependency>
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/view.html</Dependency>
-<Dependency type="File">/factory/pages/paging/data_paging_links.html</Dependency>
 <Dependency type="File">/factory/html_templates/clean_themes.html</Dependency>
-<Dependency type="File">/factory/GetCuentasMqServiceView_InputPage.html</Dependency>
-<Dependency type="File">/factory/GetCuentasServiceView_ViewPage.html</Dependency>
+<Dependency type="File">factory/ViewAndForm_InputPage.html</Dependency>
+<Dependency type="File">factory/ViewAndForm_ViewPage.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.css</Dependency>
 <Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
 <Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
 <Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
-<Dependency type="File">/factory/pages/multichannel/paging/split_pager_default_top_base.html</Dependency>
-<Dependency type="File">/factory/pages/multichannel/paging/split_pager_drop_down_bottom_base.html</Dependency>
-<Dependency type="File">/factory/pages/split_pager_default.css</Dependency>
-<Dependency type="File">/factory/pages/paging/data_paging_links_blue.css</Dependency>
 <Dependency type="Class">com.bowstreet.builderutilities.NameSequencer</Dependency>
 <Dependency type="File">/factory/style.css</Dependency>
 </Dependencies>
@@ -526,38 +683,6 @@ Parameters:
 <ExternalProperty id="PortletModeHelp">false</ExternalProperty>
 <ExternalProperty id="DojoEnabled">true</ExternalProperty>
 <ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
-<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dojo.parser,dijit.form.FilteringSelect,dijit.form.DateTextBox,dijit.form.NumberTextBox,dijit.form.DropDownButton,dijit.Menu,dijit.MenuItem</ExternalProperty>
-<ExternalProperty id="C2AWSDLDocProperty">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:portlet="http://www.ibm.com/wps/c2a" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.ibm.com/pb/models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="pbAction_Source_Service" targetNamespace="http://www.ibm.com/pb/models"&gt;&lt;types&gt;&lt;xsd:schema targetNamespace="http://www.ibm.com/pb/models"&gt;&lt;xsd:simpleType name="id_cuenta"&gt;&lt;xsd:restriction base="xsd:string" /&gt;
-&lt;/xsd:simpleType&gt;
-&lt;/xsd:schema&gt;
-&lt;/types&gt;
-&lt;message name="pbAction_SourceResponse"&gt;&lt;part name="numero_cuenta" type="tns:id_cuenta" /&gt;
-&lt;/message&gt;
-&lt;portType name="pbAction_Source_Service"&gt;&lt;operation name="pbAction_Source"&gt;&lt;output message="tns:pbAction_SourceResponse" /&gt;
-&lt;/operation&gt;
-&lt;/portType&gt;
-&lt;binding name="pbAction_SourceBinding" type="tns:pbAction_Source_Service"&gt;&lt;portlet:binding /&gt;
-&lt;operation name="pbAction_Source"&gt;&lt;portlet:action name="pbAction_Source" type="standard" actionNameParameter="ACTION_NAME" /&gt;
-&lt;output&gt;&lt;portlet:param name="numero_cuenta" partname="numero_cuenta" boundTo="request-attribute" caption="numero.cuenta.key" /&gt;
-&lt;/output&gt;
-&lt;/operation&gt;
-&lt;/binding&gt;
-&lt;/definitions&gt;
-</ExternalProperty>
-<ExternalProperty id="WSDLResourceProperty">&lt;Properties&gt;&lt;Property&gt;&lt;Key&gt;numero.cuenta.key&lt;/Key&gt;
-&lt;Value&gt;numero cuenta&lt;/Value&gt;
-&lt;/Property&gt;
-&lt;/Properties&gt;
-</ExternalProperty>
-<ExternalProperty id="EventDataProperty">&lt;EventData&gt;&lt;ProcessingEvents /&gt;
-&lt;PublishingEvents&gt;&lt;Event&gt;&lt;Name&gt;numero_cuenta&lt;/Name&gt;
-&lt;Type&gt;java.lang.String&lt;/Type&gt;
-&lt;Namespace&gt;http://www.ibm.com/pb/models&lt;/Namespace&gt;
-&lt;DisplayName&gt;numero.cuenta.key&lt;/DisplayName&gt;
-&lt;/Event&gt;
-&lt;/PublishingEvents&gt;
-&lt;/EventData&gt;
-</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dojo.parser,dijit.form.FilteringSelect,dijit.form.DateTextBox,dijit.form.NumberTextBox</ExternalProperty>
 </ExternalProperties>
 </Model>

@@ -1,0 +1,132 @@
+<Model id="providers/Pay/SelectService"><BuilderCallList><BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.webapp.ServiceDefinitionBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PublicService">true</Input>
+<Input name="ExportAsWSDL">false</Input>
+<Input name="WrappedDocLiteral">false</Input>
+<Input name="MaintainState">false</Input>
+<Input name="AddTestingSupport">true</Input>
+<Input name="TestCreateMain">true</Input>
+<Input name="TestIncludeDocumentation">false</Input>
+<Input name="TestOverrideInputs">false</Input>
+<Input name="LogicalOperations"><Functions><FunctionDef><LogicalName>Create</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>RetrieveList</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>Search</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>Update</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>Delete</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+<FunctionDef><LogicalName>RetrieveOne</LogicalName>
+<OperationName />
+<KeyFieldRequired />
+<KeyFieldProduced />
+</FunctionDef>
+</Functions>
+</Input>
+<Input name="ServiceName">SelectServiceDefinition</Input>
+<Input name="TestServiceName">SelectServiceDefinition</Input>
+<Input name="Name">SelectServiceDefinition</Input>
+<Input name="TestOperationInputs"><OverridenInputs><InputsForOperation><Operation>SelectServiceOperation</Operation>
+<Inputs><top><Input><Name>arguments</Name>
+</Input>
+<Input><Name>arguments.arg1</Name>
+</Input>
+<Input><Name>arguments.arg2</Name>
+</Input>
+<Input><Name>arguments.arg3</Name>
+</Input>
+</top>
+</Inputs>
+</InputsForOperation>
+</OverridenInputs>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc1"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">double</Input>
+<Input name="Body">{
+	return 5.3;
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">formulario</Input>
+<Input name="Arguments"><top><Argument><Name>Provedor</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>Servicio</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc5"><BuilderDefID>com.bowstreet.builders.webapp.ServiceOperationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="InputStructureHandling">FromOperation</Input>
+<Input name="InputAllowStructureEdit">false</Input>
+<Input name="InputAutomaticMapping">true</Input>
+<Input name="ResultStructureHandling">FromOperation</Input>
+<Input name="ResultAllowStructureEdit">false</Input>
+<Input name="ResultAutomaticMapping">true</Input>
+<Input name="EnableCaching">false</Input>
+<Input name="CachingTimeout">3600</Input>
+<Input name="PreExecuteEventEnabled">disabled</Input>
+<Input name="PostExecuteEventEnabled">disabled</Input>
+<Input name="PagedDataResource">Default</Input>
+<Input name="DataService">SelectServiceDefinition</Input>
+<Input name="ResultMappingTable"><Fields><Field><Name>returnValue</Name>
+<Type>double</Type>
+<Value>${Results/returnValue}</Value>
+</Field>
+</Fields>
+</Input>
+<Input name="InputMappingTable"><Fields><Field><Name>Provedor</Name>
+<Type>string</Type>
+</Field>
+<Field><Name>Servicio</Name>
+<Type>string</Type>
+</Field>
+</Fields>
+</Input>
+<Input name="OperationName">SelectServiceOperation</Input>
+<Input name="TargetOperation">formulario</Input>
+<Input name="Name">SelectServiceOperation</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies><Dependency type="File">/factory/pages/service_test_index_page.html</Dependency>
+<Dependency type="Model">factory/portletbase/view_and_form_base</Dependency>
+<Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/input.html</Dependency>
+<Dependency type="File">/factory/html_templates/clean_label_above_themes.html</Dependency>
+<Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/view.html</Dependency>
+<Dependency type="File">/factory/html_templates/clean_themes.html</Dependency>
+</Dependencies>
+<ExternalProperties><ExternalProperty id="Service2Enabled">true</ExternalProperty>
+<ExternalProperty id="DojoEnabled">true</ExternalProperty>
+<ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.TextBox</ExternalProperty>
+</ExternalProperties>
+</Model>

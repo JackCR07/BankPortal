@@ -1,0 +1,823 @@
+<Model id="consumers/Pay/SelectServiceModel"><BuilderCallList><BuilderCall id="bc145"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PortletDefaultLocale">en</Input>
+<Input name="PortletAdditionalLocales">en</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomEditDefaultsPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="Name">SeleccionarServicio</Input>
+<Input name="PortletTitle">Seleccionar Servicio</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc93"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseParentProfile">false</Input>
+<Input name="ImportOnce">false</Input>
+<Input name="ProfileHandling">None</Input>
+<Input name="Name">BaseModel</Input>
+<Input name="ModelName">baseModels/PayBaseModel</Input>
+<Input name="SetProfiledInputValues">false</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[$Child$Services$<top>
+
+</top>]]></CacheKey>
+<CacheValue><top />
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc28"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>page1</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Name">main</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc70"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageData">&lt;html&gt;
+    &lt;body&gt;
+            &lt;h2 class="titulo"&gt; Seleccionar Servicio&lt;/h2&gt;
+	        &lt;div style="width:90%; margin: 0 auto;"&gt;
+	        	&lt;div style="width:90%; margin: 0 auto;"&gt;
+	    		&lt;form name="main-form" style="margin:0 auto"&gt;
+	    		    &lt;div name="service-div"&gt;
+					    &lt;label class="subtitulos"&gt;Proveedor de Servicios &lt;/label&gt;
+					    &lt;br/&gt;
+		            	&lt;span class="inputOfText"name="provider" disabled&gt;&lt;/span&gt;
+		            	&lt;br/&gt;
+		    		    &lt;br/&gt;
+			    		&lt;label class="subtitulos"&gt;Servicios Disponibles &lt;/label&gt;
+			    		&lt;br/&gt;
+			            &lt;span name="select"&gt;&lt;/span&gt;
+			            &lt;br/&gt;
+			            &lt;br/&gt;
+			            &lt;span class="subtitulos" id="id-service-label" name="id-service-label"&gt;&lt;/span&gt;
+			            &lt;br/&gt;
+					     &lt;span class="inputOfText" id="id-service" name="id-service"&gt;&lt;/span&gt;
+					     &lt;br id="newLine1"  name="newLine1"&gt;
+			            &lt;br id="newLine2" name="newLine2"&gt;	     
+			            &lt;br id="newLine3" name="newLine3"&gt;	   
+			     	&lt;/div&gt;
+			     	
+			     &lt;/form&gt;
+	            &lt;!---&lt;div name="random-div"&gt;
+	            	&lt;label class="subtitulos"&gt; Total a Pagar &lt;/label&gt;
+	            	&lt;span class="subtitulos" name="random-value"&gt;
+	            	&lt;/span&gt;--&gt;
+	            &lt;/div&gt;
+	            &lt;input class="art-button  wefDesktopButton" id="calcular_pago_button"&gt; &lt;/span&gt; 
+            	
+            &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">page1</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc103"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Metodos</Input>
+<Input name="BuilderCallEnabled">true</Input>
+<Input name="Comment">Metodos</Input>
+<Input name="BuilderCallComment">Metodos</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc113"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">DispararEvento</Input>
+<Input name="Actions"><Actions><Action><ActionName>${Inputs/provider}</ActionName>
+<ActionType>SystemOut</ActionType>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/Total=${MethodCall/generateRandom(${Variables/Provider},${Inputs/select},${Inputs/id-service})}</ActionName>
+</Action>
+<Action><ActionName>IF (${Variables/Total} != 0) NUMBERS THEN</ActionName>
+<ActionType>Conditional</ActionType>
+</Action>
+<Action><ActionType>Method</ActionType>
+<ActionName>    fireShowTotals(${Variables/Total})</ActionName>
+</Action>
+<Action><ActionName>ELSE</ActionName>
+<ActionType>Conditional</ActionType>
+</Action>
+<Action><ActionType>Method</ActionType>
+<ActionName>    fireErrorNotification(Datos Invalidos)</ActionName>
+</Action>
+<Action><ActionType>Conditional</ActionType>
+<ActionName>ENDIF</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc94"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+   System.out.println("entre al handler cliente1");
+  webAppAccess.processPage("page1");
+  System.out.println("entre al handler cliente2");
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">doNothing</Input>
+<Input name="Arguments"><top />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc105"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Componentes de Pagina</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc149"><BuilderDefID>com.bowstreet.builders.webapp.TextInputBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Type">Normal</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><size />
+<maxlength />
+</HTMLAttributes>
+</Input>
+<Input name="Name">ProviderTextInput</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>provider</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Value">${Variables/Provider}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc112"><BuilderDefID>com.bowstreet.builders.webapp.DojoSelectBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="DojoWidgetType">dijit.form.FilteringSelect</Input>
+<Input name="RetainOptions">true</Input>
+<Input name="RemoveDuplicateOptions">false</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="HandleMissingValue">Ignore</Input>
+<Input name="Separator">;</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>select</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Options">${Variables/Services}</Input>
+<Input name="Name">selectDojo</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc74"><BuilderDefID>com.bowstreet.builders.webapp.SelectBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="Multiple">false</Input>
+<Input name="RetainOptions">true</Input>
+<Input name="RemoveDuplicateOptions">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><size />
+<class />
+</HTMLAttributes>
+</Input>
+<Input name="Options">${Variables/Services}</Input>
+<Input name="Name">ServicesSelect</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>select</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="ValueKey">Value</Input>
+<Input name="TextKey">Label</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc97"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages><Warning><Message>PageLocation expression "Page page1 NameSearch random-value" does not evaluate to any locations.</Message>
+</Warning>
+</Messages>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">randomText</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>random-value</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/Total}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc101"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">EventHandlers</Input>
+<Input name="BuilderCallEnabled">true</Input>
+<Input name="Comment">Manejadores de Eventos</Input>
+<Input name="BuilderCallComment">Manejadores de Eventos</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc108"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">RefreshLocation</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">UpdateTotalClientEventHandler</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>random-div</NameSearch>
+<InsertionModifier>Before</InsertionModifier>
+<NewNodeName>clientEvenHandlerUpdateRandom</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Event">ShowTotals</Input>
+<Input name="Action">doNothing</Input>
+<Input name="InputMappings"><top />
+</Input>
+<Input name="RefreshPageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>random-div</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="ActionURL">generateRandom</Input>
+<Input name="Script">alert("45");</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc99"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="UseInlineHandler">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="EventName">ShowTotals</Input>
+<Input name="Name">UpdateTotalEventHandler</Input>
+<Input name="Arguments"><Arguments><Argument><Name>total</Name>
+<Type>String</Type>
+</Argument>
+</Arguments>
+</Input>
+<Input name="Actions"><Actions />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc98"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">RefreshLocation</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">UpdateProviderClientEventHandler</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>service-div</NameSearch>
+<InsertionModifier>Before</InsertionModifier>
+<NewNodeName>update-provider-client-event-handler</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Event">ShowServices</Input>
+<Input name="Action">doNothing</Input>
+<Input name="InputMappings"><top />
+</Input>
+<Input name="RefreshPageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>service-div</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="ActionURL">generateRandom</Input>
+<Input name="Script">alert("45");</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc110"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseInlineHandler">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="EventName">ShowServices</Input>
+<Input name="Name">UpdateProviderEventHandler</Input>
+<Input name="Arguments"><Arguments />
+</Input>
+<Input name="Actions"><Actions><Action><ActionType>SystemOut</ActionType>
+<ActionName>Entre al handler del select service</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc109"><BuilderDefID>com.bowstreet.builders.webapp.HTMLEventActionBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">true</Input>
+<Input name="PostActionBehavior">EvalJavaScript</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">script</Input>
+<Input name="ActionTypeUI">RUN_SCRIPT</Input>
+<Input name="IsModelAction">false</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">showPayInput</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>select</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="EventName">onChange</Input>
+<Input name="InputMappings"><top />
+</Input>
+<Input name="RefreshPageLocation"><SimplePageLocation><Page>pagina1</Page>
+<NameSearch>randomdiv</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Script">var service =document.getElementsByName("select")[0].value;
+if(service=="NoSeleccionado"){
+	document.getElementById("id-service-label").style.display='none';
+	document.getElementById("id-service").style.display='none';
+	document.getElementById("newLine1").style.display='none';
+	document.getElementById("newLine2").style.display='none';
+	document.getElementById("newLine3").style.display='none';
+}
+else if(service=="Agua"){
+	document.getElementById("id-service-label").style.display='';
+	document.getElementById("id-service-label").innerHTML="Medidor";
+	document.getElementById("id-service").style.display='';
+	document.getElementById("newLine1").style.display='';
+	document.getElementById("newLine2").style.display='';
+	document.getElementById("newLine3").style.display='';
+} 	
+else if(service=="Electricidad"){
+	document.getElementById("id-service-label").style.display='';
+	document.getElementById("id-service-label").innerHTML="Medidor";
+	document.getElementById("id-service").style.display='';
+	document.getElementById("newLine1").style.display='';
+	document.getElementById("newLine2").style.display='';
+	document.getElementById("newLine3").style.display='';
+}
+else if(service=="Telefono"){
+	document.getElementById("id-service-label").style.display='';
+	document.getElementById("id-service-label").innerHTML="Telefono";
+	document.getElementById("id-service").style.display='';
+	document.getElementById("newLine1").style.display='';
+	document.getElementById("newLine2").style.display='';
+	document.getElementById("newLine3").style.display='';
+}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc115"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{ 
+	String provider = webAppAccess.getRequestInputs().getInputValue("provider"); 
+	System.out.println("Provider = "+provider);
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">getInputs</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc118"><BuilderDefID>com.bowstreet.builders.webapp.FormSubmitActionBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="ShowAdvancedPostActionBehaviors">true</Input>
+<Input name="PostActionBehavior">EvalJavaScript</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">false</Input>
+<Input name="Name">testSubmit</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>main-form</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Action">doNothing</Input>
+<Input name="ActionURL">doNothing</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc129"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Variables</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc131"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">IdServiceLabel</Input>
+<Input name="Type">String</Input>
+<Input name="Value">No Seleccionado</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc133"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">IdServiceText</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>id-service-label</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/IdServiceLabel}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc135"><BuilderDefID>com.bowstreet.builders.webapp.TextInputBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Type">Normal</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><size />
+<maxlength />
+</HTMLAttributes>
+</Input>
+<Input name="Name">IdServiceInput</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>id-service</NameSearch>
+</SimplePageLocation>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc137"><BuilderDefID>com.bowstreet.builders.webapp.AttributeSetterBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="HandleMissingValue">Ignore</Input>
+<Input name="Separator"> ;</Input>
+<Input name="TargetPhase">PostConstruction</Input>
+<Input name="TypeSelector">Multiple</Input>
+<Input name="Name">hiddenElements</Input>
+<Input name="PageName">page1</Input>
+<Input name="MultiAttributes"><top><Attribute><Tag>id-service</Tag>
+<Overwrite>Skip</Overwrite>
+<Name>style</Name>
+<Value>display:none;</Value>
+</Attribute>
+<Attribute><Tag>id-service-label</Tag>
+<Name>style</Name>
+<Value>display:none;</Value>
+</Attribute>
+<Attribute><Tag>newLine1</Tag>
+<Name>style</Name>
+<Value>display:none;</Value>
+</Attribute>
+<Attribute><Tag>newLine2</Tag>
+<Name>style</Name>
+<Value>display:none;</Value>
+</Attribute>
+<Attribute><Tag>newLine3</Tag>
+<Name>style</Name>
+<Value>display:none;</Value>
+</Attribute>
+</top>
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>id-service</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Attributes"><top><Attribute><Name>hidden</Name>
+</Attribute>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc139"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">true</Input>
+<Input name="PostActionBehavior">EvalJavaScript</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">CalcularPagoButton</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>calcular_pago_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">Consultar Pago</Input>
+<Input name="Action">DispararEvento</Input>
+<Input name="Form">main-form</Input>
+<Input name="ActionURL">DispararEvento</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc141"><BuilderDefID>com.bowstreet.builders.webapp.EventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ClientSideDelivery">true</Input>
+<Input name="ServerDelivery">false</Input>
+<Input name="EventName">ErrorNotification</Input>
+<Input name="Arguments"><top><Argument><Name>error</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="Name">ErrorNotification</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc143"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">script</Input>
+<Input name="ActionTypeUI">RUN_SCRIPT</Input>
+<Input name="IsModelAction">false</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">showAlertError</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>calcular_pago_button</NameSearch>
+<InsertionModifier>Before</InsertionModifier>
+<NewNodeName>alertErrorEventHandler</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Event">ErrorNotification</Input>
+<Input name="Script"> alert(this.error);</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc147"><BuilderDefID>com.bowstreet.builders.webapp.StyleSheetBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageLocationType">Implicit</Input>
+<Input name="SourceType">Link</Input>
+<Input name="Name">Estilos</Input>
+<Input name="PageName">page1</Input>
+<Input name="ExternalLocation">/factory/style.css</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc151"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageData">&lt;html&gt;
+    &lt;body&gt;
+    		&lt;h2 class="titulo"&gt; Resultado&lt;/h2&gt;
+            &lt;div  style="width:80%; margin:0 auto;"&gt;
+            &lt;span name="imageResult"&gt;&lt;/span&gt;
+            &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">ResultPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc153"><BuilderDefID>com.bowstreet.builders.webapp.ImageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><alt />
+<width />
+<height />
+<border />
+</HTMLAttributes>
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>ResultPage</Page>
+<NameSearch>imageResult</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">ImageResult</Input>
+<Input name="ImageName">${Variables/ImagePath}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc155"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>page1</Page>
+<NameSearch>main-form</NameSearch>
+<InsertionModifier>Before</InsertionModifier>
+<NewNodeName>ShowResultsClientEventHandler</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Event">ShowResults</Input>
+<Input name="Name">ShowResultClientEventHandler</Input>
+<Input name="Action">ResultPage</Input>
+<Input name="ActionURL">ShowResultPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc158"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>ResultPage</Page>
+<NameSearch>imageResult</NameSearch>
+<InsertionModifier>Before</InsertionModifier>
+<NewNodeName>client_event_show_start_pages</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Event">ShowStartPages</Input>
+<Input name="Action">doNothing</Input>
+<Input name="ActionURL">doNothing</Input>
+<Input name="Name">ShowStartPageClientEventHandler</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc157"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">ShowResultPage</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>ResultPage</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc161"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseInlineHandler">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="EventName">ShowStartPages</Input>
+<Input name="Name">EventHandlerShowStartPages</Input>
+<Input name="Arguments"><Arguments />
+</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/Provider=No Seleccionado</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/Services=</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc163"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">ImagePath</Input>
+<Input name="Type">String</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc165"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+    if(result.equals("El pago se realizó satisfactoriamente")){
+    	webAppAccess.getVariables().setString("ImagePath","/factory/images/icons/red-check.png");
+    }
+    else{
+    	webAppAccess.getVariables().setString("ImagePath","/factory/images/icons/red-bad.png");
+    }
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">SetImagePath</Input>
+<Input name="Arguments"><top><Argument><Name>result</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc167"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseInlineHandler">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="EventName">ShowResults</Input>
+<Input name="Name">EventHandlerShowResultPage</Input>
+<Input name="Arguments"><Arguments><Argument><Name>result</Name>
+<Type>String</Type>
+</Argument>
+</Arguments>
+</Input>
+<Input name="Actions"><Actions><Action><ActionType>Method</ActionType>
+<ActionName>SetImagePath(${Arguments/result})</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies><Dependency type="Model">baseModels/PayBaseModel</Dependency>
+<Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
+<Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
+<Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
+<Dependency type="File">/factory/style.css</Dependency>
+</Dependencies>
+<ExternalProperties><ExternalProperty id="PortletModel">true</ExternalProperty>
+<ExternalProperty id="PortletName">SeleccionarServicio</ExternalProperty>
+<ExternalProperty id="PortletTitle">Seleccionar Servicio</ExternalProperty>
+<ExternalProperty id="PortletDefaultLocale">en</ExternalProperty>
+<ExternalProperty id="PortletAdditionalLocales">en</ExternalProperty>
+<ExternalProperty id="TestPortalPage"></ExternalProperty>
+<ExternalProperty id="PortletModeEdit">false</ExternalProperty>
+<ExternalProperty id="PortletModeEditDefaults">false</ExternalProperty>
+<ExternalProperty id="PortletModeConfig">false</ExternalProperty>
+<ExternalProperty id="PortletModeHelp">false</ExternalProperty>
+<ExternalProperty id="DojoEnabled">true</ExternalProperty>
+<ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.FilteringSelect</ExternalProperty>
+</ExternalProperties>
+</Model>

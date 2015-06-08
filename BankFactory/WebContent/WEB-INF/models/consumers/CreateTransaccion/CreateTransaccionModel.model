@@ -18,6 +18,17 @@ You can view and test both the Desktop, Tablet and Smartphone profiles from Desi
 You can also profile other builder inputs according to device type, and you can apply different profiling for specific device types if you want.   For example, you could have different CSS style sheets applied for different types of smartphones if you want to have a different appearance for each device.</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc31"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseParentProfile">false</Input>
+<Input name="ImportOnce">false</Input>
+<Input name="ProfileHandling">None</Input>
+<Input name="Name">BaseModel</Input>
+<Input name="ModelName">baseModels/CreateTransaccionBaseModel</Input>
+<Input name="SetProfiledInputValues">false</Input>
+</Inputs>
+</BuilderCall>
 <BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
 <Messages />
 <Inputs profiled="true"><Input name="BuilderCallEnabled">true</Input>
@@ -92,7 +103,10 @@ Parameters:
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ViewAndFormBuilder</BuilderDefID>
-<Messages />
+<Messages><Warning><Message>Location for New Tags, "input_data" was not found.</Message>
+<Message>PageLocation expression "Page CreateTransaccionConsumerView_InputPage NameSearch input_form" does not evaluate to any locations.</Message>
+</Warning>
+</Messages>
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="BuilderCallCategory">General</Input>
 <Input name="UseTheme">true</Input>
@@ -130,6 +144,7 @@ Parameters:
 <Input name="ViewPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_ViewPageStyleSheetOverride}</Input>
 <Input name="DetailPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</Input>
 <Input name="EnablePagingButtons">true</Input>
+<Input name="InputValidationMethodBehavior">CallAlways</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
@@ -419,6 +434,73 @@ Parameters:
 <Inputs><Input name="Name">CreateTransaccionConsumerView_InputPage</Input>
 <Input name="ReplaceExisting">true</Input>
 <Input name="URL">factory/CreateTransaccionConsumerView_InputPage.html</Input>
+<Input name="URLModification">None</Input>
+<Input name="EditPage">Edit Page</Input>
+<Input name="PageEditor">&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;/HEAD&gt;
+&lt;BODY id="wefBody" style="background-color: transparent;"&gt;
+	&lt;H2 class="titulo"&gt;Transferencia&lt;/H2&gt;
+	&lt;DIV style="width: 90%; margin: 0 auto"&gt;
+		&lt;FORM name="main_form"&gt;
+			&lt;TABLE&gt;
+				&lt;TR&gt;
+					&lt;TD&gt;
+						&lt;LABEL for="CreateTransaccionModelCreateTransaccionConsumerView_InputPageid_cuenta_origen_field"&gt;
+								&lt;SPAN name="id_cuenta_origen_RequiredPrompt" class="requiredPromptAbove"&gt;*
+								&lt;/SPAN&gt;
+						 &lt;SPAN name="id_cuenta_origenlabel" class="subtitulos inputLabelAbove"&gt;Cuenta
+									de Origen&lt;/SPAN&gt;&amp;nbsp;
+						&lt;/LABEL&gt; &lt;!-- &lt;br /&gt; --&gt; 
+					&lt;/TD&gt;
+					&lt;TD&gt;
+						&lt;INPUT name="id_cuenta_origen" class="DataEntryFieldElement" id="CreateTransaccionModelCreateTransaccionConsumerView_InputPageid_cuenta_origen_field"&gt;
+			
+							&lt;SPAN name="id_cuenta_origen_ValidationError" class="ValidationErrorText"&gt;&lt;/SPAN&gt; 
+					&lt;/TD&gt;
+				&lt;/TR&gt;
+				&lt;TR&gt;
+					&lt;TD&gt;
+						&lt;LABEL for="CreateTransaccionModelCreateTransaccionConsumerView_InputPagenumero_cuenta_destino_field"&gt;
+								&lt;SPAN name="numero_cuenta_destino_RequiredPrompt" class="requiredPromptAbove"&gt;*&lt;/SPAN&gt; &lt;SPAN name="numero_cuenta_destinolabel" class="subtitulos inputLabelAbove"&gt;Numero de Cuenta Destino&lt;/SPAN&gt;&amp;nbsp;
+						&lt;/LABEL&gt; 
+					&lt;/TD&gt;
+					&lt;TD&gt;	
+						&lt;!-- &lt;br /&gt; --&gt; &lt;INPUT name="numero_cuenta_destino" class="DataEntryFieldElement" id="CreateTransaccionModelCreateTransaccionConsumerView_InputPagenumero_cuenta_destino_field"&gt;
+			
+							&lt;SPAN name="numero_cuenta_destino_ValidationError" class="ValidationErrorText"&gt;&lt;/SPAN&gt;
+					&lt;/TD&gt;
+				&lt;/TR&gt;
+				&lt;TR&gt;
+					&lt;TD&gt;
+						&lt;LABEL for="CreateTransaccionModelCreateTransaccionConsumerView_InputPagemonto_transferido_field"&gt;
+								&lt;SPAN name="monto_transferido_RequiredPrompt" class="requiredPromptAbove"&gt;*&lt;/SPAN&gt; &lt;SPAN name="monto_transferidolabel" class="subtitulos inputLabelAbove"&gt;Monto
+									Transferido&lt;/SPAN&gt;&amp;nbsp;
+					
+				
+						&lt;/LABEL&gt; 
+						&lt;!-- &lt;br /&gt; --&gt; 
+					&lt;/TD&gt;
+					&lt;TD&gt;
+						&lt;INPUT name="monto_transferido" class="DataEntryFieldElement" id="CreateTransaccionModelCreateTransaccionConsumerView_InputPagemonto_transferido_field"&gt;
+			
+							&lt;SPAN name="monto_transferido_ValidationError" class="ValidationErrorText"&gt;&lt;/SPAN&gt;
+					&lt;/TD&gt;
+				&lt;/TR&gt;
+			&lt;/TABLE&gt;
+			&lt;BR&gt;
+			&lt;BR&gt;
+
+
+			 &lt;SPAN name="submit_button" class="art-button"&gt;&lt;/SPAN&gt; 
+			 &lt;SPAN name="graph_button" class="image-button"&gt;&lt;/SPAN&gt; 
+			 &lt;SPAN name="info-button" class="image-button"&gt;&lt;/SPAN&gt;
+
+		&lt;/FORM&gt;
+	&lt;/DIV&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</Input>
+<Input name="MethodAttribute">false</Input>
 </Inputs>
 <Messages />
 </BuilderCall>
@@ -426,13 +508,215 @@ Parameters:
 <Inputs><Input name="Name">CreateTransaccionConsumerView_ViewPage</Input>
 <Input name="ReplaceExisting">true</Input>
 <Input name="URL">factory/CreateTransaccionConsumerView_ViewPage.html</Input>
+<Input name="URLModification">None</Input>
 </Inputs>
 <Messages />
+</BuilderCall>
+<BuilderCall id="bc34"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Actions"><Actions><Action><ActionName>DataServices/CreateTransaccionConsumerService/CreateTransaccionOperation/inputs/operation1/id_cuenta_origen=${Inputs/id_cuenta_origen}</ActionName>
+<ActionType>Assignment</ActionType>
+</Action>
+<Action><ActionName>DataServices/CreateTransaccionConsumerService/CreateTransaccionOperation/inputs/operation1/numero_cuenta_destino=${Inputs/numero_cuenta_destino}</ActionName>
+<ActionType>Assignment</ActionType>
+</Action>
+<Action><ActionName>DataServices/CreateTransaccionConsumerService/CreateTransaccionOperation/inputs/operation1/monto_transferido=${Inputs/monto_transferido}</ActionName>
+<ActionType>Assignment</ActionType>
+</Action>
+<Action><ActionName>DataServices/CreateTransaccionConsumerService/CreateTransaccionOperation</ActionName>
+<ActionType />
+</Action>
+<Action><ActionName>Variables/ResultadoTransaccion=${DataServices/CreateTransaccionConsumerService/CreateTransaccionOperation/results/operation1Response/resultado}</ActionName>
+<ActionType>Assignment</ActionType>
+</Action>
+<Action><ActionType>Method</ActionType>
+<ActionName>fireShowResults(${Variables/ResultadoTransaccion})</ActionName>
+</Action>
+<Action><ActionType>SystemOut</ActionType>
+<ActionName>//SystemOut!${Inputs/numero_cuenta_destino}</ActionName>
+</Action>
+<Action><ActionType>SystemOut</ActionType>
+<ActionName>//ystemOut!${Inputs/monto_transferido}</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Name">getResults</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc33"><BuilderDefID>com.bowstreet.builders.webapp.HTMLEventActionBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">true</Input>
+<Input name="PostActionBehavior">EvalJavaScript</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>CreateTransaccionConsumerView_InputPage</Page>
+<NameSearch>submit_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="EventName">onClick</Input>
+<Input name="Action">getResults</Input>
+<Input name="InputMappings"><top><InputMapping><Name>fireShowResults_Arg1</Name>
+<Value>yuyu</Value>
+</InputMapping>
+</top>
+</Input>
+<Input name="ActionURL">fireShowResults</Input>
+<Input name="Form">main_form</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc37"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">ShowResultsClientEventHandler</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>CreateTransaccionConsumerView_InputPage</Page>
+<NameSearch>submit_button</NameSearch>
+<InsertionModifier>Before</InsertionModifier>
+<NewNodeName>show_results_client_event_handler</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Event">ShowResults</Input>
+<Input name="Action">CreateTransaccionConsumerView_ViewPage</Input>
+<Input name="ActionURL">showViewPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc36"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">ResultadoTransaccion</Input>
+<Input name="Type">String</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc39"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages><Warning><Message>This BuilderCall overwrites the effect of another BuilderCall.  (This may be intentional, in which case this warning can be ignored.)</Message>
+</Warning>
+</Messages>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">resultadoTransaccion</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>CreateTransaccionConsumerView_ViewPage</Page>
+<NameSearch>resultado</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/ResultadoTransaccion}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc43"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>CreateTransaccionConsumerView_ViewPage</Page>
+<NameSearch>resultado</NameSearch>
+<InsertionModifier>Before</InsertionModifier>
+<NewNodeName>client_event_show_start_pages</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Event">ShowStartPages</Input>
+<Input name="Action">CreateTransaccionConsumerView_InputPage</Input>
+<Input name="ActionURL">doNothing</Input>
+<Input name="Name">ClientEventShowStartPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc44"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseInlineHandler">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="EventName">ShowStartPages</Input>
+<Input name="Name">EventHandlerShowStartPages</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>DataServices/CreateTransaccionConsumerService/CreateTransaccionOperation/inputs/operation1=</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Arguments"><Arguments />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc41"><BuilderDefID>com.bowstreet.builders.webapp.HTMLEventActionBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>CreateTransaccionConsumerView_ViewPage</Page>
+<NameSearch>back_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="EventName">onClick</Input>
+<Input name="Action">fireShowStartPages</Input>
+</Inputs>
 </BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
-<Dependencies><Dependency type="Model">imports/factory/multichanneltheme85</Dependency>
+<Dependencies><Dependency type="Model">baseModels/CreateTransaccionBaseModel</Dependency>
+<Dependency type="Model">imports/factory/multichanneltheme85</Dependency>
 <Dependency type="Model">providers/CreateTransaccion/CreateTransaccionModel</Dependency>
 <Dependency type="Model">factory/portletbase/view_and_form_base</Dependency>
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/input.html</Dependency>

@@ -1,0 +1,210 @@
+<Model id="baseModels/PayBaseModel"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.EventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ClientSideDelivery">true</Input>
+<Input name="ServerDelivery">true</Input>
+<Input name="EventName">ShowServices</Input>
+<Input name="Name">ShowServices</Input>
+<Input name="Arguments"><top />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc22"><BuilderDefID>com.bowstreet.builders.webapp.EventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ClientSideDelivery">true</Input>
+<Input name="ServerDelivery">true</Input>
+<Input name="EventName">ShowResults</Input>
+<Input name="Name">ShowResults</Input>
+<Input name="Arguments"><top><Argument><Name>result</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc19"><BuilderDefID>com.bowstreet.builders.webapp.EventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ClientSideDelivery">true</Input>
+<Input name="ServerDelivery">true</Input>
+<Input name="EventName">ShowTotals</Input>
+<Input name="Name">ShowTotals</Input>
+<Input name="Arguments"><top><Argument><Name>total</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc24"><BuilderDefID>com.bowstreet.builders.webapp.EventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ClientSideDelivery">true</Input>
+<Input name="ServerDelivery">true</Input>
+<Input name="EventName">ShowStartPages</Input>
+<Input name="Name">ShowStartPages</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.EventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ClientSideDelivery">true</Input>
+<Input name="ServerDelivery">false</Input>
+<Input name="EventName">changeProviderValue</Input>
+<Input name="Name">changeProviderValue</Input>
+<Input name="Arguments"><top><Argument><Name>provider</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientEventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ClientSideDelivery">true</Input>
+<Input name="ServerDelivery">false</Input>
+<Input name="EventName">ClientShowServices</Input>
+<Input name="Name">ClientShowServices</Input>
+<Input name="Arguments"><top />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc9"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientEventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ClientSideDelivery">true</Input>
+<Input name="ServerDelivery">false</Input>
+<Input name="EventName">ClientShowTotals</Input>
+<Input name="Name">ClientShowTotals</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Provider</Input>
+<Input name="Type">String</Input>
+<Input name="Value">No Seleccionado</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Total</Input>
+<Input name="Type">Double</Input>
+<Input name="Value">0</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc12"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Services</Input>
+<Input name="Type">XML</Input>
+<Input name="Value">&lt;top&gt;
+
+&lt;/top&gt;</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[<top>
+
+</top>]]></CacheKey>
+<CacheValue><top />
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc14"><BuilderDefID>com.bowstreet.builders.webapp.SharedVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Scope">Session</Input>
+<Input name="Page">(None)</Input>
+<Input name="UseOuterSession">true</Input>
+<Input name="Name">ServicesSharedVariable</Input>
+<Input name="Variable">Services</Input>
+<Input name="UniqueID">00001</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc16"><BuilderDefID>com.bowstreet.builders.webapp.SharedVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Scope">Session</Input>
+<Input name="Page">(None)</Input>
+<Input name="UseOuterSession">true</Input>
+<Input name="Name">ProviderSharedVariable</Input>
+<Input name="Variable">Provider</Input>
+<Input name="UniqueID">00002</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc18"><BuilderDefID>com.bowstreet.builders.webapp.SharedVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="Scope">Session</Input>
+<Input name="Page">(None)</Input>
+<Input name="UseOuterSession">true</Input>
+<Input name="Name">TotalSharedVariable</Input>
+<Input name="Variable">Total</Input>
+<Input name="UniqueID">00003</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc20"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">double</Input>
+<Input name="Body">{
+    System.out.println("servicio = "+service);
+    System.out.println("provider = "+provider);
+    System.out.println("id_service = "+id_service);
+	    if(service!=null &amp;&amp; id_service!=null &amp;&amp; provider!=null &amp;&amp; !service.equals("")  &amp;&amp; !id_service.equals("") &amp;&amp; !provider.equals("")){
+	        if(service.equals("NoSeleccionado"))
+	        	return 0;
+		   else  if(service.equals("Agua"))
+		    	return 5400;
+		    else if(service.equals("Electricidad"))
+		    	return 15000;
+		    else if(service.equals("Telefono"))
+		    	return 8000;
+		    else 
+		    	return 2000;
+		}
+	    else{
+		    	return 0;
+		}
+	    
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">generateRandom</Input>
+<Input name="Arguments"><top><Argument><Name>provider</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>service</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>id_service</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

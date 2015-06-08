@@ -10,9 +10,20 @@
 <Input name="PortletTitle">GetCuentas Grafico</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc22"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<BuilderCall id="bc28"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseParentProfile">false</Input>
+<Input name="ImportOnce">false</Input>
+<Input name="ProfileHandling">None</Input>
+<Input name="ModelName">baseModels/GetCuentasBaseModel</Input>
+<Input name="SetProfiledInputValues">false</Input>
+<Input name="Name">BaseModel</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc22"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
 <Input name="UseAllOperations">false</Input>
 <Input name="OverrideInputs">true</Input>
 <Input name="CreateLookupTables">true</Input>
@@ -106,7 +117,7 @@ Parameters:
 </BuilderCall>
 <BuilderCall id="bc2"><BuilderDefID>com.bowstreet.adapters.websphere.builders.C2AEventDeclarationBuilder</BuilderDefID>
 <Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Inputs><Input name="BuilderCallEnabled">false</Input>
 <Input name="C2AInputType">string</Input>
 <Input name="C2ANamespace">http://www.ibm.com/pb/models</Input>
 <Input name="C2AInputName">numero_cuenta</Input>
@@ -123,7 +134,7 @@ Parameters:
 </BuilderCall>
 <BuilderCall id="bc26"><BuilderDefID>com.bowstreet.builders.webapp.ClientJavaScriptBuilder</BuilderDefID>
 <Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Inputs><Input name="BuilderCallEnabled">false</Input>
 <Input name="PageLocationType">Implicit</Input>
 <Input name="ScriptSourceType">Explicit</Input>
 <Input name="PageName">vista</Input>
@@ -162,13 +173,13 @@ Parameters:
 }</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc27"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<BuilderCall id="bc49"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="PageData">
 &lt;html&gt;
 &lt;head&gt;
-&lt;title&gt;Doughnut Chart&lt;/title&gt;
+&lt;!-- &lt;title&gt;Doughnut Chart&lt;/title&gt;
 &lt;style&gt;
 #canvas-holder {
 	width: 100%;
@@ -176,12 +187,30 @@ Parameters:
 }
 &lt;/style&gt;
 &lt;script type="text/javascript" src="https://www.google.com/jsapi"&gt;&lt;/script&gt;
+--&gt;
 &lt;/head&gt;
 
 &lt;body &gt;
-&lt;h2 class="titulo"&gt; Información Grafica 
-&lt;div id="piechart" style="width: 500px; height:400px;"&gt;&lt;/div&gt;
+&lt;h2 class="titulo"&gt; Detalles de la Cuenta
 &lt;/h2&gt;
+&lt;div style="margin:0 auto; width:90%"&gt;
+&lt;div name="info"&gt;
+&lt;label name="numero_cuenta_label" class="subtitulos"&gt;Número de Cuenta &lt;/label&gt;
+&lt;label name="numero_cuenta" class="resultado"&gt; &lt;/label&gt;
+&lt;br&gt;
+&lt;label name="moneda_label" class="subtitulos"&gt;Moneda &lt;/label&gt;
+&lt;label name="moneda" class="resultado"&gt; &lt;/label&gt;
+&lt;br&gt;
+&lt;label name="saldo_label" class="subtitulos"&gt; Saldo &lt;/label&gt;
+&lt;label name="saldo"  class="resultado"&gt; &lt;/label&gt;
+&lt;br&gt;
+&lt;label name="fecha_creacion_label" class="subtitulos"&gt;Fecha de Creación &lt;/label&gt;
+&lt;label name="fecha_creacion"  class="resultado"&gt; &lt;/label&gt;
+&lt;br&gt;
+&lt;label name="tipo_cuenta_label" class="subtitulos"&gt; Tipo de Cuenta&lt;/label&gt;
+&lt;label name="tipo_cuenta"  class="resultado"&gt; &lt;/label&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/body&gt;
 
 &lt;/html&gt;</Input>
@@ -192,9 +221,45 @@ Parameters:
 <Input name="Name">vista</Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<BuilderCall id="bc27"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageData">
+&lt;html&gt;
+&lt;head&gt;
+&lt;!-- &lt;title&gt;Doughnut Chart&lt;/title&gt;
+&lt;style&gt;
+#canvas-holder {
+	width: 100%;
+	margin-top: 10%;
+}
+&lt;/style&gt;
+&lt;script type="text/javascript" src="https://www.google.com/jsapi"&gt;&lt;/script&gt;
+--&gt;
+&lt;/head&gt;
+
+&lt;body &gt;
+&lt;h2 class="titulo"&gt; Detalles de la Cuenta
+&lt;/h2&gt;
+&lt;div style="width:90%; margin:0 auto;"&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;label name="message" class="subtitulos"&gt;Seleccione Alguna Cuenta &lt;/label&gt;
+
+&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">pageWithOutSelecction</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
 <Input name="GenerateSchema">false</Input>
 <Input name="PersistChoice">0</Input>
 <Input name="GenerateSampleData">false</Input>
@@ -207,7 +272,7 @@ Parameters:
 </BuilderCall>
 <BuilderCall id="bc10"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
 <Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Inputs><Input name="BuilderCallEnabled">false</Input>
 <Input name="GenerateSchema">false</Input>
 <Input name="PersistChoice">0</Input>
 <Input name="GenerateSampleData">false</Input>
@@ -236,27 +301,57 @@ Parameters:
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="UseInlineHandler">true</Input>
 <Input name="ReturnType">Object</Input>
-<Input name="EventName">Target</Input>
+<Input name="EventName">ShowInfo</Input>
 <Input name="Name">EventHandler</Input>
 <Input name="Arguments"><Arguments><Argument><Name>numero_cuenta</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>saldo</Name>
+<Type>Double</Type>
+</Argument>
+<Argument><Name>fecha_creacion</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>tipo_cuenta</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>moneda</Name>
 <Type>String</Type>
 </Argument>
 </Arguments>
 </Input>
 <Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
-<ActionName>Variables/id_cuenta=${Arguments/numero_cuenta}</ActionName>
+<ActionName>//Assignment!Variables/id_cuenta=${Arguments/numero_cuenta}</ActionName>
 </Action>
 <Action><ActionType />
-<ActionName>DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp</ActionName>
+<ActionName>//DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp</ActionName>
 </Action>
 <Action><ActionType>Assignment</ActionType>
-<ActionName>Variables/Ingreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/Debito}</ActionName>
+<ActionName>//Assignment!Variables/Ingreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/Debito}</ActionName>
 </Action>
 <Action><ActionType>Assignment</ActionType>
-<ActionName>Variables/Egreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/Credito}</ActionName>
+<ActionName>//Assignment!Variables/Egreso=${DataServices/SumarTransaccionesConsumer/SumarTransaccionesOp/results/operation2OutputParameter1/Credito}</ActionName>
 </Action>
 <Action><ActionType />
-<ActionName>vista</ActionName>
+<ActionName>//vista</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/NumeroCuenta=${Arguments/numero_cuenta}</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/TipoCuenta=${Arguments/tipo_cuenta}</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/FechaCreacion=${Arguments/fecha_creacion}</ActionName>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/Saldo=${MethodCall/formatNumber(${Arguments/saldo},${Arguments/moneda})}</ActionName>
+</Action>
+<Action><ActionName>Variables/Moneda=${Arguments/moneda}</ActionName>
+<ActionType>Assignment</ActionType>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/InfoVisibility=display:</ActionName>
 </Action>
 </Actions>
 </Input>
@@ -264,21 +359,275 @@ Parameters:
 </BuilderCall>
 <BuilderCall id="bc24"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
 <Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Saldo</Input>
+<Input name="Type">Double</Input>
+<Input name="Value">0</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc30"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">NumeroCuentaText</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>vista</Page>
+<NameSearch>numero_cuenta</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/NumeroCuenta}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc32"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">FechaCreacionText</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>vista</Page>
+<NameSearch>fecha_creacion</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/FechaCreacion}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc34"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">SaldoText</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>vista</Page>
+<NameSearch>saldo</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/Saldo}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc36"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>vista</Page>
+<NameSearch>tipo_cuenta</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">TipoCuentaText</Input>
+<Input name="Text">${Variables/TipoCuenta}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc38"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="GenerateSchema">false</Input>
 <Input name="PersistChoice">0</Input>
 <Input name="GenerateSampleData">false</Input>
 <Input name="RenameExisting">false</Input>
 <Input name="CreateSampleData">Create sample data</Input>
-<Input name="Name">id_cuenta</Input>
+<Input name="Name">NumeroCuenta</Input>
 <Input name="Type">String</Input>
-<Input name="Value">0</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc40"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">FechaCreacion</Input>
+<Input name="Type">String</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc42"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Saldo</Input>
+<Input name="Type">String</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc66"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Moneda</Input>
+<Input name="Type">String</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc44"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">TipoCuenta</Input>
+<Input name="Type">String</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc50"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">true</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>vista</Page>
+<NameSearch>numero_cuenta</NameSearch>
+<InsertionModifier>Before</InsertionModifier>
+<NewNodeName>client_event_show_info</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Event">ShowInfo</Input>
+<Input name="Action">vista</Input>
+<Input name="Name">ShowInfoClientEventHandler</Input>
+<Input name="ActionURL">vista</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc48"><BuilderDefID>com.bowstreet.builders.webapp.StyleSheetBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageLocationType">Implicit</Input>
+<Input name="SourceType">Link</Input>
+<Input name="Name">Style</Input>
+<Input name="PageName">vista</Input>
+<Input name="ExternalLocation">/factory/style.css</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc62"><BuilderDefID>com.bowstreet.builders.webapp.AttributeSetterBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="HandleMissingValue">Ignore</Input>
+<Input name="Separator"> ; </Input>
+<Input name="TargetPhase">PostConstruction</Input>
+<Input name="TypeSelector">Single</Input>
+<Input name="PageName">vista</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>vista</Page>
+<NameSearch>info</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Attributes"><top><Attribute><Name>style</Name>
+<Value>${Variables/InfoVisibility}</Value>
+</Attribute>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc64"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">InfoVisibility</Input>
+<Input name="Value">display:none;</Input>
+<Input name="Type">String</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc68"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">Moneda</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>vista</Page>
+<NameSearch>moneda</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/Moneda}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc70"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    DecimalFormat formateador = new DecimalFormat("###,###,###.##");
+    String numeroStr =  formateador.format (numero);
+	if(moneda.equals("Dolares")){
+		numeroStr="$"+numeroStr;
+	}
+	else if(moneda.equals("Colones")){
+	    numeroStr="¢"+numeroStr;
+	}
+	return numeroStr;
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Imports"><Imports><Import>java.text.DecimalFormat</Import>
+</Imports>
+</Input>
+<Input name="Arguments"><top><Argument><Name>numero</Name>
+<Type>double</Type>
+</Argument>
+<Argument><Name>moneda</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="XMLType">Untyped XML</Input>
+<Input name="Name">formatNumber</Input>
 </Inputs>
 </BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
-<Dependencies><Dependency type="Model">providers/GetTransacciones/GetTransaccionesProvider</Dependency>
+<Dependencies><Dependency type="Model">baseModels/GetCuentasBaseModel</Dependency>
+<Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
+<Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
+<Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
+<Dependency type="File">/factory/style.css</Dependency>
 </Dependencies>
 <ExternalProperties><ExternalProperty id="PortletModel">true</ExternalProperty>
 <ExternalProperty id="PortletName">GetCuentasMq Grafico</ExternalProperty>
@@ -290,37 +639,8 @@ Parameters:
 <ExternalProperty id="PortletModeEditDefaults">false</ExternalProperty>
 <ExternalProperty id="PortletModeConfig">false</ExternalProperty>
 <ExternalProperty id="PortletModeHelp">false</ExternalProperty>
-<ExternalProperty id="C2AWSDLDocProperty">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:portlet="http://www.ibm.com/wps/c2a" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.ibm.com/pb/models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Target_Service" targetNamespace="http://www.ibm.com/pb/models"&gt;&lt;types&gt;&lt;xsd:schema targetNamespace="http://www.ibm.com/pb/models"&gt;&lt;xsd:simpleType name="id_cuenta"&gt;&lt;xsd:restriction base="xsd:string" /&gt;
-&lt;/xsd:simpleType&gt;
-&lt;/xsd:schema&gt;
-&lt;/types&gt;
-&lt;message name="TargetRequest"&gt;&lt;part name="numero_cuenta" type="tns:id_cuenta" /&gt;
-&lt;/message&gt;
-&lt;portType name="Target_Service"&gt;&lt;operation name="Target"&gt;&lt;input message="tns:TargetRequest" /&gt;
-&lt;/operation&gt;
-&lt;/portType&gt;
-&lt;binding name="TargetBinding" type="tns:Target_Service"&gt;&lt;portlet:binding /&gt;
-&lt;operation name="Target"&gt;&lt;portlet:action name="Target" type="standard" actionNameParameter="ACTION_NAME" /&gt;
-&lt;input&gt;&lt;portlet:param name="numero_cuenta" partname="numero_cuenta" boundTo="request-attribute" caption="numero.cuenta.key" /&gt;
-&lt;/input&gt;
-&lt;/operation&gt;
-&lt;/binding&gt;
-&lt;/definitions&gt;
-</ExternalProperty>
-<ExternalProperty id="WSDLResourceProperty">&lt;Properties&gt;&lt;Property&gt;&lt;Key&gt;numero.cuenta.key&lt;/Key&gt;
-&lt;Value&gt;numero cuenta&lt;/Value&gt;
-&lt;/Property&gt;
-&lt;/Properties&gt;
-</ExternalProperty>
-<ExternalProperty id="EventDataProperty">&lt;EventData&gt;&lt;ProcessingEvents&gt;&lt;Event&gt;&lt;Name&gt;numero_cuenta&lt;/Name&gt;
-&lt;Type&gt;java.lang.String&lt;/Type&gt;
-&lt;Namespace&gt;http://www.ibm.com/pb/models&lt;/Namespace&gt;
-&lt;DisplayName&gt;numero.cuenta.key&lt;/DisplayName&gt;
-&lt;/Event&gt;
-&lt;/ProcessingEvents&gt;
-&lt;PublishingEvents /&gt;
-&lt;/EventData&gt;
-</ExternalProperty>
+<ExternalProperty id="DojoEnabled">true</ExternalProperty>
+<ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer</ExternalProperty>
 </ExternalProperties>
 </Model>

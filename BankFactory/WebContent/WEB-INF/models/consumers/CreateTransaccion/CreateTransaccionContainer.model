@@ -1,0 +1,71 @@
+<Model id="consumers/CreateTransaccion/CreateTransaccionContainer"><BuilderCallList><BuilderCall id="bc9"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">main</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>Page1</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageData">&lt;html&gt;
+    &lt;body&gt;
+            &lt;div&gt;
+            &lt;span name="formulario"&gt;&lt;/span&gt;
+              &lt;span name="notificacion"&gt;&lt;/span&gt;
+            
+            &lt;/div&gt;
+           &lt;/body&gt;
+&lt;/html&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">Page1</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc5"><BuilderDefID>com.bowstreet.builders.webapp.ModelContainerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="LoadWhenVisible">false</Input>
+<Input name="InheritProfile">true</Input>
+<Input name="ForwardPropertyBrokerEvents">true</Input>
+<Input name="MultiInstance">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>Page1</Page>
+<NameSearch>formulario</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="ModelName">consumers/CreateTransaccion/CreateTransaccionModel</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ModelContainerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="LoadWhenVisible">false</Input>
+<Input name="InheritProfile">true</Input>
+<Input name="ForwardPropertyBrokerEvents">true</Input>
+<Input name="MultiInstance">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>Page1</Page>
+<NameSearch>notificacion</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="ModelName">consumers/CreateTransaccion/CreateTransaccionInfoProcess</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Dependencies><Dependency type="Model">consumers/CreateTransaccion/CreateTransaccionModel</Dependency>
+<Dependency type="Model">consumers/CreateTransaccion/CreateTransaccionInfoProcess</Dependency>
+</Dependencies>
+<ExternalProperties><ExternalProperty id="DojoEnabled">true</ExternalProperty>
+<ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer</ExternalProperty>
+<ExternalProperty id="ContainedModels">consumers/CreateTransaccion/CreateTransaccionModel:consumers/CreateTransaccion/CreateTransaccionInfoProcess</ExternalProperty>
+</ExternalProperties>
+<Properties />
+</Model>

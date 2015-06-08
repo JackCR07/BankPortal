@@ -1,0 +1,137 @@
+
+
+<html>
+  <head></head>
+  <body id="wefBody">
+  <span name="DojoProgressIndicator"></span><input type="hidden" id='<%= IDGenerator.getCurrentID(webAppAccess, "wpf_client_event_handler_2") %>' onchange="wpf_dojo_progress_indicator.hide({ppr:'wpf_ppr85201404141110',ids:this.ids,source:'<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>', overRegion:true})"><script type="text/javascript">wpf_event_bus.addListener("<%= webAppAccess.getInstanceID() %>AjaxPreUpdate", { handle: function() { wpf_dojo_progress_indicator.hide({ppr:'wpf_ppr85201404141110',ids:this.ids,source:'<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>', overRegion:true})}, _handlerID: "<%= IDGenerator.getCurrentID(webAppAccess, "wpf_client_event_handler_2") %>" });</script><span name="DojoProgressIndicator"></span><input type="hidden" id='<%= IDGenerator.getCurrentID(webAppAccess, "wpf_client_event_handler_0") %>' onchange="wpf_dojo_progress_indicator.show({ppr:'wpf_ppr85201404141110',ids:this.ids,source:'<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>', overRegion:true})"><script type="text/javascript">wpf_event_bus.addListener("<%= webAppAccess.getInstanceID() %>AjaxPreLoad", { handle: function() { wpf_dojo_progress_indicator.show({ppr:'wpf_ppr85201404141110',ids:this.ids,source:'<%= webAppAccess.callMethod("getDefaultProgressIndicatorProgressIndicatorPageID") %>', overRegion:true})}, _handlerID: "<%= IDGenerator.getCurrentID(webAppAccess, "wpf_client_event_handler_0") %>" });</script><span name="DojoProgressIndicatorPage_0" style="display:none"></span><script name="DojoProgressIndicatorScript" type="text/javascript" src='<%= webAppAccess.getURLMapper().getStaticContentURL("/factory/clientjavascript/dojo/progress_indicator.js", null) %>'></script><div class="vf_view_container" name="vf_view_container">
+    <h2 name="page_header_text" class="blockHeading"></h2>
+    <div class="vf_header" name="vf_header"></div>
+    <div class="vf_search_section">
+      <span name="search_section"></span>
+    </div>
+    <div class="vf_view_list" name="vf_view_list">
+      <form name="view_form" method="post" id='<%= IDGenerator.getCurrentID(webAppAccess, "wpf_reload_region_0") %>'>
+        <span name="GetTransaccionesView_PagingTopPager"></span><div name="data">
+<div name="GetTransaccionesView_ViewPage_DisplayPageWrapper">
+    <table name="responsive_table_layout" width="100%" class="gridTable TableBlank" cellspacing="0" cellpadding="3">
+   
+   <tr name="TableHeaderContainer" class="tableHeadRow">
+      
+      <th class="tableHead" nowrap="" scope="col">
+         
+         <span name="column1_header_label" class="tableHeadText">
+            <span name="numero_transaccionlabel">Transacci&#243;n</span>
+         </span>
+      </th>
+      <th class="tableHead" nowrap="" scope="col">
+         
+         <span name="column2_header_label" class="tableHeadText">
+            <span name="creditolabel">Credito</span>
+         </span>
+      </th>
+      <th class="tableHead" scope="col">
+         
+         <span name="column3_header_label" class="tableHeadText">
+            <span name="debitolabel">Debito</span>
+         </span>
+      </th>
+      <th class="tableHead" nowrap="" scope="col">
+         
+         <span name="column4_header_label" class="tableHeadText">
+            <span name="fecha_transaccionlabel">Fecha</span>
+         </span>
+      </th>
+      <th class="tableHead" nowrap="" scope="col">
+         
+         <span name="column5_header_label" class="tableHeadText">
+            <span name="num_cuenta_origenlabel">Origen</span>
+         </span>
+      </th>
+      <th class="tableHead" nowrap="" scope="col">
+         
+         <span name="column6_header_label" class="tableHeadText">
+            <span name="num_cuenta_destinolabel">Destino</span>
+         </span>
+      </th>
+      <th class="tableHead" nowrap="" scope="col">
+         
+         <span name="column7_header_label" class="tableHeadText"></span>
+      </th>
+      <th class="tableHead" nowrap="" scope="col">
+         
+         <span name="column8_header_label" class="tableHeadText"></span>
+      </th>
+      <th class="tableHead" nowrap="" scope="col">
+         
+         <span name="column9_header_label" class="tableHeadText"></span>
+      </th>
+      <th class="tableHead" nowrap="" scope="col">
+         
+         <span name="column10_header_label" class="tableHeadText"></span>
+      </th>
+   </tr>
+   <HTMLWRAPPER name="transaccion_Repeat">
+      <tr class="sampleTableRow" name="table_row" sequence_class="tableRowOdd,tableRowEven">
+         
+         <td valign="top" class="tableCell">
+            
+            <span class="outputData"></span>
+         </td>
+         <td valign="top" class="tableCell">
+            
+            <span class="outputData"></span>
+         </td>
+         <td valign="top" class="tableCell">
+            
+            <span class="outputData"></span>
+         </td>
+         <td valign="top" class="tableCell">
+            
+            <span class="outputData"></span>
+         </td>
+         <td valign="top" class="tableCell">
+            
+            <span class="outputData"></span>
+         </td>
+         <td valign="top" class="tableCell">
+            
+            <span class="outputData"></span>
+         </td>
+         <td valign="top" class="tableCell">
+            
+            <span class="outputData"></span>
+         </td>
+         <td valign="top" class="tableCell">
+            
+            <span class="outputData"></span>
+         </td>
+         <td valign="top" class="tableCell">
+            
+            <span class="outputData"></span>
+         </td>
+         <td valign="top" class="tableCell">
+            
+            <span class="outputData"></span>
+         </td>
+      </tr>
+   </HTMLWRAPPER>
+
+</table>
+  </div>
+</div>
+        <div class="paging"><span name="paging_buttons"></span></div>
+        <div class="vf_buttons" name="vf_buttons">
+          <span name="back_button"></span>
+          <span name="update_button"></span>
+          <span name="extra_button1"></span>
+          <span name="extra_button2"></span>
+        </div>
+        <div class="vf_create_button">
+          <span name="create_button"></span>
+        </div>
+      </form>
+      <div class="vf_footer" name="vf_footer"></div>
+    </div>
+  </div>
+  </body>
+</html>

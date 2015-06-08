@@ -617,6 +617,13 @@ Parameters:
 </Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc69"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Inputs><Input name="Name">GetCuentasServiceView_InputPage</Input>
+<Input name="ReplaceExisting">true</Input>
+<Input name="URL">factory/GetCuentasServiceView_InputPage.html</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
@@ -631,6 +638,7 @@ Parameters:
 <Dependency type="File">factory/GetCuentasServiceView_ViewPage.html</Dependency>
 <Dependency type="File">/factory/GetCuentasServiceView_InputPage.html</Dependency>
 <Dependency type="File">/factory/GetCuentasServiceView_ViewPage.html</Dependency>
+<Dependency type="File">factory/GetCuentasServiceView_InputPage.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.css</Dependency>
 <Dependency type="File">/factory/data_layout_templates/responsive_table_layout.html</Dependency>

@@ -131,8 +131,7 @@ Here are some of the things you might want to do now that you have the model sta
 &lt;serviceName&gt;GetCuentasHttpService&lt;/serviceName&gt;
 &lt;serviceNamespace&gt;http://GetCuentas&lt;/serviceNamespace&gt;
 &lt;/serviceInfo&gt;
-&lt;/operationInfo&gt;
-</Input>
+&lt;/operationInfo&gt;</Input>
 <Input name="ExamineWSDLargname_1">operation1Parameters</Input>
 <Input name="ExamineWSDLargtype_1">operation1</Input>
 <Input name="hidden_ExamineWSDLargclass_1">com.bowstreet.util.IXml</Input>
@@ -166,8 +165,7 @@ Here are some of the things you might want to do now that you have the model sta
 &lt;/xsd:sequence&gt;
 &lt;/xsd:complexType&gt;
 &lt;/xsd:schema&gt;
-&lt;/schemas&gt;
-</Input>
+&lt;/schemas&gt;</Input>
 <Input name="hidden_ExamineWSDL_SchemaNamespace">http://www.w3.org/2001/XMLSchema</Input>
 <Input name="hidden_ExamineWSDL_wsdldoc">&lt;wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://GetCuentas" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GetCuentas" targetNamespace="http://GetCuentas"&gt;&lt;wsdl:documentation&gt;&lt;wsdl:appinfo source="WMQI_APPINFO"&gt;&lt;MRWSDLAppInfo imported="true"&gt;&lt;generatedXSD location="GetCuentas_InlineSchema1.xsd" /&gt;
 &lt;binding hasEncoding="false" imported="true" name="GetCuentasHttpBinding" originalBindingStyle="document" /&gt;
@@ -218,8 +216,7 @@ Here are some of the things you might want to do now that you have the model sta
 &lt;wsdl:service name="GetCuentasHttpService"&gt;&lt;wsdl:port binding="tns:GetCuentasHttpBinding" name="GetCuentasHttpPort"&gt;&lt;soap:address location="http://172.16.11.225:7800/GetCuentas/GetCuentas" /&gt;
 &lt;/wsdl:port&gt;
 &lt;/wsdl:service&gt;
-&lt;/wsdl:definitions&gt;
-</Input>
+&lt;/wsdl:definitions&gt;</Input>
 <Input name="ExamineWSDL_createInputVariables">true</Input>
 <Input name="ExamineWSDLargval_1">${Variables/GetCuentasWSDLCall_arg1_operation1Parameters}</Input>
 </Inputs>
@@ -353,6 +350,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="ReturnType">String</Input>
 <Input name="Body">{
 	return webAppAccess.getUserInfo().getUserID();
+	//return "lprado";
 }</Input>
 <Input name="RenameExisting">false</Input>
 <Input name="TargetPhase">Construction</Input>

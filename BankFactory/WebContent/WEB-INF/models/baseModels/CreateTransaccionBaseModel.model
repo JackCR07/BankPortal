@@ -1,0 +1,28 @@
+<Model id="baseModels/CreateTransaccionBaseModel"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.EventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ClientSideDelivery">true</Input>
+<Input name="ServerDelivery">true</Input>
+<Input name="EventName">ShowStartPages</Input>
+<Input name="Name">ShowStartPages</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc1"><BuilderDefID>com.bowstreet.builders.webapp.EventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ClientSideDelivery">true</Input>
+<Input name="ServerDelivery">true</Input>
+<Input name="EventName">ShowResults</Input>
+<Input name="Name">ShowResults</Input>
+<Input name="Arguments"><top><Argument><Name>result</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Dependencies />
+<ExternalProperties />
+<Properties />
+</Model>

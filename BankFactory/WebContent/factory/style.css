@@ -98,47 +98,17 @@
   border-bottom-width: 0px;
 }
 
-
-/* Quitar borders inputs
-.dijitTextBox{
-	border: solid black 0px;
-    width: 15em;
-    vertical-align: middle;
-	transition-property: background-color, border;
-}
-*/
-/*
-input[type="button"]{
-  background: #b1b2b3;
-  background-image: -webkit-linear-gradient(top, #b1b2b3, #050505);
-  background-image: -moz-linear-gradient(top, #b1b2b3, #050505);
-  background-image: -ms-linear-gradient(top, #b1b2b3, #050505);
-  background-image: -o-linear-gradient(top, #b1b2b3, #050505);
-  background-image: linear-gradient(to bottom, #b1b2b3, #050505);
-  -webkit-border-radius: 7;
-  -moz-border-radius: 7;
-  border-radius: 7px;
-  font-family: Arial;
-  color: #ffffff;
-  border: 0;
-  text-shadow: 0 0px 0px #FFFFFF;
-  -webkit-box-shadow: 0 0px 0px #FFFFFF;
-  font-size: 12px;
-  padding: 10px 35px 11px 35px;
-  text-decoration: none;
-}
-
-input[type="button"]:hover {
-   background: #6d7275;
-  background-image: -webkit-linear-gradient(top, #6d7275, #303233);
-  background-image: -moz-linear-gradient(top, #6d7275, #303233);
-  background-image: -ms-linear-gradient(top, #6d7275, #303233);
-  background-image: -o-linear-gradient(top, #6d7275, #303233);
-  background-image: linear-gradient(to bottom, #6d7275, #303233);
-  text-decoration: none;
-}
-*/
 /**************************fin de sobreescribir estilos**************************/
+
+.inputOfSelect{
+}
+
+.inputOfText{
+  padding:3px 0;
+  border:none;
+  height:19px;
+  padding-right:18px;
+}
 
 label{
 	font: Arial,Helvetica,sans-serif;
@@ -192,6 +162,22 @@ h2.titulo{
 	display:inline-block;
 	width:100px;
 	height:35px;
+	text-transform: uppercase;
+}
+
+.centrado{
+	text-align:center;
+}
+.subtitulosCentrado{
+	font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	font-style: normal;
+	color: #D4D4D4;
+	width:100px;
+	height:35px;
+	text-align:center;
+	text-transform: uppercase;
 }
 
 label.resultado{
@@ -284,7 +270,6 @@ input, select, textarea
    font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: normal;
-   background-color:#D4D4D4;
 }
 
 .art-block select 

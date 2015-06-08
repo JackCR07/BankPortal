@@ -1,8 +1,9 @@
 <html>
 <head>
 </head>
-<body id="wefBody" style="background-color: transparent;">
+<body style="background-color: transparent;">
 	<h2 class="titulo">Pagos</h2>
+	<span name="evento"></span>
 	<div style="width: 90%; margin: 0 auto">
 		<form name="input_form" method="post">
 			<table>
@@ -39,7 +40,7 @@
 						<input name="numero_cuenta_destino"
 							class="DataEntryFieldElement"
 							id="PayModelPayConsumerView_InputPagenumero_cuenta_destino_field">
-			
+						
 						<span name="numero_cuenta_destino_ValidationError"
 							class="ValidationErrorText"></span>
 					
@@ -60,12 +61,25 @@
 						
 						<input name="monto_transferido"
 							class="DataEntryFieldElement"
-							id="PayModelPayConsumerView_InputPagemonto_transferido_field">
+							id="PayModelPayConsumerView_InputPagemonto_transferido_field"
+							disabled>
 				
 						<span name="monto_transferido_ValidationError"
 							class="ValidationErrorText"></span>
 					</td>
+				
 				</tr>
+				<tr>
+					<td>
+			            <span name="random_label"> Monto a Pagar</span>
+			           
+			        </td>
+					<td>
+			            <div name="random_div">
+			            	<span name="random_value" id="random_value"> asdasd</span>
+			            </div>
+			        </td>
+			    </tr>
 			</table>
 			<br/>
 			<br/>

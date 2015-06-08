@@ -78,12 +78,13 @@ public class MqConnection {
 		}
 	}
 
-	private String buildMessage(String idCliente, int idTipoCuenta,
+	private String buildMessage(String idCliente, int idTipoCuenta, String moneda,
 			String fechaMayorA, String fechaMenorA, double saldoMayorA,
 			double saldoMenorA) {
 		System.out.print("test");
 		String msg = "<datos>" + "<id_cliente>" + idCliente + "</id_cliente>"
 				+ "<id_tipo_cuenta>" + idTipoCuenta + "</id_tipo_cuenta>"
+				+ "<moneda>" + moneda + "</moneda>"
 				+ "<fecha_mayor_a>" + fechaMayorA + "</fecha_mayor_a>"
 				+ "<fecha_menor_a>" + fechaMenorA + "</fecha_menor_a>"
 				+ "<saldo_mayor_a>" + saldoMayorA + "</saldo_mayor_a>"
@@ -92,11 +93,12 @@ public class MqConnection {
 		return msg;
 	}
 
-	public String putAndGetMessage(String idCliente, int idTipoCuenta,
+	public String putAndGetMessage(String idCliente, int idTipoCuenta, String moneda,
 			String fechaMayorA, String fechaMenorA, double saldoMayorA,
 			double saldoMenorA) {
+		System.out.println("Moneda Esta ="+moneda);
 		init();// Inicializar conecciones
-		String msg = buildMessage(idCliente, idTipoCuenta, fechaMayorA,
+		String msg = buildMessage(idCliente, idTipoCuenta, moneda, fechaMayorA,
 				fechaMenorA, saldoMayorA, saldoMenorA);
 		int openOptionsInputQueue = CMQC.MQOO_OUTPUT;// Permite realizar el put
 														// de los mensajes
@@ -174,6 +176,8 @@ public class MqConnection {
 					String idCuenta = eElement.getElementsByTagName("id_cuenta").item(0).getTextContent();
 					String tipoCuenta = eElement.getElementsByTagName("tipo_cuenta").item(0)
 							.getTextContent();
+					String moneda = eElement.getElementsByTagName("moneda").item(0)
+							.getTextContent();
 					double saldo = Double.parseDouble(eElement.getElementsByTagName("saldo").item(0)
 							.getTextContent());
 					String numeroCuenta = eElement.getElementsByTagName("numero_cuenta").item(0)
@@ -182,7 +186,7 @@ public class MqConnection {
 									.getTextContent();
 					System.out.print(idCuenta+numeroCuenta+saldo+fechaCreacion+tipoCuenta);
 					
-					IXml cuentaXML = getCuentaAsXml(idCuenta,tipoCuenta,saldo,numeroCuenta,fechaCreacion);
+					IXml cuentaXML = getCuentaAsXml(idCuenta,tipoCuenta,moneda, saldo,numeroCuenta,fechaCreacion);
 					cuentasXml.addChildElement(cuentaXML);
 				}
 			}
@@ -195,24 +199,26 @@ public class MqConnection {
 	
 	// ********************************************************************************
 
-	public IXml getMessageQueue(String idCliente, int idTipoCuenta,
+	public IXml getMessageQueue(String idCliente, int idTipoCuenta, String moneda,
 			String fechaMayorA, String fechaMenorA, String saldoMayorA,
 			String saldoMenorA){
+		System.out.println("Primero moneda "+moneda);
 		//************************validar campos***************************
 		fechaMayorA = (fechaMayorA.equals("") ? null : fechaMayorA);
 		fechaMenorA = (fechaMenorA.equals("") ? null : fechaMenorA);
+		moneda = (moneda.equals("") ? null : moneda);
 		saldoMayorA = (saldoMayorA.equals("") ? "-1" : saldoMayorA);
 		saldoMenorA = (saldoMenorA.equals("") ? "-1" : saldoMenorA);
 		double saldoMayorADouble= Double.parseDouble(saldoMayorA);
 		double saldoMenorADouble= Double.parseDouble(saldoMenorA);
 		//*************************************************************
-		String messageQueue = putAndGetMessage(idCliente,idTipoCuenta,fechaMayorA,fechaMenorA,saldoMayorADouble,saldoMenorADouble);
+		String messageQueue = putAndGetMessage(idCliente,idTipoCuenta, moneda,fechaMayorA,fechaMenorA,saldoMayorADouble,saldoMenorADouble);
 		IXml queueMessageXML = xmlParser(messageQueue);
 		return queueMessageXML;
 	}
 
 	// Creación de XML
-	private IXml getCuentaAsXml(String idCuenta, String tipoCuenta, double saldo, String numeroCuenta, String fechaCreacion) {
+	private IXml getCuentaAsXml(String idCuenta, String tipoCuenta, String moneda, double saldo, String numeroCuenta, String fechaCreacion) {
 		IXml cuentaXml = XmlUtil.create("cuenta");
 		/*
 		 * <xsd:complexType name="Cuenta"> <xsd:sequence> <xsd:element
@@ -224,6 +230,7 @@ public class MqConnection {
 		 */
 		cuentaXml.setText("id_cuenta", idCuenta);
 		cuentaXml.setText("tipo_cuenta", tipoCuenta);
+		cuentaXml.setText("moneda", moneda);
 		cuentaXml.setText("saldo", "" + saldo);
 		cuentaXml.setText("numero_cuenta", numeroCuenta);
 		cuentaXml.setText("fecha_creacion", fechaCreacion);
@@ -237,8 +244,8 @@ public class MqConnection {
 		System.out.println("Processing Main...");
 
 		MqConnection clientTest = new MqConnection();
-		//String responseQueue = clientTest.putAndGetMessage("lprado", -1, null, null, -1, -1);
-		//clientTest.xmlParser(responseQueue);
+		String responseQueue = clientTest.putAndGetMessage("lprado", -1,null, null, null, -1, -1);
+		clientTest.xmlParser(responseQueue);
 		// initialize MQ.
 		/*
 		 * String msg = "<datos>"+ "<id_cliente>lprado</id_cliente>" +
@@ -249,7 +256,7 @@ public class MqConnection {
 		 * "<saldo_menor_a>-1</saldo_menor_a>" + "</datos>";
 		 */
 		// put and retreive message from MQ.
-		clientTest.putAndGetMessage("lprado", -1, null, null, -1, -1);
+		clientTest.putAndGetMessage("lprado", -1,null, null, null, -1, -1);
 		//System.out.print(clientTest.getMessageQueue("lprado", -1, null, null, -1, -1));
 		System.out.println("Done!");
 	}

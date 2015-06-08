@@ -50,10 +50,44 @@ Parameters:
 <Input><Name>operation2InputParameter1.idTipoTransaccion</Name>
 <Value>-1</Value>
 </Input>
+<Input><Name>operation2InputParameter1.fecha_mov_mayor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.fecha_mov_menor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.mon_trans_mayor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.mon_trans_menor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.n_trans_mayor_a</Name>
+</Input>
+<Input><Name>operation2InputParameter1.n_trans_menor_a</Name>
+</Input>
 </top>
 </Inputs>
 </InputsForOperation>
 <InputsForOperation><Inputs />
+</InputsForOperation>
+<InputsForOperation><Operation>GetTransaccionesOperation</Operation>
+<Inputs><top><Input><Name>operation1</Name>
+</Input>
+<Input><Name>operation1.id_cuenta</Name>
+</Input>
+<Input><Name>operation1.id_tipo_transaccion</Name>
+</Input>
+<Input><Name>operation1.fecha_mov_mayor_a</Name>
+</Input>
+<Input><Name>operation1.fecha_mov_menor_a</Name>
+</Input>
+<Input><Name>operation1.mon_trans_mayor_a</Name>
+</Input>
+<Input><Name>operation1.mon_trans_menor_a</Name>
+</Input>
+<Input><Name>operation1.n_trans_mayor_a</Name>
+</Input>
+<Input><Name>operation1.n_trans_menor_a</Name>
+</Input>
+</top>
+</Inputs>
 </InputsForOperation>
 </top>
 </Input>
@@ -84,14 +118,22 @@ Parameters:
 <BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="PageData">&lt;html&gt;
+<Input name="PageData">
+&lt;html&gt;
 &lt;head&gt;
-    &lt;script type="text/javascript" src="https://www.google.com/jsapi"&gt;&lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-            &lt;div id="piechart"&gt;&lt;/div&gt;
-        &lt;/form&gt;
-    &lt;/body&gt;
+&lt;title&gt;Doughnut Chart&lt;/title&gt;
+&lt;style&gt;
+#canvas-holder {
+	width: 100%;
+	margin-top: 10%;
+}
+&lt;/style&gt;
+&lt;script type="text/javascript" src="https://www.google.com/jsapi"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body &gt;
+&lt;div id="piechart" style="width: 900px; height: 500px;"&gt;&lt;/div&gt;
+&lt;/body&gt;
 &lt;/html&gt;</Input>
 <Input name="AbsoluteURLs">false</Input>
 <Input name="RenameExisting">false</Input>
@@ -107,25 +149,28 @@ Parameters:
 <Input name="ScriptSourceType">Explicit</Input>
 <Input name="PageName">vista</Input>
 <Input name="Name">grafico</Input>
-<Input name="Script"> google.load("visualization", "1", {packages:["corechart"]});
+<Input name="Script">{google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Total', 'Percentage'],
-          ['Ingreso',     parseInt('${Variables/Ingreso}')],
-          ['Egreso',      parseInt('${Variables/Egreso}')]
-        ]);
+        var data = google.visualization.arrayToDataTable([ 
+			['Task', 'Saldos'],
+			['Ingreso',   parseInt('${Variables/Ingreso}')],
+			['Egreso',    parseInt('${Variables/Egreso}')]
+		]);
 
         var options = {
-          title: 'Saldo Cuenta',
-          backgroundColor: { fill:'transparent' }
-        };
+			is3D : true,
+			backgroundColor:'transparent',
+			colors:['#938D8D','#FF0606'],
+			legend:{textStyle: {color: 'white',}},
+		};
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
         chart.draw(data, options);
-      }</Input>
+      }
+ }
+</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
@@ -160,7 +205,7 @@ Parameters:
 <Input name="ReturnType">Object</Input>
 <Input name="RenameExisting">false</Input>
 <Input name="Name">main</Input>
-<Input name="Actions"><Actions><Action><ActionType></ActionType>
+<Input name="Actions"><Actions><Action><ActionType />
 <ActionName>vista</ActionName>
 </Action>
 </Actions>

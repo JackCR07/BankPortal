@@ -18,7 +18,8 @@
 <Input name="DesignTimeImportCheckBox">true</Input>
 <Input name="RenameExisting">false</Input>
 <Input name="Name">getCuentas</Input>
-<Input name="URIOnly">http://172.16.11.225:7800/GetCuentas/GetCuentas?xsd=xsd0</Input>
+<Input name="URIOnly">/factory/getCuentasMqSchema.xsd</Input>
+<Input name="SaveSchemaDefButton">C:\Users\lprado\git\BankPortal11\BankFactory\WebContent\factory\getCuentasMqSchema.xsd</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.ServiceDefinitionBuilder</BuilderDefID>
@@ -119,6 +120,9 @@
 <Field><Name>fecha_creacion</Name>
 <Type>string</Type>
 </Field>
+<Field><Name>moneda</Name>
+<Type>string</Type>
+</Field>
 </top>
 </Input>
 <Input name="InputMappingTable"><top><Field><Name>arg1</Name>
@@ -145,6 +149,10 @@
 <Type>double</Type>
 <Value>${Arguments/arg6}</Value>
 </Field>
+<Field><Name>arg7</Name>
+<Type>string</Type>
+<Value>${Arguments/arg7}</Value>
+</Field>
 </top>
 </Input>
 <Input name="OperationName">getCuentasO</Input>
@@ -162,8 +170,8 @@
 <Input name="TargetPhase">Construction</Input>
 <Input name="Name">getUserId</Input>
 <Input name="Body">{
-	//return webAppAccess.getUserInfo().getUserID();
-	return "lprado";
+	return webAppAccess.getUserInfo().getUserID();
+	//return "lprado";
 }</Input>
 </Inputs>
 </BuilderCall>
@@ -171,6 +179,7 @@
 <Properties><Contained>false</Contained>
 </Properties>
 <Dependencies><Dependency type="Class">com.gbm.mq.MqConnection</Dependency>
+<Dependency type="File">factory/getCuentasMqSchema.xsd</Dependency>
 <Dependency type="File">/factory/pages/service_test_index_page.html</Dependency>
 <Dependency type="Model">factory/portletbase/view_and_form_base</Dependency>
 <Dependency type="File">/factory/pages/multichannel/desktop/view_and_form/input.html</Dependency>

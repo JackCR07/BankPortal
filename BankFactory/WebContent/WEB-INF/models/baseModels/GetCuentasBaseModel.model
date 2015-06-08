@@ -1,0 +1,32 @@
+<Model id="baseModels/GetCuentasBaseModel"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.webapp.EventDeclarationBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ClientSideDelivery">true</Input>
+<Input name="ServerDelivery">true</Input>
+<Input name="EventName">ShowInfo</Input>
+<Input name="Name">ShowInfo</Input>
+<Input name="Arguments"><top><Argument><Name>numero_cuenta</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>saldo</Name>
+<Type>Double</Type>
+</Argument>
+<Argument><Name>fecha_creacion</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>tipo_cuenta</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>moneda</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies />
+<ExternalProperties />
+</Model>

@@ -61,16 +61,12 @@ You can also profile other builder inputs according to device type, and you can 
 <Input><Name>operation1.fecha_mov_menor_a</Name>
 </Input>
 <Input><Name>operation1.mon_trans_mayor_a</Name>
-<Value />
 </Input>
 <Input><Name>operation1.mon_trans_menor_a</Name>
-<Value />
 </Input>
 <Input><Name>operation1.n_trans_mayor_a</Name>
-<Value />
 </Input>
 <Input><Name>operation1.n_trans_menor_a</Name>
-<Value />
 </Input>
 </top>
 </Inputs>
@@ -183,11 +179,77 @@ Parameters:
 <Input name="AllPages">false</Input>
 <Input name="AllPageRadio">current</Input>
 <Input name="Pages"><data><GetTransaccionesView_InputPage>true</GetTransaccionesView_InputPage>
-<GetTransaccionesView_ViewPage>false</GetTransaccionesView_ViewPage>
+<GetTransaccionesView_ViewPage>true</GetTransaccionesView_ViewPage>
 </data>
 </Input>
-<Input name="DisplayBehavior"><top><DispInfo><Name>id_cuenta</Name>
-<Label>Numero de Cuenta</Label>
+<Input name="DisplayBehavior"><top><DispInfo><Name>id_transaccion</Name>
+<Label>[Id Transaccion]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>numero_transaccion</Name>
+<Label>Transacción</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[String]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>moneda</Name>
+<Label>Moneda</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[String]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>debito</Name>
+<Label>[Debito]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>credito</Name>
+<Label>[Credito]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Floating Point]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>fecha_transaccion</Name>
+<Label>Fecha</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[String]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>tipo_transaccion</Name>
+<Label>[Tipo Transaccion]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[String]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>id_cuenta_origen</Name>
+<Label>Id Origen</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>num_cuenta_origen</Name>
+<Label>Origen</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>id_cuenta_destino</Name>
+<Label>[Id Cuenta Destino]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>num_cuenta_destino</Name>
+<Label>Destino</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+<DispInfo><Name>id_cuenta</Name>
+<Label>Número de Cuenta</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_Select</DataType>
 <Sort>[Off]</Sort>
@@ -207,19 +269,19 @@ Parameters:
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>fecha_mov_menor_a</Name>
-<Label>Fecha de Transacción Hasta</Label>
+<Label>Fecha de Transacción DesdeHasta</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>mon_trans_mayor_a</Name>
-<Label>Monto Transferido Desde</Label>
+<Label>Monto Transacción Desde</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Floating Point]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>mon_trans_menor_a</Name>
-<Label>Monto Transferido Hasta</Label>
+<Label>Monto Transacción Desde</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Floating Point]</DataType>
 <Sort>[Off]</Sort>
@@ -240,11 +302,13 @@ Parameters:
 </Input>
 <Input name="ValidationBehavior"><top><ValidationInfo><Name>id_cuenta</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
+<Required>Required</Required>
+<ErrorMessage>Campo Requerido</ErrorMessage>
 </ValidationInfo>
 <ValidationInfo><Name>id_tipo_transaccion</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
+<Required>Required</Required>
+<ErrorMessage>Campo Requerido</ErrorMessage>
 </ValidationInfo>
 <ValidationInfo><Name>fecha_mov_mayor_a</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
@@ -272,7 +336,6 @@ Parameters:
 </ValidationInfo>
 </top>
 </Input>
-<Input name="DefaultName">GetTransaccionesView_InputPage </Input>
 <Input name="CurPageDisplayBehavior"><data><DispInfo><Name>id_cuenta</Name>
 <Label>[Id Cuenta]</Label>
 <Hide>[Do Not Change]</Hide>
@@ -359,12 +422,12 @@ Parameters:
 </ValidationInfo>
 </data>
 </Input>
+<Input name="Name">InputFormDataFieldSettings</Input>
+<Input name="DefaultName">GetTransaccionesView_InputPage GetTransaccionesView_ViewPage </Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc96"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
-<Messages><Warning><Message>PageLocation expression "AllPages #(GetTransaccionesView_InputPage, GetTransaccionesView_ViewPage, GetTransaccionesView_PagingTopPage, DefaultProgressIndicatorIndicatorHTML, GetTransaccionesView_PagingBottomPage, page1, GetTransaccionesView_PagingPage}# NameSearch page_header_text" does not evaluate to any locations.</Message>
-</Warning>
-</Messages>
+<Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="QuoteText">true</Input>
 <Input name="ReplaceContents">true</Input>
@@ -595,7 +658,7 @@ webAppAccess.processPage("PageName");
 </BuilderCall>
 <BuilderCall id="bc103"><BuilderDefID>com.bowstreet.builders.webapp.DataLayoutBuilder</BuilderDefID>
 <Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Inputs><Input name="BuilderCallEnabled">false</Input>
 <Input name="UseTheme">false</Input>
 <Input name="MoveLinkToListItem">false</Input>
 <Input name="AddLogging">false</Input>
@@ -605,103 +668,7 @@ webAppAccess.processPage("PageName");
 <Input name="TemplateFile">/factory/data_layout_templates/responsive_table_layout.html</Input>
 <Input name="TemplateDescription">This template allows you to use styles to create a responsive table of up to 10 columns.  Use the different versions of the hide styles to hide columns in different ways.</Input>
 <Input name="StyleSheetFile">/factory/data_layout_templates/blank.css</Input>
-<Input name="LayoutFields"><top><FieldMapping><Name>column1_header</Name>
-<Value>numero_transaccion_LABEL</Value>
-</FieldMapping>
-<FieldMapping><Name>column2_header</Name>
-<Value>debito_LABEL</Value>
-</FieldMapping>
-<FieldMapping><Name>column3_header</Name>
-<Value>credito_LABEL</Value>
-</FieldMapping>
-<FieldMapping><Name>column4_header</Name>
-<Value>fecha_transaccion_LABEL</Value>
-</FieldMapping>
-<FieldMapping><Name>column5_header</Name>
-</FieldMapping>
-<FieldMapping><Name>column6_header</Name>
-</FieldMapping>
-<FieldMapping><Name>column7_header</Name>
-</FieldMapping>
-<FieldMapping><Name>column8_header</Name>
-</FieldMapping>
-<FieldMapping><Name>column9_header</Name>
-</FieldMapping>
-<FieldMapping><Name>column10_header</Name>
-</FieldMapping>
-<FieldMapping><Name>column1</Name>
-<Value>numero_transaccion</Value>
-</FieldMapping>
-<FieldMapping><Name>column2</Name>
-<Value>debito</Value>
-</FieldMapping>
-<FieldMapping><Name>column3</Name>
-<Value>credito</Value>
-</FieldMapping>
-<FieldMapping><Name>column4</Name>
-<Value>fecha_transaccion</Value>
-</FieldMapping>
-<FieldMapping><Name>column5</Name>
-</FieldMapping>
-<FieldMapping><Name>column6</Name>
-</FieldMapping>
-<FieldMapping><Name>column7</Name>
-</FieldMapping>
-<FieldMapping><Name>column8</Name>
-</FieldMapping>
-<FieldMapping><Name>column9</Name>
-</FieldMapping>
-<FieldMapping><Name>column10</Name>
-</FieldMapping>
-<FieldMapping><Name>column1_header_styles</Name>
-<Style>text-align:center</Style>
-</FieldMapping>
-<FieldMapping><Name>column2_header_styles</Name>
-<Style>text-align:center</Style>
-</FieldMapping>
-<FieldMapping><Name>column3_header_styles</Name>
-<Style>text-align:center</Style>
-</FieldMapping>
-<FieldMapping><Name>column4_header_styles</Name>
-<Style>text-align:center</Style>
-</FieldMapping>
-<FieldMapping><Name>column5_header_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column6_header_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column7_header_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column8_header_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column9_header_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column10_header_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column1_styles</Name>
-<Style>text-align:center</Style>
-</FieldMapping>
-<FieldMapping><Name>column2_styles</Name>
-<Style>text-align:center</Style>
-</FieldMapping>
-<FieldMapping><Name>column3_styles</Name>
-<Style>text-align:center</Style>
-</FieldMapping>
-<FieldMapping><Name>column4_styles</Name>
-<Style>text-align:center</Style>
-</FieldMapping>
-<FieldMapping><Name>column5_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column6_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column7_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column8_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column9_styles</Name>
-</FieldMapping>
-<FieldMapping><Name>column10_styles</Name>
-</FieldMapping>
-</top>
+<Input name="LayoutFields"><top />
 </Input>
 <Input name="LayoutContainers"><top />
 </Input>
@@ -796,23 +763,14 @@ webAppAccess.processPage("PageName");
 </Input>
 </Inputs>
 </BuilderCall>
-<BuilderCall id="bc109"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
-<Inputs><Input name="Name">GetTransaccionesView_ViewPage</Input>
-<Input name="ReplaceExisting">true</Input>
-<Input name="URL">/factory/GetTransaccionesView_ViewPage.html</Input>
-<Input name="URLModification">None</Input>
-<Input name="BuilderCallEnabled">true</Input>
-</Inputs>
-<Messages />
-</BuilderCall>
 <BuilderCall id="bc113"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="ReturnType">Object</Input>
 <Input name="RenameExisting">false</Input>
 <Input name="Name">SaveVariables</Input>
-<Input name="Actions"><Actions><Action><ActionName>GetTransaccionesView_ShowResults</ActionName>
-<ActionType></ActionType>
+<Input name="Actions"><Actions><Action><ActionName>GetTransaccionesGetTransaccionesOperation</ActionName>
+<ActionType />
 </Action>
 <Action><ActionType />
 <ActionName>GetTotals</ActionName>
@@ -1061,6 +1019,46 @@ System.out.println(webAppAccess.getVariables().getString("IdTipoTransaccion"));
 </Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc122"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    System.out.println("numero = "+numero + "moneda =" +moneda);
+    if(!numero.equals("")){
+     double num = Double.parseDouble(numero);
+    DecimalFormat formateador = new DecimalFormat("###,###,###.##");
+    String numeroStr =  formateador.format (num);
+    
+	if(moneda.equals("Dolares")){
+		numeroStr="$"+numeroStr;
+	}
+	else if(moneda.equals("Colones")){
+	    numeroStr="¢"+numeroStr;
+	}
+	return numeroStr;
+    }
+    else{
+    return "";
+    } 
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Imports"><Imports><Import>java.text.DecimalFormat</Import>
+</Imports>
+</Input>
+<Input name="Arguments"><top><Argument><Name>numero</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>moneda</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="XMLType">Untyped XML</Input>
+<Input name="Name">formatNumber</Input>
+</Inputs>
+</BuilderCall>
 <BuilderCall id="bc119"><BuilderDefID>com.bowstreet.builders.webapp.ImageButtonBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
@@ -1093,6 +1091,56 @@ System.out.println(webAppAccess.getVariables().getString("IdTipoTransaccion"));
 <Input name="HoverImage">/factory/images/icons/info-icon2.png</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc123"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">DebitoText</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>GetTransaccionesView_ViewPage</Page>
+<NameSearch>debito</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${MethodCall/formatNumber(${Variables/transaccionLoopVar/transaccion/debito},${Variables/transaccionLoopVar/transaccion/moneda})}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc125"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">CreditoText</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>GetTransaccionesView_ViewPage</Page>
+<NameSearch>credito</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${MethodCall/formatNumber(${Variables/transaccionLoopVar/transaccion/credito},${Variables/transaccionLoopVar/transaccion/moneda})}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc129"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Inputs><Input name="Name">GetTransaccionesView_ViewPage</Input>
+<Input name="ReplaceExisting">true</Input>
+<Input name="URLModification">None</Input>
+<Input name="URL">/factory/GetTransaccionesView_ViewPage.html</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
+<BuilderCall id="bc130"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Inputs><Input name="Name">GetTransaccionesView_ViewPage</Input>
+<Input name="ReplaceExisting">true</Input>
+<Input name="URL">factory/GetTransaccionesView_ViewPage.html</Input>
+<Input name="URLModification">None</Input>
+</Inputs>
+<Messages />
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
@@ -1105,11 +1153,11 @@ System.out.println(webAppAccess.getVariables().getString("IdTipoTransaccion"));
 <Dependency type="File">/factory/html_templates/clean_themes.html</Dependency>
 <Dependency type="Model">providers/GetCuentas/GetCuentasProvider</Dependency>
 <Dependency type="File">/factory/GetTransaccionesView_InputPage.html</Dependency>
-<Dependency type="File">/factory/GetTransaccionesView_ViewPage.html</Dependency>
 <Dependency type="Model">providers/GetTransacciones/transaccionesSharedVariables</Dependency>
+<Dependency type="File">/factory/GetTransaccionesView_ViewPage.html</Dependency>
+<Dependency type="File">factory/GetTransaccionesView_ViewPage.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.css</Dependency>
-<Dependency type="File">/factory/data_layout_templates/responsive_table_layout.html</Dependency>
 <Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
 <Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
 <Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>

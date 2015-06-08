@@ -167,7 +167,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="ExamineWSDL_replytype">operation1Response</Input>
 <Input name="hidden_ExamineWSDL_replyclass">com.bowstreet.util.IXml</Input>
 <Input name="hidden_WSDL_replycount">1</Input>
-<Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\lprado\git\BankPortal3\BankFactory\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://getTransacciones" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://getTransacciones"&gt;&lt;xsd:import schemaLocation="http://172.16.11.225:7800/getTransacciones/getTransacciones?xsd=xsd0" /&gt;
+<Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\lprado\git\BankPortal11\BankFactory\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://getTransacciones" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://getTransacciones"&gt;&lt;xsd:import schemaLocation="http://172.16.11.225:7800/getTransacciones/getTransacciones?xsd=xsd0" /&gt;
 &lt;/xsd:schema&gt;
 &lt;/schemas&gt;
 </Input>
@@ -383,8 +383,7 @@ Here are some of the things you might want to do now that you have the model sta
 &lt;serviceName&gt;getTransaccionesHttpService&lt;/serviceName&gt;
 &lt;serviceNamespace&gt;http://getTransacciones&lt;/serviceNamespace&gt;
 &lt;/serviceInfo&gt;
-&lt;/operationInfo&gt;
-</Input>
+&lt;/operationInfo&gt;</Input>
 <Input name="ExamineWSDLargname_1">operation2InputParameter1</Input>
 <Input name="ExamineWSDLargtype_1">operation2InputParameter1</Input>
 <Input name="hidden_ExamineWSDLargclass_1">com.bowstreet.util.IXml</Input>
@@ -399,8 +398,7 @@ Here are some of the things you might want to do now that you have the model sta
 <Input name="hidden_WSDL_replycount">1</Input>
 <Input name="hidden_ExamineWSDL_Schema">&lt;schemas rootDirectory="C:\Users\lprado\git\BankPortal3\BankFactory\WebContent"&gt;&lt;xsd:schema xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://getTransacciones" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://getTransacciones"&gt;&lt;xsd:import schemaLocation="http://172.16.11.225:7800/getTransacciones/getTransacciones?xsd=xsd0" /&gt;
 &lt;/xsd:schema&gt;
-&lt;/schemas&gt;
-</Input>
+&lt;/schemas&gt;</Input>
 <Input name="hidden_ExamineWSDL_SchemaNamespace">http://www.w3.org/2001/XMLSchema</Input>
 <Input name="hidden_ExamineWSDL_wsdldoc">&lt;wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://getTransacciones" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="getTransacciones" targetNamespace="http://getTransacciones"&gt;&lt;wsdl:documentation&gt;&lt;wsdl:appinfo source="WMQI_APPINFO"&gt;&lt;MRWSDLAppInfo imported="true"&gt;&lt;binding hasEncoding="false" imported="true" name="getTransaccionesHttpBinding" originalBindingStyle="document" /&gt;
 &lt;generatedXSD location="getTransacciones_InlineSchema1.xsd" /&gt;

@@ -1,0 +1,1294 @@
+<Model id="consumers/Pay/SelectProviderModel"><BuilderCallList><BuilderCall id="bc2"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">Next Steps</Input>
+<Input name="BuilderCallEnabled">true</Input>
+<Input name="Comment">For further development of this model, you can add and modify any builders to customize the application.   You can also use Design view to work with page elements, for example to move fields around or by using right-click commands.
+
+With that profiling enabled, when you run the model, by default you will see a "desktop" view of the application.
+
+You can view and test both the Desktop, Tablet and Smartphone profiles from Designer.   To do this, open the "Applied Profiles" tab, and select the profile you want to view and click the "Apply" button.   After you have done this, when you run the model you will see the selected profile.    
+
+You can also profile other builder inputs according to device type, and you can apply different profiling for specific device types if you want.   For example, you could have different CSS style sheets applied for different types of smartphones if you want to have a different appearance for each device.</Input>
+<Input name="BuilderCallComment">For further development of this model, you can add and modify any builders to customize the application.   You can also use Design view to work with page elements, for example to move fields around or by using right-click commands.
+
+With that profiling enabled, when you run the model, by default you will see a "desktop" view of the application.
+
+You can view and test both the Desktop, Tablet and Smartphone profiles from Designer.   To do this, open the "Applied Profiles" tab, and select the profile you want to view and click the "Apply" button.   After you have done this, when you run the model you will see the selected profile.    
+
+You can also profile other builder inputs according to device type, and you can apply different profiling for specific device types if you want.   For example, you could have different CSS style sheets applied for different types of smartphones if you want to have a different appearance for each device.</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc114"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PortletDefaultLocale">en</Input>
+<Input name="PortletAdditionalLocales">en</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomEditDefaultsPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="Name">PayService</Input>
+<Input name="PortletTitle">Pagar Servicio</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages />
+<Inputs profiled="true"><Input name="BuilderCallEnabled">false</Input>
+<Input name="UseParentProfile">true</Input>
+<Input name="ImportOnce">true</Input>
+<Input name="ProfileHandling">UseParentProfiling</Input>
+<Input name="Name">Theme</Input>
+<Input name="ModelName">imports/factory/multichanneltheme85</Input>
+<Input name="SetProfiledInputValues">false</Input>
+<Input name="_ProfiledInputs"><ProfiledInputs profile_contributor="imports/factory/multichanneltheme85"><Input profile="mobile_devicetype_base:DesktopDevice" />
+<Input profile="mobile_devicetype_base:SmartPhoneDevice" />
+<Input profile="mobile_devicetype_base:TabletDevice" />
+</ProfiledInputs>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc5"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="CustomEditPageType">None</Input>
+<Input name="CustomConfigurePageType">None</Input>
+<Input name="Name">PayPortlet</Input>
+<Input name="PortletTitle">Realizar Pago</Input>
+<Input name="CustomEditDefaultsPageType">None</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc89"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageData">&lt;html&gt;
+    &lt;body&gt;
+        &lt;form name="main-form"&gt;
+				&lt;label&gt;Proveedor de Servicios &lt;/label&gt;
+	            &lt;span name="provider"&gt;&lt;/span&gt;
+	    		&lt;div name="service-div"&gt;
+		    		&lt;label&gt;Servicio &lt;/label&gt;
+		            &lt;span name="select"&gt;&lt;/span&gt;
+	            &lt;/div&gt;
+            &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">page1</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc96"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">true</Input>
+<Input name="URLModification">Relative</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="UseJSPCode">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="RemoveJavaScript">false</Input>
+<Input name="LocalizationVariable">LocaleInfo</Input>
+<Input name="Name">pageInput</Input>
+<Input name="URL">/factory/PayConsumerView_InputPage.html</Input>
+<Input name="PageData"><htmlDocument><HTMLContent><![CDATA[<% String _bowStServerURL = com.bowstreet.builders.webapp.methods.HTMLImporter.getServerURL(webAppAccess); %>]]></HTMLContent>
+<HTML><HEAD />
+<BODY style="background-color: transparent;"><H2 class="titulo">Pagos</H2>
+<SPAN name="evento" />
+<DIV style="width: 90%; margin: 0 auto"><FORM name="input_form" method="post"><TABLE><TR><TD><LABEL for="PayModelPayConsumerView_InputPageid_cuenta_origen_field"><SPAN name="id_cuenta_origen_RequiredPrompt" class="requiredPromptAbove">*</SPAN>
+<SPAN name="id_cuenta_origenlabel" class="subtitulos inputLabelAbove">Cuenta
+								de Origen</SPAN>
+
+&amp;nbsp;</LABEL>
+</TD>
+<TD><INPUT name="id_cuenta_origen" class="DataEntryFieldElement" id="PayModelPayConsumerView_InputPageid_cuenta_origen_field" />
+<SPAN name="id_cuenta_origen_ValidationError" class="ValidationErrorText" />
+</TD>
+</TR>
+<TR><TD><LABEL for="PayModelPayConsumerView_InputPagenumero_cuenta_destino_field"><SPAN name="numero_cuenta_destino_RequiredPrompt" class="requiredPromptAbove">*</SPAN>
+<SPAN name="numero_cuenta_destinolabel" class="subtitulos inputLabelAbove">Servicio
+								a Pagar</SPAN>
+
+&amp;nbsp;</LABEL>
+<HTMLContent><![CDATA[<!-- <br /> -->]]></HTMLContent>
+</TD>
+<TD><INPUT name="numero_cuenta_destino" class="DataEntryFieldElement" id="PayModelPayConsumerView_InputPagenumero_cuenta_destino_field" />
+<SPAN name="numero_cuenta_destino_ValidationError" class="ValidationErrorText" />
+</TD>
+</TR>
+<TR><TD><LABEL for="PayModelPayConsumerView_InputPagemonto_transferido_field"><SPAN name="monto_transferido_RequiredPrompt" class="requiredPromptAbove">*</SPAN>
+<SPAN name="monto_transferidolabel" class="subtitulos inputLabelAbove">Monto
+								Transferido</SPAN>
+
+&amp;nbsp;</LABEL>
+</TD>
+<TD><HTMLContent><![CDATA[<!-- <br /> -->]]></HTMLContent>
+<INPUT name="monto_transferido" class="DataEntryFieldElement" id="PayModelPayConsumerView_InputPagemonto_transferido_field" disabled="" />
+<SPAN name="monto_transferido_ValidationError" class="ValidationErrorText" />
+</TD>
+</TR>
+<TR><TD><SPAN name="random_label"> Monto a Pagar</SPAN>
+</TD>
+<TD><DIV name="random_div"><SPAN name="random_value" id="random_value"> asdasd</SPAN>
+</DIV>
+</TD>
+</TR>
+</TABLE>
+<BR />
+<BR />
+<SPAN name="submit_button" class="art-button" />
+<SPAN name="cancel_button" />
+<SPAN name="extra_button1" />
+<SPAN name="extra_button2" />
+</FORM>
+</DIV>
+</BODY>
+</HTML>
+</htmlDocument>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc90"><BuilderDefID>com.bowstreet.builders.webapp.DojoSelectBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="DojoWidgetType">dijit.form.FilteringSelect</Input>
+<Input name="RetainOptions">true</Input>
+<Input name="RemoveDuplicateOptions">false</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="HandleMissingValue">Ignore</Input>
+<Input name="Separator">;</Input>
+<Input name="LookupTable">CuentasPagos</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>inputForm</Page>
+<NameSearch>numero_cuenta_destino</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Options">${Variables/Services}</Input>
+<Input name="Name">selectProvidersDojo</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc85"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">main</Input>
+<Input name="Actions"><Actions><Action><ActionType />
+<ActionName>inputForm</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="UseAllOperations">true</Input>
+<Input name="OverrideInputs">true</Input>
+<Input name="Name">PayConsumerService</Input>
+<Input name="ProviderModel">providers/Pay/Pay</Input>
+<Input name="OperationInputs"><top><InputsForOperation><Operation>PayOperation</Operation>
+<Inputs><top><Input><Name>operation1</Name>
+</Input>
+<Input><Name>operation1.id_cuenta_origen</Name>
+</Input>
+<Input><Name>operation1.numero_cuenta_destino</Name>
+</Input>
+<Input><Name>operation1.id_tipo_transaccion</Name>
+</Input>
+<Input><Name>operation1.monto_transferido</Name>
+</Input>
+</top>
+</Inputs>
+</InputsForOperation>
+</top>
+</Input>
+<Input name="OperationName">all</Input>
+<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>PayOperation</Operation>
+<Mappings />
+</ValuesForOperation>
+</ContextVariables>
+</Input>
+<Input name="OperationDescription">[no description]
+Parameters:
+	Name:			results</Input>
+<Input name="SelectOperations"><top><OperationSelected><Operation>PayOperation</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>No description was provided.
+Parameters:
+	Name:			inputs
+
+	Name:			results</Description>
+</OperationSelected>
+</top>
+</Input>
+<Input name="CreateLookupTables">false</Input>
+<Input name="AssociateLookupTables">false</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc74"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">RefreshLocation</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">updateRandomClientEventHandler</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>inputForm</Page>
+<NameSearch>random-div</NameSearch>
+<InsertionModifier>Before</InsertionModifier>
+<NewNodeName>clientEvenHandlerUpdateRandom</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Event">ShowTotals</Input>
+<Input name="Action">doNothing</Input>
+<Input name="InputMappings"><top />
+</Input>
+<Input name="RefreshPageLocation"><SimplePageLocation><Page>inputForm</Page>
+<NameSearch>random-div</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="ActionURL">generateRandom</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc14"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseAllOperations">true</Input>
+<Input name="OverrideInputs">true</Input>
+<Input name="CreateLookupTables">true</Input>
+<Input name="AssociateLookupTables">true</Input>
+<Input name="UseDiscardableInputVariables">false</Input>
+<Input name="UseDiscardableVariables">false</Input>
+<Input name="EnableCaching">true</Input>
+<Input name="InheritProfile">true</Input>
+<Input name="ProviderModel">providers/GetCuentas/GetCuentasProvider</Input>
+<Input name="SelectOperations"><top><OperationSelected><Operation>GetCuentasSO</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>No description was provided.
+Parameters:
+	Name:			inputs
+
+	Name:			results</Description>
+</OperationSelected>
+</top>
+</Input>
+<Input name="OperationInputs"><top><InputsForOperation><Operation>GetCuentasSO</Operation>
+<Inputs><top><Input><Name>operation1</Name>
+</Input>
+<Input><Name>operation1.id_cliente</Name>
+<Value />
+</Input>
+<Input><Name>operation1.id_tipo_cuenta</Name>
+<Value>-1</Value>
+</Input>
+<Input><Name>operation1.fecha_mayor_a</Name>
+<Value>null</Value>
+</Input>
+<Input><Name>operation1.fecha_menor_a</Name>
+<Value>null</Value>
+</Input>
+<Input><Name>operation1.saldo_mayor_a</Name>
+<Value>-1</Value>
+</Input>
+<Input><Name>operation1.saldo_menor_a</Name>
+<Value>-1</Value>
+</Input>
+</top>
+</Inputs>
+</InputsForOperation>
+</top>
+</Input>
+<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>GetCuentasSO</Operation>
+<Mappings />
+</ValuesForOperation>
+</ContextVariables>
+</Input>
+<Input name="Name">ObtenerCuentas</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc7"><BuilderDefID>com.bowstreet.builders.webapp.ViewAndFormBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="BuilderCallCategory">General</Input>
+<Input name="UseTheme">true</Input>
+<Input name="ViewPageURL">${Properties/bowstreet.Theme/ViewAndForm_ViewPageBase}</Input>
+<Input name="EnableDataPaging">false</Input>
+<Input name="CreateInputPage">false</Input>
+<Input name="InputPageURL">${Properties/bowstreet.Theme/ViewAndForm_InputPageBase}</Input>
+<Input name="EnableInputValidation">false</Input>
+<Input name="ViewPageBackButtonText">Volver</Input>
+<Input name="InsertInputPage">true</Input>
+<Input name="CreateColumnLink">false</Input>
+<Input name="LinkActionChoice">rowdata</Input>
+<Input name="DetailPageURL">${Properties/bowstreet.Theme/ViewAndForm_DetailPageBase}</Input>
+<Input name="DetailPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_DetailPageHTMLTemplate}</Input>
+<Input name="DetailPageBackButtonText">Back</Input>
+<Input name="CreateUpdatePage">false</Input>
+<Input name="UpdateAutoInitializeData">true</Input>
+<Input name="UpdatePageURL">${Properties/bowstreet.Theme/ViewAndForm_UpdatePageBase}</Input>
+<Input name="EnableUpdateValidation">false</Input>
+<Input name="UpdateLinkText">Edit</Input>
+<Input name="UpdateSubmitText">Submit</Input>
+<Input name="UpdateCancelText">Cancel</Input>
+<Input name="CreateMain">false</Input>
+<Input name="ViewPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_ViewPageHTMLTemplate}</Input>
+<Input name="InputPageHTMLTemplate">${Properties/bowstreet.Theme/ViewAndForm_InputPageHTMLTemplate}</Input>
+<Input name="Name">PayConsumerView</Input>
+<Input name="ViewMethod">DataServices/PayConsumerService/PayOperation</Input>
+<Input name="RowsPerPage">5</Input>
+<Input name="ModelName">factory/portletbase/view_and_form_base</Input>
+<Input name="SetProfiledInputValues">true</Input>
+<Input name="UniquePattern">xyzzy7</Input>
+<Input name="DetailsMethod" />
+<Input name="InputPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_InputPageStyleSheetOverrideHTMLTemplate}</Input>
+<Input name="ViewPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_ViewPageStyleSheetOverride}</Input>
+<Input name="DetailPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_DetailStyleSheetOverride}</Input>
+<Input name="EnablePagingButtons">true</Input>
+<Input name="InputSubmitText">Submit</Input>
+<Input name="InputValidationMethodBehavior">CallAlways</Input>
+<Input name="InputValidationMethod">PayConsumerView_ShowResults</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.pageautomation.DataFieldSettings</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="AllPages">false</Input>
+<Input name="AllPageRadio">current</Input>
+<Input name="Pages"><data><PayConsumerView_InputPage>true</PayConsumerView_InputPage>
+<PayConsumerView_ViewPage>false</PayConsumerView_ViewPage>
+</data>
+</Input>
+<Input name="DisplayBehavior"><top />
+</Input>
+<Input name="ValidationBehavior"><top />
+</Input>
+<Input name="CurPageDisplayBehavior"><data><DispInfo><Name>resultado</Name>
+<Label>[Resultado]</Label>
+<Hide>[Do Not Change]</Hide>
+<DataType>[Integer]</DataType>
+<Sort>[Off]</Sort>
+</DispInfo>
+</data>
+</Input>
+<Input name="CurValidationBehavior"><data />
+</Input>
+<Input name="Name">InputPageDataFieldSettings</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc83"><BuilderDefID>com.bowstreet.builders.core.Comment</BuilderDefID>
+<Messages />
+<Inputs><Input name="Name">LookUpTables</Input>
+<Input name="BuilderCallEnabled">true</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc16"><BuilderDefID>com.bowstreet.builders.webapp.LookupTableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="DataType">DataServiceData</Input>
+<Input name="NewXmlData"><top><item><Value>value1</Value>
+<Label>label1</Label>
+</item>
+<item><Value>value2</Value>
+<Label>label2</Label>
+</item>
+</top>
+</Input>
+<Input name="VariableType">ValueTagLabelTag</Input>
+<Input name="LabelElementName">numero_cuenta</Input>
+<Input name="DataServiceValueElementName">operation1Response/cuenta/id_cuenta</Input>
+<Input name="DataServiceLabelElementName">operation1Response/cuenta/numero_cuenta</Input>
+<Input name="GetDataFrom">BuilderInput</Input>
+<Input name="TablePosition">InFront</Input>
+<Input name="LabelValueFilterMode">LabelValue</Input>
+<Input name="Name">CuentasUsuario</Input>
+<Input name="DataServiceData">DataServices/ObtenerCuentas/GetCuentasSO</Input>
+<Input name="ValueElementName">id_cuenta</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc106"><BuilderDefID>com.bowstreet.builders.webapp.LookupTableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="DataType">NewXmlData</Input>
+<Input name="NewXmlData">&lt;top&gt;
+	&lt;item&gt;
+      &lt;Value&gt;-1&lt;/Value&gt;
+      &lt;Label&gt;Seleccione Algun Servicio&lt;/Label&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;Value&gt;10021&lt;/Value&gt;
+      &lt;Label&gt;AYA&lt;/Label&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;Value&gt;10022&lt;/Value&gt;
+      &lt;Label&gt;ICE&lt;/Label&gt;
+   &lt;/item&gt;
+&lt;/top&gt;</Input>
+<Input name="VariableType">ValueTagLabelTag</Input>
+<Input name="ValueElementName">Value</Input>
+<Input name="LabelElementName">Label</Input>
+<Input name="DataServiceValueElementName">Value</Input>
+<Input name="DataServiceLabelElementName">Label</Input>
+<Input name="GetDataFrom">BuilderInput</Input>
+<Input name="TablePosition">InFront</Input>
+<Input name="LabelValueFilterMode">LabelValue</Input>
+<Input name="Name">CuentasPagos</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc18"><BuilderDefID>com.bowstreet.builders.webapp.LookupTableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="DataType">NewXmlData</Input>
+<Input name="NewXmlData">&lt;top&gt;
+   &lt;item&gt;
+      &lt;Value&gt;1&lt;/Value&gt;
+      &lt;Label&gt;Debito&lt;/Label&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;Value&gt;2&lt;/Value&gt;
+      &lt;Label&gt;Credito&lt;/Label&gt;
+   &lt;/item&gt;
+&lt;/top&gt;</Input>
+<Input name="VariableType">ValueTagLabelTag</Input>
+<Input name="ValueElementName">Value</Input>
+<Input name="LabelElementName">Label</Input>
+<Input name="DataServiceValueElementName">Value</Input>
+<Input name="DataServiceLabelElementName">Label</Input>
+<Input name="GetDataFrom">BuilderInput</Input>
+<Input name="TablePosition">InFront</Input>
+<Input name="LabelValueFilterMode">LabelValue</Input>
+<Input name="Name">TipoTransacciones</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc24"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Mensaje_Validacion</Input>
+<Input name="Type">String</Input>
+<Input name="Value">Campo Requerido</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc27"><BuilderDefID>com.bowstreet.builders.webapp.StyleSheetBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageLocationType">Implicit</Input>
+<Input name="SourceType">Import</Input>
+<Input name="Name">estilos</Input>
+<Input name="PageName">AllPages</Input>
+<Input name="ExternalLocation">/factory/style.css</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc33"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Inputs><Input name="Name">view_page</Input>
+<Input name="ReplaceExisting">true</Input>
+<Input name="URL">factory/PayConsumerView_ViewPage.html</Input>
+<Input name="BuilderCallEnabled">true</Input>
+<Input name="URLModification">None</Input>
+</Inputs>
+<Messages><Warning><Message>Replaced page "view_page" does not exist</Message>
+</Warning>
+</Messages>
+</BuilderCall>
+<BuilderCall id="bc36"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseParentProfile">false</Input>
+<Input name="ImportOnce">false</Input>
+<Input name="ProfileHandling">None</Input>
+<Input name="Name">BaseModel</Input>
+<Input name="ModelName">baseModels/PayBaseModel</Input>
+<Input name="SetProfiledInputValues">false</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[$Child$Services$<top>
+
+</top>]]></CacheKey>
+<CacheValue><top />
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc38"><BuilderDefID>com.bowstreet.builders.webapp.HTMLEventActionBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">true</Input>
+<Input name="PostActionBehavior">EvalJavaScript</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">selectProviderHtmlEvent</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>inputForm</Page>
+<NameSearch>numero_cuenta_destino</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="EventName">onChange</Input>
+<Input name="Action">DispararShowServices</Input>
+<Input name="InputMappings"><top />
+</Input>
+<Input name="ActionURL">fireShowServices</Input>
+<Input name="Script">this.</Input>
+<Input name="Form">input_form</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc112"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Type">XML</Input>
+<Input name="Name">iceServices</Input>
+<Input name="NamespacePrefix">tns</Input>
+<Input name="Value">&lt;top&gt;
+   &lt;item&gt;
+      &lt;Value&gt;NoSeleccionado&lt;/Value&gt;
+      &lt;Label&gt;Seleccione Algun Servicio&lt;/Label&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;Value&gt;Electricidad&lt;/Value&gt;
+      &lt;Label&gt;Electricidad&lt;/Label&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;Value&gt;Telefono&lt;/Value&gt;
+      &lt;Label&gt;Telefono&lt;/Label&gt;
+   &lt;/item&gt;
+&lt;/top&gt;</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[<top>
+   <item>
+      <Value>NoSeleccionado</Value>
+      <Label>Seleccione Algun Servicio</Label>
+   </item>
+   <item>
+      <Value>Electricidad</Value>
+      <Label>Electricidad</Label>
+   </item>
+   <item>
+      <Value>Telefono</Value>
+      <Label>Telefono</Label>
+   </item>
+</top>]]></CacheKey>
+<CacheValue><top><item><Value>NoSeleccionado</Value>
+<Label>Seleccione Algun Servicio</Label>
+</item>
+<item><Value>Electricidad</Value>
+<Label>Electricidad</Label>
+</item>
+<item><Value>Telefono</Value>
+<Label>Telefono</Label>
+</item>
+</top>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc66"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Type">XML</Input>
+<Input name="Name">noSeleccionadoServices</Input>
+<Input name="NamespacePrefix">tns</Input>
+<Input name="Value">&lt;top&gt;
+&lt;/top&gt;</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[<top>
+</top>]]></CacheKey>
+<CacheValue><top />
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc67"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Type">XML</Input>
+<Input name="Name">AyAServices</Input>
+<Input name="NamespacePrefix">tns</Input>
+<Input name="Value">&lt;top&gt;
+   &lt;item&gt;
+      &lt;Value&gt;NoSeleccionado&lt;/Value&gt;
+      &lt;Label&gt;Seleccione Algun Servicio&lt;/Label&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;Value&gt;Agua&lt;/Value&gt;
+      &lt;Label&gt;Agua&lt;/Label&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;Value&gt;value2&lt;/Value&gt;
+      &lt;Label&gt;label2&lt;/Label&gt;
+   &lt;/item&gt;
+&lt;/top&gt;</Input>
+</Inputs>
+<CacheMap><CacheEntry><CacheKey><![CDATA[<top>
+   <item>
+      <Value>NoSeleccionado</Value>
+      <Label>Seleccione Algun Servicio</Label>
+   </item>
+   <item>
+      <Value>Agua</Value>
+      <Label>Agua</Label>
+   </item>
+   <item>
+      <Value>value2</Value>
+      <Label>label2</Label>
+   </item>
+</top>]]></CacheKey>
+<CacheValue><top><item><Value>NoSeleccionado</Value>
+<Label>Seleccione Algun Servicio</Label>
+</item>
+<item><Value>Agua</Value>
+<Label>Agua</Label>
+</item>
+<item><Value>value2</Value>
+<Label>label2</Label>
+</item>
+</top>
+</CacheValue>
+</CacheEntry>
+</CacheMap>
+</BuilderCall>
+<BuilderCall id="bc65"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+   if(provider.equals("-1")){
+	    //webAppAccess.getVariables().setString("Provider", "ICE");
+	    IXml noSeleccionadoServicesIXml = webAppAccess.getVariables().getXml("noSeleccionadoServices");
+	    webAppAccess.getVariables().setXml("Services", noSeleccionadoServicesIXml);
+	    webAppAccess.getVariables().setString("Provider", "No seleccionado");
+	    System.out.println("Entre");
+	}
+	if(provider.equals("10022")){
+	    //webAppAccess.getVariables().setString("Provider", "ICE");
+	    IXml iceServicesIXml = webAppAccess.getVariables().getXml("iceServices");
+	    
+	    webAppAccess.getVariables().setXml("Services", iceServicesIXml);
+	    webAppAccess.getVariables().setString("Provider", "ICE");
+	    System.out.println("Entre");
+	}
+	else if(provider.equals("10021")){
+	    //webAppAccess.getVariables().setString("Provider", "AyA");
+		IXml AyAServicesIXml = webAppAccess.getVariables().getXml("AyAServices");
+		webAppAccess.getVariables().setString("Provider", "AyA");
+	    webAppAccess.getVariables().setXml("Services", AyAServicesIXml);
+	}
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Arguments"><top><Argument><Name>provider</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="XMLType">Untyped XML</Input>
+<Input name="Name">GetServicesMethod</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc64"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">DispararShowServices</Input>
+<Input name="Actions"><Actions><Action><ActionType>Method</ActionType>
+<ActionName>GetServicesMethod(${Inputs/numero_cuenta_destino})</ActionName>
+</Action>
+<Action><ActionType />
+<ActionName>fireShowServices</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc75"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseInlineHandler">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="EventName">ShowTotals</Input>
+<Input name="Name">updateRandomEventHandler</Input>
+<Input name="Arguments"><Arguments><Argument><Name>total</Name>
+<Type>String</Type>
+</Argument>
+</Arguments>
+</Input>
+<Input name="Actions"><Actions><Action><ActionType>SystemOut</ActionType>
+<ActionName>${Variables/Total}</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc127"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+webAppAccess.processPage("inputForm");
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">doNothing</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc77"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+webAppAccess.processPage("ViewPage");
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">processViewPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc92"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="PageData">&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body style="background-color: transparent;"&gt;
+	&lt;h2 class="titulo"&gt;Pagos&lt;/h2&gt;
+	&lt;span name="evento"&gt;&lt;/span&gt;
+	&lt;div style="width: 90%; margin: 0 auto"&gt;
+		&lt;form name="input_form" method="post"&gt;
+			&lt;table&gt;
+				&lt;tr&gt;
+					&lt;td&gt;
+						&lt;label
+							for="PayModelPayConsumerView_InputPageid_cuenta_origen_field"&gt;
+							&lt;span name="id_cuenta_origen_RequiredPrompt"
+							class="requiredPromptAbove"&gt;*&lt;/span&gt; &lt;span
+							name="id_cuenta_origenlabel" class="subtitulos inputLabelAbove"&gt;Cuenta
+								de Origen&lt;/span&gt;&amp;nbsp;
+						&lt;/label&gt;
+					&lt;/td&gt;
+					&lt;td&gt;
+						&lt;input name="id_cuenta_origen" class="DataEntryFieldElement"
+							id="PayModelPayConsumerView_InputPageid_cuenta_origen_field"&gt;
+				
+						&lt;span name="id_cuenta_origen_ValidationError"
+							class="ValidationErrorText"&gt;&lt;/span&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;
+						&lt;label
+							for="PayModelPayConsumerView_InputPagenumero_cuenta_destino_field"&gt;
+							&lt;span name="numero_cuenta_destino_RequiredPrompt"
+							class="requiredPromptAbove"&gt;*&lt;/span&gt; &lt;span
+							name="numero_cuenta_destinolabel" class="subtitulos inputLabelAbove"&gt;Servicio
+								a Pagar&lt;/span&gt;&amp;nbsp;
+						&lt;/label&gt;
+						&lt;!-- &lt;br /&gt; --&gt;
+					&lt;/td&gt;
+					&lt;td&gt;
+						&lt;input name="numero_cuenta_destino"
+							class="DataEntryFieldElement"
+							id="PayModelPayConsumerView_InputPagenumero_cuenta_destino_field"&gt;
+						
+						&lt;span name="numero_cuenta_destino_ValidationError"
+							class="ValidationErrorText"&gt;&lt;/span&gt;
+					
+					&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;
+						&lt;label
+							for="PayModelPayConsumerView_InputPagemonto_transferido_field"&gt;
+							&lt;span name="monto_transferido_RequiredPrompt"
+							class="requiredPromptAbove"&gt;*&lt;/span&gt; &lt;span
+							name="monto_transferidolabel" class="subtitulos inputLabelAbove"&gt;Monto
+								Transferido&lt;/span&gt;&amp;nbsp;
+						&lt;/label&gt;
+					&lt;/td&gt;
+					&lt;td&gt;
+						&lt;!-- &lt;br /&gt; --&gt;
+						
+						&lt;input name="monto_transferido"
+							class="DataEntryFieldElement"
+							id="PayModelPayConsumerView_InputPagemonto_transferido_field"
+							disabled&gt;
+				
+						&lt;span name="monto_transferido_ValidationError"
+							class="ValidationErrorText"&gt;&lt;/span&gt;
+					&lt;/td&gt;
+				
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;
+			            &lt;span name="random_label"&gt; Monto a Pagar&lt;/span&gt;
+			           
+			        &lt;/td&gt;
+					&lt;td&gt;
+			            &lt;div name="random_div"&gt;
+			            	&lt;span name="random_value" id="random_value"&gt; asdasd&lt;/span&gt;
+			            &lt;/div&gt;
+			        &lt;/td&gt;
+			    &lt;/tr&gt;
+			&lt;/table&gt;
+			&lt;br/&gt;
+			&lt;br/&gt;
+			&lt;span name="submit_button" class="art-button"&gt;&lt;/span&gt; &lt;span name="cancel_button"&gt;&lt;/span&gt;
+			&lt;span name="extra_button1"&gt;&lt;/span&gt; &lt;span name="extra_button2"&gt;&lt;/span&gt;
+			
+		&lt;/form&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">inputPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc98"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageData">&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2 class="titulo"&gt; Pagos &lt;/h2&gt;
+        &lt;div style="width:90%; margin: 0 auto;"&gt;
+        &lt;div style="width:90%; margin: 0 auto;"&gt;
+        &lt;form name="input_form"&gt;
+			&lt;table&gt;
+				&lt;tr&gt;
+					&lt;td&gt;
+						&lt;span
+							name="id_cuenta_origenlabel" class="subtitulos"&gt;Cuenta
+								de Origen&lt;/span&gt;
+					&lt;/td&gt;
+					&lt;td&gt;
+						&lt;span name="id_cuenta_origen" class="inputOfSelect"&gt; &lt;/span&gt;
+				
+					&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;&lt;span
+							name="numero_cuenta_destinolabel" class="subtitulos"&gt;Servicio
+								a Pagar&lt;/span&gt;
+						&lt;!-- &lt;br /&gt; --&gt;
+					&lt;/td&gt;
+					&lt;td&gt;
+						&lt;span name="numero_cuenta_destino" class="inputOfSelect"&gt; &lt;/span&gt;
+					
+					
+					&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;&lt;span
+							name="monto_transferidolabel" class="subtitulos"&gt;Cantidad a Pagar&lt;/span&gt;
+					&lt;/td&gt;
+					&lt;td&gt;
+						&lt;!-- &lt;br /&gt; --&gt;
+						&lt;div name="random-div"&gt;
+						&lt;span name="monto_transferido" class="subtitulos"&gt; &lt;/span&gt;
+						&lt;/div&gt;
+					&lt;/td&gt;
+				
+				&lt;/tr&gt;
+			&lt;/table&gt;
+			&lt;br/&gt;
+			&lt;br/&gt;
+			&lt;/div&gt;
+			 &lt;span name="cancel_button"&gt;&lt;/span&gt;
+			&lt;span name="extra_button1"&gt;&lt;/span&gt; &lt;span name="extra_button2"&gt;&lt;/span&gt;
+			
+		&lt;/form&gt;
+		&lt;span name="submit_button" class="art-button wefDesktopButton"&gt;&lt;/span&gt;
+		&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">inputForm</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc105"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">true</Input>
+<Input name="PostActionBehavior">EvalJavaScript</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">form</Input>
+<Input name="ActionTypeUI">MODEL_FORM</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">pagarServicio</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>inputForm</Page>
+<NameSearch>submit_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">Pagar Servicio</Input>
+<Input name="Action">getResults</Input>
+<Input name="Form">input_form</Input>
+<Input name="ActionURL">PayConsumerView_ShowResults</Input>
+<Input name="InputMappings"><top />
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc109"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Actions"><Actions><Action><ActionName>DataServices/PayConsumerService/PayOperation/inputs/operation1/id_cuenta_origen=${Inputs/id_cuenta_origen}</ActionName>
+<ActionType>Assignment</ActionType>
+</Action>
+<Action><ActionName>DataServices/PayConsumerService/PayOperation/inputs/operation1/monto_transferido=${Inputs/monto_transferido}</ActionName>
+<ActionType>Assignment</ActionType>
+</Action>
+<Action><ActionName>DataServices/PayConsumerService/PayOperation/inputs/operation1/numero_cuenta_destino=${Inputs/numero_cuenta_destino}</ActionName>
+<ActionType>Assignment</ActionType>
+</Action>
+<Action><ActionName>DataServices/PayConsumerService/PayOperation</ActionName>
+<ActionType></ActionType>
+</Action>
+<Action><ActionName>Variables/ResultadoVariable=${DataServices/PayConsumerService/PayOperation/results/operation1Response/resultado}</ActionName>
+<ActionType>Assignment</ActionType>
+</Action>
+<Action><ActionType>Method</ActionType>
+<ActionName>fireShowResults(${DataServices/PayConsumerService/PayOperation/results/operation1Response/resultado})</ActionName>
+</Action>
+<Action><ActionType>SystemOut</ActionType>
+<ActionName>//SystemOut!${Inputs/numero_cuenta_destino}</ActionName>
+</Action>
+<Action><ActionType>SystemOut</ActionType>
+<ActionName>//ystemOut!${Inputs/monto_transferido}</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Name">getResults</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc111"><BuilderDefID>com.bowstreet.builders.webapp.TextInputBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="Type">Normal</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><size />
+<maxlength />
+</HTMLAttributes>
+</Input>
+<Input name="Name">TotalInput</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>inputForm</Page>
+<NameSearch>monto_transferido</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Value">${Variables/Total}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc116"><BuilderDefID>com.bowstreet.builders.webapp.DojoSelectBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="DojoWidgetType">dijit.form.FilteringSelect</Input>
+<Input name="RetainOptions">true</Input>
+<Input name="RemoveDuplicateOptions">false</Input>
+<Input name="HandleExisting">Skip</Input>
+<Input name="HandleMissingValue">Ignore</Input>
+<Input name="Separator">;</Input>
+<Input name="LookupTable">CuentasUsuario</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">SelectCuentaDojo</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>inputForm</Page>
+<NameSearch>id_cuenta_origen</NameSearch>
+</SimplePageLocation>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc118"><BuilderDefID>com.bowstreet.builders.webapp.StyleSheetBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageLocationType">Implicit</Input>
+<Input name="SourceType">Link</Input>
+<Input name="Name">Style</Input>
+<Input name="PageName">inputForm</Input>
+<Input name="ExternalLocation">/factory/style.css</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc120"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">ShowFormPage</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>ViewPage</Page>
+<NameSearch>back_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Label">Volver al formulario de Pago</Input>
+<Input name="Action">fireShowStartPages</Input>
+<Input name="ActionURL">inputForm</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc122"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">TotalPagarText</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>inputForm</Page>
+<NameSearch>monto_transferido</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/Total}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc124"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">ShowResultsClientEventHandler</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>inputForm</Page>
+<NameSearch>submit_button</NameSearch>
+<InsertionModifier>Before</InsertionModifier>
+<NewNodeName>show_results_client_event_handler</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Event">ShowResults</Input>
+<Input name="Action">processViewPage</Input>
+<Input name="ActionURL">showViewPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc126"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Input name="UseInlineHandler">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="EventName">ShowResults</Input>
+<Input name="Name">showResultsEventHandler</Input>
+<Input name="Arguments"><Arguments><Argument><Name>result</Name>
+<Type>String</Type>
+</Argument>
+</Arguments>
+</Input>
+<Input name="Actions"><Actions><Action><ActionType></ActionType>
+<ActionName>showViewPage</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc129"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageData">&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body id="wefBody"&gt;
+	&lt;h2 class="titulo"&gt;Pagos&lt;/h2&gt;
+
+	&lt;div style="width: 90%; margin: 0 auto;"&gt;
+		&lt;div style="width: 90%; margin: 0 auto;"&gt;
+			&lt;label&gt;&lt;span name="resultadolabel" class="subtitulos"&gt;Resultado&lt;/span&gt;&amp;nbsp;&lt;/label&gt;
+
+			&lt;h2 name="resultado" class="titulo"
+				value="Field Value"
+				id="resultadoField"&gt;&lt;/h2&gt;
+				 &lt;br&gt;
+
+			&lt;br&gt;
+		&lt;/div&gt;
+		&lt;span name="back_button" class="art-button wefDesktopButton"&gt;&lt;/span&gt;
+	&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">ViewPage</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc132"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">ResultadoVariable</Input>
+<Input name="Type">String</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc133"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">ResultText</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>ViewPage</Page>
+<NameSearch>resultado</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/ResultadoVariable}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc135"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>ViewPage</Page>
+<NameSearch>resultado</NameSearch>
+<InsertionModifier>Before</InsertionModifier>
+<NewNodeName>client_event_show_start_pages</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Event">ShowStartPages</Input>
+<Input name="Action">doNothing</Input>
+<Input name="ActionURL">doNothing</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc137"><BuilderDefID>com.bowstreet.builders.webapp.EventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseInlineHandler">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="EventName">ShowStartPages</Input>
+<Input name="Name">EventHandlerShowStartPages</Input>
+<Input name="Actions"><Actions><Action><ActionType>Assignment</ActionType>
+<ActionName>Variables/Total=0</ActionName>
+</Action>
+</Actions>
+</Input>
+<Input name="Arguments"><Arguments />
+</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies><Dependency type="Model">providers/Pay/Pay</Dependency>
+<Dependency type="Model">providers/GetCuentas/GetCuentasProvider</Dependency>
+<Dependency type="Model">baseModels/PayBaseModel</Dependency>
+<Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
+<Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
+<Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
+<Dependency type="File">/factory/style.css</Dependency>
+</Dependencies>
+<ExternalProperties><ExternalProperty id="PortletModel">true</ExternalProperty>
+<ExternalProperty id="PortletName">PayService</ExternalProperty>
+<ExternalProperty id="PortletTitle">Pagar Servicio</ExternalProperty>
+<ExternalProperty id="PortletDefaultLocale">en</ExternalProperty>
+<ExternalProperty id="PortletAdditionalLocales">en</ExternalProperty>
+<ExternalProperty id="TestPortalPage"></ExternalProperty>
+<ExternalProperty id="PortletModeEdit">false</ExternalProperty>
+<ExternalProperty id="PortletModeEditDefaults">false</ExternalProperty>
+<ExternalProperty id="PortletModeConfig">false</ExternalProperty>
+<ExternalProperty id="PortletModeHelp">false</ExternalProperty>
+<ExternalProperty id="DojoEnabled">true</ExternalProperty>
+<ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer,dijit.form.FilteringSelect</ExternalProperty>
+</ExternalProperties>
+</Model>
