@@ -115,7 +115,7 @@ Parameters:
 <Input name="CreateInputPage">true</Input>
 <Input name="InputPageURL">${Properties/bowstreet.Theme/ViewAndForm_InputPageBase}</Input>
 <Input name="EnableInputValidation">false</Input>
-<Input name="InputSubmitText">Realizar Transferencia</Input>
+<Input name="InputSubmitText">Realizar Transacción</Input>
 <Input name="ViewPageBackButtonText">Volver</Input>
 <Input name="InsertInputPage">false</Input>
 <Input name="CreateColumnLink">false</Input>
@@ -161,13 +161,13 @@ Parameters:
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>numero_cuenta_destino</Name>
-<Label>Numero de Cuenta Destino</Label>
+<Label>Número de Cuenta Destino</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[String]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>id_tipo_transaccion</Name>
-<Label>Tipo de Transaccion</Label>
+<Label>Tipo de Transacción</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
@@ -179,7 +179,7 @@ Parameters:
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>resultado</Name>
-<Label>[Resultado]</Label>
+<Label>Estado de la Transacción</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Integer]</DataType>
 <Sort>[Off]</Sort>
@@ -230,20 +230,20 @@ Parameters:
 </data>
 </Input>
 <Input name="DisplayBehavior"><data><DispInfo><Name>id_cuenta_origen</Name>
-<Label>[Id Cuenta Origen]</Label>
+<Label>[Cuenta de Origen]</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_Select</DataType>
 <Sort>[Off]</Sort>
 <LookupTable>CuentasUsuario</LookupTable>
 </DispInfo>
 <DispInfo><Name>numero_cuenta_destino</Name>
-<Label>[Numero Cuenta Destino]</Label>
+<Label>[Número de Cuenta Destino]</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[String]</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>id_tipo_transaccion</Name>
-<Label>[Tipo Transaccion]</Label>
+<Label>[Tipo de Transacción]</Label>
 <Hide>HideAlways</Hide>
 <DataType>base_Select</DataType>
 <Sort>[Off]</Sort>
@@ -259,19 +259,19 @@ Parameters:
 </Input>
 <Input name="ValidationBehavior"><data><ValidationInfo><Name>id_cuenta_origen</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
+<Required>[Required]</Required>
 </ValidationInfo>
 <ValidationInfo><Name>numero_cuenta_destino</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
+<Required>[Required]</Required>
 </ValidationInfo>
 <ValidationInfo><Name>id_tipo_transaccion</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
+<Required>[Required]</Required>
 </ValidationInfo>
 <ValidationInfo><Name>monto_transferido</Name>
 <ValidationOp>[Do Not Change]</ValidationOp>
-<Required>[NotRequired]</Required>
+<Required>[Required]</Required>
 </ValidationInfo>
 </data>
 </Input>

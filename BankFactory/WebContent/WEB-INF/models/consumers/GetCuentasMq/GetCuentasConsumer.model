@@ -124,8 +124,8 @@ Parameters:
 <Input name="InputPageStyleSheetOverride">${Properties/bowstreet.Theme/ViewAndForm_InputPageStyleSheetOverrideHTMLTemplate}</Input>
 <Input name="EnableInputValidation">false</Input>
 <Input name="InputValidationMethodBehavior">CallAlways</Input>
-<Input name="InputSubmitText">Submit</Input>
-<Input name="ViewPageBackButtonText">Back</Input>
+<Input name="InputSubmitText">Obtener Cuentas</Input>
+<Input name="ViewPageBackButtonText">Regresar</Input>
 <Input name="InsertInputPage">true</Input>
 <Input name="CreateColumnLink">false</Input>
 <Input name="LinkActionChoice">dataservice</Input>
@@ -181,7 +181,7 @@ Parameters:
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>numero_cuenta</Name>
-<Label>[Numero Cuenta]</Label>
+<Label>Número Cuenta</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[String]</DataType>
 <Sort>[Off]</Sort>
@@ -213,25 +213,25 @@ Parameters:
 <LookupTable>MonedasLookupTable</LookupTable>
 </DispInfo>
 <DispInfo><Name>arg4</Name>
-<Label>Fecha de Transacción Desde</Label>
+<Label>Fecha de Creación Desde</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>arg5</Name>
-<Label>Fecha de Transacción Hasta</Label>
+<Label>Fecha de Creación Hasta</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>arg6</Name>
-<Label>Monto de Transacción Desde</Label>
+<Label>Saldo de Cuenta Desde</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_FloatingPoint</DataType>
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>arg7</Name>
-<Label>Monto de Transacción Desde</Label>
+<Label>Saldo de Cuenta Hasta</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_FloatingPoint</DataType>
 <Sort>[Off]</Sort>
@@ -649,6 +649,7 @@ Parameters:
 <Inputs><Input name="Name">ViewAndForm_ViewPage</Input>
 <Input name="ReplaceExisting">true</Input>
 <Input name="URL">factory/ViewAndForm_ViewPage.html</Input>
+<Input name="URLModification">None</Input>
 </Inputs>
 <Messages />
 </BuilderCall>

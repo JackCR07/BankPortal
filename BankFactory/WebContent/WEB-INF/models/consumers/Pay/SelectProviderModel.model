@@ -148,6 +148,7 @@ You can also profile other builder inputs according to device type, and you can 
 
 
 
+
 &amp;nbsp;</LABEL>
 </TD>
 <TD><INPUT name="id_cuenta_origen" class="DataEntryFieldElement" id="PayModelPayConsumerView_InputPageid_cuenta_origen_field" />
@@ -157,6 +158,7 @@ You can also profile other builder inputs according to device type, and you can 
 <TR><TD><LABEL for="PayModelPayConsumerView_InputPagenumero_cuenta_destino_field"><SPAN name="numero_cuenta_destino_RequiredPrompt" class="requiredPromptAbove">*</SPAN>
 <SPAN name="numero_cuenta_destinolabel" class="subtitulos inputLabelAbove">Servicio
 								a Pagar</SPAN>
+
 
 
 
@@ -171,6 +173,7 @@ You can also profile other builder inputs according to device type, and you can 
 <TR><TD><LABEL for="PayModelPayConsumerView_InputPagemonto_transferido_field"><SPAN name="monto_transferido_RequiredPrompt" class="requiredPromptAbove">*</SPAN>
 <SPAN name="monto_transferidolabel" class="subtitulos inputLabelAbove">Monto
 								Transferido</SPAN>
+
 
 
 
@@ -481,7 +484,7 @@ Parameters:
 <Input name="NewXmlData">&lt;top&gt;
 	&lt;item&gt;
       &lt;Value&gt;-1&lt;/Value&gt;
-      &lt;Label&gt;Seleccione Algun Servicio&lt;/Label&gt;
+      &lt;Label&gt;Seleccione Algún Servicio&lt;/Label&gt;
    &lt;/item&gt;
    &lt;item&gt;
       &lt;Value&gt;10021&lt;/Value&gt;
@@ -624,7 +627,7 @@ Parameters:
 <Input name="Value">&lt;top&gt;
    &lt;item&gt;
       &lt;Value&gt;NoSeleccionado&lt;/Value&gt;
-      &lt;Label&gt;Seleccione Algun Servicio&lt;/Label&gt;
+      &lt;Label&gt;Seleccione Algún Servicio&lt;/Label&gt;
    &lt;/item&gt;
    &lt;item&gt;
       &lt;Value&gt;Electricidad&lt;/Value&gt;
@@ -632,14 +635,14 @@ Parameters:
    &lt;/item&gt;
    &lt;item&gt;
       &lt;Value&gt;Telefono&lt;/Value&gt;
-      &lt;Label&gt;Telefono&lt;/Label&gt;
+      &lt;Label&gt;Teléfono&lt;/Label&gt;
    &lt;/item&gt;
 &lt;/top&gt;</Input>
 </Inputs>
 <CacheMap><CacheEntry><CacheKey><![CDATA[<top>
    <item>
       <Value>NoSeleccionado</Value>
-      <Label>Seleccione Algun Servicio</Label>
+      <Label>Seleccione Algún Servicio</Label>
    </item>
    <item>
       <Value>Electricidad</Value>
@@ -647,17 +650,17 @@ Parameters:
    </item>
    <item>
       <Value>Telefono</Value>
-      <Label>Telefono</Label>
+      <Label>Teléfono</Label>
    </item>
 </top>]]></CacheKey>
 <CacheValue><top><item><Value>NoSeleccionado</Value>
-<Label>Seleccione Algun Servicio</Label>
+<Label>Seleccione Algún Servicio</Label>
 </item>
 <item><Value>Electricidad</Value>
 <Label>Electricidad</Label>
 </item>
 <item><Value>Telefono</Value>
-<Label>Telefono</Label>
+<Label>Teléfono</Label>
 </item>
 </top>
 </CacheValue>
@@ -699,7 +702,7 @@ Parameters:
 <Input name="Value">&lt;top&gt;
    &lt;item&gt;
       &lt;Value&gt;NoSeleccionado&lt;/Value&gt;
-      &lt;Label&gt;Seleccione Algun Servicio&lt;/Label&gt;
+      &lt;Label&gt;Seleccione Algún Servicio&lt;/Label&gt;
    &lt;/item&gt;
    &lt;item&gt;
       &lt;Value&gt;Agua&lt;/Value&gt;
@@ -710,7 +713,7 @@ Parameters:
 <CacheMap><CacheEntry><CacheKey><![CDATA[<top>
    <item>
       <Value>NoSeleccionado</Value>
-      <Label>Seleccione Algun Servicio</Label>
+      <Label>Seleccione Algún Servicio</Label>
    </item>
    <item>
       <Value>Agua</Value>
@@ -718,7 +721,7 @@ Parameters:
    </item>
 </top>]]></CacheKey>
 <CacheValue><top><item><Value>NoSeleccionado</Value>
-<Label>Seleccione Algun Servicio</Label>
+<Label>Seleccione Algún Servicio</Label>
 </item>
 <item><Value>Agua</Value>
 <Label>Agua</Label>

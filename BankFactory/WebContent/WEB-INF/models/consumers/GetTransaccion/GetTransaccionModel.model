@@ -138,7 +138,7 @@ Parameters:
 <Input name="CreateInputPage">true</Input>
 <Input name="InputPageURL">${Properties/bowstreet.Theme/ViewAndForm_InputPageBase}</Input>
 <Input name="EnableInputValidation">false</Input>
-<Input name="InputSubmitText">Buscar</Input>
+<Input name="InputSubmitText">Obtener Transacciones</Input>
 <Input name="ViewPageBackButtonText">Back</Input>
 <Input name="InsertInputPage">true</Input>
 <Input name="CreateColumnLink">false</Input>
@@ -269,7 +269,7 @@ Parameters:
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>fecha_mov_menor_a</Name>
-<Label>Fecha de Transacción DesdeHasta</Label>
+<Label>Fecha de Transacción Hasta</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>base_Date</DataType>
 <Sort>[Off]</Sort>
@@ -281,7 +281,7 @@ Parameters:
 <Sort>[Off]</Sort>
 </DispInfo>
 <DispInfo><Name>mon_trans_menor_a</Name>
-<Label>Monto Transacción Desde</Label>
+<Label>Monto Transacción Hasta</Label>
 <Hide>[Do Not Change]</Hide>
 <DataType>[Floating Point]</DataType>
 <Sort>[Off]</Sort>
@@ -423,7 +423,7 @@ Parameters:
 </data>
 </Input>
 <Input name="Name">InputFormDataFieldSettings</Input>
-<Input name="DefaultName">GetTransaccionesView_InputPage GetTransaccionesView_ViewPage </Input>
+<Input name="DefaultName">GetTransaccionesView_ViewPage GetTransaccionesView_InputPage </Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc96"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
@@ -1230,7 +1230,7 @@ Parameters:
 <Inputs><top><Input><Name>operation1</Name>
 </Input>
 <Input><Name>operation1.numero_cuenta</Name>
-<Value></Value>
+<Value />
 </Input>
 </top>
 </Inputs>

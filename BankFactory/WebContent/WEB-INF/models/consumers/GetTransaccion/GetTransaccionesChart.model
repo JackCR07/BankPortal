@@ -26,7 +26,7 @@
 &lt;h2 class="titulo"&gt; Información Adicional &lt;/label&gt;
 &lt;br&gt;
 &lt;br&gt;
-        	&lt;label id="numero_cuenta_label" class="subtitulos"&gt; Seleccione Alguna opcíon&lt;/label&gt;</Input>
+        	&lt;label id="numero_cuenta_label" class="subtitulos"&gt; Seleccione Alguna opción&lt;/label&gt;</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
@@ -101,9 +101,7 @@
 </CacheMap>
 </BuilderCall>
 <BuilderCall id="bc14"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
-<Messages><Warning><Message>Duplicate portlet name found in model consumers/GetTransaccion/GetTransaccionesChartBackUp.</Message>
-</Warning>
-</Messages>
+<Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="PortletDefaultLocale">en</Input>
 <Input name="PortletAdditionalLocales">en</Input>

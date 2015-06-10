@@ -394,7 +394,7 @@ else if(service=="Electricidad"){
 }
 else if(service=="Telefono"){
 	document.getElementById("id-service-label").style.display='';
-	document.getElementById("id-service-label").innerHTML="Telefono";
+	document.getElementById("id-service-label").innerHTML="Teléfono";
 	document.getElementById("id-service").style.display='';
 	document.getElementById("newLine1").style.display='';
 	document.getElementById("newLine2").style.display='';
