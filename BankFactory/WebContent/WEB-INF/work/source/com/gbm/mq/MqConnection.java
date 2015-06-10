@@ -206,7 +206,7 @@ public class MqConnection {
 		//************************validar campos***************************
 		fechaMayorA = (fechaMayorA.equals("") ? null : fechaMayorA);
 		fechaMenorA = (fechaMenorA.equals("") ? null : fechaMenorA);
-		moneda = (moneda.equals("") ? null : moneda);
+		moneda = (moneda.equals("") ? "todas" : moneda);
 		saldoMayorA = (saldoMayorA.equals("") ? "-1" : saldoMayorA);
 		saldoMenorA = (saldoMenorA.equals("") ? "-1" : saldoMenorA);
 		double saldoMayorADouble= Double.parseDouble(saldoMayorA);
@@ -244,7 +244,7 @@ public class MqConnection {
 		System.out.println("Processing Main...");
 
 		MqConnection clientTest = new MqConnection();
-		String responseQueue = clientTest.putAndGetMessage("lprado", -1,null, null, null, -1, -1);
+		String responseQueue = clientTest.putAndGetMessage("lprado", -1,"null", null, null, -1, -1);
 		clientTest.xmlParser(responseQueue);
 		// initialize MQ.
 		/*
@@ -256,7 +256,7 @@ public class MqConnection {
 		 * "<saldo_menor_a>-1</saldo_menor_a>" + "</datos>";
 		 */
 		// put and retreive message from MQ.
-		clientTest.putAndGetMessage("lprado", -1,null, null, null, -1, -1);
+		//clientTest.putAndGetMessage("lprado", -1,null, null, null, -1, -1);
 		//System.out.print(clientTest.getMessageQueue("lprado", -1, null, null, -1, -1));
 		System.out.println("Done!");
 	}

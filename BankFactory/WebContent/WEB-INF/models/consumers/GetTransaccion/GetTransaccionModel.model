@@ -46,7 +46,7 @@ You can also profile other builder inputs according to device type, and you can 
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="BuilderCallCategory">General</Input>
 <Input name="UseAllOperations">true</Input>
-<Input name="OverrideInputs">true</Input>
+<Input name="OverrideInputs">false</Input>
 <Input name="Name">GetTransacciones</Input>
 <Input name="ProviderModel">providers/GetTransacciones/GetTransaccionesProvider</Input>
 <Input name="OperationInputs"><top><InputsForOperation><Operation>GetTransaccionesOperation</Operation>
@@ -772,6 +772,27 @@ webAppAccess.processPage("PageName");
 <Input name="Actions"><Actions><Action><ActionName>GetTransaccionesGetTransaccionesOperation</ActionName>
 <ActionType />
 </Action>
+<Action><ActionName>${Variables/Moneda}</ActionName>
+<ActionType>SystemOut</ActionType>
+</Action>
+<Action><ActionName>${Variables/NumeroCuenta}</ActionName>
+<ActionType>SystemOut</ActionType>
+</Action>
+<Action><ActionName>${Inputs/id_cuenta}</ActionName>
+<ActionType>SystemOut</ActionType>
+</Action>
+<Action><ActionName>DataServices/GetMonedaByNumCuentaConsumer/GetMonedaByNumCuenta/inputs/operation1/numero_cuenta=${MethodCall/idCuentaToNumCuenta(${Inputs/id_cuenta})}</ActionName>
+<ActionType>Assignment</ActionType>
+</Action>
+<Action><ActionName>DataServices/GetMonedaByNumCuentaConsumer/GetMonedaByNumCuenta</ActionName>
+<ActionType />
+</Action>
+<Action><ActionName>Variables/Moneda=${MethodCall/getMonedaByNumCuenta(${DataServices/GetMonedaByNumCuentaConsumer/GetMonedaByNumCuenta/results/operation1Response/moneda})}</ActionName>
+<ActionType>Assignment</ActionType>
+</Action>
+<Action><ActionName>${Variables/Moneda}</ActionName>
+<ActionType>SystemOut</ActionType>
+</Action>
 <Action><ActionType />
 <ActionName>GetTotals</ActionName>
 </Action>
@@ -969,6 +990,7 @@ jkljk</Input>
  double sumaCredito =0;
  int cantidadDebito=0;
  int cantidadCredito=0;
+ String moneda = webAppAccess.getVariables().getString("Moneda");
  
  //Obtener datos de los inputs
   int idCuenta =Integer.parseInt(operation1IXml.getText("id_cuenta"));
@@ -977,29 +999,46 @@ jkljk</Input>
   String tipoTransaccion = idTipoTransaccion.equals("-1") ? "Todas" : (idTipoTransaccion.equals("1") ? "Credito" : "Debito");
   //Obtener datos de los results
   IXml child = results.getFirstChildElement();
+  String monedaTransaccion="NoSelec";
  while(child!=null){
+       String origenNumCuenta=child.getText("num_cuenta_origen");
        String debito =child.getText("debito");
-       String credito =child.getText("credito"); 
+       String credito =child.getText("credito");
+       monedaTransaccion = child.getText("moneda"); 
        if((debito ==null )|| (credito ==null)){
        		break;
        }
        if(!debito.equals("")){
-        	sumaDebito +=Double.parseDouble(debito);
-        	cantidadDebito++;
+           if(monedaTransaccion.equals(moneda)){
+        		sumaDebito +=Double.parseDouble(debito);
+           }
+          else  if(moneda.equals("Dolares")){
+               sumaDebito +=Double.parseDouble(debito)/500;
+           }
+           else{
+               sumaDebito +=Double.parseDouble(debito)*500;
+           }
+           cantidadDebito++;
        }
         if(!credito.equals("")){
-        	sumaCredito +=Double.parseDouble(credito);
-        	cantidadCredito++;
+	         sumaCredito +=Double.parseDouble(credito);
+          	 cantidadCredito++;
        }
       //Siguiente transaccion 
  	  child = child.getNextSiblingElement();
  }
 
 //Setear variables
+webAppAccess.getVariables().setString("CantidadEgresoSinFomato",sumaCredito+"");
+webAppAccess.getVariables().setString("CantidadIngresoSinFormato", sumaDebito+"");
+String sumaCreditoStr=" ";
+String sumaDebitoStr =" ";
+sumaCreditoStr =(String)webAppAccess.callMethod("formatNumber", sumaCredito+"", moneda);
+sumaDebitoStr =(String)webAppAccess.callMethod("formatNumber", sumaDebito+"", moneda);
 webAppAccess.getVariables().setString("CantidadEgreso", cantidadCredito+"");
 webAppAccess.getVariables().setString("CantidadIngreso", cantidadDebito+"");
-webAppAccess.getVariables().setString("Egreso", sumaCredito+"");
-webAppAccess.getVariables().setString("Ingreso", sumaDebito+"");
+webAppAccess.getVariables().setString("Egreso", sumaCreditoStr);
+webAppAccess.getVariables().setString("Ingreso", sumaDebitoStr);
 webAppAccess.getVariables().setString("NumeroCuenta",numeroCuenta);
 webAppAccess.getVariables().setString("IdTipoTransaccion",tipoTransaccion);
 
@@ -1024,23 +1063,24 @@ System.out.println(webAppAccess.getVariables().getString("IdTipoTransaccion"));
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="ReturnType">String</Input>
 <Input name="Body">{
-    System.out.println("numero = "+numero + "moneda =" +moneda);
-    if(!numero.equals("")){
-     double num = Double.parseDouble(numero);
-    DecimalFormat formateador = new DecimalFormat("###,###,###.##");
-    String numeroStr =  formateador.format (num);
-    
-	if(moneda.equals("Dolares")){
-		numeroStr="$"+numeroStr;
-	}
-	else if(moneda.equals("Colones")){
-	    numeroStr="¢"+numeroStr;
-	}
-	return numeroStr;
+    String numeroStr="";
+    if(!moneda.equals("NoSeleccionado")){
+	    System.out.println("numero = "+numero + "moneda =" +moneda);
+	    if(!numero.equals("")){
+		     double num = Double.parseDouble(numero);
+		    DecimalFormat formateador = new DecimalFormat("###,###,###.##");
+		    numeroStr =  formateador.format (num);
+			if(moneda.equals("Dolares"))
+				numeroStr="$"+numeroStr;
+			else if(moneda.equals("Colones"))
+			    numeroStr="¢"+numeroStr;
+			else
+				return numeroStr;
+	    }
+	    return numeroStr;
     }
-    else{
-    return "";
-    } 
+    else
+    	return numeroStr;
 }</Input>
 <Input name="RenameExisting">false</Input>
 <Input name="TargetPhase">Construction</Input>
@@ -1092,8 +1132,10 @@ System.out.println(webAppAccess.getVariables().getString("IdTipoTransaccion"));
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc123"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Messages><Warning><Message>This BuilderCall overwrites the effect of another BuilderCall.  (This may be intentional, in which case this warning can be ignored.)</Message>
+</Warning>
+</Messages>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="QuoteText">true</Input>
 <Input name="ReplaceContents">true</Input>
 <Input name="ReplaceTargetElement">false</Input>
@@ -1109,8 +1151,10 @@ System.out.println(webAppAccess.getVariables().getString("IdTipoTransaccion"));
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc125"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">false</Input>
+<Messages><Warning><Message>This BuilderCall overwrites the effect of another BuilderCall.  (This may be intentional, in which case this warning can be ignored.)</Message>
+</Warning>
+</Messages>
+<Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="QuoteText">true</Input>
 <Input name="ReplaceContents">true</Input>
 <Input name="ReplaceTargetElement">false</Input>
@@ -1138,8 +1182,86 @@ System.out.println(webAppAccess.getVariables().getString("IdTipoTransaccion"));
 <Input name="ReplaceExisting">true</Input>
 <Input name="URL">factory/GetTransaccionesView_ViewPage.html</Input>
 <Input name="URLModification">None</Input>
+<Input name="BuilderCallEnabled">false</Input>
 </Inputs>
 <Messages />
+</BuilderCall>
+<BuilderCall id="bc133"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    return (idCuenta+10000)+"";
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">idCuentaToNumCuenta</Input>
+<Input name="Arguments"><top><Argument><Name>idCuenta</Name>
+<Type>int</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc132"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseAllOperations">true</Input>
+<Input name="OverrideInputs">true</Input>
+<Input name="CreateLookupTables">true</Input>
+<Input name="AssociateLookupTables">true</Input>
+<Input name="UseDiscardableInputVariables">false</Input>
+<Input name="UseDiscardableVariables">false</Input>
+<Input name="EnableCaching">true</Input>
+<Input name="InheritProfile">true</Input>
+<Input name="Name">GetMonedaByNumCuentaConsumer</Input>
+<Input name="ProviderModel">providers/GetMonedaByNumCuenta/GetMonedaByNumCuenta</Input>
+<Input name="SelectOperations"><top><OperationSelected><Operation>GetMonedaByNumCuenta</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>No description was provided.
+Parameters:
+	Name:			inputs
+
+	Name:			results</Description>
+</OperationSelected>
+</top>
+</Input>
+<Input name="OperationInputs"><top><InputsForOperation><Operation>GetMonedaByNumCuenta</Operation>
+<Inputs><top><Input><Name>operation1</Name>
+</Input>
+<Input><Name>operation1.numero_cuenta</Name>
+<Value></Value>
+</Input>
+</top>
+</Inputs>
+</InputsForOperation>
+</top>
+</Input>
+<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>GetMonedaByNumCuenta</Operation>
+<Mappings />
+</ValuesForOperation>
+</ContextVariables>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc135"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+ IXml results = webAppAccess.getDataServiceParameterXml("GetMonedaByNumCuentaConsumer","GetMonedaByNumCuenta","results","operation1Response");
+String moneda = results.getText("moneda");
+return moneda;
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">getMonedaByNumCuenta</Input>
+<Input name="Arguments"><top><Argument><Name>numCuenta</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
 </BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
@@ -1155,7 +1277,7 @@ System.out.println(webAppAccess.getVariables().getString("IdTipoTransaccion"));
 <Dependency type="File">/factory/GetTransaccionesView_InputPage.html</Dependency>
 <Dependency type="Model">providers/GetTransacciones/transaccionesSharedVariables</Dependency>
 <Dependency type="File">/factory/GetTransaccionesView_ViewPage.html</Dependency>
-<Dependency type="File">factory/GetTransaccionesView_ViewPage.html</Dependency>
+<Dependency type="Model">providers/GetMonedaByNumCuenta/GetMonedaByNumCuenta</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.html</Dependency>
 <Dependency type="File">/factory/data_layout_templates/multiline_show_hide_list.css</Dependency>
 <Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>

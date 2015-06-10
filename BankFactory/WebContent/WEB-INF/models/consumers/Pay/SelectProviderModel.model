@@ -57,6 +57,46 @@ You can also profile other builder inputs according to device type, and you can 
 <Input name="CustomEditDefaultsPageType">None</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc138"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    System.out.println("numero = "+numero + "moneda =" +moneda);
+    if(!numero.equals("")){
+     double num = Double.parseDouble(numero);
+    DecimalFormat formateador = new DecimalFormat("###,###,###.##");
+    String numeroStr =  formateador.format (num);
+    
+	if(moneda.equals("Dolares")){
+		numeroStr="$"+numeroStr;
+	}
+	else if(moneda.equals("Colones")){
+	    numeroStr="¢"+numeroStr;
+	}
+	return numeroStr;
+    }
+    else{
+    return "";
+    } 
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Imports"><Imports><Import>java.text.DecimalFormat</Import>
+</Imports>
+</Input>
+<Input name="Arguments"><top><Argument><Name>numero</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>moneda</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="XMLType">Untyped XML</Input>
+<Input name="Name">formatNumber</Input>
+</Inputs>
+</BuilderCall>
 <BuilderCall id="bc89"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
@@ -105,6 +145,9 @@ You can also profile other builder inputs according to device type, and you can 
 <SPAN name="id_cuenta_origenlabel" class="subtitulos inputLabelAbove">Cuenta
 								de Origen</SPAN>
 
+
+
+
 &amp;nbsp;</LABEL>
 </TD>
 <TD><INPUT name="id_cuenta_origen" class="DataEntryFieldElement" id="PayModelPayConsumerView_InputPageid_cuenta_origen_field" />
@@ -114,6 +157,9 @@ You can also profile other builder inputs according to device type, and you can 
 <TR><TD><LABEL for="PayModelPayConsumerView_InputPagenumero_cuenta_destino_field"><SPAN name="numero_cuenta_destino_RequiredPrompt" class="requiredPromptAbove">*</SPAN>
 <SPAN name="numero_cuenta_destinolabel" class="subtitulos inputLabelAbove">Servicio
 								a Pagar</SPAN>
+
+
+
 
 &amp;nbsp;</LABEL>
 <HTMLContent><![CDATA[<!-- <br /> -->]]></HTMLContent>
@@ -125,6 +171,9 @@ You can also profile other builder inputs according to device type, and you can 
 <TR><TD><LABEL for="PayModelPayConsumerView_InputPagemonto_transferido_field"><SPAN name="monto_transferido_RequiredPrompt" class="requiredPromptAbove">*</SPAN>
 <SPAN name="monto_transferidolabel" class="subtitulos inputLabelAbove">Monto
 								Transferido</SPAN>
+
+
+
 
 &amp;nbsp;</LABEL>
 </TD>
@@ -506,12 +555,10 @@ Parameters:
 <Inputs><Input name="Name">view_page</Input>
 <Input name="ReplaceExisting">true</Input>
 <Input name="URL">factory/PayConsumerView_ViewPage.html</Input>
-<Input name="BuilderCallEnabled">true</Input>
+<Input name="BuilderCallEnabled">false</Input>
 <Input name="URLModification">None</Input>
 </Inputs>
-<Messages><Warning><Message>Replaced page "view_page" does not exist</Message>
-</Warning>
-</Messages>
+<Messages />
 </BuilderCall>
 <BuilderCall id="bc36"><BuilderDefID>com.bowstreet.builders.webapp.ImportedModelBuilder</BuilderDefID>
 <Messages />
@@ -658,10 +705,6 @@ Parameters:
       &lt;Value&gt;Agua&lt;/Value&gt;
       &lt;Label&gt;Agua&lt;/Label&gt;
    &lt;/item&gt;
-   &lt;item&gt;
-      &lt;Value&gt;value2&lt;/Value&gt;
-      &lt;Label&gt;label2&lt;/Label&gt;
-   &lt;/item&gt;
 &lt;/top&gt;</Input>
 </Inputs>
 <CacheMap><CacheEntry><CacheKey><![CDATA[<top>
@@ -673,19 +716,12 @@ Parameters:
       <Value>Agua</Value>
       <Label>Agua</Label>
    </item>
-   <item>
-      <Value>value2</Value>
-      <Label>label2</Label>
-   </item>
 </top>]]></CacheKey>
 <CacheValue><top><item><Value>NoSeleccionado</Value>
 <Label>Seleccione Algun Servicio</Label>
 </item>
 <item><Value>Agua</Value>
 <Label>Agua</Label>
-</item>
-<item><Value>value2</Value>
-<Label>label2</Label>
 </item>
 </top>
 </CacheValue>
@@ -782,7 +818,7 @@ webAppAccess.processPage("inputForm");
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="ReturnType">void</Input>
 <Input name="Body">{
-webAppAccess.processPage("ViewPage");
+webAppAccess.processPage("ResultPage");
 }</Input>
 <Input name="RenameExisting">false</Input>
 <Input name="TargetPhase">Construction</Input>
@@ -995,14 +1031,14 @@ webAppAccess.processPage("ViewPage");
 <Input name="Actions"><Actions><Action><ActionName>DataServices/PayConsumerService/PayOperation/inputs/operation1/id_cuenta_origen=${Inputs/id_cuenta_origen}</ActionName>
 <ActionType>Assignment</ActionType>
 </Action>
-<Action><ActionName>DataServices/PayConsumerService/PayOperation/inputs/operation1/monto_transferido=${Inputs/monto_transferido}</ActionName>
+<Action><ActionName>DataServices/PayConsumerService/PayOperation/inputs/operation1/monto_transferido=${Variables/Total}</ActionName>
 <ActionType>Assignment</ActionType>
 </Action>
 <Action><ActionName>DataServices/PayConsumerService/PayOperation/inputs/operation1/numero_cuenta_destino=${Inputs/numero_cuenta_destino}</ActionName>
 <ActionType>Assignment</ActionType>
 </Action>
 <Action><ActionName>DataServices/PayConsumerService/PayOperation</ActionName>
-<ActionType></ActionType>
+<ActionType />
 </Action>
 <Action><ActionName>Variables/ResultadoVariable=${DataServices/PayConsumerService/PayOperation/results/operation1Response/resultado}</ActionName>
 <ActionType>Assignment</ActionType>
@@ -1109,7 +1145,7 @@ webAppAccess.processPage("ViewPage");
 <NameSearch>monto_transferido</NameSearch>
 </SimplePageLocation>
 </Input>
-<Input name="Text">${Variables/Total}</Input>
+<Input name="Text">${MethodCall/formatNumber(${Variables/Total},Colones)}</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc124"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
@@ -1154,7 +1190,7 @@ webAppAccess.processPage("ViewPage");
 </Argument>
 </Arguments>
 </Input>
-<Input name="Actions"><Actions><Action><ActionType></ActionType>
+<Input name="Actions"><Actions><Action><ActionType />
 <ActionName>showViewPage</ActionName>
 </Action>
 </Actions>
@@ -1214,7 +1250,7 @@ webAppAccess.processPage("ViewPage");
 <Input name="HTMLAttributes"><HTMLAttributes />
 </Input>
 <Input name="Name">ResultText</Input>
-<Input name="PageLocation"><SimplePageLocation><Page>ViewPage</Page>
+<Input name="PageLocation"><SimplePageLocation><Page>ResultPage</Page>
 <NameSearch>resultado</NameSearch>
 </SimplePageLocation>
 </Input>
@@ -1266,12 +1302,92 @@ webAppAccess.processPage("ViewPage");
 </Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc141"><BuilderDefID>com.bowstreet.builders.webapp.ImportedPageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="MethodAttribute">true</Input>
+<Input name="DesignTimeImport">false</Input>
+<Input name="URLModification">Relative</Input>
+<Input name="AbsoluteURLs">true</Input>
+<Input name="UseJSPCode">true</Input>
+<Input name="AddBaseTag">false</Input>
+<Input name="LocalizeUrl">false</Input>
+<Input name="PreserveAppContext">true</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="RemoveJavaScript">false</Input>
+<Input name="LocalizationVariable">LocaleInfo</Input>
+<Input name="Name">ResultPage</Input>
+<Input name="URL">/factory/PayConsumerView_ViewPage.html</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc143"><BuilderDefID>com.bowstreet.builders.webapp.ButtonBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HTMLAttributes"><HTMLAttributes><class />
+<style />
+</HTMLAttributes>
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>ResultPage</Page>
+<NameSearch>back_button</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Name">BackButton</Input>
+<Input name="Label">Regresar</Input>
+<Input name="Action">fireShowStartPages</Input>
+<Input name="ActionURL">fireShowStartPages</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc145"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ShowAdvancedPostActionBehaviors">false</Input>
+<Input name="PostActionBehavior">Default</Input>
+<Input name="DefaultRefreshPageLocation">false</Input>
+<Input name="ExecuteEmbeddedScripts">false</Input>
+<Input name="IncludeEmbeddedCSS">false</Input>
+<Input name="RenderOuterPage">false</Input>
+<Input name="BreakContainment">false</Input>
+<Input name="PreservePage">false</Input>
+<Input name="HandleExisting">Replace</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="ActionType">link</Input>
+<Input name="ActionTypeUI">MODEL_LINK</Input>
+<Input name="IsModelAction">true</Input>
+<Input name="EarlyArgumentEvaluation">true</Input>
+<Input name="Name">ShowStartPage</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>ResultPage</Page>
+<NameSearch>back_button</NameSearch>
+<InsertionModifier>Rename</InsertionModifier>
+<NewNodeName>client-event-handler_show_start_page</NewNodeName>
+</SimplePageLocation>
+</Input>
+<Input name="Event">ShowStartPages</Input>
+<Input name="Action">inputForm</Input>
+<Input name="ActionURL">inputForm</Input>
+</Inputs>
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
 <Dependencies><Dependency type="Model">providers/Pay/Pay</Dependency>
 <Dependency type="Model">providers/GetCuentas/GetCuentasProvider</Dependency>
 <Dependency type="Model">baseModels/PayBaseModel</Dependency>
+<Dependency type="File">/factory/PayConsumerView_ViewPage.html</Dependency>
 <Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
 <Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
 <Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>

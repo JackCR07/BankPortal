@@ -178,6 +178,7 @@ h2.titulo{
 	height:35px;
 	text-align:center;
 	text-transform: uppercase;
+	border-bottom:0;
 }
 
 label.resultado{
@@ -350,5 +351,4 @@ input.art-button
 	font-weight: bold;
 	
 }
-
 

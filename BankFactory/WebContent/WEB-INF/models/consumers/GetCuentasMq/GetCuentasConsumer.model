@@ -71,6 +71,7 @@ You can also profile other builder inputs according to device type, and you can 
 <Value />
 </Input>
 <Input><Name>arguments.arg2</Name>
+<Value />
 </Input>
 <Input><Name>arguments.arg3</Name>
 </Input>
@@ -397,11 +398,11 @@ Parameters:
 <FieldMapping><Name>fixed_show</Name>
 <Value>arg2</Value>
 </FieldMapping>
-<FieldMapping><Name></Name>
-<Value></Value>
+<FieldMapping><Name />
+<Value />
 </FieldMapping>
-<FieldMapping><Name></Name>
-<Value></Value>
+<FieldMapping><Name />
+<Value />
 </FieldMapping>
 <FieldMapping><Name>left_top</Name>
 <Value>arg3_LABEL</Value>
@@ -569,7 +570,7 @@ Parameters:
 <Input name="DataType">NewXmlData</Input>
 <Input name="NewXmlData">&lt;top&gt;
    &lt;item&gt;
-      &lt;Value&gt;null&lt;/Value&gt;
+      &lt;Value&gt;todas&lt;/Value&gt;
       &lt;Label&gt;Todas&lt;/Label&gt;
    &lt;/item&gt;
    &lt;item&gt;
@@ -650,6 +651,29 @@ Parameters:
 <Input name="URL">factory/ViewAndForm_ViewPage.html</Input>
 </Inputs>
 <Messages />
+</BuilderCall>
+<BuilderCall id="bc88"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">int</Input>
+<Input name="Body">{
+if(numero==null){
+	return -1;
+}
+else
+	return Integer.parseInt(numero);
+
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">validarNulo</Input>
+<Input name="Arguments"><top><Argument><Name>numero</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="XMLType">Untyped XML</Input>
+</Inputs>
 </BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>

@@ -1,0 +1,71 @@
+<Model id="consumers/GetTransaccion/GetTransaccionesTestContainer"><BuilderCallList><BuilderCall id="bc3"><BuilderDefID>com.bowstreet.builders.webapp.ActionListBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">Object</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="Name">main</Input>
+<Input name="Actions"><Actions><Action><ActionType></ActionType>
+<ActionName>Page1</ActionName>
+</Action>
+</Actions>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc4"><BuilderDefID>com.bowstreet.builders.webapp.PageBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="PageData">&lt;html&gt;
+    &lt;body&gt;
+            &lt;span name="getTransacciones"&gt;&lt;/span&gt;
+            &lt;span name="getChart"&gt;&lt;/span&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</Input>
+<Input name="AbsoluteURLs">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="ReplaceExisting">false</Input>
+<Input name="FullyParse">true</Input>
+<Input name="Name">Page1</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc6"><BuilderDefID>com.bowstreet.builders.webapp.ModelContainerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="LoadWhenVisible">false</Input>
+<Input name="InheritProfile">true</Input>
+<Input name="ForwardPropertyBrokerEvents">true</Input>
+<Input name="MultiInstance">true</Input>
+<Input name="Name">GetTransaccionesModel</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>Page1</Page>
+<NameSearch>getTransacciones</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="ModelName">consumers/GetTransaccion/GetTransaccionModel</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc8"><BuilderDefID>com.bowstreet.builders.webapp.ModelContainerBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="LoadWhenVisible">false</Input>
+<Input name="InheritProfile">true</Input>
+<Input name="ForwardPropertyBrokerEvents">true</Input>
+<Input name="MultiInstance">true</Input>
+<Input name="Name">getChartContainer</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>Page1</Page>
+<NameSearch>getChart</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="ModelName">consumers/GetTransaccion/GetTransaccionesChart</Input>
+</Inputs>
+</BuilderCall>
+</BuilderCallList>
+<Properties><Contained>false</Contained>
+</Properties>
+<Dependencies><Dependency type="Model">consumers/GetTransaccion/GetTransaccionModel</Dependency>
+<Dependency type="Model">consumers/GetTransaccion/GetTransaccionesChart</Dependency>
+</Dependencies>
+<ExternalProperties><ExternalProperty id="DojoEnabled">true</ExternalProperty>
+<ExternalProperty id="DojoMinVersion">1.4.3</ExternalProperty>
+<ExternalProperty id="DojoRequires">dijit.layout.ContentPane,wpf.widget.RefreshContainer</ExternalProperty>
+<ExternalProperty id="ContainedModels">consumers/GetTransaccion/GetTransaccionModel:consumers/GetTransaccion/GetTransaccionesChart</ExternalProperty>
+</ExternalProperties>
+</Model>

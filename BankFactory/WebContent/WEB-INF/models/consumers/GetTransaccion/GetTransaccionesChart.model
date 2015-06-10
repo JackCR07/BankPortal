@@ -101,7 +101,9 @@
 </CacheMap>
 </BuilderCall>
 <BuilderCall id="bc14"><BuilderDefID>com.bowstreet.adapters.builders.PortletAdapterBuilder</BuilderDefID>
-<Messages />
+<Messages><Warning><Message>Duplicate portlet name found in model consumers/GetTransaccion/GetTransaccionesChartBackUp.</Message>
+</Warning>
+</Messages>
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="PortletDefaultLocale">en</Input>
 <Input name="PortletAdditionalLocales">en</Input>
@@ -285,8 +287,8 @@ Parameters:
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="ReturnType">void</Input>
 <Input name="Body">{
-	var ingreso = parseInt(this.getVariable('ClientIngreso'));
-	var egreso = parseInt(this.getVariable('ClientEgreso'));
+	var ingreso = parseInt(this.getVariable('ClientIngresoSinFormato'));
+	var egreso =  parseInt(this.getVariable('ClientEgresoSinFormato'));
 	
 	drawChart( 
 	[ 
@@ -297,23 +299,6 @@ Parameters:
 }</Input>
 <Input name="CreationOption">Automatic</Input>
 <Input name="Name">showChartClientMethod</Input>
-<Input name="Arguments"><top />
-</Input>
-</Inputs>
-</BuilderCall>
-<BuilderCall id="bc63"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientMethodBuilder</BuilderDefID>
-<Messages />
-<Inputs><Input name="BuilderCallEnabled">true</Input>
-<Input name="ReturnType">void</Input>
-<Input name="Body">{
-	document.getElementById("numero_cuenta").innerHTML = this.getVariable('ClientNumeroCuenta');
-	document.getElementById("numero_debitos").innerHTML = this.getVariable('ClientCantidadIngreso');
-	document.getElementById("numero_retiros").innerHTML = this.getVariable('ClientCantidadEgreso');
-	document.getElementById("saldo_retiros").innerHTML = this.getVariable('ClientEgreso');
-	document.getElementById("saldo_debitos").innerHTML = this.getVariable('ClientIngreso');
-}</Input>
-<Input name="CreationOption">Automatic</Input>
-<Input name="Name">showInfoClientMethod</Input>
 <Input name="Arguments"><top />
 </Input>
 </Inputs>
@@ -344,6 +329,24 @@ Parameters:
 <Input name="Event">showChart</Input>
 <Input name="Action">UpdateChartClientActionList</Input>
 <Input name="ActionURL">metodo</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc63"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientMethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">void</Input>
+<Input name="Body">{
+	document.getElementById("numero_cuenta").innerHTML = this.getVariable('ClientNumeroCuenta');
+	document.getElementById("numero_debitos").innerHTML = this.getVariable('ClientCantidadIngreso');
+	document.getElementById("numero_retiros").innerHTML = this.getVariable('ClientCantidadEgreso');
+	document.getElementById("saldo_retiros").innerHTML = this.getVariable('ClientEgreso');
+	document.getElementById("saldo_debitos").innerHTML = this.getVariable('ClientIngreso');
+	document.getElementById("moneda").innerHTML = this.getVariable('ClientMoneda');
+}</Input>
+<Input name="CreationOption">Automatic</Input>
+<Input name="Name">showInfoClientMethod</Input>
+<Input name="Arguments"><top />
+</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc90"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientVariableBuilder</BuilderDefID>
@@ -435,6 +438,9 @@ Parameters:
         	&lt;label id="numero_cuenta_label" class="subtitulos"&gt; Numero Cuenta&lt;/label&gt;
         	&lt;label id="numero_cuenta" class="resultado"&gt; &lt;/label&gt;
 			&lt;br&gt;
+			&lt;label id="moneda_label" class="subtitulos"&gt;Moneda&lt;/label&gt;
+        	&lt;label id="moneda" class="resultado"&gt; &lt;/label&gt;
+			&lt;br&gt;
         	&lt;label id="numero_retiros_label" class="subtitulos"&gt; Número de Egresos&lt;/label&gt;
         	&lt;label id="numero_retiros"  class="resultado"&gt; &lt;/label&gt;
 			 &lt;br&gt;
@@ -511,10 +517,108 @@ Parameters:
     webAppAccess.getVariables().setString("ClientNumeroCuenta", numeroCuenta);
     String tipoTransaccion = webAppAccess.getVariables().getString("IdTipoTransaccion");
     webAppAccess.getVariables().setString("TipoTransaccion", tipoTransaccion);
+    String moneda = webAppAccess.getVariables().getString("Moneda");
+    webAppAccess.getVariables().setString("ClientMoneda", moneda);
+    String egresoSinFormato = webAppAccess.getVariables().getString("CantidadEgresoSinFomato");
+     webAppAccess.getVariables().setString("ClientEgresoSinFormato", egresoSinFormato);
+   String ingresoSinFormato = webAppAccess.getVariables().getString("CantidadIngresoSinFormato");
+    webAppAccess.getVariables().setString("ClientIngresoSinFormato", ingresoSinFormato);
+    
 }</Input>
 <Input name="RenameExisting">false</Input>
 <Input name="TargetPhase">Construction</Input>
 <Input name="Name">setClientVariables</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc110"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">DebitoText</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>info_page</Page>
+<NameSearch>saldo_debitos</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${MethodCall/formatNumber(${Variables/CantidadIngreso},${Variables/Moneda})}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc111"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    System.out.println("numero = "+numero + "moneda =" +moneda);
+    if(!numero.equals("")){
+     double num = Double.parseDouble(numero);
+    DecimalFormat formateador = new DecimalFormat("###,###,###.##");
+    String numeroStr =  formateador.format (num);
+    
+	if(moneda.equals("Dolares")){
+		numeroStr="$"+numeroStr;
+	}
+	else if(moneda.equals("Colones")){
+	    numeroStr="¢"+numeroStr;
+	}
+	return numeroStr;
+    }
+    else{
+    return "";
+    } 
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Imports"><Imports><Import>java.text.DecimalFormat</Import>
+</Imports>
+</Input>
+<Input name="Arguments"><top><Argument><Name>numero</Name>
+<Type>String</Type>
+</Argument>
+<Argument><Name>moneda</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+<Input name="XMLType">Untyped XML</Input>
+<Input name="Name">formatNumber</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc112"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">CreditoText</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>info_page</Page>
+<NameSearch>saldo_retiros</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${MethodCall/formatNumber(${Variables/CantidadEgreso},${Variables/Moneda})}</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc113"><BuilderDefID>com.bowstreet.builders.webapp.TextBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="QuoteText">true</Input>
+<Input name="ReplaceContents">true</Input>
+<Input name="ReplaceTargetElement">false</Input>
+<Input name="LookupTable">None</Input>
+<Input name="HTMLAttributes"><HTMLAttributes />
+</Input>
+<Input name="Name">MonedaText</Input>
+<Input name="PageLocation"><SimplePageLocation><Page>info_page</Page>
+<NameSearch>moneda</NameSearch>
+</SimplePageLocation>
+</Input>
+<Input name="Text">${Variables/Moneda}</Input>
 </Inputs>
 </BuilderCall>
 <BuilderCall id="bc109"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientMethodBuilder</BuilderDefID>
@@ -526,6 +630,45 @@ Parameters:
 }</Input>
 <Input name="CreationOption">Automatic</Input>
 <Input name="Name">showAlert</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc115"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">ClientMoneda</Input>
+<Input name="Type">String</Input>
+<Input name="Value" />
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc117"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">ClientEgresoSinFormato</Input>
+<Input name="Type">String</Input>
+<Input name="Value">89</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc119"><BuilderDefID>com.bowstreet.builders.webapp.client.ClientVariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">ClientIngresoSinFormato</Input>
+<Input name="Type">String</Input>
+<Input name="Value">-1</Input>
 </Inputs>
 </BuilderCall>
 </BuilderCallList>

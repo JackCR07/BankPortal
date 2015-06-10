@@ -3,12 +3,12 @@
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" id="com.bowstreet.portlet.WebAppRunner2_BankFactory">
    <portlet>
       <description xml:lang="en" />
-      <portlet-name>PayPortlet</portlet-name>
-      <display-name xml:lang="en">Realizar Pago</display-name>
+      <portlet-name>SeleccionarServicio</portlet-name>
+      <display-name xml:lang="en">Seleccionar Servicio</display-name>
       <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
       <init-param>
          <name>model</name>
-         <value>consumers/Pay/PayModel</value>
+         <value>consumers/Pay/SelectServiceModel</value>
       </init-param>
       <expiration-cache>0</expiration-cache>
       <supports>
@@ -16,11 +16,50 @@
          <portlet-mode>view</portlet-mode>
       </supports>
       <supported-locale>en</supported-locale>
-      <resource-bundle>nls.consumers.pay.paymodel</resource-bundle>
+      <resource-bundle>nls.consumers.pay.selectservicemodel</resource-bundle>
       <portlet-info>
-         <title>Realizar Pago</title>
-         <short-title>Realizar Pago</short-title>
-         <keywords>Realizar Pago</keywords>
+         <title>Seleccionar Servicio</title>
+         <short-title>Seleccionar Servicio</short-title>
+         <keywords>Seleccionar Servicio</keywords>
+      </portlet-info>
+      <portlet-preferences>
+         <preference>
+            <name>capability.1.id</name>
+            <value>dojo</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capability.1.minValue</name>
+            <value>1.4.3</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capabilities.selfManaged</name>
+            <value>false</value>
+            <read-only>true</read-only>
+         </preference>
+      </portlet-preferences>
+   </portlet>
+   <portlet>
+      <description xml:lang="en" />
+      <portlet-name>PayService</portlet-name>
+      <display-name xml:lang="en">Pagar Servicio</display-name>
+      <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
+      <init-param>
+         <name>model</name>
+         <value>consumers/Pay/SelectProviderModel</value>
+      </init-param>
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+      <supported-locale>en</supported-locale>
+      <resource-bundle>nls.consumers.pay.selectprovidermodel</resource-bundle>
+      <portlet-info>
+         <title>Pagar Servicio</title>
+         <short-title>Pagar Servicio</short-title>
+         <keywords>Pagar Servicio</keywords>
       </portlet-info>
       <portlet-preferences>
          <preference>
@@ -224,9 +263,6 @@
             <read-only>true</read-only>
          </preference>
       </portlet-preferences>
-      <supported-publishing-event>
-         <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:numero_cuenta</qname>
-      </supported-publishing-event>
    </portlet>
    <portlet>
       <description xml:lang="en" />
@@ -249,10 +285,23 @@
          <short-title>GetCuentas Grafico</short-title>
          <keywords>GetCuentas Grafico</keywords>
       </portlet-info>
-      <portlet-preferences />
-      <supported-processing-event>
-         <qname xmlns:pbns="http://www.ibm.com/pb/models">pbns:numero_cuenta</qname>
-      </supported-processing-event>
+      <portlet-preferences>
+         <preference>
+            <name>capability.1.id</name>
+            <value>dojo</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capability.1.minValue</name>
+            <value>1.4.3</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capabilities.selfManaged</name>
+            <value>false</value>
+            <read-only>true</read-only>
+         </preference>
+      </portlet-preferences>
    </portlet>
    <portlet>
       <description xml:lang="en" />
@@ -274,6 +323,45 @@
          <title>Realizar Transaccion</title>
          <short-title>Realizar Transaccion</short-title>
          <keywords>Realizar Transaccion</keywords>
+      </portlet-info>
+      <portlet-preferences>
+         <preference>
+            <name>capability.1.id</name>
+            <value>dojo</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capability.1.minValue</name>
+            <value>1.4.3</value>
+            <read-only>true</read-only>
+         </preference>
+         <preference>
+            <name>capabilities.selfManaged</name>
+            <value>false</value>
+            <read-only>true</read-only>
+         </preference>
+      </portlet-preferences>
+   </portlet>
+   <portlet>
+      <description xml:lang="en" />
+      <portlet-name>stateTransaccion</portlet-name>
+      <display-name xml:lang="en">Estado de Transaccionn</display-name>
+      <portlet-class>com.bowstreet.portlet.adapter.WebAppRunnerPortlet286</portlet-class>
+      <init-param>
+         <name>model</name>
+         <value>consumers/CreateTransaccion/CreateTransaccionInfoProcess</value>
+      </init-param>
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+      <supported-locale>en</supported-locale>
+      <resource-bundle>nls.consumers.createtransaccion.createtransaccioninfoprocess</resource-bundle>
+      <portlet-info>
+         <title>Estado de Transaccionn</title>
+         <short-title>Estado de Transaccionn</short-title>
+         <keywords>Estado de Transaccionn</keywords>
       </portlet-info>
       <portlet-preferences>
          <preference>
