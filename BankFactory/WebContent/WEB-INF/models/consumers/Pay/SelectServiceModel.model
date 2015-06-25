@@ -797,6 +797,19 @@ else if(service=="Telefono"){
 </Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc169"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Moneda</Input>
+<Input name="Type">String</Input>
+<Input name="Value">NOINICIADO</Input>
+</Inputs>
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>

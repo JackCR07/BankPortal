@@ -149,6 +149,7 @@ You can also profile other builder inputs according to device type, and you can 
 
 
 
+
 &amp;nbsp;</LABEL>
 </TD>
 <TD><INPUT name="id_cuenta_origen" class="DataEntryFieldElement" id="PayModelPayConsumerView_InputPageid_cuenta_origen_field" />
@@ -158,6 +159,7 @@ You can also profile other builder inputs according to device type, and you can 
 <TR><TD><LABEL for="PayModelPayConsumerView_InputPagenumero_cuenta_destino_field"><SPAN name="numero_cuenta_destino_RequiredPrompt" class="requiredPromptAbove">*</SPAN>
 <SPAN name="numero_cuenta_destinolabel" class="subtitulos inputLabelAbove">Servicio
 								a Pagar</SPAN>
+
 
 
 
@@ -173,6 +175,7 @@ You can also profile other builder inputs according to device type, and you can 
 <TR><TD><LABEL for="PayModelPayConsumerView_InputPagemonto_transferido_field"><SPAN name="monto_transferido_RequiredPrompt" class="requiredPromptAbove">*</SPAN>
 <SPAN name="monto_transferidolabel" class="subtitulos inputLabelAbove">Monto
 								Transferido</SPAN>
+
 
 
 
@@ -1031,11 +1034,32 @@ webAppAccess.processPage("ResultPage");
 <Inputs><Input name="BuilderCallEnabled">true</Input>
 <Input name="ReturnType">Object</Input>
 <Input name="RenameExisting">false</Input>
-<Input name="Actions"><Actions><Action><ActionName>DataServices/PayConsumerService/PayOperation/inputs/operation1/id_cuenta_origen=${Inputs/id_cuenta_origen}</ActionName>
+<Input name="Actions"><Actions><Action><ActionName>DataServices/GetMonedaByNumCuentaConsumer/GetMonedaByNumCuenta/inputs/operation1/numero_cuenta=${MethodCall/idCuentaToNumCuenta(${Inputs/id_cuenta_origen})}</ActionName>
 <ActionType>Assignment</ActionType>
 </Action>
-<Action><ActionName>DataServices/PayConsumerService/PayOperation/inputs/operation1/monto_transferido=${Variables/Total}</ActionName>
+<Action><ActionName>DataServices/GetMonedaByNumCuentaConsumer/GetMonedaByNumCuenta</ActionName>
+<ActionType></ActionType>
+</Action>
+<Action><ActionName>Variables/Moneda=${MethodCall/getMonedaByNumCuenta(${DataServices/GetMonedaByNumCuentaConsumer/GetMonedaByNumCuenta/results/operation1Response/moneda})}</ActionName>
 <ActionType>Assignment</ActionType>
+</Action>
+<Action><ActionName>DataServices/PayConsumerService/PayOperation/inputs/operation1/id_cuenta_origen=${Inputs/id_cuenta_origen}</ActionName>
+<ActionType>Assignment</ActionType>
+</Action>
+<Action><ActionName>IF (${Variables/Moneda} == Dolares) THEN</ActionName>
+<ActionType>Conditional</ActionType>
+</Action>
+<Action><ActionName>    DataServices/PayConsumerService/PayOperation/inputs/operation1/monto_transferido=${MethodCall/dividir(${Variables/Total},500)}</ActionName>
+<ActionType>Assignment</ActionType>
+</Action>
+<Action><ActionName>ELSE</ActionName>
+<ActionType>Conditional</ActionType>
+</Action>
+<Action><ActionType>Assignment</ActionType>
+<ActionName>    DataServices/PayConsumerService/PayOperation/inputs/operation1/monto_transferido=${Variables/Total}</ActionName>
+</Action>
+<Action><ActionName>ENDIF</ActionName>
+<ActionType>Conditional</ActionType>
 </Action>
 <Action><ActionName>DataServices/PayConsumerService/PayOperation/inputs/operation1/numero_cuenta_destino=${Inputs/numero_cuenta_destino}</ActionName>
 <ActionType>Assignment</ActionType>
@@ -1354,6 +1378,96 @@ webAppAccess.processPage("ResultPage");
 <Input name="ActionURL">fireShowStartPages</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc146"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+    return (idCuenta+10000)+"";
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">idCuentaToNumCuenta</Input>
+<Input name="Arguments"><top><Argument><Name>idCuenta</Name>
+<Type>int</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc147"><BuilderDefID>com.bowstreet.builders.webapp.ServiceConsumer2Builder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="UseAllOperations">true</Input>
+<Input name="OverrideInputs">true</Input>
+<Input name="CreateLookupTables">true</Input>
+<Input name="AssociateLookupTables">true</Input>
+<Input name="UseDiscardableInputVariables">false</Input>
+<Input name="UseDiscardableVariables">false</Input>
+<Input name="EnableCaching">true</Input>
+<Input name="InheritProfile">true</Input>
+<Input name="Name">GetMonedaByNumCuentaConsumer</Input>
+<Input name="ProviderModel">providers/GetMonedaByNumCuenta/GetMonedaByNumCuenta</Input>
+<Input name="SelectOperations"><top><OperationSelected><Operation>GetMonedaByNumCuenta</Operation>
+<OperationEnabled>true</OperationEnabled>
+<Description>No description was provided.
+Parameters:
+	Name:			inputs
+
+	Name:			results</Description>
+</OperationSelected>
+</top>
+</Input>
+<Input name="OperationInputs"><top><InputsForOperation><Operation>GetMonedaByNumCuenta</Operation>
+<Inputs><top><Input><Name>operation1</Name>
+</Input>
+<Input><Name>operation1.numero_cuenta</Name>
+<Value />
+</Input>
+</top>
+</Inputs>
+</InputsForOperation>
+</top>
+</Input>
+<Input name="ContextVariables"><ContextVariables><ValuesForOperation><Operation>GetMonedaByNumCuenta</Operation>
+<Mappings />
+</ValuesForOperation>
+</ContextVariables>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc148"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">String</Input>
+<Input name="Body">{
+ IXml results = webAppAccess.getDataServiceParameterXml("GetMonedaByNumCuentaConsumer","GetMonedaByNumCuenta","results","operation1Response");
+String moneda = results.getText("moneda");
+return moneda;
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">getMonedaByNumCuenta</Input>
+<Input name="Arguments"><top><Argument><Name>numCuenta</Name>
+<Type>String</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
+<BuilderCall id="bc149"><BuilderDefID>com.bowstreet.builders.webapp.VariableBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="GenerateSchema">false</Input>
+<Input name="PersistChoice">0</Input>
+<Input name="GenerateSampleData">false</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="CreateSampleData">Create sample data</Input>
+<Input name="Name">Moneda</Input>
+<Input name="Type">String</Input>
+<Input name="Value">NOINICIADO</Input>
+</Inputs>
+</BuilderCall>
 <BuilderCall id="bc145"><BuilderDefID>com.bowstreet.builders.webapp.ClientEventHandlerBuilder</BuilderDefID>
 <Messages />
 <Inputs><Input name="BuilderCallEnabled">true</Input>
@@ -1384,6 +1498,26 @@ webAppAccess.processPage("ResultPage");
 <Input name="ActionURL">inputForm</Input>
 </Inputs>
 </BuilderCall>
+<BuilderCall id="bc151"><BuilderDefID>com.bowstreet.builders.webapp.MethodBuilder</BuilderDefID>
+<Messages />
+<Inputs><Input name="BuilderCallEnabled">true</Input>
+<Input name="ReturnType">double</Input>
+<Input name="Body">{
+	return dividendo/divisor;
+}</Input>
+<Input name="RenameExisting">false</Input>
+<Input name="TargetPhase">Construction</Input>
+<Input name="Name">dividir</Input>
+<Input name="Arguments"><top><Argument><Name>dividendo</Name>
+<Type>double</Type>
+</Argument>
+<Argument><Name>divisor</Name>
+<Type>double</Type>
+</Argument>
+</top>
+</Input>
+</Inputs>
+</BuilderCall>
 </BuilderCallList>
 <Properties><Contained>false</Contained>
 </Properties>
@@ -1391,6 +1525,7 @@ webAppAccess.processPage("ResultPage");
 <Dependency type="Model">providers/GetCuentas/GetCuentasProvider</Dependency>
 <Dependency type="Model">baseModels/PayBaseModel</Dependency>
 <Dependency type="File">/factory/PayConsumerView_ViewPage.html</Dependency>
+<Dependency type="Model">providers/GetMonedaByNumCuenta/GetMonedaByNumCuenta</Dependency>
 <Dependency type="File">/factory/clientjavascript/dojo/progress_indicator.js</Dependency>
 <Dependency type="File">/factory/pages/dojo_progress_indicator_base.html</Dependency>
 <Dependency type="File">/factory/images/progressindicator/spinning_spokes.gif</Dependency>
